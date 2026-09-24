@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第二章 结构化软件开发方法 · 考点总结</title>
+<style>
+:root{--fg:#24292f;--muted:#57606a;--line:#d0d7de;--accent:#0969da;--code:#f6f8fa;--soft:#fafbfc}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--fg);
+  font:16px/1.78 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",sans-serif}
+main{max-width:980px;margin:0 auto;padding:26px 22px 72px}
+h1{font-size:1.75em;line-height:1.35;border-bottom:3px solid var(--accent);padding-bottom:.28em;margin:1.1em 0 .7em}
+h2{font-size:1.36em;line-height:1.4;border-bottom:1px solid var(--line);padding-bottom:.22em;margin:1.5em 0 .6em}
+h3{font-size:1.14em;margin:1.25em 0 .45em}
+h4{font-size:1.02em;margin:1.05em 0 .35em;color:var(--muted)}
+p{margin:.5em 0}
+ul,ol{margin:.45em 0;padding-left:1.5em}
+li{margin:.22em 0}
+li>ul,li>ol{margin:.15em 0}
+strong{color:#000}
+em{color:#000}
+code{background:var(--code);border-radius:4px;padding:.12em .34em;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:.92em}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;margin:.7em 0}
+pre code{background:none;padding:0;white-space:pre;font-size:.9em;line-height:1.5}
+table{border-collapse:collapse;width:100%;margin:.75em 0;font-size:.95em;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600}
+tbody tr:nth-child(even){background:var(--soft)}
+blockquote{margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:var(--code);color:var(--muted)}
+blockquote p{margin:.25em 0}
+hr{border:0;border-top:1px solid var(--line);margin:1.8em 0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.topnav{position:sticky;top:0;z-index:20;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+  padding:10px 22px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(180%) blur(6px);font-size:.9em}
+.topnav a{white-space:nowrap}
+.topnav .sep{color:var(--line)}
+.topnav .brand{font-weight:600;color:var(--fg);margin-right:6px}
+footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid var(--line);color:var(--muted);font-size:.86em}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:1em 0}
+.card{display:block;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--soft)}
+.card:hover{border-color:var(--accent)}
+.card b{display:block;margin-bottom:4px}
+.card span{color:var(--muted);font-size:.86em}
+.toc{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:1em 0}
+.toc ul{margin:.25em 0;padding-left:1.3em}
+.tip{border:1px dashed var(--accent);border-radius:10px;padding:10px 14px;background:#f6faff;margin:1em 0;font-size:.94em}
+@media (max-width:640px){main{padding:18px 14px 60px}h1{font-size:1.5em}}
+@media print{
+  body{font-size:11.5pt;line-height:1.6}
+  .topnav{display:none}
+  main{max-width:none;padding:0}
+  h1{page-break-before:always;border-bottom-width:2px}
+  body>main>h1:first-child,main>section:first-child>h1{page-break-before:avoid}
+  pre,table,blockquote,li{page-break-inside:avoid}
+  a{color:#000;text-decoration:none}
+  footer{display:none}
+}
+</style>
+</head>
+<body>
+<nav class="topnav"><span class="brand">13005 软件工程</span> <a href="index.html">目录</a> <span class="sep">|</span> <a href="第01章_软件工程概述_考点总结.html">← 第一章 软件工程概述 · 考点总结</a> <span class="sep">|</span> <a href="第03章_面向对象的软件开发方法_考点总结.html">第三章 面向对象的软件开发方法 · 考点总结 →</a></nav>
+<main>
+<h1 id="_1">第二章 结构化软件开发方法 · 考点总结</h1>
+<blockquote>
+<p>本章重点：需求分析的任务/工作步骤/表达工具/需求文档内容；结构化设计的步骤、任务、原则与设计文档；结构化设计中<strong>模块的独立性</strong><br>
+本章难点：用 DFD、数据字典、数据结构图、判定树、判定表描述需求分析结果；用 SC 图描绘软件结构；用程序流程图、N-S 图、伪代码描绘详细设计<br>
+考查层次：本章是<strong>应用题/综合题的重灾区</strong>（画 DFD、画 SC 图、设计用例式图表），识记题集中在符号与定义，领会题为简答（耦合内聚、模块化、启发式规则）。</p>
+</blockquote>
+<hr>
+<h2 id="_2">一、本章知识地图</h2>
+<ul>
+<li><strong>1. 软件需求分析</strong>：考纲要点：任务、原则、5 步骤、DFD 符号、DD 符号、结构化分析定义；需求规格说明书、DFD/DD/分层 DFD；DFD 画法、DD 描述方法、结构化语言/判定表/判定树；进行结构化分析；层次：识记 + 领会 + 简单应用 + <strong>综合应用</strong></li>
+<li><strong>2. 软件设计</strong>：考纲要点：设计步骤、任务、概要设计工作内容、设计规范；体系结构总体设计、处理方式设计、详细设计 3 任务、设计策略、数据结构设计、可靠性、模块与模块化、耦合、内聚、设计文档构成；层次：识记 + 领会</li>
+<li><strong>3. 结构化系统设计</strong>：考纲要点：软件结构典型形式、变换型/事务型组成、SC 图符号；变换型/事务型基本模型；变换分析法/事务分析法画 SC 图、模块结构改进；层次：识记 + 领会 + <strong>综合应用</strong></li>
+<li><strong>4. 详细设计</strong>：考纲要点：目的与任务、流程图符号；设计原则、结构复杂性度量、环域复杂度、交叉点复杂度；程序流程图、N-S 图、伪代码；层次：识记 + 领会 + <strong>综合应用</strong></li>
+</ul>
+<hr>
+<h2 id="1">二、考点 1：软件需求分析</h2>
+<h3 id="_3">（一）识记</h3>
+<ul>
+<li>
+<p><strong>1. 需求分析的任务</strong><br>
+① 确定系统<strong>必须做什么</strong>（功能、性能、数据、界面、接口与约束）；<br>
+② 导出系统的<strong>逻辑模型</strong>（用 DFD、数据字典、判定表/树等表达），即"目标系统的模型"；<br>
+③ 编写<strong>需求规格说明书</strong>，作为<strong>开发、测试与验收</strong>的共同依据。</p>
+</li>
+<li>
+<p><strong>2. 需求分析应遵循的原则（5 条）</strong></p>
+</li>
+<li>必须<strong>理解并表达问题的信息域</strong>（数据与数据流）；</li>
+<li>必须<strong>建立描述系统功能与行为的模型</strong>（功能模型、数据模型、行为模型）；</li>
+<li>必须<strong>对问题自顶向下、逐层分解</strong>，并<strong>区分"本质"与"实现"</strong>（推迟实现细节）；</li>
+<li>必须使用<strong>图表等可视化工具</strong>表达需求（DFD、数据字典、判定表、判定树、结构化语言）；</li>
+<li>
+<p>必须有<strong>用户参与</strong>，需求必须<strong>一致、完整、无二义、可验证、可追溯、可修改</strong>。</p>
+</li>
+<li>
+<p><strong>3. 需求分析的 5 个步骤</strong> 【注意】（按教材表述）<br>
+① <strong>需求获取（调查研究）</strong>：了解用户要求与现有系统的业务流程、数据与问题；<br>
+② <strong>分析与综合</strong>：去伪存真、建立 DFD/数据字典等分析模型，导出目标系统的逻辑模型；<br>
+③ <strong>编写需求规格说明书</strong>：把分析结果文档化（含数据字典）；<br>
+④ <strong>需求评审（验证）</strong>：与用户共同检查需求的一致性、完整性、可行性，形成评审结论；<br>
+⑤ <strong>需求管理</strong>：需求的变更控制与追溯（也可理解为"需求确认与基线化"）。</p>
+<blockquote>
+<p>若教材采用经典 <strong>4 步</strong>（调查研究、分析与综合、书写文档、需求评审），按教材原话作答即可。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>4. 数据流图（DFD）的符号（必考）</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>圆形/圆角矩形</td>
+<td><strong>加工（变换/处理）</strong></td>
+<td>对数据进行的操作，名称用"动词+宾语"</td>
+</tr>
+<tr>
+<td>带箭头直线</td>
+<td><strong>数据流</strong></td>
+<td>箭头表示流动方向，旁标数据流名</td>
+</tr>
+<tr>
+<td>开口矩形（或双横线）</td>
+<td><strong>数据存储（文件）</strong></td>
+<td>数据的静态存储，如"订单表"</td>
+</tr>
+<tr>
+<td>矩形（方框）</td>
+<td><strong>外部实体（源/宿）</strong></td>
+<td>系统之外的人/组织/系统</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>5. 数据字典使用的符号</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>=</code></td>
+<td><strong>定义为</strong></td>
+<td>学生记录 = 学号 + 姓名 + 班级</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td><strong>与（顺序连接）</strong></td>
+<td>姓名 + 性别</td>
+</tr>
+<tr>
+<td><code>[ … | … ]</code></td>
+<td><strong>或（选择其一）</strong></td>
+<td>[ 男</td>
+</tr>
+<tr>
+<td><code>{ … }</code></td>
+<td><strong>重复（0 次或多次）</strong></td>
+<td>{ 课程名 + 成绩 }</td>
+</tr>
+<tr>
+<td><code>( … )</code></td>
+<td><strong>可选（可有可无）</strong></td>
+<td>( 备注 )</td>
+</tr>
+<tr>
+<td><code>…</code></td>
+<td>重复/省略说明</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>**…**</code></td>
+<td>注释（部分教材用）</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>6. 结构化分析（SA）的定义</strong><br>
+一种<strong>面向数据流、自顶向下、逐层分解</strong>的需求分析方法；以<strong>数据流图 + 数据字典</strong>为核心工具，配合<strong>判定表、判定树、结构化语言</strong>描述加工逻辑，建立系统的<strong>逻辑（功能）模型</strong>。</li>
+</ul>
+<h3 id="_4">（二）领会</h3>
+<ul>
+<li><strong>1. 需求规格说明书的主要内容</strong></li>
+<li>① 引言（目的、范围、术语定义、参考资料）：</li>
+<li>② 任务概述（目标、用户特点、约束与假设）</li>
+<li>③ <strong>数据描述</strong>（数据流图、数据字典、数据对象/ER 描述）</li>
+<li>④ <strong>功能需求</strong>（功能划分与说明）</li>
+<li>⑤ <strong>性能需求</strong>（时间、容量、精度）</li>
+<li>⑥ <strong>接口需求</strong>（用户、硬件、软件、通信接口）</li>
+<li>⑦ 设计约束（标准、语言、环境、安全）</li>
+<li>⑧ 质量属性与<strong>验收标准</strong></li>
+<li>
+<p>⑨ 附录（图表、索引）。</p>
+</li>
+<li>
+<p><strong>2. 数据流图、数据字典、分层数据流图</strong></p>
+</li>
+<li><strong>DFD 的作用</strong>：从<strong>数据流动与加工</strong>的角度刻画系统"做什么"，是<strong>结构化分析的核心工具</strong>，也是结构化设计的输入。</li>
+<li><strong>数据字典（DD）的作用</strong>：<strong>定义 DFD 中每个成分（数据流、数据项、数据存储、加工）的确切含义</strong>，与 DFD 配合构成系统的需求模型（"DFD 是骨架，DD 是血肉"）。</li>
+<li><strong>分层 DFD</strong>：顶层（<strong>上下文图</strong>：整个系统画成一个加工，标出所有外部实体及其输入输出流）→ <strong>0 层</strong>（系统的几个主要功能）→ <strong>1 层、2 层</strong>……逐层细化。</li>
+<li><strong>平衡原则（父子平衡）</strong>：父图中某个加工的<strong>输入输出数据流</strong>，必须与分解它的子图的输入输出数据流<strong>一致</strong>；同时<strong>数据守恒</strong>（不能凭空产生或消失）。</li>
+</ul>
+<h3 id="_5">（三）简单应用</h3>
+<ul>
+<li>
+<p><strong>1. DFD 的作用及画法（步骤）</strong><br>
+① 确定系统<strong>边界与外部实体</strong>；② 找出系统的<strong>输入输出数据流</strong>，画顶层（上下文）图；③ 自顶向下<strong>逐层分解</strong>主要功能，画 0 层、1 层图；④ 为每个数据流、数据存储<strong>命名并编号</strong>；⑤ 检查<strong>平衡与一致性</strong>，避免"黑洞/奇迹"加工（只有输入没有输出，或反之）。<br>
+要点：<strong>由外向内、自顶向下、逐层分解、数据流命名用名词、加工命名用"动词+宾语"</strong>。</p>
+</li>
+<li>
+<p><strong>2. 数据字典对不同类型的数据的描述方法</strong></p>
+</li>
+<li><strong>数据流</strong>：<code>数据流名 = 组成该数据流的数据项/数据结构</code>（如：订书单 = 书名 + 数量 + 单价 + 总金额）；</li>
+<li><strong>数据项（数据元素）</strong>：说明<strong>名称、别名、类型、长度/取值范围、默认值、说明</strong>；</li>
+<li><strong>数据存储（文件）</strong>：<code>文件名 = 记录构成 + 组织方式 + 存取方式 + 关键字</code>；</li>
+<li>
+<p><strong>加工（基本加工/小说明）</strong>：用<strong>结构化语言、判定表、判定树</strong>描述其加工逻辑（输入、处理、输出）。</p>
+</li>
+<li>
+<p><strong>3. 结构化语言、判定表、判定树</strong></p>
+</li>
+<li><strong>结构化语言（类 PDL）</strong>：用自然语言 + 三种控制结构描述加工逻辑，只有<strong>顺序、选择（if-then-else）、循环（while/until）</strong>。</li>
+</ul>
+<pre><code>  若 金额 ≥ 1000 则
+        若 是老客户 则 折扣 = 10%
+        否则 折扣 = 8%
+  否则
+        若 金额 ≥ 500 则 …
+
+</code></pre>
+<ul>
+<li><strong>判定表</strong>：由<strong>条件桩 + 条件项、动作桩 + 动作项</strong>组成，把<strong>所有条件组合</strong>与相应动作列成表格，适合<strong>条件组合复杂、逻辑严格</strong>的加工。</li>
+<li>
+<p><strong>判定树</strong>：判定表的图形化表示，层次直观、易读，适合<strong>条件判断有层次关系</strong>的加工；缺点是规模大时易遗漏。</p>
+</li>
+<li>
+<p><strong>4. 数据字典条目示例（图书借阅系统）</strong></p>
+</li>
+</ul>
+<pre><code>借书单   = 借书证号 + 图书号 + 借出日期 + 归还期限
+借书证   = 借书证号 + 读者姓名 + 单位 + 已借册数
+读者记录 = { 借书证 + { 借书单 } }
+借书证号 = 8{ 数字 }8            （附：类型=字符，长度=8，范围=00000001..99999999）
+加工&quot;借书&quot; = 输入: 借书单; 处理: [ 校验借书证 | 校验图书 ] + 登记借出; 输出: 借出确认 + 修改后的读者记录
+
+</code></pre>
+<ul>
+<li><strong>5. 判定树示例（折扣规则）</strong></li>
+</ul>
+<pre><code>折扣决策
+├── 金额 ≥ 1000 元
+│   ├── 长期客户 → 10%
+│   └── 非长期客户 → 8%
+└── 金额 &lt; 1000 元
+    ├── 金额 ≥ 500 元
+    │   ├── 长期客户 → 5%
+    │   └── 非长期客户 → 3%
+    └── 金额 &lt; 500 元 → 无折扣
+
+</code></pre>
+<ul>
+<li><strong>6. 判定表示例（折扣规则）</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>条件桩</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>金额 ≥ 1000 元</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>500 ≤ 金额 &lt; 1000</td>
+<td>—</td>
+<td>—</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+</tr>
+<tr>
+<td>是长期客户</td>
+<td>Y</td>
+<td>N</td>
+<td>Y</td>
+<td>N</td>
+<td>—</td>
+</tr>
+<tr>
+<td>- <strong>动作</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>折扣 10%</td>
+<td>×</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>折扣 8%</td>
+<td></td>
+<td>×</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>折扣 5%</td>
+<td></td>
+<td></td>
+<td>×</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>折扣 3%</td>
+<td></td>
+<td></td>
+<td></td>
+<td>×</td>
+<td></td>
+</tr>
+<tr>
+<td>无折扣</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>×</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_6">（四）综合应用（大题套路）</h3>
+<ul>
+<li><strong>"进行结构化分析 + 画 DFD + 对分层 DFD 中的数据与加工进行说明" 答题步骤</strong></li>
+<li><strong>确定系统范围与外部实体</strong>（谁给系统什么、系统给谁什么）；</li>
+<li>画<strong>顶层图（上下文图）</strong>：一个加工 + 全部外部实体 + 输入输出流；</li>
+<li><strong>分解功能</strong>：画 0 层 DFD（3–6 个主要加工为宜），再按需分解到 1、2 层；</li>
+<li>标注<strong>数据存储</strong>与<strong>编号</strong>（如 1、1.1、1.1.1）；</li>
+<li><strong>编写数据字典条目</strong>：对每个数据流、数据存储、基本加工写出定义式/说明；</li>
+<li>检查<strong>父图子图平衡、数据守恒、命名规范</strong>。<blockquote>
+<p>得分点：外部实体齐全、加工命名规范、分层平衡、DD 条目完整（数据流组成 + 数据项类型长度 + 加工小说明）。</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h2 id="2">三、考点 2：软件设计</h2>
+<h3 id="_7">（一）识记</h3>
+<ul>
+<li>
+<p><strong>1. 软件设计的基本步骤</strong>：<strong>概要设计（总体设计）→ 详细设计</strong>。</p>
+</li>
+<li>
+<p><strong>2. 软件设计的任务（4 项）</strong>：<strong>数据设计、体系结构设计、接口设计、过程（构件级）设计</strong>。</p>
+</li>
+<li>
+<p><strong>3. 概要设计阶段的工作内容</strong><br>
+① 制定<strong>设计规范/设计准则</strong>；② 软件<strong>体系结构（总体结构）设计</strong>；③ <strong>接口设计</strong>（模块间接口、外部接口、人机接口）；④ <strong>处理方式设计</strong>；⑤ <strong>数据结构（数据）设计</strong>；⑥ 可靠性/安全性设计；⑦ 编写<strong>概要设计文档</strong>；⑧ <strong>设计评审</strong>。</p>
+</li>
+<li>
+<p><strong>4. 设计规范的制定</strong>：明确统一的设计<strong>准则、命名规则、文档格式与评审标准</strong>，保证设计的一致性、可读性与可维护性。</p>
+</li>
+</ul>
+<h3 id="_8">（二）领会</h3>
+<ul>
+<li>
+<p><strong>1. 软件体系结构总体设计需要完成的工作内容</strong><br>
+确定系统的<strong>模块组成</strong>、模块的<strong>层次与调用关系</strong>、模块的<strong>接口与数据传递关系</strong>，并用<strong>结构图（SC 图）</strong> 表示；同时确定<strong>全局数据结构与关键算法策略</strong>。</p>
+</li>
+<li>
+<p><strong>2. 处理方式的设计涉及的内容</strong>：<strong>人机交互（界面）设计</strong>、<strong>输入输出格式与校验</strong>、<strong>错误与异常处理</strong>、<strong>并发/事务处理方式</strong>、<strong>运行环境与资源使用</strong>、<strong>安全与权限</strong>等。</p>
+</li>
+<li>
+<p><strong>3. 详细设计过程中需要完成的 3 个主要任务</strong><br>
+① 为每个模块确定<strong>算法</strong>（过程设计）；<br>
+② 设计模块内部的<strong>数据结构</strong>与接口细节；<br>
+③ 用图形/表格/语言工具<strong>表达设计结果</strong>，并进行<strong>复杂度度量与评审</strong>。</p>
+</li>
+<li>
+<p><strong>4. 软件设计的基本策略</strong><br>
+① <strong>自顶向下、逐步求精</strong>；② <strong>模块化</strong>；③ <strong>抽象</strong>；④ <strong>信息隐藏</strong>；⑤ <strong>模块独立性（高内聚、低耦合）</strong>；⑥ 结构一致性与可复用。</p>
+</li>
+<li>
+<p><strong>5. 数据结构设计包括的内容</strong>：数据的<strong>逻辑结构</strong>、<strong>存储（物理）结构</strong>、数据元素的<strong>组成与取值范围</strong>、数据之间的<strong>关系与操作</strong>、<strong>完整性/一致性约束</strong>。</p>
+</li>
+<li>
+<p><strong>6. 可靠性的含义</strong>：软件在<strong>规定的条件和规定的时间内</strong>无故障运行的<strong>能力（概率）</strong>；包括<strong>容错能力与健壮性</strong>，常用 <strong>MTBF（平均无故障时间）、MTTR（平均修复时间）、可用性</strong>等度量。</p>
+</li>
+<li>
+<p><strong>7. 模块的概念、基本属性、模块化的好处、模块的独立性</strong></p>
+</li>
+<li><strong>模块</strong>：由<strong>数据说明、可执行语句等程序对象</strong>组成的、可<strong>单独命名</strong>并可通过名字访问的程序单元（过程、函数、子程序等）。</li>
+<li><strong>基本属性</strong>：<strong>功能</strong>（做什么）、<strong>逻辑</strong>（内部如何做）、<strong>状态</strong>（使用的数据与环境）。其中<strong>功能与接口</strong>构成模块的<strong>外部特性</strong>，<strong>逻辑与状态</strong>是<strong>内部特性</strong>。</li>
+<li><strong>模块化的好处</strong>：分而治之<strong>降低复杂度</strong>；便于<strong>分工与并行开发</strong>；便于<strong>测试、调试与修改</strong>；提高<strong>可理解性、可复用性与可靠性</strong>；降低维护成本。</li>
+<li>
+<p><strong>模块的独立性</strong>：模块<strong>功能单一明确、模块之间联系尽量少</strong>，即"<strong>高内聚、低耦合</strong>"；是衡量设计质量最重要的标准。</p>
+</li>
+<li>
+<p><strong>8. 分解、信息隐藏、模块独立性</strong></p>
+</li>
+<li><strong>分解</strong>：把大问题<strong>自顶向下逐层划分为小问题</strong>（模块），降低复杂度；</li>
+<li><strong>信息隐藏</strong>：模块内部的<strong>数据与实现细节对外不可见</strong>，只通过接口访问，使修改局部化；</li>
+<li>
+<p><strong>模块独立性</strong>：由<strong>分解 + 信息隐藏</strong>保证，最终表现为<strong>高内聚、低耦合</strong>。</p>
+</li>
+<li>
+<p><strong>9. 模块间的耦合（由弱到强，必背 7 级）</strong></p>
+</li>
+<li>
+<p><strong>1（弱）</strong>：名称：<strong>非直接耦合</strong>；两模块无直接联系，仅通过上级模块通信；例：两个互不相干的模块</p>
+</li>
+<li><strong>2</strong>：名称：<strong>数据耦合</strong>；只传递<strong>简单数据参数</strong>；例：传一个整数/字符串参数</li>
+<li><strong>3</strong>：名称：<strong>标记耦合</strong>；传递<strong>数据结构（记录）</strong>，甚至只用了其中一部分；例：传整个学生记录但只用姓名</li>
+<li><strong>4</strong>：名称：<strong>控制耦合</strong>；传递<strong>控制信息（开关量）</strong>，控制对方执行哪部分逻辑；例：传 flag 决定模块走哪个分支</li>
+<li><strong>5</strong>：名称：<strong>外部耦合</strong>；都访问同一<strong>外部数据格式/通信协议/设备</strong>；例：都读写同一外部文件格式</li>
+<li><strong>6</strong>：名称：<strong>公共耦合</strong>；都访问同一<strong>全局数据区（公共环境）</strong>；例：都用同一个全局变量表</li>
+<li><strong>7（强）</strong>：名称：<strong>内容耦合</strong>；一个模块<strong>直接访问/修改另一模块内部数据</strong>，或直接转入其内部；例：直接跳入别的模块内部标号</li>
+</ul>
+<blockquote>
+<p>设计原则：<strong>尽量使用数据耦合，少用控制耦合，限制公共耦合的适用范围，坚决避免内容耦合</strong>。</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>10. 模块内的内聚（由弱到强，必背 7 级）</strong></p>
+</li>
+<li>
+<p><strong>1（弱）</strong>：名称：<strong>巧合（偶然）内聚</strong>；模块内各部分<strong>毫无关系</strong>，只是凑在一起；例：把不相干的语句放进同一模块</p>
+</li>
+<li><strong>2</strong>：名称：<strong>逻辑内聚</strong>；各部分<strong>逻辑相似</strong>，由传入参数决定执行哪一个；例："输出模块"按参数决定打印/显示/写文件</li>
+<li><strong>3</strong>：名称：<strong>时间内聚</strong>；各部分在<strong>同一时间段内执行</strong>；例：初始化模块</li>
+<li><strong>4</strong>：名称：<strong>过程内聚</strong>；各部分<strong>按特定次序执行</strong>，无数据关系；例：先读入再判断流程</li>
+<li><strong>5</strong>：名称：<strong>通信内聚</strong>；各部分<strong>使用同一输入数据或产生同一输出数据</strong>；例：都基于同一订单计算统计量</li>
+<li><strong>6</strong>：名称：<strong>信息（顺序）内聚</strong>；各部分对<strong>同一数据结构</strong>操作，且<strong>前者的输出是后者的输入</strong>；例：先算总分再算平均分</li>
+<li><strong>7（强）</strong>：名称：<strong>功能内聚</strong>；各部分<strong>共同完成单一、明确的功能</strong>，缺一不可；例："计算平均分"模块</li>
+</ul>
+<blockquote>
+<p>设计目标：<strong>力争功能内聚，允许信息/通信内聚，避免巧合与逻辑内聚</strong>。</p>
+</blockquote>
+<ul>
+<li><strong>11. 概要设计阶段文档的构成</strong></li>
+<li><strong>概要设计说明书</strong>（软件结构、模块清单与功能说明、接口说明）、<strong>数据结构/数据库设计说明</strong>、<strong>组装（集成）测试计划</strong>、<strong>用户手册初稿</strong>、<strong>模块开发卷宗</strong>等。</li>
+</ul>
+<hr>
+<h2 id="3">四、考点 3：结构化系统设计</h2>
+<h3 id="_9">（一）识记</h3>
+<ul>
+<li>
+<p><strong>1. 软件结构的典型形式</strong>：<strong>变换型结构</strong>、<strong>事务型结构</strong>（实际系统常为两者的复合）。</p>
+</li>
+<li>
+<p><strong>2. 变换型系统的组成</strong>：<strong>输入（传入）部分 + 变换中心（处理）部分 + 输出（传出）部分</strong>（加上输入/输出协调逻辑）。</p>
+</li>
+<li>
+<p><strong>3. 事务型系统的特征与组成</strong></p>
+</li>
+<li><strong>特征</strong>：以<strong>事务</strong>（一组数据或一次请求）为中心，系统先<strong>接收并分析事务类型</strong>，再<strong>分派</strong>给相应的处理模块；</li>
+<li>
+<p><strong>组成</strong>：<strong>事务中心（接收与分析、分派）+ 若干事务处理（活动）模块</strong>。</p>
+</li>
+<li>
+<p><strong>4. SC 图（结构图）的表示符号</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>矩形</td>
+<td><strong>模块</strong>（框内写模块名）</td>
+</tr>
+<tr>
+<td>带箭头（无圆点）的直线</td>
+<td><strong>调用关系</strong>（由调用者指向被调用者）</td>
+</tr>
+<tr>
+<td>带<strong>空心小圆</strong>的短箭头</td>
+<td><strong>数据信息</strong>的传递</td>
+</tr>
+<tr>
+<td>带<strong>实心小圆</strong>的短箭头</td>
+<td><strong>控制信息</strong>的传递</td>
+</tr>
+<tr>
+<td>菱形</td>
+<td><strong>选择调用</strong>（有条件地调用）</td>
+</tr>
+<tr>
+<td>弧形（半圆）箭头</td>
+<td><strong>循环调用</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_10">（二）领会</h3>
+<ul>
+<li>
+<p><strong>1. 变换型结构的基本模型</strong>：顶层为<strong>主控模块</strong>，下设<strong>输入协调模块</strong>（处理所有逻辑输入）、<strong>变换协调模块</strong>（完成主要加工）、<strong>输出协调模块</strong>（产生所有逻辑输出）；三者再各自向下分解。</p>
+</li>
+<li>
+<p><strong>2. 事务型结构的基本模型</strong>：顶层<strong>主控模块</strong> → <strong>事务中心模块</strong>（分析事务类型）→ 各<strong>事务处理模块</strong>（按类型分支）；若某分支仍含输入—变换—输出，则再对该分支用<strong>变换分析</strong>细化。</p>
+</li>
+</ul>
+<h3 id="_11">（三）综合应用</h3>
+<ul>
+<li><strong>1. 用变换分析法画 SC 图的步骤</strong><br>
+① <strong>复审并细化 DFD</strong>，确定加工与数据流；<br>
+② 找出<strong>逻辑输入（传入）</strong>、<strong>逻辑输出（传出）</strong>，夹在两者中间的是<strong>变换中心</strong>，从而<strong>划定三条边界</strong>；<br>
+③ 设计<strong>顶层主控模块</strong>（分配控制、协调）；<br>
+④ 为输入、变换、输出各设计<strong>协调模块</strong>及其下属模块（一个加工对应一个模块，自顶向下逐层映射）；<br>
+⑤ <strong>优化</strong>结构（合并小模块、提高独立性、单入口单出口）。</li>
+</ul>
+<blockquote>
+<p><strong>SC 图文本示意（变换分析结果）</strong><br>
+<code>主控模块  
+┌──────┼──────┐  
+输入协调 变换协调 输出协调  
+│ │ │  
+读入数据 计算处理 输出结果</code></p>
+</blockquote>
+<ul>
+<li>
+<p><strong>2. 用事务分析法画 SC 图的步骤</strong><br>
+① 识别<strong>事务中心</strong>与<strong>事务类型</strong>（由数据流的"类型标识"决定）；<br>
+② 设计<strong>顶层主控模块</strong> + <strong>事务中心模块</strong>（接收事务、判定类型、分派）；<br>
+③ 为每一类事务设计<strong>事务处理模块</strong>及其下级模块；<br>
+④ 若某事务分支中含变换流，则对分支再用<strong>变换分析</strong>细化；<br>
+⑤ 优化结构并检查接口。</p>
+</li>
+<li>
+<p><strong>3. 对软件模块结构的改进（启发式规则，必背）</strong></p>
+</li>
+<li><strong>提高模块独立性</strong>（高内聚、低耦合）；</li>
+<li>模块<strong>规模适中</strong>（一般 50–100 行/不超过一页纸）；</li>
+<li><strong>深度、宽度适当</strong>，<strong>扇入大、扇出小</strong>（扇出以 3–4 为宜，避免"病态"结构）；</li>
+<li>模块的<strong>作用域应在其控制域内</strong>（被影响的模块应在控制范围内）；</li>
+<li><strong>降低接口复杂度</strong>（少传参数、避免标记/控制耦合）；</li>
+<li>设计<strong>单入口、单出口</strong>模块；</li>
+<li>模块<strong>功能可预测</strong>（相同输入→相同输出，无副作用）。</li>
+</ul>
+<hr>
+<h2 id="4">五、考点 4：详细设计</h2>
+<h3 id="_12">（一）识记</h3>
+<ul>
+<li><strong>1. 详细设计的目的与任务</strong></li>
+<li><strong>目的</strong>：确定<strong>每个模块的内部实现</strong>，为编码提供<strong>清晰、准确、无二义</strong>的描述；</li>
+<li>
+<p><strong>任务</strong>：确定每个模块的<strong>算法与处理逻辑、局部数据结构、接口细节</strong>，并用工具表达出来（<strong>不写具体源程序代码</strong>）。</p>
+</li>
+<li>
+<p><strong>2. 程序流程图的常用标准符号</strong>：<strong>起止框</strong>（圆角矩形/椭圆）、<strong>输入输出框</strong>（平行四边形）、<strong>处理框</strong>（矩形）、<strong>判定框</strong>（菱形）、<strong>准备框/初始化框</strong>（六边形）、<strong>流程线</strong>（箭头）、<strong>连接点</strong>（小圆圈）、<strong>注释框</strong>。</p>
+</li>
+</ul>
+<h3 id="_13">（二）领会</h3>
+<ul>
+<li>
+<p><strong>1. 详细设计的原则</strong>：① 采用<strong>结构化构造</strong>（顺序、选择、循环）；② <strong>限制或避免使用 goto 语句</strong>；③ <strong>单入口单出口</strong>；④ <strong>自顶向下、逐步求精</strong>；⑤ 结构清晰、易读易维护；⑥ 避免过深的嵌套与过长的模块；⑦ 设计结果<strong>可验证、可评审</strong>。</p>
+</li>
+<li>
+<p><strong>2. 结构复杂性度量</strong></p>
+</li>
+<li><strong>环域复杂度（McCabe 环路复杂度）</strong>：衡量程序<strong>逻辑复杂程度</strong>与<strong>所需基本路径数</strong>：</li>
+<li><strong>V(G) = 判定（判定点）数 + 1</strong></li>
+<li><strong>V(G) = 边数 E − 节点数 N + 2</strong></li>
+<li>例：一个模块中有 3 个判定框 → V(G) = 3 + 1 = <strong>4</strong>，即至少需要 4 条测试路径才能覆盖所有独立路径。</li>
+<li>例（数图法）：设某流程图有 <strong>7 个节点、9 条边</strong> → V(G) = 9 − 7 + 2 = <strong>4</strong>，与"判定数 + 1"结果一致（该图有 3 个判定）。</li>
+<li><strong>用途</strong>：衡量模块逻辑复杂度、<strong>确定基本路径测试所需用例数的下限</strong>、判断模块是否过大（一般 V(G) ≤ 10 为宜）。</li>
+<li><strong>交叉点复杂度</strong> 【注意】：以流程图中<strong>交叉点的个数</strong>衡量流程图的复杂程度——线条交叉越多，越难理解与维护；设计时应尽量减少交叉。</li>
+</ul>
+<h3 id="_14">（三）综合应用（必考表达工具）</h3>
+<ul>
+<li>
+<p><strong>1. 程序流程图</strong>：直观、易于表达，但<strong>容易破坏结构化</strong>（随意跳转），适合初学者与简单逻辑。</p>
+</li>
+<li>
+<p><strong>2. N-S 图（盒图）</strong>：<strong>取消流程线</strong>，用<strong>嵌套的矩形</strong>表示顺序、选择与循环，<strong>强制结构化</strong>，<strong>单入口单出口</strong>，缺点是修改与嵌套过深时不便。</p>
+</li>
+</ul>
+<pre><code>┌────────────────────┐
+│  读入 x, y          │  ← 顺序
+├────────────────────┤
+│  x &gt; y ?           │
+│ ┌──────┬─────────┐ │  ← 选择（条件成立在左，不成立在右）
+│ │max=x │ max=y   │ │
+│ └──────┴─────────┘ │
+├────────────────────┤
+│ while i ≤ n  ┌────┐│  ← 循环
+│              │累加││
+│              └────┘│
+└────────────────────┘
+
+</code></pre>
+<ul>
+<li><strong>3. 伪代码（PDL）</strong>：用自然语言 + 结构化控制结构描述算法，<strong>易读、易修改、便于转成程序</strong>，是详细设计中最常用的表达方式之一。</li>
+</ul>
+<pre><code>BEGIN
+  读入 n
+  若 n ≤ 0 则 输出&quot;输入有误&quot;
+  否则
+    sum ← 0; i ← 1
+    WHILE i ≤ n DO
+        sum ← sum + i
+        i ← i + 1
+    ENDWHILE
+    输出 sum
+END
+
+</code></pre>
+<ul>
+<li><strong>4. PAD 图（问题分析图）</strong>：用<strong>自左向右的阶梯式二维树形结构</strong>表示程序逻辑，层次清晰、便于转成代码。</li>
+</ul>
+<hr>
+<h2 id="_15">六、本章对比与易混点</h2>
+<table>
+<thead>
+<tr>
+<th>易混点</th>
+<th>正确理解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DFD vs SC 图</td>
+<td><strong>DFD 面向数据流、与实现无关</strong>；<strong>SC 图面向模块与调用关系、是设计结果</strong></td>
+</tr>
+<tr>
+<td>耦合 vs 内聚</td>
+<td><strong>耦合看模块之间</strong>（越小越好）；<strong>内聚看模块内部</strong>（越大越好）</td>
+</tr>
+<tr>
+<td>概要设计 vs 详细设计</td>
+<td>概要=定<strong>软件结构、接口、数据</strong>；详细=定<strong>每个模块的算法与内部逻辑</strong></td>
+</tr>
+<tr>
+<td>变换型 vs 事务型</td>
+<td>变换型=<strong>输入→变换→输出</strong>；事务型=<strong>事务中心分派</strong>多个处理分支</td>
+</tr>
+<tr>
+<td>环路复杂度</td>
+<td>V(G) = <strong>判定数 + 1</strong> = <strong>边 − 点 + 2</strong>，不是"节点数 + 1"</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="_16">七、本章必背清单 + 简答预测</h2>
+<ul>
+<li><strong>必背</strong></li>
+<li>需求分析的任务、5 原则、5 步骤；</li>
+<li><strong>DFD 四类符号</strong>、<strong>数据字典符号</strong>、结构化分析定义；</li>
+<li>需求规格说明书的主要内容；分层 DFD 与平衡原则；</li>
+<li>设计步骤（概要→详细）、4 项设计任务、概要设计工作内容、详细设计 3 任务、设计策略；</li>
+<li>模块概念与三属性、模块化好处、独立性与分解/信息隐藏；</li>
+<li><strong>耦合 7 级</strong>、<strong>内聚 7 级</strong>；</li>
+<li>变换型/事务型组成，<strong>SC 图 6 类符号</strong>，变换分析/事务分析步骤，模块结构改进 7 条；</li>
+<li>
+<p>详细设计目的/任务/原则；流程图符号；<strong>环域复杂度公式</strong>；三种表达工具。</p>
+</li>
+<li>
+<p><strong>高频简答预测</strong></p>
+</li>
+<li>需求分析的任务是什么？应遵循哪些原则？</li>
+<li>简述需求分析的工作步骤。</li>
+<li>数据流图有哪几种基本符号？数据字典有哪些符号？两者的关系如何？</li>
+<li>什么是结构化分析？其基本思想是什么？</li>
+<li>需求规格说明书应包含哪些主要内容？</li>
+<li>软件设计分哪几步？设计任务有哪些？概要设计阶段要完成哪些工作？</li>
+<li>什么是模块？模块有哪些基本属性？模块化有什么好处？</li>
+<li>什么是耦合与内聚？各有哪些类型？设计时应如何处理？</li>
+<li>什么是变换型系统与事务型系统？简述变换分析法（事务分析法）的步骤。</li>
+<li>简述详细设计的任务与原则，常用的表达工具有哪些？</li>
+<li>
+<p>什么是环域复杂度？如何计算？有什么用途？</p>
+</li>
+<li>
+<p><strong>综合应用预测</strong></p>
+</li>
+<li>给出一个业务描述（如"图书借阅/订货/成绩管理"），要求：画<strong>分层 DFD</strong> + 写<strong>数据字典条目</strong> + 用<strong>判定表/判定树</strong>描述某加工逻辑；</li>
+<li>给出 DFD，要求用<strong>变换分析法或事务分析法画出 SC 图</strong>，并说明改进理由；</li>
+<li>给出算法描述，要求画<strong>程序流程图 / N-S 图</strong>并写出<strong>伪代码</strong>，计算<strong>环域复杂度</strong>。</li>
+</ul>
+</main>
+<footer>13005 软件工程 · 由 Markdown 生成，浏览器直接打开即可阅读</footer>
+</body>
+</html>

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第四章 移动应用的设计与测试 · 考点总结</title>
+<style>
+:root{--fg:#24292f;--muted:#57606a;--line:#d0d7de;--accent:#0969da;--code:#f6f8fa;--soft:#fafbfc}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--fg);
+  font:16px/1.78 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",sans-serif}
+main{max-width:980px;margin:0 auto;padding:26px 22px 72px}
+h1{font-size:1.75em;line-height:1.35;border-bottom:3px solid var(--accent);padding-bottom:.28em;margin:1.1em 0 .7em}
+h2{font-size:1.36em;line-height:1.4;border-bottom:1px solid var(--line);padding-bottom:.22em;margin:1.5em 0 .6em}
+h3{font-size:1.14em;margin:1.25em 0 .45em}
+h4{font-size:1.02em;margin:1.05em 0 .35em;color:var(--muted)}
+p{margin:.5em 0}
+ul,ol{margin:.45em 0;padding-left:1.5em}
+li{margin:.22em 0}
+li>ul,li>ol{margin:.15em 0}
+strong{color:#000}
+em{color:#000}
+code{background:var(--code);border-radius:4px;padding:.12em .34em;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:.92em}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;margin:.7em 0}
+pre code{background:none;padding:0;white-space:pre;font-size:.9em;line-height:1.5}
+table{border-collapse:collapse;width:100%;margin:.75em 0;font-size:.95em;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600}
+tbody tr:nth-child(even){background:var(--soft)}
+blockquote{margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:var(--code);color:var(--muted)}
+blockquote p{margin:.25em 0}
+hr{border:0;border-top:1px solid var(--line);margin:1.8em 0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.topnav{position:sticky;top:0;z-index:20;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+  padding:10px 22px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(180%) blur(6px);font-size:.9em}
+.topnav a{white-space:nowrap}
+.topnav .sep{color:var(--line)}
+.topnav .brand{font-weight:600;color:var(--fg);margin-right:6px}
+footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid var(--line);color:var(--muted);font-size:.86em}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:1em 0}
+.card{display:block;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--soft)}
+.card:hover{border-color:var(--accent)}
+.card b{display:block;margin-bottom:4px}
+.card span{color:var(--muted);font-size:.86em}
+.toc{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:1em 0}
+.toc ul{margin:.25em 0;padding-left:1.3em}
+.tip{border:1px dashed var(--accent);border-radius:10px;padding:10px 14px;background:#f6faff;margin:1em 0;font-size:.94em}
+@media (max-width:640px){main{padding:18px 14px 60px}h1{font-size:1.5em}}
+@media print{
+  body{font-size:11.5pt;line-height:1.6}
+  .topnav{display:none}
+  main{max-width:none;padding:0}
+  h1{page-break-before:always;border-bottom-width:2px}
+  body>main>h1:first-child,main>section:first-child>h1{page-break-before:avoid}
+  pre,table,blockquote,li{page-break-inside:avoid}
+  a{color:#000;text-decoration:none}
+  footer{display:none}
+}
+</style>
+</head>
+<body>
+<nav class="topnav"><span class="brand">13005 软件工程</span> <a href="index.html">目录</a> <span class="sep">|</span> <a href="第03章_面向对象的软件开发方法_考点总结.html">← 第三章 面向对象的软件开发方法 · 考点总结</a> <span class="sep">|</span> <a href="第05章_软件测试_考点总结.html">第五章 软件测试 · 考点总结 →</a></nav>
+<main>
+<h1 id="_1">第四章 移动应用的设计与测试 · 考点总结</h1>
+<blockquote>
+<p><strong>本章重点</strong>：移动应用（包括 WebApp）的特点、移动应用设计的内容及方法、移动应用的测试内容及技术<br>
+<strong>本章难点</strong>：<strong>基于构件的移动应用的建模</strong><br>
+<strong>考查层次</strong>：本章条目多、以<strong>识记（列举型选择/填空）</strong> 和<strong>领会（简答：内容/方法/策略）</strong> 为主；关键是把"设计五要素"和"测试十类内容"背成体系。<br>
+【注意】 提示：本章术语译名较多（界面设计模型、6 个质量因素等），不同教材表述略有差异，答题以指定教材为准。</p>
+</blockquote>
+<hr>
+<h2 id="_2">一、本章知识地图</h2>
+<ul>
+<li><strong>1. 移动应用的特点</strong>：考纲要点：3 个特点；强调用户体验、需求及环境复杂、技术难度高、需解决的技术难题；层次：识记+领会</li>
+<li><strong>2. 移动应用开发的软件过程</strong>：考纲要点：采用敏捷开发模型、<strong>5 个迭代阶段</strong>；界面设计需考虑的问题、<strong>界面设计的 3 种模型</strong>、3 种设计方法、应尽量避免的问题；层次：识记+领会</li>
+<li><strong>3. 移动计算环境和环境感知 App</strong>：考纲要点：云计算的 <strong>3 层体系结构</strong>（识记）；移动计算环境层次结构、环境感知含义（领会）；层次：识记+领会</li>
+<li><strong>4. WebApp 设计</strong>：考纲要点：保证质量的必要步骤、<strong>设计的内容</strong>、界面目标、导航语义单元、导航元素、WebApp 构件；美学设计原则、内容设计任务、内容体系结构、WebApp 体系结构、MVC 三部分功能、导航设计、构件设计、<strong>影响移动 App 质量的 6 个重要因素</strong>；层次：识记+领会</li>
+<li><strong>5. 移动软件的测试</strong>：考纲要点：测试目标、用户体验相关测试内容、内容测试 3 目标、导航测试内容、压力测试内容、负载测试内容；准则与策略、手势/虚拟键盘/语音/警报异常、Web 测试、内容/界面/导航测试方法、安全/性能测试、压力/负载测试方法、实时测试、<strong>AI 测试（静态/动态/基于模型）</strong>、虚拟环境测试、<strong>α/β 测试</strong>、文档测试两阶段与技术；层次：识记+领会</li>
+</ul>
+<hr>
+<h2 id="1">二、考点 1：移动应用的特点</h2>
+<h3 id="3">（一）识记：移动应用具有的 3 个特点</h3>
+<ul>
+<li><strong>面向移动使用场景</strong>：用户<strong>随时随地、随身携带、碎片化</strong>使用，设备随时在线/离线切换；</li>
+<li><strong>依赖移动设备特性且资源受限</strong>：依赖触摸屏、传感器（GPS、摄像头、重力感应）等设备能力，同时受<strong>屏幕小、输入不便、内存/电量/网络带宽受限</strong>的约束；</li>
+<li><strong>运行环境与需求复杂多变</strong>：设备型号与操作系统<strong>碎片化</strong>、网络环境不稳定、用户群体与使用场景差异大，<strong>需求变化快</strong>。</li>
+</ul>
+<h3 id="_3">（二）领会</h3>
+<ul>
+<li>
+<p><strong>1. 移动应用强调用户体验</strong><br>
+以用户为中心：交互<strong>简单直观</strong>、层级浅、<strong>减少输入</strong>（多用选择、手势、语音、默认值）、<strong>响应及时</strong>、反馈明确、视觉清晰（字号、对比度、触控目标足够大）、尊重用户<strong>隐私与权限</strong>、节省<strong>流量与电量</strong>。</p>
+</li>
+<li>
+<p><strong>2. 需求及环境复杂</strong></p>
+</li>
+<li>用户群与使用场景多样（碎片化时间、单手操作、户外强光/弱网）；</li>
+<li>硬件与系统平台碎片化，需适配多种分辨率、系统版本与厂商定制；</li>
+<li>需求往往<strong>不明确、变化快</strong>，需要迭代与快速反馈；</li>
+<li>
+<p>网络环境不稳定，需处理离线、断网、切换网络。</p>
+</li>
+<li>
+<p><strong>3. 技术难度高 / 移动应用开发需要解决的技术难题</strong><br>
+① <strong>多平台与多设备适配</strong>（跨平台框架/响应式布局）；<br>
+② <strong>性能与资源优化</strong>（启动速度、流畅度、内存与耗电控制）；<br>
+③ <strong>离线支持与数据同步</strong>（本地缓存、冲突处理）；<br>
+④ <strong>安全与隐私保护</strong>（加密传输、本地安全存储、权限最小化、代码加固）；<br>
+⑤ <strong>环境感知与上下文处理</strong>（定位、传感器、通知）；<br>
+⑥ <strong>版本管理与持续更新</strong>（灰度发布、兼容升级、崩溃监控）。</p>
+</li>
+</ul>
+<hr>
+<h2 id="2">三、考点 2：移动应用开发的软件过程</h2>
+<h3 id="_4">（一）识记</h3>
+<ul>
+<li>
+<p><strong>1. 移动应用采用敏捷开发模型</strong><br>
+原因：需求变化快、交付周期短、需要持续反馈与快速迭代；采用<strong>短迭代（1–4 周）、持续集成/持续交付、可运行增量交付</strong>。</p>
+</li>
+<li>
+<p><strong>2. 移动应用开发的 5 个迭代阶段</strong> 【注意】（每次迭代都完整经历一遍）</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>主要工作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① 探索（需求）</strong></td>
+<td>调研用户与场景，形成用户故事/需求清单并排定优先级</td>
+</tr>
+<tr>
+<td><strong>② 设计</strong></td>
+<td>界面设计（UI/UX）与体系结构、构件设计；原型与可用性验证</td>
+</tr>
+<tr>
+<td><strong>③ 开发（实现）</strong></td>
+<td>按迭代计划编码，构件集成（持续集成），单元测试</td>
+</tr>
+<tr>
+<td><strong>④ 测试</strong></td>
+<td>功能、界面、导航、性能、兼容性、安全性等测试（含真机与多设备）</td>
+</tr>
+<tr>
+<td><strong>⑤ 发布与评估（交付/维护）</strong></td>
+<td>发布（可含灰度）、监控与用户反馈收集，进入下一迭代</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>3. 将敏捷开发与 5 个迭代阶段相结合的方法（学习目的要求"理解"）</strong><br>
+① 每个<strong>冲刺/迭代</strong>都走完"需求→设计→开发→测试→发布"小循环，交付<strong>可运行增量</strong>；<br>
+② 需求以<strong>用户故事 + 待办列表</strong>管理，优先级由产品负责人排定；<br>
+③ 每日站会同步进度与障碍，<strong>持续集成/自动化测试</strong>保证质量；<br>
+④ 每次迭代结束做<strong>评审与回顾</strong>，根据用户反馈调整下一迭代；<br>
+⑤ 版本发布采用<strong>灰度/热更新</strong>，快速验证与回滚。</li>
+</ul>
+<h3 id="_5">（二）领会</h3>
+<ul>
+<li><strong>1. 移动应用界面设计需要考虑的问题</strong></li>
+<li>① 屏幕尺寸与分辨率<strong>适配</strong>（多设备、横竖屏）：</li>
+<li>② <strong>触摸操作</strong>特性（手指精度、误触、触控目标≥约 44px）</li>
+<li>③ <strong>导航与层级简洁</strong>（层级浅、返回路径清晰）</li>
+<li>④ <strong>输入困难</strong>（虚拟键盘、语音、扫码、选择替代输入）</li>
+<li>⑤ <strong>视觉层次与可读性</strong>（字号、对比度、留白）</li>
+<li>⑥ <strong>状态与反馈</strong>（加载、失败、离线提示）</li>
+<li>⑦ <strong>单手操作与持握方式</strong></li>
+<li>⑧ <strong>无障碍与本地化</strong></li>
+<li>
+<p>⑨ 电量/流量/隐私提示。</p>
+</li>
+<li>
+<p><strong>2. 用于移动应用的界面设计的 3 种模型</strong> 【注意】<br>
+（常见表述）：  </p>
+</li>
+<li><strong>用户模型（User Model）</strong>：建立<strong>用户对系统的心理模型</strong>，界面应符合用户的认知与习惯（"用户以为系统是怎样工作的"）；</li>
+<li><strong>设计模型（Design Model）</strong>：设计者依据需求与用户模型所构建的<strong>界面实现方案</strong>（结构、布局、交互流程）；</li>
+<li>
+<p><strong>实现模型（Implementation Model）</strong>：对界面元素的<strong>具体实现描述</strong>（控件、样式、代码实现），是设计模型的落地。</p>
+<blockquote>
+<p>也有教材把"三种模型"表述为<strong>基于隐喻的模型、基于任务的模型、基于对象的模型</strong>；答题时按指定教材表述作答，但<strong>用户模型/设计模型/实现模型</strong>是最常见的答案。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>3. 3 种设计移动应用程序的方法</strong> 【注意】<br>
+① <strong>以任务为中心的设计</strong>：按用户要完成的任务/流程组织界面与功能；<br>
+② <strong>以对象（内容）为中心的设计</strong>：按业务对象/内容组织界面（如"订单""商品"）；<br>
+③ <strong>以构件（组件）复用为基础的设计</strong>：基于可复用 UI 构件与业务构件装配应用（本章难点"基于构件的建模"即此）。</p>
+</li>
+<li>
+<p><strong>4. 在移动应用的设计中应该尽量避免的问题</strong><br>
+① 界面拥挤、功能堆砌；② 层级过深、导航混乱；③ 强制大量文字输入；④ 忽视不同设备与网络条件（只在单一机型/网络下设计）；⑤ 字号过小、对比度不足；⑥ 忽视加载/失败/离线的反馈；⑦ 无视隐私与权限最小化；⑧ 浪费流量与电量；⑨ 忽视无障碍与本地化；⑩ 忽视用户中断场景（来电、切后台）。</p>
+</li>
+</ul>
+<hr>
+<h2 id="3-app">四、考点 3：移动计算环境和环境感知 App</h2>
+<ul>
+<li><strong>1. 识记：云计算的 3 层体系结构</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>层次</th>
+<th>名称</th>
+<th>提供的服务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① 基础设施层</td>
+<td><strong>IaaS（基础设施即服务）</strong></td>
+<td>虚拟机、存储、网络等基础设施资源</td>
+</tr>
+<tr>
+<td>② 平台层</td>
+<td><strong>PaaS（平台即服务）</strong></td>
+<td>开发/运行平台、中间件、数据库、部署环境</td>
+</tr>
+<tr>
+<td>③ 软件层</td>
+<td><strong>SaaS（软件即服务）</strong></td>
+<td>直接向用户提供的应用软件服务</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>上层构建于下层之上：IaaS 支撑 PaaS，PaaS 支撑 SaaS。</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>2. 领会：移动计算环境的层次结构</strong> 【注意】<br>
+由底向上大致为：<strong>网络通信层（无线网络/移动互联网）→ 云/服务层（云平台与后端服务）→ 中间件（平台）层（移动中间件、数据同步、推送）→ 终端设备层（手机/平板 + 操作系统）→ 应用层（移动应用/WebApp）</strong>。</p>
+</li>
+<li>
+<p><strong>3. 领会：环境感知的含义</strong></p>
+</li>
+<li><strong>环境感知（上下文感知，Context Awareness）</strong>：应用通过<strong>传感器与设备状态</strong>（位置、时间、光线、运动、网络、电量、用户行为等）<strong>感知用户当前所处的环境与情境</strong>，并据此<strong>自动调整行为、内容与呈现方式</strong>，提供<strong>个性化、主动化</strong>的服务。<blockquote>
+<p>例：进入商场推送优惠；检测到运动状态切换为语音播报；弱网自动降码率。</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h2 id="4webapp">五、考点 4：WebApp 设计</h2>
+<h3 id="_6">（一）识记</h3>
+<ul>
+<li>
+<p><strong>1. 保证 WebApp 质量的必要步骤</strong> 【注意】<br>
+① 明确<strong>质量目标与度量指标</strong>（可用性、性能、安全、可维护性等）；<br>
+② <strong>需求与内容建模</strong>（内容模型、交互模型、功能模型）；<br>
+③ <strong>设计</strong>：美学（界面）设计、内容设计、体系结构设计、导航设计、构件设计；<br>
+④ <strong>实施与测试</strong>：内容测试、界面测试、导航测试、性能（压力/负载）测试、安全性测试等；<br>
+⑤ <strong>配置与变更管理、发布与维护评审</strong>（保证一致性、可追溯、可持续改进）。</p>
+</li>
+<li>
+<p><strong>2. WebApp 设计的内容（5 项）</strong><br>
+① <strong>美学设计（界面设计）</strong>；② <strong>内容设计</strong>；③ <strong>体系结构设计</strong>；④ <strong>导航设计</strong>；⑤ <strong>构件设计</strong>。</p>
+</li>
+<li>
+<p><strong>3. WebApp 界面的目标</strong> 【注意】<br>
+建立<strong>有效、高效、令人满意</strong>的人机交互：用户能<strong>快速理解界面、轻松找到并获取内容、顺畅完成操作</strong>；界面一致、响应及时、反馈清晰、适应不同设备（响应式）。</p>
+</li>
+<li>
+<p><strong>4. 导航语义单元（NSU）</strong><br>
+由<strong>一组相关信息与相关导航结构组成、协作完成一组相关用户需求</strong>的<strong>导航基本单元</strong>（用户完成某个任务所浏览的内容单元）。它是设计导航的基本单位。</p>
+</li>
+<li>
+<p><strong>5. 导航元素</strong><br>
+导航链接、<strong>导航栏</strong>（全局/局部）、<strong>站点地图</strong>、<strong>目录/索引</strong>、<strong>面包屑</strong>、<strong>搜索框</strong>、前进/后退与分页、标签页（Tab）等。</p>
+</li>
+<li>
+<p><strong>6. WebApp 构件</strong><br>
+构成 WebApp 的<strong>可复用软件单元</strong>：页面/模板构件、表单与输入构件、脚本/业务逻辑构件、数据访问构件、业务服务构件、通用工具构件（搜索、购物车、登录）等。</p>
+</li>
+</ul>
+<h3 id="_7">（二）领会</h3>
+<ul>
+<li>
+<p><strong>1. 美学设计的参考原则</strong><br>
+① 内容优先，形式服从内容（"少即是多"）；② 布局平衡、善用<strong>留白</strong>；③ 建立清晰的<strong>视觉层次</strong>与聚焦点；④ 颜色、字体、图标<strong>风格统一</strong>；⑤ 一致性（同类元素同样式）；⑥ 适应不同屏幕（响应式/流式布局）；⑦ 避免花哨动画与装饰干扰；⑧ 保证可读性与可访问性（对比度、字号）。</p>
+</li>
+<li>
+<p><strong>2. 内容设计的任务</strong></p>
+</li>
+<li>
+<p><strong>内容建模与内容体系结构设计</strong>：确定内容的<strong>来源、组织、分类、粒度、关系与呈现</strong>，保证内容<strong>准确、一致、适时、相关、完整</strong>，并支持内容与<strong>展示（视图）分离</strong>。</p>
+</li>
+<li>
+<p><strong>3. 内容体系结构</strong><br>
+内容的组织方式：<strong>层次结构（树形目录）</strong>、<strong>线性结构（顺序浏览）</strong>、<strong>网状/超文本结构（交叉链接）</strong>；常采用"分层 + 交叉链接"的混合结构，并配<strong>内容清单/内容模型</strong>。</p>
+</li>
+<li>
+<p><strong>4. WebApp 体系结构</strong><br>
+常见的分层/MVC 结构：<strong>表示层（视图）— 控制层（控制器）— 业务/数据层（模型）</strong>；强调<strong>表现与逻辑分离、可扩展、可复用、可维护</strong>。</p>
+</li>
+<li>
+<p><strong>5. MVC 体系结构中视图、控制器、模型部分的功能</strong></p>
+</li>
+<li><strong>视图（View）</strong>：负责<strong>界面展示与数据呈现</strong>，不含业务逻辑；</li>
+<li><strong>控制器（Controller）</strong>：<strong>接收用户请求、解析参数、调度模型与视图、控制页面流程</strong>；</li>
+<li>
+<p><strong>模型（Model）</strong>：封装<strong>业务逻辑与数据处理/持久化</strong>，与界面无关。</p>
+</li>
+<li>
+<p><strong>6. 导航设计的内容和方法</strong></p>
+</li>
+<li><strong>内容</strong>：确定<strong>导航语义单元</strong>、导航<strong>链接与路径</strong>、导航<strong>布局与位置</strong>、全局/局部导航的一致性、返回与错误路径；</li>
+<li>
+<p><strong>方法</strong>：先做<strong>内容与用户任务分析</strong>，再设计<strong>导航图/导航类图</strong>（页面与链接关系），最后用<strong>可用性测试/导航测试</strong>验证（原则：用户总知道"我在哪、能去哪、怎么回去"）。</p>
+</li>
+<li>
+<p><strong>7. WebApp 构件设计</strong><br>
+按<strong>构件级设计原则</strong>（职责单一、接口清晰、高内聚、低耦合、可复用）设计构件的<strong>功能、接口与依赖</strong>，并明确构件与页面/服务的对应关系。</p>
+</li>
+<li>
+<p><strong>8. 影响移动 App 质量的 6 个重要因素</strong> 【注意】</p>
+</li>
+<li><strong>可用性/用户体验</strong>；2. <strong>性能与响应速度</strong>；3. <strong>可靠性/稳定性</strong>；4. <strong>兼容性（设备与平台适配）</strong>；5. <strong>安全性</strong>；6. <strong>资源消耗（电量、流量、内存）</strong>。</li>
+</ul>
+<hr>
+<h2 id="5">六、考点 5：移动软件的测试</h2>
+<h3 id="_8">（一）识记</h3>
+<ul>
+<li>
+<p><strong>1. 移动软件测试的目标</strong><br>
+在<strong>真实设备与真实网络环境</strong>下尽早发现缺陷，验证应用的<strong>功能正确性、用户体验、性能、兼容性与安全性</strong>，保证其在<strong>多种平台与设备上的一致质量</strong>。</p>
+</li>
+<li>
+<p><strong>2. 与用户体验相关的测试内容</strong><br>
+① <strong>手势测试</strong>；② <strong>虚拟键盘输入</strong>测试；③ <strong>语音输入与识别</strong>测试；④ <strong>警报与异常条件</strong>测试（来电、通知打断、断网、低电量、内存不足、权限拒绝）；⑤ 界面布局/可读性/响应与反馈。</p>
+</li>
+<li>
+<p><strong>3. WebApp 内容测试的 3 个目标</strong> 【注意】<br>
+① <strong>内容的正确性</strong>（无语法、语义、数据错误）；<br>
+② <strong>内容的一致性/完整性</strong>（内容与设计模型一致，无缺失、无孤立链接）；<br>
+③ <strong>内容的恰当性/适时性</strong>（内容准确、及时更新、与用户需求相关）。</p>
+</li>
+<li>
+<p><strong>4. 导航测试的内容</strong><br>
+验证<strong>导航链接与路径</strong>是否有效可达（<strong>无死链</strong>）、<strong>导航语义单元</strong>是否合理、层级与结构是否清晰、全局与局部导航是否一致、<strong>返回/重定向</strong>是否正确、是否存在回路与孤立页面。</p>
+</li>
+<li>
+<p><strong>5. 压力测试的内容</strong><br>
+在<strong>超常规负载（超出预期极限的并发用户、数据量、操作频率）</strong> 下考察系统是否<strong>崩溃、崩溃后能否恢复、性能如何降级</strong>，确定<strong>系统极限与瓶颈</strong>。</p>
+</li>
+<li>
+<p><strong>6. 负载测试的内容</strong><br>
+在<strong>预期与实际负载水平</strong>下考察<strong>响应时间、吞吐量、资源占用（CPU/内存/网络）、错误率</strong>等指标，验证是否满足性能需求。</p>
+</li>
+</ul>
+<h3 id="_9">（二）领会</h3>
+<ul>
+<li><strong>1. 移动 App 测试应遵循的准则及策略</strong></li>
+<li>① <strong>尽早测试、持续测试</strong>：</li>
+<li>② <strong>真机 + 多设备 + 多系统版本</strong>覆盖</li>
+<li>③ <strong>真实网络环境</strong>（含弱网、切换网络）与模拟环境结合</li>
+<li>④ <strong>自动化 + 手工</strong>结合（自动化做回归与兼容，手工做体验）</li>
+<li>⑤ <strong>覆盖异常与打断场景</strong></li>
+<li>⑥ 以<strong>用户体验为中心</strong>评估</li>
+<li>⑦ 持续回归测试与缺陷跟踪</li>
+<li>
+<p>⑧ 兼顾<strong>安全与隐私</strong>、<strong>性能</strong>与<strong>资源消耗</strong>。</p>
+</li>
+<li>
+<p><strong>2. 与用户体验相关的具体测试</strong></p>
+</li>
+<li><strong>手势测试</strong>：单击、双击、长按、滑动、拖拽、捏合缩放、多点触控、误触与边界手势；</li>
+<li><strong>虚拟键盘输入</strong>：键盘弹出/收起、遮挡输入框、不同输入法、特殊字符与长度限制、输入校验；</li>
+<li><strong>语音输入和识别</strong>：识别准确率、噪声环境、多语言/方言、无网络时的降级处理；</li>
+<li>
+<p><strong>警报和异常条件</strong>：来电、短信/通知、低电量、断网/弱网、后台切换、权限拒绝、存储不足等<strong>打断与异常场景</strong>下的表现与恢复。</p>
+</li>
+<li>
+<p><strong>3. Web 测试的内容和策略</strong><br>
+内容=功能测试、内容测试、界面测试、导航测试、性能测试（压力/负载）、兼容性测试、安全性测试；策略=以<strong>黑盒功能验证 + 用户体验评估 + 多浏览器/多设备兼容 + 性能与安全专项</strong>组合推进，优先覆盖核心业务流程。</p>
+</li>
+<li>
+<p><strong>4. 内容测试方法</strong>：<strong>人工检查 + 拼写/语法自动检查工具 + 链接检查工具（死链检测）+ 数据库/内容源比对</strong>，核对内容与需求/设计模型的一致性。</p>
+</li>
+<li>
+<p><strong>5. 界面测试的策略和界面测试工作的内容</strong></p>
+</li>
+<li><strong>策略</strong>：以设计规范/原型为基准，覆盖<strong>多分辨率、多设备、横竖屏、多语言</strong>，结合可用性评估与用户反馈；</li>
+<li>
+<p><strong>内容</strong>：布局与对齐、字号与颜色对比、控件与交互、图标与文案、提示与错误信息、加载与过渡效果、无障碍支持、界面与设计稿一致性。</p>
+</li>
+<li>
+<p><strong>6. 导航测试的方法</strong>：走查每个导航单元与链接（链接有效性/死链检测工具）、按用户任务<strong>走完整路径</strong>、检查返回与深层链接、检查全局/局部导航一致性、<strong>可用性测试</strong>（用户能否顺利找到目标）。</p>
+</li>
+<li>
+<p><strong>7. 安全性测试的目的</strong>：发现<strong>数据泄露、越权访问、通信不安全、本地存储不安全、权限滥用、代码被反编译/篡改</strong>等风险，保证用户数据与业务安全。</p>
+</li>
+<li>
+<p><strong>8. 解决安全性问题的技术</strong></p>
+</li>
+<li>
+<p><strong>传输加密（HTTPS/TLS）</strong>、<strong>本地数据加密与安全存储（Keychain/Keystore）</strong>、<strong>权限最小化与运行时授权</strong>、<strong>输入校验与防注入</strong>、<strong>代码混淆与加固/防逆向</strong>、<strong>安全审计与日志</strong>、<strong>第三方依赖与 SDK 安全审查</strong>。</p>
+</li>
+<li>
+<p><strong>9. 性能测试的目的</strong>：验证应用的<strong>响应时间、吞吐量、资源占用</strong>是否达标，找出<strong>性能瓶颈</strong>并优化，保证用户感知的流畅度。</p>
+</li>
+<li>
+<p><strong>10. 影响性能的因素</strong>：代码与算法效率、网络延迟与带宽、服务器处理能力与并发、数据结构与数据库访问、设备硬件（CPU/内存/电量）、图片与资源体积、第三方 SDK/网络请求数量。</p>
+</li>
+<li>
+<p><strong>11. 压力测试方法 / 负载测试方法</strong></p>
+</li>
+<li><strong>压力测试方法</strong>：<strong>逐步加压（阶梯加压）</strong>、<strong>峰值/突发加压</strong>、<strong>长时间高压运行</strong>，持续监控资源与响应，观察崩溃点与恢复能力；</li>
+<li>
+<p><strong>负载测试方法</strong>：模拟<strong>预期并发用户数与业务操作组合</strong>（脚本录制/参数化），<strong>逐步施压至目标负载</strong>，采集响应时间、吞吐量、错误率与资源曲线。</p>
+</li>
+<li>
+<p><strong>12. 实时测试的必要性和进行实时测试的方法</strong></p>
+</li>
+<li><strong>必要性</strong>：移动应用（导航、支付、通信、推送）对<strong>时效性</strong>要求高，网络与服务波动会直接影响体验与业务，必须验证<strong>实时性</strong>（时延、丢包、抖动、卡顿）；</li>
+<li>
+<p><strong>方法</strong>：在<strong>真实网络与真实设备</strong>下测试（含 4G/5G/Wi-Fi 切换、弱网模拟、隧道/地铁等场景），使用<strong>实时监控与埋点</strong>测量时延与成功率，必要时模拟高并发实时请求。</p>
+</li>
+<li>
+<p><strong>13. 人工智能测试（AI 测试）</strong></p>
+</li>
+<li><strong>静态测试</strong>：<strong>不运行程序</strong>，用 AI 分析<strong>源代码、模型、规则、日志</strong>（缺陷预测、代码异味识别、模式匹配）；</li>
+<li><strong>动态测试</strong>：<strong>运行程序</strong>，用 AI 生成/优选用例、图像识别定位界面元素与视觉缺陷、挖掘崩溃日志、模糊测试；</li>
+<li>
+<p><strong>基于模型的测试（MBT）</strong>：由系统<strong>行为模型</strong>自动生成测试用例。</p>
+</li>
+<li>
+<p><strong>14. 基于模型的测试步骤</strong> 【注意】<br>
+① 建立被测系统的<strong>模型</strong>（状态图/行为模型/用例模型）；<br>
+② 由模型<strong>自动生成测试用例与测试路径</strong>（含覆盖准则）；<br>
+③ <strong>执行测试</strong>并比较<strong>实际结果与期望结果</strong>；<br>
+④ 分析结果、报告缺陷，<strong>维护与更新模型</strong>后进行<strong>回归测试</strong>。</p>
+</li>
+<li>
+<p><strong>15. 虚拟环境测试的内容及方法</strong></p>
+</li>
+<li><strong>内容</strong>：在不同<strong>设备型号、操作系统版本、分辨率、网络条件、权限与存储状态</strong>下验证应用表现；</li>
+<li>
+<p><strong>方法</strong>：使用<strong>模拟器/仿真器、虚拟设备云（设备农场）</strong> 进行早期验证、兼容性与回归测试；但它<strong>不能完全替代真机测试</strong>（传感器、性能、真实网络差异）。</p>
+</li>
+<li>
+<p><strong>16. α 测试与 β 测试</strong></p>
+</li>
+<li>
+<p><strong>α 测试</strong>：地点/环境：<strong>开发者场所</strong>，受控环境；参与者：公司内部人员/受邀用户；特点：在开发方监控下进行，便于快速收集问题</p>
+</li>
+<li>
+<p><strong>β 测试</strong>：地点/环境：<strong>用户实际使用环境</strong>，不受控；参与者：最终用户（真实用户群）；特点：真实场景暴露问题，收集反馈后修正再正式发布</p>
+</li>
+<li>
+<p><strong>17. 文档测试的两个阶段</strong> 【注意】<br>
+① <strong>交付前的文档审查阶段</strong>：检查文档的<strong>正确性、完整性、一致性、可读性</strong>（与软件/需求是否一致）；<br>
+② <strong>交付/使用阶段的文档检验阶段</strong>：让用户<strong>按文档操作软件</strong>，检验文档能否<strong>支持用户正确、高效地使用系统</strong>（可操作性/可用性）。</p>
+</li>
+<li>
+<p><strong>18. 文档测试可使用的测试技术</strong></p>
+</li>
+<li><strong>技术评审/评审会、走查与检查（桌前检查、代码/文档评审）、对照检查（文档与软件、文档与需求比对）、可用性测试（让用户按文档操作）、试运行/培训检验、术语与一致性检查工具</strong>。</li>
+</ul>
+<hr>
+<h2 id="_10">七、本章对比与易混点</h2>
+<table>
+<thead>
+<tr>
+<th>易混点</th>
+<th>正确理解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>压力测试 vs 负载测试</td>
+<td><strong>负载测试=在预期负载下测性能指标</strong>；<strong>压力测试=超极限负载下测极限与崩溃/恢复</strong></td>
+</tr>
+<tr>
+<td>α 测试 vs β 测试</td>
+<td><strong>α 在开发者场所由内部人员做</strong>；<strong>β 在用户真实环境由最终用户做</strong></td>
+</tr>
+<tr>
+<td>内容测试 vs 界面测试</td>
+<td>内容测试查<strong>信息本身</strong>（正确/一致/适时）；界面测试查<strong>呈现与交互</strong>（布局/控件/一致性）</td>
+</tr>
+<tr>
+<td>导航测试 vs 界面测试</td>
+<td>导航测试查<strong>链接与路径可达性、结构合理</strong>；界面测试查<strong>视觉与交互表现</strong></td>
+</tr>
+<tr>
+<td>模拟器测试 vs 真机测试</td>
+<td>模拟器适合早期与兼容性回归，<strong>不能替代真机</strong>（传感器、性能、真实网络）</td>
+</tr>
+<tr>
+<td>WebApp 设计内容 vs 测试内容</td>
+<td>设计=<strong>美学、内容、体系结构、导航、构件</strong>；测试=<strong>内容、界面、导航、性能、安全、兼容</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="_11">八、本章必背清单 + 简答预测</h2>
+<ul>
+<li><strong>必背</strong></li>
+<li>移动应用的 <strong>3 个特点</strong>；强调用户体验、需求环境复杂、技术难度高与需解决的技术难题；</li>
+<li>采用<strong>敏捷模型</strong> + <strong>5 个迭代阶段</strong>；界面设计要考虑的问题、<strong>3 种界面设计模型</strong>、3 种设计方法、应避免的问题；</li>
+<li><strong>云计算 3 层（IaaS/PaaS/SaaS）</strong>、移动计算环境层次结构、环境感知含义；</li>
+<li>WebApp：保证质量的必要步骤、<strong>设计 5 项内容</strong>、界面目标、<strong>导航语义单元（NSU）</strong>、导航元素、WebApp 构件；</li>
+<li>美学设计参考原则、内容设计任务与内容体系结构、WebApp 体系结构、<strong>MVC 三部分功能</strong>、导航设计与构件设计、<strong>影响移动 App 质量的 6 个因素</strong>；</li>
+<li>测试目标、体验相关 4 类测试（手势/虚拟键盘/语音/警报异常）、<strong>内容测试 3 目标</strong>、导航/压力/负载测试内容；</li>
+<li>
+<p>测试准则与策略、内容/界面/导航测试方法、安全与性能测试目的与技术、压力与负载测试方法、<strong>实时测试</strong>、<strong>AI 测试 3 类 + MBT 步骤</strong>、虚拟环境测试、<strong>α/β 测试</strong>、<strong>文档测试两阶段与技术</strong>。</p>
+</li>
+<li>
+<p><strong>高频简答预测</strong></p>
+</li>
+<li>移动应用有哪些特点？开发移动应用需要解决哪些技术难题？</li>
+<li>移动应用为什么采用敏捷开发模型？其 5 个迭代阶段是什么？</li>
+<li>把敏捷开发与 5 个迭代阶段相结合的方法是什么？</li>
+<li>移动应用界面设计需要考虑哪些问题？用于界面设计的 3 种模型是什么？</li>
+<li>在移动应用设计中应尽量避免哪些问题？</li>
+<li>云计算的 3 层体系结构是什么？什么是环境感知？</li>
+<li>保证 WebApp 质量的必要步骤有哪些？WebApp 设计包括哪 5 方面内容？</li>
+<li>什么是导航语义单元与导航元素？常见的 WebApp 构件有哪些？</li>
+<li>MVC 中视图、控制器、模型各有什么功能？影响移动 App 质量的 6 个重要因素是什么？</li>
+<li>移动软件测试的目标是什么？与用户体验相关的测试内容包括哪些？</li>
+<li>WebApp 内容测试的 3 个目标是什么？导航测试的内容是什么？</li>
+<li>压力测试与负载测试的内容和方法分别是什么？</li>
+<li>什么是实时测试？为什么必要？如何进行？</li>
+<li>人工智能测试中的静态测试、动态测试、基于模型的测试各是什么？基于模型的测试步骤有哪些？</li>
+<li>
+<p>什么是 α 测试与 β 测试？文档测试有哪两个阶段？可使用哪些测试技术？</p>
+</li>
+<li>
+<p><strong>综合应用预测</strong>：基于<strong>构件</strong>的移动应用建模（难点）——由实体类/业务需求划分<strong>构件</strong>，定义<strong>接口与依赖</strong>，画出<strong>构件图</strong>，并说明构件如何组装成应用、如何针对构件设计测试。</p>
+</li>
+</ul>
+</main>
+<footer>13005 软件工程 · 由 Markdown 生成，浏览器直接打开即可阅读</footer>
+</body>
+</html>

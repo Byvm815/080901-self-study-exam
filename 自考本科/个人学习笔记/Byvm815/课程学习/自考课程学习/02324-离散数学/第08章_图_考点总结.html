@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 8 章 图 · 考点总结</title>
+<style>
+:root{--fg:#24292f;--muted:#57606a;--line:#d0d7de;--accent:#0969da;--code:#f6f8fa;--soft:#fafbfc}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--fg);
+  font:16px/1.78 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",sans-serif}
+main{max-width:980px;margin:0 auto;padding:26px 22px 72px}
+h1{font-size:1.75em;line-height:1.35;border-bottom:3px solid var(--accent);padding-bottom:.28em;margin:1.1em 0 .7em}
+h2{font-size:1.36em;line-height:1.4;border-bottom:1px solid var(--line);padding-bottom:.22em;margin:1.5em 0 .6em}
+h3{font-size:1.14em;margin:1.25em 0 .45em}
+h4{font-size:1.02em;margin:1.05em 0 .35em;color:var(--muted)}
+p{margin:.5em 0}
+ul,ol{margin:.45em 0;padding-left:1.5em}
+li{margin:.22em 0}
+li>ul,li>ol{margin:.15em 0}
+strong{color:#000}
+em{color:#000}
+code{background:var(--code);border-radius:4px;padding:.12em .34em;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:.92em}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;margin:.7em 0}
+pre code{background:none;padding:0;white-space:pre;font-size:.9em;line-height:1.5}
+table{border-collapse:collapse;width:100%;margin:.75em 0;font-size:.95em;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600}
+tbody tr:nth-child(even){background:var(--soft)}
+blockquote{margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:var(--code);color:var(--muted)}
+blockquote p{margin:.25em 0}
+hr{border:0;border-top:1px solid var(--line);margin:1.8em 0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.topnav{position:sticky;top:0;z-index:20;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+  padding:10px 22px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(180%) blur(6px);font-size:.9em}
+.topnav a{white-space:nowrap}
+.topnav .sep{color:var(--line)}
+.topnav .brand{font-weight:600;color:var(--fg);margin-right:6px}
+footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid var(--line);color:var(--muted);font-size:.86em}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:1em 0}
+.card{display:block;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--soft)}
+.card:hover{border-color:var(--accent)}
+.card b{display:block;margin-bottom:4px}
+.card span{color:var(--muted);font-size:.86em}
+.toc{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:1em 0}
+.toc ul{margin:.25em 0;padding-left:1.3em}
+.tip{border:1px dashed var(--accent);border-radius:10px;padding:10px 14px;background:#f6faff;margin:1em 0;font-size:.94em}
+@media (max-width:640px){main{padding:18px 14px 60px}h1{font-size:1.5em}}
+@media print{
+  body{font-size:11.5pt;line-height:1.6}
+  .topnav{display:none}
+  main{max-width:none;padding:0}
+  h1{page-break-before:always;border-bottom-width:2px}
+  body>main>h1:first-child,main>section:first-child>h1{page-break-before:avoid}
+  pre,table,blockquote,li{page-break-inside:avoid}
+  a{color:#000;text-decoration:none}
+  footer{display:none}
+}
+</style>
+</head>
+<body>
+<nav class="topnav"><span class="brand">02324 离散数学</span> <a href="index.html">目录</a> <span class="sep">|</span> <a href="第07章_格与布尔代数_考点总结.html">← 第 7 章 格与布尔代数 · 考点总结</a> <span class="sep">|</span> <a href="第09章_图的应用_考点总结.html">第 9 章 图的应用 · 考点总结 →</a></nav>
+<main>
+<h1 id="8">第 8 章 图 · 考点总结</h1>
+<blockquote>
+<p>课程：02324 离散数学（080901 自考）<br>
+<strong>课程内容</strong>：8.1 图的基本概念 ； 8.2 图的连通性 ； 8.3 图的表示<br>
+<strong>考核层次</strong>：8.1 <strong>识记</strong> ； 8.2 <strong>领会</strong> ； 8.3 <strong>简单应用</strong><br>
+<strong>重点</strong>：图的定义、相关性质及判别方法；<strong>邻接矩阵表示法</strong><br>
+<strong>难点</strong>：<strong>路径矩阵</strong></p>
+</blockquote>
+<hr>
+<h2 id="_1">一、本章知识地图</h2>
+<ul>
+<li><strong>8.1 图的基本概念</strong>：核心内容：图的定义（无向/有向）、<strong>阶</strong>、<strong>关联与邻接</strong>、零图/平凡图/<strong>完全图</strong>/简单图、<strong>子图与生成子图</strong>、<strong>补图与自补图</strong>、<strong>顶点的度与握手定理</strong>；层次：<strong>识记</strong></li>
+<li><strong>8.2 图的连通性</strong>：核心内容：<strong>通路、回路、简单通路/回路、初级通路/回路</strong>、<strong>连通、连通分支</strong>、有向图的强/单向/弱连通；层次：领会</li>
+<li><strong>8.3 图的表示</strong>：核心内容：<strong>邻接矩阵</strong>、由邻接矩阵求图的信息、<strong>邻接矩阵幂 Aᵏ 的含义</strong>、可达矩阵（<strong>路径矩阵</strong>）；层次：<strong>简单应用</strong></li>
+</ul>
+<hr>
+<h2 id="81">二、8.1 图的基本概念（识记）</h2>
+<h3 id="_2">（一）图的定义</h3>
+<ul>
+<li><strong>无向图 G = <V, E></strong>：V 是<strong>非空有穷</strong>的<strong>顶点集</strong>（元素称<strong>顶点</strong>），E 是 V 中元素的<strong>无序对</strong>构成的集合（元素称<strong>边</strong>）。</li>
+<li><strong>有向图 D = <V, E></strong>：E 是 V 中元素的<strong>有序对</strong>（称<strong>有向边/弧</strong>），<u,v> 中 u 为<strong>始点（弧尾）</strong>、v 为<strong>终点（弧头）</strong>。</li>
+<li><strong>图的阶</strong>：顶点数 <strong>|V| = n</strong>（称 n 阶图）；</li>
+<li>
+<p>无向边记 (u, v)（= (v, u)）；有向边记 <u, v>（≠ <v, u>）。</p>
+</li>
+<li>
+<p><strong>关联与邻接（两个易混术语）</strong></p>
+</li>
+<li><strong>关联</strong>：边 e = (u, v) 与它的<strong>端点 u、v 相关联</strong>（边与顶点的关系）；</li>
+<li><strong>邻接</strong>：若 u、v 之间有边，则称 <strong>u 与 v 相邻（邻接）</strong>（顶点与顶点的关系）。</li>
+</ul>
+<h3 id="_3">（二）几类特殊的图（必记）</h3>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>定义</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>零图</strong></td>
+<td><strong>E = ∅</strong> 的图（n 阶零图记 <strong>Nₙ</strong>）</td>
+<td>只有顶点没有边</td>
+</tr>
+<tr>
+<td><strong>平凡图</strong></td>
+<td><strong>1 阶零图</strong>（</td>
+<td>V</td>
+</tr>
+<tr>
+<td><strong>无向完全图 Kₙ</strong></td>
+<td>任意两顶点之间都有边</td>
+<td><strong>边数 = n(n−1)/2</strong></td>
+</tr>
+<tr>
+<td><strong>有向完全图</strong></td>
+<td>任意两顶点之间都有<strong>两条方向相反</strong>的弧</td>
+<td><strong>弧数 = n(n−1)</strong></td>
+</tr>
+<tr>
+<td><strong>简单图</strong></td>
+<td><strong>无平行边、无环</strong>的图</td>
+<td>反之称<strong>多重图</strong> 【注意】（教材约定）</td>
+</tr>
+<tr>
+<td><strong>稀疏图 / 密集图</strong></td>
+<td>边数相对较少 / 接近完全图</td>
+<td>相对概念</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">（三）子图与补图</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>子图</strong></td>
+<td>G' = <V', E'>，<strong>V' ⊆ V，E' ⊆ E</strong>（且 E' 中边的端点都在 V' 中）</td>
+</tr>
+<tr>
+<td><strong>真子图</strong></td>
+<td>G' ⊆ G 且 <strong>G' ≠ G</strong></td>
+</tr>
+<tr>
+<td><strong>生成子图（支撑子图）</strong></td>
+<td>子图且 <strong>V' = V</strong>（<strong>含全部顶点</strong>）</td>
+</tr>
+<tr>
+<td><strong>导出子图</strong></td>
+<td>由 V' 导出的子图（顶点集为 V'，边集取 G 中两端点都在 V' 中的<strong>全部</strong>边）</td>
+</tr>
+<tr>
+<td><strong>补图 ~G</strong></td>
+<td>与 G 有<strong>相同顶点集</strong>，且 <strong>u、v 在 ~G 中相邻 ⟺ u、v 在 G 中不相邻</strong>（【注意】 通常对简单图定义）</td>
+</tr>
+<tr>
+<td><strong>自补图</strong></td>
+<td>与自己的补图<strong>同构</strong>的图（G ≅ ~G）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>自补图的必要条件（常考）</strong></li>
+<li>若 n 阶图是自补图，则其边数须为完全图边数的一半：<strong>|E| = n(n−1)/4</strong>，故 <strong>n(n−1) 能被 4 整除</strong>，即 <strong>n ≡ 0 或 1 (mod 4)</strong>；</li>
+<li>例：n = 4 时 |E| = 3（<strong>4 阶路径 P₄ 是自补图</strong>）；n = 5 时 |E| = 5（<strong>5 阶圈 C₅ 是自补图</strong>）。</li>
+</ul>
+<h3 id="_5">（四）顶点的度与握手定理（本章最常考）</h3>
+<ul>
+<li><strong>无向图</strong>：顶点 v 的<strong>度 deg(v) = 与 v 关联的边数</strong>（【注意】 <strong>环对度贡献 2</strong>）；</li>
+<li><strong>有向图</strong>：<strong>出度 deg⁺(v)</strong>（以 v 为始点的弧数）、<strong>入度 deg⁻(v)</strong>（以 v 为终点的弧数），<strong>deg(v) = deg⁺(v) + deg⁻(v)</strong>；</li>
+<li>
+<p><strong>最大度 Δ(G)、最小度 δ(G)</strong>。</p>
+</li>
+<li>
+<p><strong>【重点】 握手定理（欧拉定理，必背）</strong></p>
+</li>
+<li>无向图：<strong>Σ_{v∈V} deg(v) = 2|E|</strong>（所有顶点度数之和 = 边数的两倍）；</li>
+<li>
+<p>有向图：<strong>Σ deg⁺(v) = Σ deg⁻(v) = |E|</strong>。</p>
+</li>
+<li>
+<p><strong>重要推论</strong></p>
+</li>
+<li><strong>任何图中，奇度顶点的个数必为偶数</strong>；</li>
+<li>一个非负整数序列能成为某图的度序列的<strong>必要条件</strong>：<strong>和为偶数</strong>（且最大值不超过 n−1）；</li>
+<li><strong>简单无向图 n 个顶点最多 n(n−1)/2 条边</strong>；</li>
+<li>
+<p>若每个顶点的度都等于 r，则称 r 度正则图，此时 <strong>|E| = nr/2</strong>，故 <strong>n·r 必为偶数</strong>（如"每个顶点度数都是 3" ⇒ <strong>n 必为偶数</strong>）。</p>
+</li>
+<li>
+<p><strong>典型计算题</strong></p>
+</li>
+<li><strong>例 1</strong>：无向图 6 个顶点的度依次为 1, 1, 2, 2, 3, 3 ⇒ Σ = 12 ⇒ <strong>|E| = 6</strong>；</li>
+<li><strong>例 2</strong>：G 中有 4 个度为 3 的顶点、6 个度为 2 的顶点，其余顶点度为 1 且共有 2 个 ⇒ Σ = 12+12+2 = 26 ⇒ <strong>|E| = 13</strong>；</li>
+<li><strong>例 3</strong>：判断"是否存在 3 个顶点、度分别为 2, 3, 3 的简单无向图"——3 阶简单图最大度为 2 ⇒ <strong>不存在</strong>；</li>
+<li><strong>例 4</strong>：已知图有 10 条边、每个顶点度数相同，n = 5 ⇒ 每个顶点度为 2×10/5 = <strong>4</strong>（4 度正则图，即 K₅ 的 10 条边 ✓）。</li>
+</ul>
+<hr>
+<h2 id="82">三、8.2 图的连通性（领会）</h2>
+<h3 id="_6">（一）通路与回路（术语辨析，必考）</h3>
+<ul>
+<li><strong>通路（路径）</strong>：顶点与边交替出现的序列 <strong>v₀e₁v₁e₂…eₖvₖ</strong>（每条边两端正是相邻的两个顶点）；通路的<strong>长度 = 边数 k</strong></li>
+<li><strong>回路（圈）</strong>：起点与终点相同的通路（<strong>v₀ = vₖ</strong>）；长度 ≥ 1（简单图中 ≥ 3）</li>
+<li><strong>简单通路</strong>：<strong>边不重复</strong>的通路（迹）；看<strong>边</strong></li>
+<li><strong>简单回路</strong>：<strong>边不重复</strong>的回路；看<strong>边</strong></li>
+<li><strong>初级通路（路径）</strong>：<strong>顶点不重复</strong>的通路；看<strong>顶点</strong></li>
+<li>
+<p><strong>初级回路（圈）</strong>：除<strong>起点=终点</strong>外，<strong>顶点不重复</strong>的回路；看<strong>顶点</strong></p>
+</li>
+<li>
+<p><strong>关系与结论</strong></p>
+</li>
+<li><strong>初级通路一定是简单通路</strong>；<strong>简单通路不一定是初级通路</strong>（例如 A→B→C→A→D 中顶点 A 重复但边不重复）；</li>
+<li>在<strong>简单图</strong>中，通路可直接用<strong>顶点序列</strong>表示（边由顶点对唯一确定）；</li>
+<li><strong>重要定理</strong>：在 n 阶图中，若 u 与 v 之间存在通路，则必存在长度<strong>不超过 n−1</strong> 的<strong>初级通路</strong>；若存在经过某顶点的回路，则必存在长度<strong>不超过 n</strong> 的<strong>初级回路</strong>。</li>
+</ul>
+<h3 id="_7">（二）无向图的连通性</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>连通（u ~ v）</strong></td>
+<td>u 与 v 之间存在<strong>通路</strong></td>
+</tr>
+<tr>
+<td><strong>连通图</strong></td>
+<td>图中<strong>任意两个顶点都连通</strong></td>
+</tr>
+<tr>
+<td><strong>连通分支（连通分量）p(G)</strong></td>
+<td><strong>极大连通子图</strong>的个数（n 阶连通图 p = 1）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>常用结论</strong></li>
+<li><strong>若无向图有 n 个顶点、p 个连通分支，则边数 |E| ≥ n − p</strong>（取等号时每个分支都是树，等价于"生成森林"）；</li>
+<li>若 |E| &gt; (n−1)(n−2)/2，则图<strong>必连通</strong>（了解）；</li>
+<li>顶点数 n ≥ 2 的连通图至少有 n−1 条边（树）。</li>
+</ul>
+<h3 id="_8">（三）有向图的连通性（三类，必记层次关系）</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>强连通</strong></td>
+<td>任意两顶点之间<strong>互相可达</strong>（u 到 v、v 到 u 都有通路）</td>
+</tr>
+<tr>
+<td><strong>单向连通</strong></td>
+<td>任意两顶点之间<strong>至少有一个方向可达</strong></td>
+</tr>
+<tr>
+<td><strong>弱连通</strong></td>
+<td>忽略弧的方向后（作为无向图）是连通的</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>层次关系</strong>：<strong>强连通 ⟹ 单向连通 ⟹ 弱连通</strong>（反之不成立）。</li>
+<li><strong>可达</strong>：有向图中 u 到 v 存在<strong>有向通路</strong>，称 u 可达 v；</li>
+<li>有向图中"两个顶点互相可达"是<strong>等价关系</strong>（对应<strong>强连通分支</strong>，了解）。</li>
+</ul>
+<hr>
+<h2 id="83">四、8.3 图的表示（简单应用）</h2>
+<h3 id="_9">（一）邻接矩阵</h3>
+<ul>
+<li><strong>定义</strong>：对 n 阶图（顶点依次编号 v₁, v₂, …, vₙ），<strong>邻接矩阵 A = (aᵢⱼ)ₙₓₙ</strong>：</li>
+<li><strong>无向图</strong>：aᵢⱼ = 1 ⟺ <strong>vᵢ 与 vⱼ 之间有边</strong>；aᵢⱼ = 0 否则（<strong>顶点到自身无环时对角线为 0</strong>）；</li>
+<li>
+<p><strong>有向图</strong>：aᵢⱼ = 1 ⟺ <strong><vᵢ, vⱼ> 是弧</strong>（即 vᵢ 到 vⱼ 有弧）；aᵢⱼ = 0 否则。</p>
+</li>
+<li>
+<p><strong>由邻接矩阵读图的信息（必考）</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>想知道什么</th>
+<th>如何从 A 读出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>顶点数</strong></td>
+<td>A 的阶数 n</td>
+</tr>
+<tr>
+<td><strong>边数</strong>（无向）</td>
+<td><strong>所有元素之和 ÷ 2</strong>（即 Σᵢ 行和 ÷ 2）</td>
+</tr>
+<tr>
+<td><strong>弧数</strong>（有向）</td>
+<td>所有元素之和（Σᵢ 行和）</td>
+</tr>
+<tr>
+<td><strong>顶点 vᵢ 的度</strong>（无向）</td>
+<td><strong>第 i 行（或第 i 列）元素之和</strong></td>
+</tr>
+<tr>
+<td><strong>vᵢ 的出度 / 入度</strong>（有向）</td>
+<td><strong>第 i 行之和 / 第 i 列之和</strong></td>
+</tr>
+<tr>
+<td><strong>是否有环</strong></td>
+<td>对角线元素不为 0</td>
+</tr>
+<tr>
+<td><strong>是否零图</strong></td>
+<td>A 是零矩阵</td>
+</tr>
+<tr>
+<td><strong>是否完全图 Kₙ</strong></td>
+<td>除对角线外全为 1</td>
+</tr>
+<tr>
+<td><strong>是否有平行边多重边</strong></td>
+<td>A 中元素 &gt; 1（【注意】 视教材约定）</td>
+</tr>
+<tr>
+<td><strong>是否对称</strong></td>
+<td>无向图的 A 一定<strong>对称</strong>（Aᵀ = A）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>例</strong>：G = <V, E>，V = {v₁, v₂, v₃, v₄}，E = {v₁v₂, v₂v₃, v₃v₄, v₁v₃}</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>v₁</th>
+<th>v₂</th>
+<th>v₃</th>
+<th>v₄</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v₁</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>v₂</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>v₃</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>v₄</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>边数 = A 全部元素之和 ÷ 2 = 8 ÷ 2 = <strong>4</strong> ✓（与 |E| 一致）；</li>
+<li><strong>各顶点度</strong> = 各行之和：deg(v₁) = 2，deg(v₂) = 2，deg(v₃) = <strong>3</strong>，deg(v₄) = 1 ⇒ <strong>Σ = 8 = 2|E|</strong> ✓（握手定理）。</li>
+</ul>
+<h3 id="ak">（二）邻接矩阵的幂 Aᵏ 的含义（<strong>难点·路径矩阵</strong>，必考）</h3>
+<ul>
+<li>
+<p><strong>【重点】 定理</strong>：设 A 为图 G 的邻接矩阵，则 <strong>Aᵏ 的第 i 行第 j 列元素 (Aᵏ)ᵢⱼ = 从 vᵢ 到 vⱼ 长度为 k 的通路的数目</strong>。</p>
+<blockquote>
+<p>对<strong>有向图</strong>与<strong>无向图</strong>同样成立（无向图中"通路"不计方向）。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>由 Aᵏ 判断连通性</strong></p>
+</li>
+<li>若在 <strong>A + A² + A³ + … + A^(n−1)</strong> 中 (i, j) 元素非 0，则 <strong>vᵢ 与 vⱼ 连通（u 可达 v）</strong>；</li>
+<li>由此可定义<strong>可达矩阵（路径矩阵）P</strong>：<strong>Pᵢⱼ = 1 ⟺ vᵢ 到 vⱼ 存在长度 ≤ n−1 的通路</strong>；无向图的可达矩阵<strong>对称</strong>，有向图<strong>一般不称</strong>；</li>
+<li>
+<p>无向图的<strong>连通分支个数</strong>可由 P 判断（P 中互相可达的顶点构成一个分支）。</p>
+</li>
+<li>
+<p><strong>例（承上）</strong>：A 如上，计算 A² 的若干元素</p>
+</li>
+<li>(A²)₁₁ = 0·0 + 1·1 + 1·1 + 0·0 = <strong>2</strong> ⇒ v₁ 到 v₁ 长度为 2 的通路有 <strong>2</strong> 条：v₁v₂v₁、v₁v₃v₁；</li>
+<li>(A²)₁₃ = 0·1 + 1·1 + 1·0 + 0·1 = <strong>1</strong> ⇒ v₁ 到 v₃ 长度为 2 的通路 <strong>1</strong> 条：v₁v₂v₃；</li>
+<li>
+<p>(A²)₁₄ = 0·0 + 1·0 + 1·1 + 0·0 = <strong>1</strong> ⇒ v₁ 到 v₄ 长度为 2 的通路 <strong>1</strong> 条：v₁v₃v₄。</p>
+</li>
+<li>
+<p><strong>计算要点</strong>：矩阵乘法（普通整数乘法）下，(Aᵏ)ᵢⱼ = Σ_{t₁,…,t_{k−1}} aᵢt₁·a_t₁t₂·…·a_{t_{k−1}j}，每一项对应一条长度为 k 的通路；若只关心"是否存在"，则可用<strong>布尔矩阵乘法</strong>（∨ 与 ∧）。</p>
+</li>
+</ul>
+<h3 id="_10">（三）其他表示（了解）</h3>
+<table>
+<thead>
+<tr>
+<th>表示</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>关联矩阵</strong></td>
+<td>行对应顶点、列对应边，元素表示顶点与边的关联次数（无向图每列两个 1；有向图用 +1/−1 表示始点/终点）</td>
+</tr>
+<tr>
+<td><strong>邻接表</strong></td>
+<td>每个顶点挂一条链表，存其所有邻接顶点（适合稀疏图）</td>
+</tr>
+<tr>
+<td><strong>边集表示</strong></td>
+<td>直接列出边集合</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="_11">五、本章对比与易混点</h2>
+<table>
+<thead>
+<tr>
+<th>易混点</th>
+<th>正确理解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>关联 vs 邻接</strong></td>
+<td>关联＝<strong>边与顶点</strong>；邻接＝<strong>顶点与顶点</strong></td>
+</tr>
+<tr>
+<td>无向边 (u,v) vs 有向边 <u,v></td>
+<td>无向边对称（(u,v) = (v,u)）；有向边<strong>不对称</strong>（<u,v> ≠ <v,u>）</td>
+</tr>
+<tr>
+<td><strong>零图 vs 平凡图</strong></td>
+<td>零图＝<strong>E = ∅</strong>（顶点可多个）；平凡图＝<strong>1 阶</strong>零图</td>
+</tr>
+<tr>
+<td><strong>完全图边数</strong></td>
+<td>无向 <strong>n(n−1)/2</strong>；有向 <strong>n(n−1)</strong></td>
+</tr>
+<tr>
+<td><strong>子图 vs 生成子图</strong></td>
+<td>子图可少顶点也可少边；<strong>生成子图必须含全部顶点</strong></td>
+</tr>
+<tr>
+<td><strong>简单通路 vs 初级通路</strong></td>
+<td>简单＝<strong>边不重复</strong>；初级＝<strong>顶点不重复</strong>（初级 ⇒ 简单，反之不然）</td>
+</tr>
+<tr>
+<td><strong>通路长度</strong></td>
+<td>指<strong>边数</strong>（不是顶点数）</td>
+</tr>
+<tr>
+<td><strong>连通 vs 强连通 vs 弱连通</strong></td>
+<td>无向图连通；有向图强连通（互相可达）⇒ 单向连通 ⇒ 弱连通（忽略方向）</td>
+</tr>
+<tr>
+<td>连通分支</td>
+<td>"<strong>极大</strong>连通子图"，个数记 p(G)</td>
+</tr>
+<tr>
+<td><strong>握手定理</strong></td>
+<td>**Σdeg(v) = 2</td>
+</tr>
+<tr>
+<td>环对度的贡献</td>
+<td>计 <strong>2</strong> 度 【注意】（视教材是否有环）</td>
+</tr>
+<tr>
+<td><strong>自补图的必要条件</strong></td>
+<td><strong>n ≡ 0 或 1 (mod 4)</strong>（边数 = n(n−1)/4 必须为整数）</td>
+</tr>
+<tr>
+<td><strong>A vs Aᵏ</strong></td>
+<td>A 只反映<strong>相邻关系</strong>；<strong>Aᵏ 反映长度为 k 的通路数目</strong></td>
+</tr>
+<tr>
+<td>无向图邻接矩阵行和</td>
+<td>= 该顶点的<strong>度</strong>；有向图<strong>行和 = 出度、列和 = 入度</strong></td>
+</tr>
+<tr>
+<td>可达矩阵（路径矩阵）</td>
+<td>由 A + A² + … + A^(n−1) 得到，反映"是否连通/可达"</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="_12">六、必背清单 + 简答预测 + 计算模板</h2>
+<h3 id="_13">（一）必背清单</h3>
+<ul>
+<li>图的定义（无向图、有向图）、<strong>阶</strong>、<strong>关联与邻接</strong>、始点/终点；</li>
+<li><strong>零图、平凡图、完全图（无向/有向边数）、简单图、多重图</strong>的定义；</li>
+<li><strong>子图、真子图、生成子图、导出子图、补图、自补图</strong>的定义；<strong>自补图的必要条件 n ≡ 0 或 1 (mod 4)</strong>；</li>
+<li><strong>顶点的度</strong>（无向；有向的出度/入度）、最大度最小度；</li>
+<li><strong>握手定理：Σdeg(v) = 2|E|</strong> 及其推论（<strong>奇度顶点个数为偶数</strong>、度序列和为偶数、n 个顶点最多 n(n−1)/2 条边、r 正则图 nr 为偶数）；</li>
+<li><strong>通路、回路、简单通路/回路、初级通路/回路</strong>的定义与区别；长度不超过 n−1 的初级通路定理；</li>
+<li><strong>连通、连通图、连通分支 p(G)</strong>；n 顶点 p 分支至少 n−p 条边；</li>
+<li>有向图的<strong>可达、强连通、单向连通、弱连通</strong>及层次关系；</li>
+<li><strong>邻接矩阵</strong>的定义（无向图对称；有向图行=出度、列=入度）与<strong>由 A 读图信息</strong>；</li>
+<li><strong>Aᵏ 的含义</strong>（长度为 k 的通路数目）与<strong>可达矩阵（路径矩阵）</strong>的求法。</li>
+</ul>
+<h3 id="_14">（二）高频简答 / 判断题预测</h3>
+<ul>
+<li>什么是无向图、有向图？图的阶指什么？</li>
+<li>什么是关联？什么是邻接？二者有何区别？</li>
+<li>什么是零图、平凡图、完全图？无向完全图和有向完全图各有多少条边？</li>
+<li>什么是简单图？什么是子图和生成子图？什么是补图和自补图？</li>
+<li>什么是顶点的度？有向图顶点的度如何定义？</li>
+<li>叙述握手定理，并说明它的推论（奇度顶点个数为偶数）。</li>
+<li>举例说明：为什么"每个顶点度数都是 3"的图其顶点数必为偶数？</li>
+<li>判断是否存在度序列为某序列的图（应如何验证）？</li>
+<li>什么是通路、回路？通路长度指什么？</li>
+<li>简单通路与初级通路有何区别？两者有何联系？</li>
+<li>什么是连通图、连通分支？n 个顶点 p 个分支的图至少有多少条边？</li>
+<li>有向图的强连通、单向连通、弱连通各是什么？三者关系如何？</li>
+<li>什么是邻接矩阵？如何由邻接矩阵求顶点数、边数和各顶点的度？</li>
+<li>Aᵏ 的元素有什么含义？如何用邻接矩阵判断两顶点是否连通？</li>
+<li>什么是可达矩阵（路径矩阵）？它如何得到？</li>
+</ul>
+<h3 id="_15">（三）计算 / 应用模板</h3>
+<ul>
+<li><strong>求度与边数</strong>：写出全部顶点的度 → <strong>Σdeg = 2|E|</strong> 求边数；反之由边数求度。</li>
+<li><strong>判存在性</strong>：① 度序列<strong>和为偶数</strong>；② 最大值 ≤ n−1（简单图）；③ 奇度顶点个数为偶数；不满足即<strong>不存在</strong>。</li>
+<li><strong>完全图/正则图</strong>：Kₙ 边数 n(n−1)/2；r 正则图 |E| = nr/2（须为整数）。</li>
+<li><strong>自补图</strong>：先算应有边数 n(n−1)/4（必须为整数 ⇒ n ≡ 0 或 1 mod 4），再构造/验证与补图同构。</li>
+<li><strong>邻接矩阵读图</strong>：列矩阵 → 数边（无向图元素和 ÷ 2）→ 求各顶点度（行和；有向图行和=出度、列和=入度）→ 判断完全图/零图/是否有环。</li>
+<li><strong>求 Aᵏ / 判连通</strong>：按矩阵乘法算 A²、A³…；<strong>Aᵏ 单元格 = 长度为 k 的通路数</strong>；把 A + A² + … + A^(n−1) 中非零处标 1，即得<strong>可达矩阵</strong>，从而判断连通/连通分支。</li>
+<li><strong>通路的计数</strong>：用 Aᵏ 元素直接回答"从 vᵢ 到 vⱼ 长度为 k 的通路有几条"；若要问"是否存在"则只用布尔运算。</li>
+</ul>
+</main>
+<footer>02324 离散数学 · 由 Markdown 生成，浏览器直接打开即可阅读</footer>
+</body>
+</html>

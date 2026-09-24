@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第六章 图结构 · 考点总结</title>
+<style>
+:root{--fg:#24292f;--muted:#57606a;--line:#d0d7de;--accent:#0969da;--code:#f6f8fa;--soft:#fafbfc}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--fg);
+  font:16px/1.78 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",sans-serif}
+main{max-width:980px;margin:0 auto;padding:26px 22px 72px}
+h1{font-size:1.75em;line-height:1.35;border-bottom:3px solid var(--accent);padding-bottom:.28em;margin:1.1em 0 .7em}
+h2{font-size:1.36em;line-height:1.4;border-bottom:1px solid var(--line);padding-bottom:.22em;margin:1.5em 0 .6em}
+h3{font-size:1.14em;margin:1.25em 0 .45em}
+h4{font-size:1.02em;margin:1.05em 0 .35em;color:var(--muted)}
+p{margin:.5em 0}
+ul,ol{margin:.45em 0;padding-left:1.5em}
+li{margin:.22em 0}
+li>ul,li>ol{margin:.15em 0}
+strong{color:#000}
+em{color:#000}
+code{background:var(--code);border-radius:4px;padding:.12em .34em;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:.92em}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;margin:.7em 0}
+pre code{background:none;padding:0;white-space:pre;font-size:.9em;line-height:1.5}
+table{border-collapse:collapse;width:100%;margin:.75em 0;font-size:.95em;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600}
+tbody tr:nth-child(even){background:var(--soft)}
+blockquote{margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:var(--code);color:var(--muted)}
+blockquote p{margin:.25em 0}
+hr{border:0;border-top:1px solid var(--line);margin:1.8em 0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.topnav{position:sticky;top:0;z-index:20;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+  padding:10px 22px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(180%) blur(6px);font-size:.9em}
+.topnav a{white-space:nowrap}
+.topnav .sep{color:var(--line)}
+.topnav .brand{font-weight:600;color:var(--fg);margin-right:6px}
+footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid var(--line);color:var(--muted);font-size:.86em}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:1em 0}
+.card{display:block;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--soft)}
+.card:hover{border-color:var(--accent)}
+.card b{display:block;margin-bottom:4px}
+.card span{color:var(--muted);font-size:.86em}
+.toc{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:1em 0}
+.toc ul{margin:.25em 0;padding-left:1.3em}
+.tip{border:1px dashed var(--accent);border-radius:10px;padding:10px 14px;background:#f6faff;margin:1em 0;font-size:.94em}
+@media (max-width:640px){main{padding:18px 14px 60px}h1{font-size:1.5em}}
+@media print{
+  body{font-size:11.5pt;line-height:1.6}
+  .topnav{display:none}
+  main{max-width:none;padding:0}
+  h1{page-break-before:always;border-bottom-width:2px}
+  body>main>h1:first-child,main>section:first-child>h1{page-break-before:avoid}
+  pre,table,blockquote,li{page-break-inside:avoid}
+  a{color:#000;text-decoration:none}
+  footer{display:none}
+}
+</style>
+</head>
+<body>
+<nav class="topnav"><span class="brand">13003 数据结构与算法</span> <a href="index.html">目录</a> <span class="sep">|</span> <a href="第05章_树与二叉树_考点总结.html">← 第五章 树与二叉树 · 考点总结</a> <span class="sep">|</span> <a href="第07章_内部排序_考点总结.html">第七章 内部排序 · 考点总结 →</a></nav>
+<main>
+<h1 id="_1">第六章 图结构 · 考点总结</h1>
+<blockquote>
+<p>课程：13003 数据结构与算法（080901 自考）<br>
+<strong>重点</strong>：图的基本概念；邻接矩阵、邻接表及逆邻接表存储结构；图的基本操作的实现；深度优先搜索与广度优先搜索；生成树概念及最小生成树算法；有向无环图；拓扑排序；关键路径；迪杰斯特拉算法；弗洛伊德算法<br>
+<strong>难点</strong>：图的各种算法的求解过程、实现及时间复杂度分析</p>
+</blockquote>
+<h2 id="_2">考纲要求速览</h2>
+<ul>
+<li><strong>识记</strong>：</li>
+<li>图的术语（图、子图、边、顶点、边集、顶点集、稀疏图、密集图、有向边、弧头、弧尾、无向边、有向图、无向图、带权图、邻接点、关联、边的权、顶点的度、入度、出度、完全图、路径、有向路径、简单路径、回路、简单回路、路径长度、有向无环图、连通图、连通分量、强连通图、弱连通图）。邻接矩阵</li>
+<li>邻接表</li>
+<li>逆邻接表</li>
+<li>表结点。图的搜索</li>
+<li>深度优先搜索</li>
+<li>广度优先搜索。生成树</li>
+<li>深度/广度优先生成树</li>
+<li>最小生成树。AOV 网</li>
+<li>源点</li>
+<li>汇点</li>
+<li>前驱</li>
+<li>后继</li>
+<li>直接前驱</li>
+<li>直接后继</li>
+<li>活动</li>
+<li>拓扑排序</li>
+<li>拓扑序列</li>
+<li>入度值表</li>
+<li>关键路径</li>
+<li>关键活动</li>
+<li>事件</li>
+<li>最早开始时间</li>
+<li>最迟开始时间</li>
+<li>时间余量</li>
+<li>活动的持续时间。源点</li>
+<li>终点</li>
+<li>带权图中的路径长度</li>
+<li>单源最短路径</li>
+<li>所有点对间的最短路径。</li>
+<li><strong>领会</strong>：关联性、邻接含义、边与度的关系、有向路径；邻接矩阵/邻接表/逆邻接表与图的对应关系；图搜索特性、搜索序列、辅助数据结构；生成树与最小生成树特性、Prim 与 Kruskal 策略、代价计算；拓扑排序过程、关键活动、求关键路径；Dijkstra 与 Floyd 的求解过程。</li>
+<li><strong>简单应用</strong>：图特性应用；按存储结构实现基本操作与获取图信息；实现搜索算法；求生成树、Prim、Kruskal；判断有向图是否含环、求拓扑序列、求关键路径；Dijkstra、Floyd。</li>
+<li><strong>综合应用</strong>：选择存储结构设计算法；基于图搜索思想；基于生成树策略设计算法。</li>
+</ul>
+<hr>
+<h2 id="_3">一、本章知识地图</h2>
+<table>
+<thead>
+<tr>
+<th>考点块</th>
+<th>核心内容</th>
+<th>层次</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 基本概念</td>
+<td>术语、度与边的关系、完全图、连通性、路径</td>
+<td>识记+领会+简单应用</td>
+</tr>
+<tr>
+<td>2. 存储结构</td>
+<td>邻接矩阵、邻接表、逆邻接表、（十字链表）</td>
+<td>识记+领会+简单应用+综合应用</td>
+</tr>
+<tr>
+<td>3. 图的搜索</td>
+<td>DFS、BFS、辅助结构、复杂度、应用</td>
+<td>识记+领会+简单应用+<strong>综合应用</strong></td>
+</tr>
+<tr>
+<td>4. 生成树</td>
+<td>生成树、DFS/BFS 生成树、<strong>Prim、Kruskal</strong></td>
+<td>识记+领会+简单应用+综合应用</td>
+</tr>
+<tr>
+<td>5. 有向无环图</td>
+<td>AOV 网、拓扑排序、AOE 网、<strong>关键路径</strong></td>
+<td>识记+领会+简单应用</td>
+</tr>
+<tr>
+<td>6. 最短路径</td>
+<td><strong>Dijkstra</strong>、<strong>Floyd</strong></td>
+<td>识记+领会+简单应用</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="_4">二、图的基本概念与基本操作</h2>
+<h3 id="_5">（一）识记（术语）</h3>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>图 G = (V, E)</strong></td>
+<td><strong>顶点集 V</strong> + <strong>边集 E</strong>；</td>
+</tr>
+<tr>
+<td><strong>子图</strong></td>
+<td>顶点集、边集分别是原图的子集（E' ⊆ E 且边的端点都在 V' 中）</td>
+</tr>
+<tr>
+<td><strong>无向边 (v, w)</strong></td>
+<td>无方向的边；<strong>有向边/弧 <v, w></strong>：v 为<strong>弧尾（始点）</strong>，w 为<strong>弧头（终点）</strong></td>
+</tr>
+<tr>
+<td><strong>无向图 / 有向图</strong></td>
+<td>边无方向 / 边有方向</td>
+</tr>
+<tr>
+<td><strong>带权图（网）</strong></td>
+<td>每条边（弧）附带<strong>权值</strong>（表示距离、代价、时间等）</td>
+</tr>
+<tr>
+<td><strong>邻接点</strong></td>
+<td>无向图：(v,w) 存在则 v、w <strong>互为邻接点</strong>；有向图：<v,w> 存在则 v <strong>邻接到</strong> w</td>
+</tr>
+<tr>
+<td><strong>关联</strong></td>
+<td>边与其两端顶点<strong>相关联</strong>（一条边关联两个顶点）</td>
+</tr>
+<tr>
+<td><strong>顶点的度 TD(v)</strong></td>
+<td>无向图：与该顶点关联的<strong>边数</strong>；有向图：<strong>入度 ID(v) + 出度 OD(v)</strong></td>
+</tr>
+<tr>
+<td><strong>入度 / 出度</strong></td>
+<td>以该顶点为<strong>弧头</strong>的弧数 / 以该顶点为<strong>弧尾</strong>的弧数</td>
+</tr>
+<tr>
+<td><strong>稀疏图 / 密集图</strong></td>
+<td>e 远小于 n²（一般 e &lt; n·log n）/ e 接近 n²</td>
+</tr>
+<tr>
+<td><strong>完全图</strong></td>
+<td>无向完全图：<strong>n(n−1)/2</strong> 条边；有向完全图：<strong>n(n−1)</strong> 条弧</td>
+</tr>
+<tr>
+<td><strong>路径 / 有向路径</strong></td>
+<td>顶点序列 v₀v₁…vₖ（相邻顶点间有边）/ 沿弧方向的路径</td>
+</tr>
+<tr>
+<td><strong>简单路径 / 简单回路</strong></td>
+<td>顶点<strong>不重复</strong>出现 / 除首尾外顶点不重复的回路</td>
+</tr>
+<tr>
+<td><strong>回路（环）</strong></td>
+<td>首尾顶点相同的路径</td>
+</tr>
+<tr>
+<td><strong>路径长度</strong></td>
+<td>路径上的<strong>边数</strong>；带权图中为<strong>各边权之和</strong></td>
+</tr>
+<tr>
+<td><strong>连通图</strong></td>
+<td>无向图中任意两顶点间都有路径</td>
+</tr>
+<tr>
+<td><strong>连通分量</strong></td>
+<td>无向图中的<strong>极大连通子图</strong></td>
+</tr>
+<tr>
+<td><strong>强连通图 / 强连通分量</strong></td>
+<td>有向图中任意两顶点<strong>互相可达</strong> / 极大强连通子图</td>
+</tr>
+<tr>
+<td><strong>弱连通图</strong></td>
+<td>有向图<strong>忽略方向</strong>后连通</td>
+</tr>
+<tr>
+<td><strong>有向无环图（DAG）</strong></td>
+<td>不含回路的有向图</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_6">（二）领会</h3>
+<ul>
+<li>
+<p><strong>1. 顶点与边的关联性</strong>：每条边<strong>关联两个顶点</strong>（无向边）或<strong>一个弧尾、一个弧头</strong>（有向边）；顶点的度正是由"关联的边数"定义的。</p>
+</li>
+<li>
+<p><strong>2. 邻接的含义</strong>：邻接描述<strong>顶点与顶点</strong>之间的关系（有边相连）；关联描述<strong>顶点与边</strong>之间的关系——两者不是一回事。</p>
+</li>
+<li>
+<p><strong>3. 边与顶点的度的关系（必考）</strong></p>
+</li>
+<li>无向图：<strong>ΣTD(v) = 2e</strong>（每条边给两端各贡献 1 度）；</li>
+<li>
+<p>有向图：<strong>ΣID(v) = ΣOD(v) = e</strong>；ΣTD(v) = 2e。</p>
+</li>
+<li>
+<p><strong>4. 有向路径</strong>：必须<strong>沿着弧的方向</strong>前进；有向图中"(v,w) 有路径"与"(w,v) 有路径"是两回事（这正是强连通与弱连通的区别）。</p>
+</li>
+</ul>
+<h3 id="_7">（三）简单应用（特性小计算）</h3>
+<ul>
+<li>n 个顶点的<strong>无向完全图</strong>边数 = n(n−1)/2（n=5 → <strong>10</strong>）；<strong>有向完全图</strong>弧数 = n(n−1)（n=5 → <strong>20</strong>）；</li>
+<li><strong>由度求边数</strong>：e = ΣTD / 2；</li>
+<li><strong>例</strong>：无向图中有 3 个度为 4 的顶点、4 个度为 3 的顶点，其余顶点度均小于 3，求顶点数最少是多少？<br>
+已知度和 = 3×4 + 4×3 = 24 → 2e ≥ 24 需为偶数（成立）；余下度和 = 2e − 24，且每个小于 3 的顶点度 ≤ 2 → 余下顶点数 ≥ (2e−24)/2；取 e = 12（度和 24）时余下度为 0，最少顶点 = 3+4 = <strong>7</strong>；</li>
+<li>判断图是否连通、是否为完全图、是否含环、某序列是否为路径等。</li>
+</ul>
+<hr>
+<h2 id="_8">三、图的存储结构及基本操作的实现</h2>
+<h3 id="_9">（一）识记</h3>
+<table>
+<thead>
+<tr>
+<th>存储结构</th>
+<th>结构描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>邻接矩阵</strong></td>
+<td>一维数组 <code>vexs[n]</code> 存顶点 + 二维数组 <code>arcs[n][n]</code> 存边（0/1 或权值；无边用 0 或 ∞ 【注意】）</td>
+</tr>
+<tr>
+<td><strong>邻接表</strong></td>
+<td><strong>顶点表（表头结点）</strong> 数组：<code>data + firstarc</code>；每个顶点挂一条<strong>边表</strong>，<strong>表结点</strong>为 <code>adjvex（邻接点在顶点表中的下标）+ nextarc（+ info 权值）</code></td>
+</tr>
+<tr>
+<td><strong>逆邻接表</strong></td>
+<td>与邻接表结构相同，但边表中存放的是<strong>指向该顶点的弧（入边）</strong>，便于求<strong>入度</strong></td>
+</tr>
+<tr>
+<td><strong>表结点</strong></td>
+<td>邻接表中表示一条边的结点（<code>adjvex</code> + <code>nextarc</code>）</td>
+</tr>
+<tr>
+<td>（扩展）十字链表 / 邻接多重表</td>
+<td>便于同时求有向图出入度 / 处理无向图每条边存储两次的问题</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_10">（二）领会：三种结构与图的对应关系</h3>
+<ul>
+<li><strong>空间</strong>：邻接矩阵：<strong>O(n²)</strong>（与边数无关）；邻接表：<strong>O(n + e)</strong>；逆邻接表：O(n + e)</li>
+<li><strong>适合</strong>：邻接矩阵：<strong>密集图</strong>；邻接表：<strong>稀疏图</strong>；逆邻接表：稀疏图（侧重入度）</li>
+<li><strong>判断 (i,j) 是否相邻</strong>：邻接矩阵：<strong>O(1)</strong>；邻接表：O(度)；逆邻接表：O(度)</li>
+<li><strong>求某顶点的所有邻接点</strong>：邻接矩阵：O(n)；邻接表：<strong>O(度)</strong>；逆邻接表：O(入度)</li>
+<li><strong>无向图</strong>：邻接矩阵：矩阵<strong>对称</strong>；第 i 行（列）非零个数 = 顶点 i 的<strong>度</strong>；邻接表：边表结点总数 = <strong>2e</strong>；逆邻接表：同邻接表</li>
+<li><strong>有向图</strong>：邻接矩阵：<strong>第 i 行</strong>非零个数 = <strong>出度</strong>；<strong>第 i 列</strong>非零个数 = <strong>入度</strong>；邻接表：边表结点总数 = <strong>e</strong>，求出度易、求入度难；逆邻接表：便于<strong>求入度</strong>，求出度难</li>
+</ul>
+<h3 id="_11">（三）简单应用（实现与信息获取）</h3>
+<pre><code class="language-c">// 邻接矩阵存储
+#define MAXV 100
+typedef struct { ElemType vexs[MAXV]; int arcs[MAXV][MAXV]; int n, e; } MGraph;
+
+// 邻接表存储
+typedef struct ArcNode {            // 表结点（边结点）
+    int adjvex;                     // 该边另一顶点在顶点表中的下标
+    struct ArcNode *nextarc;
+    int info;                       // 权值（网）
+} ArcNode;
+typedef struct VNode {              // 表头结点（顶点结点）
+    ElemType data; ArcNode *firstarc;
+} VNode, AdjList[MAXV];
+typedef struct { AdjList vertices; int n, e; } ALGraph;
+
+</code></pre>
+<ul>
+<li><strong>根据存储结构实现基本操作 / 获取图的基本信息</strong></li>
+<li>邻接矩阵：求顶点度（数行/列非零个数）、判断两点是否相邻、求所有邻接点；</li>
+<li>邻接表：遍历某顶点的边表可得其<strong>所有邻接点</strong>与<strong>出度</strong>；统计全表可得<strong>入度</strong>（或改用<strong>逆邻接表</strong>直接求入度）；</li>
+<li>无向图邻接表的边表结点数 = 2e；有向图 = e（由此可校验建表是否正确）。</li>
+</ul>
+<h3 id="_12">（四）综合应用</h3>
+<p>按问题特点<strong>选择存储结构</strong>：密集图 + 频繁判断相邻 → <strong>邻接矩阵</strong>；稀疏图 + 频繁求邻接点/遍历 → <strong>邻接表</strong>；频繁求入度 → <strong>逆邻接表</strong>（或十字链表）；然后设计算法（如求度、判连通、路径查找）。</p>
+<hr>
+<h2 id="_13">四、图的搜索</h2>
+<h3 id="_14">（一）识记</h3>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>图的搜索（遍历）</strong></td>
+<td>从某顶点出发，沿边<strong>访问图中所有顶点且每个顶点仅访问一次</strong>的过程</td>
+</tr>
+<tr>
+<td><strong>深度优先搜索（DFS）</strong></td>
+<td>类似树的<strong>先序遍历</strong>：访问顶点 → 递归访问其未访问的邻接点 → 回溯</td>
+</tr>
+<tr>
+<td><strong>广度优先搜索（BFS）</strong></td>
+<td>类似树的<strong>层次遍历</strong>：访问顶点 → 依次访问其所有未访问邻接点 → 再按访问顺序处理下一层</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_15">（二）领会</h3>
+<ul>
+<li>
+<p><strong>1. 图搜索的特性</strong>：图可能有<strong>回路</strong>且<strong>可能不连通</strong>，因此必须设 <strong>visited[] 访问标志数组</strong>防止重复访问；对非连通图需<strong>对每个未访问顶点重新发起一次搜索</strong>（每次得到一个<strong>连通分量</strong>）。</p>
+</li>
+<li>
+<p><strong>2. 图的搜索序列</strong>：与<strong>起始顶点</strong>和<strong>邻接点的访问次序（存储结构中的顺序）</strong> 有关——同一图不同起点或不同存储顺序，搜索序列不同。</p>
+</li>
+<li>
+<p><strong>3. 图搜索时使用的辅助数据结构</strong></p>
+</li>
+<li><strong>DFS</strong>：<strong>栈</strong>（递归时用系统栈；非递归时显式栈）+ <code>visited[]</code>；</li>
+<li><strong>BFS</strong>：<strong>队列</strong> + <code>visited[]</code>。</li>
+<li>都需要 <code>visited[n]</code>。</li>
+</ul>
+<h3 id="_16">（三）简单应用（实现与搜索序列）</h3>
+<pre><code class="language-c">int visited[MAXV];
+void DFS(ALGraph G, int v) {                 // 邻接表 DFS（递归）
+    visit(v); visited[v] = 1;
+    for (ArcNode *p = G.vertices[v].firstarc; p; p = p-&gt;nextarc)
+        if (!visited[p-&gt;adjvex]) DFS(G, p-&gt;adjvex);
+}
+void BFS(ALGraph G, int v) {                 // 邻接表 BFS（队列）
+    int q[MAXV], front = 0, rear = 0;
+    visit(v); visited[v] = 1; q[rear++] = v;
+    while (front &lt; rear) {
+        int u = q[front++];
+        for (ArcNode *p = G.vertices[u].firstarc; p; p = p-&gt;nextarc)
+            if (!visited[p-&gt;adjvex]) { visit(p-&gt;adjvex); visited[p-&gt;adjvex] = 1; q[rear++] = p-&gt;adjvex; }
+    }
+}
+
+</code></pre>
+<ul>
+<li><strong>示例</strong>：V = {1,2,3,4,5}，边 1-2, 1-3, 2-4, 3-4, 4-5（邻接点按序号升序）</li>
+<li><strong>DFS 序列：1, 2, 4, 3, 5</strong>（1→2→4→3（4 的邻接点按序）→回退→5）</li>
+<li>
+<p><strong>BFS 序列：1, 2, 3, 4, 5</strong></p>
+</li>
+<li>
+<p><strong>复杂度</strong>：<strong>邻接矩阵 O(n²)</strong>；<strong>邻接表 O(n + e)</strong>（DFS、BFS 相同）。</p>
+</li>
+</ul>
+<h3 id="_17">（四）综合应用（基于搜索思想）</h3>
+<p>① 求<strong>连通分量个数</strong>；② 判断两顶点间是否有路径、求一条简单路径；③ <strong>判断图中是否有环</strong>（DFS 中出现回边）；④ <strong>判断二分图</strong>（BFS/DFS 染色）；⑤ 迷宫求解、连通块统计（岛屿问题）；⑥ 无向图求割点/桥（扩展）；⑦ 拓扑排序的 DFS 实现。</p>
+<hr>
+<h2 id="_18">五、图的生成树</h2>
+<h3 id="_19">（一）识记</h3>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>生成树</strong></td>
+<td>连通图的<strong>极小连通子图</strong>：含全部 <strong>n 个顶点</strong>和 <strong>n − 1 条边</strong>（再加一条边必成环，少一条边必不连通）</td>
+</tr>
+<tr>
+<td><strong>深度优先生成树</strong></td>
+<td>由 <strong>DFS</strong> 得到的生成树（非连通图得到<strong>生成森林</strong>）</td>
+</tr>
+<tr>
+<td><strong>广度优先生成树</strong></td>
+<td>由 <strong>BFS</strong> 得到的生成树</td>
+</tr>
+<tr>
+<td><strong>最小生成树（MST）</strong></td>
+<td>带权连通图中<strong>边权之和最小</strong>的生成树</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_20">（二）领会</h3>
+<ul>
+<li>
+<p><strong>1. 生成树的特性</strong>：n 个顶点、<strong>恰好 n−1 条边</strong>、<strong>连通且无环</strong>；生成树<strong>可能不唯一</strong>（DFS/BFS 生成树通常不同，最小生成树也可能不唯一——当存在等权边时）。</p>
+</li>
+<li>
+<p><strong>2. 最小生成树的特性</strong>：<strong>权值之和最小</strong>；包含 n 个顶点、n−1 条边；<strong>MST 不唯一</strong>但<strong>最小代价唯一</strong>。</p>
+</li>
+<li>
+<p><strong>3. 普里姆（Prim）算法的求解策略</strong>：<strong>"加点法"</strong></p>
+</li>
+<li>从任一顶点出发，把顶点逐步加入集合 U（已入选）；</li>
+<li>每次在"<strong>U 中顶点 ↔ V−U 中顶点</strong>"的所有边中选<strong>权最小</strong>的一条，把对应顶点加入 U；</li>
+<li>重复 <strong>n−1</strong> 次；</li>
+<li>
+<p><strong>适合密集图</strong>，时间复杂度 <strong>O(n²)</strong>（邻接矩阵；用堆可优化到 O(e log n)）。</p>
+</li>
+<li>
+<p><strong>4. 克鲁斯卡尔（Kruskal）算法的求解策略</strong>：<strong>"加边法"</strong></p>
+</li>
+<li>把所有边按<strong>权值从小到大排序</strong>；</li>
+<li>依次考察每条边，若它的两个端点<strong>不在同一连通分量</strong>（加入后不形成回路）则<strong>选入</strong>；</li>
+<li>直到选够 <strong>n−1</strong> 条边；</li>
+<li>
+<p><strong>适合稀疏图</strong>，时间复杂度 <strong>O(e log e)</strong>（排序 + 并查集）。</p>
+</li>
+<li>
+<p><strong>5. 最小生成树代价的计算</strong>：把选中的 n−1 条边权值相加。</p>
+</li>
+</ul>
+<h3 id="_21">（三）简单应用（必考过程题）</h3>
+<ul>
+<li>
+<p><strong>示例</strong>：顶点 A、B、C、D、E、F，边权 A-B 6、A-C 1、A-D 5、B-C 5、B-E 3、C-D 5、C-E 6、C-F 4、D-F 2、E-F 6</p>
+</li>
+<li>
+<p><strong>用 Prim 求 MST（从 A 出发）</strong></p>
+</li>
+<li>
+<p><strong>1</strong>：入选顶点集：{A}；可选的最小边：A-C(1)；选入边（权）：<strong>A-C (1)</strong></p>
+</li>
+<li><strong>2</strong>：入选顶点集：{A,C}；可选的最小边：C-F(4)；选入边（权）：<strong>C-F (4)</strong></li>
+<li><strong>3</strong>：入选顶点集：{A,C,F}；可选的最小边：F-D(2)；选入边（权）：<strong>F-D (2)</strong></li>
+<li><strong>4</strong>：入选顶点集：{A,C,D,F}；可选的最小边：C-B(5)；选入边（权）：<strong>C-B (5)</strong></li>
+<li>
+<p><strong>5</strong>：入选顶点集：{A,B,C,D,F}；可选的最小边：B-E(3)；选入边（权）：<strong>B-E (3)</strong></p>
+</li>
+<li>
+<p><strong>MST 代价 = 1 + 4 + 2 + 5 + 3 = 15</strong></p>
+</li>
+<li>
+<p><strong>用 Kruskal 求 MST</strong><br>
+边按权排序：AC(1), DF(2), BE(3), CF(4), AD(5), BC(5), CD(5), AB(6), CE(6), EF(6)</p>
+</li>
+<li>AC(1) 选入（{A,C}）；DF(2) 选入（{D,F}）；BE(3) 选入（{B,E}）；</li>
+<li>CF(4)：C∈{A,C}、F∈{D,F} 不同 → 选入（合并为 {A,C,D,F}）；</li>
+<li>AD(5)：同在 {A,C,D,F} → <strong>舍去</strong>（成环）；</li>
+<li>BC(5)：C∈{A,C,D,F}、B∈{B,E} 不同 → 选入（全图连通）；</li>
+<li>已有 <strong>5 = n−1</strong> 条边 → 结束。</li>
+<li><strong>MST 代价 = 1 + 2 + 3 + 4 + 5 = 15</strong>（与 Prim 结果一致，MST 边集相同）</li>
+</ul>
+<h3 id="_22">（四）综合应用</h3>
+<p>① 网络布线/管道铺设的最小成本设计；② 判断图是否连通（生成树能否覆盖全部顶点）；③ 求"次小生成树"（扩展）；④ 基于 Prim/Kruskal 策略的贪心算法设计。</p>
+<hr>
+<h2 id="_23">六、有向无环图及其应用</h2>
+<h3 id="_24">（一）识记</h3>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AOV 网</strong></td>
+<td><strong>顶点表示活动</strong>、<strong>弧表示活动间先后关系</strong>的有向图（Activity On Vertex）</td>
+</tr>
+<tr>
+<td><strong>AOE 网</strong></td>
+<td><strong>顶点表示事件</strong>、<strong>弧表示活动</strong>、<strong>弧权表示活动持续时间</strong>的有向图（Activity On Edge）</td>
+</tr>
+<tr>
+<td><strong>源点 / 汇点</strong></td>
+<td>AOE 网中<strong>唯一入度为 0</strong> 的顶点（开始事件）/ <strong>唯一出度为 0</strong> 的顶点（结束事件）</td>
+</tr>
+<tr>
+<td><strong>前驱 / 后继 / 直接前驱 / 直接后继</strong></td>
+<td>活动间的先后关系（弧的指向）</td>
+</tr>
+<tr>
+<td><strong>活动 / 事件</strong></td>
+<td>弧 / 顶点</td>
+</tr>
+<tr>
+<td><strong>拓扑排序 / 拓扑序列</strong></td>
+<td>把 AOV 网顶点排成<strong>线性序列</strong>，使每条弧 <u,v> 中 u 都排在 v 之前 / 这样的序列</td>
+</tr>
+<tr>
+<td><strong>入度值表</strong></td>
+<td>记录各顶点当前入度的表（拓扑排序中用）</td>
+</tr>
+<tr>
+<td><strong>关键路径 / 关键活动</strong></td>
+<td>从源点到汇点<strong>路径长度最长</strong>的路径 / 关键路径上的活动（<strong>时间余量为 0</strong>）</td>
+</tr>
+<tr>
+<td><strong>事件最早开始时间 ve / 最迟开始时间 vl</strong></td>
+<td>事件可能发生的最早 / 最迟时刻</td>
+</tr>
+<tr>
+<td><strong>时间余量（松弛时间）</strong></td>
+<td>活动的<strong>最迟开始时间 − 最早开始时间</strong>；为 0 即关键活动</td>
+</tr>
+<tr>
+<td><strong>活动的持续时间</strong></td>
+<td>弧的权值</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_25">（二）领会 + （三）简单应用</h3>
+<ul>
+<li><strong>1. 拓扑排序的过程（必考）</strong><br>
+① 在 AOV 网中选一个<strong>入度为 0</strong> 的顶点并<strong>输出</strong>；<br>
+② <strong>删除该顶点及其所有出边</strong>（相关顶点入度减 1）；<br>
+③ 重复 ①②，直到<strong>全部顶点输出</strong>（成功）或<strong>找不到入度为 0 的顶点而仍有顶点未输出</strong>（说明<strong>有环</strong>）。</li>
+<li>用<strong>栈/队列</strong>保存入度为 0 的顶点；复杂度 <strong>O(n + e)</strong>；</li>
+<li>
+<p><strong>拓扑序列可能不唯一</strong>；<strong>判断有向图是否存在环</strong>：拓扑排序能否输出全部顶点。</p>
+</li>
+<li>
+<p><strong>2. 关键路径的求解过程（必考，AOE 网）</strong><br>
+① <strong>正向递推</strong>求事件最早开始时间：<code>ve(j) = max{ ve(i) + w(&lt;i,j&gt;) }</code>（源点 ve = 0）；<br>
+② <strong>逆向递推</strong>求事件最迟开始时间：从汇点开始 <code>vl(j) = min{ vl(k) − w(&lt;j,k&gt;) }</code>，<strong>vl(汇点) = ve(汇点)</strong>；<br>
+③ 求活动的最早开始时间：<code>e(a) = ve(弧尾)</code>；<br>
+④ 求活动的最迟开始时间：<code>l(a) = vl(弧头) − 活动持续时间</code>；<br>
+⑤ <strong>时间余量 = l(a) − e(a)</strong>；<strong>余量为 0 的活动即关键活动</strong>；<br>
+⑥ 关键活动构成的从源点到汇点的路径即<strong>关键路径</strong>（<strong>可能不唯一</strong>），其长度即<strong>最短工期</strong>。</p>
+</li>
+<li>
+<p><strong>3. 关键路径计算示例（经典 AOE 网）</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>活动</th>
+<th>弧</th>
+<th>权</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a1</td>
+<td>V1→V2</td>
+<td>6</td>
+</tr>
+<tr>
+<td>a2</td>
+<td>V1→V3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>a3</td>
+<td>V1→V4</td>
+<td>5</td>
+</tr>
+<tr>
+<td>a4</td>
+<td>V2→V5</td>
+<td>1</td>
+</tr>
+<tr>
+<td>a5</td>
+<td>V3→V5</td>
+<td>1</td>
+</tr>
+<tr>
+<td>a6</td>
+<td>V4→V6</td>
+<td>2</td>
+</tr>
+<tr>
+<td>a7</td>
+<td>V5→V7</td>
+<td>9</td>
+</tr>
+<tr>
+<td>a8</td>
+<td>V5→V8</td>
+<td>7</td>
+</tr>
+<tr>
+<td>a9</td>
+<td>V6→V8</td>
+<td>4</td>
+</tr>
+<tr>
+<td>a10</td>
+<td>V7→V9</td>
+<td>2</td>
+</tr>
+<tr>
+<td>a11</td>
+<td>V8→V9</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>ve（正向）</strong>：ve1=0；ve2=6；ve3=4；ve4=5；ve5=max(6+1, 4+1)=<strong>7</strong>；ve6=5+2=7；ve7=7+9=<strong>16</strong>；ve8=max(7+7, 7+4)=<strong>14</strong>；ve9=max(16+2, 14+4)=<strong>18</strong></li>
+<li><strong>vl（逆向，vl9=18）</strong>：vl8=14；vl7=16；vl6=10；vl5=min(16−9, 14−7)=<strong>7</strong>；vl4=10−2=8；vl3=7−1=6；vl2=7−1=6；vl1=min(6−6, 6−4, 8−5)=<strong>0</strong></li>
+<li>
+<p><strong>活动余量</strong>：</p>
+</li>
+<li>
+<p><strong>a1</strong>：e = ve(尾)：0；l = vl(头) − w：6−6 = 0；余量：0；是否关键：<strong>关键</strong></p>
+</li>
+<li><strong>a2</strong>：e = ve(尾)：0；l = vl(头) − w：6−4 = 2；余量：2；是否关键：否</li>
+<li><strong>a3</strong>：e = ve(尾)：0；l = vl(头) − w：8−5 = 3；余量：3；是否关键：否</li>
+<li><strong>a4</strong>：e = ve(尾)：6；l = vl(头) − w：7−1 = 6；余量：0；是否关键：<strong>关键</strong></li>
+<li><strong>a5</strong>：e = ve(尾)：4；l = vl(头) − w：7−1 = 6；余量：2；是否关键：否</li>
+<li><strong>a6</strong>：e = ve(尾)：5；l = vl(头) − w：10−2 = 8；余量：3；是否关键：否</li>
+<li><strong>a7</strong>：e = ve(尾)：7；l = vl(头) − w：16−9 = 7；余量：0；是否关键：<strong>关键</strong></li>
+<li><strong>a8</strong>：e = ve(尾)：7；l = vl(头) − w：14−7 = 7；余量：0；是否关键：<strong>关键</strong></li>
+<li><strong>a9</strong>：e = ve(尾)：7；l = vl(头) − w：14−4 = 10；余量：3；是否关键：否</li>
+<li><strong>a10</strong>：e = ve(尾)：16；l = vl(头) − w：18−2 = 16；余量：0；是否关键：<strong>关键</strong></li>
+<li>
+<p><strong>a11</strong>：e = ve(尾)：14；l = vl(头) − w：18−4 = 14；余量：0；是否关键：<strong>关键</strong></p>
+</li>
+<li>
+<p><strong>关键活动</strong>：a1, a4, a7, a8, a10, a11</p>
+</li>
+<li><strong>关键路径（2 条，长度均为 18）</strong>：</li>
+<li>V1 → V2 → V5 → V7 → V9（6+1+9+2 = <strong>18</strong>）</li>
+<li>V1 → V2 → V5 → V8 → V9（6+1+7+4 = <strong>18</strong>）<blockquote>
+<p><strong>最短工期 = 18</strong>（关键路径长度）。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="_26">（四）综合应用</h3>
+<p>① 工程进度安排（哪些活动不能拖延）；② 课程/任务先修关系排序；③ 检测循环依赖（拓扑排序失败即有环）；④ 缩短工期时必须压缩<strong>关键活动</strong>（且可能改变关键路径）；⑤ 用 DFS 实现拓扑排序（按完成时间逆序）。</p>
+<hr>
+<h2 id="_27">七、最短路径</h2>
+<h3 id="_28">（一）识记</h3>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>源点 / 终点</strong></td>
+<td>路径的起点 / 终点</td>
+</tr>
+<tr>
+<td><strong>带权图中的路径长度</strong></td>
+<td>路径上<strong>各边权值之和</strong></td>
+</tr>
+<tr>
+<td><strong>单源最短路径</strong></td>
+<td>从<strong>一个源点</strong>到其余各顶点的最短路径（<strong>Dijkstra 算法</strong>）</td>
+</tr>
+<tr>
+<td><strong>所有点对间的最短路径</strong></td>
+<td>图中<strong>每一对顶点</strong>之间的最短路径（<strong>Floyd 算法</strong>）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_29">（二）领会 + （三）简单应用</h3>
+<ul>
+<li><strong>1. 迪杰斯特拉（Dijkstra）算法的求解过程（单源，贪心）</strong></li>
+<li>设集合 <strong>S</strong>（已确定最短路径的顶点，初始只含源点 v₀），数组 <strong>dist[i]</strong> 记录 v₀ 到 i 的当前最短距离（初始为直接边的权，无直接边为 ∞）；</li>
+<li><strong>① 选</strong>：从 V−S 中选 <strong>dist 最小</strong>的顶点 u 加入 S；</li>
+<li><strong>② 更新</strong>：对 u 的每个邻接点 w，若 <code>dist[u] + w(u,w) &lt; dist[w]</code> 则更新 dist[w]（并记录前驱 p[w] = u）；</li>
+<li><strong>③ 重复</strong> ①② 共 n−1 次，直到所有顶点加入 S；</li>
+<li>
+<p><strong>要求所有边权非负</strong>；邻接矩阵实现 <strong>O(n²)</strong>（堆优化 O(e log n)）；dist 数组给出最短距离，p 数组可还原路径。</p>
+</li>
+<li>
+<p><strong>Dijkstra 计算示例</strong>（有向图，源点 1）<br>
+边：1→2 (2)、1→3 (5)、2→3 (1)、2→4 (7)、3→4 (3)</p>
+</li>
+<li>
+<p><strong>初始</strong>：S：{1}；dist[2]：2；dist[3]：5；dist[4]：∞；选入：—</p>
+</li>
+<li><strong>①</strong>：S：{1,2}；dist[2]：2；dist[3]：min(5, 2+1)=<strong>3</strong>；dist[4]：min(∞, 2+7)=<strong>9</strong>；选入：2</li>
+<li><strong>②</strong>：S：{1,2,3}；dist[2]：2；dist[3]：3；dist[4]：min(9, 3+3)=<strong>6</strong>；选入：3</li>
+<li>
+<p><strong>③</strong>：S：{1,2,3,4}；dist[2]：2；dist[3]：3；dist[4]：6；选入：4</p>
+</li>
+<li>
+<p><strong>结果</strong>：1→2 = 2；1→2→3 = 3；1→2→3→4 = <strong>6</strong></p>
+</li>
+<li>
+<p><strong>2. 弗洛伊德（Floyd）算法的求解过程（所有点对，动态规划）</strong></p>
+</li>
+<li>用邻接矩阵 <code>D</code>（D[i][j] 为 i→j 的当前最短距离，无边为 ∞）；</li>
+<li><strong>递推公式</strong>：<code>D⁽ᵏ⁾[i][j] = min( D⁽ᵏ⁻¹⁾[i][j], D⁽ᵏ⁻¹⁾[i][k] + D⁽ᵏ⁻¹⁾[k][j] )</code><br>
+即"<strong>允许经过顶点 k 中转</strong>"时是否更短；k 从 1 到 n <strong>逐轮更新</strong>；</li>
+<li>时间复杂度 <strong>O(n³)</strong>；<strong>允许负权边</strong>（但不能有负权回路）；</li>
+<li>
+<p>可同时用 <code>path[i][j]</code> 记录路径经过的中间顶点。</p>
+</li>
+<li>
+<p><strong>Floyd 计算示例</strong>（3 个顶点：1→2 权 4、2→3 权 1、1→3 权 10）</p>
+</li>
+<li>D⁽⁰⁾ = [[0,4,10],[∞,0,1],[∞,∞,0]]</li>
+<li>k=2 时：D[1][3] = min(10, 4+1=5) = <strong>5</strong> → D = [[0,4,<strong>5</strong>],[∞,0,1],[∞,∞,0]]</li>
+<li>
+<p>k=1、k=3 无改进 → <strong>1→3 最短距离 = 5</strong>（路径 1→2→3）</p>
+</li>
+<li>
+<p><strong>3. 三种算法对照</strong></p>
+</li>
+<li>
+<p><strong>Dijkstra</strong>：解决的问题：单源最短路径；思想：贪心（逐步扩充 S）；时间复杂度：O(n²) / O(e log n)；权值限制：<strong>非负权</strong></p>
+</li>
+<li><strong>Floyd</strong>：解决的问题：所有点对最短路径；思想：动态规划（逐轮加中转点）；时间复杂度：<strong>O(n³)</strong>；权值限制：可含负权（无负环）</li>
+<li><strong>（对比）Prim</strong>：解决的问题：最小生成树；思想：贪心加点；时间复杂度：O(n²)；权值限制：无向连通带权图</li>
+</ul>
+<h3 id="_30">（四）综合应用</h3>
+<p>① 交通/网络路由的最短代价路径；② 地图导航、物流配送；③ 城市间最短里程/最少费用/最快时间；④ 结合路径数组输出具体路径；⑤ 判断负权回路（Bellman-Ford，扩展）。</p>
+<hr>
+<h2 id="_31">八、本章对比与易混点</h2>
+<table>
+<thead>
+<tr>
+<th>易混点</th>
+<th>正确理解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>邻接 vs 关联</strong></td>
+<td>邻接＝<strong>顶点与顶点</strong>；关联＝<strong>顶点与边</strong></td>
+</tr>
+<tr>
+<td>无向图<strong>度</strong> vs 有向图<strong>入/出度</strong></td>
+<td>无向：关联边数；有向：入度 + 出度</td>
+</tr>
+<tr>
+<td><strong>完全图边数</strong></td>
+<td>无向 <strong>n(n−1)/2</strong>；有向 <strong>n(n−1)</strong></td>
+</tr>
+<tr>
+<td>连通 vs 强连通 vs 弱连通</td>
+<td>无向图连通 / 有向图互相可达 / 有向图忽略方向后连通</td>
+</tr>
+<tr>
+<td>连通分量 vs 强连通分量</td>
+<td>无向图的极大连通子图 / 有向图的极大强连通子图</td>
+</tr>
+<tr>
+<td><strong>邻接矩阵 vs 邻接表</strong></td>
+<td>矩阵 O(n²) 适合密集图、判断相邻 O(1)；邻接表 O(n+e) 适合稀疏图、求邻接点快</td>
+</tr>
+<tr>
+<td>邻接表<strong>求入度</strong></td>
+<td>需遍历全表（O(n+e)）→ 用<strong>逆邻接表</strong>解决</td>
+</tr>
+<tr>
+<td>无向图邻接表边结点数</td>
+<td><strong>2e</strong>（每条边存两次）；有向图为 e</td>
+</tr>
+<tr>
+<td><strong>DFS vs BFS</strong></td>
+<td>DFS 用<strong>栈</strong>（似先序）、BFS 用<strong>队列</strong>（似层次）；复杂度：矩阵 O(n²)、邻接表 O(n+e)</td>
+</tr>
+<tr>
+<td><strong>生成树 vs 最小生成树</strong></td>
+<td>生成树只要极小连通（n−1 条边）；MST 要求<strong>权和最小</strong></td>
+</tr>
+<tr>
+<td><strong>Prim vs Kruskal</strong></td>
+<td>Prim <strong>加点</strong>、稠密图、O(n²)；Kruskal <strong>加边</strong>（排序 + 判环）、稀疏图、O(e log e)</td>
+</tr>
+<tr>
+<td><strong>AOV vs AOE</strong></td>
+<td>AOV <strong>顶点=活动</strong>（拓扑排序）；AOE <strong>弧=活动</strong>、顶点=事件（关键路径）</td>
+</tr>
+<tr>
+<td>拓扑排序 vs DFS</td>
+<td>拓扑排序用"入度为 0"逐步删除；也可用 DFS 按完成时间逆序</td>
+</tr>
+<tr>
+<td><strong>ve / vl 方向</strong></td>
+<td>ve <strong>正向</strong>递推取 <strong>max</strong>；vl <strong>逆向</strong>递推取 <strong>min</strong></td>
+</tr>
+<tr>
+<td>关键活动判据</td>
+<td><strong>时间余量 l(a) − e(a) = 0</strong></td>
+</tr>
+<tr>
+<td><strong>Dijkstra vs Prim</strong></td>
+<td>都是"选最小、更新"，但 Dijkstra 更新的是<strong>到源点的距离和</strong>（dist[u]+w），Prim 更新的是<strong>到树的距离</strong>（只看 w）</td>
+</tr>
+<tr>
+<td><strong>Dijkstra vs Floyd</strong></td>
+<td>单源 O(n²)（非负权）vs 全点对 O(n³)（可负权、无负环）</td>
+</tr>
+<tr>
+<td>最短路径 vs 最小生成树</td>
+<td>前者是<strong>两点间</strong>路径和最小；后者是<strong>整棵树</strong>边权和最小</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>复杂度速查</strong>：DFS/BFS 矩阵 O(n²)、邻接表 O(n+e)；Prim O(n²)；Kruskal O(e log e)；拓扑排序 O(n+e)；关键路径 O(n+e)；Dijkstra O(n²)；Floyd O(n³)</li>
+</ul>
+<hr>
+<h2 id="_32">九、必背清单 + 简答预测</h2>
+<h3 id="_33">（一）必背清单</h3>
+<ul>
+<li>图的术语（顶点/边/弧头/弧尾/邻接点/关联/度/入度/出度/完全图/路径/回路/连通性）；</li>
+<li><strong>ΣTD = 2e</strong>、有向图 <strong>ΣID = ΣOD = e</strong>、无向完全图 <strong>n(n−1)/2</strong>、有向完全图 <strong>n(n−1)</strong>；</li>
+<li><strong>邻接矩阵、邻接表、逆邻接表</strong>的结构、空间与适用场合、与图的对应关系（行=出度、列=入度）；</li>
+<li><strong>DFS / BFS</strong> 的过程、辅助结构（栈/队列/visited）、搜索序列与复杂度；</li>
+<li><strong>生成树</strong>定义与特性（n 顶点、n−1 边、连通无环）；<strong>Prim（加点，O(n²)）</strong>、<strong>Kruskal（加边，O(e log e)）</strong> 的策略与过程、MST 代价计算；</li>
+<li><strong>AOV 网与拓扑排序</strong>步骤、用拓扑排序判环；</li>
+<li><strong>AOE 网</strong>：源点/汇点、<strong>ve 正向 max、vl 逆向 min</strong>、活动 e/l、<strong>余量为 0 即关键活动</strong>、<strong>关键路径可能不唯一</strong>；</li>
+<li><strong>Dijkstra</strong>（单源、非负权、O(n²)）与 <strong>Floyd</strong>（全点对、O(n³)、可负权）的过程与公式。</li>
+</ul>
+<h3 id="_34">（二）高频简答预测</h3>
+<ul>
+<li>什么是图的邻接点和关联？顶点的度与边数有什么关系？</li>
+<li>无向完全图和有向完全图各有多少条边？稀疏图与密集图如何区分？</li>
+<li>什么是连通图、连通分量、强连通图、弱连通图？它们有何区别？</li>
+<li>邻接矩阵与邻接表各有什么优缺点？分别适用于什么图？空间复杂度各是多少？</li>
+<li>有向图的邻接矩阵中，行和列分别表示什么？为什么需要逆邻接表？</li>
+<li>简述深度优先搜索与广度优先搜索的过程，各用什么辅助数据结构？</li>
+<li>为什么图的搜索必须设置访问标志数组？非连通图如何处理？</li>
+<li>什么是生成树？它有什么特性？有多少条边？</li>
+<li>简述 Prim 算法与 Kruskal 算法的求解策略，各自适用于什么图？复杂度各是多少？</li>
+<li>什么是最小生成树？它唯一吗？</li>
+<li>什么是 AOV 网？简述拓扑排序的过程。如何判断有向图是否存在环？</li>
+<li>什么是 AOE 网？源点、汇点、关键路径、关键活动的含义是什么？</li>
+<li>如何求事件的最早/最迟开始时间？如何判断关键活动？</li>
+<li>简述 Dijkstra 算法的求解过程，它有什么限制？时间复杂度是多少？</li>
+<li>简述 Floyd 算法的求解过程与递推公式，时间复杂度是多少？它能否处理负权边？</li>
+<li>Dijkstra 算法与 Prim 算法有何异同？</li>
+</ul>
+<h3 id="_35">（三）计算题模板</h3>
+<ul>
+<li><strong>度与边</strong>：<code>2e = ΣTD</code>；有向图 <code>e = ΣID = ΣOD</code>；由"度为 k 的顶点数"列方程求 e、n、叶子类顶点数。</li>
+<li><strong>存储结构</strong>：无向图邻接表边结点数 = 2e；邻接矩阵第 i 行非零个数 = 度（有向图 = 出度）。</li>
+<li><strong>搜索序列</strong>：按邻接点<strong>递增次序</strong>手工模拟，标注 visited；DFS 用栈、BFS 用队列。</li>
+<li><strong>最小生成树</strong>：Prim → 画"候选边表"逐步选最小边；Kruskal → 边按权排序、逐个判环（不同分量才选），直到 n−1 条；代价=所选边权和。</li>
+<li><strong>拓扑排序</strong>：列出各顶点入度 → 反复"输出入度 0 的顶点并删除其出边" → 写出序列（可能不唯一）。</li>
+<li><strong>关键路径</strong>：先正推 ve（max）、再逆推 vl（min）→ 算各活动 e、l、余量 → 余量为 0 者为关键活动 → 写出关键路径与工期。</li>
+<li><strong>最短路径</strong>：Dijkstra → 填"dist 表 + 每步选入顶点"；Floyd → 逐轮按 <code>min(D[i][j], D[i][k]+D[k][j])</code> 更新矩阵。</li>
+</ul>
+</main>
+<footer>13003 数据结构与算法 · 由 Markdown 生成，浏览器直接打开即可阅读</footer>
+</body>
+</html>

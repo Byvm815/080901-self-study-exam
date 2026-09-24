@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第六章 软件维护 · 考点总结</title>
+<style>
+:root{--fg:#24292f;--muted:#57606a;--line:#d0d7de;--accent:#0969da;--code:#f6f8fa;--soft:#fafbfc}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--fg);
+  font:16px/1.78 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",sans-serif}
+main{max-width:980px;margin:0 auto;padding:26px 22px 72px}
+h1{font-size:1.75em;line-height:1.35;border-bottom:3px solid var(--accent);padding-bottom:.28em;margin:1.1em 0 .7em}
+h2{font-size:1.36em;line-height:1.4;border-bottom:1px solid var(--line);padding-bottom:.22em;margin:1.5em 0 .6em}
+h3{font-size:1.14em;margin:1.25em 0 .45em}
+h4{font-size:1.02em;margin:1.05em 0 .35em;color:var(--muted)}
+p{margin:.5em 0}
+ul,ol{margin:.45em 0;padding-left:1.5em}
+li{margin:.22em 0}
+li>ul,li>ol{margin:.15em 0}
+strong{color:#000}
+em{color:#000}
+code{background:var(--code);border-radius:4px;padding:.12em .34em;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:.92em}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;margin:.7em 0}
+pre code{background:none;padding:0;white-space:pre;font-size:.9em;line-height:1.5}
+table{border-collapse:collapse;width:100%;margin:.75em 0;font-size:.95em;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600}
+tbody tr:nth-child(even){background:var(--soft)}
+blockquote{margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:var(--code);color:var(--muted)}
+blockquote p{margin:.25em 0}
+hr{border:0;border-top:1px solid var(--line);margin:1.8em 0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.topnav{position:sticky;top:0;z-index:20;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+  padding:10px 22px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(180%) blur(6px);font-size:.9em}
+.topnav a{white-space:nowrap}
+.topnav .sep{color:var(--line)}
+.topnav .brand{font-weight:600;color:var(--fg);margin-right:6px}
+footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid var(--line);color:var(--muted);font-size:.86em}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:1em 0}
+.card{display:block;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--soft)}
+.card:hover{border-color:var(--accent)}
+.card b{display:block;margin-bottom:4px}
+.card span{color:var(--muted);font-size:.86em}
+.toc{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:1em 0}
+.toc ul{margin:.25em 0;padding-left:1.3em}
+.tip{border:1px dashed var(--accent);border-radius:10px;padding:10px 14px;background:#f6faff;margin:1em 0;font-size:.94em}
+@media (max-width:640px){main{padding:18px 14px 60px}h1{font-size:1.5em}}
+@media print{
+  body{font-size:11.5pt;line-height:1.6}
+  .topnav{display:none}
+  main{max-width:none;padding:0}
+  h1{page-break-before:always;border-bottom-width:2px}
+  body>main>h1:first-child,main>section:first-child>h1{page-break-before:avoid}
+  pre,table,blockquote,li{page-break-inside:avoid}
+  a{color:#000;text-decoration:none}
+  footer{display:none}
+}
+</style>
+</head>
+<body>
+<nav class="topnav"><span class="brand">13005 软件工程</span> <a href="index.html">目录</a> <span class="sep">|</span> <a href="第05章_软件测试_考点总结.html">← 第五章 软件测试 · 考点总结</a> <span class="sep">|</span> <a href="第07章_软件项目管理_考点总结.html">第七章 软件项目管理 · 考点总结 →</a></nav>
+<main>
+<h1 id="_1">第六章 软件维护 · 考点总结</h1>
+<blockquote>
+<p><strong>本章重点</strong>：软件维护工作的机构、软件维护的步骤、软件可维护性的度量、提高软件可维护性的方法<br>
+<strong>本章难点</strong>：理解在<strong>软件开发各阶段如何考虑和采取提高软件可维护性</strong>的方法<br>
+<strong>考查层次</strong>：以<strong>识记（定义、分类、7 个指标、3 种文档、3 种审查）</strong> 与<strong>领会（简答：因素、策略、步骤、副作用、原则）</strong> 为主；最后一问常出"综合分析：如何在开发各阶段提高可维护性"。</p>
+</blockquote>
+<hr>
+<h2 id="_2">一、本章知识地图</h2>
+<ul>
+<li><strong>1. 软件维护概述</strong>：考纲要点：定义、原因、分类；影响维护工作量的因素、三类维护的不同策略、维护工作量模型、维护成本评估；层次：识记+领会</li>
+<li><strong>2. 软件维护的过程</strong>：考纲要点：<strong>对程序进行修改的 3 个步骤</strong>；维护机构与分工、维护申请报告内容、维护一般步骤、维护档案记录、维护性能度量值、分析理解程序的工作与方法、修改计划与修改方法、修改要求、重新验证方法、<strong>三类副作用</strong>；层次：识记+领会</li>
+<li><strong>3. 软件的可维护性</strong>：考纲要点：可维护性定义、<strong>7 个指标</strong>及各自定义；可理解程序的主要特性、<strong>程序修改难度估算公式</strong>、间接定量度量可维护性的指标；层次：识记+领会</li>
+<li><strong>4. 提高软件可维护性的方法</strong>：考纲要点：模块化优点、好的文档的作用与意义、<strong>3 种历史文档</strong>；提高质量的技术与工具、<strong>3 种软件审查</strong>、最小验收标准、选择易维护语言、改进程序文档；层次：识记+领会</li>
+</ul>
+<hr>
+<h2 id="1">二、考点 1：软件维护概述</h2>
+<h3 id="_3">（一）识记</h3>
+<ul>
+<li>
+<p><strong>1. 软件维护的定义</strong><br>
+软件<strong>交付使用之后</strong>，为了<strong>改正错误、适应环境变化、满足新的需求（完善功能与性能）</strong> 而对软件进行的<strong>修改、完善与再验证</strong>的过程。</p>
+<blockquote>
+<p>关键点：发生在<strong>交付使用之后</strong>；包括"改正 + 适应 + 完善 + 预防"；维护不只是改错，<strong>大量工作是增强与适应</strong>。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>2. 软件维护的原因（4 类）</strong><br>
+① 软件中存在<strong>错误与缺陷</strong>（隐含错误在运行中暴露）；<br>
+② 软件<strong>运行环境（硬件、操作系统、数据、平台、接口）发生变化</strong>；<br>
+③ <strong>用户提出新的功能与性能要求</strong>，业务规则变化；<br>
+④ 为<strong>提高软件的可维护性、可靠性与运行效率</strong>而主动改进（预防性维护）。</p>
+</li>
+<li>
+<p><strong>3. 软件维护的分类（4 种，必背）</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>目的</th>
+<th>大致工作量占比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>改正性维护</strong></td>
+<td>修改运行中<strong>发现的错误与缺陷</strong></td>
+<td>约 <strong>17%–20%</strong></td>
+</tr>
+<tr>
+<td><strong>适应性维护</strong></td>
+<td>适应<strong>外部环境（硬件、OS、数据格式、平台）变化</strong></td>
+<td>约 <strong>18%–20%</strong></td>
+</tr>
+<tr>
+<td><strong>完善性维护</strong></td>
+<td><strong>增加新功能、改进性能</strong>，满足用户新要求</td>
+<td><strong>约 50%–60%（最大）</strong></td>
+</tr>
+<tr>
+<td><strong>预防性维护</strong></td>
+<td>为<strong>将来可维护性/可靠性</strong>而主动改造（重构、文档与结构改进）</td>
+<td>约 <strong>4%–5%</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>结论：<strong>完善性维护占比最高</strong>，因此维护<strong>不是"善后"，而是软件的持续演进</strong>。</p>
+</blockquote>
+<h3 id="_4">（二）领会</h3>
+<ul>
+<li>
+<p><strong>1. 影响维护工作量的因素</strong> 【注意】<br>
+① <strong>系统规模</strong>（代码量与模块数越大，维护越难）；<br>
+② <strong>程序结构</strong>（结构化程度、耦合/内聚、可读性）；<br>
+③ 软件的<strong>"年龄"与修改历史</strong>（维护次数越多、结构越乱）；<br>
+④ <strong>文档质量</strong>（齐全、与程序一致则维护快）；<br>
+⑤ <strong>开发与维护人员的水平与稳定性</strong>（人员流动是维护成本的重要来源）；<br>
+⑥ <strong>需求变更的频率与幅度</strong>；<br>
+⑦ <strong>硬件的稳定性与系统的可靠性</strong>；<br>
+⑧ <strong>可用的维护工具与技术支持</strong>（调试、测试、配置管理工具）。</p>
+</li>
+<li>
+<p><strong>2. 不同维护类型采取的不同策略</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>策略</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>改正性维护</strong></td>
+<td>快速<strong>定位与修复</strong>，强调<strong>回归测试</strong>，防止修复引入新错误；对高发缺陷模块重点分析根因</td>
+</tr>
+<tr>
+<td><strong>适应性维护</strong></td>
+<td>以<strong>最小改动</strong>适应环境变化，注意<strong>接口与数据格式兼容</strong>、版本共存与迁移方案；尽量通过配置/适配层隔离变化</td>
+</tr>
+<tr>
+<td><strong>完善性维护</strong></td>
+<td>纳入<strong>需求变更管理</strong>，先评估<strong>影响范围与代价</strong>，按<strong>优先级排入版本计划</strong>，采用迭代方式增量交付；必要时先重构再扩展</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>3. 维护工作量的模型</strong><br>
+常考 <strong>Belady–Lehman 模型</strong>：<strong>M = p + K · e^(c − d)</strong></li>
+<li>M：维护总工作量；</li>
+<li>p：<strong>生产性工作量</strong>（真正用于分析与修改的工作量）；</li>
+<li>
+<p>K：经验常数；c：<strong>程序复杂度</strong>（结构混乱程度、文档缺失程度）；d：<strong>维护人员对软件的熟悉程度</strong>。</p>
+<blockquote>
+<p>含义：<strong>程序越复杂（c 大）、维护人员越不熟悉（d 小），维护工作量呈指数增长</strong>；因此应通过<strong>结构化设计、完整文档、人员稳定</strong>来降低维护成本。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>4. 软件维护成本的评估</strong></p>
+</li>
+<li><strong>维护成本占比</strong>：维护费用通常占软件<strong>生命周期总成本的 60%–80%</strong>，且随软件"年龄"增长而上升；</li>
+<li><strong>影响维护成本的因素</strong>：上面"影响维护工作量的因素" + 人员工资率、维护工具与环境的投入、停机损失等；</li>
+<li><strong>维护成本的构成</strong>：<strong>理解程序</strong>的开销（常占最大部分）、<strong>修改</strong>开销、<strong>测试与验证</strong>开销、<strong>文档更新</strong>开销、<strong>管理与协调</strong>开销；</li>
+<li><strong>评估方法</strong> 【注意】：按<strong>维护类型</strong>分别估算（改正/适应/完善/预防），按<strong>维护活动</strong>分解估算（理解—修改—验证），或用<strong>工作量模型（如 M = p + K·e^(c−d)）</strong> 与<strong>历史数据</strong>外推；也可按"每次维护的平均成本 × 预计维护次数"估算。</li>
+</ul>
+<hr>
+<h2 id="2">三、考点 2：软件维护的过程</h2>
+<h3 id="_5">（一）识记</h3>
+<ul>
+<li><strong>软件维护期间对程序进行修改的 3 个步骤（必背）</strong><br>
+① <strong>分析和理解程序</strong>；<br>
+② <strong>修改程序</strong>；<br>
+③ <strong>重新验证程序</strong>。</li>
+</ul>
+<h3 id="_6">（二）领会</h3>
+<ul>
+<li><strong>1. 维护机构的组织及组织内的分工</strong> 【注意】</li>
+<li><strong>维护管理员（维护主管/维护负责人）</strong>：统一接收与登记维护申请，初步分类与分配任务，跟踪维护进度；</li>
+<li><strong>配置管理员</strong>：管理版本与配置项，控制变更、记录改动；</li>
+<li><strong>系统管理员/技术负责人</strong>：提供运行环境与技术支持，参与影响评估；</li>
+<li><strong>变更控制（评审）委员会</strong>：对重大修改进行<strong>评审与审批</strong>，决定是否实施及优先级；</li>
+<li><strong>维护人员（开发人员）</strong>：分析理解程序、实施修改、测试验证、更新文档；</li>
+<li>
+<p><strong>用户/业务代表</strong>：提出申请、参与验收与反馈。</p>
+</li>
+<li>
+<p><strong>2. 维护申请报告的内容</strong>：申请人、申请日期、<strong>问题或需求的描述</strong>（现象、复现步骤、涉及模块）、<strong>影响范围</strong>、<strong>优先级别</strong>、期望完成时间、相关文档与版本信息、验收标准。</p>
+</li>
+<li>
+<p><strong>3. 软件维护工作的一般步骤（流程，必背 9 步）</strong><br>
+① <strong>提出维护申请</strong>（用户/维护人员提交报告）；<br>
+② <strong>确认与分类</strong>（判定属于改正性/适应性/完善性/预防性维护）；<br>
+③ <strong>评审与审批</strong>（评估影响、代价与优先级，批准、拒绝或延期）；<br>
+④ <strong>制定维护计划</strong>（安排人员、资源与进度）；<br>
+⑤ <strong>分析和理解程序</strong>（阅读文档与代码，建立结构认识）；<br>
+⑥ <strong>修改程序与文档</strong>；<br>
+⑦ <strong>重新验证程序</strong>（回归测试 + 针对修改部分的测试）；<br>
+⑧ <strong>复审（评审）</strong>；<br>
+⑨ <strong>记录与归档</strong>（更新配置、维护档案），交付使用。</p>
+</li>
+<li>
+<p><strong>4. 维护档案记录</strong> 【注意】：记录<strong>维护申请编号与内容、维护类型、改动的程序与文档清单、修改人与时间、测试与验证结果、资源消耗（工时、成本）、维护性能度量值、遗留问题</strong>等，是维护管理与成本分析的基础。</p>
+</li>
+<li>
+<p><strong>5. 维护性能方面的度量值</strong> 【注意】：如<strong>每类维护的工时/成本及比例、维护申请的平均处理时间、每次维护的平均改动量（行数/模块数）、缺陷复发率、修复合格率、软件可用性与故障率（MTBF/MTTR）</strong>。</p>
+</li>
+<li>
+<p><strong>6. 分析理解程序必须完成的工作和所采取的方法</strong></p>
+</li>
+<li><strong>必须完成的工作</strong>：理解程序的<strong>目标与功能、总体结构（模块与调用关系）、数据结构与接口、控制流程与关键算法、约束与环境</strong>；</li>
+<li>
+<p><strong>方法</strong>：<strong>阅读文档与源程序</strong>；<strong>结构化分析与逆向工程</strong>（由代码反推结构图/数据流图）；<strong>跟踪执行（动态分析/断点调试）</strong>；借助<strong>工具生成结构图、调用图、数据字典</strong>；<strong>访谈原开发人员</strong>。</p>
+</li>
+<li>
+<p><strong>7. 程序修改计划的内容及程序修改的方法</strong></p>
+</li>
+<li><strong>计划内容</strong>：修改的<strong>范围与目标</strong>、具体的<strong>修改步骤与顺序</strong>、<strong>资源与进度安排</strong>、<strong>测试与验证安排</strong>、<strong>回退方案</strong>、文档更新要求；</li>
+<li>
+<p><strong>修改方法</strong>：<strong>直接修改源程序</strong>（小范围）、<strong>重构（改善结构而不改变行为）</strong>、<strong>打补丁/封装适配层</strong>（隔离变化）、<strong>用工具辅助修改</strong>（影响分析、自动重构）。</p>
+</li>
+<li>
+<p><strong>8. 修改程序时应遵循的要求</strong><br>
+① <strong>不降低可读性与可维护性</strong>（不图省事而破坏结构）；<br>
+② 保持原程序<strong>风格与设计的一致性</strong>；<br>
+③ 改动<strong>尽量局部化、影响面小</strong>；<br>
+④ <strong>同步更新文档</strong>；<br>
+⑤ <strong>每次修改都进行回归测试</strong>；<br>
+⑥ 遵守<strong>配置管理与审批流程</strong>，记录改动；<br>
+⑦ 尽量<strong>复用原有构件与接口</strong>，避免重复代码。</p>
+</li>
+<li>
+<p><strong>9. 重新验证程序的方法</strong></p>
+</li>
+<li>
+<p><strong>静态检查</strong>（复核代码与文档、走查/评审）＋ <strong>动态测试</strong>（<strong>回归测试</strong>：重跑原有的全部用例；<strong>新用例</strong>：针对修改部分及其接口设计；必要时做<strong>边界、性能、兼容性</strong>等专项测试）；确认<strong>修改有效且未引入新缺陷</strong>后再交付。</p>
+</li>
+<li>
+<p><strong>10. 修改的副作用（3 类，必背）</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>含义</th>
+<th>典型表现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>代码的副作用</strong></td>
+<td>修改代码引起<strong>新错误或原功能失效</strong></td>
+<td>误删/误改语句、变量共享与作用域冲突、控制流改变、常量与初始化被破坏</td>
+</tr>
+<tr>
+<td><strong>数据的副作用</strong></td>
+<td>数据结构/格式/取值改变导致<strong>旧数据不兼容</strong></td>
+<td>记录结构变化、字段长度/类型改变、文件与数据库需要转换与迁移</td>
+</tr>
+<tr>
+<td><strong>文档的副作用</strong></td>
+<td>程序改了但<strong>文档未同步更新</strong></td>
+<td>文档与程序不一致，误导后续维护与使用者</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="3">四、考点 3：软件的可维护性</h2>
+<h3 id="_7">（一）识记</h3>
+<ul>
+<li>
+<p><strong>1. 软件可维护性的定义</strong>：软件<strong>能够被理解、改正、适应和改进的难易程度</strong>——即维护人员为维护该软件所需<strong>付出的努力（代价）的大小</strong>，努力越小，可维护性越好。</p>
+</li>
+<li>
+<p><strong>2. 衡量软件可维护性的 7 个指标（必背）</strong></p>
+</li>
+<li>
+<p><strong>可理解性、可靠性、可测试性、可修改性、可移植性、效率、可使用性</strong>。</p>
+</li>
+<li>
+<p><strong>3. 各指标的定义</strong></p>
+</li>
+<li>
+<p><strong>可理解性</strong>：人们通过<strong>阅读程序与文档</strong>理解程序<strong>结构与功能</strong>的难易程度；补充/度量：与命名、注释、结构、文档质量有关</p>
+</li>
+<li><strong>可靠性</strong>：软件在<strong>规定条件与规定时间内无故障运行</strong>的能力（概率）；补充/度量：度量：<strong>MTBF（平均无故障时间）、MTTR（平均修复时间）、故障率、可用性 = MTBF/(MTBF+MTTR)</strong></li>
+<li><strong>可测试性</strong>：为<strong>验证程序正确性而设计测试用例、执行测试与判断结果</strong>的难易程度；补充/度量：与结构清晰度、模块独立性、是否有测试工具支持有关</li>
+<li><strong>可修改性</strong>：<strong>修改程序（改正错误、适应环境、完善功能）</strong> 的难易程度；补充/度量：与耦合、内聚、模块化、信息隐藏有关</li>
+<li><strong>可移植性</strong>：把程序从<strong>一个环境（硬件/OS/编译器等）移植到另一个环境</strong>的难易程度；补充/度量：好的程序特点见下</li>
+<li><strong>效率</strong>：软件<strong>不浪费资源（CPU 时间、内存、I/O、通信）</strong> 的程度；补充/度量：与算法、数据结构、代码优化有关</li>
+<li>
+<p><strong>可使用性（易用性）</strong>：用户<strong>学习、使用软件</strong>的难易程度（人机界面友好、易学易记、有提示与帮助）；补充/度量：与界面设计、文档、帮助系统有关</p>
+</li>
+<li>
+<p><strong>4. 可移植性好的程序具有的特点</strong><br>
+① 采用<strong>标准化、通用</strong>的程序设计语言与库（少用方言与扩展）；<br>
+② <strong>与具体机器/操作系统无关</strong>（少用硬件依赖、专有系统调用）；<br>
+③ <strong>模块化结构好、高内聚低耦合</strong>，变化局部化；<br>
+④ 与硬件相关的部分<strong>隔离到少数模块</strong>；<br>
+⑤ 数据格式与接口<strong>统一、规范</strong>，不依赖特定字节序/编码；<br>
+⑥ 依赖标准的接口与工具，文档齐全。</p>
+</li>
+</ul>
+<h3 id="_8">（二）领会</h3>
+<ul>
+<li>
+<p><strong>1. 可理解的程序应具备的主要特性</strong><br>
+① <strong>模块化、结构化</strong>（层次清晰、单入口单出口）；<br>
+② <strong>命名规范、含义明确</strong>（见名知义）；<br>
+③ <strong>注释恰当</strong>（关键逻辑与接口有说明）；<br>
+④ <strong>文档齐全并与程序一致</strong>；<br>
+⑤ <strong>控制流简单</strong>（少用 goto、嵌套不过深）；<br>
+⑥ <strong>耦合低、内聚高</strong>，模块规模适中；<br>
+⑦ 代码风格统一、格式规范。</p>
+</li>
+<li>
+<p><strong>2. 程序修改难度的估算公式</strong> 【注意】<br>
+教材给出按维护活动估算修改难度的公式（形式各异），<strong>核心含义</strong>是：</p>
+</li>
+<li>
+<p><strong>修改难度（维护工作量）= 理解程序的工作量 + 修改程序的工作量 + 验证程序的工作量</strong>（各环节用经验系数加权，如按"理解、修改、测试/验证"分别赋权并求和）；<br>
+另一种常见形式为 <strong>M = p + K·e^(c−d)</strong>（见前面维护工作量模型）。</p>
+<blockquote>
+<p>答题时记住：<strong>公式的用途是用以预测维护代价、比较不同程序的可维护性</strong>；具体系数以教材为准。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>3. 间接定量度量可维护性的方法中涉及的指标</strong> 【注意】</p>
+</li>
+<li><strong>模块化程度（模块数、模块规模）、耦合与内聚、结构复杂度（环域复杂度、控制流复杂度）、代码行数与注释率、扇入扇出、缺陷密度与缺陷修复时间、需求变更次数、平均修复时间（MTTR）</strong> 等，最终汇总为<strong>可维护性指数（MI）</strong> 之类的综合指标。</li>
+</ul>
+<hr>
+<h2 id="4">五、考点 4：提高软件可维护性的方法</h2>
+<h3 id="_9">（一）识记</h3>
+<ul>
+<li>
+<p><strong>1. 模块化的优点</strong>：降低复杂度（分而治之）、便于<strong>理解与测试</strong>、便于<strong>修改与局部替换</strong>、便于<strong>复用</strong>与分工并行开发、提高<strong>可靠性与可维护性</strong>、降低维护成本。</p>
+</li>
+<li>
+<p><strong>2. 好的文档的作用及意义</strong><br>
+文档是<strong>开发与维护的依据与桥梁</strong>：便于<strong>理解程序</strong>、传递知识、<strong>减少对个人的依赖</strong>、支持<strong>变更控制与追溯</strong>、便于培训与交接、为测试与验收提供依据，<strong>显著降低维护成本</strong>（"没有文档的程序几乎无法维护"）。</p>
+</li>
+<li>
+<p><strong>3. 3 种历史文档</strong> 【注意】（常见表述，以教材为准）<br>
+① <strong>开发文档</strong>：需求规格说明、设计说明、测试报告等（记录"系统如何被开发出来"）；<br>
+② <strong>用户文档</strong>：用户手册、操作指南、帮助信息（说明"如何使用系统"）；<br>
+③ <strong>管理/维护文档</strong>：项目计划、配置与变更记录、维护记录、版本说明（记录"系统的演进与管理过程"）。</p>
+</li>
+</ul>
+<h3 id="_10">（二）领会</h3>
+<ul>
+<li>
+<p><strong>1. 提高软件质量的技术和工具</strong>：结构化/面向对象方法、设计模式与<strong>重构</strong>、编码规范与静态检查工具、代码评审、<strong>自动化测试与回归测试</strong>、<strong>配置管理与版本控制</strong>、度量与缺陷跟踪工具、持续集成。</p>
+</li>
+<li>
+<p><strong>2. 保证软件可维护性的 3 种软件审查</strong> 【注意】<br>
+① <strong>检查点审查（设计/阶段审查）</strong>：在<strong>各阶段结束时</strong>按检查清单评审设计、文档与代码；<br>
+② <strong>验收检查（验收审查）</strong>：<strong>交付前</strong>按"最小验收标准"检查软件是否满足需求与质量要求；<br>
+③ <strong>周期性维护审查（管理复审）</strong>：在<strong>维护期间定期</strong>复审软件与文档状态，评估维护效果与遗留问题。</p>
+</li>
+<li>
+<p><strong>3. 验收检查必须遵循的最小验收标准</strong>：可接受的<strong>最低质量要求</strong>——如<strong>关键功能正确、无严重（致命）缺陷、文档齐全并与程序一致、性能/安全等主要指标达标、可按规定方式安装运行</strong>。</p>
+</li>
+<li>
+<p><strong>4. 选择易维护的程序设计语言</strong>：选择<strong>结构化特性好、可读性强、模块化与封装支持好、有标准与工具支持、有成熟开发维护人员</strong>的语言；避免过度使用冷门/方言语言。</p>
+</li>
+<li>
+<p><strong>5. 改进程序文档</strong>：文档应<strong>及时、完整、准确、与程序一致</strong>；采用统一模板与工具；随程序修改<strong>同步更新</strong>；补充结构说明、数据字典、接口说明与维护记录。</p>
+</li>
+<li>
+<p><strong>6. 难点：在软件开发各阶段如何提高可维护性（综合分析题）</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>提高可维护性的措施</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>需求分析</strong></td>
+<td>需求<strong>清晰、完整、可追溯</strong>，明确质量与维护要求；建立需求变更管理</td>
+</tr>
+<tr>
+<td><strong>设计</strong></td>
+<td><strong>模块化、信息隐藏、高内聚低耦合</strong>；结构简单清晰；接口规范；设计文档完整；考虑未来扩展与可移植</td>
+</tr>
+<tr>
+<td><strong>编码</strong></td>
+<td>遵循<strong>编码规范</strong>与命名约定；<strong>注释恰当</strong>；结构简单（少 goto、控制嵌套）；避免重复代码；使用易维护的语言与标准库</td>
+</tr>
+<tr>
+<td><strong>测试</strong></td>
+<td>设计<strong>可测试</strong>的结构；保留<strong>全部测试用例与结果</strong>（支持回归测试）；自动化测试</td>
+</tr>
+<tr>
+<td><strong>文档</strong></td>
+<td>与程序<strong>同步更新</strong>；齐全、准确、可读；建立文档标准与评审</td>
+</tr>
+<tr>
+<td><strong>维护阶段</strong></td>
+<td>建立<strong>维护机构与流程</strong>；<strong>配置管理与变更控制</strong>；修改<strong>局部化</strong>并<strong>回归测试</strong>；记录维护档案；<strong>重构</strong>改善结构；人员稳定与知识传递</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="_11">六、本章对比与易混点</h2>
+<table>
+<thead>
+<tr>
+<th>易混点</th>
+<th>正确理解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>改正性 vs 适应性 vs 完善性</td>
+<td><strong>改正=改错</strong>；<strong>适应=适应环境变化</strong>；<strong>完善=增强功能/性能（占比最大）</strong></td>
+</tr>
+<tr>
+<td>预防性维护</td>
+<td>目的<strong>不是修错</strong>，而是为提高<strong>将来的可维护性/可靠性</strong>（如重构、补文档）</td>
+</tr>
+<tr>
+<td>维护成本 vs 开发成本</td>
+<td>维护成本通常占生命周期总成本的 <strong>60%–80%</strong>，且随软件年龄上升</td>
+</tr>
+<tr>
+<td>可维护性 7 指标</td>
+<td>可理解性、可靠性、可测试性、可修改性、可移植性、效率、可使用性（<strong>没有"可复用性/完整性"</strong>）</td>
+</tr>
+<tr>
+<td>程序修改 3 步骤 vs 维护一般步骤</td>
+<td>3 步骤=<strong>分析理解 → 修改 → 重新验证</strong>（针对程序）；一般步骤=从<strong>申请到归档</strong>的 9 步流程</td>
+</tr>
+<tr>
+<td>代码/数据/文档副作用</td>
+<td>分别指<strong>代码改动引入新错</strong>、<strong>数据不兼容</strong>、<strong>文档未同步</strong></td>
+</tr>
+<tr>
+<td>可理解性 vs 可使用性</td>
+<td>可理解性针对<strong>维护者读程序</strong>；可使用性针对<strong>用户使用软件</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="_12">七、本章必背清单 + 简答预测</h2>
+<ul>
+<li><strong>必背</strong></li>
+<li>维护定义、<strong>4 类维护及占比</strong>、维护原因；影响维护工作量的因素；三类维护的不同策略；<strong>维护工作量模型 M = p + K·e^(c−d)</strong>；维护成本评估；</li>
+<li><strong>对程序修改的 3 个步骤</strong>；维护机构与分工；维护申请报告内容；<strong>维护一般步骤（9 步）</strong>；维护档案记录；维护性能度量值；分析理解程序的工作与方法；修改计划与修改方法；修改要求；重新验证方法；<strong>3 类副作用</strong>；</li>
+<li>可维护性定义；<strong>7 个指标及定义</strong>；可移植性好的程序特点；可理解程序的主要特性；<strong>修改难度估算公式的含义</strong>；间接度量指标；</li>
+<li>
+<p>模块化优点；好的文档作用与意义；<strong>3 种历史文档</strong>；提高质量的技术与工具；<strong>3 种软件审查</strong>；最小验收标准；选择易维护语言；改进程序文档；<strong>各阶段提高可维护性的措施</strong>。</p>
+</li>
+<li>
+<p><strong>高频简答预测</strong></p>
+</li>
+<li>什么是软件维护？软件维护的原因有哪些？分哪几类？各类占比如何？</li>
+<li>影响维护工作量的因素有哪些？改正性、适应性、完善性维护各采取什么策略？</li>
+<li>什么是维护工作量模型 M = p + K·e^(c−d)？它说明了什么？</li>
+<li>软件维护期间修改程序有哪 3 个步骤？软件维护工作的一般步骤是什么？</li>
+<li>维护机构如何组织与分工？维护申请报告应包含哪些内容？</li>
+<li>分析理解程序必须完成哪些工作？可采用什么方法？</li>
+<li>程序修改计划包含哪些内容？修改程序应遵循哪些要求？如何重新验证程序？</li>
+<li>修改程序会产生哪 3 类副作用？各举例说明。</li>
+<li>什么是软件的可维护性？衡量可维护性的 7 个指标是什么？各如何定义（可靠性、可移植性等如何度量）？</li>
+<li>可理解的程序应具备哪些主要特性？可移植性好的程序有哪些特点？</li>
+<li>模块化有什么优点？好的文档有什么作用？3 种历史文档是什么？</li>
+<li>保证软件可维护性的 3 种软件审查是什么？验收检查的最小验收标准是什么？</li>
+<li>提高软件可维护性的技术和工具（方法）有哪些？</li>
+<li><strong>（综合）在软件开发的需求、设计、编码、测试、维护各阶段，如何考虑和采取提高软件可维护性的措施？</strong></li>
+</ul>
+</main>
+<footer>13005 软件工程 · 由 Markdown 生成，浏览器直接打开即可阅读</footer>
+</body>
+</html>

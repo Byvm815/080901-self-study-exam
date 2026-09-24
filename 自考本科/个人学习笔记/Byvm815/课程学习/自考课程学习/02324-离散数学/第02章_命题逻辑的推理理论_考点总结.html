@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 2 章 命题逻辑的推理理论 · 考点总结</title>
+<style>
+:root{--fg:#24292f;--muted:#57606a;--line:#d0d7de;--accent:#0969da;--code:#f6f8fa;--soft:#fafbfc}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--fg);
+  font:16px/1.78 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",sans-serif}
+main{max-width:980px;margin:0 auto;padding:26px 22px 72px}
+h1{font-size:1.75em;line-height:1.35;border-bottom:3px solid var(--accent);padding-bottom:.28em;margin:1.1em 0 .7em}
+h2{font-size:1.36em;line-height:1.4;border-bottom:1px solid var(--line);padding-bottom:.22em;margin:1.5em 0 .6em}
+h3{font-size:1.14em;margin:1.25em 0 .45em}
+h4{font-size:1.02em;margin:1.05em 0 .35em;color:var(--muted)}
+p{margin:.5em 0}
+ul,ol{margin:.45em 0;padding-left:1.5em}
+li{margin:.22em 0}
+li>ul,li>ol{margin:.15em 0}
+strong{color:#000}
+em{color:#000}
+code{background:var(--code);border-radius:4px;padding:.12em .34em;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:.92em}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;margin:.7em 0}
+pre code{background:none;padding:0;white-space:pre;font-size:.9em;line-height:1.5}
+table{border-collapse:collapse;width:100%;margin:.75em 0;font-size:.95em;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600}
+tbody tr:nth-child(even){background:var(--soft)}
+blockquote{margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:var(--code);color:var(--muted)}
+blockquote p{margin:.25em 0}
+hr{border:0;border-top:1px solid var(--line);margin:1.8em 0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.topnav{position:sticky;top:0;z-index:20;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+  padding:10px 22px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(180%) blur(6px);font-size:.9em}
+.topnav a{white-space:nowrap}
+.topnav .sep{color:var(--line)}
+.topnav .brand{font-weight:600;color:var(--fg);margin-right:6px}
+footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid var(--line);color:var(--muted);font-size:.86em}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:1em 0}
+.card{display:block;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--soft)}
+.card:hover{border-color:var(--accent)}
+.card b{display:block;margin-bottom:4px}
+.card span{color:var(--muted);font-size:.86em}
+.toc{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:1em 0}
+.toc ul{margin:.25em 0;padding-left:1.3em}
+.tip{border:1px dashed var(--accent);border-radius:10px;padding:10px 14px;background:#f6faff;margin:1em 0;font-size:.94em}
+@media (max-width:640px){main{padding:18px 14px 60px}h1{font-size:1.5em}}
+@media print{
+  body{font-size:11.5pt;line-height:1.6}
+  .topnav{display:none}
+  main{max-width:none;padding:0}
+  h1{page-break-before:always;border-bottom-width:2px}
+  body>main>h1:first-child,main>section:first-child>h1{page-break-before:avoid}
+  pre,table,blockquote,li{page-break-inside:avoid}
+  a{color:#000;text-decoration:none}
+  footer{display:none}
+}
+</style>
+</head>
+<body>
+<nav class="topnav"><span class="brand">02324 离散数学</span> <a href="index.html">目录</a> <span class="sep">|</span> <a href="第01章_命题与命题公式_考点总结.html">← 第 1 章 命题与命题公式 · 考点总结</a> <span class="sep">|</span> <a href="第03章_谓词逻辑_考点总结.html">第 3 章 谓词逻辑 · 考点总结 →</a></nav>
+<main>
+<h1 id="2">第 2 章 命题逻辑的推理理论 · 考点总结</h1>
+<blockquote>
+<p>课程：02324 离散数学（080901 自考）<br>
+<strong>课程内容</strong>：2.1 范式 ； 2.2 主范式 ； 2.3 自然推理系统<br>
+<strong>考核层次</strong>：范式 <strong>领会</strong> ； 主范式 <strong>简单应用</strong> ； 自然推理系统 <strong>简单应用</strong><br>
+<strong>重点</strong>：命题公式的<strong>主范式表示及其相互转换</strong>；使用 <strong>P 规则、T 规则及 CP 规则</strong>进行命题推理<br>
+<strong>难点</strong>：命题推理及其应用</p>
+</blockquote>
+<hr>
+<h2 id="_1">一、本章知识地图</h2>
+<ul>
+<li><strong>2.1 范式</strong>：核心内容：文字、简单合取式/简单析取式、<strong>析取范式/合取范式</strong>、范式的性质、求法；层次：领会</li>
+<li><strong>2.1 小项与大项</strong>：核心内容：<strong>小项（极小项）/大项（极大项）</strong> 的定义、编码、性质；成真/成假赋值与编码；层次：领会</li>
+<li><strong>2.2 主范式</strong>：核心内容：<strong>主析取范式/主合取范式</strong>的概念、性质（唯一性）、求法与<strong>相互转换</strong>；层次：<strong>简单应用</strong></li>
+<li>
+<p><strong>2.3 自然推理系统</strong>：核心内容：<strong>有效推理</strong>概念、<strong>P/T/CP 规则</strong>、真值表法与主范式法判定、形式证明书写；层次：<strong>简单应用</strong></p>
+</li>
+<li>
+<p><strong>本章主线</strong>：范式（化简与分类）→ <strong>主范式（唯一标准形式）</strong> → 用主范式或推理规则<strong>判定与证明推理的有效性</strong>。</p>
+</li>
+</ul>
+<hr>
+<h2 id="21">二、2.1 范式（领会）</h2>
+<h3 id="_2">（一）基本概念</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>定义</th>
+<th>例（变元 p, q, r）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>文字</strong></td>
+<td><strong>命题变元或其否定</strong></td>
+<td>p、¬p、q、¬q</td>
+</tr>
+<tr>
+<td><strong>简单合取式（基本积）</strong></td>
+<td>有限个<strong>文字</strong>的<strong>合取</strong></td>
+<td>p∧¬q∧r、¬p</td>
+</tr>
+<tr>
+<td><strong>简单析取式（基本和）</strong></td>
+<td>有限个<strong>文字</strong>的<strong>析取</strong></td>
+<td>p∨¬q∨r、¬p</td>
+</tr>
+<tr>
+<td><strong>析取范式（DNF）</strong></td>
+<td>有限个<strong>简单合取式</strong>的<strong>析取</strong>：A₁∨A₂∨…∨Aₙ</td>
+<td>(p∧¬q)∨(¬p∧r)</td>
+</tr>
+<tr>
+<td><strong>合取范式（CNF）</strong></td>
+<td>有限个<strong>简单析取式</strong>的<strong>合取</strong>：A₁∧A₂∧…∧Aₙ</td>
+<td>(p∨q)∧(¬p∨r)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注意：<strong>单个文字</strong>既可看作简单合取式，也可看作简单析取式；因此<strong>单个文字本身既是析取范式也是合取范式</strong>。</p>
+</blockquote>
+<h3 id="_3">（二）范式的性质（必考）</h3>
+<ul>
+<li>一个<strong>简单合取式是矛盾式</strong> ⟺ 它<strong>同时含某个命题变元及其否定</strong>（如 p∧¬q∧¬p）；</li>
+<li>一个<strong>简单析取式是重言式</strong> ⟺ 它<strong>同时含某个命题变元及其否定</strong>（如 p∨¬q∨¬p）；</li>
+<li>一个<strong>析取范式是矛盾式</strong> ⟺ 它的<strong>每个简单合取式都是矛盾式</strong>；</li>
+<li>一个<strong>合取范式是重言式</strong> ⟺ 它的<strong>每个简单析取式都是重言式</strong>；</li>
+<li><strong>范式的用途</strong>：① 判断公式类型；② 化简公式；③ 作为求主范式的中间步骤；</li>
+<li><strong>一个公式的析取范式（合取范式）不唯一</strong>（这正是需要"主范式"的原因）。</li>
+</ul>
+<h3 id="_4">（三）求范式的步骤（三步法，必考）</h3>
+<ul>
+<li><strong>① 消去 → 与 ↔</strong></li>
+<li>A→B ⇔ ¬A∨B；</li>
+<li>
+<p>A↔B ⇔ (A→B)∧(B→A)（或 (A∧B)∨(¬A∧¬B)，按其结果形式选择）。</p>
+</li>
+<li>
+<p><strong>② 把 ¬ 内移（德摩根律 + 双重否定律）</strong></p>
+</li>
+<li>¬(A∨B) ⇔ ¬A∧¬B；¬(A∧B) ⇔ ¬A∨¬B；¬¬A ⇔ A；</li>
+<li>
+<p>目标：使 <strong>¬ 只出现在命题变元之前</strong>（得到"文字"）。</p>
+</li>
+<li>
+<p><strong>③ 用分配律化为目标形式</strong></p>
+</li>
+<li><strong>求析取范式</strong>（积之和）：用 <strong>∧ 对 ∨ 的分配律</strong>：A∧(B∨C) ⇔ (A∧B)∨(A∧C)；</li>
+<li><strong>求合取范式</strong>（和之积）：用 <strong>∨ 对 ∧ 的分配律</strong>：A∨(B∧C) ⇔ (A∨B)∧(A∨C)；</li>
+<li>
+<p>最后<strong>合并相同项、消去重复</strong>。</p>
+</li>
+<li>
+<p><strong>例 1（求析取范式）</strong>：A = <strong>(p→q)→r</strong><br>
+= ¬(¬p∨q)∨r 　（消去 →）<br>
+= (p∧¬q)∨r 　（德摩根 + 双重否定）<br>
+→ 已经是<strong>析取范式</strong>：(p∧¬q)∨r（其中 r 是单文字的简单合取式）。</p>
+</li>
+<li>
+<p><strong>例 2（求合取范式）</strong>：B = <strong>(p∧q)→r</strong><br>
+= ¬(p∧q)∨r = (¬p∨¬q)∨r = <strong>¬p∨¬q∨r</strong>（既是合取范式，也是析取范式——单个简单析取式）。</p>
+</li>
+<li>
+<p><strong>例 3（求合取范式）</strong>：C = <strong>p∨(q∧r)</strong> 已是合取范式：<strong>(p∨q)∧(p∨r)</strong>？注意：p∨(q∧r) 本身也是析取范式（"简单合取式 q∧r" 与 "p" 的析取）；若要写成合取范式，用分配律：<strong>p∨(q∧r) ⇔ (p∨q)∧(p∨r)</strong> ✓</p>
+</li>
+</ul>
+<hr>
+<h2 id="21_1">三、2.1（续）小项与大项（领会，主范式的基础）</h2>
+<h3 id="_5">（一）定义</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>定义</th>
+<th>个数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>小项（极小项）</strong></td>
+<td>n 个命题变元的<strong>简单合取式</strong>，其中<strong>每个变元及其否定恰好出现一次</strong></td>
+<td><strong>2ⁿ</strong> 个</td>
+</tr>
+<tr>
+<td><strong>大项（极大项）</strong></td>
+<td>n 个命题变元的<strong>简单析取式</strong>，其中<strong>每个变元及其否定恰好出现一次</strong></td>
+<td><strong>2ⁿ</strong> 个</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_6">（二）编码规则（关键，易错！）</h3>
+<ul>
+<li><strong>统一步骤</strong>：把变元按<strong>字母顺序（或教材约定顺序）</strong> 排列，然后</li>
+<li><strong>小项 mᵢ</strong>：用 <strong>1 表示变元本身、0 表示其否定</strong>；得到的二进制串转成十进制即为下标 i；</li>
+<li>
+<p><strong>大项 Mᵢ</strong>：用 <strong>0 表示变元本身、1 表示其否定</strong>（与小项<strong>相反</strong>！）。</p>
+</li>
+<li>
+<p><strong>两变元的小项与大项（必背）</strong></p>
+</li>
+<li>
+<p><strong>00</strong>：成真/成假赋值：p=0, q=0；<strong>小项 mᵢ</strong>：<strong>m₀ = ¬p∧¬q</strong>；<strong>大项 Mᵢ</strong>：<strong>M₀ = p∨q</strong></p>
+</li>
+<li><strong>01</strong>：成真/成假赋值：p=0, q=1；<strong>小项 mᵢ</strong>：<strong>m₁ = ¬p∧q</strong>；<strong>大项 Mᵢ</strong>：<strong>M₁ = p∨¬q</strong></li>
+<li><strong>10</strong>：成真/成假赋值：p=1, q=0；<strong>小项 mᵢ</strong>：<strong>m₂ = p∧¬q</strong>；<strong>大项 Mᵢ</strong>：<strong>M₂ = ¬p∨q</strong></li>
+<li><strong>11</strong>：成真/成假赋值：p=1, q=1；<strong>小项 mᵢ</strong>：<strong>m₃ = p∧q</strong>；<strong>大项 Mᵢ</strong>：<strong>M₃ = ¬p∨¬q</strong></li>
+</ul>
+<blockquote>
+<p>记忆：<strong>小项"1 是变元本身"</strong>（m₃ = p∧q 对应 11）；<strong>大项"1 是否定"</strong>（M₃ = ¬p∨¬q 对应 11）。</p>
+</blockquote>
+<h3 id="_7">（三）性质（必考）</h3>
+<ul>
+<li><strong>小项的性质</strong></li>
+<li><strong>每个小项只有一个成真赋值</strong>（即其编码对应的赋值），其余 2ⁿ−1 个赋值下为假；</li>
+<li>任意<strong>两个不同小项的合取是矛盾式</strong>；</li>
+<li><strong>全体小项的析取是重言式</strong>；</li>
+<li>
+<p><strong>小项 mᵢ 的否定是大项 Mᵢ</strong>：<strong>¬mᵢ ⇔ Mᵢ</strong>（如 ¬m₂ = ¬(p∧¬q) = ¬p∨q = M₂ ✓）。</p>
+</li>
+<li>
+<p><strong>大项的性质</strong></p>
+</li>
+<li><strong>每个大项只有一个成假赋值</strong>（其编码对应的赋值），其余赋值下为真；</li>
+<li>任意<strong>两个不同大项的析取是重言式</strong>；</li>
+<li><strong>全体大项的合取是矛盾式</strong>；</li>
+<li>
+<p><strong>大项 Mᵢ 的否定是小项 mᵢ</strong>：<strong>¬Mᵢ ⇔ mᵢ</strong>。</p>
+</li>
+<li>
+<p><strong>由此得到重要结论</strong>：</p>
+</li>
+<li><strong>公式 A 的成真赋值 ⟷ 使对应小项为真的赋值</strong> ⇒ 可用成真赋值写出主析取范式；</li>
+<li><strong>公式 A 的成假赋值 ⟷ 使对应大项为假的赋值</strong> ⇒ 可用成假赋值写出主合取范式。</li>
+</ul>
+<hr>
+<h2 id="22">四、2.2 主范式（简单应用，本章第一个得分重点）</h2>
+<h3 id="_8">（一）定义</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>主析取范式</strong></td>
+<td>由<strong>小项的析取</strong>构成的析取范式（每个小项对应公式的<strong>一个成真赋值</strong>）</td>
+</tr>
+<tr>
+<td><strong>主合取范式</strong></td>
+<td>由<strong>大项的合取</strong>构成的合取范式（每个大项对应公式的<strong>一个成假赋值</strong>）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>唯一性定理</strong>：</li>
+<li><strong>任何非矛盾式</strong>都有<strong>唯一</strong>的主析取范式；</li>
+<li><strong>任何非重言式</strong>都有<strong>唯一</strong>的主合取范式；</li>
+<li><strong>矛盾式</strong>：主析取范式<strong>不存在</strong>（也可说"不含任何小项"），其主合取范式含<strong>全部</strong> 2ⁿ 个大项；</li>
+<li><strong>重言式</strong>：主合取范式<strong>不存在</strong>，其主析取范式含<strong>全部</strong> 2ⁿ 个小项。</li>
+</ul>
+<h3 id="_9">（二）求主范式的两种方法</h3>
+<ul>
+<li>
+<p><strong>方法 1：真值表法（最稳妥）</strong><br>
+① 列出公式的真值表（2ⁿ 行）；<br>
+② 取<strong>所有成真赋值</strong>对应的<strong>小项</strong>，用 <strong>∨</strong> 连接 ⇒ <strong>主析取范式</strong>；<br>
+③ 取<strong>所有成假赋值</strong>对应的<strong>大项</strong>，用 <strong>∧</strong> 连接 ⇒ <strong>主合取范式</strong>；<br>
+④ 可写成简写形式：<strong>∑m(…) 与 ∏M(…)</strong>。</p>
+</li>
+<li>
+<p><strong>例</strong>：A = <strong>p→q</strong>（两个变元，赋值 00、01、10、11）</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>p</th>
+<th>q</th>
+<th>A=p→q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td><strong>1</strong> ← 成真 → m₀</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td><strong>1</strong> ← 成真 → m₁</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td><strong>0</strong> ← 成假 → M₂</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td><strong>1</strong> ← 成真 → m₃</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>主析取范式</strong> = m₀∨m₁∨m₃ = <strong>(¬p∧¬q)∨(¬p∧q)∨(p∧q)</strong> = ∑m(0,1,3)</li>
+<li>
+<p><strong>主合取范式</strong> = M₂ = <strong>¬p∨q</strong> = ∏M(2)　（与 A ⇔ ¬p∨q 一致 ✓ 便于验算）</p>
+</li>
+<li>
+<p><strong>方法 2：等值演算法（先求范式再补全）</strong><br>
+① 先求<strong>析取范式或合取范式</strong>；<br>
+② 对缺变元的简单式<strong>补全变元</strong>：A ⇔ A∧(B∨¬B)（求主析取时）或 A ⇔ A∨(B∧¬B)（求主合取时）；<br>
+③ 用分配律展开，<strong>合并相同小项、删除重复小项</strong>；<br>
+④ 按编码写成 ∑m(…) 或 ∏M(…)。</p>
+</li>
+<li>
+<p><strong>例</strong>：求 A = <strong>(p∧q)∨(¬p∧r)</strong> 的主范式<br>
+真值表（p,q,r）：</p>
+</li>
+<li>
+<p><strong>000</strong>：p∧q：0；¬p∧r：0；A：0</p>
+</li>
+<li><strong>001</strong>：p∧q：0；¬p∧r：1；A：<strong>1</strong> (m₁)</li>
+<li><strong>010</strong>：p∧q：0；¬p∧r：0；A：0</li>
+<li><strong>011</strong>：p∧q：0；¬p∧r：1；A：<strong>1</strong> (m₃)</li>
+<li><strong>100</strong>：p∧q：0；¬p∧r：0；A：0</li>
+<li><strong>101</strong>：p∧q：0；¬p∧r：0；A：0</li>
+<li><strong>110</strong>：p∧q：1；¬p∧r：0；A：<strong>1</strong> (m₆)</li>
+<li>
+<p><strong>111</strong>：p∧q：1；¬p∧r：0；A：<strong>1</strong> (m₇)</p>
+</li>
+<li>
+<p><strong>主析取范式</strong> = m₁∨m₃∨m₆∨m₇ = ∑m(1,3,6,7)<br>
+= (¬p∧¬q∧r)∨(¬p∧q∧r)∨(p∧q∧¬r)∨(p∧q∧r)</p>
+</li>
+<li><strong>主合取范式</strong> = M₀∧M₂∧M₄∧M₅ = ∏M(0,2,4,5)<br>
+= (p∨q∨r)∧(p∨¬q∨r)∧(¬p∨q∨r)∧(¬p∨q∨¬r)</li>
+</ul>
+<h3 id="_10">（三）两种主范式的相互转换（必考，最省时）</h3>
+<ul>
+<li><strong>核心规律</strong>：<strong>小项与大项的下标互补</strong>——<br>
+若 2ⁿ 个小项下标全集的某公式<strong>主析取范式为 ∑m(S)</strong>（S 为成真赋值下标集合），则</li>
+<li>
+<p><strong>主合取范式为 ∏M(补集)</strong>，即 <strong>∏M(S̄)</strong>（S̄ 为 {0,1,…,2ⁿ−1} 中不属于 S 的下标）。<br>
+反之亦然。</p>
+</li>
+<li>
+<p><strong>例 1</strong>：A = p→q 的主析取为 ∑m(0,1,3) → 补集为 {2} → <strong>主合取 = ∏M(2) = M₂</strong> ✓</p>
+</li>
+<li>
+<p><strong>例 2</strong>：上例 A = (p∧q)∨(¬p∧r) 主析取 ∑m(1,3,6,7) → 补集 {0,2,4,5} → <strong>主合取 ∏M(0,2,4,5)</strong> ✓</p>
+</li>
+<li>
+<p><strong>由主范式看公式类型</strong>（快速判断）</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>主范式情况</th>
+<th>公式类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主析取含<strong>全部</strong> 2ⁿ 个小项</td>
+<td><strong>重言式</strong></td>
+</tr>
+<tr>
+<td>主合取含<strong>全部</strong> 2ⁿ 个大项</td>
+<td><strong>矛盾式</strong></td>
+</tr>
+<tr>
+<td>小项/大项均不完整</td>
+<td><strong>可满足式（非重言、非矛盾）</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="23">五、2.3 自然推理系统（简单应用，本章第二个得分重点）</h2>
+<h3 id="_11">（一）推理与有效推理</h3>
+<ul>
+<li><strong>1. 推理的形式</strong>：由前提 A₁, A₂, …, Aₙ 推出结论 B，其逻辑形式为</li>
+<li>
+<p><strong>A₁∧A₂∧…∧Aₙ → B</strong>（记作 A₁, A₂, …, Aₙ ⇒ B）。</p>
+</li>
+<li>
+<p><strong>2. 有效推理（推理正确）的定义</strong>：若 <strong>A₁∧A₂∧…∧Aₙ → B 是重言式</strong>，则称该推理<strong>有效（正确）</strong>，此时记 <strong>A₁, A₂, …, Aₙ ⇒ B</strong>。</p>
+</li>
+<li><strong>直观含义</strong>：<strong>只要前提全为真，结论必为真</strong>；</li>
+<li>
+<p>特别注意：<strong>推理有效 ≠ 结论真实</strong>（前提可能本身为假）；推理无效时，即使结论为真，推理也不正确。</p>
+</li>
+<li>
+<p><strong>3. 三种判定方法（考纲明确要求）</strong></p>
+</li>
+<li>
+<p><strong>真值表法</strong>：列出所有赋值，检查"<strong>前提全真的行中结论是否都为真</strong>"；或直接检查蕴涵式 A₁∧…∧Aₙ→B 是否恒真；适用：变元少（≤3 个）时直观</p>
+</li>
+<li><strong>主范式法</strong>：求<strong>前提合取</strong> A = A₁∧…∧Aₙ 的成真赋值集合 S_A 与<strong>结论</strong> B 的成真赋值集合 S_B；<strong>推理有效 ⟺ S_A ⊆ S_B</strong>（等价地：B 的主合取范式的大项集合 ⊆ A 的主合取范式的大项集合）；适用：变元较多、需要精确说明理由时</li>
+<li><strong>推理法（形式证明）</strong>：用 <strong>P/T/CP 规则</strong>从前提逐步推出结论；适用：<strong>考试主流</strong>，答案规范、按步给分</li>
+</ul>
+<h3 id="_12">（二）推理规则（必背）</h3>
+<ul>
+<li><strong>P 规则</strong>：名称：<strong>前提引入规则</strong>；含义/用法：推理过程中<strong>随时可以引入一个前提</strong></li>
+<li><strong>T 规则</strong>：名称：<strong>结论引用（重言蕴涵）规则</strong>；含义/用法：由已推出的公式（或前提），按<strong>重言蕴涵式/等值式</strong>推出新公式；可<strong>引用前面已证的结论</strong>；<strong>置换规则</strong>（用等值式替换子公式）属 T 规则</li>
+<li>
+<p><strong>CP 规则</strong>：名称：<strong>附加前提（条件证明）规则</strong>；含义/用法：若要证明 <strong>A→B</strong>：把 <strong>A 作为附加前提引入</strong>，推出 <strong>B</strong> 后即得 <strong>A→B</strong>（可使证明大幅简化）</p>
+</li>
+<li>
+<p><strong>T 规则常用的蕴涵式/等值式</strong>（第 1 章已背，这里作为推理规则使用）</p>
+</li>
+<li>假言推理：A∧(A→B) ⇒ B；</li>
+<li>拒取式：(A→B)∧¬B ⇒ ¬A；</li>
+<li>析取三段论：(A∨B)∧¬A ⇒ B；</li>
+<li>假言三段论：(A→B)∧(B→C) ⇒ A→C；</li>
+<li>化简：A∧B ⇒ A；附加：A ⇒ A∨B；合取引入：A, B ⇒ A∧B；</li>
+<li>构造性二难、破坏性二难；</li>
+<li>置换（等值替换）：A→B ⇔ ¬A∨B、德摩根律、分配律、双重否定、假言易位等。</li>
+</ul>
+<blockquote>
+<p>补充（【注意】 视教材）：<strong>归谬法（反证法）</strong>——为证 A₁,…,Aₙ ⇒ B，把 <strong>¬B</strong> 作为附加前提，若能推出矛盾（如 r∧¬r），则推理有效；亦可写为"由附加前提 ¬B 推出矛盾 ⇒ B"。</p>
+</blockquote>
+<h3 id="_13">（三）形式证明的书写格式（阅卷按步给分）</h3>
+<pre><code>序号    公式        依据
+①      A→B        P
+②      A           P
+③      B          T①② 假言推理
+……
+
+</code></pre>
+<blockquote>
+<p>写法要点：<strong>每行都要写"依据"</strong>（P 表示前提，T 表示由前面某几行 + 规则名推出，CP 表示附加前提/结论）；习惯上用<strong>真值表或主范式法</strong>验证结果。</p>
+</blockquote>
+<h3 id="_14">（四）典型证明题（必考题型）</h3>
+<ul>
+<li><strong>【例 1】前提 p→q, q→r, p；结论 r</strong></li>
+</ul>
+<pre><code>① p→q        P
+② q→r        P
+③ p          P
+④ q          T①③ 假言推理
+⑤ r          T②④ 假言推理
+
+</code></pre>
+<ul>
+<li>
+<p><strong>说明</strong>：也可用<strong>假言三段论</strong>由 ①② 得 p→r，再由 ③ 得 r。<strong>推理有效</strong>（这就是"假言三段论 + 假言推理"）。</p>
+</li>
+<li>
+<p><strong>【例 2】前提 (p∨q)→(r∧s), p；结论 r</strong></p>
+</li>
+</ul>
+<pre><code>① p              P
+② p∨q            T① 附加律
+③ (p∨q)→(r∧s)    P
+④ r∧s            T②③ 假言推理
+⑤ r              T④ 化简律
+
+</code></pre>
+<ul>
+<li><strong>【例 3】前提 ¬p∨q, ¬q∨r, p；结论 r</strong></li>
+</ul>
+<pre><code>① ¬p∨q      P
+② p          P
+③ q          T①② 析取三段论
+④ ¬q∨r      P
+⑤ r          T③④ 析取三段论
+
+</code></pre>
+<ul>
+<li><strong>【例 4；用 CP 规则】前提 p→q, q→r；结论 p→r</strong></li>
+</ul>
+<pre><code>① p→q        P
+② q→r        P
+③ p          CP（附加前提）
+④ q          T①③ 假言推理
+⑤ r          T②④ 假言推理
+⑥ p→r        CP（由 ③~⑤ 得条件结论）
+
+</code></pre>
+<ul>
+<li><strong>【例 5；构造性二难】前提 p→q, r→s, p∨r；结论 q∨s</strong></li>
+</ul>
+<pre><code>① p→q            P
+② r→s            P
+③ p∨r            P
+④ q∨s            T①②③ 构造性二难
+
+</code></pre>
+<ul>
+<li><strong>【例 6；先验证再证明（含等值替换）】前提 p→(q→r), p, q；结论 r</strong></li>
+</ul>
+<pre><code>① p→(q→r)       P
+② p              P
+③ q→r            T①② 假言推理
+④ q              P
+⑤ r              T③④ 假言推理
+
+</code></pre>
+<blockquote>
+<p>也可先用<strong>输出律</strong> p→(q→r) ⇔ (p∧q)→r 替换后推理。</p>
+</blockquote>
+<h3 id="_15">（五）真值表法 / 主范式法判定例题</h3>
+<ul>
+<li>
+<p><strong>【例 7；真值表法判断有效性】</strong> 前提 p→q, q；结论 p（"<strong>肯定后件</strong>"的谬误）</p>
+</li>
+<li>
+<p><strong>0</strong>：q：0；p→q：1；前提全真？：q=0，不符</p>
+</li>
+<li><strong>0</strong>：q：1；p→q：1；前提全真？：<strong>前提全真，而 p = 0</strong></li>
+<li><strong>1</strong>：q：0；p→q：0；前提全真？：p→q=0，不符</li>
+<li><strong>1</strong>：q：1；p→q：1；前提全真？：前提全真，p = 1 ✓</li>
+</ul>
+<p>→ 存在前提全真而结论假的赋值（p=0,q=1）⇒ <strong>推理无效</strong>。</p>
+<ul>
+<li><strong>【例 8；主范式法】</strong> 判定：前提 p∨q, ¬p∨r；结论 q∨r（<strong>归结</strong>形式）</li>
+<li>前提合取 A = (p∨q)∧(¬p∨r)，其成真赋值：010、011、101、111 ⇒ S_A = {2,3,5,7}；</li>
+<li>结论 B = q∨r，成真赋值：001、010、011、101、110、111 ⇒ S_B = {1,2,3,5,6,7}；</li>
+<li>
+<p>因 <strong>S_A ⊆ S_B</strong> ⇒ <strong>推理有效</strong>。<br>
+（另：前提的<strong>主合取范式</strong> ∏M(0,1,4,6)，结论的主合取范式 ∏M(0,4)，后者是前者的子集，也说明有效。）</p>
+</li>
+<li>
+<p><strong>两种常见谬误（务必区分）</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>谬误</th>
+<th>形式</th>
+<th>反例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>肯定后件</strong></td>
+<td>p→q, q ⇒ p</td>
+<td>p=0, q=1</td>
+</tr>
+<tr>
+<td><strong>否定前件</strong></td>
+<td>p→q, ¬p ⇒ ¬q</td>
+<td>p=0, q=1</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>正确的推理形式（对照记忆）</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>正确</th>
+<th>形式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>假言推理</td>
+<td>p→q, p ⇒ q</td>
+</tr>
+<tr>
+<td>拒取式</td>
+<td>p→q, ¬q ⇒ ¬p</td>
+</tr>
+<tr>
+<td>析取三段论</td>
+<td>p∨q, ¬p ⇒ q</td>
+</tr>
+<tr>
+<td>假言三段论</td>
+<td>p→q, q→r ⇒ p→r</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="_16">六、本章对比与易混点</h2>
+<table>
+<thead>
+<tr>
+<th>易混点</th>
+<th>正确理解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>析取范式 vs 合取范式</strong></td>
+<td>析取范式＝<strong>积之和</strong>（简单合取式的析取）；合取范式＝<strong>和之积</strong>（简单析取式的合取）</td>
+</tr>
+<tr>
+<td>范式是否唯一</td>
+<td><strong>范式不唯一</strong>；<strong>主范式唯一</strong>（非矛盾式有唯一主析取，非重言式有唯一主合取）</td>
+</tr>
+<tr>
+<td><strong>小项 vs 大项编码</strong></td>
+<td>小项：<strong>1＝变元本身</strong>；大项：<strong>1＝变元的否定</strong>（两者相反，最易错！）</td>
+</tr>
+<tr>
+<td>小项与大项的关系</td>
+<td><strong>¬mᵢ ⇔ Mᵢ</strong>，<strong>¬Mᵢ ⇔ mᵢ</strong>（互为否定）</td>
+</tr>
+<tr>
+<td>小项的作用 vs 大项的作用</td>
+<td>小项对应<strong>成真赋值</strong>（写主析取）；大项对应<strong>成假赋值</strong>（写主合取）</td>
+</tr>
+<tr>
+<td>主析取/主合取的下标关系</td>
+<td><strong>互补</strong>：∑m(S) ↔ ∏M(S̄)</td>
+</tr>
+<tr>
+<td>矛盾式 / 重言式的主范式</td>
+<td>矛盾式<strong>无</strong>主析取（主合取含全部 2ⁿ 个大项）；重言式<strong>无</strong>主合取（主析取含全部小项）</td>
+</tr>
+<tr>
+<td>简单合取式 vs 简单析取式的"永假/永真"</td>
+<td><strong>简单合取式永假</strong> ⟺ 同时含 p 与 ¬p；<strong>简单析取式永真</strong> ⟺ 同时含 p 与 ¬p</td>
+</tr>
+<tr>
+<td><strong>推理有效 vs 结论真</strong></td>
+<td>推理有效指<strong>前提真则结论必真</strong>；结论真不代表推理有效；前提假时推理可能"有效"</td>
+</tr>
+<tr>
+<td>⇒ 与 →</td>
+<td><strong>⇒</strong> 是推理关系（元语言）；<strong>→</strong> 是联结词（公式内部）</td>
+</tr>
+<tr>
+<td><strong>CP 规则</strong></td>
+<td>为证 A→B，把 <strong>A</strong>（前件）作为<strong>附加前提</strong>引入，推出 B</td>
+</tr>
+<tr>
+<td>肯定后件 / 否定前件</td>
+<td>都是<strong>无效</strong>推理；正确形式是假言推理与拒取式</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="_17">七、必背清单 + 简答预测 + 计算模板</h2>
+<h3 id="_18">（一）必背清单</h3>
+<ul>
+<li>文字的、简单合取式/简单析取式、<strong>析取范式/合取范式</strong>的定义与三条性质；</li>
+<li><strong>求范式的三步法</strong>（消 →、↔ → 德摩根内移 → 分配律展开）；</li>
+<li><strong>小项/大项</strong>的定义、<strong>编码规则（1 的含义相反）</strong>、各自的三条性质、<strong>¬mᵢ ⇔ Mᵢ</strong>；</li>
+<li><strong>主析取范式/主合取范式</strong>的定义、<strong>唯一性</strong>、<strong>由真值表/由范式补全</strong>两种求法；</li>
+<li><strong>两种主范式的相互转换（下标互补）</strong>；由主范式判断公式类型；</li>
+<li><strong>有效推理的定义</strong>（A₁∧…∧Aₙ→B 是重言式）；</li>
+<li><strong>三种判定方法</strong>：真值表法、主范式法（成真赋值集合的包含关系）、推理法；</li>
+<li><strong>P 规则、T 规则、CP 规则</strong>的含义与书写格式；常用的假言推理、拒取式、析取三段论、假言三段论、构造性二难、化简、附加、合取引入；</li>
+<li>两种常见谬误（肯定后件、否定前件）；</li>
+<li><strong>形式证明的标准书写</strong>（序号、公式、依据）。</li>
+</ul>
+<h3 id="_19">（二）高频简答 / 判断题预测</h3>
+<ul>
+<li>什么是文字、简单合取式、简单析取式？什么是析取范式、合取范式？</li>
+<li>简单合取式在什么情况下是矛盾式？简单析取式在什么情况下是重言式？</li>
+<li>析取范式是矛盾式的条件是什么？合取范式是重言式的条件是什么？</li>
+<li>如何求一个公式的析取范式（合取范式）？步骤是什么？</li>
+<li>什么是小项与大项？各有多少个？编码规则有何不同？</li>
+<li>小项和大项各有哪些性质？它们的否定关系如何？</li>
+<li>什么是主析取范式与主合取范式？为什么它们是唯一的？</li>
+<li>如何由真值表（或由范式）求主析取范式和主合取范式？</li>
+<li>已知主析取范式为 ∑m(1,3,5,7)，求主合取范式。</li>
+<li>如何由主范式判断公式是重言式、矛盾式还是可满足式？</li>
+<li>什么是有效推理？如何判定一个推理是否有效（三种方法）？</li>
+<li>P 规则、T 规则、CP 规则各是什么？各在什么情况下使用？</li>
+<li>写出假言推理、拒取式、析取三段论、假言三段论、构造性二难的形式。</li>
+<li>什么是"肯定后件""否定前件"的谬误？为什么它们无效？</li>
+<li>推理有效与结论真实有何区别与联系？</li>
+</ul>
+<h3 id="_20">（三）计算 / 证明题模板</h3>
+<ul>
+<li><strong>求范式</strong>：消去 →、↔ → 德摩根内移 → 按目标用分配律展开 → 合并重复。</li>
+<li><strong>求主范式（真值表法，最稳）</strong>：列 2ⁿ 行真值表 → 成真赋值写小项（∨）→ 成假赋值写大项（∧）→ 写成 ∑m / ∏M。</li>
+<li><strong>主范式互转</strong>：写下标补集（2ⁿ 个下标对半分）。</li>
+<li><strong>判定推理有效性（真值表法）</strong>：找"前提全真"的行 → 看结论是否都真。</li>
+<li><strong>判定推理有效性（主范式法）</strong>：求前提合取的成真赋值集合 S_A 与结论的成真赋值集合 S_B → <strong>S_A ⊆ S_B 即有效</strong>。</li>
+<li><strong>形式证明</strong>：① 先看结论形状——<strong>是条件式 A→B 就用 CP 规则</strong>（附加前提 A）；② 否则从头推：<strong>能用假言推理就用</strong>，其次用析取三段论/拒取式化简；③ 每行写明依据；④ 全部列出后核对结论。</li>
+<li><strong>反例法否定推理</strong>：找出一个使<strong>前提全真而结论假</strong>的赋值，即可证明推理无效（如肯定后件取 p=0,q=1）。</li>
+</ul>
+</main>
+<footer>02324 离散数学 · 由 Markdown 生成，浏览器直接打开即可阅读</footer>
+</body>
+</html>

@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 3 章 谓词逻辑 · 考点总结</title>
+<style>
+:root{--fg:#24292f;--muted:#57606a;--line:#d0d7de;--accent:#0969da;--code:#f6f8fa;--soft:#fafbfc}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--fg);
+  font:16px/1.78 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",sans-serif}
+main{max-width:980px;margin:0 auto;padding:26px 22px 72px}
+h1{font-size:1.75em;line-height:1.35;border-bottom:3px solid var(--accent);padding-bottom:.28em;margin:1.1em 0 .7em}
+h2{font-size:1.36em;line-height:1.4;border-bottom:1px solid var(--line);padding-bottom:.22em;margin:1.5em 0 .6em}
+h3{font-size:1.14em;margin:1.25em 0 .45em}
+h4{font-size:1.02em;margin:1.05em 0 .35em;color:var(--muted)}
+p{margin:.5em 0}
+ul,ol{margin:.45em 0;padding-left:1.5em}
+li{margin:.22em 0}
+li>ul,li>ol{margin:.15em 0}
+strong{color:#000}
+em{color:#000}
+code{background:var(--code);border-radius:4px;padding:.12em .34em;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:.92em}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;margin:.7em 0}
+pre code{background:none;padding:0;white-space:pre;font-size:.9em;line-height:1.5}
+table{border-collapse:collapse;width:100%;margin:.75em 0;font-size:.95em;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600}
+tbody tr:nth-child(even){background:var(--soft)}
+blockquote{margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:var(--code);color:var(--muted)}
+blockquote p{margin:.25em 0}
+hr{border:0;border-top:1px solid var(--line);margin:1.8em 0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.topnav{position:sticky;top:0;z-index:20;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+  padding:10px 22px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(180%) blur(6px);font-size:.9em}
+.topnav a{white-space:nowrap}
+.topnav .sep{color:var(--line)}
+.topnav .brand{font-weight:600;color:var(--fg);margin-right:6px}
+footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid var(--line);color:var(--muted);font-size:.86em}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:1em 0}
+.card{display:block;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--soft)}
+.card:hover{border-color:var(--accent)}
+.card b{display:block;margin-bottom:4px}
+.card span{color:var(--muted);font-size:.86em}
+.toc{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:1em 0}
+.toc ul{margin:.25em 0;padding-left:1.3em}
+.tip{border:1px dashed var(--accent);border-radius:10px;padding:10px 14px;background:#f6faff;margin:1em 0;font-size:.94em}
+@media (max-width:640px){main{padding:18px 14px 60px}h1{font-size:1.5em}}
+@media print{
+  body{font-size:11.5pt;line-height:1.6}
+  .topnav{display:none}
+  main{max-width:none;padding:0}
+  h1{page-break-before:always;border-bottom-width:2px}
+  body>main>h1:first-child,main>section:first-child>h1{page-break-before:avoid}
+  pre,table,blockquote,li{page-break-inside:avoid}
+  a{color:#000;text-decoration:none}
+  footer{display:none}
+}
+</style>
+</head>
+<body>
+<nav class="topnav"><span class="brand">02324 离散数学</span> <a href="index.html">目录</a> <span class="sep">|</span> <a href="第02章_命题逻辑的推理理论_考点总结.html">← 第 2 章 命题逻辑的推理理论 · 考点总结</a> <span class="sep">|</span> <a href="第04章_集合_考点总结.html">第 4 章 集合 · 考点总结 →</a></nav>
+<main>
+<h1 id="3">第 3 章 谓词逻辑 · 考点总结</h1>
+<blockquote>
+<p>课程：02324 离散数学（080901 自考）<br>
+<strong>课程内容</strong>：3.1 谓词的概念与表示 ； 3.2 量词与合式公式 ； 3.3 谓词演算的等价式与蕴涵式 ； 3.4 前束范式 ； 3.5 谓词演算的推理理论<br>
+<strong>考核层次</strong>：3.1 <strong>领会</strong> ； 3.2 <strong>识记</strong> ； 3.3 <strong>领会</strong> ； 3.4 <strong>简单应用</strong> ； 3.5 <strong>简单应用</strong><br>
+<strong>重点</strong>：用谓词及量词表示命题并确定量词的辖域；把带量词公式变换为等价的<strong>前束范式</strong>；进行正确的<strong>谓词演算推理</strong><br>
+<strong>难点</strong>：带量词公式变换为前束范式；谓词演算推理</p>
+</blockquote>
+<hr>
+<h2 id="_1">一、本章知识地图</h2>
+<ul>
+<li><strong>3.1 谓词的概念与表示</strong>：核心内容：个体词、谓词、命题函数、用谓词表示命题；层次：领会</li>
+<li><strong>3.2 量词与合式公式</strong>：核心内容：<strong>∀/∃</strong>、合式公式、<strong>指导变元与辖域</strong>、<strong>自由出现/约束出现</strong>、<strong>改名规则与代入规则</strong>、命题符号化；层次：<strong>识记</strong></li>
+<li><strong>3.3 等价式与蕴涵式</strong>：核心内容：赋值（解释）、<strong>量词否定、辖域扩张收缩、量词分配</strong>等值式、单向蕴涵式；层次：领会</li>
+<li><strong>3.4 前束范式</strong>：核心内容：定义、<strong>求法五步</strong>（消→、内移¬、换名、前移量词）；层次：<strong>简单应用</strong></li>
+<li><strong>3.5 推理理论</strong>：核心内容：<strong>US、ES、UG、EG</strong> 四规则 + P/T/CP、典型证明；层次：<strong>简单应用</strong></li>
+</ul>
+<hr>
+<h2 id="31">二、3.1 谓词的概念与表示（领会）</h2>
+<h3 id="_2">（一）基本概念</h3>
+<ul>
+<li><strong>个体词（个体）</strong>：所研究对象中<strong>可独立存在的对象</strong>（具体或抽象的实体）；表示：<strong>个体常元</strong> a, b, c（具体对象）；<strong>个体变元</strong> x, y, z（取值于<strong>个体域 D</strong>，又称论域）</li>
+<li><strong>谓词</strong>：刻画<strong>个体性质</strong>或<strong>个体之间关系</strong>的词；表示：<strong>一元谓词</strong> P(x)（性质）；<strong>n 元谓词</strong> P(x₁,…,xₙ)（关系）；谓词常元/谓词变元</li>
+<li><strong>命题函数</strong>：含<strong>个体变元</strong>的谓词表达式 P(x)；表示：本身<strong>不是命题</strong>（赋值后才成为命题）</li>
+<li><strong>0 元谓词</strong>：不含个体词的谓词；表示：即<strong>命题</strong>（如 P）</li>
+</ul>
+<h3 id="_3">（二）用谓词表示命题（领会，必练）</h3>
+<ul>
+<li><strong>方法</strong>：① 确定个体域 D；② 设个体常元表示具体对象；③ 设谓词表示性质/关系；④ 写成谓词表达式。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>命题</th>
+<th>符号化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>张三是大学生</td>
+<td>设 S(x)：x 是大学生，a：张三 → <strong>S(a)</strong></td>
+</tr>
+<tr>
+<td>3 &gt; 2</td>
+<td>设 G(x, y)：x &gt; y → <strong>G(3, 2)</strong></td>
+</tr>
+<tr>
+<td>李四与王五同岁</td>
+<td>设 E(x, y)：x 与 y 同岁 → <strong>E(l, w)</strong></td>
+</tr>
+<tr>
+<td>北京是中国的首都</td>
+<td>设 C(x, y)：x 是 y 的首都 → <strong>C(b, c)</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>要点</strong>：</li>
+<li><strong>个体域不同，符号化写法不同</strong>（如"所有人都会死"在个体域"人类"下写 ∀xD(x)，在个体域"全体事物"下写 ∀x(M(x)→D(x))）；</li>
+<li>谓词本身<strong>不含真假</strong>，只有<strong>赋值</strong>（指定个体域、个体、谓词）后才成为有真假的命题。</li>
+</ul>
+<hr>
+<h2 id="32">三、3.2 量词与合式公式（识记，本章得分重点之一）</h2>
+<h3 id="_4">（一）量词</h3>
+<ul>
+<li><strong>全称量词</strong>：记号：<strong>∀x</strong>；读法："对所有 x""任意的 x"；个体域中<strong>所有</strong>个体都具有该性质</li>
+<li>
+<p><strong>存在量词</strong>：记号：<strong>∃x</strong>；读法："存在 x""至少有一个 x"；个体域中<strong>至少有一个</strong>个体具有该性质</p>
+</li>
+<li>
+<p><strong>量词与有限个体域的关系（理解的关键）</strong>：若个体域有限 D = {a₁, a₂, …, aₙ}，则</p>
+</li>
+<li><strong>∀xP(x) ⇔ P(a₁)∧P(a₂)∧…∧P(aₙ)</strong>（全称量词是<strong>合取</strong>的推广）</li>
+<li><strong>∃xP(x) ⇔ P(a₁)∨P(a₂)∨…∨P(aₙ)</strong>（存在量词是<strong>析取</strong>的推广）<blockquote>
+<p>这一对应关系解释了符号化中"<strong>全称配蕴涵、存在配合取</strong>"的口诀。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="_5">（二）合式公式（谓词公式）的递归定义</h3>
+<p>① <strong>原子公式</strong>：n 元谓词 P(x₁,…,xₙ)（含 0 元谓词即命题）是合式公式；<br>
+② 若 A 是合式公式，则 <strong>¬A</strong> 是；<br>
+③ 若 A、B 是，则 <strong>(A∧B)、(A∨B)、(A→B)、(A↔B)</strong> 是；<br>
+④ 若 A 是合式公式，x 是<strong>个体变元</strong>，则 <strong>∀xA、∃xA</strong> 是；<br>
+⑤ 只有<strong>有限次</strong>应用上述规则得到的符号串才是合式公式。</p>
+<h3 id="_6">（三）指导变元与辖域</h3>
+<ul>
+<li><strong>指导变元（作用变元）</strong>：量词后面紧跟的那个个体变元（∀x、∃y 中的 x、y）；</li>
+<li>
+<p><strong>辖域（作用域）</strong>：量词<strong>所约束的范围</strong>——若量词后紧跟括号则括号内为其辖域，否则为<strong>紧跟其后的最小子公式</strong>。</p>
+</li>
+<li>
+<p><strong>例</strong>：</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>公式</th>
+<th>指导变元</th>
+<th>辖域</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>∀x(P(x)→Q(x))</td>
+<td>x</td>
+<td>(P(x)→Q(x))</td>
+</tr>
+<tr>
+<td>∃x(P(x)∧Q(y))</td>
+<td>x</td>
+<td>(P(x)∧Q(y))</td>
+</tr>
+<tr>
+<td><strong>∀xP(x)∧Q(x)</strong></td>
+<td>x</td>
+<td><strong>只有 P(x)</strong>（最后一个 Q(x) 中的 x 不受约束）</td>
+</tr>
+<tr>
+<td>∀x(P(x)→∃yQ(x,y))</td>
+<td>x；y</td>
+<td>(P(x)→∃yQ(x,y))；(Q(x,y))</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_7">（四）自由出现与约束出现</h3>
+<ul>
+<li><strong>约束出现（约束变元）</strong>：变元出现在<strong>相应量词的辖域内</strong>且该量词的指导变元正是它；</li>
+<li><strong>自由出现（自由变元）</strong>：变元<strong>不在</strong>任何以它为指导变元的量词辖域内。</li>
+<li><strong>闭式（封闭公式）</strong>：<strong>不含自由变元</strong>的公式（一定是命题）；含自由变元的称<strong>开式</strong>。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>公式</th>
+<th>约束出现</th>
+<th>自由出现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>∀x(P(x)∧Q(x))</td>
+<td>x</td>
+<td>无（闭式）</td>
+</tr>
+<tr>
+<td>∀xP(x)→Q(x)</td>
+<td>前面的 x</td>
+<td>后面的 x</td>
+</tr>
+<tr>
+<td>∀x(P(x)→Q(y))</td>
+<td>x</td>
+<td>y</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>记忆技巧</strong>：<strong>"看量词的指导变元是否罩住它"</strong>——被罩住是约束，没被罩住是自由。</li>
+</ul>
+<h3 id="_8">（五）两个改写规则（必考）</h3>
+<ul>
+<li><strong>1. 约束变元改名规则（换名规则）</strong><br>
+改变量词的<strong>指导变元</strong>及其<strong>辖域中相应</strong>的变元名称（<strong>只改约束出现，不改自由出现</strong>）。</li>
+<li>
+<p><strong>限制</strong>：新名称<strong>不能与该量词辖域内已有的变元重名</strong>（否则改变公式含义）。<br>
+例：∀x(P(x)→Q(x,y)) 可改名为 <strong>∀z(P(z)→Q(z,y))</strong>（y 是自由的，不改）。</p>
+</li>
+<li>
+<p><strong>2. 自由变元代入规则（代入规则）</strong><br>
+对公式中<strong>自由出现的个体变元</strong>，可用某个个体词（<strong>个体常元 or 自由个体变元</strong>）<strong>同时</strong>代入其<strong>所有自由出现</strong>。</p>
+</li>
+<li><strong>限制</strong>：代入后的变元<strong>不能被公式中的量词约束</strong>（否则要改名）。<br>
+例：A(x) = P(x)∨Q(y) 中把自由变元 y 代入常元 a → <strong>P(x)∨Q(a)</strong>。</li>
+</ul>
+<h3 id="_9">（六）命题的符号化（<strong>最常考</strong>，务必熟练）</h3>
+<table>
+<thead>
+<tr>
+<th>自然语言</th>
+<th>符号化（个体域为全域）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>所有的 A 都是 B</strong></td>
+<td><strong>∀x(A(x)→B(x))</strong></td>
+</tr>
+<tr>
+<td><strong>有的 A 是 B</strong></td>
+<td><strong>∃x(A(x)∧B(x))</strong></td>
+</tr>
+<tr>
+<td>所有的 A 都不是 B</td>
+<td>∀x(A(x)→¬B(x)) 或 ¬∃x(A(x)∧B(x))</td>
+</tr>
+<tr>
+<td>有的 A 不是 B</td>
+<td>∃x(A(x)∧¬B(x))</td>
+</tr>
+<tr>
+<td>并非所有的 A 都是 B</td>
+<td>¬∀x(A(x)→B(x)) ⇔ <strong>∃x(A(x)∧¬B(x))</strong></td>
+</tr>
+<tr>
+<td>有的 x 使 P 成立</td>
+<td>∃xP(x)</td>
+</tr>
+<tr>
+<td>不存在使 P 成立的 x</td>
+<td>¬∃xP(x) ⇔ ∀x¬P(x)</td>
+</tr>
+<tr>
+<td>每个人都有父母</td>
+<td>∀x∃y(父母(x,y))</td>
+</tr>
+<tr>
+<td>有一个数小于所有正数</td>
+<td>∃y∀x(正数(x)→小于(y,x))</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>两个致命易错（必记）</strong>：</li>
+<li><strong>全称量词配蕴涵</strong>：∀x(A(x)→B(x))（<strong>不能写成</strong> ∀x(A(x)∧B(x))，那样成了"所有个体都是 A 且都是 B"）</li>
+<li>
+<p><strong>存在量词配合取</strong>：∃x(A(x)∧B(x))（<strong>不能写成</strong> ∃x(A(x)→B(x))，那样"不是 A 的个体"也使之成立，语义过弱）</p>
+</li>
+<li>
+<p><strong>多重量词的顺序不能随意交换</strong>（以 L(x,y)：x 爱 y 为例）</p>
+</li>
+<li><strong>∀x∃yL(x,y)</strong>：每个人都爱某个人（可以是不同的人）；</li>
+<li><strong>∃y∀xL(x,y)</strong>：存在一个人，被所有人爱（同一个人）；</li>
+<li>二者<strong>不等值</strong>，但 <strong>∃y∀xL(x,y) ⇒ ∀x∃yL(x,y)</strong>（单向）。<br>
+（同种量词可交换：∀x∀y ⇔ ∀y∀x，∃x∃y ⇔ ∃y∃x）</li>
+</ul>
+<hr>
+<h2 id="33">四、3.3 谓词演算的等价式与蕴涵式（领会）</h2>
+<h3 id="_10">（一）赋值（解释）</h3>
+<ul>
+<li>
+<p><strong>谓词公式的赋值（解释）</strong>包括四部分：<br>
+① 指定<strong>个体域 D</strong>；② 对<strong>个体常元</strong>指派 D 中的元素；③ 对<strong>自由个体变元</strong>指派 D 中的元素；④ 对<strong>谓词（及命题变元）</strong> 作出解释。</p>
+<blockquote>
+<p>赋值后公式成为<strong>命题</strong>，可判真假；若公式<strong>闭式</strong>，其真假只取决于个体域与谓词的解释。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>谓词公式的分类（相对命题公式的推广）</strong></p>
+</li>
+<li><strong>永真式（有效公式）</strong>：在<strong>任何解释</strong>下都为真；</li>
+<li><strong>矛盾式（不可满足式）</strong>：在任何解释下都为假；</li>
+<li><strong>可满足式</strong>：存在一个解释使其为真。</li>
+</ul>
+<h3 id="_11">（二）常用等值式（必背）</h3>
+<ul>
+<li><strong>1. 量词否定等值式（最常考）</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>公式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>¬∀xP(x) ⇔ ∃x¬P(x)</strong></td>
+<td>"并非所有"＝"存在不"</td>
+</tr>
+<tr>
+<td><strong>¬∃xP(x) ⇔ ∀x¬P(x)</strong></td>
+<td>"不存在"＝"所有都不"</td>
+</tr>
+<tr>
+<td>¬∀x¬P(x) ⇔ ∃xP(x)</td>
+<td>常用变形</td>
+</tr>
+<tr>
+<td>¬∃x¬P(x) ⇔ ∀xP(x)</td>
+<td>常用变形</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>2. 量词辖域的扩张与收缩等值式</strong>（B 中<strong>不含</strong>变元 x）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>等值式</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>∀x(A(x)∧B) ⇔ ∀xA(x)∧B</td>
+<td>合取可直接扩缩</td>
+</tr>
+<tr>
+<td>∀x(A(x)∨B) ⇔ ∀xA(x)∨B</td>
+<td>析取可直接扩缩</td>
+</tr>
+<tr>
+<td>∃x(A(x)∧B) ⇔ ∃xA(x)∧B</td>
+<td>合取可直接扩缩</td>
+</tr>
+<tr>
+<td>∃x(A(x)∨B) ⇔ ∃xA(x)∨B</td>
+<td>析取可直接扩缩</td>
+</tr>
+<tr>
+<td>∀x(A→B(x)) ⇔ A→∀xB(x)</td>
+<td>蕴涵前件<strong>不含</strong> x</td>
+</tr>
+<tr>
+<td>∃x(A→B(x)) ⇔ A→∃xB(x)</td>
+<td>蕴涵前件<strong>不含</strong> x</td>
+</tr>
+<tr>
+<td><strong>∀x(B(x)→A) ⇔ ∃xB(x)→A</strong></td>
+<td>蕴涵后件不含 x（<strong>注意变成 ∃</strong>）</td>
+</tr>
+<tr>
+<td><strong>∃x(B(x)→A) ⇔ ∀xB(x)→A</strong></td>
+<td>蕴涵后件不含 x（<strong>注意变成 ∀</strong>）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>3. 量词分配等值式（只有两条！）</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>成立</th>
+<th>不成立（只有单向蕴涵）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>∀x(A(x)∧B(x)) ⇔ ∀xA(x)∧∀xB(x)</strong></td>
+<td>∀x(A(x)∨B(x)) <strong>⇐</strong> ∀xA(x)∨∀xB(x)（反向不成立）</td>
+</tr>
+<tr>
+<td><strong>∃x(A(x)∨B(x)) ⇔ ∃xA(x)∨∃xB(x)</strong></td>
+<td>∃x(A(x)∧B(x)) <strong>⇒</strong> ∃xA(x)∧∃xB(x)（反向不成立）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>4. 同种量词可交换</strong>：∀x∀yP(x,y) ⇔ ∀y∀xP(x,y)；∃x∃y ⇔ ∃y∃x（<strong>异种量词不可交换</strong>）</p>
+</li>
+<li>
+<p><strong>5. 命题逻辑等值式的推广</strong>：第 1 章的等值式（德摩根、分配律、吸收律、蕴涵等值式等）<strong>对谓词公式的子公式同样适用</strong>（作为整体替换）。</p>
+</li>
+</ul>
+<h3 id="_12">（三）常用蕴涵式（单向，必背）</h3>
+<table>
+<thead>
+<tr>
+<th>蕴涵式</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>∀xP(x) ⇒ ∃xP(x)</strong></td>
+<td>个体域非空时，"所有"推出"存在"</td>
+</tr>
+<tr>
+<td>∀xP(x)∨∀xQ(x) ⇒ ∀x(P(x)∨Q(x))</td>
+<td>全称对析取只有单向</td>
+</tr>
+<tr>
+<td>∃x(P(x)∧Q(x)) ⇒ ∃xP(x)∧∃xQ(x)</td>
+<td>存在对合取只有单向</td>
+</tr>
+<tr>
+<td>∀x(A(x)→B(x)) ⇒ ∀xA(x)→∀xB(x)</td>
+<td>全称蕴涵推出蕴涵的全称</td>
+</tr>
+<tr>
+<td>∀x(A(x)→B(x)) ⇒ ∃xA(x)→∃xB(x)</td>
+<td>全称蕴涵推出存在的蕴涵</td>
+</tr>
+<tr>
+<td><strong>∃y∀xP(x,y) ⇒ ∀x∃yP(x,y)</strong></td>
+<td>量词顺序（强的推弱的）</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="34">五、3.4 前束范式（简单应用）</h2>
+<h3 id="_13">（一）定义</h3>
+<ul>
+<li><strong>前束范式</strong>：形如 <strong>Q₁x₁Q₂x₂…QₖxₖM</strong> 的公式，其中 Qᵢ ∈ {∀, ∃}，<strong>所有量词都在公式最前面</strong>（辖域延伸到整个公式），M 称为<strong>母式（矩阵）</strong>，<strong>不含任何量词</strong>。<blockquote>
+<p>例：∀x∃y(P(x)∧Q(y)) 是前束范式；¬∃xP(x)∨Q(x) 不是（¬ 与 ∃ 混在一起、量词未前置）。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="_14">（二）求前束范式的步骤（必考，五步法）</h3>
+<ul>
+<li><strong>① 消去 → 与 ↔</strong>：用 A→B ⇔ ¬A∨B、A↔B ⇔ (A→B)∧(B→A)；</li>
+<li><strong>② 把 ¬ 内移</strong>：用德摩根律 + <strong>量词否定等值式</strong>（¬∀x ↔ ∃x¬、¬∃x ↔ ∀x¬），使 <strong>¬ 只作用于原子公式</strong>；</li>
+<li><strong>③ 换名（改约束变元名称）</strong>：使各量词的<strong>指导变元互不相同</strong>、且与自由变元不重名（避免前置后变元冲突）；</li>
+<li><strong>④ 量词前移</strong>：用<strong>辖域扩张等值式</strong>把量词逐个移到公式<strong>最前面</strong>（注意后件不含 x 的情形会改变量词种类）；</li>
+<li>
+<p><strong>⑤ 整理母式</strong>：得到 Q₁x₁…QₖxₖM。</p>
+</li>
+<li>
+<p><strong>要点</strong>：前束范式<strong>不唯一</strong>（换名方式、量词前移顺序不同会得到不同形式，但<strong>彼此等值</strong>）。</p>
+</li>
+</ul>
+<h3 id="_15">（三）典型例题</h3>
+<ul>
+<li>
+<p><strong>【例 1】求 ∀x(P(x)→Q(x)) 的前束范式</strong><br>
+= ∀x(¬P(x)∨Q(x))　→ <strong>已是前束范式</strong>（量词在最前，母式 ¬P(x)∨Q(x)）。</p>
+</li>
+<li>
+<p><strong>【例 2】求 ∀xP(x)→∃xQ(x) 的前束范式</strong><br>
+= ¬∀xP(x)∨∃xQ(x)　（消去 →）<br>
+= ∃x¬P(x)∨∃xQ(x)　（量词否定）<br>
+= ∃x¬P(x)∨∃yQ(y)　（<strong>换名</strong>，避免同名冲突）<br>
+= <strong>∃x∃y(¬P(x)∨Q(y))</strong>　（量词前移）</p>
+</li>
+<li>
+<p><strong>【例 3】求 ¬(∀xP(x)→∃yQ(y)) 的前束范式</strong><br>
+= ¬(¬∀xP(x)∨∃yQ(y))　（消去 →）<br>
+= ∀xP(x)∧¬∃yQ(y)　（德摩根）<br>
+= ∀xP(x)∧∀y¬Q(y)　（量词否定）<br>
+= <strong>∀x∀y(P(x)∧¬Q(y))</strong>　（量词前移）</p>
+</li>
+<li>
+<p><strong>【例 4】求 ∃xP(x)→∀yQ(y) 的前束范式</strong><br>
+= ¬∃xP(x)∨∀yQ(y)<br>
+= ∀x¬P(x)∨∀yQ(y)<br>
+= <strong>∀x∀y(¬P(x)∨Q(y))</strong></p>
+</li>
+<li>
+<p><strong>【例 5】求 ∃x(P(x)∧∀y(Q(y)→R(x,y))) 的前束范式</strong><br>
+= ∃x∀y(P(x)∧(Q(y)→R(x,y)))　（用 ∀x(A∧B(x)) ⇔ A∧∀xB(x) 把 ∀y 前移）<br>
+= <strong>∃x∀y(P(x)∧(¬Q(y)∨R(x,y)))</strong>　（母式中消去 →）</p>
+</li>
+<li>
+<p><strong>【例 6】求 ∀xP(x)∨∃yQ(y) 的前束范式</strong>（注意 ¬ 不涉及，直接前移）<br>
+先将 ∃y 换名（若与 x 同名）→ <strong>∀x∃y(P(x)∨Q(y))</strong></p>
+</li>
+</ul>
+<hr>
+<h2 id="35">六、3.5 谓词演算的推理理论（简单应用）</h2>
+<h3 id="_16">（一）量词推理的四条基本规则（必背）</h3>
+<ul>
+<li><strong>US</strong>：名称：<strong>全称指定（例示）规则</strong>；形式：<strong>∀xA(x) ⇒ A(c)</strong>（或 A(y)）；限制条件（易考）：用个体常元 c 或<strong>不在公式中出现的变元</strong> y 代入；代入后的变元<strong>不能落入新量词的辖域</strong></li>
+<li><strong>ES</strong>：名称：<strong>存在指定（例示）规则</strong>；形式：<strong>∃xA(x) ⇒ A(c)</strong>；限制条件（易考）：c 必须是<strong>前面未出现过的特定个体常元</strong>（"新名字"），且<strong>只能先例示、后使用</strong></li>
+<li><strong>UG</strong>：名称：<strong>全称推广规则</strong>；形式：<strong>A(x) ⇒ ∀xA(x)</strong>；限制条件（易考）：x 必须是<strong>任意的</strong>：<strong>不能是由 ES 引入的特定常元</strong>，且未被其他量词约束</li>
+<li><strong>EG</strong>：名称：<strong>存在推广规则</strong>；形式：<strong>A(c) ⇒ ∃xA(x)</strong>；限制条件（易考）：用 c 或 x 代入均成立（由"有一个"推广得 ∃）</li>
+</ul>
+<blockquote>
+<p>记忆：<strong>US/ES 是"消去量词"（往下用），UG/EG 是"引入量词"（往上用）</strong>；<br>
+<strong>US 与 ES 的区别</strong>：US 可对任意个体（常元或变元）进行，ES 只能指定一个<strong>新的特定常元</strong>；<br>
+<strong>UG 与 EG 的区别</strong>：EG 对具体个体可推广，UG 必须保证该变元<strong>具有任意性</strong>（尤其不能是 ES 指定的常元）。</p>
+</blockquote>
+<h3 id="ptcp">（二）书写格式：在命题逻辑 P/T/CP 规则基础上增加量词规则</h3>
+<pre><code>序号    公式                依据
+①      ∀x(M(x)→D(x))      P
+②      M(s)→D(s)          US①            （s：苏格拉底）
+③      M(s)               P
+④      D(s)               T②③ 假言推理
+
+</code></pre>
+<h3 id="_17">（三）典型例题（必考题型）</h3>
+<ul>
+<li><strong>【例 1】所有人都会死；苏格拉底是人 ⇒ 苏格拉底会死</strong></li>
+</ul>
+<pre><code>① ∀x(M(x)→D(x))     P
+② M(s)→D(s)         US①
+③ M(s)              P
+④ D(s)              T②③ 假言推理
+
+</code></pre>
+<blockquote>
+<p><strong>推理有效</strong>（形式化后即命题逻辑的假言推理）。</p>
+</blockquote>
+<ul>
+<li><strong>【例 2】∀x(P(x)→Q(x)), ∃xP(x) ⇒ ∃xQ(x)</strong></li>
+</ul>
+<pre><code>① ∃xP(x)            P
+② P(c)              ES①            （c 为新的特定常元）
+③ ∀x(P(x)→Q(x))     P
+④ P(c)→Q(c)         US③
+⑤ Q(c)              T②④ 假言推理
+⑥ ∃xQ(x)            EG⑤
+
+</code></pre>
+<ul>
+<li><strong>【例 3】∃x(P(x)∧Q(x)) ⇒ ∃xP(x)</strong></li>
+</ul>
+<pre><code>① ∃x(P(x)∧Q(x))     P
+② P(c)∧Q(c)         ES①
+③ P(c)              T② 化简
+④ ∃xP(x)            EG③
+
+</code></pre>
+<ul>
+<li><strong>【例 4】∀x(P(x)→Q(x)) ⇒ ∃xP(x)→∃xQ(x)</strong>（结论是条件式 → <strong>用 CP 规则</strong>）</li>
+</ul>
+<pre><code>① ∃xP(x)            CP（附加前提）
+② P(c)              ES①
+③ ∀x(P(x)→Q(x))     P
+④ P(c)→Q(c)         US③
+⑤ Q(c)              T②④ 假言推理
+⑥ ∃xQ(x)            EG⑤
+⑦ ∃xP(x)→∃xQ(x)     CP
+
+</code></pre>
+<ul>
+<li><strong>【例 5】∀x(P(x)→Q(x)) ⇒ ∀xP(x)→∀xQ(x)</strong></li>
+</ul>
+<pre><code>① ∀xP(x)            CP
+② ∀x(P(x)→Q(x))     P
+③ P(y)              US①            （用变元 y，便于后面 UG）
+④ P(y)→Q(y)         US②
+⑤ Q(y)              T③④ 假言推理
+⑥ ∀xQ(x)            UG⑤
+⑦ ∀xP(x)→∀xQ(x)     CP
+
+</code></pre>
+<ul>
+<li><strong>【例 6】∀x(P(x)→Q(x)), ∀x(Q(x)→R(x)) ⇒ ∀x(P(x)→R(x))</strong></li>
+</ul>
+<pre><code>① ∀x(P(x)→Q(x))     P
+② ∀x(Q(x)→R(x))     P
+③ P(y)→Q(y)         US①
+④ Q(y)→R(y)         US②
+⑤ P(y)→R(y)         T③④ 假言三段论
+⑥ ∀x(P(x)→R(x))     UG⑤
+
+</code></pre>
+<ul>
+<li><strong>【例 7】"每个大学生都要学数学，小李是大学生 ⇒ 小李要学数学"</strong><br>
+形式化：∀x(S(x)→M(x)), S(l) ⇒ M(l)（同例 1 的证明结构）</li>
+</ul>
+<h3 id="_18">（四）常见错误提示</h3>
+<ul>
+<li><strong>ES 指定的常元必须是新的</strong>：若前面已用 c 作 ES，后面再 ES 必须换新名（如 d）；</li>
+<li><strong>不能对 ES 指定的常元作 UG</strong>（否则由"某个特定个体"错误地推出"所有个体"）；</li>
+<li><strong>US 代入的变元不能被新的量词辖域捕获</strong>（必要时先换名）；</li>
+<li>引用前提（P）顺序不受限制，但 <strong>ES 的"新常元"约束与步骤顺序有关</strong>，一般<strong>先 ES 后 US</strong>（避免冲突）。</li>
+</ul>
+<hr>
+<h2 id="_19">七、本章对比与易混点</h2>
+<table>
+<thead>
+<tr>
+<th>易混点</th>
+<th>正确理解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>个体词 vs 谓词</td>
+<td>个体词＝<strong>对象</strong>；谓词＝对象的<strong>性质或关系</strong></td>
+</tr>
+<tr>
+<td>谓词 vs 命题</td>
+<td>谓词（含变元）<strong>不是命题</strong>（命题函数）；赋值/加量词后才是命题</td>
+</tr>
+<tr>
+<td><strong>∀ 配 ∧ 还是 →</strong></td>
+<td>符号化"<strong>所有 A 都是 B</strong>"用 <strong>∀x(A(x)→B(x))</strong>；<strong>存在 A 是 B</strong> 用 <strong>∃x(A(x)∧B(x))</strong></td>
+</tr>
+<tr>
+<td>指导变元 vs 辖域</td>
+<td>指导变元＝量词后紧跟的变元；辖域＝量词约束的<strong>范围</strong>（只看紧跟的最小公式）</td>
+</tr>
+<tr>
+<td><strong>约束出现 vs 自由出现</strong></td>
+<td>被量词"罩住"的是约束；否则自由；<strong>闭式无自由变元</strong></td>
+</tr>
+<tr>
+<td>改名 vs 代入</td>
+<td><strong>改名</strong>改<strong>约束</strong>出现（只改某量词辖域内）；<strong>代入</strong>改<strong>自由</strong>出现（全部同时代入）</td>
+</tr>
+<tr>
+<td>量词否定</td>
+<td>¬∀xP(x) ⇔ <strong>∃x¬P(x)</strong>；¬∃xP(x) ⇔ <strong>∀x¬P(x)</strong>（"否定了量词要翻牌"）</td>
+</tr>
+<tr>
+<td><strong>分配等值式</strong></td>
+<td>只有 <strong>∀(A∧B) ⇔ ∀A∧∀B</strong> 与 <strong>∃(A∨B) ⇔ ∃A∨∃B</strong> 成立；另外两条只有<strong>单向蕴涵</strong></td>
+</tr>
+<tr>
+<td>辖域扩张的蕴涵式</td>
+<td><strong>∀x(B(x)→A) ⇔ ∃xB(x)→A</strong>（<strong>后件不含 x 时量词由 ∀ 变 ∃</strong>），反之亦然</td>
+</tr>
+<tr>
+<td>量词顺序</td>
+<td><strong>∃y∀xP ⇒ ∀x∃yP</strong>（不可反推）；同种量词可交换</td>
+</tr>
+<tr>
+<td>前束范式</td>
+<td>所有<strong>量词都在最前面</strong>且<strong>母式不含量词</strong>；<strong>不唯一</strong></td>
+</tr>
+<tr>
+<td>US / ES</td>
+<td>US 可代任意个体；ES 只能用<strong>新常元</strong></td>
+</tr>
+<tr>
+<td>UG / EG</td>
+<td>EG 由具体个体得 ∃；UG 要求变元<strong>任意</strong>（ES 的常元不能 UG）</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="_20">八、必背清单 + 简答预测 + 计算模板</h2>
+<h3 id="_21">（一）必背清单</h3>
+<ul>
+<li>个体词（常元/变元、个体域）、谓词（一元/多元）、命题函数；<strong>用谓词表示命题</strong>；</li>
+<li><strong>全称量词与存在量词</strong>；有限个体域下 ∀＝∧、∃＝∨ 的对应；</li>
+<li>合式公式的递归定义；<strong>指导变元与辖域</strong>；<strong>自由出现与约束出现</strong>（含闭式）；</li>
+<li><strong>约束变元改名规则</strong>与<strong>自由变元代入规则</strong>（及限制）；</li>
+<li><strong>命题符号化五组对照</strong>（所有 A 是 B、有的 A 是 B、所有 A 不是 B、有的 A 不是 B、并非所有…）与<strong>多重量词顺序</strong>；</li>
+<li><strong>赋值（解释）的四要素</strong>；永真式/矛盾式/可满足式；</li>
+<li><strong>量词否定等值式</strong>、<strong>辖域扩张收缩等值式（8 条）</strong>、<strong>分配等值式（2 条成立）</strong>、同种量词交换；</li>
+<li><strong>常用蕴涵式</strong>（∀⇒∃、全称对析取单向、存在对合取单向、∃∀⇒∀∃）；</li>
+<li><strong>前束范式定义与五步求法</strong>（消 → ↔ → ¬ 内移 → 换名 → 量词前移）；</li>
+<li><strong>US、ES、UG、EG 四条规则的形式与限制</strong>；结合 P/T/CP 的证明书写。</li>
+</ul>
+<h3 id="_22">（二）高频简答 / 判断题预测</h3>
+<ul>
+<li>什么是个体词、谓词、命题函数？如何用谓词表示命题？</li>
+<li>全称量词与存在量词的含义是什么？在有限个体域上它们与 ∧、∨ 有何关系？</li>
+<li>什么是合式公式？谓词公式的递归定义是什么？</li>
+<li>什么是量词的指导变元与辖域？如何确定？举例说明。</li>
+<li>什么是自由出现与约束出现？什么是闭式？</li>
+<li>约束变元改名规则与自由变元代入规则各是什么？各有什么限制？</li>
+<li>"所有的 A 都是 B""有的 A 是 B"分别如何符号化？为什么全称用蕴涵、存在用合取？</li>
+<li>∀x∃yL(x,y) 与 ∃y∀xL(x,y) 的含义有何不同？它们等值吗？</li>
+<li>什么是谓词公式的赋值（解释）？谓词公式的永真式如何理解？</li>
+<li>写出量词否定等值式、辖域扩张收缩等值式与量词分配等值式。</li>
+<li>为什么 ∀x(A(x)∨B(x)) 不等值于 ∀xA(x)∨∀xB(x)？它们之间有什么关系？</li>
+<li>什么是前束范式？如何求前束范式（步骤）？</li>
+<li>量词推理有哪四条规则？各自的限制条件是什么？</li>
+<li>US 与 ES 有何区别？UG 与 EG 有何区别？</li>
+<li>为什么不能对 ES 引入的个体常元使用 UG？</li>
+</ul>
+<h3 id="_23">（三）计算 / 证明题模板</h3>
+<ul>
+<li><strong>符号化</strong>：定个体域 → 设谓词 → 判断"全部/存在" → <strong>全称配 →、存在配 ∧</strong> → 多重量词注意顺序。</li>
+<li><strong>确定辖域/自由约束</strong>：把量词与其管辖范围画出来，逐个变元判断。</li>
+<li><strong>改名/代入</strong>：改名只动某量词辖域内的约束变元；代入要<strong>同时</strong>替换该自由变元的<strong>所有</strong>自由出现。</li>
+<li><strong>求前束范式</strong>：五步法（消 → ↔ → ¬ 内移 → 换名 → 量词逐个前移 → 整理母式）。</li>
+<li><strong>谓词推理证明</strong>：</li>
+<li>① 先把自然语言<strong>形式化</strong></li>
+<li>② 结论是条件式 → 用 <strong>CP</strong></li>
+<li>③ 有 ∃ 前提先 <strong>ES</strong>（用新常元），有 ∀ 前提用 <strong>US</strong>（注意代入变元的任意性）</li>
+<li>④ 中间用命题逻辑规则（假言推理、化简、假言三段论等）</li>
+<li>⑤ 最后用 <strong>UG/EG</strong> 得结论</li>
+<li>⑥ 每行写明依据。</li>
+</ul>
+</main>
+<footer>02324 离散数学 · 由 Markdown 生成，浏览器直接打开即可阅读</footer>
+</body>
+</html>

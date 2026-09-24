@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第一章 绪论 · 考点总结与简记</title>
+<style>
+:root{--fg:#24292f;--muted:#57606a;--line:#d0d7de;--accent:#0969da;--code:#f6f8fa;--soft:#fafbfc}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--fg);
+  font:16px/1.78 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",sans-serif}
+main{max-width:980px;margin:0 auto;padding:26px 22px 72px}
+h1{font-size:1.75em;line-height:1.35;border-bottom:3px solid var(--accent);padding-bottom:.28em;margin:1.1em 0 .7em}
+h2{font-size:1.36em;line-height:1.4;border-bottom:1px solid var(--line);padding-bottom:.22em;margin:1.5em 0 .6em}
+h3{font-size:1.14em;margin:1.25em 0 .45em}
+h4{font-size:1.02em;margin:1.05em 0 .35em;color:var(--muted)}
+p{margin:.5em 0}
+ul,ol{margin:.45em 0;padding-left:1.5em}
+li{margin:.22em 0}
+li>ul,li>ol{margin:.15em 0}
+strong{color:#000}
+em{color:#000}
+code{background:var(--code);border-radius:4px;padding:.12em .34em;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:.92em}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;margin:.7em 0}
+pre code{background:none;padding:0;white-space:pre;font-size:.9em;line-height:1.5}
+table{border-collapse:collapse;width:100%;margin:.75em 0;font-size:.95em;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600}
+tbody tr:nth-child(even){background:var(--soft)}
+blockquote{margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:var(--code);color:var(--muted)}
+blockquote p{margin:.25em 0}
+hr{border:0;border-top:1px solid var(--line);margin:1.8em 0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.topnav{position:sticky;top:0;z-index:20;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+  padding:10px 22px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(180%) blur(6px);font-size:.9em}
+.topnav a{white-space:nowrap}
+.topnav .sep{color:var(--line)}
+.topnav .brand{font-weight:600;color:var(--fg);margin-right:6px}
+footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid var(--line);color:var(--muted);font-size:.86em}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:1em 0}
+.card{display:block;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--soft)}
+.card:hover{border-color:var(--accent)}
+.card b{display:block;margin-bottom:4px}
+.card span{color:var(--muted);font-size:.86em}
+.toc{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:1em 0}
+.toc ul{margin:.25em 0;padding-left:1.3em}
+.tip{border:1px dashed var(--accent);border-radius:10px;padding:10px 14px;background:#f6faff;margin:1em 0;font-size:.94em}
+@media (max-width:640px){main{padding:18px 14px 60px}h1{font-size:1.5em}}
+@media print{
+  body{font-size:11.5pt;line-height:1.6}
+  .topnav{display:none}
+  main{max-width:none;padding:0}
+  h1{page-break-before:always;border-bottom-width:2px}
+  body>main>h1:first-child,main>section:first-child>h1{page-break-before:avoid}
+  pre,table,blockquote,li{page-break-inside:avoid}
+  a{color:#000;text-decoration:none}
+  footer{display:none}
+}
+</style>
+</head>
+<body>
+<nav class="topnav"><span class="brand">13003 数据结构与算法</span> <a href="index.html">目录</a> <span class="sep">|</span> <a href="第02章_线性表_考点总结.html">第二章 线性表 · 考点总结 →</a></nav>
+<main>
+<h1 id="_1">第一章 绪论 · 考点总结与简记</h1>
+<blockquote>
+<p>课程：13003 数据结构与算法（080901 自考）；依据：考试大纲第一章<br>
+用法：前半为<strong>考点总结</strong>（分识记/领会/简单应用），后半为<strong>考前简记</strong>（关键词版）</p>
+</blockquote>
+<h3 id="_2">考纲要求速览</h3>
+<ul>
+<li><strong>识记</strong>：数据；数据元素；数据项；数据结构；逻辑结构；存储结构；基本操作；集合；线性结构；树结构；图结构；抽象数据类型。算法及其 5 个特性；问题规模。算法策略。</li>
+<li><strong>领会</strong>：数据项之间的关系；逻辑结构与存储结构的关系、存储结构对基本操作实现的影响；数据结构的 4 种基本存储方法；线性结构与非线性结构的特性。时间复杂度、空间复杂度、大 O 表示法、增长函数。递推法、迭代法、递归法、贪心法、分治法、动态规划法的基本特点。</li>
+<li><strong>简单应用</strong>：定义抽象数据类型；描述算法并分析程序段的时间复杂度；使用基本的算法策略实现简单程序。</li>
+<li><strong>重点</strong>：逻辑结构、存储结构及相互关系；线性与非线性结构；4 种基本存储方法；算法复杂度概念与分析方法。</li>
+<li><strong>难点</strong>：算法复杂度的概念；描述算法；算法复杂度的分析；用基本算法策略实现简单程序。</li>
+</ul>
+<hr>
+<h2 id="_3">第一部分 考点总结</h2>
+<h3 id="_4">一、基本概念和术语（识记 + 领会）</h3>
+<h4 id="1">1. 基本术语（必背）</h4>
+<ul>
+<li><strong>数据</strong>：信息的载体，能被计算机识别、存储和加工处理的符号集合。</li>
+<li><strong>数据元素</strong>：数据的基本单位，是数据集合中的一个个体（又称结点、记录）。</li>
+<li><strong>数据项</strong>：构成数据元素的<strong>最小单位</strong>，是数据不可分割的最小标识单位（一个数据元素可由若干数据项组成）。</li>
+<li><strong>数据结构</strong>：相互之间存在一种或多种<strong>特定关系</strong>的数据元素的集合。包含三要素：<strong>逻辑结构、存储结构、数据的运算（基本操作）</strong>。</li>
+<li><strong>逻辑结构</strong>：数据元素之间的<strong>抽象关系</strong>，与计算机无关。分 4 类：<strong>集合、线性结构、树结构、图结构（网状结构）</strong>。</li>
+<li><strong>存储结构（物理结构）</strong>：逻辑结构在计算机存储器中的<strong>表示（映像）</strong>。</li>
+<li><strong>基本操作</strong>：定义在某种逻辑结构上的一组运算（如插入、删除、查找、遍历）。</li>
+<li><strong>抽象数据类型（ADT）</strong>：一个<strong>数学模型</strong>及定义在该模型上的一组操作；只关心<strong>逻辑特性</strong>，与实现无关。</li>
+</ul>
+<h4 id="2-4">2. 4 类基本逻辑结构</h4>
+<table>
+<thead>
+<tr>
+<th>逻辑结构</th>
+<th>元素间关系</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>集合</strong></td>
+<td>元素间除"同属一个集合"外无其他关系</td>
+<td>集合</td>
+</tr>
+<tr>
+<td><strong>线性结构</strong></td>
+<td>一对一（除首尾外每个元素有唯一直接前驱和直接后继）</td>
+<td>线性表、栈、队列、串</td>
+</tr>
+<tr>
+<td><strong>树结构</strong></td>
+<td>一对多（层次关系）</td>
+<td>树、二叉树</td>
+</tr>
+<tr>
+<td><strong>图结构</strong></td>
+<td>多对多（网状）</td>
+<td>图</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>线性结构与非线性结构特性</strong></li>
+<li>线性结构：有唯一"第一个"和"最后一个"元素；每个元素最多一个直接前驱、一个直接后继（1:1）。</li>
+<li>非线性结构（树、图）:一个元素可有多个后继（1:n、m:n），存在层次或网状关系，不能简单按序号一对一访问。</li>
+</ul>
+<h4 id="3-4">3. 4 种基本存储方法（领会）</h4>
+<ul>
+<li><strong>顺序存储</strong>：用一组<strong>连续</strong>的存储单元依次存放数据元素，逻辑相邻则物理相邻；<strong>可随机存取</strong>；插入删除需移动元素。</li>
+<li><strong>链式存储</strong>：用<strong>指针</strong>表示元素间的逻辑关系，结点可分散存放；<strong>只能顺序存取</strong>；插入删除方便，需额外指针空间（结构性开销）。</li>
+<li><strong>索引存储</strong>：存储元素的同时建立<strong>索引表</strong>（关键字→地址）；查找快，需额外索引空间，插入删除要维护索引。</li>
+<li><strong>散列（哈希）存储</strong>：由<strong>关键字通过哈希函数直接计算存储地址</strong>；查找快，可能产生冲突，需解决冲突。</li>
+</ul>
+<h4 id="4">4. 逻辑结构与存储结构的关系（高频简答）</h4>
+<ul>
+<li><strong>逻辑结构是面向问题的抽象，存储结构是面向计算机的实现</strong>；</li>
+<li>一种逻辑结构可对应<strong>多种</strong>存储结构（如线性表可用顺序或链式）；</li>
+<li><strong>存储结构不同，同一基本操作的实现方法、效率（时间/空间）也不同</strong>；</li>
+<li>设计时通常先确定逻辑结构，再结合操作特点选择存储结构。</li>
+</ul>
+<h4 id="5-adt">5. ADT 的定义形式（简单应用）</h4>
+<pre><code>ADT 抽象数据类型名 {
+    数据对象: &lt;数据对象的定义&gt;
+    数据关系: &lt;数据关系的定义&gt;
+    基本操作: &lt;操作名(参数表)&gt;
+              初始条件: ...
+              操作结果: ...
+} ADT 抽象数据类型名
+
+</code></pre>
+<ul>
+<li><strong>示例：复数 ADT</strong></li>
+</ul>
+<pre><code>ADT Complex {
+    数据对象: D = { e1, e2 | e1, e2 为实数 }
+    数据关系: R = { &lt;e1, e2&gt; }
+    基本操作:
+        Assign(&amp;C, v1, v2)   初始条件: 无; 操作结果: 构造复数 C = v1 + v2i
+        Add(&amp;C, C1, C2)      初始条件: C1、C2 为复数; 操作结果: C = C1 + C2
+        GetReal(C)           初始条件: C 为复数; 操作结果: 返回实部
+} ADT Complex
+
+</code></pre>
+<h3 id="_5">二、算法和算法分析（识记 + 领会 + 简单应用）</h3>
+<h4 id="1-5">1. 算法及其 5 个特性（必背）</h4>
+<ul>
+<li><strong>算法</strong>：对特定问题求解步骤的一种描述，是<strong>指令的有限序列</strong>。<br>
+5 个特性：<strong>有穷性 · 确定性 · 可行性 · 输入（0 个或多个）· 输出（1 个或多个）</strong>。<blockquote>
+<p>程序 ≠ 算法：程序可以不满足有穷性（如操作系统）；算法必须满足。</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="2">2. 问题规模</h4>
+<p>算法执行时间（或空间）随<strong>输入数据量</strong>增长的度量基准，通常记为 <strong>n</strong>（如数组长度、表的元素个数、图的顶点/边数）。</p>
+<h4 id="3">3. 时间复杂度</h4>
+<ul>
+<li><strong>定义</strong>：算法中<strong>基本操作重复执行的次数</strong>（语句频度）是问题规模 n 的某个函数 f(n)，则时间复杂度 <strong>T(n) = O(f(n))</strong>。</li>
+<li><strong>大 O 表示法</strong>：只保留<strong>最高阶项</strong>并舍去系数，表示 <strong>n → ∞ 时的渐进上界（增长量级）</strong>。</li>
+<li><strong>常见增长函数由小到大</strong>：<br>
+O(1) &lt; O(log₂n) &lt; O(n) &lt; O(n log₂n) &lt; O(n²) &lt; O(n³) &lt; O(2ⁿ) &lt; O(n!)</li>
+<li><strong>常用结论</strong>：</li>
+<li>顺序执行的语句、赋值/比较：O(1)；</li>
+<li>单重循环 n 次：O(n)；双重嵌套各 n 次：O(n²)；</li>
+<li>每次折半（i *= 2 或 i /= 2）：O(log₂n)；</li>
+<li>分治递归（如归并、快排平均）：O(n log₂n)。</li>
+<li><strong>最坏 / 平均 / 最好时间复杂度</strong>：通常以<strong>最坏情况</strong>为主要衡量（平均复杂度分析较难）。</li>
+</ul>
+<h4 id="4_1">4. 空间复杂度</h4>
+<p>算法运行所需<strong>辅助存储空间</strong>（除输入数据本身外）随问题规模增长的度量，记 <strong>S(n) = O(f(n))</strong>。<br>
+- <strong>原地（就地）算法</strong>：S(n) = O(1)，只用常数个辅助单元（如冒泡、直接插入、堆排序）。</p>
+<h4 id="5">5. 分析程序段时间复杂度的方法（简单应用，固定套路）</h4>
+<p>① 找出<strong>基本操作</strong>（最深层、执行最频繁的语句）；<br>
+② 计算它的<strong>语句频度</strong>（含循环次数的乘积）；<br>
+③ 取<strong>最高阶项、去系数</strong>，写成 O(…)。</p>
+<pre><code class="language-c">for (i = 1; i &lt;= n; i++)        // 外层 n 次
+    for (j = 1; j &lt;= n; j++)    // 内层 n 次
+        x++;                    // 基本操作执行 n² 次 → T(n) = O(n²)
+
+</code></pre>
+<pre><code class="language-c">for (i = 1; i &lt;= n; i *= 2)     // i: 1,2,4,8,... 共 log2n 次
+    x++;                        // T(n) = O(log2n)
+
+</code></pre>
+<h3 id="_6">三、算法设计策略简介（领会 + 简单应用）</h3>
+<ul>
+<li><strong>递推法</strong>：基本特点：由已知的<strong>初始条件</strong>出发，按递推公式<strong>逐步推出后续结果</strong>；典型例子：斐波那契数列、秦九韶多项式求值</li>
+<li><strong>迭代法</strong>：基本特点：用<strong>循环</strong>反复用同一公式（旧值→新值）逼近或更新结果；典型例子：迭代求平方根、牛顿迭代</li>
+<li><strong>递归法</strong>：基本特点：问题<strong>分解为同类子问题</strong>，函数<strong>直接或间接调用自身</strong>，需<strong>递归出口</strong>；典型例子：阶乘、汉诺塔、二叉树遍历</li>
+<li><strong>贪心法</strong>：基本特点：每步都选<strong>当前最优（局部最优）</strong>，期望得到全局最优；<strong>不保证最优</strong>；典型例子：哈夫曼树、Prim、Kruskal、Dijkstra</li>
+<li><strong>分治法</strong>：基本特点：把问题<strong>分成若干规模更小的同类子问题</strong>，分别求解后<strong>合并</strong>；典型例子：二分查找、快速排序、归并排序</li>
+<li><strong>动态规划法</strong>：基本特点：把问题分解为<strong>重叠子问题</strong>，用<strong>表记录子问题最优解</strong>避免重复计算（最优子结构 + 无后效性）；典型例子：最长公共子序列、背包问题、Floyd</li>
+</ul>
+<blockquote>
+<p>简记：<strong>递推=公式往前推；迭代=循环逼近；递归=自己调自己；贪心=只顾眼前；分治=分而治之再合并；动规=记表防重算。</strong></p>
+</blockquote>
+<hr>
+<h2 id="_7">第二部分 考前简记（关键词版）</h2>
+<ul>
+<li><strong>数据结构 = 逻辑结构 + 存储结构 + 运算（三要素）</strong></li>
+<li><strong>4 类逻辑结构</strong>：集合（无关系）· 线性（1:1）· 树（1:n）· 图（m:n）</li>
+<li><strong>4 种存储方法</strong>：顺序（连续、随机存取）· 链式（指针、顺序存取）· 索引（索引表）· 散列（哈希函数算地址）</li>
+<li><strong>关系</strong>：逻辑=抽象（面向问题）；存储=实现（面向机器）；一种逻辑→多种存储；存储不同→操作实现与效率不同</li>
+<li><strong>ADT</strong> = 数学模型 + 其上的一组操作（只讲逻辑，与实现无关）</li>
+<li>
+<p><strong>术语</strong>：数据 &gt; 数据元素 &gt; 数据项（数据项最小）；基本操作＝定义在逻辑结构上的运算</p>
+</li>
+<li>
+<p><strong>算法 5 特性</strong>：有穷 · 确定 · 可行 · 输入 · 输出</p>
+</li>
+<li><strong>问题规模 n</strong>：输入量的度量</li>
+<li><strong>时间复杂度</strong>：基本操作执行次数 f(n) → T(n)=O(f(n))（只留最高阶、去系数）</li>
+<li><strong>增长阶</strong>：O(1) &lt; O(log n) &lt; O(n) &lt; O(n log n) &lt; O(n²) &lt; O(n³) &lt; O(2ⁿ) &lt; O(n!)</li>
+<li><strong>空间复杂度</strong>：辅助空间 S(n)=O(f(n))；原地算法 O(1)</li>
+<li><strong>分析三步</strong>：找基本操作 → 数频度 → 取最高阶去系数</li>
+<li>
+<p><strong>常用</strong>：单层循环 O(n)；双层 O(n²)；折半/倍增 O(log n)；分治排序 O(n log n)</p>
+</li>
+<li>
+<p><strong>6 策略</strong>：递推（初始值往前推）· 迭代（循环逼近）· 递归（自调用+出口）· 贪心（局部最优，不保证全局最优）· 分治（分—治—合）· 动态规划（重叠子问题+记表）</p>
+</li>
+<li>
+<p><strong>贪心与分治常考</strong>：哈夫曼/Prim/Kruskal/Dijkstra＝贪心；二分查找/快排/归并＝分治；Floyd/背包＝动态规划</p>
+</li>
+<li>
+<p><strong>最爱考</strong>：逻辑结构与存储结构的区别与联系；4 种存储方法及特点；ADT 定义；算法 5 特性；程序段时间复杂度分析（写频度、化简为 O）；递归与迭代的区别；分治/贪心/动规的适用与差别</p>
+</li>
+</ul>
+</main>
+<footer>13003 数据结构与算法 · 由 Markdown 生成，浏览器直接打开即可阅读</footer>
+</body>
+</html>

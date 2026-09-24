@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>02324 离散数学 · 考前简记（1–9 章合订）</title>
+<style>
+:root{--fg:#24292f;--muted:#57606a;--line:#d0d7de;--accent:#0969da;--code:#f6f8fa;--soft:#fafbfc}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--fg);
+  font:16px/1.78 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",sans-serif}
+main{max-width:980px;margin:0 auto;padding:26px 22px 72px}
+h1{font-size:1.75em;line-height:1.35;border-bottom:3px solid var(--accent);padding-bottom:.28em;margin:1.1em 0 .7em}
+h2{font-size:1.36em;line-height:1.4;border-bottom:1px solid var(--line);padding-bottom:.22em;margin:1.5em 0 .6em}
+h3{font-size:1.14em;margin:1.25em 0 .45em}
+h4{font-size:1.02em;margin:1.05em 0 .35em;color:var(--muted)}
+p{margin:.5em 0}
+ul,ol{margin:.45em 0;padding-left:1.5em}
+li{margin:.22em 0}
+li>ul,li>ol{margin:.15em 0}
+strong{color:#000}
+em{color:#000}
+code{background:var(--code);border-radius:4px;padding:.12em .34em;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:.92em}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;margin:.7em 0}
+pre code{background:none;padding:0;white-space:pre;font-size:.9em;line-height:1.5}
+table{border-collapse:collapse;width:100%;margin:.75em 0;font-size:.95em;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600}
+tbody tr:nth-child(even){background:var(--soft)}
+blockquote{margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:var(--code);color:var(--muted)}
+blockquote p{margin:.25em 0}
+hr{border:0;border-top:1px solid var(--line);margin:1.8em 0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.topnav{position:sticky;top:0;z-index:20;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+  padding:10px 22px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(180%) blur(6px);font-size:.9em}
+.topnav a{white-space:nowrap}
+.topnav .sep{color:var(--line)}
+.topnav .brand{font-weight:600;color:var(--fg);margin-right:6px}
+footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid var(--line);color:var(--muted);font-size:.86em}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:1em 0}
+.card{display:block;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--soft)}
+.card:hover{border-color:var(--accent)}
+.card b{display:block;margin-bottom:4px}
+.card span{color:var(--muted);font-size:.86em}
+.toc{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:1em 0}
+.toc ul{margin:.25em 0;padding-left:1.3em}
+.tip{border:1px dashed var(--accent);border-radius:10px;padding:10px 14px;background:#f6faff;margin:1em 0;font-size:.94em}
+@media (max-width:640px){main{padding:18px 14px 60px}h1{font-size:1.5em}}
+@media print{
+  body{font-size:11.5pt;line-height:1.6}
+  .topnav{display:none}
+  main{max-width:none;padding:0}
+  h1{page-break-before:always;border-bottom-width:2px}
+  body>main>h1:first-child,main>section:first-child>h1{page-break-before:avoid}
+  pre,table,blockquote,li{page-break-inside:avoid}
+  a{color:#000;text-decoration:none}
+  footer{display:none}
+}
+</style>
+</head>
+<body>
+<nav class="topnav"><span class="brand">02324 离散数学</span> <a href="index.html">目录</a> <span class="sep">|</span> <a href="第09章_图的应用_考点总结.html">← 第 9 章 图的应用 · 考点总结</a></nav>
+<main>
+<h1 id="02324-19">02324 离散数学 · 考前简记（1–9 章合订）</h1>
+<blockquote>
+<p>课程：02324 离散数学（080901 自考）<br>
+来源：由第 1–9 章的 9 份"考前简记"合并而成，并附<strong>全书速查（符号数字 · 公式定理 · 典型反例 · 题型对策）</strong><br>
+用法：考前一晚通读；只留关键词、定义、公式、判别准则与步骤链<br>
+打印提示：本文件已按 A4 纵向 PDF 优化——每条要点独立成行；宽长表改为条目式、短表（真值表等）保留；超长条目自动拆成缩进子项。可直接用 VS Code Markdown PDF 插件导出。</p>
+</blockquote>
+<h2 id="_1">目录</h2>
+<ul>
+<li>第 1 章 命题与命题公式</li>
+<li>第 2 章 命题逻辑的推理理论</li>
+<li>第 3 章 谓词逻辑</li>
+<li>第 4 章 集合</li>
+<li>第 5 章 关系与函数</li>
+<li>第 6 章 代数系统的一般概念</li>
+<li>第 7 章 格与布尔代数</li>
+<li>第 8 章 图</li>
+<li>第 9 章 图的应用</li>
+<li>附录 A 符号与"数字"速记</li>
+<li>附录 B 核心公式与定理速查</li>
+<li>附录 C 典型反例与"不能"清单</li>
+<li>
+<p>附录 D 题型对策</p>
+</li>
+<li>
+<p><strong>全书主线</strong>：<strong>数理逻辑</strong>（命题 → 命题推理 → 谓词）→ <strong>集合论</strong>（集合 → 关系与函数）→ <strong>代数结构</strong>（代数系统 → 格与布尔代数）→ <strong>图论</strong>（图 → 图的应用）</p>
+</li>
+</ul>
+<hr>
+<h2 id="1">第 1 章 命题与命题公式 · 考前简记（关键词版）</h2>
+<h3 id="_2">一、命题</h3>
+<ul>
+<li><strong>命题＝能判断真假的陈述句</strong>（真值唯一：T/1、F/0）</li>
+<li><strong>不是命题</strong>：疑问 · 祈使 · 感叹 · <strong>悖论</strong> · 含未定变元（"x&gt;3"，是命题函数）；<strong>真假未知但客观确定 = 仍是命题</strong></li>
+<li><strong>命题变元</strong> p,q,r…（取值 0/1）；<strong>命题常元</strong> T,F；<strong>复合命题</strong>＝原子命题 + 联结词</li>
+</ul>
+<h3 id="_3">二、五个基本联结词（真值表必背）</h3>
+<table>
+<thead>
+<tr>
+<th>p q</th>
+<th>¬p</th>
+<th>p∧q</th>
+<th>p∨q</th>
+<th><strong>p→q</strong></th>
+<th>p↔q</th>
+<th>p⊕q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0 0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td><strong>1</strong></td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0 1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td><strong>1</strong></td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1 0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td><strong>0</strong></td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1 1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td><strong>1</strong></td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>要点</strong>：∧ 同真才真；∨ 有真即真；<strong>→ 只有"前件真、后件假"为假</strong>（p 假则 → 真）；↔ 同真同假才真；⊕ 不同为真</li>
+<li><strong>运算次序</strong>：<strong>¬ &gt; ∧ &gt; ∨ &gt; → &gt; ↔</strong>（【注意】教材为准），同级从左到右，<strong>括号优先</strong></li>
+</ul>
+<h3 id="_4">三、符号化对照（必背）</h3>
+<table>
+<thead>
+<tr>
+<th>自然语言</th>
+<th>符号化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p 且 q / 既…又…</td>
+<td>p∧q</td>
+</tr>
+<tr>
+<td>p 或 q（可兼）</td>
+<td>p∨q</td>
+</tr>
+<tr>
+<td>要么 p 要么 q（排斥或）</td>
+<td>(p∧¬q)∨(¬p∧q) 或 p⊕q</td>
+</tr>
+<tr>
+<td>如果 p 则 q／p 是 q 的<strong>充分</strong>条件／只要 p 就 q</td>
+<td><strong>p→q</strong></td>
+</tr>
+<tr>
+<td><strong>只有 p 才 q</strong>／p 是 q 的<strong>必要</strong>条件／q 仅当 p</td>
+<td><strong>q→p</strong></td>
+</tr>
+<tr>
+<td>p 当且仅当 q</td>
+<td>p↔q</td>
+</tr>
+<tr>
+<td><strong>除非 p，否则 q</strong></td>
+<td><strong>¬p→q</strong>（＝p∨q）</td>
+</tr>
+<tr>
+<td>既不 p 也不 q</td>
+<td>¬p∧¬q</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">四、命题公式与公式类型</h3>
+<ul>
+<li><strong>合式公式（WFF）</strong>：变元/常元是；¬A 是；(A∧B)(A∨B)(A→B)(A↔B) 是；有限次应用</li>
+<li><strong>赋值</strong>：n 个变元 → <strong>2ⁿ 个赋值</strong>（真值表 2ⁿ 行）；<strong>成真/成假赋值</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>重言式（永真）</strong></td>
+<td>全部赋值为真</td>
+</tr>
+<tr>
+<td><strong>矛盾式（永假/不可满足）</strong></td>
+<td>全部赋值为假</td>
+</tr>
+<tr>
+<td><strong>可满足式</strong></td>
+<td>至少一个成真赋值</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>关系</strong>：重言式的否定＝矛盾式；矛盾式的否定＝重言式；<strong>矛盾式一定不可满足</strong></li>
+</ul>
+<h3 id="_6">五、等值式（命题定律，必背）</h3>
+<ul>
+<li><strong>等值</strong>：A⇔B ⟺ <strong>A↔B 是重言式</strong>（自反、对称、传递）</li>
+<li><strong>双重否定</strong> ¬¬A⇔A；<strong>幂等</strong> A∨A⇔A, A∧A⇔A；<strong>交换</strong>；<strong>结合</strong></li>
+<li><strong>分配</strong>：A∨(B∧C)⇔(A∨B)∧(A∨C)；A∧(B∨C)⇔(A∧B)∨(A∧C)</li>
+<li><strong>德摩根</strong>：¬(A∨B)⇔¬A∧¬B；¬(A∧B)⇔¬A∨¬B</li>
+<li><strong>吸收</strong>：A∨(A∧B)⇔A；A∧(A∨B)⇔A</li>
+<li><strong>零律</strong> A∨1⇔1, A∧0⇔0；<strong>同一律</strong> A∨0⇔A, A∧1⇔A</li>
+<li><strong>排中律</strong> A∨¬A⇔1；<strong>矛盾律</strong> A∧¬A⇔0</li>
+<li><strong>蕴涵等值式</strong>：<strong>A→B ⇔ ¬A∨B</strong>；<strong>等价等值式</strong>：A↔B⇔(A→B)∧(B→A)</li>
+<li><strong>假言易位（逆否）</strong>：A→B ⇔ ¬B→¬A；<strong>等价否定</strong>：A↔B⇔¬A↔¬B</li>
+<li><strong>归谬论</strong>：(A→B)∧(A→¬B) ⇔ ¬A；<strong>输出律</strong>：p∧q→r ⇔ p→(q→r)</li>
+</ul>
+<h3 id="_7">六、蕴涵式（必背）</h3>
+<ul>
+<li><strong>蕴涵</strong>：A⇒B ⟺ <strong>A→B 是重言式</strong>（单向！A⇔B 需双向）</li>
+<li><strong>附加</strong> A⇒A∨B；<strong>化简</strong> A∧B⇒A；<strong>合取引入</strong> A,B⇒A∧B</li>
+<li><strong>假言推理</strong> A∧(A→B)⇒B；<strong>拒取式</strong> (A→B)∧¬B⇒¬A</li>
+<li><strong>析取三段论</strong> (A∨B)∧¬A⇒B；<strong>假言三段论</strong> (A→B)∧(B→C)⇒A→C</li>
+<li><strong>等价三段论</strong> (A↔B)∧(B↔C)⇒A↔C</li>
+<li><strong>构造性二难</strong> (A→B)∧(C→D)∧(A∨C)⇒B∨D；<strong>破坏性二难</strong> (A→B)∧(C→D)∧(¬B∨¬D)⇒¬A∨¬C</li>
+</ul>
+<h3 id="_8">七、等值演算四步套路</h3>
+<ul>
+<li>① <strong>消去 →、↔</strong>（蕴涵/等价等值式）→ ② <strong>德摩根把 ¬ 内移</strong> → ③ <strong>分配律、吸收律化简</strong> → ④ 化到目标形式或 1/0</li>
+<li><strong>例</strong>：(p→q)∧(p→¬q) = (¬p∨q)∧(¬p∨¬q) = ¬p∨(q∧¬q) = <strong>¬p</strong></li>
+<li><strong>例</strong>：p→(q→p) = ¬p∨¬q∨p = <strong>1</strong>（重言式）</li>
+</ul>
+<h3 id="_9">八、联结词完备集</h3>
+<ul>
+<li><strong>完备集</strong>＝能表示任何命题公式的联结词集合</li>
+<li>常见：<strong>{¬,∧,∨}</strong> · <strong>{¬,∧}</strong> · <strong>{¬,∨}</strong> · <strong>{¬,→}</strong> · <strong>{↑}（与非）</strong> · <strong>{↓}（或非）</strong></li>
+<li><strong>与非</strong> p↑q ⇔ ¬(p∧q)：¬p ⇔ p↑p；p∨q ⇔ (p↑p)↑(q↑q)</li>
+<li><strong>或非</strong> p↓q ⇔ ¬(p∨q)：¬p ⇔ p↓p；p∧q ⇔ (p↓p)↓(q↓q)</li>
+<li><strong>最小完备集</strong>＝去掉任一联结词就不再完备</li>
+</ul>
+<h3 id="_10">九、易混点一句</h3>
+<ul>
+<li>命题 ↔ 命题变元：</li>
+<li>"x&gt;3" 不是命题</li>
+<li><strong>→ 只有 1→0 为假</strong></li>
+<li>充分条件→p→q、<strong>必要条件→q→p</strong></li>
+<li>"只有 p 才 q"＝<strong>q→p</strong></li>
+<li>"除非 p 否则 q"＝<strong>¬p→q</strong></li>
+<li>矛盾式不可满足</li>
+<li><strong>⇔ 双向、⇒ 单向</strong></li>
+<li>⇔/⇒ 是关系符号、↔/→ 是联结词</li>
+<li>德摩根只对 ∧∨</li>
+<li>次序 ¬&gt;∧&gt;∨&gt;→&gt;↔</li>
+</ul>
+<h3 id="_11">十、题型对策</h3>
+<ul>
+<li><strong>符号化</strong>：设变元 → 定层次 → 写公式（必要条件倒过来）；<strong>真值表</strong>：2ⁿ 行逐层算；<strong>判类型</strong>：真值表或等值演算化到 1/0；<strong>等值证明</strong>：四步套路 + 每步注明定律名（按步给分）；<strong>判蕴涵</strong>：检验 A→B 是否重言式（举反例可否定）</li>
+</ul>
+<hr>
+<h2 id="2">第 2 章 命题逻辑的推理理论 · 考前简记（关键词版）</h2>
+<h3 id="_12">一、范式</h3>
+<ul>
+<li><strong>文字</strong>＝变元或其否定；<strong>简单合取式</strong>＝文字之∧（基本积）；<strong>简单析取式</strong>＝文字之∨（基本和）</li>
+<li><strong>析取范式 DNF</strong>＝<strong>积之和</strong>（简单合取式之析取）；<strong>合取范式 CNF</strong>＝<strong>和之积</strong>（简单析取式之合取）</li>
+<li><strong>性质</strong>：<strong>简单合取式永假 ⟺ 同时含 p 与 ¬p</strong>；<strong>简单析取式永真 ⟺ 同时含 p 与 ¬p</strong>；析取范式永假 ⟺ 每个子式永假；合取范式永真 ⟺ 每个子式永真</li>
+<li>
+<p><strong>范式不唯一</strong>（→所以需要主范式）</p>
+</li>
+<li>
+<p><strong>求范式三步</strong>：① 消去 <strong>→、↔</strong>（A→B⇔¬A∨B；A↔B⇔(A→B)∧(B→A)）② <strong>德摩根内移 ¬</strong>、双重否定 ③ 用分配律：求<strong>析取</strong>用 ∧ 对 ∨ 分配；求<strong>合取</strong>用 ∨ 对 ∧ 分配 → 合并重复</p>
+</li>
+<li>例：(p→q)→r = ¬(¬p∨q)∨r = <strong>(p∧¬q)∨r</strong>；(p∧q)→r = <strong>¬p∨¬q∨r</strong></li>
+</ul>
+<h3 id="_13">二、小项与大项（编码最易错！）</h3>
+<ul>
+<li><strong>小项 mᵢ</strong>：n 变元的简单合取式，每个变元与其否定恰出现一次（共 <strong>2ⁿ</strong> 个）；编码 <strong>1＝变元本身</strong>、0＝否定</li>
+<li><strong>大项 Mᵢ</strong>：n 变元的简单析取式，每个变元与其否定恰出现一次；编码 <strong>1＝变元的否定</strong>、0＝本身（<strong>与小项相反</strong>）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>二进制</th>
+<th>小项</th>
+<th>大项</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00</td>
+<td><strong>m₀ = ¬p∧¬q</strong></td>
+<td><strong>M₀ = p∨q</strong></td>
+</tr>
+<tr>
+<td>01</td>
+<td><strong>m₁ = ¬p∧q</strong></td>
+<td><strong>M₁ = p∨¬q</strong></td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>m₂ = p∧¬q</strong></td>
+<td><strong>M₂ = ¬p∨q</strong></td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>m₃ = p∧q</strong></td>
+<td><strong>M₃ = ¬p∨¬q</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>性质</strong>：小项<strong>只有一个成真赋值</strong>（其编码）；大项<strong>只有一个成假赋值</strong>；不同小项之∧永假、不同大项之∨永真；全小项之∨为 1、全大项之∧为 0</li>
+<li><strong>关键关系</strong>：<strong>¬mᵢ ⇔ Mᵢ</strong>，<strong>¬Mᵢ ⇔ mᵢ</strong></li>
+</ul>
+<h3 id="_14">三、主范式</h3>
+<ul>
+<li><strong>主析取范式</strong>＝小项之析取（对应<strong>成真赋值</strong>）；<strong>主合取范式</strong>＝大项之合取（对应<strong>成假赋值</strong>）</li>
+<li><strong>唯一性</strong>：<strong>非矛盾式有唯一主析取范式</strong>；<strong>非重言式有唯一主合取范式</strong>；矛盾式无主析取（主合取含全部大项）；重言式无主合取（主析取含全部小项）</li>
+<li><strong>求法 1（真值表）</strong>：成真赋值 → 写小项 ∨；成假赋值 → 写大项 ∧</li>
+<li><strong>求法 2（由范式补全）</strong>：缺变元用 <strong>A ⇔ A∧(B∨¬B)</strong>（主析取）或 <strong>A ⇔ A∨(B∧¬B)</strong>（主合取）→ 分配展开 → 合并重复</li>
+<li><strong>相互转换</strong>：<strong>下标互补</strong>——∑m(S) ↔ ∏M(S̄)（例：∑m(0,1,3) → 主合取 M₂）</li>
+<li>
+<p><strong>由主范式判类型</strong>：主析取含全部 2ⁿ 个小项＝重言式；主合取含全部 2ⁿ 个大项＝矛盾式</p>
+</li>
+<li>
+<p><strong>例</strong>：p→q → 主析取 <strong>∑m(0,1,3) = (¬p∧¬q)∨(¬p∧q)∨(p∧q)</strong>；主合取 <strong>∏M(2) = ¬p∨q</strong></p>
+</li>
+<li><strong>例</strong>：(p∧q)∨(¬p∧r) → 主析取 ∑m(1,3,6,7)；主合取 ∏M(0,2,4,5)</li>
+</ul>
+<h3 id="_15">四、有效推理与三种判定法</h3>
+<ul>
+<li><strong>推理形式</strong>：A₁∧A₂∧…∧Aₙ → B；<strong>有效</strong> ⟺ 该式是<strong>重言式</strong>（前提全真 ⇒ 结论必真）</li>
+<li><strong>注意</strong>：推理有效 ≠ 结论真实（前提可能为假）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>真值表法</strong></td>
+<td>看"前提全真"的行中结论是否都为真（找出反例即无效）</td>
+</tr>
+<tr>
+<td><strong>主范式法</strong></td>
+<td>前提合取的成真赋值集合 S_A ⊆ 结论的成真赋值集合 S_B ⇒ 有效</td>
+</tr>
+<tr>
+<td><strong>推理法</strong></td>
+<td>用 P/T/CP 规则逐步推出结论（考试主流，按步给分）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_16">五、推理规则（必背）</h3>
+<ul>
+<li><strong>P 规则</strong>＝前提引入（随时可引入前提）</li>
+<li><strong>T 规则</strong>＝由已推出的公式按重言蕴涵式/等值式推新公式（可引用前面结论；<strong>置换规则</strong>属 T 规则）</li>
+<li><strong>CP 规则</strong>＝为证 <strong>A→B</strong>，把 <strong>A 作为附加前提</strong>引入，推出 B 即得 A→B</li>
+<li>（【注意】 另有<strong>归谬法</strong>：把 ¬B 作附加前提推出矛盾，则有效）</li>
+<li><strong>常用规则</strong>：假言推理 A∧(A→B)⇒B；拒取式 (A→B)∧¬B⇒¬A；析取三段论 (A∨B)∧¬A⇒B；假言三段论 (A→B)∧(B→C)⇒A→C；构造性二难；化简 A∧B⇒A；附加 A⇒A∨B；合取引入 A,B⇒A∧B</li>
+</ul>
+<h3 id="_17">六、证明书写格式</h3>
+<pre><code>序号   公式        依据
+①     p→q        P
+②     p          P
+③     q          T①② 假言推理
+
+</code></pre>
+<ul>
+<li>
+<p><strong>要点</strong>：每行写<strong>依据</strong>（P / T＋行号＋规则名 / CP），最后一行必须是结论</p>
+</li>
+<li>
+<p><strong>经典证明</strong></p>
+</li>
+<li>前提 p→q, q→r, p ⇒ 结论 r：④ q T①③ 假言推理；⑤ r T②④ 假言推理</li>
+<li>前提 (p∨q)→(r∧s), p ⇒ r：② p∨q T①附加；④ r∧s T②③假言推理；⑤ r T④化简</li>
+<li>前提 ¬p∨q, ¬q∨r, p ⇒ r：③ q T①②析取三段论；⑤ r T③④析取三段论</li>
+<li><strong>CP</strong>：前提 p→q, q→r ⇒ p→r：③ <strong>p CP</strong>；④ q；⑤ r；⑥ <strong>p→r CP</strong></li>
+<li>构造性二难：p→q, r→s, p∨r ⇒ q∨s</li>
+</ul>
+<h3 id="_18">七、常见谬误（必考）</h3>
+<table>
+<thead>
+<tr>
+<th>谬误</th>
+<th>形式</th>
+<th>反例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>肯定后件</strong></td>
+<td>p→q, q ⇒ p</td>
+<td>p=0, q=1</td>
+</tr>
+<tr>
+<td><strong>否定前件</strong></td>
+<td>p→q, ¬p ⇒ ¬q</td>
+<td>p=0, q=1</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>正确对照</strong>：假言推理 p→q, p ⇒ q；拒取式 p→q, ¬q ⇒ ¬p；析取三段论 p∨q, ¬p ⇒ q；假言三段论 p→q, q→r ⇒ p→r</li>
+</ul>
+<h3 id="_19">八、易混点一句</h3>
+<ul>
+<li>析取范式＝积之和 ↔ 合取范式＝和之积：</li>
+<li><strong>范式不唯一、主范式唯一</strong></li>
+<li><strong>小项 1＝变元本身、大项 1＝否定</strong>（相反！）</li>
+<li>¬mᵢ⇔Mᵢ</li>
+<li>小项对成真、大项对成假</li>
+<li>主析取↔主合取<strong>下标互补</strong></li>
+<li>矛盾式无主析取、重言式无主合取</li>
+<li><strong>推理有效 ≠ 结论真</strong></li>
+<li>⇒ 是关系、→ 是联结词</li>
+<li><strong>CP 规则＝把前件当附加前提</strong></li>
+</ul>
+<hr>
+<h2 id="3">第 3 章 谓词逻辑 · 考前简记（关键词版）</h2>
+<h3 id="_20">一、谓词的概念</h3>
+<ul>
+<li><strong>个体词</strong>＝研究对象（<strong>个体常元</strong> a,b,c；<strong>个体变元</strong> x,y,z 取值于<strong>个体域 D</strong>）</li>
+<li><strong>谓词</strong>＝个体的<strong>性质</strong>（一元 P(x)）或<strong>关系</strong>（n 元 P(x₁..xₙ)）；<strong>命题函数</strong> P(x) <strong>不是命题</strong>（赋值后才是）；<strong>0 元谓词</strong>＝命题</li>
+<li>例：S(a)＝"张三是大学生"；G(3,2)＝"3&gt;2"</li>
+<li>【注意】 <strong>个体域不同，写法不同</strong>（"所有人会死"：个体域人类→∀xD(x)；全域→∀x(M(x)→D(x))）</li>
+</ul>
+<h3 id="_21">二、量词与合式公式</h3>
+<ul>
+<li><strong>∀ 全称</strong>（所有/任意）；<strong>∃ 存在</strong>（至少一个）</li>
+<li><strong>有限个体域</strong>：∀xP(x) ⇔ P(a₁)∧…∧P(aₙ)（<strong>全称＝合取推广</strong>）；∃xP(x) ⇔ P(a₁)∨…∨P(aₙ)（<strong>存在＝析取推广</strong>）</li>
+<li><strong>合式公式</strong>：原子公式；¬A；(A∧B)(A∨B)(A→B)(A↔B)；<strong>∀xA、∃xA</strong>；有限次应用</li>
+<li><strong>指导变元</strong>＝量词后紧跟的变元；<strong>辖域</strong>＝量词约束的范围（紧跟的括号或最小子公式）</li>
+<li><strong>自由/约束出现</strong>：被量词"罩住"＝约束；否则＝自由；<strong>闭式</strong>（无自由变元）一定是命题</li>
+<li><strong>两个改写规则</strong></li>
+<li><strong>约束变元改名（换名）</strong>：只改<strong>某量词辖域内的约束变元</strong>；新名不能与辖域内已有变元重名</li>
+<li><strong>自由变元代入</strong>：对该自由变元<strong>所有自由出现同时代入</strong>；代入后不能被量词约束</li>
+</ul>
+<h3 id="_22">三、符号化（必考）</h3>
+<table>
+<thead>
+<tr>
+<th>自然语言</th>
+<th>符号化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>所有的 A 都是 B</strong></td>
+<td><strong>∀x(A(x)→B(x))</strong></td>
+</tr>
+<tr>
+<td><strong>有的 A 是 B</strong></td>
+<td><strong>∃x(A(x)∧B(x))</strong></td>
+</tr>
+<tr>
+<td>所有 A 都不是 B</td>
+<td>∀x(A(x)→¬B(x)) ＝ ¬∃x(A(x)∧B(x))</td>
+</tr>
+<tr>
+<td>有的 A 不是 B</td>
+<td>∃x(A(x)∧¬B(x))</td>
+</tr>
+<tr>
+<td>并非所有 A 都是 B</td>
+<td>¬∀x(A(x)→B(x)) ⇔ <strong>∃x(A(x)∧¬B(x))</strong></td>
+</tr>
+<tr>
+<td>不存在使 P 成立者</td>
+<td>¬∃xP(x) ⇔ <strong>∀x¬P(x)</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>【注意】 <strong>全称配 →、存在配 ∧</strong>；写成 ∀x(A∧B) 过强，∃x(A→B) 过弱</li>
+<li><strong>多重量词顺序</strong>：∀x∃yL(x,y)＝"每个人都爱某人"；∃y∀xL(x,y)＝"有一人被所有人爱" → <strong>不等值</strong>，但 <strong>∃y∀x ⇒ ∀x∃y</strong>；同种量词可交换</li>
+</ul>
+<h3 id="_23">四、赋值与等值式</h3>
+<ul>
+<li><strong>赋值（解释）四要素</strong>：个体域 D · 个体常元指派 · 自由变元指派 · 谓词解释 → 公式成为命题</li>
+<li>
+<p><strong>永真式</strong>＝任何解释下都真；矛盾式；可满足式</p>
+</li>
+<li>
+<p><strong>量词否定</strong>：<strong>¬∀xP(x) ⇔ ∃x¬P(x)</strong>；<strong>¬∃xP(x) ⇔ ∀x¬P(x)</strong>（否定量词要"翻牌"）</p>
+</li>
+<li><strong>辖域扩张收缩</strong>（B 不含 x）：∀x(A(x)∧B)⇔∀xA(x)∧B：</li>
+<li>∀x(A(x)∨B)⇔∀xA(x)∨B</li>
+<li>∃x(A(x)∧B)⇔∃xA(x)∧B</li>
+<li>∃x(A(x)∨B)⇔∃xA(x)∨B</li>
+<li>∀x(A→B(x))⇔A→∀xB(x)</li>
+<li>∃x(A→B(x))⇔A→∃xB(x)</li>
+<li><strong>∀x(B(x)→A)⇔∃xB(x)→A</strong></li>
+<li><strong>∃x(B(x)→A)⇔∀xB(x)→A</strong></li>
+<li><strong>分配等值式（只两条成立）</strong>：<strong>∀x(A(x)∧B(x))⇔∀xA(x)∧∀xB(x)</strong>；<strong>∃x(A(x)∨B(x))⇔∃xA(x)∨∃xB(x)</strong></li>
+<li>（∀ 对 ∨、∃ 对 ∧ 只有<strong>单向</strong>：∀xA∨∀xB ⇒ ∀x(A∨B)；∃x(A∧B) ⇒ ∃xA∧∃xB）</li>
+<li><strong>同种量词可交换</strong>：∀x∀y⇔∀y∀x；∃x∃y⇔∃y∃x（<strong>异种不可交换</strong>）</li>
+<li><strong>常用蕴涵式</strong>：<strong>∀xP(x) ⇒ ∃xP(x)</strong>；∀xA∨∀xB ⇒ ∀x(A∨B)；∃x(A∧B) ⇒ ∃xA∧∃xB；∀x(A→B) ⇒ ∀xA→∀xB；<strong>∃y∀xP ⇒ ∀x∃yP</strong></li>
+</ul>
+<h3 id="_24">五、前束范式（五步法）</h3>
+<ul>
+<li><strong>定义</strong>：形如 <strong>Q₁x₁Q₂x₂…QₖxₖM</strong>（<strong>量词全在最前</strong>，母式 M <strong>不含量词</strong>）；<strong>不唯一</strong></li>
+<li><strong>五步</strong>：① 消去 <strong>→、↔</strong> ② <strong>德摩根＋量词否定</strong>把 ¬ 内移到原子前 ③ <strong>换名</strong>（各量词指导变元互不相同）④ 用<strong>辖域扩张</strong>把量词逐个<strong>前移</strong> ⑤ 整理母式</li>
+<li><strong>例</strong>：∀xP(x)→∃xQ(x) = ¬∀xP(x)∨∃xQ(x) = ∃x¬P(x)∨∃yQ(y) = <strong>∃x∃y(¬P(x)∨Q(y))</strong></li>
+<li><strong>例</strong>：¬(∀xP(x)→∃yQ(y)) = ∀xP(x)∧¬∃yQ(y) = <strong>∀x∀y(P(x)∧¬Q(y))</strong></li>
+<li><strong>例</strong>：∃xP(x)→∀yQ(y) = <strong>∀x∀y(¬P(x)∨Q(y))</strong></li>
+</ul>
+<h3 id="_25">六、量词推理四规则（必背）</h3>
+<table>
+<thead>
+<tr>
+<th>规则</th>
+<th>形式</th>
+<th>限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>US 全称指定</strong></td>
+<td>∀xA(x) ⇒ <strong>A(c)</strong> 或 A(y)</td>
+<td>代常元或<strong>新变元</strong>；代入后不被量词捕获</td>
+</tr>
+<tr>
+<td><strong>ES 存在指定</strong></td>
+<td>∃xA(x) ⇒ <strong>A(c)</strong></td>
+<td>c 必须是<strong>前面未出现过的新常元</strong></td>
+</tr>
+<tr>
+<td><strong>UG 全称推广</strong></td>
+<td>A(x) ⇒ <strong>∀xA(x)</strong></td>
+<td>x 必须<strong>任意</strong>；<strong>ES 引入的常元不能 UG</strong></td>
+</tr>
+<tr>
+<td><strong>EG 存在推广</strong></td>
+<td>A(c) ⇒ <strong>∃xA(x)</strong></td>
+<td>由具体个体推广</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>US/ES 消去量词（往下）；UG/EG 引入量词（往上）</strong>；有 ∃ 前提先 ES，有 ∀ 前提用 US；结论是条件式用 <strong>CP</strong></p>
+</blockquote>
+<ul>
+<li><strong>证明格式</strong>：序号 / 公式 / 依据（P、T＋行号＋规则、US/ES/UG/EG、CP）</li>
+<li><strong>经典例题</strong></li>
+<li>∀x(M(x)→D(x)), M(s) ⇒ D(s)：② M(s)→D(s) US①；④ D(s) T②③</li>
+<li>∀x(P(x)→Q(x)), ∃xP(x) ⇒ ∃xQ(x)：② P(c) ES①；④ P(c)→Q(c) US③；⑤ Q(c)；⑥ ∃xQ(x) EG⑤</li>
+<li>∃x(P(x)∧Q(x)) ⇒ ∃xP(x)：② P(c)∧Q(c) ES①；③ P(c) 化简；④ ∃xP(x) EG③</li>
+<li>∀x(P(x)→Q(x)) ⇒ ∀xP(x)→∀xQ(x)：① ∀xP(x) <strong>CP</strong>；③ P(y) US①；⑤ Q(y)；⑥ ∀xQ(x) <strong>UG⑤</strong>；⑦ CP</li>
+</ul>
+<h3 id="_26">七、易混点一句</h3>
+<ul>
+<li>谓词不是命题（含变元）：</li>
+<li><strong>全称配 →、存在配 ∧</strong>（勿写成 ∀x(A∧B)、∃x(A→B)）</li>
+<li>轄域只看紧跟的最小公式（∀xP(x)∧Q(x) 中后一个 x 自由）</li>
+<li><strong>改名改约束、代入改自由</strong></li>
+<li><strong>¬∀ ⇔ ∃¬、¬∃ ⇔ ∀¬</strong></li>
+<li>分配等值式<strong>只两条成立</strong></li>
+<li><strong>∀x(B(x)→A) ⇔ ∃xB(x)→A</strong>（后件不含 x 时量词变种）</li>
+<li><strong>∃y∀x ⇒ ∀x∃y</strong>（不可反推）</li>
+<li>前束范式<strong>量词全前、母式无量词</strong></li>
+<li><strong>ES 要新常元、UG 不能对 ES 常元用</strong></li>
+</ul>
+<hr>
+<h2 id="4">第 4 章 集合 · 考前简记（关键词版）</h2>
+<h3 id="_27">一、基本概念</h3>
+<ul>
+<li><strong>集合</strong>＝确定、互异对象的整体；<strong>∈/∉</strong>＝元素与集合的关系；<strong>⊆/⊂</strong>＝集合与集合的关系</li>
+<li><strong>三特征</strong>：确定性 · 互异性 · 无序性；数集：<strong>N ⊂ Z ⊂ Q ⊂ R ⊂ C</strong></li>
+<li><strong>三种表示法</strong>：列举法 · 描述法 {x|P(x)} · 图示法（文氏图，<strong>只作辅助说明</strong>）</li>
+<li><strong>子集</strong> A⊆B ⟺ ∀x(x∈A→x∈B)；<strong>真子集</strong> A⊂B ⟺ A⊆B 且 A≠B；<strong>相等 A=B ⟺ A⊆B 且 B⊆A</strong>（证明相等的标准方法）</li>
+<li><strong>空集 ∅</strong>：∅⊆A <strong>恒成立</strong>；∅∈A 一般不成立；<strong>∅ 唯一</strong>；<strong>全集 E</strong>（相对概念）</li>
+<li><strong>幂集 P(A)</strong>＝A 的全部子集；<strong>|P(A)| = 2^|A|</strong>；<strong>P(∅) = {∅}</strong>（|P(∅)|=1）</li>
+<li><strong>基数</strong>：|N|=|Z|=|Q|=<strong>ℵ₀</strong>（<strong>可数集</strong>）；|R|&gt;ℵ₀（<strong>不可数</strong>）；<strong>|P(A)| &gt; |A|</strong>（康托尔定理）</li>
+</ul>
+<h3 id="_28">二、集合的运算</h3>
+<table>
+<thead>
+<tr>
+<th>运算</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>并</strong> A∪B</td>
+<td>{x</td>
+</tr>
+<tr>
+<td><strong>交</strong> A∩B</td>
+<td>{x</td>
+</tr>
+<tr>
+<td><strong>差</strong> A−B</td>
+<td>{x</td>
+</tr>
+<tr>
+<td><strong>补</strong> ~A</td>
+<td><strong>E−A</strong> = {x</td>
+</tr>
+<tr>
+<td><strong>对称差</strong> A⊕B</td>
+<td>(A−B)∪(B−A) = (A∪B)−(A∩B)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>关键转化</strong>：<strong>A − B = A∩~B</strong>；互斥：A∩B=∅</li>
+<li>
+<p><strong>容斥（了解）</strong>：|A∪B| = |A|+|B|−|A∩B|</p>
+</li>
+<li>
+<p><strong>运算律（与命题定律一一对应）</strong></p>
+</li>
+<li>幂等 A∪A=A, A∩A=A；交换；结合；<strong>分配</strong> A∪(B∩C)=(A∪B)∩(A∪C)、A∩(B∪C)=(A∩B)∪(A∩C)</li>
+<li><strong>德摩根</strong> ~(A∪B)=~A∩~B；~(A∩B)=~A∪~B；<strong>吸收</strong> A∪(A∩B)=A</li>
+<li>
+<p><strong>零律</strong> A∪E=E, A∩∅=∅；<strong>同一律</strong> A∪∅=A, A∩E=A；<strong>排中</strong> A∪~A=<strong>E</strong>；<strong>矛盾</strong> A∩~A=<strong>∅</strong>；双重否定 ~~A=A</p>
+</li>
+<li>
+<p><strong>差与补的常用恒等式</strong></p>
+</li>
+<li>A−B = A∩~B；A−B = A−(A∩B)；<strong>(A−B)−C = A−(B∪C)</strong>；<strong>A−(B∪C) = (A−B)∩(A−C)</strong>；<strong>A−(B∩C) = (A−B)∪(A−C)</strong>；(A∪B)−C = (A−C)∪(B−C)</li>
+<li>
+<p><strong>包含的五种等价刻画</strong>：A⊆B ⟺ A∩B=A ⟺ A∪B=B ⟺ A−B=∅ ⟺ ~B⊆~A</p>
+</li>
+<li>
+<p><strong>恒等式证明三法</strong>：① <strong>元素法</strong>（x∈左 ⟺ … ⟺ x∈右，最严格）② <strong>代入法</strong>（用已知恒等式逐步化简，每步写依据）③ <strong>文氏图法</strong>（<strong>仅辅助，不能当证明</strong>）</p>
+</li>
+<li><strong>例证</strong>：A−(B∪C) = (A−B)∩(A−C)：x∈A ∧ x∉(B∪C) ⟺ x∈A ∧ x∉B ∧ x∉C ⟺ x∈(A−B) ∧ x∈(A−C)</li>
+</ul>
+<h3 id="_29">三、有序对与笛卡儿积</h3>
+<ul>
+<li><strong>有序对 <x,y></strong>：<strong>有序</strong>（<x,y>≠<y,x>）；<strong>集合性定义 <x,y> = {{x},{x,y}}</strong>；<strong><x,y>=<u,v> ⟺ x=u 且 y=v</strong></li>
+<li><strong>有序 n 元组 <x₁,…,xₙ></strong>：对应位置相等</li>
+<li><strong>笛卡儿积 A×B = {<x,y> | x∈A ∧ y∈B}</strong>；A×A = A²（如 R² 是平面）</li>
+<li>
+<p>例：A={1,2}, B={a,b} → A×B = {&lt;1,a&gt;,&lt;1,b&gt;,&lt;2,a&gt;,&lt;2,b&gt;}，<strong>|A×B| = 4</strong></p>
+</li>
+<li>
+<p><strong>性质</strong>：</p>
+</li>
+<li><strong>|A×B| = |A|·|B|</strong></li>
+<li><strong>A×∅ = ∅×A = ∅</strong></li>
+<li><strong>不满足交换律</strong>（A×B≠B×A）</li>
+<li><strong>不满足结合律</strong>（(A×B)×C ≠ A×(B×C)）</li>
+<li><strong>对 ∪、∩、− 分配</strong>：A×(B∪C)=(A×B)∪(A×C) 等</li>
+<li>A⊆C 且 B⊆D ⇒ A×B ⊆ C×D</li>
+<li><strong>A,B,C,D 均非空时</strong>：A×B⊆C×D ⟺ A⊆C 且 B⊆D</li>
+<li><strong>由 |P(A)| 求 |A|</strong>：|A| = log₂|P(A)|（如 |P(A)|=64 → |A|=6）</li>
+</ul>
+<h3 id="_30">四、易混点一句</h3>
+<ul>
+<li><strong>∈（元素与集合）≠ ⊆（集合与集合）</strong>：</li>
+<li><strong>∅ 无元素、{∅} 有一个元素</strong></li>
+<li><strong>∅⊆A 恒真、∅∈A 一般不真</strong></li>
+<li><strong>P(∅)={∅}</strong></li>
+<li>集合相等要<strong>双向包含</strong></li>
+<li>文氏图<strong>不能证明</strong></li>
+<li><strong>A−B = A∩~B</strong></li>
+<li>德摩根"并变交、交变并"</li>
+<li><strong><x,y> 有序 ≠ {x,y} 无序</strong></li>
+<li><strong>A×B 不交换不结合</strong>（但对 ∪∩− 分配）</li>
+<li>A×B⊆C×D 需<strong>四集非空</strong>才等价</li>
+<li><strong>N/Z/Q 可数、R 不可数</strong></li>
+<li><strong>|P(A)|&gt;|A|</strong></li>
+</ul>
+<h3 id="_31">五、题型对策</h3>
+<ul>
+<li><strong>求幂集</strong>：</li>
+<li>列全子集（必含 ∅ 与 A），个数核对 2ⁿ</li>
+<li><strong>判关系</strong>：先分清"∈"还是"⊆"</li>
+<li><strong>证恒等式</strong>：元素法（逐行等值变形＋注依据）或代入法（化到同一形式）</li>
+<li><strong>证包含</strong>：x∈A ⇒ x∈B</li>
+<li>证相等＝双向包含</li>
+<li><strong>笛卡儿积</strong>：逐个写有序对，核对 |A×B|=|A||B|</li>
+<li>否定性质<strong>举反例</strong>，肯定性质<strong>用定义证</strong></li>
+</ul>
+<hr>
+<h2 id="5">第 5 章 关系与函数 · 考前简记（关键词版）</h2>
+<h3 id="_32">一、关系及性质</h3>
+<ul>
+<li><strong>二元关系 R ⊆ A×B</strong>（A=B 时为 A 上的关系）；<x,y>∈R 记 <strong>xRy</strong>；<strong>dom R</strong>、<strong>ran R</strong></li>
+<li>
+<p><strong>三种表示</strong>：① 集合列举 ② <strong>关系矩阵</strong>（布尔矩阵，行 A 列 B）③ <strong>关系图</strong>（有向边，自环表示 <x,x>）</p>
+</li>
+<li>
+<p><strong>自反</strong>：∀x, <x,x>∈R；矩阵：对角线<strong>全 1</strong>；图：每点有自环</p>
+</li>
+<li><strong>反自反</strong>：∀x, <x,x>∉R；矩阵：对角线<strong>全 0</strong>；图：每点无自环</li>
+<li><strong>对称</strong>：xRy ⇒ yRx；矩阵：<strong>对称</strong>（M=Mᵀ）；图：边成对</li>
+<li><strong>反对称</strong>：xRy ∧ yRx ⇒ x=y；矩阵：i≠j 时 rᵢⱼ、rⱼᵢ <strong>不同时为 1</strong>；图：两点间至多一条边</li>
+<li>
+<p><strong>传递</strong>：xRy ∧ yRz ⇒ xRz；矩阵：<strong>M⊙M ≤ M</strong>；图：有链必有短路</p>
+</li>
+<li>
+<p>【注意】 <strong>自反与反自反不互补</strong>（可都不成立；非空集上不能同时成立）；<strong>对称与反对称不互补</strong>（<strong>恒等关系两者兼有</strong>）；空关系：反自反、对称、反对称、传递，但<strong>不自反</strong></p>
+</li>
+</ul>
+<h3 id="_33">二、关系的运算</h3>
+<ul>
+<li><strong>并 R∪S；交 R∩S；差 R−S；补 ~R（相对 A×B）；逆 R⁻¹ = {<y,x> | <x,y>∈R}</strong>（矩阵转置、图反向）</li>
+<li><strong>逆的性质</strong>：(R⁻¹)⁻¹=R；(R∪S)⁻¹=R⁻¹∪S⁻¹；<strong>(R∘S)⁻¹ = S⁻¹∘R⁻¹</strong>（<strong>顺序颠倒</strong>）</li>
+<li><strong>复合 R∘S = {<x,z> | ∃y, <x,y>∈R ∧ <y,z>∈S}</strong>（先 R 后 S 【注意】按教材）；<strong>矩阵用布尔乘法</strong>（先 ∧ 后 ∨）</li>
+<li>性质：<strong>结合律</strong>；<strong>不交换律</strong>（R∘S≠S∘R）；幺元 <strong>I_A∘R = R∘I_B = R</strong>；<strong>R⁰ = I_A</strong>，Rᵐ∘Rⁿ = Rᵐ⁺ⁿ</li>
+<li>
+<p>例：R={&lt;1,2&gt;,&lt;2,3&gt;}, S={&lt;2,2&gt;,&lt;3,1&gt;} → R∘S = {&lt;1,2&gt;,&lt;2,1&gt;}，S∘R = {&lt;2,3&gt;,&lt;3,2&gt;}</p>
+</li>
+<li>
+<p><strong>关系矩阵布尔运算</strong>：并＝∨；交＝∧；补＝¬；逆＝转置；复合＝布尔乘</p>
+</li>
+<li>
+<p><strong>闭包</strong>：<strong>r(R) = R∪I_A</strong>；<strong>s(R) = R∪R⁻¹</strong>；<strong>t(R) = R∪R²∪…∪Rⁿ（n=|A|）</strong></p>
+</li>
+<li><strong>等价刻画</strong>：<strong>R 自反 ⟺ r(R)=R</strong>；<strong>R 对称 ⟺ R⁻¹=R ⟺ s(R)=R</strong>；<strong>R 传递 ⟺ R∘R⊆R ⟺ t(R)=R</strong></li>
+<li><strong>Warshall</strong>：M[i][j] = M[i][j] ∨ (M[i][k] ∧ M[k][j])（k 逐轮中转）</li>
+</ul>
+<h3 id="_34">三、等价关系与序关系（重点）</h3>
+<ul>
+<li><strong>等价关系 = 自反 + 对称 + 传递</strong>（例：模 n 同余、相似、同姓、等势）</li>
+<li><strong>等价类 [x] = {y | <x,y>∈R}</strong>；性质：<strong>非空</strong>；<strong>xRy ⟺ [x]=[y]</strong>；<strong><x,y>∉R ⟹ [x]∩[y]=∅</strong>（<strong>要么相等、要么不相交</strong>）</li>
+<li><strong>商集 A/R = {[x] | x∈A}</strong>＝A 的一个<strong>划分</strong>；<strong>划分</strong>：块非空、两两不交、并＝A；<strong>等价关系 ↔ 划分 一一对应</strong></li>
+<li>
+<p>例：A={1..8} 模 3 同余 → 等价类 {1,4,7}、{2,5,8}、{3,6}</p>
+</li>
+<li>
+<p><strong>相容关系 = 自反 + 对称（不要求传递）</strong> → 相容类、最大相容类、<strong>覆盖</strong>（块可相交）</p>
+</li>
+<li>
+<p><strong>序关系</strong>：<strong>偏序 = 自反+反对称+传递</strong>（≤、⊆、整除）；<strong>拟序 = 反自反+传递</strong>（&lt;、⊂）；<strong>全序 = 偏序 + 任意两元素可比</strong>（链）</p>
+</li>
+<li><strong>哈斯图画法</strong>：① 去自环 ② 去传递可推出的边（只留<strong>覆盖关系</strong>）③ <strong>小下大上</strong>、直线连接、<strong>不画箭头</strong></li>
+<li><strong>极值元</strong>：</li>
+<li><strong>最大元</strong>（∀x∈B, x≤a，<strong>唯一</strong>）</li>
+<li><strong>最小元</strong>（唯一）</li>
+<li><strong>极大元</strong>（无更大者，<strong>可多个</strong>）</li>
+<li><strong>极小元</strong>（可多个）</li>
+<li><strong>上界/下界</strong>（可多个，可在 B 外）</li>
+<li><strong>上确界</strong>＝上界中最小、<strong>下确界</strong>＝下界中最大（存在则唯一）</li>
+<li><strong>关系</strong>：最大元 ⇒ 极大元；<strong>有限偏序集必有极大（小）元</strong>，未必有最大（小）元</li>
+<li>例：&lt;{1,2,3,6,12}, 整除&gt;，B={2,3,6}：极大元=最大元=<strong>6</strong>；极小元=<strong>2,3</strong>；无最小元；上界=<strong>6,12</strong>，上确界=<strong>6</strong>；下界=下确界=<strong>1</strong></li>
+</ul>
+<h3 id="_35">四、函数</h3>
+<ul>
+<li><strong>函数 f: A→B</strong>：是满足 <strong>dom f = A</strong> 且 <strong>每 x 有唯一像</strong> 的关系（<strong>关系 + 唯一性</strong>）</li>
+<li><strong>单射</strong>：f(x₁)=f(x₂) ⇒ x₁=x₂；<strong>满射</strong>：ran f = B；<strong>双射</strong>：既单射又满射</li>
+<li>例：f(x)=x² 于 R→R <strong>非单射非满射</strong>；f(x)=2x 于 Z→Z <strong>单射非满射</strong>；f(x)=2x+1 于 R→R <strong>双射</strong></li>
+<li>
+<p><strong>计数</strong>（|A|=m, |B|=n）：函数 <strong>nᵐ</strong> 个；单射 <strong>P(n,m)</strong> 个（需 m≤n）；<strong>双射存在 ⟺ m=n</strong>，个数 <strong>m!</strong></p>
+</li>
+<li>
+<p><strong>复合函数</strong>：<strong>(g∘f)(x) = g(f(x))</strong>；满足结合律、<strong>不交换</strong>；f∘I_A = I_B∘f = f</p>
+</li>
+<li><strong>复合与性质</strong>：f、g 单射 ⇒ g∘f 单射；f、g 满射 ⇒ g∘f 满射；<strong>g∘f 单射 ⇒ f 单射</strong>；<strong>g∘f 满射 ⇒ g 满射</strong></li>
+<li><strong>反函数</strong>：<strong>存在 ⟺ f 是双射</strong>；f⁻¹∘f = I_A，f∘f⁻¹ = I_B；<strong>(f⁻¹)⁻¹ = f</strong>；<strong>(g∘f)⁻¹ = f⁻¹∘g⁻¹</strong></li>
+</ul>
+<h3 id="_36">五、易混点一句</h3>
+<ul>
+<li><strong>函数是特殊关系</strong>（唯一像）：</li>
+<li><strong>自反/反自反不互补、对称/反对称不互补</strong>（恒等关系既对称又反对称）</li>
+<li>关系补相对 <strong>A×B</strong></li>
+<li><strong>(R∘S)⁻¹ = S⁻¹∘R⁻¹</strong></li>
+<li>复合<strong>不交换</strong>、矩阵用<strong>布尔乘</strong></li>
+<li><strong>t(R) = R∪R²∪…∪Rⁿ</strong></li>
+<li><strong>R 传递 ⟺ R∘R ⊆ R</strong></li>
+<li><strong>等价关系三性质缺一不可</strong></li>
+<li>相容关系只两条</li>
+<li><strong>等价类要么相等要么不交</strong></li>
+<li>商集是划分</li>
+<li><strong>最大元唯一、极大元可多个</strong></li>
+<li><strong>上确界 = 上界中最小</strong></li>
+<li><strong>g∘f 单射 ⇒ f 单射</strong>（不是 g！）</li>
+<li><strong>有反函数 ⟺ 双射</strong></li>
+</ul>
+<h3 id="_37">六、题型对策</h3>
+<ul>
+<li><strong>判性质</strong>：</li>
+<li>写定义→用矩阵（对角线/对称性/布尔平方 ⊆ 自身）最快</li>
+<li><strong>求复合</strong>：逐对找中转 y</li>
+<li>矩阵用布尔乘</li>
+<li><strong>求闭包</strong>：三条公式 + Warshall</li>
+<li><strong>判等价关系</strong>：自反→对称→传递三步并求等价类/商集</li>
+<li><strong>画哈斯图</strong>：只留覆盖关系、小下大上</li>
+<li><strong>求极值元</strong>：逐一比较，注意"极大元可多个、最大元唯一"</li>
+<li><strong>判单射满射</strong>：先解 f(x₁)=f(x₂)，再任给 y 求原像</li>
+</ul>
+<hr>
+<h2 id="6">第 6 章 代数系统的一般概念 · 考前简记（关键词版）</h2>
+<h3 id="_38">一、代数系统与运算</h3>
+<ul>
+<li><strong>二元运算</strong>：f: S×S→S（<strong>封闭性是固有要求</strong>）；<strong>代数系统 <S, *, ∘></strong>＝非空集合 + 其上若干运算</li>
+<li><strong>六条性质</strong>：</li>
+<li><strong>封闭</strong> ∀x,y, x*y∈S</li>
+<li><strong>交换</strong> x<em>y=y</em>x</li>
+<li><strong>结合</strong> (x<em>y)</em>z=x<em>(y</em>z)</li>
+<li><strong>幂等</strong> x*x=x</li>
+<li><strong>分配</strong> x<em>(y∘z)=(x</em>y)∘(x*z)（左右都要）</li>
+<li><strong>吸收</strong> x<em>(x∘y)=x 且 x∘(x</em>y)=x</li>
+<li>（补充：消去律——x<em>y=x</em>z ⇒ y=z）</li>
+</ul>
+<h3 id="_39">二、特殊元素（必背）</h3>
+<table>
+<thead>
+<tr>
+<th>元素</th>
+<th>定义</th>
+<th>唯一性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>幺元 e</strong></td>
+<td>∀x, e<em>x=x</em>e=x</td>
+<td><strong>若存在必唯一</strong></td>
+</tr>
+<tr>
+<td><strong>零元 θ</strong></td>
+<td>∀x, θ<em>x=x</em>θ=θ</td>
+<td><strong>若存在必唯一</strong></td>
+</tr>
+<tr>
+<td><strong>幂等元</strong></td>
+<td>x*x=x</td>
+<td>可多个</td>
+</tr>
+<tr>
+<td><strong>逆元 a⁻¹</strong></td>
+<td>a<em>b=b</em>a=e</td>
+<td>结合律下<strong>唯一</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>唯一性证明</strong>：幺元 e₁=e₁<em>e₂=e₂；逆元 b=b</em>e=b<em>(a</em>c)=(b<em>a)</em>c=c</li>
+<li>
+<p><strong>逆元性质</strong>：<strong>(a⁻¹)⁻¹ = a</strong>；<strong>(a*b)⁻¹ = b⁻¹*a⁻¹</strong>（顺序颠倒）</p>
+</li>
+<li>
+<p><strong>常见系统</strong>：</p>
+</li>
+<li><Z,+> 幺元 0、无零元、可逆元全部（−a）</li>
+<li><Z,·> 幺元 1、<strong>零元 0</strong>、可逆元 ±1</li>
+<li><P(A),∪> 幺元 <strong>∅</strong>、零元 <strong>A</strong>、全部幂等</li>
+<li><P(A),∩> 幺元 A、零元 ∅</li>
+<li><strong><P(A),⊕></strong> 幺元 ∅、<strong>每元素逆元为自身</strong></li>
+<li><strong>运算表判别</strong>：交换＝表<strong>对称</strong>；幺元＝该行该列<strong>照抄表头</strong>；零元＝该行该列<strong>全是它</strong>；幂等元＝<strong>主对角线上</strong>等于自身者</li>
+</ul>
+<h3 id="_40">三、半群 / 独异点 / 群</h3>
+<ul>
+<li><strong>半群</strong>＝封闭 + <strong>结合</strong>；<strong>独异点（含幺半群）</strong>＝半群 + <strong>幺元</strong>；<strong>群</strong>＝独异点 + <strong>每元素有逆元</strong>（封闭+结合+幺元+逆元，<strong>缺一不可</strong>）；<strong>交换群（Abel 群）</strong>＝群 + <strong>交换律</strong></li>
+<li><strong>判别五步</strong>：① 封闭 ② 结合 ③ 幺元 ④ 逆元 ⑤ 交换（问 Abel 群时）</li>
+<li><strong>典型结论</strong>：</li>
+<li><Z,+> <strong>Abel 群</strong></li>
+<li><Z,·> <strong>独异点</strong>（2 无逆）</li>
+<li><N,+> 独异点</li>
+<li><Z⁺,+> <strong>半群</strong>（无幺元）</li>
+<li><R,·> 独异点</li>
+<li><R−{0},·> <strong>Abel 群</strong></li>
+<li><P(A),∪> 独异点（非空子集无逆）</li>
+<li>
+<p><strong><P(A),⊕> Abel 群</strong></p>
+</li>
+<li>
+<p><strong>群的阶</strong> |G|；元素 a 的阶＝使 aⁿ=e 的最小正整数</p>
+</li>
+<li>
+<p><strong>群的性质</strong>：幺元与逆元唯一；<strong>消去律成立</strong>；方程 a<em>x=b 有唯一解 x=a⁻¹b；</em><em>(a*b)⁻¹=b⁻¹a⁻¹</em><em>；</em><em>除幺元外无幂等元</em><em>；</em><em>群中无零元</em>*（除平凡群）</p>
+</li>
+<li>
+<p><strong>子群 H ≤ G</strong>：H 非空且 <H,*> 本身是群；平凡子群 <strong>{e}</strong> 与 <strong>G</strong></p>
+</li>
+<li><strong>判别条件</strong>：① <strong>两步法</strong>：非空 + 封闭（a<em>b∈H）+ 逆元封闭（a⁻¹∈H）② </em><em>一步法</em><em>：非空且 </em><em>a*b⁻¹ ∈ H</em><em> ③ </em><em>有限子集</em>*：非空 + 封闭即可</li>
+<li>
+<p><strong>例</strong>：<strong>2Z ≤ Z</strong>（非空；a−b = 2(m−n) ∈ 2Z）；<Z₆,+₆> 的子群 {0,2,4}</p>
+</li>
+<li>
+<p><strong>经典运算表例</strong>（Klein 四元群）：S={e,a,b,c}，e 为幺元、a*a=b*b=c*c=e、表对称 ⇒ <strong>交换群</strong>，非幺元元素阶均为 2</p>
+</li>
+</ul>
+<h3 id="_41">四、环与域</h3>
+<ul>
+<li><strong>环 <R, +, ·></strong>：① <strong><R,+> 是交换群</strong> ② <strong><R,·> 是半群</strong> ③ <strong>· 对 + 满足分配律</strong></li>
+<li>例：<Z,+,·>、<Q,+,·>、<R,+,·>、<Zₙ,+ₙ,×ₙ>、矩阵环；性质：0·a = 0、(−a)b = −(ab)</li>
+<li><strong>环的分类</strong>：交换环（乘法交换）；含幺环（乘法有 1）；无零因子（ab=0 ⇒ a=0 或 b=0）；<strong>整环</strong>＝交换 + 含幺 + 无零因子 + |R|≥2</li>
+<li><strong>域 <F, +, ·></strong>（≥2 个元素）：① <strong><F,+> 是交换群</strong> ② <strong><F−{0},·> 是交换群</strong> ③ 分配律</li>
+<li>例：<strong><Q,+,·>、<R,+,·>、<C,+,·>、<Z_p,+,·>（p 素数）</strong>；<strong><Z,+,·> 不是域</strong>（2 的乘法逆元 1/2 ∉ Z）</li>
+<li><strong>层级</strong>：<strong>域 ⇒ 整环 ⇒ 交换含幺环 ⇒ 环</strong>（域一定是整环；Z 是整环但非域）</li>
+</ul>
+<h3 id="_42">五、易混点一句</h3>
+<ul>
+<li>封闭性是<strong>二元运算的固有要求</strong>：</li>
+<li><strong>半群→独异点→群</strong>逐级加条件（结合 → 幺元 → 逆元）</li>
+<li>幺元/零元<strong>必唯一</strong>、逆元在结合律下唯一</li>
+<li><strong>幂等元可多个</strong>，运算幂等律要求全部元素幂等</li>
+<li><strong>群中无零元、除幺元外无幂等元</strong></li>
+<li><Z,·> 是独异点<strong>不是群</strong></li>
+<li><Z⁺,+> 只是<strong>半群</strong></li>
+<li><strong><P(A),⊕> 是群</strong>（逆元为自身）</li>
+<li>子群判别用 <strong>a*b⁻¹∈H</strong> 最省事，<strong>有限子集只验封闭</strong></li>
+<li><strong>域 ⇒ 整环</strong>，反之不成立</li>
+<li><Z,+,·> 不是域</li>
+</ul>
+<h3 id="_43">六、判别模板</h3>
+<ul>
+<li><strong>判群</strong>：封闭 → 结合 → 幺元 → 逆元 →（交换 ⇒ Abel 群）</li>
+<li><strong>判半群/独异点</strong>：封闭 + 结合（独异点再加幺元）</li>
+<li><strong>查运算表</strong>：对称＝交换；行=列表头＝幺元；整行整列同一元素＝零元；主对角线＝幂等元；逐元素配对找逆元</li>
+<li><strong>判子群</strong>：非空 + a*b⁻¹∈H（有限子集只需封闭）</li>
+<li><strong>判环/域</strong>：先 + 法是交换群，再验乘法（域要求<strong>非零元成群</strong>），最后分配律</li>
+</ul>
+<hr>
+<h2 id="7">第 7 章 格与布尔代数 · 考前简记（关键词版）</h2>
+<h3 id="_44">一、格的定义与判别</h3>
+<ul>
+<li><strong>格的定义一（偏序）</strong>：偏序集 <L, ≤> 中<strong>任意两个元素</strong>都有 <strong>inf（最大下界 a∧b）</strong> 与 <strong>sup（最小上界 a∨b）</strong></li>
+<li><strong>格的定义二（代数）</strong>：<L, ∧, ∨> 满足 <strong>交换律 + 结合律 + 吸收律</strong>（a∧(a∨b) = a，a∨(a∧b) = a）</li>
+<li><strong>两种定义等价</strong>：偏序定义 → 用 inf/sup 定义 ∧∨（满足三律）；代数定义 → 定义 <strong>a ≤ b ⟺ a∧b = a</strong>，得偏序且 ∧∨ 恰为 inf/sup</li>
+<li>
+<p>【注意】 <strong>格运算 ∧、∨ ≠ 命题联结词</strong>（符号相同、性质类似）</p>
+</li>
+<li>
+<p><strong>判别（哈斯图逐对法）</strong>：对<strong>每一对</strong>元素找"公共上界中最小者"和"公共下界中最大者"；<strong>有一对缺 inf 或 sup 就不是格</strong></p>
+</li>
+<li><strong>典型例子</strong>：<strong><P(A), ⊆></strong> 是格（∧=∩，∨=∪）；<strong><Z⁺, |></strong> 是格（<strong>∧=gcd，∨=lcm</strong>）；<strong>链（全序集）都是格</strong>（∧=min，∨=max）</li>
+<li>
+<p><strong>非格例</strong>：{a,b,c}，a≤b、a≤c（b、c 不可比）→ <strong>{b,c} 无上界 ⇒ 不是格</strong>；&lt;{2,3,6,12}, |&gt; → <strong>inf{2,3} 不存在（1 不在集合中）</strong></p>
+</li>
+<li>
+<p><strong>格的性质</strong>：</p>
+</li>
+<li><strong>幂等律由吸收律推出</strong>（a∨a = a∨(a∧(a∨a)) = a</li>
+<li>a∧a = a∧(a∨a) = a）</li>
+<li><strong>保序性</strong> a≤b ⇒ a∧c≤b∧c、a∨c≤b∨c</li>
+<li><strong>分配不等式</strong> a∨(b∧c) ≤ (a∨b)∧(a∨c)</li>
+<li><strong>a ≤ b ⟺ a∧b = a ⟺ a∨b = b</strong></li>
+</ul>
+<h3 id="_45">二、分配格、有界格、有补格</h3>
+<ul>
+<li><strong>分配格</strong>：满足 <strong>a∧(b∨c) = (a∧b)∨(a∧c)</strong> 与 <strong>a∨(b∧c) = (a∨b)∧(a∨c)</strong>（一条成立则另一条自动成立）</li>
+<li><strong>判别</strong>：① 直接验证分配律 ② <strong>格是分配格 ⟺ 不含与 M₃ 或 N₅ 同构的子格</strong></li>
+<li><strong>M₃（钻石格）</strong>：0 ≤ a,b,c ≤ 1，a、b、c 两两不可比 → a∧(b∨c) = a，而 (a∧b)∨(a∧c) = 0 ⇒ 非分配</li>
+<li><strong>N₅（五角格）</strong>：0 ≤ a ≤ b ≤ 1 且 0 ≤ c ≤ 1（c 与 a、b 不可比）→ b∧(a∨c) = b，而 (b∧a)∨(b∧c) = a ⇒ 非分配</li>
+<li>
+<p><strong>M₃、N₅ 都是格、都有补，但都不是分配格</strong>；<strong><P(A),∩,∪>、链、整除格都是分配格</strong></p>
+</li>
+<li>
+<p><strong>有界格</strong>：有<strong>最大元 1</strong> 与<strong>最小元 0</strong>；性质：a∧0 = 0，a∨1 = 1；<strong>有限格必有界</strong>；<Z⁺, |> 无最大元 ⇒ 无界</p>
+</li>
+<li><strong>补元</strong>：a 的补元 b 满足 <strong>a∧b = 0 且 a∨b = 1</strong>（记 a′）；<strong>不一定存在</strong>；存在也<strong>不一定唯一</strong>（M₃ 中 a 的补元是 b 或 c）；<strong>分配格中若存在必唯一</strong></li>
+<li>
+<p><strong>有补格</strong>：有界 + <strong>每个元素都有补元</strong>；例：<strong><P(A),∩,∪,~,∅,A></strong>（S 的补元 = ~S）；<strong>M₃、N₅ 有补但非分配</strong>；链 &lt;{1,2,4,8}, |&gt; <strong>有界但非有补</strong>（2 无补元）</p>
+</li>
+<li>
+<p><strong>判别速查</strong>：格＝任意两元都有 inf/sup；分配格＝分配律（或<strong>不含 M₃/N₅</strong>）；有界格＝有 0、1；补元＝a∧b=0 且 a∨b=1；有补格＝有界且每元有补；<strong>布尔代数＝有补的分配格</strong></p>
+</li>
+</ul>
+<h3 id="_46">三、布尔代数</h3>
+<ul>
+<li><strong>定义</strong>：<strong>有补的分配格</strong> <B, ∧, ∨, ′, 0, 1>（三条件：分配格 + 有界 + 每元素有补元）</li>
+<li><strong>例子</strong>：</li>
+<li><strong><P(A), ∩, ∪, ~, ∅, A></strong>（幂集布尔代数；0 = ∅，1 = A，a′ = ~a；<strong>元素个数 = 2^|A|</strong>）</li>
+<li><strong>&lt;{0,1}, ∧, ∨, ¬, 0, 1&gt;</strong>（二值布尔代数＝开关代数，与命题逻辑结构相同）</li>
+<li><strong>有限布尔代数元素个数必为 2ⁿ</strong>，且同构于 <P(A), ∩, ∪></li>
+<li>
+<p><strong>三位一体</strong>：<strong>命题逻辑 ↔ 集合代数 ↔ 开关电路</strong>（∨↔∪↔并联；∧↔∩↔串联；¬↔补集↔反相；1↔全集↔通路；0↔空集↔断路）</p>
+</li>
+<li>
+<p><strong>基本性质</strong>：幂等 · 交换 · 结合 · <strong>吸收</strong> · <strong>分配</strong> · 同一律 a∧1=a、a∨0=a · 零律 a∧0=0、a∨1=1 · <strong>补元律 a∧a′=0、a∨a′=1</strong> · <strong>双重否定 (a′)′=a</strong> · <strong>德摩根 (a∧b)′=a′∨b′、(a∨b)′=a′∧b′</strong> · <strong>0′=1，1′=0</strong></p>
+<blockquote>
+<p><strong>双重否定与德摩根只在分配格（布尔代数）中成立</strong></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="_47">四、易混点一句</h3>
+<ul>
+<li>格的 <strong>∧、∨ 是 inf/sup</strong>（不是联结词）：</li>
+<li><strong>偏序集不一定是格</strong>（要任意两元都有 inf/sup）</li>
+<li><strong>链一定是格，格不一定是链</strong></li>
+<li>上界可多个、<strong>上确界唯一</strong></li>
+<li>下确界可<strong>不在子集 B 中</strong></li>
+<li>格中<strong>幂等律由吸收律推出</strong></li>
+<li>一般格只有<strong>分配不等式</strong>，分配格才取等</li>
+<li><strong>分配格 ⟺ 不含 M₃/N₅</strong></li>
+<li><strong>M₃、N₅ 有补但非分配</strong></li>
+<li>补元<strong>不一定存在、存在不一定唯一</strong>，<strong>分配格中唯一</strong></li>
+<li><strong>有界 ≠ 有补</strong>（链 {1,2,4,8} 有界无补）</li>
+<li><strong>布尔代数 = 有补分配格</strong>，有限时元素数 <strong>2ⁿ</strong></li>
+<li>德摩根/双重否定只在布尔代数中成立</li>
+</ul>
+<h3 id="_48">五、判别模板</h3>
+<ul>
+<li><strong>判格</strong>：哈斯图逐对找 sup/inf，全存在才是格（一对缺失即否定）</li>
+<li><strong>判分配格</strong>：验分配律 或 找 <strong>M₃/N₅ 子格</strong></li>
+<li><strong>判有界格</strong>：找最大元（被所有元素 ≤）与最小元</li>
+<li><strong>求补元</strong>：试 b 使 <strong>a∧b=0 且 a∨b=1</strong>（整除格用 gcd/lcm；幂集格用 ∩/∪ 与 ~）</li>
+<li><strong>判有补格</strong>：有界 + 每元素都有补元（有一个没有即否定）</li>
+<li><strong>判布尔代数</strong>：<strong>分配 + 有界 + 每元素有补</strong>（三者缺一不可）</li>
+<li><strong>算 inf/sup</strong>：整除格 <strong>gcd/lcm</strong>；幂集格 <strong>∩/∪</strong>；链 <strong>min/max</strong></li>
+</ul>
+<hr>
+<h2 id="8">第 8 章 图 · 考前简记（关键词版）</h2>
+<h3 id="_49">一、图的基本概念</h3>
+<ul>
+<li><strong>无向图 G=<V,E></strong>：V 非空有穷顶点集，E 是<strong>无序对</strong>集合；<strong>有向图</strong>：E 是<strong>有序对（弧）</strong>，<u,v> 中 u 始点（弧尾）、v 终点（弧头）；<strong>阶</strong> = |V| = n</li>
+<li><strong>关联</strong>（边与顶点）≠ <strong>邻接</strong>（顶点与顶点）</li>
+<li><strong>特殊图</strong>：<strong>零图</strong> E=∅（Nₙ）；<strong>平凡图</strong>（1 阶零图）；<strong>完全图 Kₙ</strong>：无向 <strong>n(n−1)/2</strong> 条边、有向 <strong>n(n−1)</strong> 条弧；<strong>简单图</strong>（无平行边无环）；多重图</li>
+<li><strong>子图</strong> V'⊆V, E'⊆E；<strong>生成子图</strong> V'=V；<strong>导出子图</strong>（取 V' 间全部边）；<strong>补图 ~G</strong>（相邻与否相反）；<strong>自补图</strong> G≅~G</li>
+<li><strong>自补图必要条件</strong>：|E| = <strong>n(n−1)/4</strong> ⇒ <strong>n ≡ 0 或 1 (mod 4)</strong>（例：P₄、C₅ 是自补图）</li>
+</ul>
+<h3 id="_50">二、顶点的度与握手定理（最常考）</h3>
+<ul>
+<li><strong>无向</strong>：deg(v) = 与 v 关联的边数（<strong>环计 2</strong>）；<strong>有向</strong>：<strong>deg = 出度 + 入度</strong></li>
+<li><strong>【重点】 握手定理</strong>：<strong>Σdeg(v) = 2|E|</strong>（无向）；有向：<strong>Σdeg⁺ = Σdeg⁻ = |E|</strong></li>
+<li><strong>推论</strong>：① <strong>奇度顶点必为偶数个</strong> ② 度序列<strong>和为偶数</strong> ③ n 阶简单图最多 <strong>n(n−1)/2</strong> 条边 ④ r 正则图 <strong>nr 为偶数</strong>（"每点度为 3"⇒ n 必为偶数）</li>
+<li><strong>例</strong>：度 1,1,2,2,3,3（n=6）⇒ Σ=12 ⇒ |E|=<strong>6</strong>；度 2,3,3 的 3 阶简单图<strong>不存在</strong>（最大度 2）</li>
+</ul>
+<h3 id="_51">三、通路、回路与连通性</h3>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>关键词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>通路</strong></td>
+<td>顶点边交替序列；<strong>长度 = 边数</strong></td>
+</tr>
+<tr>
+<td><strong>回路</strong></td>
+<td>起点=终点</td>
+</tr>
+<tr>
+<td><strong>简单通路/回路</strong></td>
+<td><strong>边不重复</strong></td>
+</tr>
+<tr>
+<td><strong>初级通路/回路</strong></td>
+<td><strong>顶点不重复</strong>（初级 ⇒ 简单，反之不然）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>定理</strong>：n 阶图中若两顶点间有通路，则存在长度 <strong>≤ n−1</strong> 的初级通路；若有回路，则存在长度 <strong>≤ n</strong> 的初级回路</li>
+<li><strong>无向图</strong>：<strong>连通</strong>（任意两顶点有通路）；<strong>连通图</strong>；<strong>连通分支 p(G)</strong>（极大连通子图）；n 个顶点 p 个分支 ⇒ <strong>|E| ≥ n−p</strong></li>
+<li><strong>有向图</strong>：<strong>可达</strong>；<strong>强连通</strong>（互相可达）⟹ <strong>单向连通</strong>（至少一个方向）⟹ <strong>弱连通</strong>（忽略方向）</li>
+</ul>
+<h3 id="_52">四、图的表示</h3>
+<ul>
+<li><strong>邻接矩阵 A</strong>：aᵢⱼ = 1 ⟺ vᵢvⱼ 是边（无向图<strong>对称</strong>；有向图 aᵢⱼ = 1 ⟺ <vᵢ,vⱼ> 是弧）</li>
+<li><strong>读图信息</strong>：顶点数 = 矩阵阶数；<strong>边数</strong> = 元素和 ÷ 2（无向）；<strong>度</strong> = 第 i 行（列）和（有向：<strong>行和=出度、列和=入度</strong>）；零图 = 零矩阵；Kₙ = 除对角线外全 1；对角线非 0 ⇒ 有环</li>
+<li>
+<p><strong>例</strong>：V={v₁..v₄}，E={v₁v₂,v₂v₃,v₃v₄,v₁v₃} → 行和 2,2,3,1，Σ=8=2|E| ⇒ |E|=4</p>
+</li>
+<li>
+<p><strong>【重点】 Aᵏ 的含义</strong>：<strong>(Aᵏ)ᵢⱼ = 从 vᵢ 到 vⱼ 长度为 k 的通路数目</strong></p>
+</li>
+<li><strong>判连通</strong>：<strong>A + A² + … + A^(n−1)</strong> 中 (i,j) 非零 ⇒ vᵢ 与 vⱼ 连通；把所有非零处记为 1 即得<strong>可达矩阵（路径矩阵）</strong></li>
+<li><strong>例</strong>：(A²)₁₁ = 2 ⇒ v₁→v₁ 长度 2 的通路 2 条（v₁v₂v₁、v₁v₃v₁）；(A²)₁₃ = 1 ⇒ v₁v₂v₃</li>
+<li><strong>要点</strong>：通路计数用普通矩阵乘法；只问"是否存在"可用布尔乘法（∨、∧）</li>
+<li><strong>其他表示（了解）</strong>：关联矩阵 · 邻接表 · 边集</li>
+</ul>
+<h3 id="_53">五、易混点一句</h3>
+<ul>
+<li><strong>关联（边—顶点）≠ 邻接（顶点—顶点）</strong>：</li>
+<li>零图 ≠ 平凡图</li>
+<li>无向完全图 <strong>n(n−1)/2</strong> ↔ 有向完全图 <strong>n(n−1)</strong></li>
+<li><strong>生成子图必须含全部顶点</strong></li>
+<li><strong>简单通路看边、初级通路看顶点</strong></li>
+<li><strong>通路长度 = 边数</strong></li>
+<li>连通（无向）↔ 强连通 ⟹ 单向连通 ⟹ 弱连通（有向）</li>
+<li><strong>Σdeg = 2|E|</strong>、奇度顶点偶数个</li>
+<li>自补图 <strong>n ≡ 0 或 1 (mod 4)</strong></li>
+<li>A 反映相邻、<strong>Aᵏ 反映长度 k 的通路数</strong></li>
+<li>有向图邻接矩阵<strong>行和=出度、列和=入度</strong></li>
+</ul>
+<h3 id="_54">六、计算模板</h3>
+<ul>
+<li><strong>求边数</strong>：Σdeg ÷ 2；有向图用 Σdeg⁺ = Σdeg⁻ = |E|</li>
+<li><strong>判存在性</strong>：度和为偶 + 最大值 ≤ n−1 + 奇度顶点偶数个，缺一即不存在</li>
+<li><strong>完全图/正则图</strong>：Kₙ 边数 n(n−1)/2；r 正则图 nr/2 须为整数</li>
+<li><strong>自补图</strong>：先验 n(n−1)/4 为整数（n ≡ 0 或 1 mod 4）</li>
+<li><strong>读邻接矩阵</strong>：数边（和 ÷ 2）→ 行和求度（有向分别求出入度）→ 判零图/完全图/有环</li>
+<li><strong>算 Aᵏ / 判连通</strong>：矩阵乘法算 A²、A³…；A + A² + … + A^(n−1) 标 1 得可达矩阵；由可达矩阵判断连通与连通分支</li>
+</ul>
+<hr>
+<h2 id="9">第 9 章 图的应用 · 考前简记（关键词版）</h2>
+<h3 id="_55">一、欧拉图（看"边"）</h3>
+<ul>
+<li><strong>欧拉通路</strong>＝经过每条边一次且仅一次的通路；<strong>欧拉回路</strong>＝每条边一次且仅一次的回路；<strong>欧拉图</strong>＝有欧拉回路；<strong>半欧拉图（一笔画）</strong>＝有欧拉通路无欧拉回路</li>
+<li><strong>【重点】 欧拉定理（充要条件）</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无向图<strong>欧拉回路</strong></td>
+<td>连通 且 <strong>所有顶点度为偶数</strong></td>
+</tr>
+<tr>
+<td>无向图<strong>欧拉通路</strong></td>
+<td>连通 且 <strong>恰有 2 个奇度顶点</strong>（此二点为端点）</td>
+</tr>
+<tr>
+<td>有向图<strong>欧拉回路</strong></td>
+<td><strong>强连通</strong> 且 <strong>每点入度 = 出度</strong></td>
+</tr>
+<tr>
+<td>有向图<strong>欧拉通路</strong></td>
+<td>单向连通 且 除两点外入度=出度（起点出度多 1、终点入度多 1）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>速判</strong>：奇度顶点 <strong>0 个 ⇒ 欧拉图</strong>；<strong>2 个 ⇒ 可一笔画（半欧拉）</strong>；<strong>≥4 个 ⇒ 不能一笔画</strong></li>
+<li><strong>例</strong>：K₅ 每点度 4（全偶）⇒ <strong>欧拉图</strong>；K₄ 有 4 个奇度顶点 ⇒ <strong>不能一笔画</strong>；两三角形共用一顶点（该点度 4、其余度 2）⇒ <strong>欧拉图</strong></li>
+</ul>
+<h3 id="_56">二、哈密顿图（看"顶点"）</h3>
+<ul>
+<li><strong>哈密顿通路</strong>＝经过每个顶点一次且仅一次的通路；<strong>哈密顿回路</strong>＝每个顶点一次且仅一次的回路；<strong>哈密顿图</strong>＝有哈密顿回路</li>
+<li><strong>【重点】 判别（无充要条件！）</strong></li>
+<li><strong>必要条件</strong>（用于<strong>否定</strong>）：若 G 是哈密顿图，则对任意非空真子集 S，<strong>p(G−S) ≤ |S|</strong></li>
+<li><strong>充分条件 狄拉克定理</strong>：n≥3 的简单图，若<strong>每点度 ≥ n/2</strong> ⇒ 哈密顿图</li>
+<li><strong>充分条件 奥尔定理</strong>：n≥3 的简单图，若<strong>任意两个不相邻顶点度之和 ≥ n</strong> ⇒ 哈密顿图</li>
+<li>【注意】 充分条件<strong>不满足不能否定</strong></li>
+<li>
+<p><strong>例</strong>：Kₙ（n≥3）是哈密顿图；<strong>星形图 K₁,ₙ 不是</strong>：取 S={中心}，<strong>p(G−S) = n &gt; 1 = |S|</strong> ⇒ 否定 ✓</p>
+</li>
+<li>
+<p><strong>欧拉 vs 哈密顿</strong>：欧拉看<strong>边</strong>、<strong>有充要条件</strong>；哈密顿看<strong>顶点</strong>、<strong>无充要条件</strong>（只有充分/必要条件）；应用：一笔画 vs 旅行商</p>
+</li>
+</ul>
+<h3 id="_57">三、平面图</h3>
+<ul>
+<li><strong>平面图</strong>：能画在平面上使<strong>任意两边除端点外不相交</strong>（平面嵌入）</li>
+<li><strong>面与次数</strong>：区域＝<strong>面</strong>（含<strong>外部面</strong>）；deg(f)＝面边界上的边数；<strong>Σdeg(f) = 2m</strong></li>
+<li><strong>【重点】 欧拉公式</strong>：连通平面图 <strong>n − m + r = 2</strong>（r = m − n + 2）；<strong>k 个连通分支：n − m + r = k + 1</strong></li>
+<li><strong>【重点】 判非平面（不等式）</strong>：连通简单平面图（n≥3）<strong>m ≤ 3n − 6</strong>；<strong>无三角形</strong>时 <strong>m ≤ 2n − 4</strong></li>
+<li><strong>两个经典非平面图</strong>：<strong>K₅</strong>（n=5,m=10 &gt; 3n−6=9）；<strong>K₃,₃</strong>（n=6,m=9 &gt; 2n−4=8，无三角形）</li>
+<li>（库拉托夫斯基定理：平面图 ⟺ 不含与 K₅ 或 K₃,₃ 同胚的子图——了解）</li>
+</ul>
+<h3 id="_58">四、树及其遍历</h3>
+<ul>
+<li><strong>树</strong>＝<strong>连通无回路</strong>的无向图；<strong>森林</strong>＝无回路（可不连通）；<strong>树叶</strong>＝度 1 顶点；<strong>分支点</strong>＝度 ≥ 2</li>
+<li><strong>【重点】 六个等价命题</strong>：① 树（连通无圈）② 无圈且 m = n−1 ③ 连通且 m = n−1 ④ <strong>任意两点间有唯一通路</strong> ⑤ 连通且<strong>删任一边即不连通</strong>（极小连通）⑥ 无圈且<strong>加任一新边产生唯一回路</strong>（极大无圈）</li>
+<li><strong>【重点】 性质</strong>：<strong>m = n − 1</strong>；森林（n 顶点、k 棵树）<strong>m = n − k</strong>；n≥2 的树<strong>至少两片树叶</strong>；Σdeg = 2(n−1)</li>
+<li><strong>【重点】 叶数公式</strong>：<strong>n₁ = 2 + Σ_{i≥3}(i−2)·nᵢ</strong>（＝2 + n₃ + 2n₄ + 3n₅ + …）</li>
+<li>
+<p><strong>例</strong>：2 个度为 4、3 个度为 3、其余为叶 ⇒ n₁ = 2 + 2×2 + 1×3 = <strong>9</strong>（验算：n=14、m=13、Σdeg=26=2×13 ✓）</p>
+</li>
+<li>
+<p><strong>二叉树</strong>：每点度数 ≤ 2 的根树；性质：<strong>第 i 层 ≤ 2^(i−1)</strong>；<strong>深度 h ≤ 2^h − 1</strong>；<strong>n₀ = n₂ + 1</strong>；完全二叉树深度 = <strong>⌊log₂n⌋ + 1</strong></p>
+</li>
+<li><strong>三种遍历</strong>：<strong>先序＝根左右</strong>；<strong>中序＝左根右</strong>；<strong>后序＝左右根</strong></li>
+<li><strong>例</strong>：A(B(D,E), C(∅,F)) → 先序 <strong>A B D E C F</strong>；中序 <strong>D B E A C F</strong>；后序 <strong>D E B F C A</strong></li>
+<li><strong>还原</strong>：<strong>先序＋中序</strong>、<strong>后序＋中序</strong> 可唯一确定；<strong>先序＋后序不行</strong></li>
+<li><strong>表达式树</strong>：中序→中缀、先序→前缀（波兰）、后序→后缀（逆波兰）</li>
+</ul>
+<h3 id="_59">五、易混点一句</h3>
+<ul>
+<li><strong>欧拉看边、哈密顿看顶点</strong>：</li>
+<li>欧拉<strong>有充要条件</strong>（全偶/恰 2 奇）、哈密顿<strong>没有</strong>（只有充分/必要）</li>
+<li>必要条件 <strong>p(G−S) ≤ |S|</strong> 只用于<strong>否定</strong></li>
+<li>充分条件<strong>不满足不能否定</strong></li>
+<li>平面图看<strong>是否存在</strong>无边交叉画法</li>
+<li><strong>欧拉公式 n−m+r=2</strong>（k 分支时为 k+1）</li>
+<li><strong>Σdeg(f)=2m</strong></li>
+<li><strong>m ≤ 3n−6</strong>（无三角形 m ≤ 2n−4）</li>
+<li><strong>K₅、K₃,₃ 非平面</strong></li>
+<li><strong>树 m = n−1</strong>、森林 m = n−k</li>
+<li><strong>n₁ = 2 + Σ(i−2)nᵢ</strong></li>
+<li><strong>n₀ = n₂ + 1</strong></li>
+<li><strong>先序+后序不能还原二叉树</strong></li>
+</ul>
+<h3 id="_60">六、计算模板</h3>
+<ul>
+<li><strong>判欧拉图</strong>：连通性 → 度数（有向出入度相等）→ 全偶 = 欧拉回路；恰 2 奇 = 欧拉通路</li>
+<li><strong>判哈密顿图</strong>：先试充分条件（度 ≥ n/2；不相邻度和 ≥ n）→ 否则用必要条件找 S 使 p(G−S) &gt; |S| 否定</li>
+<li><strong>判平面图</strong>：数 n、m → m &gt; 3n−6（无三角形 m &gt; 2n−4）⇒ 非平面；否则试画平面嵌入</li>
+<li><strong>欧拉公式</strong>：r = m − n + 2（k 分支：r = m − n + k + 1）</li>
+<li><strong>树的叶数</strong>：n₁ = 2 + Σ_{i≥3}(i−2)nᵢ，用 Σdeg = 2(n−1) 验算</li>
+<li><strong>二叉树遍历</strong>：按"根左右 / 左根右 / 左右根"递归写；还原用"先序首元（后序末元）为根 → 中序切分"</li>
+</ul>
+<hr>
+<h2 id="a">附录 A 符号与"数字"速记</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>五个基本联结词</td>
+<td><strong>¬ ∧ ∨ → ↔</strong>（＋异或 ⊕）</td>
+</tr>
+<tr>
+<td>真值表行数</td>
+<td>n 个命题变元 → <strong>2ⁿ</strong> 行</td>
+</tr>
+<tr>
+<td>小项 / 大项</td>
+<td>各 <strong>2ⁿ</strong> 个；<strong>¬mᵢ ⇔ Mᵢ</strong></td>
+</tr>
+<tr>
+<td>主范式互转</td>
+<td><strong>∑m(S) ↔ ∏M(S̄)</strong>（下标互补）</td>
+</tr>
+<tr>
+<td>推理规则（命题）</td>
+<td>P 规则 · T 规则 · CP 规则（＋归谬法）</td>
+</tr>
+<tr>
+<td>量词与规则</td>
+<td><strong>∀ ∃</strong>；<strong>US ES UG EG</strong>（4 条）</td>
+</tr>
+<tr>
+<td>前束范式</td>
+<td>Q₁x₁…QₖxₖM（量词全在前、母式无量词）</td>
+</tr>
+<tr>
+<td>集合运算</td>
+<td><strong>∪ ∩ − ~ ⊕</strong>（5 种）</td>
+</tr>
+<tr>
+<td>集合特殊集合</td>
+<td>∅ · E · P(A)；**</td>
+</tr>
+<tr>
+<td>关系的三种表示</td>
+<td>集合 · <strong>关系矩阵</strong> · <strong>关系图</strong></td>
+</tr>
+<tr>
+<td>关系的五条性质</td>
+<td>自反 · 反自反 · 对称 · 反对称 · 传递</td>
+</tr>
+<tr>
+<td>三种闭包</td>
+<td><strong>r(R) · s(R) · t(R)</strong></td>
+</tr>
+<tr>
+<td>偏序集特殊元</td>
+<td>最大元 · 最小元 · 极大元 · 极小元 · 上界 · 下界（＋上/下确界）</td>
+</tr>
+<tr>
+<td>函数三类</td>
+<td><strong>单射 · 满射 · 双射</strong></td>
+</tr>
+<tr>
+<td>运算的六条性质</td>
+<td>封闭 · 交换 · 结合 · 幂等 · 分配 · 吸收</td>
+</tr>
+<tr>
+<td>特殊元素</td>
+<td><strong>幺元 · 零元 · 幂等元 · 逆元</strong></td>
+</tr>
+<tr>
+<td>代数系统层级</td>
+<td>半群 → 独异点 → <strong>群</strong>（→ 交换群）；环 → 整环 → <strong>域</strong></td>
+</tr>
+<tr>
+<td>格与布尔代数</td>
+<td>格 → 分配格/有补格 → <strong>布尔代数</strong>；反例 <strong>M₃、N₅</strong></td>
+</tr>
+<tr>
+<td>图的术语</td>
+<td>关联（边—顶点）/邻接（顶点—顶点）；零图 · 平凡图 · <strong>Kₙ</strong></td>
+</tr>
+<tr>
+<td>通路 4 类</td>
+<td>通路 · 回路 · <strong>简单</strong>（边不重复）· <strong>初级</strong>（顶点不重复）</td>
+</tr>
+<tr>
+<td>有向图连通 3 类</td>
+<td><strong>强连通 ⟹ 单向连通 ⟹ 弱连通</strong></td>
+</tr>
+<tr>
+<td>图的应用</td>
+<td>欧拉（<strong>有充要条件</strong>）· 哈密顿（<strong>无充要条件</strong>）· 平面图（<strong>欧拉公式</strong>）· 树（<strong>m = n−1</strong>）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="b">附录 B 核心公式与定理速查</h2>
+<ul>
+<li><strong>命题逻辑</strong></li>
+<li>蕴涵等值式：<strong>A→B ⇔ ¬A∨B</strong>；等价等值式：A↔B ⇔ (A→B)∧(B→A)</li>
+<li>德摩根：¬(A∨B) ⇔ ¬A∧¬B；¬(A∧B) ⇔ ¬A∨¬B</li>
+<li>分配：A∨(B∧C) ⇔ (A∨B)∧(A∨C)；A∧(B∨C) ⇔ (A∧B)∨(A∧C)</li>
+<li>吸收：A∨(A∧B) ⇔ A；A∧(A∨B) ⇔ A</li>
+<li>假言易位：A→B ⇔ ¬B→¬A；归谬论：(A→B)∧(A→¬B) ⇔ ¬A；输出律：p∧q→r ⇔ p→(q→r)</li>
+<li>常用蕴涵：假言推理 A∧(A→B)⇒B；拒取式 (A→B)∧¬B⇒¬A；析取三段论 (A∨B)∧¬A⇒B；假言三段论 (A→B)∧(B→C)⇒A→C</li>
+<li>
+<p><strong>有效推理 ⟺ A₁∧…∧Aₙ→B 是重言式</strong>（主范式法：<strong>S_A ⊆ S_B</strong>）</p>
+</li>
+<li>
+<p><strong>谓词逻辑</strong></p>
+</li>
+<li><strong>¬∀xP(x) ⇔ ∃x¬P(x)</strong>；<strong>¬∃xP(x) ⇔ ∀x¬P(x)</strong></li>
+<li><strong>∀x(A∧B) ⇔ ∀xA∧∀xB</strong>；<strong>∃x(A∨B) ⇔ ∃xA∨∃xB</strong>（其余只有单向）</li>
+<li><strong>∀x(B(x)→A) ⇔ ∃xB(x)→A</strong>；<strong>∃x(B(x)→A) ⇔ ∀xB(x)→A</strong></li>
+<li>
+<p>符号化：<strong>所有 A 都是 B → ∀x(A(x)→B(x))</strong>；<strong>有的 A 是 B → ∃x(A(x)∧B(x))</strong></p>
+</li>
+<li>
+<p><strong>集合</strong></p>
+</li>
+<li><strong>A − B = A∩~B</strong>；~(A∪B) = ~A∩~B；~(A∩B) = ~A∪~B</li>
+<li><strong>A − (B∪C) = (A−B)∩(A−C)</strong>；<strong>A − (B∩C) = (A−B)∪(A−C)</strong></li>
+<li>包含五等价：A ⊆ B ⟺ A∩B = A ⟺ A∪B = B ⟺ A−B = ∅ ⟺ ~B ⊆ ~A</li>
+<li>
+<p><strong>|P(A)| = 2^|A|</strong>；笛卡儿积 <strong>|A×B| = |A|·|B|</strong>；<x,y> = {{x},{x,y}}</p>
+</li>
+<li>
+<p><strong>关系与函数</strong></p>
+</li>
+<li><strong>t(R) = R∪R²∪…∪Rⁿ（n=|A|）</strong>；<strong>R 传递 ⟺ R∘R ⊆ R ⟺ t(R) = R</strong></li>
+<li><strong>(R∘S)⁻¹ = S⁻¹∘R⁻¹</strong>；M_{R∘S} = M_R ⊙ M_S（布尔乘）</li>
+<li>等价关系 = <strong>自反 + 对称 + 传递</strong>；等价类要么相等、要么不交；<strong>商集 = 划分</strong></li>
+<li>偏序 = 自反+反对称+传递；<strong>哈斯图只留覆盖关系</strong></li>
+<li><strong>函数数 nᵐ；单射 P(n,m)；双射 ⟺ m = n，个数 m!</strong></li>
+<li>
+<p><strong>g∘f 单射 ⇒ f 单射</strong>；<strong>g∘f 满射 ⇒ g 满射</strong>；<strong>(a*b)⁻¹ = b⁻¹a⁻¹</strong>（群）</p>
+</li>
+<li>
+<p><strong>代数系统</strong></p>
+</li>
+<li>群 = <strong>封闭 + 结合 + 幺元 + 每元素可逆</strong>；Abel 群再加交换</li>
+<li>子群判别：<strong>非空 + a*b⁻¹ ∈ H</strong>；有限子集只需封闭</li>
+<li>环：<R,+> 交换群 + <R,·> 半群 + 分配律；域：<F,+> 与 <strong><F−{0},·></strong> 都是交换群 + 分配律</li>
+<li>
+<p>层级：<strong>域 ⇒ 整环 ⇒ 交换含幺环 ⇒ 环</strong></p>
+</li>
+<li>
+<p><strong>格与布尔代数</strong></p>
+</li>
+<li>格：任意两元素有 <strong>inf = a∧b</strong> 与 <strong>sup = a∨b</strong>；代数定义＝交换 + 结合 + <strong>吸收</strong></li>
+<li>分配不等式：a∨(b∧c) ≤ (a∨b)∧(a∨c)（<strong>分配格取等号</strong>）</li>
+<li>补元：<strong>a∧b = 0 且 a∨b = 1</strong>；<strong>分配格中补元唯一</strong></li>
+<li>
+<p><strong>布尔代数 = 有补分配格</strong>；有限布尔代数元素个数 <strong>2ⁿ</strong>；<strong>德摩根/双重否定只在此成立</strong></p>
+</li>
+<li>
+<p><strong>图与图的应用</strong></p>
+</li>
+<li><strong>Σdeg(v) = 2|E|</strong>（有向：Σdeg⁺ = Σdeg⁻ = |E|）⇒ <strong>奇度顶点必为偶数个</strong></li>
+<li>完全图：无向 <strong>n(n−1)/2</strong>、有向 <strong>n(n−1)</strong>；<strong>自补图 n ≡ 0 或 1 (mod 4)</strong></li>
+<li><strong>(Aᵏ)ᵢⱼ = vᵢ 到 vⱼ 长度为 k 的通路数</strong>；A + A² + … + A^(n−1) 非零 ⇒ 连通（可达矩阵）</li>
+<li>欧拉：<strong>全偶 ⟺ 欧拉回路</strong>；<strong>恰 2 奇 ⟺ 欧拉通路</strong>（有向：强连通 + 入度=出度）</li>
+<li>哈密顿：<strong>必要条件 p(G−S) ≤ |S|</strong>；<strong>狄拉克 deg ≥ n/2</strong>；<strong>奥尔 deg(u)+deg(v) ≥ n</strong></li>
+<li>平面图：<strong>n − m + r = 2</strong>（k 分支：k+1）；<strong>m ≤ 3n−6</strong>（n≥3）；无三角形 <strong>m ≤ 2n−4</strong>；<strong>Σdeg(f) = 2m</strong></li>
+<li>树：<strong>m = n − 1</strong>；森林 m = n − k；<strong>n₁ = 2 + Σ_{i≥3}(i−2)nᵢ</strong></li>
+<li>二叉树：第 i 层 ≤ <strong>2^(i−1)</strong>；深度 h ≤ <strong>2^h − 1</strong>；<strong>n₀ = n₂ + 1</strong>；<strong>先序=根左右、中序=左根右、后序=左右根</strong></li>
+</ul>
+<h2 id="c">附录 C 典型反例与"不能"清单</h2>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>反例 / 结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>非命题</td>
+<td>疑问句 · 祈使句 · 感叹句 · <strong>悖论</strong> · 含未定变元（"x&gt;3"）</td>
+</tr>
+<tr>
+<td>蕴涵</td>
+<td><strong>p→q 只有 p 真 q 假时为假</strong>（p 假则真）</td>
+</tr>
+<tr>
+<td>推理谬误</td>
+<td><strong>肯定后件</strong>（p→q, q ⇒ p）· <strong>否定前件</strong>（p→q, ¬p ⇒ ¬q）</td>
+</tr>
+<tr>
+<td>主范式</td>
+<td>矛盾式<strong>无</strong>主析取范式；重言式<strong>无</strong>主合取范式</td>
+</tr>
+<tr>
+<td>关系性质</td>
+<td><strong>自反/反自反不互补</strong>、<strong>对称/反对称不互补</strong>（I_A 兼有）</td>
+</tr>
+<tr>
+<td>集合易错</td>
+<td><strong>P(∅) = {∅}</strong>；∅ ⊆ A 恒真但 ∅ ∈ A 一般假</td>
+</tr>
+<tr>
+<td>非格</td>
+<td>{a,b,c}：a≤b、a≤c 且 b、c 不可比（{b,c} 无上界）</td>
+</tr>
+<tr>
+<td>非分配格</td>
+<td><strong>M₃（钻石格）· N₅（五角格）</strong>——<strong>两者都是格、都有补，但都非分配</strong></td>
+</tr>
+<tr>
+<td>有界非有补</td>
+<td>链 <strong>&lt;{1,2,4,8}, 整除&gt;</strong>（2 无补元）</td>
+</tr>
+<tr>
+<td>非群</td>
+<td><strong><Z, ·></strong>（独异点，2 无逆元）· <strong><Z⁺, +></strong>（只是半群，无幺元）· <strong><P(A), ∪></strong>（独异点）</td>
+</tr>
+<tr>
+<td>非域</td>
+<td><strong><Z, +, ·></strong>（1/2 ∉ Z）；整环不一定是域</td>
+</tr>
+<tr>
+<td>非自补图</td>
+<td>自补图需 <strong>n ≡ 0 或 1 (mod 4)</strong></td>
+</tr>
+<tr>
+<td>不能一笔画</td>
+<td>奇度顶点 <strong>≥ 4</strong> 个（如 K₄）</td>
+</tr>
+<tr>
+<td>非哈密顿图</td>
+<td><strong>星形图 K₁,ₙ</strong>（取 S = {中心}，p(G−S) = n &gt; 1 =</td>
+</tr>
+<tr>
+<td>非平面图</td>
+<td><strong>K₅</strong>（10 &gt; 3n−6 = 9）· <strong>K₃,₃</strong>（9 &gt; 2n−4 = 8）</td>
+</tr>
+<tr>
+<td>不能还原二叉树</td>
+<td><strong>先序 + 后序</strong>（需配中序）</td>
+</tr>
+<tr>
+<td>树的计算陷阱</td>
+<td>树 <strong>m = n−1</strong>（不是 n）；森林 m = n − k</td>
+</tr>
+</tbody>
+</table>
+<h2 id="d">附录 D 题型对策</h2>
+<table>
+<thead>
+<tr>
+<th>章</th>
+<th>常考题型</th>
+<th>得分要点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 命题</td>
+<td>判断题（是否命题）· 符号化 · 真值表 · 判重言/矛盾/可满足 · 等值证明</td>
+<td><strong>全称必要条件要"倒过来"</strong>；等值证明每步写定律名</td>
+</tr>
+<tr>
+<td>2 推理</td>
+<td>求范式/主范式 · 判推理有效性 · 形式证明</td>
+<td>主范式靠真值表；<strong>下标互补</strong>互转；证明每行写依据</td>
+</tr>
+<tr>
+<td>3 谓词</td>
+<td>符号化 · 辖域与自由/约束 · 化前束范式 · 谓词推理</td>
+<td><strong>全称配 →、存在配 ∧</strong>；五步化前束；<strong>ES 用新常元</strong></td>
+</tr>
+<tr>
+<td>4 集合</td>
+<td>求幂集 · 判 ∈/⊆ · 集合恒等式证明 · 笛卡儿积</td>
+<td>恒等式用<strong>元素法</strong>（x∈左 ⟺ x∈右）；相等证<strong>双向包含</strong></td>
+</tr>
+<tr>
+<td>5 关系函数</td>
+<td>判五条性质 · 求矩阵/图 · 复合 · 闭包 · 等价类与商集 · 哈斯图与极值元 · 单射满射</td>
+<td>矩阵法最快（<strong>M⊙M ≤ M</strong> 判传递）；<strong>最大元唯一、极大元可多</strong>；<strong>g∘f 单射 ⇒ f 单射</strong></td>
+</tr>
+<tr>
+<td>6 代数系统</td>
+<td>判半群/独异点/群/环/域 · 求幺元零元逆元 · 判子群 · 运算表分析</td>
+<td><strong>五步法</strong>；子群用 <strong>a*b⁻¹∈H</strong>；运算表看对称/行列</td>
+</tr>
+<tr>
+<td>7 格与布尔代数</td>
+<td>判格 · 判分配格 · 求补元 · 判有补格/布尔代数</td>
+<td>哈斯图<strong>逐对</strong>找 sup/inf；<strong>不含 M₃/N₅ ⇒ 分配</strong>；<strong>布尔代数 = 有补 + 分配</strong></td>
+</tr>
+<tr>
+<td>8 图</td>
+<td>求度与边数 · 判存在性 · 邻接矩阵读图 · 算 Aᵏ · 判连通</td>
+<td>**Σdeg = 2</td>
+</tr>
+<tr>
+<td>9 图的应用</td>
+<td>判欧拉图/哈密顿图/平面图 · 欧拉公式 · 树的叶数计算 · 二叉树遍历</td>
+<td>欧拉看<strong>奇度个数</strong>；哈密顿<strong>必要条件否定</strong>；平面图用 <strong>m ≤ 3n−6</strong>；<strong>n₁ = 2+Σ(i−2)nᵢ</strong>；<strong>先序+中序还原</strong></td>
+</tr>
+</tbody>
+</table>
+</main>
+<footer>02324 离散数学 · 由 Markdown 生成，浏览器直接打开即可阅读</footer>
+</body>
+</html>

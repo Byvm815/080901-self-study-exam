@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 7 章 格与布尔代数 · 考点总结</title>
+<style>
+:root{--fg:#24292f;--muted:#57606a;--line:#d0d7de;--accent:#0969da;--code:#f6f8fa;--soft:#fafbfc}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--fg);
+  font:16px/1.78 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",sans-serif}
+main{max-width:980px;margin:0 auto;padding:26px 22px 72px}
+h1{font-size:1.75em;line-height:1.35;border-bottom:3px solid var(--accent);padding-bottom:.28em;margin:1.1em 0 .7em}
+h2{font-size:1.36em;line-height:1.4;border-bottom:1px solid var(--line);padding-bottom:.22em;margin:1.5em 0 .6em}
+h3{font-size:1.14em;margin:1.25em 0 .45em}
+h4{font-size:1.02em;margin:1.05em 0 .35em;color:var(--muted)}
+p{margin:.5em 0}
+ul,ol{margin:.45em 0;padding-left:1.5em}
+li{margin:.22em 0}
+li>ul,li>ol{margin:.15em 0}
+strong{color:#000}
+em{color:#000}
+code{background:var(--code);border-radius:4px;padding:.12em .34em;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:.92em}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;margin:.7em 0}
+pre code{background:none;padding:0;white-space:pre;font-size:.9em;line-height:1.5}
+table{border-collapse:collapse;width:100%;margin:.75em 0;font-size:.95em;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600}
+tbody tr:nth-child(even){background:var(--soft)}
+blockquote{margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:var(--code);color:var(--muted)}
+blockquote p{margin:.25em 0}
+hr{border:0;border-top:1px solid var(--line);margin:1.8em 0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.topnav{position:sticky;top:0;z-index:20;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+  padding:10px 22px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(180%) blur(6px);font-size:.9em}
+.topnav a{white-space:nowrap}
+.topnav .sep{color:var(--line)}
+.topnav .brand{font-weight:600;color:var(--fg);margin-right:6px}
+footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid var(--line);color:var(--muted);font-size:.86em}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:1em 0}
+.card{display:block;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--soft)}
+.card:hover{border-color:var(--accent)}
+.card b{display:block;margin-bottom:4px}
+.card span{color:var(--muted);font-size:.86em}
+.toc{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:1em 0}
+.toc ul{margin:.25em 0;padding-left:1.3em}
+.tip{border:1px dashed var(--accent);border-radius:10px;padding:10px 14px;background:#f6faff;margin:1em 0;font-size:.94em}
+@media (max-width:640px){main{padding:18px 14px 60px}h1{font-size:1.5em}}
+@media print{
+  body{font-size:11.5pt;line-height:1.6}
+  .topnav{display:none}
+  main{max-width:none;padding:0}
+  h1{page-break-before:always;border-bottom-width:2px}
+  body>main>h1:first-child,main>section:first-child>h1{page-break-before:avoid}
+  pre,table,blockquote,li{page-break-inside:avoid}
+  a{color:#000;text-decoration:none}
+  footer{display:none}
+}
+</style>
+</head>
+<body>
+<nav class="topnav"><span class="brand">02324 离散数学</span> <a href="index.html">目录</a> <span class="sep">|</span> <a href="第06章_代数系统的一般概念_考点总结.html">← 第 6 章 代数系统的一般概念 · 考点总结</a> <span class="sep">|</span> <a href="第08章_图_考点总结.html">第 8 章 图 · 考点总结 →</a></nav>
+<main>
+<h1 id="7">第 7 章 格与布尔代数 · 考点总结</h1>
+<blockquote>
+<p>课程：02324 离散数学（080901 自考）<br>
+<strong>课程内容</strong>：7.1 格的基本概念 ； 7.2 分配格与有补格 ； 7.3 布尔代数<br>
+<strong>考核层次</strong>：7.1 <strong>领会</strong> ； 7.2 <strong>领会</strong> ； 7.3 <strong>识记</strong><br>
+<strong>重点/难点</strong>：<strong>格、分配格、有补格</strong>的概念及性质</p>
+</blockquote>
+<hr>
+<h2 id="_1">一、本章知识地图</h2>
+<ul>
+<li><strong>7.1 格的基本概念</strong>：核心内容：<strong>最大下界（下确界 inf）与最小上界（上确界 sup）</strong>、<strong>格的两种定义及其联系</strong>、格的判别（哈斯图法）、格的性质；层次：领会</li>
+<li><strong>7.2 分配格与有补格</strong>：核心内容：<strong>分配格</strong>（分配律 / 不含 M₃、N₅ 子格）、<strong>有界格</strong>、<strong>补元</strong>、<strong>有补格</strong>；层次：领会</li>
+<li>
+<p><strong>7.3 布尔代数</strong>：核心内容：布尔代数的定义（<strong>有补分配格</strong>）、例子（幂集、二值布尔代数）、基本性质；层次：识记</p>
+</li>
+<li>
+<p><strong>本章主线</strong>：偏序集 →（任意两元素都有 inf/sup）<strong>格</strong> →（满足分配律）<strong>分配格</strong> →（有 0、1 且每元素有补元）<strong>有补格</strong> →（有补 + 分配）<strong>布尔代数</strong>。</p>
+</li>
+</ul>
+<hr>
+<h2 id="71">二、7.1 格的基本概念（领会）</h2>
+<h3 id="_2">（一）复习：上下界与确界</h3>
+<p>设 <A, ≤> 是偏序集，B ⊆ A，a∈A（回顾第 5 章）：<br>
+- <strong>上界</strong>：∀x∈B，x ≤ a；<strong>下界</strong>：∀x∈B，a ≤ x；<br>
+- <strong>上确界（最小上界，sup B）</strong>：上界中<strong>最小</strong>者（存在则唯一）；<br>
+- <strong>下确界（最大下界，inf B）</strong>：下界中<strong>最大</strong>者（存在则唯一）。</p>
+<blockquote>
+<p>【注意】 上下界<strong>未必存在</strong>；即使存在，也可能<strong>不在 B 中</strong>。</p>
+</blockquote>
+<h3 id="_3">（二）格的定义（两种定义方法，必背）</h3>
+<ul>
+<li><strong>定义一（偏序定义）</strong>：设 <L, ≤> 是偏序集，若 <strong>L 中任意两个元素都存在最大下界与最小上界</strong>，则称 <L, ≤> 为<strong>格</strong>。</li>
+<li>记 <strong>inf{a, b} = a ∧ b</strong>（称<strong>交</strong>、下确界）；<strong>sup{a, b} = a ∨ b</strong>（称<strong>并</strong>、上确界）；</li>
+<li>
+<p>【注意】 这里的 <strong>∧、∨ 是格运算符号</strong>（不是命题联结词，也不要与集合的交并混淆，但性质惊人相似）。</p>
+</li>
+<li>
+<p><strong>定义二（代数定义）</strong>：设 <L, ∧, ∨> 是带两个二元运算的代数系统，若运算满足<br>
+① <strong>交换律</strong>：a∧b = b∧a，a∨b = b∨a；<br>
+② <strong>结合律</strong>：(a∧b)∧c = a∧(b∧c)，(a∨b)∨c = a∨(b∨c)；<br>
+③ <strong>吸收律</strong>：<strong>a∧(a∨b) = a</strong>，<strong>a∨(a∧b) = a</strong>，<br>
+则称 <L, ∧, ∨> 为<strong>格</strong>。</p>
+</li>
+<li>
+<p><strong>两种定义的联系（重要，常考简答）</strong></p>
+</li>
+<li>由<strong>偏序定义</strong>的格：定义 a∧b = inf{a,b}、a∨b = sup{a,b} 后，可验证 ∧、∨ 满足交换律、结合律与吸收律 ⇒ 得到代数定义下的格；</li>
+<li>由<strong>代数定义</strong>的格：在 L 上定义关系 <strong>a ≤ b ⟺ a∧b = a（⟺ a∨b = b）</strong>，则可验证 ≤ 是<strong>偏序</strong>，且 a∧b、a∨b 恰为 {a,b} 的下确界与上确界 ⇒ 得到偏序定义下的格；</li>
+<li><strong>两种定义等价</strong>；代数定义的好处是能用<strong>等式推演</strong>（如证明幂等律、分配律），偏序定义的好处是能借助<strong>哈斯图</strong>判别。</li>
+</ul>
+<h3 id="_4">（三）格的判别（必考）</h3>
+<ul>
+<li>
+<p><strong>方法一：哈斯图法（直观）</strong><br>
+对哈斯图中<strong>每一对</strong>元素检验：<strong>向上的公共上界中取最小者</strong>是否存在；<strong>向下的公共下界中取最大者</strong>是否存在。<strong>只要有一对元素缺 inf 或 sup，就不是格</strong>。</p>
+</li>
+<li>
+<p><strong>方法二：运算验证法（代数）</strong>：检验 ∧、∨ 是否满足交换律、结合律、吸收律。</p>
+</li>
+<li>
+<p><strong>典型例子（必记）</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>偏序集</th>
+<th>是否格</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><P(A), ⊆></strong></td>
+<td><strong>是格</strong></td>
+<td>a∧b = A∩B，a∨b = A∪B</td>
+</tr>
+<tr>
+<td>**&lt;Z⁺,</td>
+<td>&gt;**（整除）</td>
+<td><strong>是格</strong></td>
+</tr>
+<tr>
+<td><strong>全序集（链）</strong></td>
+<td><strong>是格</strong></td>
+<td>a∧b = min(a,b)，a∨b = max(a,b)</td>
+</tr>
+<tr>
+<td>**&lt;{1,2,4,8},</td>
+<td>&gt;**</td>
+<td><strong>是格</strong>（链）</td>
+</tr>
+<tr>
+<td>**&lt;{1,2,3,6,12},</td>
+<td>&gt;**</td>
+<td><strong>是格</strong></td>
+</tr>
+<tr>
+<td><strong>A = {a,b,c}，a ≤ b，a ≤ c（b、c 不可比）</strong></td>
+<td><strong>不是格</strong></td>
+<td>{b,c} <strong>无上界</strong> ⇒ sup 不存在</td>
+</tr>
+<tr>
+<td>**&lt;{2,3,6,12},</td>
+<td>&gt;**</td>
+<td><strong>不是格</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">（四）格的性质（领会）</h3>
+<ul>
+<li><strong>幂等律可由吸收律推出</strong>（经典推导，常考）：<br>
+① <strong>a∨a = a∨(a∧(a∨a)) = a</strong>（用吸收律 a∨(a∧b) = a，取 b = a∨a）；<br>
+② <strong>a∧a = a∧(a∨a) = a</strong>（用吸收律 a∧(a∨b) = a，取 b = a，并代入①）。  </li>
+<li><strong>保序性（单调性）</strong>：若 a ≤ b，则<strong>a∧c ≤ b∧c</strong> 且 <strong>a∨c ≤ b∨c</strong>；</li>
+<li><strong>分配不等式</strong>（一般格中只有不等式）：</li>
+<li><strong>a∨(b∧c) ≤ (a∨b)∧(a∨c)</strong>；<strong>a∧(b∨c) ≥ (a∧b)∨(a∧c)</strong><br>
+（<strong>分配格</strong>中两式均取等号，见 7.2）；  </li>
+<li><strong>由运算导出序</strong>：<strong>a ≤ b ⟺ a∧b = a ⟺ a∨b = b</strong>；</li>
+<li><strong>对偶原理</strong>（了解）：把格中公式的 ∧ 与 ∨ 互换、≤ 与 ≥ 互换，所得命题仍成立；</li>
+<li>格的<strong>子格</strong>（了解）：L 的子集 S 在同样的 ∧、∨ 下仍构成格（注意运算结果必须仍落在 S 中）。</li>
+</ul>
+<hr>
+<h2 id="72">三、7.2 分配格与有补格（领会，本章核心判别）</h2>
+<h3 id="_6">（一）分配格</h3>
+<ul>
+<li><strong>定义</strong>：格 <L, ∧, ∨> 若满足<strong>分配律</strong></li>
+<li>
+<p><strong>a∧(b∨c) = (a∧b)∨(a∧c)</strong> 与 <strong>a∨(b∧c) = (a∨b)∧(a∨c)</strong><br>
+则称 L 为<strong>分配格</strong>。</p>
+<blockquote>
+<p>在格中，<strong>两条分配律只要一条成立，另一条自动成立</strong>（对偶）。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>判别方法</strong></p>
+</li>
+<li><strong>直接验证分配律</strong>是否成立（对任意元素）；</li>
+<li><strong>看是否有 M₃ 或 N₅ 型子格</strong>（定理，超好用）：</li>
+<li>
+<p><strong>格是分配格 ⟺ 它不含与钻石格 M₃ 或五角格 N₅ 同构的子格</strong>。</p>
+</li>
+<li>
+<p><strong>两个著名的非分配格（必记）</strong></p>
+</li>
+<li>
+<p><strong>钻石格 M₃</strong>：结构：{0, 1, a, b, c}：<strong>0 ≤ a, b, c ≤ 1</strong>，a、b、c <strong>两两不可比</strong>；非分配的验证：a∧(b∨c) = a∧1 = a；而 (a∧b)∨(a∧c) = 0∨0 = 0 ⇒ <strong>a ≠ 0</strong>（分配律不成立）</p>
+</li>
+<li>
+<p><strong>五角格 N₅</strong>：结构：{0, a, b, c, 1}：<strong>0 ≤ a ≤ b ≤ 1</strong>，且 <strong>0 ≤ c ≤ 1</strong>（c 与 a、b 不可比）；非分配的验证：b∧(a∨c) = b∧1 = b；而 (b∧a)∨(b∧c) = a∨0 = a ⇒ <strong>a ≠ b</strong></p>
+</li>
+<li>
+<p><strong>分配格的例子</strong>：<strong><P(A), ∩, ∪></strong>（分配格）、<strong>任何链（全序集）都是分配格</strong>、<strong><Z⁺, gcd, lcm></strong>（整除格）。</p>
+</li>
+</ul>
+<h3 id="_7">（二）有界格、补元、有补格</h3>
+<ul>
+<li><strong>有界格</strong>：若格 L 存在<strong>最大元（全上界）1</strong> 与<strong>最小元（全下界）0</strong>，则称 <L, ∧, ∨, 0, 1> 为<strong>有界格</strong>。</li>
+<li>有界格中：<strong>a∧0 = 0，a∨0 = a，a∧1 = a，a∨1 = 1</strong>；</li>
+<li>
+<p><strong>有限格必是有界格</strong>（有限个元素的 sup 与 inf 都存在）；无限格可以有界（如 [0,1] 上的实数区间）或<strong>无界</strong>（如 <Z⁺, |> 无最大元）。</p>
+</li>
+<li>
+<p><strong>补元</strong>：设 <L, ∧, ∨, 0, 1> 是有界格，a∈L，若存在 b∈L 使</p>
+</li>
+<li><strong>a∧b = 0 且 a∨b = 1</strong>，<br>
+则称 b 是 a 的<strong>补元</strong>（记 a′ 或 ¬a）。</li>
+<li>有界格中元素的补元<strong>不一定存在</strong>；<strong>即使存在也不一定唯一</strong>（如 M₃ 中 a 的补元可以是 b 或 c）；</li>
+<li>
+<p><strong>重要定理：在分配格中，若元素有补元则补元唯一</strong>（因此可有记号 a′）。</p>
+</li>
+<li>
+<p><strong>有补格</strong>：有界格 L 若<strong>每个元素都至少有一个补元</strong>，则称 L 为<strong>有补格</strong>。</p>
+</li>
+<li>例：<strong><P(A), ∩, ∪, ~, ∅, A></strong> 是有补格（A 的子集 S 的补元是 <strong>~S</strong>）；</li>
+<li>例：<strong>M₃ 与 N₅ 都是有补格但都不是分配格</strong>（说明"有补"与"分配"是两回事）；</li>
+<li>反例：<strong>链 &lt;{1,2,4,8}, |&gt;</strong> 是有界分配格，但 <strong>2 没有补元</strong>（2∧x = 1 只可能 x = 1，而 2∨1 = 2 ≠ 8）⇒ <strong>不是有补格</strong>。</li>
+</ul>
+<h3 id="_8">（三）判别速查表（必背）</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>判别条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>格</strong></td>
+<td>任意两元素都有 <strong>inf 与 sup</strong>（或 ∧∨ 满足交换、结合、<strong>吸收</strong>）</td>
+</tr>
+<tr>
+<td><strong>分配格</strong></td>
+<td>满足<strong>分配律</strong>（等价：<strong>不含 M₃ 或 N₅ 同构子格</strong>）</td>
+</tr>
+<tr>
+<td><strong>有界格</strong></td>
+<td>有<strong>最大元 1</strong> 与<strong>最小元 0</strong></td>
+</tr>
+<tr>
+<td><strong>补元</strong></td>
+<td>存在 b 使 <strong>a∧b = 0 且 a∨b = 1</strong></td>
+</tr>
+<tr>
+<td><strong>有补格</strong></td>
+<td><strong>有界</strong> 且<strong>每个元素都有补元</strong></td>
+</tr>
+<tr>
+<td><strong>布尔代数</strong></td>
+<td><strong>有补的分配格</strong>（有界 + 分配 + 每元素有补元）</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="73">四、7.3 布尔代数（识记）</h2>
+<h3 id="_9">（一）定义</h3>
+<ul>
+<li>
+<p><strong>布尔代数</strong>：<strong>有补的分配格</strong>称为布尔代数，记 <strong><B, ∧, ∨, ′, 0, 1></strong> ——即同时满足：<br>
+① <B, ∧, ∨> 是<strong>分配格</strong>；② <strong>有界</strong>（存在 0 与 1）；③ <strong>每个元素都有补元</strong>（补元唯一，记 a′）。</p>
+</li>
+<li>
+<p><strong>等价代数定义（了解）</strong>：<B, ∧, ∨, ′, 0, 1> 若满足<strong>交换律、分配律、同一律（a∧1 = a，a∨0 = a）、补元律（a∧a′ = 0，a∨a′ = 1）</strong>，则称为布尔代数。</p>
+</li>
+</ul>
+<h3 id="_10">（二）典型例子（必记）</h3>
+<table>
+<thead>
+<tr>
+<th>布尔代数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><P(A), ∩, ∪, ~, ∅, A></strong></td>
+<td><strong>幂集布尔代数</strong>；0 = ∅，1 = A，a′ = ~a；**元素个数 2^</td>
+</tr>
+<tr>
+<td><strong>&lt;{0, 1}, ∧, ∨, ¬, 0, 1&gt;</strong></td>
+<td><strong>二值布尔代数</strong>（开关代数、逻辑代数），与命题逻辑<strong>结构完全相同</strong></td>
+</tr>
+<tr>
+<td>有限布尔代数的一般结论</td>
+<td>任何<strong>有限</strong>布尔代数的元素个数必为 <strong>2ⁿ</strong>，且与 <strong><P(A), ∩, ∪></strong>（</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>"三位一体"（帮助理解，常考对比）</strong>：<strong>命题逻辑 ↔ 集合代数 ↔ 开关电路</strong> 三者结构完全一致：<br>
+命题变元 ↔ 子集 ↔ 开关状态；∨ ↔ ∪ ↔ 并联；∧ ↔ ∩ ↔ 串联；¬ ↔ 补集 ↔ 反相；1 ↔ 全集 ↔ 通路；0 ↔ 空集 ↔ 断路。</p>
+</blockquote>
+<h3 id="_11">（三）布尔代数的基本性质（了解，考试多以选择/填空出现）</h3>
+<table>
+<thead>
+<tr>
+<th>性质</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>幂等律</td>
+<td>a∧a = a；a∨a = a</td>
+</tr>
+<tr>
+<td>交换律 / 结合律</td>
+<td>同格</td>
+</tr>
+<tr>
+<td><strong>吸收律</strong></td>
+<td>a∧(a∨b) = a；a∨(a∧b) = a</td>
+</tr>
+<tr>
+<td><strong>分配律</strong></td>
+<td>a∧(b∨c) = (a∧b)∨(a∧c)；a∨(b∧c) = (a∨b)∧(a∨c)</td>
+</tr>
+<tr>
+<td><strong>同一律</strong></td>
+<td>a∧1 = a；a∨0 = a</td>
+</tr>
+<tr>
+<td><strong>零律</strong></td>
+<td>a∧0 = 0；a∨1 = 1</td>
+</tr>
+<tr>
+<td><strong>补元律（排中/矛盾）</strong></td>
+<td><strong>a∧a′ = 0；a∨a′ = 1</strong></td>
+</tr>
+<tr>
+<td><strong>双重否定律</strong></td>
+<td><strong>(a′)′ = a</strong></td>
+</tr>
+<tr>
+<td><strong>德摩根律</strong></td>
+<td><strong>(a∧b)′ = a′∨b′；(a∨b)′ = a′∧b′</strong></td>
+</tr>
+<tr>
+<td>常数</td>
+<td><strong>0′ = 1；1′ = 0</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>关键点：<strong>双重否定律与德摩根律只在分配格（布尔代数）中成立</strong>（在一般的有界格或有补格中不保证成立）。</p>
+</blockquote>
+<hr>
+<h2 id="_12">五、本章对比与易混点</h2>
+<table>
+<thead>
+<tr>
+<th>易混点</th>
+<th>正确理解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>格的 ∧、∨</strong></td>
+<td>是<strong>格的交与并（inf/sup）</strong>，不是命题联结词；但在分配格/布尔代数中与集合的 ∩、∪ 性质一致</td>
+</tr>
+<tr>
+<td><strong>格 vs 偏序集</strong></td>
+<td>偏序集只要求"可比或不可比"；<strong>格要求任意两元素都有 inf 与 sup</strong>（<strong>并非所有偏序集都是格</strong>）</td>
+</tr>
+<tr>
+<td><strong>格 vs 链</strong></td>
+<td>链（全序集）<strong>一定是格</strong>（∧ = min、∨ = max）；格<strong>不一定</strong>是链（允许不可比元素）</td>
+</tr>
+<tr>
+<td>上界 vs 上确界</td>
+<td>上界可多个；<strong>上确界是上界中最小的那个</strong>（唯一）</td>
+</tr>
+<tr>
+<td>inf 存在但不属于集合</td>
+<td>下确界<strong>可以不在子集 B 中</strong>（但必须在 L 中）</td>
+</tr>
+<tr>
+<td><strong>幂等律的来源</strong></td>
+<td>格中幂等律<strong>由吸收律推出</strong>（不是独立公理）</td>
+</tr>
+<tr>
+<td>分配不等式 vs 分配律</td>
+<td>一般格只有<strong>不等式</strong> a∨(b∧c) ≤ (a∨b)∧(a∨c)；<strong>分配格才取等号</strong></td>
+</tr>
+<tr>
+<td><strong>分配格判别</strong></td>
+<td>满足分配律 ⟺ <strong>不含 M₃ 或 N₅ 子格</strong></td>
+</tr>
+<tr>
+<td><strong>M₃、N₅ 的性质</strong></td>
+<td>都是<strong>格</strong>、都是<strong>有补格</strong>，但<strong>都不是分配格</strong></td>
+</tr>
+<tr>
+<td><strong>补元唯一性</strong></td>
+<td>一般有界格中补元<strong>不一定存在、存在也不一定唯一</strong>；<strong>分配格中若存在必唯一</strong></td>
+</tr>
+<tr>
+<td><strong>有界 vs 有补</strong></td>
+<td>有界＝有 0 和 1；有补＝有界 <strong>且每元素都有补元</strong>（有界不一定有补，如链 {1,2,4,8}）</td>
+</tr>
+<tr>
+<td><strong>布尔代数</strong></td>
+<td>＝<strong>有补的分配格</strong>（三个条件同时满足）；有限布尔代数元素个数必为 2ⁿ</td>
+</tr>
+<tr>
+<td>德摩根律的适用</td>
+<td>只在<strong>分配格/布尔代数</strong>中成立</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="_13">六、必背清单 + 简答预测 + 判别模板</h2>
+<h3 id="_14">（一）必背清单</h3>
+<ul>
+<li><strong>最大下界（inf）与最小上界（sup）</strong>的概念（以及"存在则唯一"）；</li>
+<li><strong>格的两种定义</strong>（偏序定义：任意两元素都有 inf/sup；代数定义：交换律 + 结合律 + <strong>吸收律</strong>）与<strong>两者的等价性</strong>；</li>
+<li><strong>格的判别</strong>（哈斯图逐对检验；典型是格/非格的例子）；<strong>格的 ∧ = gcd、∨ = lcm</strong>（整除格）、<strong>∧ = ∩、∨ = ∪</strong>（幂集格）；</li>
+<li>格的性质：<strong>幂等律由吸收律推出</strong>、保序性、<strong>分配不等式</strong>、a ≤ b ⟺ a∧b = a；</li>
+<li><strong>分配格</strong>的定义、判别（分配律；<strong>不含 M₃/N₅ 子格</strong>）、例子；</li>
+<li><strong>M₃（钻石格）与 N₅（五角格）</strong>的结构与非分配性的验证；</li>
+<li><strong>有界格</strong>（0、1）、<strong>补元</strong>（a∧b = 0 且 a∨b = 1）、<strong>分配格中补元唯一</strong>；</li>
+<li><strong>有补格</strong>的定义与例子（<P(A), ∩, ∪, ~>）；M₃、N₅ 有补但非分配；链 {1,2,4,8} 有界但非有补；</li>
+<li><strong>布尔代数 = 有补分配格</strong>；例子 <P(A), ∩, ∪, ~, ∅, A> 与 &lt;{0,1}, ∧, ∨, ¬&gt;；<strong>有限布尔代数元素个数为 2ⁿ</strong>；</li>
+<li>布尔代数的基本性质（分配律、补元律、<strong>双重否定律</strong>、<strong>德摩根律</strong>、0′ = 1）。</li>
+</ul>
+<h3 id="_15">（二）高频简答 / 判断题预测</h3>
+<ul>
+<li>什么是偏序集中两个元素的最大下界与最小上界？它们一定存在吗？</li>
+<li>什么是格？格的两种定义分别是什么？两者有何联系？</li>
+<li>如何判别一个偏序集是否为格？举例说明一个不是格的偏序集。</li>
+<li>举例说明：<P(A), ⊆> 是格，并写出其 ∧ 与 ∨；<Z⁺, |> 是格，其 ∧ 与 ∨ 是什么？</li>
+<li>格有哪些基本性质？为什么说幂等律可由吸收律推出？</li>
+<li>什么是分配不等式？一般格中分配律成立吗？</li>
+<li>什么是分配格？如何判别一个格是否为分配格？</li>
+<li>钻石格 M₃ 与五角格 N₅ 各有什么结构？为什么它们不是分配格？</li>
+<li>什么是有界格？有限格一定有界吗？为什么？</li>
+<li>什么是补元？补元唯一吗？在什么条件下唯一？</li>
+<li>什么是有补格？举例说明。M₃ 是有补格吗？它是分配格吗？</li>
+<li>什么是布尔代数？它与有补格、分配格的关系是什么？</li>
+<li>举出两个布尔代数的例子，并写出其中的 0、1 与补元运算。</li>
+<li>布尔代数有哪些基本性质？为什么德摩根律只在布尔代数中成立？</li>
+<li>有限布尔代数的元素个数有什么特点？</li>
+</ul>
+<h3 id="_16">（三）判别题模板</h3>
+<ul>
+<li><strong>判格</strong>：画出哈斯图 → 对<strong>每一对</strong>元素找 sup（公共上界中最小）与 inf（公共下界中最大） → 全部存在才是格；举出一对不存在即可否定。</li>
+<li><strong>判分配格</strong>：① 直接验证分配律（任取元素算 a∧(b∨c) 与 (a∧b)∨(a∧c) 是否相等）；② 或检查是否存在 <strong>M₃/N₅ 型子格</strong>。</li>
+<li><strong>判有界格</strong>：找是否有最大元（被所有元素 ≤ 的元素）与最小元。</li>
+<li><strong>求补元</strong>：对 a 逐一试 b，使 <strong>gcd 型/∩型运算 = 0</strong> 且 <strong>lcm 型/∪型运算 = 1</strong>；在分配格中补元唯一，可记为 a′。</li>
+<li><strong>判有补格</strong>：有界 + 每个元素都能找到补元；只要有一个元素无补元即否定（如链 {1,2,4,8} 中的 2）。</li>
+<li><strong>判布尔代数</strong>：三条件全满足 —— <strong>分配格 + 有界（0、1）+ 每元素有补元</strong>。</li>
+<li><strong>求 inf/sup 具体值</strong>：在整除格中 inf = <strong>gcd</strong>、sup = <strong>lcm</strong>；在幂集格中 inf = <strong>∩</strong>、sup = <strong>∪</strong>；在链中 inf = min、sup = max。</li>
+</ul>
+</main>
+<footer>02324 离散数学 · 由 Markdown 生成，浏览器直接打开即可阅读</footer>
+</body>
+</html>

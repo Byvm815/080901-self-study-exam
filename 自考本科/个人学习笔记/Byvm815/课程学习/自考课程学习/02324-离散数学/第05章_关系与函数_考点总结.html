@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 5 章 关系与函数 · 考点总结</title>
+<style>
+:root{--fg:#24292f;--muted:#57606a;--line:#d0d7de;--accent:#0969da;--code:#f6f8fa;--soft:#fafbfc}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--fg);
+  font:16px/1.78 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",sans-serif}
+main{max-width:980px;margin:0 auto;padding:26px 22px 72px}
+h1{font-size:1.75em;line-height:1.35;border-bottom:3px solid var(--accent);padding-bottom:.28em;margin:1.1em 0 .7em}
+h2{font-size:1.36em;line-height:1.4;border-bottom:1px solid var(--line);padding-bottom:.22em;margin:1.5em 0 .6em}
+h3{font-size:1.14em;margin:1.25em 0 .45em}
+h4{font-size:1.02em;margin:1.05em 0 .35em;color:var(--muted)}
+p{margin:.5em 0}
+ul,ol{margin:.45em 0;padding-left:1.5em}
+li{margin:.22em 0}
+li>ul,li>ol{margin:.15em 0}
+strong{color:#000}
+em{color:#000}
+code{background:var(--code);border-radius:4px;padding:.12em .34em;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:.92em}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;margin:.7em 0}
+pre code{background:none;padding:0;white-space:pre;font-size:.9em;line-height:1.5}
+table{border-collapse:collapse;width:100%;margin:.75em 0;font-size:.95em;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600}
+tbody tr:nth-child(even){background:var(--soft)}
+blockquote{margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:var(--code);color:var(--muted)}
+blockquote p{margin:.25em 0}
+hr{border:0;border-top:1px solid var(--line);margin:1.8em 0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.topnav{position:sticky;top:0;z-index:20;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+  padding:10px 22px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(180%) blur(6px);font-size:.9em}
+.topnav a{white-space:nowrap}
+.topnav .sep{color:var(--line)}
+.topnav .brand{font-weight:600;color:var(--fg);margin-right:6px}
+footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid var(--line);color:var(--muted);font-size:.86em}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:1em 0}
+.card{display:block;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--soft)}
+.card:hover{border-color:var(--accent)}
+.card b{display:block;margin-bottom:4px}
+.card span{color:var(--muted);font-size:.86em}
+.toc{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:1em 0}
+.toc ul{margin:.25em 0;padding-left:1.3em}
+.tip{border:1px dashed var(--accent);border-radius:10px;padding:10px 14px;background:#f6faff;margin:1em 0;font-size:.94em}
+@media (max-width:640px){main{padding:18px 14px 60px}h1{font-size:1.5em}}
+@media print{
+  body{font-size:11.5pt;line-height:1.6}
+  .topnav{display:none}
+  main{max-width:none;padding:0}
+  h1{page-break-before:always;border-bottom-width:2px}
+  body>main>h1:first-child,main>section:first-child>h1{page-break-before:avoid}
+  pre,table,blockquote,li{page-break-inside:avoid}
+  a{color:#000;text-decoration:none}
+  footer{display:none}
+}
+</style>
+</head>
+<body>
+<nav class="topnav"><span class="brand">02324 离散数学</span> <a href="index.html">目录</a> <span class="sep">|</span> <a href="第04章_集合_考点总结.html">← 第 4 章 集合 · 考点总结</a> <span class="sep">|</span> <a href="第06章_代数系统的一般概念_考点总结.html">第 6 章 代数系统的一般概念 · 考点总结 →</a></nav>
+<main>
+<h1 id="5">第 5 章 关系与函数 · 考点总结</h1>
+<blockquote>
+<p>课程：02324 离散数学（080901 自考）<br>
+<strong>课程内容</strong>：5.1 关系及关系的性质 ； 5.2 关系的运算 ； 5.3 等价关系与序关系 ； 5.4 函数<br>
+<strong>考核层次</strong>：关系及性质 <strong>领会</strong> ； 关系运算 <strong>领会</strong> ； 等价关系与序关系 <strong>简单应用</strong> ； 函数 <strong>领会</strong><br>
+<strong>重点</strong>：集合上的关系及其运算、函数及其运算<br>
+<strong>难点</strong>：等价关系、相容关系、序关系等的判定与证明</p>
+</blockquote>
+<hr>
+<h2 id="_1">一、本章知识地图</h2>
+<ul>
+<li><strong>5.1 关系及性质</strong>：核心内容：关系的定义、<strong>三种表示法</strong>、定义域与值域、<strong>五条性质</strong>与判别；层次：领会</li>
+<li><strong>5.2 关系的运算</strong>：核心内容：并交差补、<strong>逆</strong>、<strong>复合</strong>、<strong>关系矩阵的布尔运算</strong>、<strong>三种闭包</strong>；层次：领会</li>
+<li><strong>5.3 等价关系与序关系</strong>：核心内容：<strong>等价关系/等价类/商集/划分</strong>；<strong>偏序/拟序/全序</strong>、<strong>哈斯图</strong>、<strong>极值元与上下确界</strong>；层次：<strong>简单应用</strong></li>
+<li><strong>5.4 函数</strong>：核心内容：函数定义与判别、<strong>单射/满射/双射</strong>、<strong>复合函数</strong>、反函数；层次：领会</li>
+</ul>
+<hr>
+<h2 id="51">二、5.1 关系及关系的性质（领会）</h2>
+<h3 id="_2">（一）关系的定义</h3>
+<ul>
+<li><strong>二元关系</strong>：<strong>从 A 到 B 的二元关系 R 是笛卡儿积 A×B 的任一子集</strong>，即 <strong>R ⊆ A×B</strong>；若 A = B，则称 <strong>A 上的关系</strong>。</li>
+<li>若 <strong><x, y> ∈ R</strong>，记作 <strong>xRy</strong>；</li>
+<li><strong>定义域</strong> dom R = {x | ∃y(<x,y>∈R)}；<strong>值域</strong> ran R = {y | ∃x(<x,y>∈R)}；<strong>域</strong> fld R = dom R ∪ ran R；</li>
+<li>特殊关系：<strong>空关系 ∅</strong>、<strong>全域关系 E_A = A×A</strong>、<strong>恒等关系 I_A = {<x,x> | x∈A}</strong>。</li>
+</ul>
+<h3 id="_3">（二）关系的三种表示方法（必考）</h3>
+<table>
+<thead>
+<tr>
+<th>表示法</th>
+<th>做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① 集合（列举/描述）</strong></td>
+<td _1_2_="&lt;1,2&gt;," _2_3_="&lt;2,3&gt;">直接列出有序对：R =</td>
+</tr>
+<tr>
+<td><strong>② 关系矩阵 M_R</strong></td>
+<td>称为<strong>布尔矩阵</strong>：行对应 A 的元素、列对应 B 的元素；rᵢⱼ = 1 ⟺ <aᵢ,bⱼ>∈R，否则 0</td>
+</tr>
+<tr>
+<td><strong>③ 关系图</strong></td>
+<td>以 A 的元素为结点；若 <x,y>∈R 则画<strong>从 x 指向 y 的有向边</strong>（<x,x> 画<strong>自环</strong>）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>例</strong>：A = {a, b, c}，R = {<a,b>, <b,c>}</li>
+<li>关系矩阵 M_R（行、列均按 a、b、c 排列）：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>M_R</th>
+<th>a</th>
+<th>b</th>
+<th>c</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>b</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>c</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>- 关系图：a → b → c（三条结点、两条有向边）</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">（三）关系的五条性质（必考，必须会判别）</h3>
+<ul>
+<li><strong>自反性</strong>：<strong>∀x∈A，<x,x>∈R</strong>；关系矩阵判别：主对角线<strong>全 1</strong>；关系图判别：每个结点都有<strong>自环</strong></li>
+<li><strong>反自反性</strong>：<strong>∀x∈A，<x,x>∉R</strong>；关系矩阵判别：主对角线<strong>全 0</strong>；关系图判别：每个结点都<strong>无自环</strong></li>
+<li><strong>对称性</strong>：若 <x,y>∈R，则 <strong><y,x>∈R</strong>；关系矩阵判别：矩阵<strong>对称</strong>（rᵢⱼ = rⱼᵢ）；关系图判别：有向边<strong>成对出现</strong>（互为反向）</li>
+<li><strong>反对称性</strong>：若 <x,y>∈R <strong>且</strong> <y,x>∈R，则 <strong>x = y</strong>；关系矩阵判别：i≠j 时 rᵢⱼ 与 rⱼᵢ <strong>不同时为 1</strong>；关系图判别：任意两点间<strong>至多一条有向边</strong>（不成对）</li>
+<li>
+<p><strong>传递性</strong>：若 <x,y>∈R 且 <y,z>∈R，则 <strong><x,z>∈R</strong>；关系矩阵判别：M_R 的布尔平方 ⊆ M_R（即 M_R⊙M_R ≤ M_R）；关系图判别：有链必有"短路"边</p>
+</li>
+<li>
+<p><strong>重要提示（易错）</strong></p>
+</li>
+<li><strong>自反与反自反不是互补关系</strong>：既有关系既不自反也不反自反（如 A={1,2}，R={&lt;1,1&gt;}）；但<strong>同一非空集合上的关系不能同时自反又反自反</strong>；</li>
+<li><strong>对称与反对称也不互补</strong>：可同时成立（如 <strong>恒等关系 I_A 既对称又反对称</strong>）；也可都不成立（如 R={&lt;1,2&gt;,&lt;2,1&gt;,&lt;2,3&gt;} 在 A={1,2,3} 上）；</li>
+<li><strong>空关系</strong>：反自反、对称、反对称、传递，但<strong>不自反</strong>（除非 A=∅）；</li>
+<li>
+<p><strong>全域关系 E_A</strong>：自反、对称、传递，但<strong>不反自反</strong>；一般<strong>不反对称</strong>（|A|≥2 时）。</p>
+</li>
+<li>
+<p><strong>判别步骤</strong>：先写出 A 的<strong>所有元素</strong>，再逐条性质按定义核对（自反看对角线；对称/反对称看反向对是否同时存在及其后果；传递看所有"两步链"）。</p>
+</li>
+</ul>
+<hr>
+<h2 id="52">三、5.2 关系的运算（领会）</h2>
+<h3 id="_5">（一）常规运算</h3>
+<p>设 R、S 都是从 A 到 B 的关系：<br>
+- <strong>并</strong> R∪S = {<x,y> | <x,y>∈R ∨ <x,y>∈S}；<br>
+- <strong>交</strong> R∩S；<strong>差</strong> R−S；<strong>补</strong> ~R = (A×B) − R（<strong>注意补是相对于 A×B</strong>）；<br>
+- <strong>逆关系</strong>：<strong>R⁻¹ = {<y,x> | <x,y>∈R}</strong>（矩阵<strong>转置</strong>、关系图<strong>反向</strong>）。</p>
+<ul>
+<li><strong>逆关系的性质</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>性质</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>双重逆</td>
+<td><strong>(R⁻¹)⁻¹ = R</strong></td>
+</tr>
+<tr>
+<td>并/交/差的逆</td>
+<td>(R∪S)⁻¹ = R⁻¹∪S⁻¹；(R∩S)⁻¹ = R⁻¹∩S⁻¹；(R−S)⁻¹ = R⁻¹−S⁻¹</td>
+</tr>
+<tr>
+<td><strong>复合的逆（顺序颠倒）</strong></td>
+<td><strong>(R∘S)⁻¹ = S⁻¹∘R⁻¹</strong></td>
+</tr>
+<tr>
+<td>逆与性质</td>
+<td>R 自反 ⟺ R⁻¹ 自反；R 对称 ⟺ R⁻¹ = R；R 传递 ⟺ R⁻¹ 传递</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_6">（二）复合运算（重点）</h3>
+<ul>
+<li><strong>定义</strong>：设 R 是从 A 到 B 的关系、S 是从 B 到 C 的关系，则 <strong>R 与 S 的复合</strong>（记 <strong>R∘S</strong>，【注意】 不同教材记号方向相反）</li>
+<li>
+<p><strong>R∘S = {<x,z> | ∃y∈B（<x,y>∈R ∧ <y,z>∈S）}</strong>（即"<strong>先 R 后 S</strong>"，是从 A 到 C 的关系）。</p>
+</li>
+<li>
+<p><strong>关系矩阵的布尔乘法</strong>：<strong>M_{R∘S} = M_R ⊙ M_S</strong><br>
+其中布尔乘法：<strong>先按位相乘（∧）再布尔加（∨）</strong>：cᵢⱼ = ∨ₖ(rᵢₖ ∧ sₖⱼ)（只要有一项 1 即得 1）。</p>
+</li>
+<li>
+<p><strong>例</strong>：A = {1,2,3}，R = {&lt;1,2&gt;, &lt;2,3&gt;}，S = {&lt;2,2&gt;, &lt;3,1&gt;}</p>
+</li>
+<li>R∘S：&lt;1,2&gt;∈R 与 &lt;2,2&gt;∈S ⇒ &lt;1,2&gt;；&lt;2,3&gt;∈R 与 &lt;3,1&gt;∈S ⇒ &lt;2,1&gt; ⇒ <strong>R∘S = {&lt;1,2&gt;, &lt;2,1&gt;}</strong></li>
+<li>S∘R：&lt;2,2&gt;∈S 与 &lt;2,3&gt;∈R ⇒ &lt;2,3&gt;；&lt;3,1&gt;∈S 与 &lt;1,2&gt;∈R ⇒ &lt;3,2&gt; ⇒ <strong>S∘R = {&lt;2,3&gt;, &lt;3,2&gt;}</strong></li>
+<li>
+<p>⇒ <strong>R∘S ≠ S∘R</strong>（<strong>复合不满足交换律</strong>）</p>
+</li>
+<li>
+<p><strong>复合的性质</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>性质</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>结合律</strong></td>
+<td><strong>(R∘S)∘T = R∘(S∘T)</strong></td>
+</tr>
+<tr>
+<td>交换律</td>
+<td><strong>一般不成立</strong></td>
+</tr>
+<tr>
+<td>恒等关系<strong>幺元</strong></td>
+<td><strong>I_A∘R = R∘I_B = R</strong></td>
+</tr>
+<tr>
+<td>逆</td>
+<td><strong>(R∘S)⁻¹ = S⁻¹∘R⁻¹</strong></td>
+</tr>
+<tr>
+<td>幂</td>
+<td><strong>R⁰ = I_A</strong>；<strong>Rⁿ = R∘R∘…∘R</strong>（n 个）；<strong>Rᵐ∘Rⁿ = Rᵐ⁺ⁿ</strong>，<strong>(Rᵐ)ⁿ = Rᵐⁿ</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_7">（三）关系矩阵的布尔运算（必考）</h3>
+<table>
+<thead>
+<tr>
+<th>运算</th>
+<th>矩阵做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>并 R∪S</td>
+<td>对应元素取 <strong>∨</strong>（逻辑或）</td>
+</tr>
+<tr>
+<td>交 R∩S</td>
+<td>对应元素取 <strong>∧</strong>（逻辑与）</td>
+</tr>
+<tr>
+<td>补 ~R</td>
+<td>每个元素取 <strong>¬</strong>（1↔0）</td>
+</tr>
+<tr>
+<td>逆 R⁻¹</td>
+<td>矩阵<strong>转置</strong></td>
+</tr>
+<tr>
+<td>复合 R∘S</td>
+<td><strong>布尔乘法</strong> M_R ⊙ M_S</td>
+</tr>
+<tr>
+<td>关系性质</td>
+<td>自反：对角线全 1；反自反：对角线全 0；对称：M = Mᵀ；反对称：i≠j 时不能同时为 1；传递：M⊙M ≤ M</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">（四）关系的闭包（重点）</h3>
+<ul>
+<li><strong>闭包</strong>：包含 R 且<strong>具有某种性质的最小关系</strong>。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>闭包</th>
+<th>求法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>自反闭包 r(R)</strong></td>
+<td><strong>r(R) = R ∪ I_A</strong></td>
+<td>加上所有 <x,x></td>
+</tr>
+<tr>
+<td><strong>对称闭包 s(R)</strong></td>
+<td><strong>s(R) = R ∪ R⁻¹</strong></td>
+<td>把反向边补齐</td>
+</tr>
+<tr>
+<td><strong>传递闭包 t(R)</strong></td>
+<td><strong>t(R) = R ∪ R² ∪ R³ ∪ … ∪ Rⁿ</strong>（**n =</td>
+<td>A</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>闭包与性质的关系（定理，常考）</strong></li>
+<li><strong>R 自反 ⟺ I_A ⊆ R ⟺ r(R) = R</strong>；</li>
+<li><strong>R 对称 ⟺ R⁻¹ = R ⟺ s(R) = R</strong>；</li>
+<li>
+<p><strong>R 传递 ⟺ R∘R ⊆ R ⟺ t(R) = R</strong>。</p>
+</li>
+<li>
+<p><strong>求传递闭包的 Warshall 算法（了解步骤）</strong><br>
+对 k = 1…n，对 i = 1…n，对 j = 1…n：</p>
+</li>
+<li>
+<p><strong>M[i][j] = M[i][j] ∨ (M[i][k] ∧ M[k][j])</strong><br>
+（依次"允许经过第 k 个结点中转"，最终得到传递闭包的矩阵；复杂度 O(n³)。）</p>
+</li>
+<li>
+<p><strong>例</strong>：A = {a,b,c}，R = {<a,b>, <b,c>}</p>
+</li>
+<li><strong>r(R) = R∪I_A = {<a,a>, <a,b>, <b,b>, <b,c>, <c,c>}</strong>；</li>
+<li><strong>s(R) = R∪R⁻¹ = {<a,b>, <b,a>, <b,c>, <c,b>}</strong>；</li>
+<li>R² = {<a,c>}，R³ = ∅ ⇒ <strong>t(R) = {<a,b>, <b,c>, <a,c>}</strong>。</li>
+</ul>
+<hr>
+<h2 id="53">四、5.3 等价关系与序关系（简单应用，本章得分重点）</h2>
+<h3 id="_9">（一）等价关系</h3>
+<ul>
+<li>
+<p><strong>定义</strong>：A 上的关系 R 若同时满足 <strong>自反、对称、传递</strong>，则称 R 为 A 上的<strong>等价关系</strong>。</p>
+</li>
+<li>
+<p><strong>典型例子</strong>：数的相等 <code>=</code>；三角形的相似/全等；<strong>模 n 同余关系</strong>；集合的等势；人群中"同姓/同龄"；矩阵的相似。</p>
+</li>
+<li>
+<p><strong>等价类</strong>：<strong>[x]_R = {y | y∈A ∧ <x,y>∈R</strong>}（与 x 有关系的所有元素构成的集合）。</p>
+</li>
+<li>
+<p><strong>等价类的三大性质（必考）</strong></p>
+</li>
+<li><strong>每个等价类非空</strong>（因自反性 x∈[x]）；</li>
+<li><strong>xRy ⟺ [x] = [y]</strong>（同类元素等价）；</li>
+<li>
+<p><strong>若 <x,y>∉R，则 [x]∩[y] = ∅</strong>（不同类不相交）。</p>
+<blockquote>
+<p>结论：<strong>等价类要么完全相同、要么完全不相交</strong>。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>商集</strong>：<strong>A/R = {[x]_R | x∈A}</strong>（所有等价类构成的集合）——它正是 A 的一个<strong>划分</strong>。</p>
+</li>
+<li>
+<p><strong>划分</strong>：A 的子集族 π = {A₁, A₂, …, Aₘ} 若满足<br>
+① 每个 <strong>Aᵢ ≠ ∅</strong>；② <strong>Aᵢ∩Aⱼ = ∅</strong>（i≠j）；③ <strong>A₁∪A₂∪…∪Aₘ = A</strong>，则称 π 是 A 的一个划分，每个 Aᵢ 称<strong>划分块（类）</strong>。</p>
+</li>
+<li>
+<p><strong>重要定理</strong>：<strong>A 上的等价关系与 A 的划分一一对应</strong>（由等价关系可得商集（划分）；由划分可定义等价关系"同块即相关"）。</p>
+</li>
+<li>
+<p><strong>例</strong>：A = {1,2,…,8}，R 为<strong>模 3 同余</strong>关系（aRb ⟺ a ≡ b (mod 3)）</p>
+</li>
+<li>等价类：<strong>[1] = {1,4,7}，[2] = {2,5,8}，[3] = {3,6}</strong>；</li>
+<li><strong>商集 A/R = {{1,4,7}, {2,5,8}, {3,6}}</strong>（3 个划分块）。</li>
+</ul>
+<h3 id="_10">（二）相容关系（了解，大纲提到"相容关系"的判定）</h3>
+<ul>
+<li><strong>相容关系</strong>：A 上同时满足<strong>自反、对称</strong>的关系（<strong>不要求传递</strong>）。</li>
+<li><strong>相容类</strong>：非空子集 B，其中任意两元素都相容；</li>
+<li><strong>最大相容类</strong>：不能被其他相容类真包含的相容类；</li>
+<li><strong>覆盖</strong>：A 中所有最大相容类构成的集合（块可相交，区别于划分）。</li>
+</ul>
+<h3 id="_11">（三）序关系</h3>
+<table>
+<thead>
+<tr>
+<th>关系</th>
+<th>满足性质</th>
+<th>记号与例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>偏序关系（半序）</strong></td>
+<td><strong>自反、反对称、传递</strong></td>
+<td>≤；数的"≤"、集合的"⊆"、整除"</td>
+</tr>
+<tr>
+<td><strong>拟序关系（严格偏序）</strong></td>
+<td><strong>反自反、传递</strong>（必反对称）</td>
+<td>&lt;（严格小于）；"真包含" ⊂</td>
+</tr>
+<tr>
+<td><strong>全序关系（线序）</strong></td>
+<td>偏序 <strong>且任意两元素可比</strong>（∀x,y，x≤y 或 y≤x）</td>
+<td>数集上的 ≤；<A, ≤> 称<strong>全序集</strong>或<strong>链</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>可比与不可比</strong>：若 x≤y 或 y≤x，则 x、y <strong>可比</strong>；否则<strong>不可比</strong>（偏序集允许不可比元素，如图的哈斯图中无连线者）。</p>
+</li>
+<li>
+<p><strong>哈斯图（Hasse 图）的画法（必考）</strong><br>
+① 去掉所有<strong>自环</strong>（自反性使 <x,x> 无意义）；<br>
+② 去掉由<strong>传递性</strong>可推出的边（即若 x&lt;y 且 y&lt;z，则删去 x 到 z 的边，只保留<strong>覆盖关系</strong>）；<br>
+③ 把较小的元素画在<strong>下方</strong>、较大的元素画在<strong>上方</strong>，用<strong>直线段</strong>连接（<strong>不画箭头</strong>）；<br>
+④ 得到的简图即为哈斯图。</p>
+</li>
+<li>
+<p><strong>例</strong>：A = {1,2,3,6,12} 上的整除关系 ≤（a ≤ b ⟺ a | b）</p>
+</li>
+<li>覆盖关系：1|2、1|3、2|6、3|6、6|12；<strong>哈斯图</strong>：</li>
+</ul>
+<pre><code>        12
+        |
+        6
+       / \
+      2   3
+       \ /
+        1
+
+</code></pre>
+<h3 id="_12">（四）偏序集中的特殊元素（必考，易混）</h3>
+<p>设 <A, ≤> 是偏序集，B ⊆ A，a ∈ A（或 B）：</p>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>定义</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>最大元</strong></td>
+<td>a∈B 且 <strong>∀x∈B，x ≤ a</strong></td>
+<td>若存在必<strong>唯一</strong></td>
+</tr>
+<tr>
+<td><strong>最小元</strong></td>
+<td>a∈B 且 <strong>∀x∈B，a ≤ x</strong></td>
+<td>若存在必<strong>唯一</strong></td>
+</tr>
+<tr>
+<td><strong>极大元</strong></td>
+<td>a∈B 且<strong>不存在</strong> x∈B 使 <strong>a &lt; x</strong>（没有比它更大者）</td>
+<td>可<strong>多个</strong></td>
+</tr>
+<tr>
+<td><strong>极小元</strong></td>
+<td>a∈B 且<strong>不存在</strong> x∈B 使 <strong>x &lt; a</strong></td>
+<td>可<strong>多个</strong></td>
+</tr>
+<tr>
+<td><strong>上界</strong></td>
+<td>a∈A 且 <strong>∀x∈B，x ≤ a</strong></td>
+<td>可多个（可不在 B 中）</td>
+</tr>
+<tr>
+<td><strong>下界</strong></td>
+<td>a∈A 且 <strong>∀x∈B，a ≤ x</strong></td>
+<td>可多个</td>
+</tr>
+<tr>
+<td><strong>上确界（最小上界）sup B</strong></td>
+<td>上界中<strong>最小</strong>者</td>
+<td>若存在必唯一</td>
+</tr>
+<tr>
+<td><strong>下确界（最大下界）inf B</strong></td>
+<td>下界中<strong>最大</strong>者</td>
+<td>若存在必唯一</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>元素关系图（记牢）</strong>：</li>
+<li><strong>最大元 ⇒ 极大元</strong>（且最大元是唯一的极大元）；反之不成立；</li>
+<li><strong>上确界 = 上界中之最小</strong>；若最大元存在，则它既是上确界也是极大元；</li>
+<li>
+<p>极大元、极小元<strong>必定存在</strong>（有限偏序集）；最大元、最小元<strong>未必存在</strong>；上/下确界<strong>未必存在</strong>。</p>
+</li>
+<li>
+<p><strong>例（续上）</strong>：偏序集 &lt;{1,2,3,6,12}, |&gt;，取 <strong>B = {2, 3, 6}</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>项</th>
+<th>结果</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>极大元</td>
+<td><strong>6</strong></td>
+<td>6 不被 B 中其他元素整除（2∤6? 2</td>
+</tr>
+<tr>
+<td>最大元</td>
+<td><strong>6</strong></td>
+<td>∀x∈B，x</td>
+</tr>
+<tr>
+<td>极小元</td>
+<td><strong>2, 3</strong></td>
+<td>1∉B；2、3 互不整除，都是极小</td>
+</tr>
+<tr>
+<td>最小元</td>
+<td><strong>不存在</strong></td>
+<td>2 与 3 不可比</td>
+</tr>
+<tr>
+<td>上界</td>
+<td><strong>6, 12</strong></td>
+<td>都能被 B 中所有元素整除</td>
+</tr>
+<tr>
+<td>上确界</td>
+<td><strong>6</strong></td>
+<td>上界中的最小者</td>
+</tr>
+<tr>
+<td>下界</td>
+<td><strong>1</strong></td>
+<td>1 整除 B 中所有元素</td>
+</tr>
+<tr>
+<td>下确界</td>
+<td><strong>1</strong></td>
+<td>下界只有 1</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="54">五、5.4 函数（领会）</h2>
+<h3 id="_13">（一）函数的定义</h3>
+<p>设 f 是从 A 到 B 的<strong>二元关系</strong>，若满足：<br>
+① <strong>dom f = A</strong>（A 中每个元素都有像）；② <strong>每个 x∈A 只有一个像</strong>（唯一性），<br>
+则称 f 为<strong>从 A 到 B 的函数（映射）</strong>，记 <strong>f: A → B</strong>，x 的像记 f(x)。<br>
+- <strong>判别关系是否为函数</strong>：<strong>"每个 x 都有像"且"像唯一"</strong>（缺一不可）；<br>
+- <strong>dom f = A</strong>；<strong>ran f = {f(x) | x∈A} ⊆ B</strong>（称<strong>值域/像集</strong>）；当 ran f = B 时 f 是满射；<br>
+- <strong>函数相等</strong>：f = g ⟺ 定义域相同且对每个 x 有 f(x) = g(x)（<strong>与 B 无关，只要求像相同</strong>）；<br>
+- 特殊函数：<strong>恒等函数 I_A: A→A，I_A(x) = x</strong>；<strong>常函数</strong>（所有 x 的像相同）。</p>
+<h3 id="_14">（二）单射、满射、双射（必考判别）</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>定义</th>
+<th>判别要点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>单射（内射）</strong></td>
+<td>若 <strong>f(x₁) = f(x₂) 则 x₁ = x₂</strong>（不同元素像不同）</td>
+<td>水平线与图象至多一个交点</td>
+</tr>
+<tr>
+<td><strong>满射（映上）</strong></td>
+<td><strong>ran f = B</strong>（B 中每个元素都是某个 x 的像）</td>
+<td>每个 y∈B 都要找到原像</td>
+</tr>
+<tr>
+<td><strong>双射（一一映射）</strong></td>
+<td><strong>既单射又满射</strong></td>
+<td>存在反函数；</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>例</strong></li>
+<li>f: R → R，f(x) = x²：<strong>非单射</strong>（f(1)=f(−1)）、<strong>非满射</strong>（负数无原像）；</li>
+<li>f: R → [0,+∞)，f(x) = x²：<strong>满射但仍非单射</strong>；</li>
+<li>f: Z → Z，f(x) = 2x：<strong>单射但非满射</strong>；</li>
+<li>
+<p>f: R → R，f(x) = 2x + 1：<strong>双射</strong>（既有唯一原像又可取遍 R）。</p>
+</li>
+<li>
+<p><strong>计数结论（有限集，常考）</strong>：|A| = m、|B| = n</p>
+</li>
+<li><strong>从 A 到 B 的函数共 n^m 个</strong>；</li>
+<li><strong>单射个数 = P(n, m) = n(n−1)…(n−m+1)</strong>（要求 m ≤ n，否则无单射）；</li>
+<li><strong>双射存在 ⟺ m = n</strong>，此时双射个数 = <strong>m!</strong>。</li>
+</ul>
+<h3 id="_15">（三）复合函数与反函数</h3>
+<ul>
+<li><strong>复合函数</strong>：f: A→B，g: B→C，则 <strong>g∘f: A→C</strong>，<strong>(g∘f)(x) = g(f(x))</strong>。</li>
+<li><strong>满足结合律</strong>：(h∘g)∘f = h∘(g∘f)；<strong>一般不满足交换律</strong>；</li>
+<li>恒等函数是幺元：<strong>f∘I_A = I_B∘f = f</strong>；</li>
+<li><strong>单射/满射的复合</strong>（单向结论，易考）：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>已知</th>
+<th>结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>f 单射且 g 单射</td>
+<td><strong>g∘f 单射</strong></td>
+</tr>
+<tr>
+<td>f 满射且 g 满射</td>
+<td><strong>g∘f 满射</strong></td>
+</tr>
+<tr>
+<td>f、g 都是双射</td>
+<td><strong>g∘f 双射</strong></td>
+</tr>
+<tr>
+<td><strong>g∘f 单射</strong></td>
+<td>⇒ <strong>f 单射</strong>（g 未必）</td>
+</tr>
+<tr>
+<td><strong>g∘f 满射</strong></td>
+<td>⇒ <strong>g 满射</strong>（f 未必）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>反函数</strong>：<strong>f: A→B 存在反函数 ⟺ f 是双射</strong>；此时 <strong>f⁻¹: B→A</strong> 也是双射，且</li>
+<li><strong>f⁻¹∘f = I_A</strong>，<strong>f∘f⁻¹ = I_B</strong>；</li>
+<li><strong>(f⁻¹)⁻¹ = f</strong>；<strong>(g∘f)⁻¹ = f⁻¹∘g⁻¹</strong>。</li>
+</ul>
+<hr>
+<h2 id="_16">六、本章对比与易混点</h2>
+<table>
+<thead>
+<tr>
+<th>易混点</th>
+<th>正确理解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>关系 vs 函数</strong></td>
+<td>函数是<strong>特殊的关系</strong>（每个 x 恰有一个像）；关系允许一个 x 对应多个 y</td>
+</tr>
+<tr>
+<td><strong>自反 vs 反自反</strong></td>
+<td>不互补：可以既不自反也不反自反；<strong>同一非空集合上不能同时成立</strong></td>
+</tr>
+<tr>
+<td><strong>对称 vs 反对称</strong></td>
+<td>不互补：<strong>恒等关系两者都满足</strong>；也可以都不满足</td>
+</tr>
+<tr>
+<td>关系的<strong>补</strong></td>
+<td>相对 <strong>A×B</strong>（不是相对全集或 A）</td>
+</tr>
+<tr>
+<td>复合的顺序</td>
+<td><strong>R∘S 表示"先 R 后 S"</strong>（【注意】 教材记号可能相反，<strong>答题按教材</strong>）；<strong>不满足交换律</strong></td>
+</tr>
+<tr>
+<td><strong>(R∘S)⁻¹</strong></td>
+<td>= <strong>S⁻¹∘R⁻¹</strong>（<strong>顺序颠倒</strong>）</td>
+</tr>
+<tr>
+<td>M_{R∘S}</td>
+<td><strong>布尔乘法</strong>（先 ∧ 后 ∨），不是普通矩阵乘法</td>
+</tr>
+<tr>
+<td><strong>三种闭包</strong></td>
+<td>r(R) = R∪I_A；s(R) = R∪R⁻¹；**t(R) = R∪R²∪…∪Rⁿ（n=</td>
+</tr>
+<tr>
+<td>闭包与性质</td>
+<td>R 自反 ⟺ r(R) = R；R 对称 ⟺ s(R) = R；<strong>R 传递 ⟺ R∘R ⊆ R ⟺ t(R) = R</strong></td>
+</tr>
+<tr>
+<td><strong>等价关系</strong></td>
+<td>自反 + 对称 + 传递（<strong>三者缺一不可</strong>）</td>
+</tr>
+<tr>
+<td>相容关系 vs 等价关系</td>
+<td>相容<strong>只要自反+对称</strong>（不要求传递）；对应"覆盖"（块可相交）</td>
+</tr>
+<tr>
+<td>等价类关系</td>
+<td>等价类<strong>要么相等、要么不相交</strong>；商集是 A 的<strong>划分</strong></td>
+</tr>
+<tr>
+<td><strong>偏序 vs 拟序</strong></td>
+<td>偏序＝自反+反对称+传递；拟序＝反自反+传递</td>
+</tr>
+<tr>
+<td>全序 vs 偏序</td>
+<td>全序要求<strong>任意两元素可比</strong></td>
+</tr>
+<tr>
+<td><strong>最大元 vs 极大元</strong></td>
+<td>最大元与所有元素可比且最大（<strong>唯一</strong>）；极大元只是"没有更大的"（<strong>可多个</strong>）</td>
+</tr>
+<tr>
+<td>上/下确界</td>
+<td>分别是上界中<strong>最小</strong>、下界中<strong>最大</strong>者（唯一）；可能不存在</td>
+</tr>
+<tr>
+<td><strong>单射 vs 满射</strong></td>
+<td>单射看"不同 x 像不同"；满射看"每个 y 都是像"</td>
+</tr>
+<tr>
+<td><strong>g∘f 单射</strong></td>
+<td>只能推出 <strong>f 单射</strong>（不能推 g）</td>
+</tr>
+<tr>
+<td><strong>g∘f 满射</strong></td>
+<td>只能推出 <strong>g 满射</strong>（不能推 f）</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="_17">七、必背清单 + 简答预测 + 计算模板</h2>
+<h3 id="_18">（一）必背清单</h3>
+<ul>
+<li>关系的定义（A×B 的子集）、xRy、<strong>定义域/值域</strong>；<strong>三种表示法</strong>（集合、关系矩阵、关系图）；</li>
+<li><strong>五条性质</strong>的定义与三种判别方式（定义、矩阵、图）；自反/反自反、对称/反对称的<strong>非互补性</strong>；</li>
+<li>常规运算（并、交、差、补、<strong>逆</strong>）与逆的性质；<strong>复合的定义、布尔乘法、结合律、不交换、(R∘S)⁻¹ = S⁻¹∘R⁻¹、幂与 R⁰ = I_A</strong>；</li>
+<li><strong>关系矩阵的布尔运算</strong>（∨、∧、¬、转置、布尔乘）；</li>
+<li><strong>三种闭包</strong>的公式、<strong>闭包与性质的三条等价刻画</strong>、Warshall 算法思路；</li>
+<li><strong>等价关系的定义</strong>、等价类的<strong>三条性质</strong>、<strong>商集</strong>与<strong>划分</strong>的定义、<strong>等价关系与划分一一对应</strong>；</li>
+<li>相容关系的定义（自反+对称）与最大相容类/覆盖；</li>
+<li><strong>偏序/拟序/全序</strong>的定义与例子；<strong>哈斯图四步画法</strong>；</li>
+<li><strong>最大（小）元、极大（小）元、上（下）界、上（下）确界</strong>的定义与相互关系（最大元唯一、极大元可多个等）；</li>
+<li><strong>函数的定义与判别</strong>、<strong>单射/满射/双射</strong>的定义与判别、<strong>函数计数结论（nᵐ、P(n,m)、m!）</strong>；</li>
+<li><strong>复合函数</strong>的运算与单射/满射的复合结论（g∘f 单射 ⇒ f 单射；g∘f 满射 ⇒ g 满射）；<strong>反函数存在 ⟺ 双射</strong>。</li>
+</ul>
+<h3 id="_19">（二）高频简答 / 判断题预测</h3>
+<ul>
+<li>什么是二元关系？关系的定义域、值域是什么？</li>
+<li>关系有哪三种表示方法？关系矩阵中如何体现关系的性质？</li>
+<li>关系的自反性、反自反性、对称性、反对称性、传递性各是什么？如何判别？</li>
+<li>自反性与反自反性是互补的吗？对称性与反对称性呢？举例说明。</li>
+<li>什么是逆关系？它有哪些性质？(R∘S)⁻¹ 等于什么？</li>
+<li>什么是关系的复合？如何用关系矩阵求复合？（布尔运算与普通矩阵乘法有何不同？）</li>
+<li>复合运算满足哪些规律？满足交换律吗？举例说明。</li>
+<li>什么是关系的自反闭包、对称闭包、传递闭包？各如何求？</li>
+<li>R 是传递关系的充要条件是什么？与 t(R)、R∘R 有何关系？</li>
+<li>什么是等价关系？举出三个等价关系的例子。</li>
+<li>什么是等价类？等价类有哪些性质？什么是商集？</li>
+<li>什么是划分？等价关系与划分有什么关系？</li>
+<li>什么是相容关系？它与等价关系有何区别？</li>
+<li>什么是偏序关系、拟序关系、全序关系？各举一例。</li>
+<li>如何画哈斯图？哈斯图与关系图有何区别？</li>
+<li>最大元与极大元有何区别？上界与上确界有何区别？它们一定存在吗？</li>
+<li>什么是函数？如何判断一个关系是否为函数？</li>
+<li>什么是单射、满射、双射？各如何判别？举出"单射非满射""满射非单射"的例子。</li>
+<li>若 g∘f 是单射，能推出什么？若是满射呢？为什么？</li>
+<li>函数在什么条件下有反函数？反函数有哪些性质？</li>
+</ul>
+<h3 id="_20">（三）计算 / 证明题模板</h3>
+<ul>
+<li><strong>求关系矩阵/关系图</strong>：按 A、B 元素排列，逐对检查 <aᵢ,bⱼ> 是否属于 R。</li>
+<li><strong>判别五条性质</strong>：写定义 → 逐条核对（对角线、反向对、两步链）；矩阵法最快捷。</li>
+<li><strong>求复合 R∘S</strong>：对每个 <x,y>∈R，找所有 <y,z>∈S，得 <x,z>；矩阵用布尔乘法。</li>
+<li><strong>求闭包</strong>：r(R) = R∪I_A；s(R) = R∪R⁻¹；t(R) = R∪R²∪…∪Rⁿ（n=|A|）或用 Warshall 逐轮更新矩阵。</li>
+<li><strong>判等价关系</strong>：先证自反、再证对称、最后证传递（<strong>三步缺一不可</strong>）；求等价类 → 求商集（即划分）。</li>
+<li><strong>判偏序/画哈斯图</strong>：证自反+反对称+传递 → 只保留<strong>覆盖关系</strong> → 下小上大、不画箭头。</li>
+<li><strong>求极值元/上下确界</strong>：把 B 中元素按偏序关系逐一比较；上界要能"覆盖"B 中所有元素，上确界取上界中的最小者。</li>
+<li><strong>判函数/单射/满射</strong>：先看"每个 x 是否有唯一像"→ 再证单射（f(x₁)=f(x₂) ⇒ x₁=x₂）→ 再证满射（任给 y∈B 求原像）。</li>
+<li><strong>复合函数</strong>：先算 f(x)、再算 g(f(x))；注意<strong>定义域与值域要衔接</strong>（g 的定义域需包含 f 的值域）。</li>
+</ul>
+</main>
+<footer>02324 离散数学 · 由 Markdown 生成，浏览器直接打开即可阅读</footer>
+</body>
+</html>

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第四章 数组、广义表和串 · 考点总结</title>
+<style>
+:root{--fg:#24292f;--muted:#57606a;--line:#d0d7de;--accent:#0969da;--code:#f6f8fa;--soft:#fafbfc}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--fg);
+  font:16px/1.78 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",sans-serif}
+main{max-width:980px;margin:0 auto;padding:26px 22px 72px}
+h1{font-size:1.75em;line-height:1.35;border-bottom:3px solid var(--accent);padding-bottom:.28em;margin:1.1em 0 .7em}
+h2{font-size:1.36em;line-height:1.4;border-bottom:1px solid var(--line);padding-bottom:.22em;margin:1.5em 0 .6em}
+h3{font-size:1.14em;margin:1.25em 0 .45em}
+h4{font-size:1.02em;margin:1.05em 0 .35em;color:var(--muted)}
+p{margin:.5em 0}
+ul,ol{margin:.45em 0;padding-left:1.5em}
+li{margin:.22em 0}
+li>ul,li>ol{margin:.15em 0}
+strong{color:#000}
+em{color:#000}
+code{background:var(--code);border-radius:4px;padding:.12em .34em;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:.92em}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;margin:.7em 0}
+pre code{background:none;padding:0;white-space:pre;font-size:.9em;line-height:1.5}
+table{border-collapse:collapse;width:100%;margin:.75em 0;font-size:.95em;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600}
+tbody tr:nth-child(even){background:var(--soft)}
+blockquote{margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:var(--code);color:var(--muted)}
+blockquote p{margin:.25em 0}
+hr{border:0;border-top:1px solid var(--line);margin:1.8em 0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.topnav{position:sticky;top:0;z-index:20;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+  padding:10px 22px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(180%) blur(6px);font-size:.9em}
+.topnav a{white-space:nowrap}
+.topnav .sep{color:var(--line)}
+.topnav .brand{font-weight:600;color:var(--fg);margin-right:6px}
+footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid var(--line);color:var(--muted);font-size:.86em}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:1em 0}
+.card{display:block;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--soft)}
+.card:hover{border-color:var(--accent)}
+.card b{display:block;margin-bottom:4px}
+.card span{color:var(--muted);font-size:.86em}
+.toc{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:1em 0}
+.toc ul{margin:.25em 0;padding-left:1.3em}
+.tip{border:1px dashed var(--accent);border-radius:10px;padding:10px 14px;background:#f6faff;margin:1em 0;font-size:.94em}
+@media (max-width:640px){main{padding:18px 14px 60px}h1{font-size:1.5em}}
+@media print{
+  body{font-size:11.5pt;line-height:1.6}
+  .topnav{display:none}
+  main{max-width:none;padding:0}
+  h1{page-break-before:always;border-bottom-width:2px}
+  body>main>h1:first-child,main>section:first-child>h1{page-break-before:avoid}
+  pre,table,blockquote,li{page-break-inside:avoid}
+  a{color:#000;text-decoration:none}
+  footer{display:none}
+}
+</style>
+</head>
+<body>
+<nav class="topnav"><span class="brand">13003 数据结构与算法</span> <a href="index.html">目录</a> <span class="sep">|</span> <a href="第03章_栈和队列_考点总结.html">← 第三章 栈和队列 · 考点总结</a> <span class="sep">|</span> <a href="第05章_树与二叉树_考点总结.html">第五章 树与二叉树 · 考点总结 →</a></nav>
+<main>
+<h1 id="_1">第四章 数组、广义表和串 · 考点总结</h1>
+<blockquote>
+<p>课程：13003 数据结构与算法（080901 自考）<br>
+<strong>重点</strong>：数组行主序、列主序的存储方法；多维数组元素存储地址计算；特殊矩阵压缩存储方法；实现以数组作为存储结构的简单算法；BF 算法；特征向量计算；KMP 算法<br>
+<strong>难点</strong>：特殊矩阵存储地址计算；以数组为存储结构的算法；特征向量计算；KMP 算法</p>
+</blockquote>
+<h2 id="_2">考纲要求速览</h2>
+<ul>
+<li><strong>识记</strong>：多维数组；数组首地址；数组下标；行主序；列主序；地址映射函数；三元组；三元组表。广义表；表头；表尾；原子；子表；广义表的长度；广义表的深度。串；子串；空串；串的长度；主串；模式串。</li>
+<li><strong>领会</strong>：多维数组地址计算方法；特殊矩阵的定义、特点及压缩存储方法。空表；递归表的深度。比较次数；串模式匹配的含义；特征向量。</li>
+<li><strong>简单应用</strong>：构造地址映射函数；访问压缩存储的数组元素；广义表基本操作；串的基本操作；BF 算法；串的特征向量计算；KMP 算法。</li>
+<li><strong>综合应用</strong>：实现以数组作为存储结构的简单算法。</li>
+</ul>
+<hr>
+<h2 id="_3">一、本章知识地图</h2>
+<table>
+<thead>
+<tr>
+<th>考点块</th>
+<th>核心内容</th>
+<th>层次</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 数组</td>
+<td>多维数组、行/列主序、地址映射函数、特殊矩阵压缩存储、三元组表</td>
+<td>识记+领会+简单应用+综合应用</td>
+</tr>
+<tr>
+<td>2. 广义表</td>
+<td>表头/表尾、原子/子表、长度/深度、基本操作</td>
+<td>识记+领会+简单应用</td>
+</tr>
+<tr>
+<td>3. 串</td>
+<td>串/子串/主串/模式串、BF 算法、特征向量（next）、KMP 算法</td>
+<td>识记+领会+简单应用</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="_4">二、数组</h2>
+<h3 id="_5">（一）识记</h3>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>多维数组</strong></td>
+<td>一维数组是线性表；<strong>二维数组可看成"元素为一维数组的线性表"</strong>，n 维数组递归定义</td>
+</tr>
+<tr>
+<td><strong>数组首地址</strong></td>
+<td>第一个元素（a₀₀…或 a₁₁…）的存储地址，是地址计算的基准</td>
+</tr>
+<tr>
+<td><strong>数组下标</strong></td>
+<td>标识元素在数组中的位置（行列号），下标有从 0 开始与从 1 开始两种约定 【注意】</td>
+</tr>
+<tr>
+<td><strong>行主序（行优先）</strong></td>
+<td>按<strong>行</strong>的顺序存放：先存第 0 行全部元素，再存第 1 行……（C、Pascal 等）</td>
+</tr>
+<tr>
+<td><strong>列主序（列优先）</strong></td>
+<td>按<strong>列</strong>的顺序存放：先存第 0 列全部元素，再存第 1 列……（Fortran 等）</td>
+</tr>
+<tr>
+<td><strong>地址映射函数</strong></td>
+<td>由元素<strong>下标</strong>求其<strong>存储地址（一维下标）</strong> 的函数公式</td>
+</tr>
+<tr>
+<td><strong>三元组</strong></td>
+<td>表示稀疏矩阵非零元的三元组 <strong>(行下标, 列下标, 值)</strong></td>
+</tr>
+<tr>
+<td><strong>三元组表</strong></td>
+<td>用<strong>顺序存储</strong>（一维数组）按行序存放所有非零元三元组的存储方式</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>数组的两个特点：① 元素<strong>个数固定</strong>（一旦定义不能增删）；② 元素<strong>类型相同</strong>；③ 数组一般<strong>不进行插入删除</strong>，只做存取与修改 → 因此<strong>只采用顺序存储</strong>。</p>
+</blockquote>
+<h3 id="_6">（二）领会：多维数组地址计算（必考）</h3>
+<ul>
+<li><strong>1. 二维数组（行主序、下标从 0 开始）</strong><br>
+设 A[m][n]，每元素占 L 个字节，首地址 LOC(a₀₀)：</li>
+<li>
+<p><strong>LOC(aᵢⱼ) = LOC(a₀₀) + ( i × n + j ) × L</strong></p>
+</li>
+<li>
+<p><strong>2. 二维数组（列主序、下标从 0 开始）</strong></p>
+</li>
+<li>
+<p><strong>LOC(aᵢⱼ) = LOC(a₀₀) + ( j × m + i ) × L</strong></p>
+</li>
+<li>
+<p><strong>3. 下标从 1 开始的写法</strong> 【注意】（A[1..m][1..n]，首地址 LOC(a₁₁)）<br>
+行主序：<strong>LOC(aᵢⱼ) = LOC(a₁₁) + ( (i−1) × n + (j−1) ) × L</strong><br>
+列主序：<strong>LOC(aᵢⱼ) = LOC(a₁₁) + ( (j−1) × m + (i−1) ) × L</strong></p>
+</li>
+<li>
+<p><strong>4. 三维数组（行主序、0 基）</strong> A[d₁][d₂][d₃]：</p>
+</li>
+<li>
+<p><strong>LOC(a[i][j][k]) = LOC(a₀₀₀) + ( i×d₂×d₃ + j×d₃ + k ) × L</strong></p>
+</li>
+<li>
+<p><strong>5. n 维数组（行主序、0 基）</strong></p>
+</li>
+<li>
+<p><strong>LOC = LOC(a₀…₀) + ( i₁×d₂×…×d_n + i₂×d₃×…×d_n + … + i_n ) × L</strong></p>
+<blockquote>
+<p>记忆：<strong>每跨一行（第一维加 1）要跳过"后面所有维度的元素总数"个元素</strong>。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>6. 计算示例</strong></p>
+</li>
+<li>例 1：A[4][5]，L = 4，LOC(a₀₀) = 2000。<br>
+行主序：LOC(a₂₃) = 2000 + (2×5 + 3)×4 = 2000 + 52 = <strong>2052</strong><br>
+列主序：LOC(a₂₃) = 2000 + (3×4 + 2)×4 = 2000 + 56 = <strong>2056</strong></li>
+<li>例 2：A[3][4][5]，L = 2，LOC(a₀₀₀) = 100。<br>
+LOC(a[1][2][3]) = 100 + (1×4×5 + 2×5 + 3)×2 = 100 + 66 = <strong>166</strong></li>
+</ul>
+<h3 id="_7">（二·续）特殊矩阵的压缩存储（领会 + 简单应用，必考）</h3>
+<ul>
+<li><strong>1. 对称矩阵</strong>：满足 <strong>aᵢⱼ = aⱼᵢ</strong>（n×n，关于主对角线对称）。</li>
+<li><strong>压缩方法</strong>：只存<strong>下三角（含对角线）</strong> 元素，共 <strong>n(n+1)/2</strong> 个，按<strong>行优先</strong>存入一维数组 <code>SA[0..n(n+1)/2−1]</code>（下标从 0 开始）：</li>
+<li>当 <strong>i ≥ j</strong>（下三角）：<strong>k = i(i+1)/2 + j</strong></li>
+<li>
+<p>当 <strong>i &lt; j</strong>（上三角）：利用对称性存 aⱼᵢ → <strong>k = j(j+1)/2 + i</strong></p>
+<blockquote>
+<p>若教材下标从 1 开始：i ≥ j 时 <strong>k = i(i−1)/2 + j − 1</strong>（0 基）或 <strong>k = i(i−1)/2 + j</strong>（1 基）【注意】 按教材约定。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>2. 三角矩阵</strong></p>
+</li>
+<li><strong>下三角矩阵</strong>：上三角（不含对角线）元素全为常数 c → 存下三角 <strong>n(n+1)/2</strong> 个元素 + <strong>1 个常数 c</strong>，共 <strong>n(n+1)/2 + 1</strong>；</li>
+<li><strong>上三角矩阵</strong>：下三角（不含对角线）元素全为常数 c → 同理存 <strong>n(n+1)/2 + 1</strong>。</li>
+<li>
+<p>地址映射与对称矩阵相同，但"访问上三角"时不取对称元素，而是取常数 c。</p>
+</li>
+<li>
+<p><strong>3. 对角矩阵（带状矩阵）</strong></p>
+</li>
+<li>非零元素集中在主对角线及其上下若干条对角线上；</li>
+<li><strong>三对角矩阵</strong>（|i − j| ≤ 1，非零元共 <strong>3n − 2</strong> 个）：按<strong>行优先</strong>压缩存储，<br>
+0 基：<strong>k = 2i + j</strong>（|i − j| ≤ 1）；1 基：<strong>k = 2i + j − 2</strong></li>
+<li>
+<p>例：三对角矩阵 n = 4 时，非零元个数 = 3×4 − 2 = <strong>10</strong>。</p>
+</li>
+<li>
+<p><strong>4. 稀疏矩阵</strong></p>
+</li>
+<li><strong>定义</strong>：非零元素个数远小于矩阵元素总数（一般非零元占比 &lt; 5%）的矩阵；</li>
+<li><strong>三元组表（顺序存储）</strong>：用一维数组存 <code>(行, 列, 值)</code>，并按<strong>行序（行优先）</strong> 排列；优点=省空间；缺点=<strong>不能随机存取</strong>、矩阵运算（转置/加法）效率低；</li>
+<li><strong>（链式存储，扩展）</strong>：十字链表 / 行链表（大纲未要求，了解即可）。</li>
+</ul>
+<h3 id="_8">（三）简单应用</h3>
+<ul>
+<li>
+<p><strong>1. 构造地址映射函数</strong>：由题意写出"下标 → 一维存储下标（或地址）"的公式（注意：行主序/列主序、下标起点、每元素字节数）。</p>
+</li>
+<li>
+<p><strong>2. 访问压缩存储的数组元素</strong></p>
+</li>
+<li>由 (i, j) 求 k：直接代入公式（如对称矩阵 i ≥ j 时 <code>k = i(i+1)/2 + j</code>）；</li>
+<li>由 k 反求 (i, j)（对称矩阵下三角）：<br>
+先求满足 <strong>i(i+1)/2 ≤ k</strong> 的<strong>最大 i</strong>，则 <strong>j = k − i(i+1)/2</strong>；</li>
+<li>
+<p>三对角矩阵由 k 反求：<code>i = (k+1)/3</code> 附近取整后代入 <code>j = k − 2i</code> 【注意】（按教材约定与下标起点）。</p>
+</li>
+<li>
+<p><strong>3. 计算示例</strong>：n = 4 的对称矩阵，元素 a₃₁（i=3, j=1，0 基）→ k = 3×4/2 + 1 = <strong>7</strong>（存放在 SA[7]）；元素 a₁₃ → 存 a₃₁ → k = <strong>7</strong>。</p>
+</li>
+</ul>
+<h3 id="_9">（四）综合应用（以数组为存储结构的简单算法）</h3>
+<ul>
+<li><strong>矩阵转置</strong>：① 普通转置 O(n×t)（t 为非零元个数，需按列扫描）；② <strong>快速转置 O(n+t)</strong>（先统计每列非零元个数 <code>num[]</code>，再求列起始位置 <code>cpot[]</code>，一次扫描即可定位）；</li>
+<li><strong>矩阵相加 / 相乘</strong>（三元组表上按行序归并 / 逐行累加）；</li>
+<li><strong>杨辉三角</strong>（二维数组递推）；</li>
+<li><strong>数组元素循环移位 / 逆置</strong>（三段逆置法：逆置整体再分别逆置）；</li>
+<li><strong>螺旋矩阵、矩阵螺旋输出</strong>；</li>
+<li><strong>在二维数组中查找（行有序 + 列有序：从右上角或左下角出发 O(m+n)）</strong>。</li>
+</ul>
+<hr>
+<h2 id="_10">三、广义表</h2>
+<h3 id="_11">（一）识记</h3>
+<ul>
+<li><strong>1. 广义表（列表）</strong>：n（n ≥ 0）个<strong>元素</strong>组成的有限序列 <strong>LS = (a₁, a₂, …, aₙ)</strong>；其中 aᵢ <strong>可以是单个元素（原子），也可以是一个广义表（子表）</strong>。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>原子</strong></td>
+<td>不可再分的单个数据元素（如数字、字符）</td>
+</tr>
+<tr>
+<td><strong>子表</strong></td>
+<td>元素本身又是一个广义表</td>
+</tr>
+<tr>
+<td><strong>表头（head）</strong></td>
+<td><strong>第一个元素 a₁</strong>（可能是原子或子表）</td>
+</tr>
+<tr>
+<td><strong>表尾（tail）</strong></td>
+<td><strong>除表头外其余元素构成的表 (a₂, …, aₙ)</strong> ——注意表尾<strong>一定是一个表</strong></td>
+</tr>
+<tr>
+<td><strong>广义表的长度</strong></td>
+<td><strong>最外层</strong>元素的个数 n</td>
+</tr>
+<tr>
+<td><strong>广义表的深度</strong></td>
+<td>括号<strong>嵌套的最大层数</strong>（原子深度为 0；<strong>空表深度为 1</strong>）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_12">（二）领会</h3>
+<ul>
+<li><strong>1. 空表</strong>：<code>()</code> 长度 0、<strong>深度 1</strong>（注意：长度 0 但仍有"一层括号"）。</li>
+<li><strong>2. 递归表</strong>：表中直接或间接<strong>包含自身</strong>（如 <code>A = (a, A)</code>），其<strong>深度为无穷大（∞）</strong>；递归表不能求深度/长度时需特殊处理（会死循环）。</li>
+</ul>
+<h3 id="_13">（三）简单应用（基本操作）</h3>
+<ul>
+<li>
+<p><strong>取表头 GetHead(LS) / 取表尾 GetTail(LS)</strong>：注意<strong>表尾是表</strong>，必须在原括号基础上加一层括号。</p>
+</li>
+<li>
+<p><strong>示例</strong>：设 A = ((a, b), c, (d, (e)))</p>
+</li>
+<li>长度 = <strong>3</strong>（三个最外层元素：(a,b)、(c)、(d,(e)) 中 c 是原子）；</li>
+<li>深度 = <strong>3</strong>（第 1 层 A，第 2 层 (a,b) 与 (d,(e))，第 3 层 (e)）；</li>
+<li>GetHead(A) = <strong>(a, b)</strong>；GetTail(A) = <strong>( c, (d, (e)) )</strong>；</li>
+<li>GetHead(GetTail(A)) = <strong>c</strong>；GetTail(GetTail(A)) = <strong>( (d, (e)) )</strong>；</li>
+<li>
+<p>GetHead(GetHead(A)) = <strong>a</strong>；GetTail(GetHead(A)) = <strong>( b )</strong>。</p>
+</li>
+<li>
+<p><strong>再例</strong>：B = (a, (b, c, d), e) → 长度 <strong>3</strong>，深度 <strong>2</strong>；GetHead(B) = a，GetTail(B) = ( (b, c, d), e )。</p>
+</li>
+<li><strong>再例</strong>：C = (a, (b, (c))) → 长度 <strong>2</strong>，深度 <strong>3</strong>。</li>
+</ul>
+<blockquote>
+<p><strong>存储方式</strong>（扩展了解）：① <strong>头尾表示法</strong>（每个结点有标志位、表头/表尾指针或数据域）；② <strong>孩子兄弟表示法</strong>（把广义表看成树/二叉树）。</p>
+</blockquote>
+<hr>
+<h2 id="_14">四、串</h2>
+<h3 id="_15">（一）识记</h3>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>串（字符串）</strong></td>
+<td>由<strong>零个或多个字符</strong>组成的<strong>有限序列</strong>；元素是<strong>字符</strong>，通常整体处理</td>
+</tr>
+<tr>
+<td><strong>空串</strong></td>
+<td><strong>长度为 0</strong> 的串，记作 <code>""</code>（注意：<strong>空格串</strong> <code>" "</code> 长度为 1，二者不同）</td>
+</tr>
+<tr>
+<td><strong>串的长度</strong></td>
+<td>串中<strong>字符的个数</strong></td>
+</tr>
+<tr>
+<td><strong>子串</strong></td>
+<td>串中<strong>任意个连续字符</strong>组成的子序列；含空串</td>
+</tr>
+<tr>
+<td><strong>主串</strong></td>
+<td>被匹配（被查找）的串，常记 S</td>
+</tr>
+<tr>
+<td><strong>模式串</strong></td>
+<td>用于在主串中查找的串（<strong>模式</strong>），常记 T</td>
+</tr>
+<tr>
+<td><strong>模式匹配（串匹配）</strong></td>
+<td>在主串 S 中查找模式串 T，找到则返回其<strong>首次出现的位置</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>串与线性表的区别：串的元素<strong>必须是字符</strong>，且通常<strong>以整体（子串）为单位</strong>进行操作（连接、取子串、比较、定位、替换）。</p>
+</blockquote>
+<h3 id="_16">（二）领会</h3>
+<ul>
+<li><strong>1. 比较次数</strong>：模式匹配过程中<strong>字符比较的总次数</strong>，是衡量匹配算法效率的指标。</li>
+<li>BF 算法：最好 <strong>m</strong>（首字符即匹配成功，m 为模式长度）；最坏 <strong>(n − m + 1) × m</strong>（每趟都比较到最后一位才发现不等）；</li>
+<li>
+<p>KMP 算法：<strong>O(n + m)</strong>。</p>
+</li>
+<li>
+<p><strong>2. 串模式匹配的含义</strong>：在主串中寻找与模式串<strong>相同</strong>的子串，返回其<strong>起始位置</strong>；找不到称匹配失败（返回 0/ −1 【注意】）。</p>
+</li>
+<li>
+<p><strong>3. 特征向量（next 数组 / 失效函数）</strong><br>
+KMP 的核心：<strong>利用模式串自身的结构信息</strong>，当某位失配时，<strong>主串指针不回退</strong>，只把模式串向右"滑动"，滑动的位数由<strong>特征向量</strong>决定。</p>
+</li>
+<li><strong>定义（0 基常见约定）</strong>：<code>next[j]</code> = 模式串前 j 个字符 <code>P[0..j−1]</code> 中<strong>最长相等前后缀（真前缀与真后缀）的长度</strong>；<code>next[0] = 0</code>（或 −1，视教材 【注意】）。<blockquote>
+<p><strong>直观理解</strong>：失配时，模式串前面已经匹配好的部分中，"前缀 = 后缀"的那一截可以<strong>直接复用</strong>，于是模式串只需滑到 next[j] 的位置继续比较。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="bfkmp">（三）简单应用（必考：BF、特征向量、KMP）</h3>
+<ul>
+<li>
+<p><strong>1. 串的基本操作</strong>：赋值 StrAssign、求长 StrLength、连接 StrConcat、求子串 SubString、比较 StrCompare、定位 StrIndex、插入、删除、替换。</p>
+</li>
+<li>
+<p><strong>2. BF 算法（朴素/暴力匹配）</strong><br>
+思路：从主串的每个位置 i（0 ≤ i ≤ n−m）开始，逐字符与模式串比较；一旦失配，<strong>主串指针回到 i+1，模式串指针回到 0</strong> 重新比较。</p>
+</li>
+</ul>
+<pre><code class="language-c">int BF(char S[], char T[], int n, int m) {
+    int i = 0, j = 0;
+    while (i &lt; n &amp;&amp; j &lt; m) {
+        if (S[i] == T[j]) { i++; j++; }
+        else { i = i - j + 1; j = 0; }      // 主串回退到本趟起点的下一位
+    }
+    return (j &gt;= m) ? i - m : -1;            // 返回起始位置或失败
+}
+
+</code></pre>
+<ul>
+<li>
+<p><strong>复杂度</strong>：最好 O(m)，最坏 <strong>O((n−m+1)×m) ≈ O(n×m)</strong>。</p>
+</li>
+<li>
+<p><strong>3. 特征向量（next 数组）计算</strong>（0 基约定）</p>
+</li>
+</ul>
+<pre><code class="language-c">void GetNext(char P[], int m, int next[]) {
+    next[0] = 0;
+    int j = 0;                     // j：当前最长相等前后缀长度
+    for (int i = 1; i &lt; m; i++) {
+        while (j &gt; 0 &amp;&amp; P[i] != P[j]) j = next[j - 1];   // 回退
+        if (P[i] == P[j]) j++;
+        next[i] = j;
+    }
+}
+
+</code></pre>
+<ul>
+<li>
+<p><strong>手工计算示例</strong>：模式串 <strong>T = a b a a b c a c</strong>（下标 0..7）</p>
+</li>
+<li>
+<p><strong>T[j]</strong>：0：a；1：b；2：a；3：a；4：b；5：c；6：a；7：c</p>
+</li>
+<li><strong>前 j+1 个字符</strong>：0：a；1：ab；2：aba；3：abaa；4：abaab；5：abaabc；6：abaabca；7：abaabcac</li>
+<li><strong>next[j]（0 基，最长相等前后缀长度）</strong>：0：0；1：0；2：1；3：1；4：2；5：0；6：1；7：0</li>
+</ul>
+<blockquote>
+<p>【注意】 若教材采用"从 1 开始、next[1] = 0"的经典约定（严蔚敏式），上例对应 <strong>next = 0, 1, 1, 2, 2, 3, 1, 2</strong>（即 0 基的 <code>next[j−1] + 1</code>）。<strong>答题必须按教材约定</strong>，并声明起点。</p>
+</blockquote>
+<ul>
+<li><strong>4. KMP 算法（利用特征向量加速匹配）</strong></li>
+</ul>
+<pre><code class="language-c">int KMP(char S[], char T[], int n, int m, int next[]) {
+    GetNext(T, m, next);
+    int i = 0, j = 0;
+    while (i &lt; n &amp;&amp; j &lt; m) {
+        if (S[i] == T[j]) { i++; j++; }            // 继续比较下一字符
+        else if (j == 0) i++;                      // 模式首字符失配：主串后移
+        else j = next[j - 1];                      // 主串不回退，模式串滑动
+    }
+    return (j &gt;= m) ? i - m : -1;
+}
+
+</code></pre>
+<ul>
+<li><strong>要点</strong>：<strong>主串指针 i 永不回退</strong>，只让模式串指针 j 按 <code>next</code> 回退；时间 <strong>O(n + m)</strong>，空间 O(m)（存 next）。</li>
+<li><strong>示例</strong>：主串 <code>ababcabcacbab</code>（n=13），模式 <code>abcac</code>（m=5） → BF 需约 3 趟 13 次比较，KMP 只需 1 趟不回退。</li>
+</ul>
+<blockquote>
+<p>另可提及 <strong>KMP 改进（nextval）</strong>：当 <code>P[j] == P[next[j]]</code> 时令 <code>nextval[j] = nextval[next[j]]</code>，避免无效比较（大纲未要求，了解即可）。</p>
+</blockquote>
+<hr>
+<h2 id="_17">五、本章对比与易混点</h2>
+<h3 id="1">1. 易混点</h3>
+<table>
+<thead>
+<tr>
+<th>易混点</th>
+<th>正确理解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>行主序 vs 列主序</strong></td>
+<td>行主序先存同一行所有元素；列主序先存同一列所有元素；<strong>公式不同，结果一般不同</strong></td>
+</tr>
+<tr>
+<td>下标从 0 还是 1</td>
+<td>【注意】 教材约定不同，公式中体现为 <code>i</code> 还是 <code>i−1</code>；<strong>答题先声明</strong></td>
+</tr>
+<tr>
+<td>对称矩阵存多少个</td>
+<td><strong>只存下三角（含对角线）＝ n(n+1)/2</strong>；三角矩阵为 n(n+1)/2 + 1（含常数）</td>
+</tr>
+<tr>
+<td>对称矩阵 i&lt;j 的处理</td>
+<td>利用 aᵢⱼ = aⱼᵢ <strong>转存 aⱼᵢ</strong>（k 用 j 的公式）</td>
+</tr>
+<tr>
+<td>三对角矩阵非零元个数</td>
+<td><strong>3n − 2</strong>（不是 3n）</td>
+</tr>
+<tr>
+<td>三元组表 vs 二维数组</td>
+<td>三元组表<strong>省空间</strong>但不能<strong>随机存取</strong>；二维数组可随机存取但浪费空间</td>
+</tr>
+<tr>
+<td><strong>空表 ()</strong></td>
+<td>长度 0、<strong>深度 1</strong>（不是 0！）</td>
+</tr>
+<tr>
+<td>表头 vs 表尾</td>
+<td>表头＝<strong>第一个元素</strong>（可原子可子表）；表尾＝<strong>剩余元素构成的表</strong>（一定是表，要加括号）</td>
+</tr>
+<tr>
+<td>长度 vs 深度</td>
+<td>长度＝<strong>最外层元素个数</strong>；深度＝<strong>括号最大嵌套层数</strong></td>
+</tr>
+<tr>
+<td>空串 vs 空格串</td>
+<td><code>""</code> 长度 0；<code>" "</code> 长度 1</td>
+</tr>
+<tr>
+<td>BF vs KMP</td>
+<td>BF：失配时<strong>主串回退</strong>，最坏 O(nm)；KMP：<strong>主串不回退</strong>，按特征向量滑动，O(n+m)</td>
+</tr>
+<tr>
+<td>模式匹配 vs 子串</td>
+<td>定位是"找子串的<strong>位置</strong>"，取子串是"取出<strong>内容</strong>"</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2">2. 计算模板</h3>
+<ul>
+<li><strong>二维数组地址</strong>：先写公式（行/列主序、起点）→ 代入 → 得地址。</li>
+<li><strong>对称矩阵</strong>：判断 i 与 j 大小 → 选公式 <code>i(i+1)/2+j</code> 或 <code>j(j+1)/2+i</code> → 代入得 k。</li>
+<li><strong>三对角矩阵</strong>：0 基 <code>k = 2i + j</code>（1 基 <code>k = 2i + j − 2</code>）。</li>
+<li><strong>广义表</strong>：<strong>先数最外层元素个数（长度）</strong>，<strong>再数最大括号层数（深度）</strong>；求表尾时<strong>记得补括号</strong>。</li>
+<li><strong>next 数组</strong>：逐个前缀求"最长相等前后缀长度"（列表法最稳）。</li>
+</ul>
+<hr>
+<h2 id="_18">六、必背清单 + 简答预测</h2>
+<h3 id="_19">（一）必背清单</h3>
+<ul>
+<li>数组定义与特点（元素个数固定、类型相同、只做存取 → <strong>只用顺序存储</strong>）；</li>
+<li><strong>行主序/列主序</strong>的含义与<strong>二维、三维、n 维地址公式</strong>；</li>
+<li><strong>特殊矩阵压缩</strong>：对称矩阵（存 n(n+1)/2，<code>k=i(i+1)/2+j</code>）、三角矩阵（+1 个常数）、三对角矩阵（3n−2，<code>k=2i+j</code>）、稀疏矩阵与<strong>三元组表</strong>；</li>
+<li>广义表：表头/表尾/原子/子表/长度/深度；<strong>空表深度为 1</strong>；递归表深度 ∞；GetHead/GetTail 操作；</li>
+<li>串：串/子串/空串/空格串/主串/模式串；模式匹配含义；</li>
+<li><strong>BF 算法</strong>思想与复杂度（最坏 O(nm)）；<strong>特征向量（next）</strong> 的定义与手工计算；<strong>KMP 算法</strong>思想与复杂度 O(n+m)。</li>
+</ul>
+<h3 id="_20">（二）高频简答预测</h3>
+<ul>
+<li>什么是数组？数组有什么特点？为什么数组只采用顺序存储？</li>
+<li>什么是行主序和列主序？分别写出二维数组元素地址的计算公式。</li>
+<li>三维数组（或 n 维数组）的地址映射函数是什么？</li>
+<li>什么是对称矩阵？如何压缩存储？共存多少个元素？如何由 (i, j) 求一维下标 k？</li>
+<li>什么是三角矩阵、对角（带状）矩阵？各如何压缩存储？三对角矩阵有多少个非零元？</li>
+<li>什么是稀疏矩阵？三元组表如何存储？它有什么优缺点？</li>
+<li>什么是广义表？表头与表尾分别是什么？空表的长度和深度各是多少？</li>
+<li>什么是广义表的长度和深度？如何求？递归表的深度是多少？</li>
+<li>什么是串？空串与空格串有何区别？什么是子串、主串、模式串？</li>
+<li>什么是模式匹配？比较次数的含义是什么？</li>
+<li>简述 BF 算法的思想，其时间复杂度是多少（最好/最坏）？</li>
+<li>什么是串的特征向量（next 数组）？如何计算？</li>
+<li>简述 KMP 算法的思想，为什么它比 BF 算法快？时间复杂度是多少？</li>
+</ul>
+<h3 id="_21">（三）计算题模板</h3>
+<ul>
+<li>数组地址：公式 → 代入 → 结果（注意行/列主序与下标起点）</li>
+<li>对称矩阵：比较 i、j → 套公式 → 求 k；反向由 k 求 (i, j)</li>
+<li>三对角矩阵：<code>k = 2i + j</code>（0 基）</li>
+<li>广义表：长度＝最外层个数；深度＝最大嵌套层数；表尾要加括号</li>
+<li>next 数组：列表逐前缀求最长相等前后缀长度</li>
+</ul>
+</main>
+<footer>13003 数据结构与算法 · 由 Markdown 生成，浏览器直接打开即可阅读</footer>
+</body>
+</html>

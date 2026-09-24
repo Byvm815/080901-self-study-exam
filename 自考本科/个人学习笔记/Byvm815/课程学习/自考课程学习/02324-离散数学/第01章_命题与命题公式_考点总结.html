@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 1 章 命题与命题公式 · 考点总结</title>
+<style>
+:root{--fg:#24292f;--muted:#57606a;--line:#d0d7de;--accent:#0969da;--code:#f6f8fa;--soft:#fafbfc}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--fg);
+  font:16px/1.78 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",sans-serif}
+main{max-width:980px;margin:0 auto;padding:26px 22px 72px}
+h1{font-size:1.75em;line-height:1.35;border-bottom:3px solid var(--accent);padding-bottom:.28em;margin:1.1em 0 .7em}
+h2{font-size:1.36em;line-height:1.4;border-bottom:1px solid var(--line);padding-bottom:.22em;margin:1.5em 0 .6em}
+h3{font-size:1.14em;margin:1.25em 0 .45em}
+h4{font-size:1.02em;margin:1.05em 0 .35em;color:var(--muted)}
+p{margin:.5em 0}
+ul,ol{margin:.45em 0;padding-left:1.5em}
+li{margin:.22em 0}
+li>ul,li>ol{margin:.15em 0}
+strong{color:#000}
+em{color:#000}
+code{background:var(--code);border-radius:4px;padding:.12em .34em;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:.92em}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;margin:.7em 0}
+pre code{background:none;padding:0;white-space:pre;font-size:.9em;line-height:1.5}
+table{border-collapse:collapse;width:100%;margin:.75em 0;font-size:.95em;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600}
+tbody tr:nth-child(even){background:var(--soft)}
+blockquote{margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:var(--code);color:var(--muted)}
+blockquote p{margin:.25em 0}
+hr{border:0;border-top:1px solid var(--line);margin:1.8em 0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.topnav{position:sticky;top:0;z-index:20;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+  padding:10px 22px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(180%) blur(6px);font-size:.9em}
+.topnav a{white-space:nowrap}
+.topnav .sep{color:var(--line)}
+.topnav .brand{font-weight:600;color:var(--fg);margin-right:6px}
+footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid var(--line);color:var(--muted);font-size:.86em}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:1em 0}
+.card{display:block;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--soft)}
+.card:hover{border-color:var(--accent)}
+.card b{display:block;margin-bottom:4px}
+.card span{color:var(--muted);font-size:.86em}
+.toc{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:1em 0}
+.toc ul{margin:.25em 0;padding-left:1.3em}
+.tip{border:1px dashed var(--accent);border-radius:10px;padding:10px 14px;background:#f6faff;margin:1em 0;font-size:.94em}
+@media (max-width:640px){main{padding:18px 14px 60px}h1{font-size:1.5em}}
+@media print{
+  body{font-size:11.5pt;line-height:1.6}
+  .topnav{display:none}
+  main{max-width:none;padding:0}
+  h1{page-break-before:always;border-bottom-width:2px}
+  body>main>h1:first-child,main>section:first-child>h1{page-break-before:avoid}
+  pre,table,blockquote,li{page-break-inside:avoid}
+  a{color:#000;text-decoration:none}
+  footer{display:none}
+}
+</style>
+</head>
+<body>
+<nav class="topnav"><span class="brand">02324 离散数学</span> <a href="index.html">目录</a> <span class="sep">|</span> <a href="第02章_命题逻辑的推理理论_考点总结.html">第 2 章 命题逻辑的推理理论 · 考点总结 →</a></nav>
+<main>
+<h1 id="1">第 1 章 命题与命题公式 · 考点总结</h1>
+<blockquote>
+<p>课程：02324 离散数学（080901 自考）<br>
+<strong>课程内容</strong>：1.1 命题与命题联结词 ； 1.2 命题公式的等值演算 ； 1.3 联结词完备集<br>
+<strong>考核层次</strong>：1.1 领会 ； 1.2 <strong>简单应用</strong> ； 1.3 领会<br>
+<strong>重点</strong>：命题及命题联结词、将命题符号化、命题公式的真值表、命题公式的化简及命题的等值演算<br>
+<strong>难点</strong>：命题公式的化简及等值演算及其应用</p>
+</blockquote>
+<hr>
+<h2 id="_1">一、本章知识地图</h2>
+<ul>
+<li><strong>1.1 命题与命题联结词</strong>：核心内容：命题的定义与真值、命题变元/常元、<strong>5 个基本联结词</strong>、运算次序、<strong>符号化</strong>；层次：<strong>领会</strong></li>
+<li><strong>1.2 命题公式的等值演算</strong>：核心内容：合式公式、赋值、<strong>重言式/矛盾式/可满足式</strong>、<strong>等值式（20+ 定律）</strong>、<strong>蕴涵式</strong>、等值演算；层次：<strong>简单应用</strong></li>
+<li><strong>1.3 联结词完备集</strong>：核心内容：完备集的定义、常见完备集、与非/或非、最小完备集；层次：领会</li>
+</ul>
+<hr>
+<h2 id="11">二、1.1 命题与命题联结词（领会）</h2>
+<h3 id="_2">（一）命题</h3>
+<ul>
+<li><strong>1. 命题</strong>：<strong>能够判断真假的陈述句</strong>。</li>
+<li>命题的<strong>真值</strong>只有两个：<strong>真（T / 1）</strong> 与 <strong>假（F / 0）</strong>，且<strong>唯一确定</strong>；</li>
+<li>
+<p><strong>命题标识符（命题变元）</strong>：p、q、r、…（取值 T 或 F）；<strong>命题常元</strong>：T（真）、F（假）。</p>
+</li>
+<li>
+<p><strong>2. 不是命题的常见情形（易考判断）</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>情形</th>
+<th>例子</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>疑问句</td>
+<td>"今天下雨吗？"</td>
+<td>不陈述</td>
+</tr>
+<tr>
+<td>祈使句 / 命令句</td>
+<td>"请关门！"</td>
+<td>无真假</td>
+</tr>
+<tr>
+<td>感叹句</td>
+<td>"多么美的风景！"</td>
+<td>无真假</td>
+</tr>
+<tr>
+<td><strong>悖论</strong></td>
+<td>"本语句是假的"</td>
+<td>真假如 "假" 则真、如 "真" 则假，<strong>自相矛盾</strong></td>
+</tr>
+<tr>
+<td>含<strong>未确定变元</strong>的句子</td>
+<td>"x &gt; 3"（x 未定）</td>
+<td>真值随 x 而定，本身无确定真值（<strong>命题函数</strong>）</td>
+</tr>
+<tr>
+<td>真值未知但客观确定的陈述</td>
+<td>"地球外存在生命"</td>
+<td><strong>仍是命题</strong>（真假客观确定，只是目前不知道）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>结论：判断是否为命题看两点——<strong>① 是陈述句；② 有唯一确定的真假</strong>（与是否"知道"真假无关）。</p>
+</blockquote>
+<ul>
+<li><strong>3. 复合命题</strong>：由<strong>原子命题</strong>经<strong>联结词</strong>连接而成的命题。</li>
+</ul>
+<h3 id="_3">（二）五个基本联结词（必考，真值表必须背熟）</h3>
+<ul>
+<li><strong>否定</strong>：记号：¬p；读法：非 p；真值规则：p 真则 ¬p 假；p 假则 ¬p 真</li>
+<li><strong>合取</strong>：记号：p∧q；读法：p 且 q；真值规则：<strong>同真才真</strong></li>
+<li><strong>析取</strong>：记号：p∨q；读法：p 或 q（可兼或）；真值规则：<strong>至少一个为真即真</strong></li>
+<li><strong>蕴涵（条件）</strong>：记号：p→q；读法：如果 p 则 q；真值规则：<strong>仅当 p 真 q 假时为假</strong>，其余为真</li>
+<li><strong>等价（双条件）</strong>：记号：p↔q；读法：p 当且仅当 q；真值规则：<strong>p 与 q 同真同假时为真</strong></li>
+<li>
+<p><strong>（异或/排斥或）【注意】</strong>：记号：p⊕q；读法：p 与 q 不同时为真；真值规则：视教材是否列为基本联结词</p>
+</li>
+<li>
+<p><strong>真值表</strong></p>
+</li>
+<li>
+<p><strong>0</strong>：q：0；¬p：1；p∧q：0；p∨q：0；p→q：<strong>1</strong>；p↔q：1；p⊕q：0</p>
+</li>
+<li><strong>0</strong>：q：1；¬p：1；p∧q：0；p∨q：1；p→q：<strong>1</strong>；p↔q：0；p⊕q：1</li>
+<li><strong>1</strong>：q：0；¬p：0；p∧q：0；p∨q：1；p→q：<strong>0</strong>；p↔q：0；p⊕q：1</li>
+<li>
+<p><strong>1</strong>：q：1；¬p：0；p∧q：1；p∨q：1；p→q：<strong>1</strong>；p↔q：1；p⊕q：0</p>
+</li>
+<li>
+<p><strong>蕴涵 p→q 的要点</strong></p>
+</li>
+<li>p 稱<strong>前件</strong>（条件、假设），q 稱<strong>后件</strong>（结论）;</li>
+<li><strong>p 为假时，p→q 一律为真</strong>（"善意推定"）；</li>
+<li>p→q 为假<strong>只有一个情形：p 真而 q 假</strong>；</li>
+<li>
+<p>自然语言中"如果…那么…"的因果含义在数理逻辑中<strong>不予考虑</strong>（只按真值表判定）。</p>
+</li>
+<li>
+<p><strong>运算次序（优先级，【注意】 以教材为准）</strong></p>
+</li>
+<li><strong>¬ &gt; ∧ &gt; ∨ &gt; → &gt; ↔</strong>（即：否定最优先，&#8594; 低于 ∨ 而高于 ↔）；同级从左到右；<strong>括号优先</strong>。</li>
+</ul>
+<h3 id="_4">（三）自然语言的符号化（领会，必考）</h3>
+<table>
+<thead>
+<tr>
+<th>自然语言表述</th>
+<th>符号化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p 且 q / 既 p 又 q / p 与 q</td>
+<td>p∧q</td>
+</tr>
+<tr>
+<td>p 或 q（可兼或）</td>
+<td>p∨q</td>
+</tr>
+<tr>
+<td><strong>要么 p 要么 q</strong>（排斥或）</td>
+<td>(p∧¬q)∨(¬p∧q) 或 p⊕q</td>
+</tr>
+<tr>
+<td>如果 p 则 q / p 是 q 的<strong>充分条件</strong> / 只要 p 就 q / p 推出 q</td>
+<td><strong>p→q</strong></td>
+</tr>
+<tr>
+<td><strong>只有 p 才 q</strong> / p 是 q 的<strong>必要条件</strong> / q 仅当 p</td>
+<td><strong>q→p</strong></td>
+</tr>
+<tr>
+<td>p 当且仅当 q / p 与 q 等价</td>
+<td>p↔q</td>
+</tr>
+<tr>
+<td><strong>除非 p，否则 q</strong></td>
+<td>¬p→q（即 p∨q）</td>
+</tr>
+<tr>
+<td>并非 p / p 不成立</td>
+<td>¬p</td>
+</tr>
+<tr>
+<td>不 p 不 q（"既不…也不…"）</td>
+<td>¬p∧¬q</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>符号化步骤</strong>：① 找出所有<strong>原子命题</strong>并令其为一个命题变元；② 确定联结词及其<strong>层次</strong>（括号）；③ 按优先级写成公式。</p>
+</li>
+<li>
+<p><strong>例</strong>：将"<strong>如果明天不下雨，我们就去郊游；否则我们就在家看书</strong>"符号化。<br>
+设 p：明天下雨；q：我们去郊游；r：我们在家看书。<br>
+→ <strong>¬p→q</strong> 与 <strong>p→r</strong>，合起来写作 <strong>(¬p→q)∧(p→r)</strong>。</p>
+</li>
+</ul>
+<hr>
+<h2 id="12">三、1.2 命题公式的等值演算（简单应用，本章核心）</h2>
+<h3 id="_5">（一）命题公式</h3>
+<ul>
+<li>
+<p><strong>1. 合式公式（命题公式，WFF）的递归定义</strong><br>
+① 单个<strong>命题变元或命题常元</strong>是合式公式；<br>
+② 若 A 是合式公式，则 <strong>¬A</strong> 是合式公式；<br>
+③ 若 A、B 是合式公式，则 <strong>(A∧B)、(A∨B)、(A→B)、(A↔B)</strong> 是合式公式；<br>
+④ 只有<strong>有限次</strong>应用 ①②③ 得到的符号串才是合式公式。</p>
+</li>
+<li>
+<p><strong>2. 赋值（解释）</strong>：给公式中每个命题变元指定一个真值（0/1）：</p>
+</li>
+<li>使公式为真的赋值稱<strong>成真赋值</strong>；使公式为假的赋值稱<strong>成假赋值</strong>；</li>
+<li>
+<p>n 个命题变元共有 <strong>2ⁿ 个赋值</strong>（真值表有 2ⁿ 行）。</p>
+</li>
+<li>
+<p><strong>3. 真值表</strong>：列出所有赋值与对应公式真值的表，用于判断公式类型。</p>
+</li>
+<li><strong>例</strong>：A = p→(q∨¬r)，3 个变元 → 8 行真值表；当 p=1、q=0、r=1 时 q∨¬r = 0∨0 = 0，故 A = <strong>0</strong>（唯一的成假赋值之一 【注意】 逐个算清）。</li>
+</ul>
+<h3 id="_6">（二）公式的分类（必考）</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>定义</th>
+<th>例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>重言式（永真式）</strong></td>
+<td>在<strong>所有赋值</strong>下都为真</td>
+<td>p∨¬p</td>
+</tr>
+<tr>
+<td><strong>矛盾式（永假式）</strong></td>
+<td>在<strong>所有赋值</strong>下都为假（不可满足式）</td>
+<td>p∧¬p</td>
+</tr>
+<tr>
+<td><strong>可满足式</strong></td>
+<td><strong>至少有一个</strong>成真赋值</td>
+<td>p∧q、p→q</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>关系</strong>：重言式的否定是<strong>矛盾式</strong>，矛盾式的否定是<strong>重言式</strong>；重言式都是可满足式，<strong>矛盾式一定不是可满足式</strong>；<strong>既非重言式也非矛盾式</strong>的公式是可满足式（且也是可<strong>非</strong>满足式，即都有成真与成假赋值）。</li>
+</ul>
+<h3 id="_7">（三）等值（等价）与基本等值式</h3>
+<ul>
+<li><strong>1. 等值的定义</strong>：设 A、B 为两个命题公式，若 <strong>A↔B 是重言式</strong>，则稱 <strong>A 与 B 等值（等价）</strong>，记作 <strong>A⇔B</strong>（或 A = B）。</li>
+<li>等值关系满足<strong>自反性、对称性、传递性</strong>；</li>
+<li>
+<p>判断两公式是否等值：可用 <strong>真值表法</strong>（对比两列真值）或 <strong>等值演算法</strong>。</p>
+</li>
+<li>
+<p><strong>2. 常用等值式（命题定律，必背，考试中大量使用）</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>等值式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>双重否定律</strong></td>
+<td>¬¬A ⇔ A</td>
+</tr>
+<tr>
+<td><strong>幂等律</strong></td>
+<td>A∨A ⇔ A；A∧A ⇔ A</td>
+</tr>
+<tr>
+<td><strong>交换律</strong></td>
+<td>A∨B ⇔ B∨A；A∧B ⇔ B∧A</td>
+</tr>
+<tr>
+<td><strong>结合律</strong></td>
+<td>(A∨B)∨C ⇔ A∨(B∨C)；(A∧B)∧C ⇔ A∧(B∧C)</td>
+</tr>
+<tr>
+<td><strong>分配律</strong></td>
+<td>A∨(B∧C) ⇔ (A∨B)∧(A∨C)；A∧(B∨C) ⇔ (A∧B)∨(A∧C)</td>
+</tr>
+<tr>
+<td><strong>德摩根律</strong></td>
+<td>¬(A∨B) ⇔ ¬A∧¬B；¬(A∧B) ⇔ ¬A∨¬B</td>
+</tr>
+<tr>
+<td><strong>吸收律</strong></td>
+<td>A∨(A∧B) ⇔ A；A∧(A∨B) ⇔ A</td>
+</tr>
+<tr>
+<td><strong>零律</strong></td>
+<td>A∨1 ⇔ 1；A∧0 ⇔ 0</td>
+</tr>
+<tr>
+<td><strong>同一律</strong></td>
+<td>A∨0 ⇔ A；A∧1 ⇔ A</td>
+</tr>
+<tr>
+<td><strong>排中律</strong></td>
+<td>A∨¬A ⇔ 1</td>
+</tr>
+<tr>
+<td><strong>矛盾律</strong></td>
+<td>A∧¬A ⇔ 0</td>
+</tr>
+<tr>
+<td><strong>蕴涵等值式</strong></td>
+<td><strong>A→B ⇔ ¬A∨B</strong></td>
+</tr>
+<tr>
+<td><strong>等价等值式</strong></td>
+<td>A↔B ⇔ (A→B)∧(B→A)；A↔B ⇔ (A∧B)∨(¬A∧¬B)</td>
+</tr>
+<tr>
+<td><strong>假言易位（逆否）</strong></td>
+<td>A→B ⇔ ¬B→¬A</td>
+</tr>
+<tr>
+<td><strong>等价否定等值式</strong></td>
+<td>A↔B ⇔ ¬A↔¬B</td>
+</tr>
+<tr>
+<td><strong>归谬论</strong></td>
+<td>(A→B)∧(A→¬B) ⇔ ¬A</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>3. 等值演算的方法与套路</strong><br>
+① <strong>消去 →、↔</strong>（用蕴涵等值式、等价等值式）；<br>
+② <strong>用德摩根律把 ¬ 内移</strong>（内移到变元前）；<br>
+③ <strong>用分配律、吸收律化简</strong>；<br>
+④ 目标形式：<strong>析取范式 / 合取范式 / 主范式</strong>（第 2 章）或最简形式。</p>
+</li>
+<li>
+<p><strong>例 1（化简）</strong>：化简 <strong>(p→q)∧(p→¬q)</strong><br>
+= (¬p∨q)∧(¬p∨¬q) 　（蕴涵等值式）<br>
+= ¬p∨(q∧¬q) 　（分配律）<br>
+= ¬p∨0 　（矛盾律）<br>
+= <strong>¬p</strong> 　（同一律）　→ 说明该式等值于 ¬p。</p>
+</li>
+<li>
+<p><strong>例 2（判断类型）</strong>：判断 <strong>p→(q→p)</strong> 的类型<br>
+= ¬p∨(¬q∨p)<br>
+= (¬p∨p)∨¬q = 1∨¬q = <strong>1</strong> → 是<strong>重言式</strong>。</p>
+</li>
+<li>
+<p><strong>例 3（证明等值）</strong>：证明 <strong>(p∧q)→r ⇔ p→(q→r)</strong><br>
+右边 = p→(¬q∨r) = ¬p∨¬q∨r；<br>
+左边 = ¬(p∧q)∨r = ¬p∨¬q∨r　→ 左右相等 ✓（稱<strong>输出律</strong>：p∧q→r ⇔ p→(q→r)）</p>
+</li>
+</ul>
+<h3 id="_8">（四）蕴涵（蕴含）与常用蕴涵式</h3>
+<ul>
+<li><strong>1. 蕴涵的定义</strong>：若 <strong>A→B 是重言式</strong>，则稱 <strong>A 蕴涵 B</strong>，记作 <strong>A⇒B</strong>（A 推出 B）。</li>
+<li><strong>等值与蕴涵的区别</strong>：A⇔B 要求 A↔B 是重言式（<strong>双向</strong>）；A⇒B 只要求 A→B 是重言式（<strong>单向</strong>）；</li>
+<li>A⇔B 的充要条件是 <strong>A⇒B 且 B⇒A</strong>；</li>
+<li>
+<p>注意：公式 p→q 为真并不代表 p⇒q（必须<strong>在所有赋值下</strong>为真）。</p>
+</li>
+<li>
+<p><strong>2. 常用蕴涵式（必背）</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>蕴涵式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>附加</strong></td>
+<td>A ⇒ A∨B</td>
+</tr>
+<tr>
+<td><strong>化简</strong></td>
+<td>A∧B ⇒ A（也 ⇒ B）</td>
+</tr>
+<tr>
+<td><strong>假言推理</strong></td>
+<td>A∧(A→B) ⇒ B</td>
+</tr>
+<tr>
+<td><strong>拒取式</strong></td>
+<td>(A→B)∧¬B ⇒ ¬A</td>
+</tr>
+<tr>
+<td><strong>析取三段论</strong></td>
+<td>(A∨B)∧¬A ⇒ B</td>
+</tr>
+<tr>
+<td><strong>假言三段论</strong></td>
+<td>(A→B)∧(B→C) ⇒ A→C</td>
+</tr>
+<tr>
+<td><strong>等价三段论</strong></td>
+<td>(A↔B)∧(B↔C) ⇒ A↔C</td>
+</tr>
+<tr>
+<td><strong>构造性二难</strong></td>
+<td>(A→B)∧(C→D)∧(A∨C) ⇒ B∨D</td>
+</tr>
+<tr>
+<td><strong>破坏性二难</strong></td>
+<td>(A→B)∧(C→D)∧(¬B∨¬D) ⇒ ¬A∨¬C</td>
+</tr>
+<tr>
+<td><strong>合取引入</strong></td>
+<td>A，B ⇒ A∧B</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>3. 等值演算的应用</strong>：化简逻辑表达式（数字电路化简）、判断公式类型（是否重言式）、证明两公式等值、为推理证明作准备。</li>
+</ul>
+<hr>
+<h2 id="13">四、1.3 联结词完备集（领会）</h2>
+<ul>
+<li>
+<p><strong>1. 联结词完备集（全功能集）</strong>：若<strong>任何一个命题公式</strong>都能用某个联结词集合中的联结词等值地表示，则稱该集合为<strong>联结词完备集</strong>。</p>
+</li>
+<li>
+<p><strong>2. 常见完备集</strong>（都会写等值转换）</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>完备集</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>{¬, ∧, ∨}</strong></td>
+<td>最基本的完备集</td>
+</tr>
+<tr>
+<td><strong>{¬, ∧}</strong></td>
+<td>∨ 可消去：A∨B ⇔ ¬(¬A∧¬B)</td>
+</tr>
+<tr>
+<td><strong>{¬, ∨}</strong></td>
+<td>∧ 可消去：A∧B ⇔ ¬(¬A∨¬B)</td>
+</tr>
+<tr>
+<td><strong>{¬, →}</strong></td>
+<td>A∨B ⇔ ¬A→B</td>
+</tr>
+<tr>
+<td><strong>{↑}</strong>（与非，谢费尔竖）</td>
+<td>单个联结词即可构成完备集</td>
+</tr>
+<tr>
+<td><strong>{↓}</strong>（或非，皮尔斯箭头）</td>
+<td>单个联结词即可构成完备集</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>3. 与非、或非的定义（必记）</strong></li>
+<li><strong>与非</strong>：<strong>p↑q ⇔ ¬(p∧q)</strong>；可表示：¬p ⇔ p↑p；p∧q ⇔ ¬(p↑q) ⇔ (p↑q)↑(p↑q)；p∨q ⇔ (p↑p)↑(q↑q)；</li>
+<li>
+<p><strong>或非</strong>：<strong>p↓q ⇔ ¬(p∨q)</strong>；可表示：¬p ⇔ p↓p；p∨q ⇔ (p↓q)↓(p↓q)；p∧q ⇔ (p↓p)↓(q↓q)。</p>
+</li>
+<li>
+<p><strong>4. 最小完备集</strong>：若某完备集<strong>去掉任何一个联结词后就不再完备</strong>，则稱为最小完备集（如 {¬,∧}、{¬,∨}、{¬,→}、{↑}、{↓}）。</p>
+</li>
+</ul>
+<hr>
+<h2 id="_9">五、本章对比与易混点</h2>
+<table>
+<thead>
+<tr>
+<th>易混点</th>
+<th>正确理解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>命题 vs 命题变元</td>
+<td>命题有确定真值；命题变元是<strong>可取真假值的符号</strong></td>
+</tr>
+<tr>
+<td>"含变量 x 的句子"</td>
+<td>"x &gt; 3" 本身<strong>不是命题</strong>（是真值随 x 变的命题函数），但 "∀x(x&gt;3)" 或给定 x 值后才是命题</td>
+</tr>
+<tr>
+<td><strong>p→q 的假值条件</strong></td>
+<td><strong>只有 p 真、q 假</strong>时为假；<strong>p 假时 p→q 为真</strong></td>
+</tr>
+<tr>
+<td>充分 vs 必要条件</td>
+<td>"p 是 q 的<strong>充分</strong>条件" → <strong>p→q</strong>；"p 是 q 的<strong>必要</strong>条件" → <strong>q→p</strong></td>
+</tr>
+<tr>
+<td>"只有 p 才 q"</td>
+<td>翻译为 <strong>q→p</strong>（p 是 q 的必要条件）</td>
+</tr>
+<tr>
+<td>"除非 p，否则 q"</td>
+<td>翻译为 <strong>¬p→q</strong>（等价于 p∨q）</td>
+</tr>
+<tr>
+<td>可兼或 vs 排斥或</td>
+<td>可兼或 → p∨q；排斥或 → (p∧¬q)∨(¬p∧q)</td>
+</tr>
+<tr>
+<td><strong>重言式 / 矛盾式 / 可满足式</strong></td>
+<td>全真 / 全假 / 至少一个成真赋值；<strong>矛盾式不可满足</strong></td>
+</tr>
+<tr>
+<td>等值 vs 蕴涵</td>
+<td>A⇔B 需 A↔B 为重言式（双向）；A⇒B 只需 A→B 为重言式（单向）</td>
+</tr>
+<tr>
+<td>⇔ / ⇒ 与 ↔ / →</td>
+<td>前两者是<strong>关系符号</strong>（元语言，表示"等值/蕴涵"）；后两者是<strong>联结词</strong>（对象语言，构成公式）</td>
+</tr>
+<tr>
+<td>德摩根律的适用范围</td>
+<td>适用于 ∧、∨，<strong>不适用于 →、↔</strong>（需先消去）</td>
+</tr>
+<tr>
+<td>运算次序</td>
+<td>¬ &gt; ∧ &gt; ∨ &gt; → &gt; ↔（【注意】 以教材为准），不确定时<strong>加括号</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="_10">六、必背清单 + 简答预测 + 计算模板</h2>
+<h3 id="_11">（一）必背清单</h3>
+<ul>
+<li>命题的定义（能判断真假的陈述句）与<strong>非命题的情形</strong>；</li>
+<li><strong>五个基本联结词</strong>的定义与<strong>真值表</strong>（尤其蕴涵：只有 1→0 为假）；</li>
+<li><strong>运算次序</strong>（¬ &gt; ∧ &gt; ∨ &gt; → &gt; ↔）与<strong>符号化对照表</strong>（充分/必要/只有…才/除非…否则/要么…要么）；</li>
+<li>合式公式的递归定义、赋值、<strong>成真/成假赋值</strong>、真值表（2ⁿ 行）；</li>
+<li><strong>重言式、矛盾式、可满足式</strong>的定义与关系；</li>
+<li><strong>等值的定义</strong>（A↔B 重言式）与等值关系的三条性质；</li>
+<li><strong>20 余条基本等值式</strong>（尤其：蕴涵等值式、德摩根律、分配律、吸收律、归谬论、假言易位、输出律）；</li>
+<li><strong>蕴涵的定义</strong>（A→B 重言式）与 9 条常用蕴涵式；</li>
+<li><strong>等值演算四步套路</strong>（消 → ↔ → 内移 ¬ → 化简 → 目标形式）；</li>
+<li><strong>联结词完备集</strong>：{¬,∧,∨}、{¬,∧}、{¬,∨}、{¬,→}、{↑}、{↓}；与非、或非的定义与基本表示。</li>
+</ul>
+<h3 id="_12">（二）高频简答 / 判断题预测</h3>
+<ul>
+<li>什么是命题？判断下列语句是否为命题（并说明理由）。</li>
+<li>什么是复合命题？五个基本联结词的定义各是什么？</li>
+<li>为什么说"p 假时 p→q 为真"？蕴涵式在什么情况下为假？</li>
+<li>"p 是 q 的充分条件""p 是 q 的必要条件"分别符号化为什么？</li>
+<li>"只有 p 才 q""除非 p，否则 q""要么 p 要么 q"分别如何符号化？</li>
+<li>什么是重言式、矛盾式和可满足式？三者关系如何？</li>
+<li>什么是命题公式的等值？如何判断两个公式是否等值？</li>
+<li>写出常用等值式（至少 10 条），并说明德摩根律、蕴含等值式、归谬论的内容。</li>
+<li>等值与蕴涵有何区别与联系？写出常用蕴涵式（至少 6 条）。</li>
+<li>什么是联结词完备集？常见完备集有哪些？为什么 {↑} 是完备集？</li>
+<li>如何用与非（或非）表示 ¬、∧、∨？</li>
+<li>命题公式的运算次序是什么？含括号时如何运算？</li>
+</ul>
+<h3 id="_13">（三）计算 / 证明题模板</h3>
+<ul>
+<li><strong>符号化</strong>：设变元 → 找联结词与层次 → 写公式（注意必要条件要"倒过来"）。</li>
+<li><strong>构造真值表</strong>：列 2ⁿ 个赋值 → 逐层计算子公式 → 得主联结词列 → 判断类型。</li>
+<li><strong>判断公式类型</strong>：真值表法（看列）或<strong>等值演算法</strong>（化到 1 或 0）。</li>
+<li><strong>等值演算证明</strong>：① 消去 →、↔；② 德摩根内移；③ 分配/吸收化简；④ 两边化到同一形式；每步注明所用<strong>定律名称</strong>（阅卷按步给分）。</li>
+<li><strong>判断蕴涵是否成立</strong>：只需检查 <strong>A→B 是否重言式</strong>；可用真值表或等值演算（化为 1），或<strong>找一个成假赋值来举反例否定</strong>。</li>
+</ul>
+</main>
+<footer>02324 离散数学 · 由 Markdown 生成，浏览器直接打开即可阅读</footer>
+</body>
+</html>

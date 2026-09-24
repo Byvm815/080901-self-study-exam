@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 9 章 图的应用 · 考点总结</title>
+<style>
+:root{--fg:#24292f;--muted:#57606a;--line:#d0d7de;--accent:#0969da;--code:#f6f8fa;--soft:#fafbfc}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--fg);
+  font:16px/1.78 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",sans-serif}
+main{max-width:980px;margin:0 auto;padding:26px 22px 72px}
+h1{font-size:1.75em;line-height:1.35;border-bottom:3px solid var(--accent);padding-bottom:.28em;margin:1.1em 0 .7em}
+h2{font-size:1.36em;line-height:1.4;border-bottom:1px solid var(--line);padding-bottom:.22em;margin:1.5em 0 .6em}
+h3{font-size:1.14em;margin:1.25em 0 .45em}
+h4{font-size:1.02em;margin:1.05em 0 .35em;color:var(--muted)}
+p{margin:.5em 0}
+ul,ol{margin:.45em 0;padding-left:1.5em}
+li{margin:.22em 0}
+li>ul,li>ol{margin:.15em 0}
+strong{color:#000}
+em{color:#000}
+code{background:var(--code);border-radius:4px;padding:.12em .34em;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:.92em}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;margin:.7em 0}
+pre code{background:none;padding:0;white-space:pre;font-size:.9em;line-height:1.5}
+table{border-collapse:collapse;width:100%;margin:.75em 0;font-size:.95em;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600}
+tbody tr:nth-child(even){background:var(--soft)}
+blockquote{margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:var(--code);color:var(--muted)}
+blockquote p{margin:.25em 0}
+hr{border:0;border-top:1px solid var(--line);margin:1.8em 0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.topnav{position:sticky;top:0;z-index:20;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+  padding:10px 22px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(180%) blur(6px);font-size:.9em}
+.topnav a{white-space:nowrap}
+.topnav .sep{color:var(--line)}
+.topnav .brand{font-weight:600;color:var(--fg);margin-right:6px}
+footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid var(--line);color:var(--muted);font-size:.86em}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:1em 0}
+.card{display:block;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--soft)}
+.card:hover{border-color:var(--accent)}
+.card b{display:block;margin-bottom:4px}
+.card span{color:var(--muted);font-size:.86em}
+.toc{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:1em 0}
+.toc ul{margin:.25em 0;padding-left:1.3em}
+.tip{border:1px dashed var(--accent);border-radius:10px;padding:10px 14px;background:#f6faff;margin:1em 0;font-size:.94em}
+@media (max-width:640px){main{padding:18px 14px 60px}h1{font-size:1.5em}}
+@media print{
+  body{font-size:11.5pt;line-height:1.6}
+  .topnav{display:none}
+  main{max-width:none;padding:0}
+  h1{page-break-before:always;border-bottom-width:2px}
+  body>main>h1:first-child,main>section:first-child>h1{page-break-before:avoid}
+  pre,table,blockquote,li{page-break-inside:avoid}
+  a{color:#000;text-decoration:none}
+  footer{display:none}
+}
+</style>
+</head>
+<body>
+<nav class="topnav"><span class="brand">02324 离散数学</span> <a href="index.html">目录</a> <span class="sep">|</span> <a href="第08章_图_考点总结.html">← 第 8 章 图 · 考点总结</a> <span class="sep">|</span> <a href="02324离散数学_考前简记.html">02324 离散数学 · 考前简记（1–9 章合订） →</a></nav>
+<main>
+<h1 id="9">第 9 章 图的应用 · 考点总结</h1>
+<blockquote>
+<p>课程：02324 离散数学（080901 自考）<br>
+<strong>课程内容</strong>：9.1 欧拉图与哈密顿图 ； 9.2 平面图 ； 9.3 树及其遍历<br>
+<strong>考核层次</strong>：欧拉图与哈密顿图 <strong>简单应用</strong> ； 平面图 <strong>简单应用</strong> ； 树及其遍历 <strong>综合应用</strong><br>
+<strong>重点</strong>：欧拉图与哈密顿图的判别、平面图的判别、二叉树的相关性质及遍历方法<br>
+<strong>难点</strong>：欧拉图与哈密顿图的判别、平面图的判别</p>
+</blockquote>
+<hr>
+<h2 id="_1">一、本章知识地图</h2>
+<ul>
+<li><strong>9.1 欧拉图与哈密顿图</strong>：核心内容：<strong>欧拉通路/回路/欧拉图</strong>、<strong>欧拉定理（充要条件）</strong>；<strong>哈密顿通路/回路/哈密顿图</strong>、<strong>必要条件与充分条件（狄拉克、奥尔）</strong>；层次：<strong>简单应用</strong></li>
+<li><strong>9.2 平面图</strong>：核心内容：平面图定义、<strong>面与面的次数</strong>、<strong>欧拉公式 n − m + r = 2</strong>、<strong>不等式 m ≤ 3n−6 / 2n−4</strong>、<strong>K₅、K₃,₃ 非平面</strong>；层次：<strong>简单应用</strong></li>
+<li><strong>9.3 树及其遍历</strong>：核心内容：<strong>树的定义与六个等价命题</strong>、<strong>树的性质与计算（边数、叶数公式）</strong>、森林；<strong>二叉树性质</strong>、<strong>三种遍历</strong>与还原；层次：<strong>综合应用</strong></li>
+</ul>
+<hr>
+<h2 id="91">二、9.1 欧拉图与哈密顿图（简单应用）</h2>
+<h3 id="_2">（一）欧拉图（关注"边"）</h3>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>欧拉通路（欧拉迹）</strong></td>
+<td>经过图中<strong>每条边一次且仅一次</strong>的通路</td>
+</tr>
+<tr>
+<td><strong>欧拉回路</strong></td>
+<td>经过每条边一次且仅一次的<strong>回路</strong></td>
+</tr>
+<tr>
+<td><strong>欧拉图</strong></td>
+<td><strong>存在欧拉回路</strong>的图</td>
+</tr>
+<tr>
+<td><strong>半欧拉图（一笔画图）</strong></td>
+<td>存在欧拉通路但<strong>不存在</strong>欧拉回路的图</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>【重点】 欧拉定理（判别，必背）</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>图</th>
+<th>存在欧拉通路/回路的充要条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>无向图</strong></td>
+<td><strong>有欧拉回路 ⟺ G 连通且所有顶点的度都是偶数</strong>（此时是欧拉图）</td>
+</tr>
+<tr>
+<td><strong>无向图</strong></td>
+<td><strong>有欧拉通路（无欧拉回路）⟺ G 连通且恰有 2 个奇度顶点</strong>（这两个奇度顶点必为通路的两个端点，即半欧拉图）</td>
+</tr>
+<tr>
+<td><strong>有向图</strong></td>
+<td><strong>有欧拉回路 ⟺ D 强连通且每个顶点的入度 = 出度</strong></td>
+</tr>
+<tr>
+<td><strong>有向图</strong></td>
+<td><strong>有欧拉通路 ⟺ D 单向连通，且除两个顶点外各顶点入度 = 出度</strong>（一个顶点出度比入度大 1 = 起点，另一个入度比出度大 1 = 终点）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>判别与应用示例</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>图</th>
+<th>判别</th>
+<th>结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>K₅</strong>（5 阶完全图）</td>
+<td>连通，每个顶点度 = 4（<strong>都是偶数</strong>）</td>
+<td><strong>欧拉图</strong>（存在欧拉回路）</td>
+</tr>
+<tr>
+<td><strong>两个三角形共用一个顶点的图</strong></td>
+<td>连通，公共顶点度为 4、其余 4 个顶点度均为 2（<strong>全偶</strong>）</td>
+<td><strong>欧拉图</strong></td>
+</tr>
+<tr>
+<td><strong>K₄</strong></td>
+<td>连通，但 4 个顶点度都是 3（<strong>4 个奇度顶点</strong>）</td>
+<td><strong>既无欧拉回路又无欧拉通路</strong>（不能一笔画）</td>
+</tr>
+<tr>
+<td><strong>恰有 2 个奇度顶点的连通图</strong></td>
+<td>满足半欧拉条件</td>
+<td><strong>可一笔画</strong>（从一奇度点出发、另一奇度点结束），但<strong>不能回到起点</strong></td>
+</tr>
+<tr>
+<td><strong>有向图：每点入度 = 出度且强连通</strong></td>
+<td>满足条件</td>
+<td><strong>有向欧拉图</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>应用</strong>：<strong>一笔画问题</strong>（判断能否不重复地走遍所有边）、邮递员（中国邮路）问题（了解）。</li>
+</ul>
+<h3 id="_3">（二）哈密顿图（关注"顶点"）</h3>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>哈密顿通路</strong></td>
+<td>经过图中<strong>每个顶点一次且仅一次</strong>的通路（即含全部顶点的初级通路）</td>
+</tr>
+<tr>
+<td><strong>哈密顿回路</strong></td>
+<td>经过每个顶点一次且仅一次的回路（含全部顶点的初级回路）</td>
+</tr>
+<tr>
+<td><strong>哈密顿图</strong></td>
+<td><strong>存在哈密顿回路</strong>的图</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>【重点】 判别（至今没有充要条件，只有必要/充分条件）</strong></p>
+</li>
+<li>
+<p><strong>必要条件</strong>：若 G 是哈密顿图，则对<strong>任意非空真子集 S ⊊ V</strong>，都有 <strong>p(G − S) ≤ |S|</strong>（p 为 G − S 的连通分支数）；用途：<strong>主要用于否定</strong>（找到一个 S 使不等式不成立 ⇒ 非哈密顿图）</p>
+</li>
+<li><strong>充分条件：狄拉克定理</strong>：n（≥3）阶<strong>简单图</strong>，若<strong>每个顶点的度 ≥ n/2</strong>，则 G 是哈密顿图；用途：判定是（<strong>不满足时不能否定</strong>）</li>
+<li>
+<p><strong>充分条件：奥尔定理</strong>：n（≥3）阶<strong>简单图</strong>，若对<strong>任意两个不相邻的顶点 u、v</strong> 都有 <strong>deg(u) + deg(v) ≥ n</strong>，则 G 是哈密顿图；用途：同上</p>
+</li>
+<li>
+<p><strong>示例</strong></p>
+</li>
+<li><strong>Kₙ（n ≥ 3）是哈密顿图</strong> ✓（且每个顶点度 = n−1 ≥ n/2，符合狄拉克定理）；</li>
+<li><strong>星形图 K₁,ₙ（n ≥ 3）不是哈密顿图</strong>：取 <strong>S = {中心顶点}</strong>，则 <strong>G − S</strong> 是 n 个孤立顶点，<strong>p(G − S) = n &gt; 1 = |S|</strong> ⇒ 违反必要条件 ⇒ <strong>不是哈密顿图</strong> ✓（<strong>必要条件典型的用法</strong>）；</li>
+<li>例：6 阶简单图，每个顶点度 ≥ 3 ⇒ 由狄拉克定理是<strong>哈密顿图</strong>；</li>
+<li>
+<p>例：6 阶简单图，任意两个不相邻顶点的度之和 ≥ 6 ⇒ 由奥尔定理是<strong>哈密顿图</strong>。</p>
+</li>
+<li>
+<p><strong>应用</strong>：旅行商问题（TSP，了解）。</p>
+</li>
+</ul>
+<h3 id="vs">（三）欧拉图 vs 哈密顿图（对比，必记）</h3>
+<table>
+<thead>
+<tr>
+<th>比较项</th>
+<th>欧拉图</th>
+<th>哈密顿图</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>遍历对象</td>
+<td><strong>边</strong>（每条边恰一次）</td>
+<td><strong>顶点</strong>（每个顶点恰一次）</td>
+</tr>
+<tr>
+<td>判别难度</td>
+<td><strong>有充要条件</strong>（欧拉定理，容易判别）</td>
+<td><strong>无充要条件</strong>，只有必要/充分条件（较难）</td>
+</tr>
+<tr>
+<td>典型例子</td>
+<td>K₅、Cₙ（n 阶圈）</td>
+<td>Kₙ（n ≥ 3）、Cₙ</td>
+</tr>
+<tr>
+<td>应用</td>
+<td>一笔画</td>
+<td>旅行商</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="92">三、9.2 平面图（简单应用）</h2>
+<h3 id="_4">（一）定义与面</h3>
+<ul>
+<li>
+<p><strong>平面图</strong>：若图 G 能<strong>画在平面上</strong>使得<strong>任何两条边除端点外都不相交</strong>（无边交叉），则称 G 为<strong>平面图</strong>（可平面图），这种画法称<strong>平面嵌入</strong>；否则称<strong>非平面图</strong>。</p>
+<blockquote>
+<p>注意：<strong>平面图不唯一地看画法</strong>——只要<strong>存在</strong>一种无边交叉的画法即为平面图。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>面与面的次数</strong></p>
+</li>
+<li>平面图把平面分成若干<strong>区域</strong>，每个区域称一个<strong>面</strong>（面数记 <strong>r</strong>，也记 Φ）；</li>
+<li>面积无限的面称<strong>外部面（无限面）</strong>，其余称内部面；</li>
+<li>
+<p><strong>面的次数 deg(f)</strong> = 该面<strong>边界上的边数</strong>（一条边若是两个面的公共边界，则在两个面中各计一次）。</p>
+</li>
+<li>
+<p><strong>重要关系</strong>：<strong>Σ_{f} deg(f) = 2m</strong>（各面次数之和 = 边数的 2 倍，与握手定理同源）。</p>
+</li>
+</ul>
+<h3 id="_5">（二）【重点】 欧拉公式（必背）</h3>
+<ul>
+<li><strong>对连通平面图</strong>：<strong>n − m + r = 2</strong>（顶点数 − 边数 + 面数 = 2），即 <strong>r = m − n + 2</strong>。</li>
+<li>
+<p><strong>对具有 k 个连通分支的平面图</strong>：<strong>n − m + r = k + 1</strong>（即 r = m − n + k + 1）。</p>
+</li>
+<li>
+<p><strong>例</strong>：某连通平面图有 n = 6 个顶点、m = 10 条边 ⇒ <strong>r = 2 − n + m = 2 − 6 + 10 = 6</strong> 个面。</p>
+</li>
+<li><strong>例</strong>：一棵树（连通无圈）m = n − 1 ⇒ r = 2 − n + (n−1) = <strong>1</strong>（只有外部面一个面）✓</li>
+</ul>
+<h3 id="_6">（三）平面图的判别（不等式法，必考）</h3>
+<ul>
+<li><strong>由欧拉公式推出的必要条件（用于判"非平面"）</strong></li>
+<li>连通<strong>简单</strong>平面图（<strong>n ≥ 3</strong>）：<strong>m ≤ 3n − 6</strong>；</li>
+<li>若连通简单平面图<strong>没有三角形</strong>（每个面次数 ≥ 4，如二部图）：<strong>m ≤ 2n − 4</strong>；</li>
+<li>
+<p>一般地，由 Σdeg(f) = 2m 与每个面次数 ≥ 3（或 ≥ 4）可推出上述不等式。</p>
+</li>
+<li>
+<p><strong>两个经典非平面图（必须记住）</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>图</th>
+<th>数据</th>
+<th>判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>K₅</strong></td>
+<td>n = 5，m = 10</td>
+<td><strong>10 &gt; 3×5 − 6 = 9</strong> ⇒ <strong>非平面图</strong> ✓</td>
+</tr>
+<tr>
+<td><strong>K₃,₃</strong>（完全二部图）</td>
+<td>n = 6，m = 9，且<strong>无三角形</strong></td>
+<td><strong>9 &gt; 2×6 − 4 = 8</strong> ⇒ <strong>非平面图</strong> ✓</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>库拉托夫斯基定理（了解）</strong>：图 G 是平面图 <strong>⟺</strong> G <strong>不含与 K₅ 或 K₃,₃ 同胚的子图</strong>（同胚＝通过若干次"边细分/收缩"可相互得到）。</li>
+</ul>
+<h3 id="_7">（四）判别方法与步骤</h3>
+<ul>
+<li><strong>尝试平面嵌入</strong>：能画出无边交叉的图形 ⇒ 平面图；</li>
+<li><strong>用不等式否定</strong>：连通简单平面图必须 m ≤ 3n−6（无三角形时 m ≤ 2n−4）；<strong>违反即非平面</strong>（K₅、K₃,₃ 即此法）；</li>
+<li><strong>找 K₅/K₃,₃ 的同胚子图</strong>（库拉托夫斯基定理，了解）；</li>
+<li><strong>用欧拉公式求面数</strong>或<strong>由面数与次数关系反推边数</strong>。</li>
+</ul>
+<hr>
+<h2 id="93">四、9.3 树及其遍历（综合应用，本章计算重点）</h2>
+<h3 id="_8">（一）树的基本概念</h3>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>树（无向树）</strong></td>
+<td><strong>连通且无回路</strong>的无向图</td>
+</tr>
+<tr>
+<td><strong>森林</strong></td>
+<td><strong>无回路</strong>的图（每个连通分支都是一棵树）</td>
+</tr>
+<tr>
+<td><strong>树叶（叶结点）</strong></td>
+<td><strong>度为 1</strong> 的顶点</td>
+</tr>
+<tr>
+<td><strong>分支点（内部结点）</strong></td>
+<td><strong>度 ≥ 2</strong> 的顶点</td>
+</tr>
+<tr>
+<td><strong>生成树</strong></td>
+<td>连通图的<strong>极小连通生成子图</strong>（含全部顶点、n−1 条边，不唯一；了解）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_9">（二）【重点】 树的等价定义（六个等价命题，必背）</h3>
+<p>对 n 阶无向图 T，<strong>下列命题两两等价</strong>：<br>
+① <strong>T 是树</strong>（连通无回路）；<br>
+② T <strong>无回路</strong>且 <strong>m = n − 1</strong>；<br>
+③ T <strong>连通</strong>且 <strong>m = n − 1</strong>；<br>
+④ T 中<strong>任意两个顶点之间有唯一一条通路</strong>；<br>
+⑤ T <strong>连通</strong>，且<strong>删去任何一条边后就不连通</strong>（极小连通图）；<br>
+⑥ T <strong>无回路</strong>，且<strong>添加任意一条新边（连接已有顶点）就产生唯一一条回路</strong>（极大无回路图）。</p>
+<h3 id="_10">（三）【重点】 树的性质与计算（必考）</h3>
+<ul>
+<li><strong>边数</strong>：<strong>n 阶树有 n − 1 条边</strong>（m = n − 1）；</li>
+<li><strong>树叶</strong>：任一棵 n ≥ 2 的树<strong>至少有两片树叶</strong>；</li>
+<li><strong>握手定理</strong>：Σdeg(v) = 2m = <strong>2(n − 1)</strong>；</li>
+<li><strong>森林</strong>：若森林有 <strong>n 个顶点、k 棵树（k 个连通分支）</strong>，则 <strong>m = n − k</strong>；</li>
+<li><strong>叶数计算公式（重点）</strong>：设 nᵢ 为度为 i 的顶点数，则</li>
+<li>
+<p><strong>n₁ = 2 + Σ_{i≥3} (i − 2)·nᵢ</strong>（即 <strong>n₁ = 2 + n₃ + 2n₄ + 3n₅ + …</strong>）</p>
+</li>
+<li>
+<p><strong>计算示例</strong></p>
+</li>
+<li><strong>例 1</strong>：一棵树有 2 个度为 4 的顶点、3 个度为 3 的顶点，其余均为树叶，求树叶数。</li>
+<li><strong>n₁ = 2 + (4−2)×2 + (3−2)×3 = 2 + 4 + 3 = 9</strong>（9 片树叶）</li>
+<li><strong>验算</strong>：n = 9 + 2 + 3 = 14，m = n − 1 = 13；Σdeg = 9×1 + 2×4 + 3×3 = 9 + 8 + 9 = 26 = 2×13 ✓</li>
+<li><strong>例 2</strong>：n = 10 的树有 <strong>9</strong> 条边；有 10 个顶点、3 棵树的森林有 10 − 3 = <strong>7</strong> 条边。</li>
+<li><strong>例 3</strong>：一棵树若有 5 片树叶、3 个度为 3 的顶点，其余为度为 2 的顶点，则<br>
+由 n₁ = 2 + Σ(i−2)nᵢ：5 = 2 + (3−2)×3 = 5 ✓ 说明其余顶点<strong>只能都是度为 2 的顶点</strong>（度为 2 的顶点数不影响叶数）。</li>
+</ul>
+<h3 id="_11">（四）根树与二叉树</h3>
+<ul>
+<li>
+<p><strong>根树（有向树）</strong>（了解）：若有向树中<strong>恰有一个顶点入度为 0</strong>（称<strong>根</strong>）、其余顶点入度均为 1，则称该有向树为<strong>根树</strong>；出度为 0 的顶点称<strong>叶</strong>；顶点的<strong>层数</strong>（从根到该顶点的路径长度）、<strong>树的高度</strong>（最大层数）。</p>
+</li>
+<li>
+<p><strong>二叉树</strong>：每个顶点的<strong>度数不超过 2</strong> 的根树（左右有序：左孩子、右孩子）。</p>
+</li>
+<li>
+<p><strong>【重点】 二叉树的性质（必背）</strong></p>
+</li>
+<li>二叉树<strong>第 i 层</strong>上至多有 <strong>2^(i−1)</strong> 个顶点（i ≥ 1）；</li>
+<li><strong>深度为 h</strong> 的二叉树至多有 <strong>2^h − 1</strong> 个顶点（满二叉树达到）；</li>
+<li>对任何二叉树：<strong>n₀ = n₂ + 1</strong>（树叶数 = 度为 2 的顶点数 + 1）；</li>
+<li><strong>完全二叉树</strong>（n 个顶点）的深度为 <strong>⌊log₂n⌋ + 1</strong>；</li>
+<li>
+<p>（了解）n 个顶点的完全二叉树中，结点按层序编号 i 的左孩子为 2i、右孩子为 2i+1（1 基约定 【注意】）。</p>
+</li>
+<li>
+<p><strong>【重点】 三种遍历（必考）</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>遍历</th>
+<th>顺序</th>
+<th>口诀</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>先序遍历（前序）</strong></td>
+<td><strong>根 → 左子树 → 右子树</strong></td>
+<td>根在<strong>最前</strong></td>
+</tr>
+<tr>
+<td><strong>中序遍历</strong></td>
+<td><strong>左子树 → 根 → 右子树</strong></td>
+<td>根在<strong>中间</strong></td>
+</tr>
+<tr>
+<td><strong>后序遍历</strong></td>
+<td><strong>左子树 → 右子树 → 根</strong></td>
+<td>根在<strong>最后</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>遍历示例</strong>：设二叉树为 <strong>A(B(D, E), C(∅, F))</strong>（A 为根；B 有左右孩子 D、E；C 只有右孩子 F）</li>
+<li><strong>先序</strong>：<strong>A B D E C F</strong>（根 先访问）</li>
+<li><strong>中序</strong>：<strong>D B E A C F</strong>（左 根 右）</li>
+<li>
+<p><strong>后序</strong>：<strong>D E B F C A</strong>（根 最后访问）</p>
+</li>
+<li>
+<p><strong>应用</strong></p>
+</li>
+<li><strong>表达式树</strong>：叶为操作数、分支为运算符；<strong>中序 → 中缀表达式</strong>、<strong>先序 → 前缀表达式（波兰式）</strong>、<strong>后序 → 后缀表达式（逆波兰式）</strong>；</li>
+<li><strong>由遍历序列还原二叉树</strong>：<strong>先序 + 中序</strong> 或 <strong>后序 + 中序</strong> 可唯一确定（先序首元/后序末元为根 → 在中序中划分左右子树 → 递归）；<strong>先序 + 后序不能唯一确定</strong>；</li>
+<li>树的层次遍历（用队列，了解）。</li>
+</ul>
+<hr>
+<h2 id="_12">五、本章对比与易混点</h2>
+<table>
+<thead>
+<tr>
+<th>易混点</th>
+<th>正确理解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>欧拉图 vs 哈密顿图</strong></td>
+<td>欧拉图关注<strong>边</strong>（每边一次）；哈密顿图关注<strong>顶点</strong>（每点一次）</td>
+</tr>
+<tr>
+<td><strong>欧拉图的判别</strong></td>
+<td>有<strong>充要条件</strong>（欧拉定理）：无向图<strong>所有顶点度为偶数</strong>（回路）或<strong>恰有 2 个奇度顶点</strong>（通路）</td>
+</tr>
+<tr>
+<td>半欧拉图</td>
+<td>有欧拉通路但<strong>无欧拉回路</strong>（恰 2 个奇度顶点）</td>
+</tr>
+<tr>
+<td>有向欧拉图条件</td>
+<td><strong>强连通</strong>且<strong>每点入度 = 出度</strong>（若只有通路：两点例外）</td>
+</tr>
+<tr>
+<td><strong>哈密顿图判别</strong></td>
+<td><strong>没有充要条件</strong>！只有**必要条件 p(G−S) ≤</td>
+</tr>
+<tr>
+<td>充分条件的作用</td>
+<td>满足 ⇒ 是哈密顿图；<strong>不满足不能断定不是</strong></td>
+</tr>
+<tr>
+<td>必要条件的作用</td>
+<td>不满足 ⇒ <strong>不是</strong>哈密顿图（如星形图取 S = {中心}）</td>
+</tr>
+<tr>
+<td><strong>平面图 vs 非平面图</strong></td>
+<td>只要<strong>存在</strong>一种无边交叉的画法就是平面图；<strong>K₅、K₃,₃ 是非平面图</strong></td>
+</tr>
+<tr>
+<td><strong>欧拉公式</strong></td>
+<td>连通平面图 <strong>n − m + r = 2</strong>；k 个分支时为 <strong>n − m + r = k + 1</strong></td>
+</tr>
+<tr>
+<td>面的次数</td>
+<td><strong>Σdeg(f) = 2m</strong>；外部面也要计入</td>
+</tr>
+<tr>
+<td>平面图不等式</td>
+<td>连通简单平面图（n≥3）<strong>m ≤ 3n−6</strong>；无三角形时 <strong>m ≤ 2n−4</strong></td>
+</tr>
+<tr>
+<td><strong>树 vs 森林</strong></td>
+<td>树＝<strong>连通</strong>无圈；森林＝无圈（可不连通）</td>
+</tr>
+<tr>
+<td>树的边数</td>
+<td><strong>m = n − 1</strong>；森林 m = n − k（k 棵树）</td>
+</tr>
+<tr>
+<td><strong>树的六个等价命题</strong></td>
+<td>连通/无圈/边数 n−1/唯一通路/极小连通/极大无圈，互相等价</td>
+</tr>
+<tr>
+<td>二叉树性质</td>
+<td><strong>n₀ = n₂ + 1</strong>；第 i 层 ≤ 2^(i−1)；深度 h ≤ 2^h − 1</td>
+</tr>
+<tr>
+<td><strong>遍历顺序</strong></td>
+<td>先序＝根左右；中序＝左根右；后序＝左右根（<strong>先序+后序不能还原</strong>）</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="_13">六、必背清单 + 简答预测 + 计算模板</h2>
+<h3 id="_14">（一）必背清单</h3>
+<ul>
+<li><strong>欧拉通路/欧拉回路/欧拉图/半欧拉图</strong>的定义；<strong>欧拉定理（无向、有向的充要条件）</strong>；</li>
+<li>用"奇度顶点个数"快速判别：<strong>0 个 ⇒ 欧拉回路</strong>（欧拉图）；<strong>2 个 ⇒ 欧拉通路（半欧拉图）</strong>；<strong>≥4 个 ⇒ 一笔画不可能</strong>；</li>
+<li><strong>哈密顿通路/回路/哈密顿图</strong>的定义；<strong>必要条件 p(G−S) ≤ |S|</strong>、<strong>狄拉克定理（deg ≥ n/2）</strong>、<strong>奥尔定理（deg(u)+deg(v) ≥ n）</strong>；</li>
+<li>欧拉图与哈密顿图的<strong>对比</strong>（边 vs 顶点；有充要条件 vs 无）；</li>
+<li><strong>平面图</strong>的定义与平面嵌入；<strong>面与面的次数</strong>（<strong>Σdeg(f) = 2m</strong>）；</li>
+<li><strong>欧拉公式 n − m + r = 2</strong>（k 个分支时 n − m + r = k + 1）及其应用；</li>
+<li><strong>平面图不等式 m ≤ 3n−6（n≥3）与 m ≤ 2n−4（无三角形）</strong>；<strong>K₅（10 &gt; 9）与 K₃,₃（9 &gt; 8）非平面</strong>；</li>
+<li><strong>树的定义与六个等价命题</strong>；<strong>m = n − 1</strong>；森林 m = n − k；至少两片树叶；</li>
+<li><strong>叶数公式 n₁ = 2 + Σ_{i≥3}(i−2)nᵢ</strong> 及其计算；</li>
+<li><strong>二叉树的三条性质</strong>（第 i 层 ≤ 2^(i−1)、深度 h ≤ 2^h−1、<strong>n₀ = n₂ + 1</strong>）与<strong>三种遍历</strong>（先序/中序/后序）及<strong>由遍历序列还原二叉树</strong>。</li>
+</ul>
+<h3 id="_15">（二）高频简答 / 判断题预测</h3>
+<ul>
+<li>什么是欧拉通路、欧拉回路、欧拉图？什么是半欧拉图？</li>
+<li>叙述欧拉定理：无向图存在欧拉回路（欧拉通路）的充要条件是什么？有向图呢？</li>
+<li>如何用顶点度数快速判断一个图能否一笔画？</li>
+<li>判断下列图是否为欧拉图（并说明理由）。</li>
+<li>什么是哈密顿通路、哈密顿回路、哈密顿图？</li>
+<li>为什么说哈密顿图没有充要判别条件？有哪些必要条件和充分条件？</li>
+<li>叙述狄拉克定理与奥尔定理。它们是否可用于否定一个图是哈密顿图？</li>
+<li>如何用必要条件判断星形图不是哈密顿图？</li>
+<li>什么是平面图？什么是面、面的次数？Σdeg(f) 等于什么？</li>
+<li>写出欧拉公式，并说明它对不连通平面图如何推广。</li>
+<li>如何判断一个图不是平面图？（写出两个不等式，并用它们说明 K₅、K₃,₃ 非平面）</li>
+<li>什么是树？树的六个等价命题是什么？</li>
+<li>n 阶树有多少条边？森林呢？为什么树至少有两片树叶？</li>
+<li>如何由各度顶点数求树的树叶数？写出公式。</li>
+<li>二叉树有哪些基本性质？n₀ 与 n₂ 有什么关系？</li>
+<li>二叉树的三种遍历分别是什么顺序？分别举例写出遍历序列。</li>
+<li>已知先序与中序序列能否唯一确定二叉树？为什么先序与后序不行？</li>
+<li>表达式树的中序、先序、后序遍历分别得到什么？</li>
+</ul>
+<h3 id="_16">（三）计算 / 判别题模板</h3>
+<ul>
+<li><strong>判欧拉图</strong>：① 检查<strong>连通性</strong>（无向图连通 / 有向图强连通）→ ② 统计<strong>各顶点度数</strong>（有向图为入度=出度）→ ③ 全部为偶数（或恰 2 个奇数）= 有欧拉回路（通路）。</li>
+<li><strong>判哈密顿图</strong>：先试充分条件（度数是否都 ≥ n/2；不相邻顶点度之和是否 ≥ n）→ 若不满足，再用<strong>必要条件</strong>找一个子集 S 使 <strong>p(G−S) &gt; |S|</strong> 来否定。</li>
+<li><strong>判平面图</strong>：数 n 与 m → ① 若 m &gt; 3n−6（或图无三角形且 m &gt; 2n−4）⇒ <strong>非平面</strong>；② 否则尝试画出平面嵌入。</li>
+<li><strong>欧拉公式应用</strong>：由 n、m 求面数 <strong>r = m − n + 2</strong>；或由面数/次数关系反求 m。</li>
+<li><strong>树的叶数计算</strong>：列出各度顶点数 → 代 <strong>n₁ = 2 + Σ_{i≥3}(i−2)nᵢ</strong> → 用 Σdeg = 2(n−1) 验算。</li>
+<li><strong>二叉树遍历</strong>：按"先序＝根左右、中序＝左根右、后序＝左右根"递归写出；<strong>由序列还原</strong>：先序首元（后序末元）为根 → 在中序中切开左右子树 → 递归。</li>
+</ul>
+</main>
+<footer>02324 离散数学 · 由 Markdown 生成，浏览器直接打开即可阅读</footer>
+</body>
+</html>

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 6 章 代数系统的一般概念 · 考点总结</title>
+<style>
+:root{--fg:#24292f;--muted:#57606a;--line:#d0d7de;--accent:#0969da;--code:#f6f8fa;--soft:#fafbfc}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--fg);
+  font:16px/1.78 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",sans-serif}
+main{max-width:980px;margin:0 auto;padding:26px 22px 72px}
+h1{font-size:1.75em;line-height:1.35;border-bottom:3px solid var(--accent);padding-bottom:.28em;margin:1.1em 0 .7em}
+h2{font-size:1.36em;line-height:1.4;border-bottom:1px solid var(--line);padding-bottom:.22em;margin:1.5em 0 .6em}
+h3{font-size:1.14em;margin:1.25em 0 .45em}
+h4{font-size:1.02em;margin:1.05em 0 .35em;color:var(--muted)}
+p{margin:.5em 0}
+ul,ol{margin:.45em 0;padding-left:1.5em}
+li{margin:.22em 0}
+li>ul,li>ol{margin:.15em 0}
+strong{color:#000}
+em{color:#000}
+code{background:var(--code);border-radius:4px;padding:.12em .34em;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:.92em}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;margin:.7em 0}
+pre code{background:none;padding:0;white-space:pre;font-size:.9em;line-height:1.5}
+table{border-collapse:collapse;width:100%;margin:.75em 0;font-size:.95em;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600}
+tbody tr:nth-child(even){background:var(--soft)}
+blockquote{margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:var(--code);color:var(--muted)}
+blockquote p{margin:.25em 0}
+hr{border:0;border-top:1px solid var(--line);margin:1.8em 0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.topnav{position:sticky;top:0;z-index:20;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+  padding:10px 22px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(180%) blur(6px);font-size:.9em}
+.topnav a{white-space:nowrap}
+.topnav .sep{color:var(--line)}
+.topnav .brand{font-weight:600;color:var(--fg);margin-right:6px}
+footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid var(--line);color:var(--muted);font-size:.86em}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:1em 0}
+.card{display:block;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--soft)}
+.card:hover{border-color:var(--accent)}
+.card b{display:block;margin-bottom:4px}
+.card span{color:var(--muted);font-size:.86em}
+.toc{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:1em 0}
+.toc ul{margin:.25em 0;padding-left:1.3em}
+.tip{border:1px dashed var(--accent);border-radius:10px;padding:10px 14px;background:#f6faff;margin:1em 0;font-size:.94em}
+@media (max-width:640px){main{padding:18px 14px 60px}h1{font-size:1.5em}}
+@media print{
+  body{font-size:11.5pt;line-height:1.6}
+  .topnav{display:none}
+  main{max-width:none;padding:0}
+  h1{page-break-before:always;border-bottom-width:2px}
+  body>main>h1:first-child,main>section:first-child>h1{page-break-before:avoid}
+  pre,table,blockquote,li{page-break-inside:avoid}
+  a{color:#000;text-decoration:none}
+  footer{display:none}
+}
+</style>
+</head>
+<body>
+<nav class="topnav"><span class="brand">02324 离散数学</span> <a href="index.html">目录</a> <span class="sep">|</span> <a href="第05章_关系与函数_考点总结.html">← 第 5 章 关系与函数 · 考点总结</a> <span class="sep">|</span> <a href="第07章_格与布尔代数_考点总结.html">第 7 章 格与布尔代数 · 考点总结 →</a></nav>
+<main>
+<h1 id="6">第 6 章 代数系统的一般概念 · 考点总结</h1>
+<blockquote>
+<p>课程：02324 离散数学（080901 自考）<br>
+<strong>课程内容</strong>：6.1 代数系统 ； 6.2 群与半群 ； 6.3 环与域<br>
+<strong>考核层次</strong>：6.1 <strong>领会</strong> ； 6.2 <strong>领会</strong> ； 6.3 <strong>识记</strong><br>
+<strong>重点/难点</strong>：能正确判别<strong>半群、独异点、群、环</strong>等</p>
+</blockquote>
+<hr>
+<h2 id="_1">一、本章知识地图</h2>
+<ul>
+<li><strong>6.1 代数系统</strong>：核心内容：二元运算与<strong>封闭性</strong>、<strong>结合律/交换律/幂等律/分配律/吸收律</strong>、<strong>幺元·零元·幂等元·逆元</strong>；层次：领会</li>
+<li><strong>6.2 群与半群</strong>：核心内容：<strong>半群 → 独异点 → 群</strong>（逐级加强）、群的阶与性质、<strong>子群及其判别条件</strong>；层次：领会</li>
+<li>
+<p><strong>6.3 环与域</strong>：核心内容：<strong>环</strong>（交换群 + 半群 + 分配律）、交换环/含幺环/整环、<strong>域</strong>；层次：识记</p>
+</li>
+<li>
+<p><strong>本章主线</strong>：<strong>运算与特殊元素 → 半群（封闭+结合）→ 独异点（+幺元）→ 群（+逆元）→ 环/域</strong>（多运算系统）。</p>
+</li>
+</ul>
+<hr>
+<h2 id="61">二、6.1 代数系统（领会）</h2>
+<h3 id="_2">（一）代数系统与二元运算</h3>
+<ul>
+<li><strong>1. 二元运算</strong>：设 S 是<strong>非空集合</strong>，映射 <strong>f: S×S → S</strong> 称为 <strong>S 上的二元运算</strong>（常记作 * 或 ·）。</li>
+<li>二元运算的定义本身就要求<strong>结果属于 S</strong>（即<strong>封闭性</strong>是二元运算的固有要求）；</li>
+<li>
+<p><strong>n 元运算</strong>：f: Sⁿ → S；若某运算的结果可能超出 S，则称该运算在 S 上<strong>不封闭</strong>，不能作为 S 上的运算。</p>
+</li>
+<li>
+<p><strong>2. 代数系统</strong>：<strong>非空集合 S 连同 S 上的若干运算</strong>，记作 <strong><S, *, ∘, …></strong>。</p>
+</li>
+<li>例：<Z, +>、<R, ·>、<P(A), ∪, ∩>、<Z, +, ·>、<M_n(R), +, ·>。</li>
+</ul>
+<h3 id="_3">（二）运算的六条性质（必背，判别时逐条核对）</h3>
+<table>
+<thead>
+<tr>
+<th>性质</th>
+<th>定义（设 * 为 S 上二元运算）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>封闭性</strong></td>
+<td><strong>∀x, y∈S，x*y ∈ S</strong></td>
+</tr>
+<tr>
+<td><strong>交换律</strong></td>
+<td><strong>∀x, y∈S，x<em>y = y</em>x</strong></td>
+</tr>
+<tr>
+<td><strong>结合律</strong></td>
+<td><strong>∀x, y, z∈S，(x<em>y)</em>z = x<em>(y</em>z)</strong></td>
+</tr>
+<tr>
+<td><strong>幂等律</strong></td>
+<td><strong>∀x∈S，x*x = x</strong>（元素 x 满足 x<em>x = x 时称 </em><em>x 是幂等元</em>*）</td>
+</tr>
+<tr>
+<td><strong>分配律</strong></td>
+<td>对两个运算 * 与 ∘：<strong>x<em>(y∘z) = (x</em>y)∘(x*z)</strong>（<em> 对 ∘ 左分配）；</em><em>右分配</em>*同理，左右都成立才说满足分配律</td>
+</tr>
+<tr>
+<td><strong>吸收律</strong></td>
+<td>对两个运算 * 与 ∘：<strong>x*(x∘y) = x</strong> 且 <strong>x∘(x*y) = x</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>补充（【注意】 视教材）：<strong>消去律</strong>——若 x<em>y = x</em>z 则 y = z（<strong>左消去</strong>）；若 y<em>x = z</em>x 则 y = z（<strong>右消去</strong>）。</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>典型实例</strong></p>
+</li>
+<li>
+<p><strong><Z, +></strong>：交换律：✔；结合律：✔；幂等律：✘；分配律：—；吸收律：—</p>
+</li>
+<li><strong><Z, ·></strong>：交换律：✔；结合律：✔；幂等律：部分（0、1 幂等）；分配律：· 对 + 分配 ✔；吸收律：—</li>
+<li><strong><P(A), ∪, ∩></strong>：交换律：✔；结合律：✔；幂等律：✔；分配律：∪、∩ 互相分配 ✔；吸收律：✔</li>
+<li><strong><Z, −>（减法）</strong>：交换律：✘；结合律：✘；幂等律：✘；分配律：—；吸收律：—</li>
+</ul>
+<h3 id="_4">（三）特殊元素（必考，务必会算）</h3>
+<ul>
+<li><strong>幺元（单位元）e</strong>：<strong>∀x∈S，e*x = x*e = x</strong>；存在性与唯一性：<strong>若存在必唯一</strong></li>
+<li><strong>零元 θ</strong>：<strong>∀x∈S，θ*x = x*θ = θ</strong>；存在性与唯一性：<strong>若存在必唯一</strong></li>
+<li><strong>幂等元</strong>：满足 <strong>x*x = x</strong> 的元素 x；存在性与唯一性：可多个（幺元、零元通常都是幂等元）</li>
+<li><strong>逆元</strong>：设 e 为幺元，对 a∈S，若存在 <strong>b 使 a*b = b*a = e</strong>，则称 <strong>b 为 a 的逆元</strong>，记 a⁻¹；存在性与唯一性：在<strong>结合律</strong>下<strong>若存在必唯一</strong></li>
+<li>
+<p><strong>左（右）幺元 / 左（右）逆元</strong>：只满足一侧（了解）；存在性与唯一性：—</p>
+</li>
+<li>
+<p><strong>唯一性证明（常考简答）</strong></p>
+</li>
+<li><strong>幺元唯一</strong>：设 e₁、e₂ 都是幺元，则 <strong>e₁ = e₁*e₂ = e₂</strong> ✓</li>
+<li><strong>逆元唯一</strong>（结合律下）：设 b、c 都是 a 的逆元，则</li>
+<li>
+<p><strong>b = b*e = b*(a*c) = (b*a)*c = e*c = c</strong> ✓</p>
+</li>
+<li>
+<p><strong>常见实例一览</strong></p>
+</li>
+<li>
+<p><strong><Z, +></strong>：幺元：<strong>0</strong>；零元：无；幂等元：0；可逆元：所有元素（a⁻¹ = −a）</p>
+</li>
+<li><strong><Z, ·></strong>：幺元：<strong>1</strong>；零元：<strong>0</strong>；幂等元：0、1；可逆元：±1</li>
+<li><strong><Q, +></strong>：幺元：0；零元：无；幂等元：0；可逆元：所有元素</li>
+<li><strong><R−{0}, ·></strong>：幺元：1；零元：无；幂等元：1；可逆元：所有元素</li>
+<li><strong><P(A), ∪></strong>：幺元：<strong>∅</strong>；零元：<strong>A</strong>；幂等元：全部元素；可逆元：仅 ∅（自身为逆元）</li>
+<li><strong><P(A), ∩></strong>：幺元：<strong>A</strong>；零元：<strong>∅</strong>；幂等元：全部元素；可逆元：仅 A</li>
+<li>
+<p><strong><P(A), ⊕>（对称差）</strong>：幺元：<strong>∅</strong>；零元：无；幂等元：仅 ∅；可逆元：<strong>所有元素（逆元为自身）</strong></p>
+</li>
+<li>
+<p><strong>逆元的性质</strong>：<strong>(a⁻¹)⁻¹ = a</strong>；若 a、b 有逆元，则 <strong>(a*b)⁻¹ = b⁻¹*a⁻¹</strong>（<strong>顺序颠倒</strong>）。</p>
+</li>
+<li>
+<p><strong>由运算表判断特殊元素（常考题型）</strong></p>
+</li>
+<li><strong>交换律</strong>：运算表关于<strong>主对角线对称</strong>；</li>
+<li><strong>幺元</strong>：某元素的<strong>行与列都与表头相同</strong>（该行/列原样照抄表头）；</li>
+<li><strong>零元</strong>：该元素的<strong>行与列全部等于它自己</strong>；</li>
+<li><strong>逆元</strong>：先找幺元 e，再对 a 找出满足 a*b = b*a = e 的 b；</li>
+<li><strong>幂等元</strong>：<strong>主对角线上</strong>元素 = 该元素本身者。</li>
+</ul>
+<hr>
+<h2 id="62">三、6.2 群与半群（领会，本章核心判别题）</h2>
+<h3 id="_5">（一）半群、独异点、群（三级定义，必背）</h3>
+<ul>
+<li><strong>半群</strong>：定义（逐步加强）：代数系统 <S, *>，其中 * <strong>封闭</strong>且<strong>满足结合律</strong>；例子：<Z⁺, +>、<R, ·>、<P(A), ∪></li>
+<li><strong>独异点（含幺半群）</strong>：定义（逐步加强）：<strong>半群</strong>且<strong>含幺元</strong>；例子：<N, +>（幺元 0）、<Z, ·>（幺元 1）、<P(A), ∪>（幺元 ∅）、<M_n(R), ·></li>
+<li><strong>群</strong>：定义（逐步加强）：<strong>独异点</strong>且<strong>每个元素都有逆元</strong>（即：封闭 + 结合 + 幺元 + 逆元）；例子：<Z, +>、<Q, +>、<R−{0}, ·>、<P(A), ⊕>、<Zₙ, +ₙ></li>
+<li>
+<p><strong>交换群（Abel 群）</strong>：定义（逐步加强）：<strong>群</strong>且运算满足<strong>交换律</strong>；例子：<Z, +>、<R−{0}, ·>、<P(A), ⊕></p>
+</li>
+<li>
+<p><strong>判别流程（务必按顺序核对）</strong>：<strong>① 是否封闭 → ② 是否结合 → ③ 有无幺元 → ④ 每个元素是否可逆 → ⑤（若问是否交换群）运算是否可交换</strong>。</p>
+</li>
+<li>
+<p><strong>判别示例</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>系统</th>
+<th>判别结论</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><Z, +></td>
+<td><strong>Abel 群</strong></td>
+<td>封闭、结合、幺元 0、逆元 −a、可交换</td>
+</tr>
+<tr>
+<td><Z, ·></td>
+<td><strong>独异点（不是群）</strong></td>
+<td>幺元 1，但 2 无乘法逆元</td>
+</tr>
+<tr>
+<td><N, +>（含 0）</td>
+<td><strong>独异点（不是群）</strong></td>
+<td>幺元 0，但正整数无负元</td>
+</tr>
+<tr>
+<td><Z⁺, +></td>
+<td><strong>半群（不是独异点）</strong></td>
+<td>无幺元（0∉Z⁺）</td>
+</tr>
+<tr>
+<td><R, ·></td>
+<td><strong>独异点（不是群）</strong></td>
+<td>0 无逆元</td>
+</tr>
+<tr>
+<td><R−{0}, ·></td>
+<td><strong>Abel 群</strong></td>
+<td>每非零数有倒数</td>
+</tr>
+<tr>
+<td><P(A), ∪></td>
+<td><strong>独异点（不是群）</strong></td>
+<td>幺元 ∅，但非空子集无逆元</td>
+</tr>
+<tr>
+<td><strong><P(A), ⊕>（对称差）</strong></td>
+<td><strong>Abel 群</strong></td>
+<td>幺元 ∅，每元素逆元为自身</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_6">（二）群的阶与基本性质</h3>
+<ul>
+<li><strong>群的阶</strong>：群 G 的元素个数 <strong>|G|</strong>；有限群（|G| 有限）/ 无限群。</li>
+<li>
+<p><strong>元素的阶（周期，了解）</strong>：使 <strong>aⁿ = e</strong> 的最小正整数 n；例：<Z₄, +₄> 中 1 的阶为 4，2 的阶为 2。</p>
+</li>
+<li>
+<p><strong>群的性质（必背）</strong></p>
+</li>
+<li><strong>幺元唯一、每个元素的逆元唯一</strong>；</li>
+<li><strong>群中成立消去律</strong>：a*b = a*c ⇒ <strong>b = c</strong>（左消去）；b*a = c*a ⇒ <strong>b = c</strong>（右消去）；</li>
+<li><strong>方程有唯一解</strong>：a*x = b 的解 <strong>x = a⁻¹*b</strong>；y*a = b 的解 <strong>y = b*a⁻¹</strong>；</li>
+<li><strong>(a⁻¹)⁻¹ = a</strong>；<strong>(a*b)⁻¹ = b⁻¹*a⁻¹</strong>；</li>
+<li>群中<strong>除幺元外不存在其他幂等元</strong>（即若 a*a = a，则 a = e）；</li>
+<li><strong>群中不存在零元</strong>（除非 |G| = 1 的平凡群）；</li>
+<li>有限半群若满足消去律，则它必是群（了解）。</li>
+</ul>
+<h3 id="_7">（三）子群及其判别条件（必考）</h3>
+<ul>
+<li><strong>定义</strong>：设 <G, *> 是群，∅ ≠ H ⊆ G，若 <strong><H, \*> 本身也是群</strong>，则称 H 是 G 的<strong>子群</strong>，记 <strong>H ≤ G</strong>。</li>
+<li><strong>平凡子群</strong>：<strong>{e}</strong> 与 <strong>G 本身</strong>；</li>
+<li>
+<p>例：<Z, +> 的子群 <strong><nZ, +> = {0, ±n, ±2n, …}</strong>（n 为非负整数）；<Z₆, +₆> 的子群 {0,3}、{0,2,4}。</p>
+</li>
+<li>
+<p><strong>子群的判别条件（三个常用定理，必背）</strong></p>
+</li>
+<li>
+<p><strong>判别法一（两步法）</strong>：条件：H <strong>非空</strong>；① <strong>∀a, b∈H，a*b ∈ H</strong>（封闭）；② <strong>∀a∈H，a⁻¹ ∈ H</strong>（逆元封闭）；用法：分别验证封闭与逆元</p>
+</li>
+<li><strong>判别法二（一步法，最常用）</strong>：条件：H <strong>非空</strong>，且 <strong>∀a, b∈H，a*b⁻¹ ∈ H</strong>（或 a⁻¹*b ∈ H）；用法：一步同时验证封闭与逆元</li>
+<li>
+<p><strong>判别法三（有限子群）</strong>：条件：H 是 G 的<strong>非空有限子集</strong>，且 <strong>H 对 * 封闭</strong>；用法：有限集只需验封闭（结合律与逆元自动满足）</p>
+</li>
+<li>
+<p><strong>例（用一步法）</strong>：证明 <strong>2Z = {2k | k∈Z}</strong> 是 <Z, +> 的子群</p>
+</li>
+<li>2Z ≠ ∅（0 = 2×0 ∈ 2Z）；</li>
+<li>任取 a = 2m, b = 2n ∈ 2Z，则 <strong>a * b⁻¹ = a + (−b) = 2m − 2n = 2(m−n) ∈ 2Z</strong> ✓</li>
+<li>
+<p>故 <strong>2Z ≤ Z</strong> ✓</p>
+</li>
+<li>
+<p><strong>例（有限子集只验封闭）</strong>：<Z₆, +₆> 中 H = {0, 2, 4}：非空且封闭（2+2=4、2+4=0、4+4=2 均在 H 中）⇒ H ≤ Z₆ ✓</p>
+</li>
+</ul>
+<h3 id="_8">（四）运算表判别群（经典例题）</h3>
+<p>设 S = {e, a, b, c}，运算 * 的运算表如下（e 为幺元）：</p>
+<ul>
+<li><strong>e</strong>：e：e；a：a；b：b；c：c</li>
+<li><strong>a</strong>：e：a；a：e；b：c；c：b</li>
+<li><strong>b</strong>：e：b；a：c；b：e；c：a</li>
+<li>
+<p><strong>c</strong>：e：c；a：b；b：a；c：e</p>
+</li>
+<li>
+<p><strong>判别</strong>：</p>
+</li>
+<li><strong>封闭</strong>：表中所有结果都在 S 中 ✓；</li>
+<li><strong>幺元</strong>：e 所在行、列与表头完全一致 ⇒ <strong>e 是幺元</strong> ✓；</li>
+<li><strong>逆元</strong>：a*a = e、b*b = e、c*c = e ⇒ <strong>每个元素都以自身为逆元</strong> ✓；</li>
+<li><strong>交换</strong>：表关于主对角线对称 ✓；</li>
+<li><strong>结合律</strong>：该表正是 <strong>Klein 四元群</strong>（Z₂×Z₂）的运算表，满足结合律 ✓<br>
+⇒ <strong><S, *> 是交换群（Abel 群）</strong>，且每个非幺元元素的阶都是 2。</li>
+</ul>
+<hr>
+<h2 id="63">四、6.3 环与域（识记）</h2>
+<h3 id="_9">（一）环</h3>
+<ul>
+<li>
+<p><strong>定义</strong>：代数系统 <strong><R, +, ·></strong>（带两个二元运算），若满足：<br>
+① <strong><R, +> 是交换群（Abel 群）</strong>；<br>
+② <strong><R, ·> 是半群</strong>（封闭 + 结合）；<br>
+③ <strong>· 对 + 满足分配律</strong>（左、右分配），<br>
+则称 <strong><R, +, ·></strong> 为<strong>环</strong>。</p>
+</li>
+<li>
+<p><strong>记号与术语</strong>：+ 称<strong>加法</strong>、· 称<strong>乘法</strong>；加法幺元记 <strong>0</strong>；a 的加法逆元记 <strong>−a</strong>；若乘法有幺元记 <strong>1</strong>。</p>
+</li>
+<li><strong>例子</strong>：<Z, +, ·>、<Q, +, ·>、<R, +, ·>、<C, +, ·>、<Zₙ, +ₙ, ×ₙ>、多项式环 R[x]、矩阵环 <M_n(R), +, ·>。</li>
+<li>
+<p><strong>基本性质（了解）</strong>：<strong>0·a = a·0 = 0</strong>；<strong>(−a)·b = a·(−b) = −(ab)</strong>；<strong>(a−b)·c = a·c − b·c</strong>。</p>
+</li>
+<li>
+<p><strong>环的分类</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>交换环</strong></td>
+<td>乘法满足<strong>交换律</strong></td>
+</tr>
+<tr>
+<td><strong>含幺环</strong></td>
+<td>乘法<strong>有幺元 1</strong></td>
+</tr>
+<tr>
+<td><strong>无零因子环</strong></td>
+<td>若 ab = 0 则 a = 0 或 b = 0</td>
+</tr>
+<tr>
+<td><strong>整环</strong></td>
+<td>**交换环 + 含幺环 + 无零因子 +</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_10">（二）域</h3>
+<ul>
+<li>
+<p><strong>定义</strong>：代数系统 <strong><F, +, ·></strong>（<strong>至少含两个元素</strong>），若满足：<br>
+① <strong><F, +> 是交换群</strong>；<br>
+② <strong><F − {0}, ·> 是交换群</strong>（即<strong>所有非零元素对乘法构成交换群</strong>）；<br>
+③ <strong>· 对 + 满足分配律</strong>，<br>
+则称 <strong><F, +, ·></strong> 为<strong>域</strong>。</p>
+</li>
+<li>
+<p><strong>例子</strong>：<strong><Q, +, ·></strong>、<strong><R, +, ·></strong>、<strong><C, +, ·></strong>、<strong><Z_p, +_p, ×_p>（p 为素数）</strong>。</p>
+</li>
+<li>
+<p><strong>反例</strong>：<strong><Z, +, ·> 不是域</strong>——因为 2∈Z 且 2 ≠ 0，但 2 的乘法逆元 1/2 ∉ Z（非零元对乘法不构成群）。</p>
+</li>
+<li>
+<p><strong>层级关系（必记）</strong>：</p>
+</li>
+<li><strong>域 ⇒ 整环 ⇒ 交换含幺环 ⇒ 环</strong><br>
+（<strong>域一定是整环</strong>：域中若无零因子条件不满足，则 ab = 0 且 a ≠ 0 会导致 b = a⁻¹·0 = 0，矛盾；<strong>整环不一定是域</strong>，如 <Z, +, ·> 是整环但非域。）</li>
+<li><strong>有限整环必是域</strong>（了解）。</li>
+</ul>
+<hr>
+<h2 id="_11">五、本章对比与易混点</h2>
+<table>
+<thead>
+<tr>
+<th>易混点</th>
+<th>正确理解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>封闭性 vs 二元运算</strong></td>
+<td>二元运算的定义已要求结果属于 S；若运算结果可能超出 S，则该运算<strong>不是</strong> S 上的运算</td>
+</tr>
+<tr>
+<td><strong>半群 / 独异点 / 群</strong></td>
+<td>半群＝封闭+结合；独异点＝半群+<strong>幺元</strong>；群＝独异点+<strong>每元素可逆</strong></td>
+</tr>
+<tr>
+<td><strong>幺元 vs 零元</strong></td>
+<td>e*x = x（不变）；θ*x = θ（"吃掉"一切）</td>
+</tr>
+<tr>
+<td>幂等元 vs 幂等律</td>
+<td>某元素 x*x = x 称<strong>幂等元</strong>；所有元素都如此才称运算满足<strong>幂等律</strong></td>
+</tr>
+<tr>
+<td>幺元/零元/逆元的唯一性</td>
+<td><strong>幺元、零元若存在必唯一</strong>；<strong>逆元在结合律下唯一</strong>（非结合时可能不唯一）</td>
+</tr>
+<tr>
+<td><strong>群的判别</strong></td>
+<td>必须<strong>四条全满足</strong>：封闭、结合、有幺元、每元素可逆（<strong>缺一不可</strong>）</td>
+</tr>
+<tr>
+<td><Z, ·> 是群吗</td>
+<td><strong>不是</strong>（独异点），因 2 无乘法逆元</td>
+</tr>
+<tr>
+<td>群中能否有零元</td>
+<td><strong>不能</strong>（除平凡群），且群中除幺元外<strong>无幂等元</strong></td>
+</tr>
+<tr>
+<td><strong>子群判别</strong></td>
+<td>非空 + 封闭 + 逆元封闭（或一步法 a*b⁻¹∈H）；<strong>有限子集只需封闭</strong></td>
+</tr>
+<tr>
+<td><strong>环 vs 域</strong></td>
+<td>环只要求 <R,+> 交换群、<R,·> <strong>半群</strong>；域要求 <F−{0},·> 是<strong>交换群</strong></td>
+</tr>
+<tr>
+<td>域与整环</td>
+<td><strong>域 ⇒ 整环</strong>；整环<strong>不一定</strong>是域（如 Z）</td>
+</tr>
+<tr>
+<td>(a*b)⁻¹</td>
+<td>= <strong>b⁻¹*a⁻¹</strong>（顺序颠倒）</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="_12">六、必背清单 + 简答预测 + 判别模板</h2>
+<h3 id="_13">（一）必背清单</h3>
+<ul>
+<li>二元运算与<strong>代数系统</strong>的定义；运算的<strong>六条性质</strong>（封闭、交换、结合、幂等、分配、吸收）；</li>
+<li><strong>幺元、零元、幂等元、逆元</strong>的定义与<strong>唯一性</strong>（含幺元唯一、逆元唯一的证明思路）；<strong>(a*b)⁻¹ = b⁻¹*a⁻¹</strong>；</li>
+<li>常见系统（<Z,+>、<Z,·>、<P(A),∪,∩>、<P(A),⊕>）的幺元/零元/幂等元/可逆元；</li>
+<li><strong>半群、独异点、群、交换群</strong>的定义与<strong>五步判别流程</strong>；</li>
+<li>群的<strong>阶</strong>、元素阶；<strong>群的七条性质</strong>（消去律、方程唯一解、无零元等）；</li>
+<li><strong>子群</strong>的定义与<strong>三个判别条件</strong>（两步法、一步法、有限子集只验封闭）；平凡子群；</li>
+<li><strong>环</strong>的定义（<R,+> 交换群 + <R,·> 半群 + 分配律）、交换环/含幺环/整环；</li>
+<li><strong>域</strong>的定义（<F,+> 与 <F−{0},·> 都是交换群 + 分配律）与例子；<strong>域 ⇒ 整环 ⇒ 交换含幺环 ⇒ 环</strong>；</li>
+<li>运算表判别法（交换看对称、幺元看行列、零元看整行整列、逆元配对、幂等元看对角线）。</li>
+</ul>
+<h3 id="_14">（二）高频简答 / 判断题预测</h3>
+<ul>
+<li>什么是二元运算？为什么说封闭性是二元运算的固有要求？</li>
+<li>什么是代数系统？举出三个代数系统的例子。</li>
+<li>运算的结合律、交换律、幂等律、分配律、吸收律各是什么？</li>
+<li>什么是幺元、零元？它们是否唯一？请证明幺元唯一。</li>
+<li>什么是幂等元？举例说明群中除幺元外没有幂等元。</li>
+<li>什么是逆元？逆元唯一吗？(a*b)⁻¹ 等于什么？</li>
+<li>什么是半群、独异点、群？三者关系如何？</li>
+<li>判别一个代数系统是否为群，需要验证哪些条件？</li>
+<li>为什么 <Z, ·> 不是群？<P(A), ∪> 是群吗？为什么？</li>
+<li><P(A), ⊕>（对称变运算）是否构成群？其幺元和逆元是什么？</li>
+<li>群有哪些基本性质（如消去律、方程解）？</li>
+<li>什么是子群？判别子群有哪些条件？为什么有限子集只需验证封闭？</li>
+<li>举出 <Z, +> 的一个子群，并验证它是子群。</li>
+<li>什么是环？环需要满足哪些条件？什么是交换环、含幺环、整环？</li>
+<li>什么是域？域与整环、环的关系如何？为什么 <Z, +, ·> 不是域？</li>
+<li>举例说明一个交换群、一个非交换群（或说明为何难以举出）【注意】。</li>
+</ul>
+<h3 id="_15">（三）判别题模板（最常考）</h3>
+<ul>
+<li><strong>判群（五步）</strong>：① 封闭（运算结果是否仍在集合内）→ ② 结合律 → ③ 找幺元（逐一验证候选元素）→ ④ 每个元素是否都有逆元 →（⑤ 是否交换 ⇒ 是否 Abel 群）。</li>
+<li><strong>判半群/独异点</strong>：只需验 ① 封闭 + ② 结合；（独异点再加）③ 是否有幺元。</li>
+<li><strong>由运算表判别</strong>：交换＝表对称；幺元＝该行该列照抄表头；零元＝该行该列全是它；逆元＝对每元素找 b 使 a*b = e；幂等元＝主对角线上等于自身者。</li>
+<li><strong>判子群</strong>：先找幺元与逆元，再用"非空 + a*b⁻¹ ∈ H"一步法；有限子集只验封闭。</li>
+<li><strong>判环/域</strong>：先验 <R, +> 是交换群（含幺元、每元素有负元、可交换）；再验乘法是半群（域则要"非零元成群"）；最后验分配律。</li>
+</ul>
+</main>
+<footer>02324 离散数学 · 由 Markdown 生成，浏览器直接打开即可阅读</footer>
+</body>
+</html>

@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第五章 软件测试 · 考点总结</title>
+<style>
+:root{--fg:#24292f;--muted:#57606a;--line:#d0d7de;--accent:#0969da;--code:#f6f8fa;--soft:#fafbfc}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--fg);
+  font:16px/1.78 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",sans-serif}
+main{max-width:980px;margin:0 auto;padding:26px 22px 72px}
+h1{font-size:1.75em;line-height:1.35;border-bottom:3px solid var(--accent);padding-bottom:.28em;margin:1.1em 0 .7em}
+h2{font-size:1.36em;line-height:1.4;border-bottom:1px solid var(--line);padding-bottom:.22em;margin:1.5em 0 .6em}
+h3{font-size:1.14em;margin:1.25em 0 .45em}
+h4{font-size:1.02em;margin:1.05em 0 .35em;color:var(--muted)}
+p{margin:.5em 0}
+ul,ol{margin:.45em 0;padding-left:1.5em}
+li{margin:.22em 0}
+li>ul,li>ol{margin:.15em 0}
+strong{color:#000}
+em{color:#000}
+code{background:var(--code);border-radius:4px;padding:.12em .34em;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:.92em}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;margin:.7em 0}
+pre code{background:none;padding:0;white-space:pre;font-size:.9em;line-height:1.5}
+table{border-collapse:collapse;width:100%;margin:.75em 0;font-size:.95em;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600}
+tbody tr:nth-child(even){background:var(--soft)}
+blockquote{margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:var(--code);color:var(--muted)}
+blockquote p{margin:.25em 0}
+hr{border:0;border-top:1px solid var(--line);margin:1.8em 0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.topnav{position:sticky;top:0;z-index:20;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+  padding:10px 22px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(180%) blur(6px);font-size:.9em}
+.topnav a{white-space:nowrap}
+.topnav .sep{color:var(--line)}
+.topnav .brand{font-weight:600;color:var(--fg);margin-right:6px}
+footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid var(--line);color:var(--muted);font-size:.86em}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:1em 0}
+.card{display:block;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--soft)}
+.card:hover{border-color:var(--accent)}
+.card b{display:block;margin-bottom:4px}
+.card span{color:var(--muted);font-size:.86em}
+.toc{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:1em 0}
+.toc ul{margin:.25em 0;padding-left:1.3em}
+.tip{border:1px dashed var(--accent);border-radius:10px;padding:10px 14px;background:#f6faff;margin:1em 0;font-size:.94em}
+@media (max-width:640px){main{padding:18px 14px 60px}h1{font-size:1.5em}}
+@media print{
+  body{font-size:11.5pt;line-height:1.6}
+  .topnav{display:none}
+  main{max-width:none;padding:0}
+  h1{page-break-before:always;border-bottom-width:2px}
+  body>main>h1:first-child,main>section:first-child>h1{page-break-before:avoid}
+  pre,table,blockquote,li{page-break-inside:avoid}
+  a{color:#000;text-decoration:none}
+  footer{display:none}
+}
+</style>
+</head>
+<body>
+<nav class="topnav"><span class="brand">13005 软件工程</span> <a href="index.html">目录</a> <span class="sep">|</span> <a href="第04章_移动应用的设计与测试_考点总结.html">← 第四章 移动应用的设计与测试 · 考点总结</a> <span class="sep">|</span> <a href="第06章_软件维护_考点总结.html">第六章 软件维护 · 考点总结 →</a></nav>
+<main>
+<h1 id="_1">第五章 软件测试 · 考点总结</h1>
+<blockquote>
+<p><strong>本章重点</strong>：软件测试的目标、对象、步骤；黑盒法、白盒法、穷举测试法、选择测试法、边界值分析法；软件组装测试的方法；软件的调试方法；静态测试和动态测试<br>
+<strong>本章难点</strong>：<strong>根据具体问题选择合适的测试方法，设计黑盒法、白盒法、边界值分析、选择测试的测试用例</strong><br>
+<strong>考查层次</strong>：本章是全书的<strong>第一大计算/设计题区</strong>（覆盖用例设计、边界值用例设计），名词与分类题也很多。</p>
+</blockquote>
+<hr>
+<h2 id="_2">一、本章知识地图</h2>
+<ul>
+<li><strong>1. 软件测试概述</strong>：考纲要点：定义、步骤、对象；目标、原则；层次：识记+领会</li>
+<li><strong>2. 软件测试的方法与技术</strong>：考纲要点：黑盒原理、等价类、白盒原理、穷举测试、选择测试、边界值测试目的；黑盒用例设计步骤、边界值选取原则；<strong>等价类划分与用例设计、6 种覆盖用例设计、边界值用例设计</strong>；层次：识记+领会+<strong>简单应用</strong></li>
+<li><strong>3. 单元测试</strong>：考纲要点：定义、步骤、<strong>5 个方面内容</strong>、驱动模块、桩模块；模块接口/局部数据结构/路径/错误处理/边界测试；层次：识记+领会</li>
+<li><strong>4. 组装测试</strong>：考纲要点：<strong>4 种组装方式</strong>；自顶向下/自底向上的步骤与评价、计划考虑的问题、完成标志；层次：识记+领会</li>
+<li><strong>5. 确认测试</strong>：考纲要点：任务、软件配置复审目的；阶段工作与步骤、有效性测试任务、系统测试任务、<strong>测试种类及适用阶段</strong>；层次：识记+领会</li>
+<li><strong>6. 静态测试</strong>：考纲要点：静态分析的几种方法、静态错误分析工作内容；引用表、四类分析、<strong>人工测试 3 种</strong>；层次：识记+领会</li>
+<li><strong>7. 调试技术</strong>：考纲要点：调试任务、调试活动的组成、调试方法；调试步骤、强行排错、回溯法、归纳法、演绎法、确定错误原则、修改错误原则；层次：识记+领会</li>
+<li><strong>8. 软件测试工具</strong>：考纲要点：静态分析工具组成、测试数据自动生成工具分类、动态测试工具分类；各工具功能与工作过程、符号执行结果的两用途、模块测试台、集成测试环境；层次：识记+领会</li>
+</ul>
+<hr>
+<h2 id="1">二、考点 1：软件测试概述</h2>
+<h3 id="_3">（一）识记</h3>
+<ul>
+<li>
+<p><strong>1. 软件测试的定义</strong><br>
+为了<strong>发现错误</strong>而<strong>执行程序</strong>的过程（广义：对需求分析、设计、编码各阶段成果（程序、数据、文档）进行的验证与确认活动）。</p>
+<blockquote>
+<p>Myers 的三个观点（常考）：① <strong>测试的目的是发现错误</strong>；② 一个好的测试用例是<strong>能发现尚未发现的错误</strong>的用例；③ 一次成功的测试是<strong>发现了尚未发现的错误</strong>的测试。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>2. 软件测试的步骤（必背顺序）</strong></p>
+</li>
+<li>
+<p><strong>单元测试 → 组装（集成）测试 → 确认测试 → 系统测试</strong>（之后为验收测试/回归测试）。</p>
+</li>
+<li>
+<p><strong>3. 软件测试的对象</strong>：<strong>程序、数据、文档</strong>（各阶段成果）。</p>
+</li>
+</ul>
+<h3 id="_4">（二）领会</h3>
+<ul>
+<li>
+<p><strong>1. 软件测试的目标</strong><br>
+① 验证软件是否<strong>满足需求规格说明</strong>；<br>
+② <strong>尽早、尽可能多地发现并排除缺陷</strong>；<br>
+③ 通过测试<strong>建立对软件质量的信心</strong>（测试能证明有错，<strong>不能证明无错</strong>——Dijkstra：测试只能证明错误存在，不能证明错误不存在）。</p>
+</li>
+<li>
+<p><strong>2. 软件测试工作应遵循的原则（必背）</strong></p>
+</li>
+<li>测试应<strong>尽早开始并贯穿软件开发全过程</strong>（测试用例可在需求、设计阶段就开始设计）；</li>
+<li>测试用例必须包含<strong>输入数据与预期输出</strong>；</li>
+<li>程序员应<strong>避免测试自己编写的程序</strong>，测试宜由独立第三方进行；</li>
+<li>设计用例时既要包含<strong>合理、有效的输入</strong>，也要包含<strong>不合理、无效的输入</strong>；</li>
+<li>严格执行<strong>测试计划</strong>，避免随意、盲目测试；</li>
+<li><strong>妥善保存测试计划、用例、结果与缺陷记录</strong>，便于<strong>回归测试</strong>；</li>
+<li><strong>Pareto 原则</strong>：80% 的错误可能集中在 20% 的模块中，对<strong>错误聚集的模块应重点测试</strong>；</li>
+<li><strong>穷举测试不可能</strong>，应选择<strong>有限但有代表性</strong>的测试用例。</li>
+</ul>
+<hr>
+<h2 id="2">三、考点 2：软件测试的方法与技术</h2>
+<h3 id="_5">（一）识记</h3>
+<ul>
+<li>
+<p><strong>1. 黑盒测试原理</strong>：不考虑程序内部结构与处理过程，只依据<strong>功能需求/规格说明</strong>，通过<strong>输入与输出的对应关系</strong>检验功能是否正确；又称<strong>功能测试</strong>；主要用于<strong>确认测试、系统测试</strong>。</p>
+</li>
+<li>
+<p><strong>2. 等价类</strong>：把<strong>输入域</strong>划分为若干<strong>子集合（等价类）</strong>，同一等价类中的任意数据对发现错误的作用相同，取一个代表值即可代表整类；分为<strong>有效等价类</strong>与<strong>无效等价类</strong>。</p>
+</li>
+<li>
+<p><strong>3. 白盒测试原理</strong>：依据程序<strong>内部逻辑结构</strong>设计用例，检验<strong>每条路径、每个逻辑判断</strong>是否按预期工作；又称<strong>结构测试</strong>；主要用于<strong>单元测试</strong>。</p>
+</li>
+<li>
+<p><strong>4. 穷举测试的定义</strong>：把所有<strong>可能的输入数据组合</strong>（黑盒）或所有<strong>可能的执行路径</strong>（白盒）都测试一遍。<strong>实际上不可行</strong>（组合爆炸、路径爆炸）。</p>
+</li>
+<li>
+<p><strong>5. 选择测试的定义</strong>：在<strong>时间、成本、人力等资源有限</strong>的条件下，<strong>有选择地</strong>设计<strong>少量但有效</strong>的测试用例，以尽可能多地发现错误（即以有限用例达到可接受的覆盖）。</p>
+</li>
+<li>
+<p><strong>6. 边界值测试的目的</strong>：大量错误发生在<strong>输入/输出范围的边界</strong>上，故取<strong>边界值及其邻近值</strong>设计用例，以发现<strong>边界处理错误</strong>（如 <code>&lt;</code> 与 <code>≤</code> 用错、数组越界、循环次数差一）。</p>
+</li>
+</ul>
+<h3 id="_6">（二）领会</h3>
+<ul>
+<li>
+<p><strong>1. 设计黑盒法测试用例的步骤</strong><br>
+① 分析需求规格说明，划分<strong>有效等价类与无效等价类</strong>并<strong>编号</strong>；<br>
+② 设计用例使其<strong>尽可能多地覆盖尚未覆盖的有效等价类</strong>（一个用例可覆盖多个有效等价类）；<br>
+③ 为<strong>每一个无效等价类</strong>各设计<strong>一个</strong>用例（避免相互屏蔽）；<br>
+④ 结合<strong>边界值分析</strong>补充用例；<br>
+⑤ 写出<strong>预期输出</strong>，形成测试用例表；<br>
+⑥ （可选）用<strong>因果图/判定表</strong>处理输入条件之间的组合关系。</p>
+</li>
+<li>
+<p><strong>2. 边界值分析方法选择测试用例的原则</strong><br>
+① 若输入是<strong>取值范围</strong>（如 <code>1 ≤ x ≤ 100</code>）：取 <strong>min、min+、nom、max−、max</strong> 以及<strong>略小于 min、略大于 max</strong> 的值（即"七点法"：<code>min−, min, min+, nom, max−, max, max+</code>）；<br>
+② 若输入是<strong>有序集合/表格</strong>：取<strong>第一个元素</strong>和<strong>最后一个元素</strong>；<br>
+③ 若输入受<strong>条件约束</strong>（如"最多 n 个字符"）：取 <strong>n 与 n+1</strong>；<br>
+④ 若程序内部有<strong>数据结构</strong>：取其<strong>边界</strong>（数组下标 0 与 n−1、n）；<br>
+⑤ 同时考虑<strong>输出域的边界</strong>；<br>
+⑥ 通常与<strong>等价类划分</strong>结合使用（等价类取"典型值"，边界值取"边缘值"）。</p>
+</li>
+</ul>
+<h3 id="_7">（三）简单应用（必考用例设计）</h3>
+<ul>
+<li>
+<p><strong>1. 等价类划分与用例设计（示例：输入 x 要求 1 ≤ x ≤ 100 的整数）</strong></p>
+</li>
+<li>
+<p><strong>有效</strong>：编号：①；1 ≤ x ≤ 100 的整数；代表用例：x = 50</p>
+</li>
+<li><strong>无效</strong>：编号：②；x &lt; 1（如 x = 0、−5）；代表用例：x = 0</li>
+<li><strong>无效</strong>：编号：③；x &gt; 100（如 x = 101）；代表用例：x = 101</li>
+<li>
+<p><strong>无效</strong>：编号：④；非整数/非数字（如 3.5、"abc"、空）；代表用例：x = "abc"</p>
+</li>
+<li>
+<p><strong>2. 白盒测试六种覆盖的测试用例设计（经典例题）</strong></p>
+</li>
+</ul>
+<pre><code class="language-pascal">PROCEDURE P1
+  INPUT (A, B, X)
+  IF (A &gt; 1) AND (B = 0) THEN X = X / A ENDIF      ← 判定1：条件 c1(A&gt;1)、c2(B=0)
+  IF (A = 2) OR  (X &gt; 1) THEN X = X + 1 ENDIF      ← 判定2：条件 c3(A=2)、c4(X&gt;1)
+  OUTPUT (X)
+
+</code></pre>
+<blockquote>
+<p>注意：X 在第一个判定中被修改，会影响第二个判定，设计用例时要<strong>先算最终值</strong>。</p>
+</blockquote>
+<ul>
+<li><strong>语句覆盖</strong>：每个可执行语句至少执行一次；用例（A, B, X）：① (2, 0, 3)；两个判定均取真 → 所有语句执行；<strong>最弱</strong></li>
+<li><strong>判定（分支）覆盖</strong>：每个判定的真、假分支都执行一次；用例（A, B, X）：① (2, 0, 3)；② (1, 1, 1)；① 判定1真、判定2真；② 判定1假、判定2假</li>
+<li><strong>条件覆盖</strong>：每个判定中<strong>每个条件</strong>取真、取假各一次；用例（A, B, X）：① (2, 0, 3)；② (1, 1, 1)；两组用例使 c1–c4 均取真、取假</li>
+<li><strong>判定-条件覆盖</strong>：同时满足<strong>判定覆盖与条件覆盖</strong>；用例（A, B, X）：① (2, 0, 3)；② (1, 1, 1)；兼顾两者的不足，但<strong>不保证条件组合全覆盖</strong></li>
+<li><strong>条件组合覆盖</strong>：每个判定中<strong>条件取值的所有组合</strong>至少出现一次；用例（A, B, X）：① (2, 0, 3)；② (2, 1, 1)；③ (1, 0, 3)；④ (1, 1, 1)；判定1 的 c1c2 与判定2 的 c3c4 全覆盖</li>
+<li>
+<p><strong>路径覆盖</strong>：程序中<strong>所有可能的执行路径</strong>至少执行一次；用例（A, B, X）：① (2, 0, 3)：判1真/判2真；② (3, 0, 1)：判1真/判2假；③ (1, 0, 3)：判1假/判2真；④ (1, 1, 1)：判1假/判2假；<strong>最强</strong>（本例 4 条路径全覆盖；含循环时不可穷举）</p>
+</li>
+<li>
+<p><strong>覆盖强度顺序</strong>：语句覆盖 ＜ 判定覆盖 ＜ 条件覆盖/判定-条件覆盖 ＜ 条件组合覆盖 ＜ 路径覆盖。</p>
+<blockquote>
+<p>关键结论：<strong>条件覆盖不一定包含判定覆盖</strong>；<strong>判定-条件覆盖不一定包含条件组合覆盖</strong>；<strong>路径覆盖最强但通常不可实现</strong>。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>3. 边界值分析用例设计（示例：1 ≤ x ≤ 100 的整数）</strong><br>
+取：<strong>x = 0（min−）、1（min）、2（min+）、50（nom）、99（max−）、100（max）、101（max+）</strong>；<br>
+若输入是字符串长度上限 8，则取 <strong>8 与 9</strong>；若输入是数组下标，则取 <strong>0、n−1、n</strong>。</p>
+</li>
+</ul>
+<hr>
+<h2 id="3">四、考点 3：单元测试</h2>
+<h3 id="_8">（一）识记</h3>
+<ul>
+<li>
+<p><strong>1. 单元测试的定义</strong>：对软件中<strong>最小的可测试单元（模块/构件/函数）</strong> 进行的测试，验证其<strong>接口、内部数据结构、逻辑路径、错误处理与边界</strong>是否正确。</p>
+</li>
+<li>
+<p><strong>2. 单元测试的步骤</strong> 【注意】：① 制定单元测试计划；② <strong>依据详细设计</strong>设计测试用例；③ 编写<strong>驱动模块与桩模块</strong>（测试台/测试脚手架）；④ 执行测试并记录结果；⑤ 分析结果、修正错误并<strong>回归测试</strong>。</p>
+</li>
+<li>
+<p><strong>3. 单元测试 5 个方面的内容（必背）</strong></p>
+</li>
+<li><strong>模块接口</strong>测试；</li>
+<li><strong>局部数据结构</strong>测试；</li>
+<li><strong>重要的执行路径</strong>测试（路径测试）；</li>
+<li><strong>错误处理路径</strong>测试；</li>
+<li>
+<p><strong>边界条件</strong>测试。</p>
+</li>
+<li>
+<p><strong>4. 驱动模块（Driver）</strong>：模拟<strong>调用被测模块的上层模块</strong>，负责向被测模块<strong>传送测试数据、调用它并接收结果</strong>（相当于"主程序"）。</p>
+</li>
+<li>
+<p><strong>5. 桩模块（Stub）</strong>：模拟<strong>被测模块所调用的下层模块</strong>，用简单代码返回<strong>预期的（或固定的）数据</strong>，以便被测模块能运行。</p>
+</li>
+</ul>
+<h3 id="_9">（二）领会</h3>
+<table>
+<thead>
+<tr>
+<th>测试方面</th>
+<th>主要检查内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>模块接口测试</strong></td>
+<td>参数<strong>个数、类型、顺序</strong>是否正确；形参与实参是否匹配；返回值是否正确；全局变量/外部数据的使用是否正确；文件读写的打开、关闭与格式</td>
+</tr>
+<tr>
+<td><strong>局部数据结构测试</strong></td>
+<td>变量<strong>是否初始化/未定义使用</strong>；类型是否一致（整型/实型混用）；变量名拼写与作用域；数组/字符串越界；指针与动态内存使用</td>
+</tr>
+<tr>
+<td><strong>路径测试</strong></td>
+<td>基本路径与独立路径是否按预期执行；<strong>判定条件</strong>是否正确（<code>&lt;</code> 与 <code>≤</code>、<code>AND</code> 与 <code>OR</code>）；循环的初值、次数、终止条件；是否存在不可达代码</td>
+</tr>
+<tr>
+<td><strong>错误处理测试</strong></td>
+<td>是否能<strong>预见并处理</strong>错误（除零、越界、文件不存在）；错误提示是否清晰；异常分支是否能正确返回；错误处理本身是否会引发新错误</td>
+</tr>
+<tr>
+<td><strong>边界测试</strong></td>
+<td>数据流的<strong>最大值/最小值</strong>、数组边界、循环的<strong>第 0 次与最后一次</strong>、正好等于边界与刚好越界的情形</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="4">五、考点 4：组装测试</h2>
+<h3 id="_10">（一）识记</h3>
+<ul>
+<li><strong>组装测试（集成测试）的 4 种组装方式（必背）</strong></li>
+<li><strong>自顶向下</strong>组装（Top-Down）；</li>
+<li><strong>自底向上</strong>组装（Bottom-Up）；</li>
+<li><strong>自顶向下与自底向上相结合</strong>（混合/三明治式）；</li>
+<li><strong>一次性组装</strong>（大爆炸式/整体组装）。</li>
+</ul>
+<h3 id="_11">（二）领会</h3>
+<ul>
+<li>
+<p><strong>1. 自顶向下组装测试的步骤</strong><br>
+① 以<strong>主控模块</strong>作为测试起点（作为驱动模块）；<br>
+② 沿控制层次<strong>自顶向下</strong>逐层加入模块，尚未加入的下层模块用<strong>桩模块</strong>代替；<br>
+③ 可采用<strong>深度优先</strong>（先打通一条主路径）或<strong>广度优先</strong>（逐层横向加入）策略；<br>
+④ 每加入一个（或一组）模块就<strong>做一次测试</strong>，通过后再加入下一层，直至全部组装完成。</p>
+</li>
+<li>
+<p><strong>2. 自顶向下组装测试的评价</strong></p>
+</li>
+<li><strong>优点</strong>：能<strong>较早验证主要控制与决策逻辑</strong>（高层结构）、<strong>较早发现接口与设计错误</strong>、可在早期向用户<strong>演示骨架版本</strong>、需要桩模块但可复用；</li>
+<li>
+<p><strong>缺点</strong>：需要编写<strong>大量桩模块</strong>；<strong>底层关键模块（算法、输入输出）的测试被推迟</strong>，问题发现晚；桩模块可能掩盖底层真实行为。</p>
+</li>
+<li>
+<p><strong>3. 自底向上组装测试的步骤</strong><br>
+① 从<strong>最底层模块</strong>（不再调用其他模块的模块）开始，把紧密相关的一组模块组成<strong>簇（cluster）</strong>；<br>
+② 为每个簇编写<strong>驱动模块</strong>调用它，先对簇做测试；<br>
+③ 逐层<strong>向上合并</strong>，用驱动模块调用下级已测好的簇，边合并边测试，直至顶层。</p>
+</li>
+<li>
+<p><strong>4. 自底向上组装测试的评价</strong></p>
+</li>
+<li><strong>优点</strong>：<strong>不需要桩模块</strong>；<strong>底层模块（关键算法与输入输出）得到充分测试</strong>，问题早发现；</li>
+<li>
+<p><strong>缺点</strong>：需要编写<strong>大量驱动模块</strong>；<strong>程序整体骨架直到后期才形成</strong>，<strong>高层控制与设计错误发现晚</strong>；不便早期向用户演示。</p>
+</li>
+<li>
+<p><strong>5. 组装测试计划时应考虑的问题</strong> 【注意】<br>
+① 组装的<strong>顺序与策略</strong>（自顶向下/自底向上/混合/一次性）；② <strong>驱动模块与桩模块</strong>的准备与工作量；③ <strong>模块接口与数据传递</strong>的正确性（参数、全局数据、文件）；④ <strong>回归测试</strong>的安排；⑤ <strong>集成频度</strong>（持续集成）与版本管理；⑥ 测试环境、工具与人员、进度安排。</p>
+</li>
+<li>
+<p><strong>6. 组装测试完成的标志</strong><br>
+① 所有模块按计划<strong>全部组装完毕</strong>；② <strong>接口测试全部通过</strong>，模块间数据传递正确；③ 主要功能已能<strong>协作运行</strong>；④ <strong>回归测试无严重缺陷</strong>；⑤ 组装测试报告与缺陷记录<strong>完成并归档</strong>。</p>
+</li>
+</ul>
+<hr>
+<h2 id="5">六、考点 5：确认测试</h2>
+<h3 id="_12">（一）识记</h3>
+<ul>
+<li>
+<p><strong>1. 确认测试（Validation Testing）的任务</strong>：验证软件<strong>是否满足需求规格说明书的全部要求</strong>——即"<strong>证实我们做对了产品</strong>"（有效性验证），由<strong>有效性测试 + 软件配置复审</strong>两部分组成。</p>
+</li>
+<li>
+<p><strong>2. 软件配置复审的目的</strong>：保证<strong>所有交付物（文档、程序、数据）齐全、一致、正确、可追溯</strong>，配置管理与变更记录完整，为交付与后续维护提供依据。</p>
+</li>
+</ul>
+<h3 id="_13">（二）领会</h3>
+<ul>
+<li>
+<p><strong>1. 确认测试阶段需要完成的工作及步骤</strong> 【注意】：① 制定确认测试计划；② 进行<strong>有效性测试（黑盒法）</strong>；③ 进行<strong>软件配置复审</strong>；④ 进行<strong>验收测试（α 测试、β 测试）</strong>；⑤ 记录缺陷并修正、回归；⑥ 编写确认测试报告，通过后交付。</p>
+</li>
+<li>
+<p><strong>2. 有效性测试的任务</strong>：在<strong>模拟用户环境</strong>下，用<strong>黑盒测试</strong>验证软件的功能、性能、界面、文档等<strong>与需求规格说明是否一致</strong>（是否满足所有需求与验收标准）。</p>
+</li>
+<li>
+<p><strong>3. 系统测试的任务</strong>：把软件与<strong>硬件、网络、其他软件/数据</strong>集成在一起，在<strong>实际运行环境</strong>中测试<strong>整个计算机系统</strong>，验证其是否满足系统要求（功能、性能、强度、安全、兼容、恢复、可靠性、安装、文档等）。</p>
+</li>
+<li>
+<p><strong>4. 软件测试的种类及其适用阶段</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>测试种类</th>
+<th>目的/内容</th>
+<th>适用阶段</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>单元测试</strong>（白盒为主）</td>
+<td>验证模块内部逻辑、接口、数据结构</td>
+<td>编码完成后</td>
+</tr>
+<tr>
+<td><strong>组装/集成测试</strong></td>
+<td>验证模块间接口与协作</td>
+<td>模块组装时</td>
+</tr>
+<tr>
+<td><strong>确认测试</strong>（黑盒）</td>
+<td>验证是否满足需求规格说明（有效性 + 配置复审）</td>
+<td>组装完成、交付前</td>
+</tr>
+<tr>
+<td><strong>系统测试</strong>（黑盒）</td>
+<td>验证整个系统在实际环境中的表现</td>
+<td>交付前的整体系统</td>
+</tr>
+<tr>
+<td><strong>验收测试</strong>（α/β）</td>
+<td>由用户验证是否可接受</td>
+<td>交付前/交付时</td>
+</tr>
+<tr>
+<td><strong>功能测试</strong></td>
+<td>功能正确性</td>
+<td>确认/系统测试</td>
+</tr>
+<tr>
+<td><strong>性能测试</strong></td>
+<td>响应时间、吞吐量、资源占用</td>
+<td>系统测试</td>
+</tr>
+<tr>
+<td><strong>强度（压力）测试</strong></td>
+<td>极限负载下的表现</td>
+<td>系统测试</td>
+</tr>
+<tr>
+<td><strong>安全测试</strong></td>
+<td>权限、数据安全、防攻击</td>
+<td>系统测试</td>
+</tr>
+<tr>
+<td><strong>兼容性测试</strong></td>
+<td>不同软硬件/平台环境</td>
+<td>系统测试</td>
+</tr>
+<tr>
+<td><strong>恢复测试</strong></td>
+<td>故障后的恢复能力</td>
+<td>系统测试</td>
+</tr>
+<tr>
+<td><strong>可靠性测试</strong></td>
+<td>MTBF 等可靠性指标</td>
+<td>系统测试</td>
+</tr>
+<tr>
+<td><strong>安装测试 / 文档测试</strong></td>
+<td>安装部署、文档可用性</td>
+<td>系统测试/交付</td>
+</tr>
+<tr>
+<td><strong>回归测试</strong></td>
+<td>修改后验证原有功能未被破坏</td>
+<td>每次修改之后</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="6">七、考点 6：静态测试</h2>
+<h3 id="_14">（一）识记</h3>
+<ul>
+<li>
+<p><strong>1. 程序静态分析的几种方法（识记）</strong><br>
+① <strong>引用表（数据/引用表）分析</strong>；② <strong>变量类型分析</strong>；③ <strong>引用分析</strong>；④ <strong>表达式分析</strong>；⑤ <strong>接口分析</strong>。</p>
+<blockquote>
+<p>即：不运行程序，通过<strong>分析源程序的语法、结构与数据流</strong>发现错误。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>2. 静态错误分析的工作内容</strong><br>
+检查<strong>语法与语义错误、类型不匹配、变量未初始化或未使用、数组越界、参数与接口不一致、不可达代码、死循环、表达式中的除零与括号不匹配、违反编码规范</strong>等。</p>
+</li>
+</ul>
+<h3 id="_15">（二）领会</h3>
+<ul>
+<li>
+<p><strong>1. 在程序的静态分析中使用各种引用表</strong><br>
+常用：<strong>变量引用表（定义—使用表）、标号引用表、过程/函数调用表、常量表、文件与数据引用表</strong>。<br>
+用途：检查<strong>变量是否"先定义后使用"、是否有定义未使用/使用未定义、标号是否有效、调用与被调用是否一致</strong>，以及数据流异常（未初始化、死代码）。</p>
+</li>
+<li>
+<p><strong>2. 错误分析的四类</strong></p>
+</li>
+<li><strong>变量类型分析</strong>：检查变量<strong>类型与使用是否匹配</strong>（整型/实型混用、数组维数与下标类型、赋值类型兼容）；</li>
+<li><strong>引用分析</strong>：检查变量/过程<strong>是否被定义而未引用、或引用而未定义</strong>；参数传递是否一致；</li>
+<li><strong>表达式分析</strong>：检查<strong>括号匹配、除零、下标越界、类型不兼容、运算优先级引起的错误</strong>；</li>
+<li>
+<p><strong>接口分析</strong>：检查模块间<strong>参数个数、类型、顺序、返回值、全局量</strong>是否一致。</p>
+</li>
+<li>
+<p><strong>3. 人工测试的三种方式（必背）</strong></p>
+</li>
+<li>
+<p><strong>桌前检查（代码自查）</strong>：由<strong>程序员本人</strong>按检查表审查自己的代码；特点：成本低，但受"自查盲区"限制</p>
+</li>
+<li><strong>代码评审（代码会审/审查）</strong>：由评审小组按规程<strong>逐行审查</strong>代码，对照错误清单（如常见缺陷检查表）；特点：系统、严格，发现问题多，但耗时、需组织</li>
+<li><strong>走查（遍历/演示）</strong>：由<strong>测试者/评审者</strong>提出<strong>测试数据，在纸面或脑中"走"程序</strong>，作者讲解、评审者质疑；特点：以人为"执行器"，能发现逻辑与理解偏差</li>
+</ul>
+<hr>
+<h2 id="7">八、考点 7：调试技术</h2>
+<h3 id="_16">（一）识记</h3>
+<ul>
+<li>
+<p><strong>1. 程序调试（Debug）的任务</strong>：在测试<strong>发现错误之后</strong>，<strong>确定错误的准确性质与位置</strong>并<strong>加以排除（修正）</strong>。</p>
+</li>
+<li>
+<p><strong>2. 调试活动的组成</strong> 【注意】：<strong>确定错误的位置（定位）→ 分析错误原因 → 修改设计与代码 → 重新测试（回归验证）</strong>。</p>
+</li>
+<li>
+<p><strong>3. 调试可采用的方法（必背）</strong><br>
+① <strong>强行排错法（蛮干法）</strong>；② <strong>回溯法</strong>；③ <strong>归纳法</strong>；④ <strong>演绎法</strong>；⑤ <strong>对分查找法（原因排除法/二分法）</strong>。</p>
+</li>
+</ul>
+<h3 id="_17">（二）领会</h3>
+<ul>
+<li>
+<p><strong>1. 程序调试的步骤</strong>：① 从<strong>错误征兆</strong>入手；② 确定错误的<strong>性质与位置</strong>；③ 找出<strong>产生错误的原因</strong>；④ 提出并选择<strong>修改方案</strong>；⑤ <strong>修改代码并回归测试</strong>（确认修正且未引入新错误）。</p>
+</li>
+<li>
+<p><strong>2. 强行排错的方法</strong>：在程序中<strong>插入打印语句（输出中间变量）</strong>、<strong>设置断点</strong>、<strong>单步跟踪</strong>、<strong>转储内存/调用栈</strong>、使用调试器查看变量与表达式。特点：直观、易上手，但<strong>效率低、可能引入新问题</strong>，适合错误范围较小或有工具支持时。</p>
+</li>
+<li>
+<p><strong>3. 回溯法排错的基本方法</strong>：从<strong>错误征兆出现的位置</strong>开始，沿程序<strong>逻辑（控制流）逐步向前回溯</strong>，检查各步的数据与逻辑，直到找到错误的源头。适合<strong>小型程序</strong>；程序大时回溯路径过多、效率低。</p>
+</li>
+<li>
+<p><strong>4. 归纳法排错的步骤（必背顺序）</strong><br>
+① <strong>收集</strong>与错误有关的所有数据（测试结果、征兆、日志）；<br>
+② <strong>整理数据</strong>，找出<strong>规律</strong>（哪些输入出错、哪些不出错）；<br>
+③ 提出<strong>假设</strong>（关于错误原因的推测）；<br>
+④ 用<strong>数据/实验证明</strong>假设是否成立；<br>
+⑤ 若假设不成立，回到②修正假设；成立则<strong>修正错误并回归测试</strong>。</p>
+</li>
+<li>
+<p><strong>5. 演绎法排错的主要步骤（必背顺序）</strong><br>
+① <strong>列举所有可能的原因</strong>（提出多个假设）；<br>
+② 用<strong>已有数据排除、细化</strong>这些假设（缩小范围）；<br>
+③ 对剩下的<strong>假设进行证明</strong>（设计实验验证）；<br>
+④ <strong>确定并修正错误</strong>，回归测试。</p>
+</li>
+<li>
+<p><strong>6. 确定错误性质与位置的原则</strong><br>
+① <strong>先分析错误征兆，再动手修改</strong>（不要急于改代码）；<br>
+② <strong>思考在前</strong>：先想清楚"错误可能在哪、为什么"，再用调试工具；<br>
+③ <strong>不要轻易怀疑"不可能出错"的地方</strong>，也不要一次改多处；<br>
+④ 若长时间无进展，<strong>暂时放下问题</strong>，稍后再分析；必要时<strong>向他人求助</strong>（讲解问题常能带来灵感）；<br>
+⑤ <strong>保存现场</strong>（记录数据、日志、运行环境），避免破坏证据。</p>
+</li>
+<li>
+<p><strong>7. 修改错误的原则</strong><br>
+① 修改前必须<strong>确认错误原因</strong>，避免"改症状不改病因"；<br>
+② <strong>一次只修改一个错误</strong>（便于判断效果）；<br>
+③ <strong>修改后立即回归测试</strong>，确认原功能未被破坏；<br>
+④ 修改要考虑<strong>连带影响（副作用）</strong>：代码、数据、文档；<br>
+⑤ <strong>修改错误的概率与引入新错误的概率成正比</strong>，故修改要谨慎、局部化；<br>
+⑥ <strong>记录修改内容、原因、时间与验证结果</strong>，更新文档。</p>
+</li>
+</ul>
+<hr>
+<h2 id="8">九、考点 8：软件测试工具</h2>
+<h3 id="_18">（一）识记</h3>
+<ul>
+<li>
+<p><strong>1. 静态分析工具的组成</strong> 【注意】：<strong>词法/语法分析器（语言分析器）＋ 数据（引用）表生成器 ＋ 错误分析与报告输出模块</strong>（＋ 与源程序库/配置库的接口）。</p>
+</li>
+<li>
+<p><strong>2. 测试数据自动生成工具的分类</strong><br>
+① <strong>路径测试数据生成器</strong>（按路径/条件求解生成数据，白盒）；<br>
+② <strong>随机测试数据生成器</strong>（按分布随机产生输入）；<br>
+③ <strong>面向数据（输入域）的生成器</strong>（按等价类、边界值等规则生成，黑盒）。</p>
+</li>
+<li>
+<p><strong>3. 动态测试工具按功能的分类</strong> 【注意】<br>
+① <strong>测试覆盖监视程序</strong>；② <strong>动态断言处理程序</strong>；③ <strong>符号执行工具</strong>；④ <strong>测试结果分析程序</strong>；⑤ <strong>模块测试台（驱动/桩 + 数据管理）</strong>；⑥ <strong>集成测试环境</strong>（以上工具的集成）。</p>
+</li>
+</ul>
+<h3 id="_19">（二）领会</h3>
+<ul>
+<li>
+<p><strong>1. 静态分析工具的功能</strong>：在不运行程序的情况下<strong>分析源程序</strong>，报告语法/语义问题、可疑结构与数据流异常（未初始化变量、不可达代码、接口不一致）、复杂度与编码规范违反，输出<strong>引用表与告警清单</strong>。</p>
+</li>
+<li>
+<p><strong>2. 测试覆盖监视程序的工作过程</strong>：对源程序进行<strong>插装（instrument，插入计数/标志语句）</strong> → 运行被测程序 → 记录<strong>语句/判定/条件/路径</strong>的执行情况 → 运行结束后与总计数比较，输出<strong>覆盖率报告</strong>。</p>
+</li>
+<li>
+<p><strong>3. 动态断言处理程序的工作过程</strong>：在程序中<strong>插入断言（assert）语句</strong> → 运行到断言处时<strong>求值</strong> → 若为假则<strong>报告错误位置与上下文信息</strong>（变量值、调用栈）→ 便于快速定位错误。</p>
+</li>
+<li>
+<p><strong>4. 符号执行结果的两个用途</strong>：① 作为<strong>路径测试数据的生成/选择依据</strong>（求解路径约束得到输入数据）；② 用于<strong>程序正确性验证/分析</strong>（发现不可达路径、路径约束矛盾、除零等潜在错误）。</p>
+</li>
+<li>
+<p><strong>5. 测试结果分析程序的功能</strong>：把<strong>实际输出与预期输出比较</strong>，对结果<strong>分类、汇总、标记差异</strong>，生成<strong>测试报告</strong>，便于判断通过/失败与统计缺陷。</p>
+</li>
+<li>
+<p><strong>6. 模块测试台的功能</strong>：为单元测试提供<strong>驱动模块、桩模块、测试数据准备与执行控制、结果记录</strong>的支撑环境，使单个模块能独立运行与验证。</p>
+</li>
+<li>
+<p><strong>7. 集成测试环境的构成和作用</strong></p>
+</li>
+<li><strong>构成</strong>：测试驱动/桩、测试数据生成器、覆盖监视、结果分析、缺陷记录与配置管理等工具的<strong>集成</strong>；</li>
+<li><strong>作用</strong>：支撑模块组装后的<strong>集成测试</strong>，统一管理用例、执行与结果，提高<strong>效率、可重复性与可追溯性</strong>。</li>
+</ul>
+<hr>
+<h2 id="_20">十、本章对比与易混点</h2>
+<table>
+<thead>
+<tr>
+<th>易混点</th>
+<th>正确理解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>黑盒 vs 白盒</td>
+<td>黑盒=<strong>功能测试</strong>，不看内部结构，用于确认/系统测试；白盒=<strong>结构测试</strong>，看内部逻辑，用于单元测试</td>
+</tr>
+<tr>
+<td>穷举测试 vs 选择测试</td>
+<td>穷举=<strong>测遍所有输入/路径</strong>（不可行）；选择=<strong>有限资源下选有代表性的用例</strong></td>
+</tr>
+<tr>
+<td>等价类 vs 边界值</td>
+<td>等价类取<strong>代表值</strong>（典型值）；边界值取<strong>边界及其邻域值</strong>；两者常结合使用</td>
+</tr>
+<tr>
+<td>语句覆盖 vs 判定覆盖</td>
+<td>语句覆盖<strong>最弱</strong>（判定全真即可）；判定覆盖要求<strong>真假分支各执行一次</strong></td>
+</tr>
+<tr>
+<td>条件覆盖 vs 判定-条件覆盖</td>
+<td>条件覆盖<strong>不保证</strong>判定覆盖；判定-条件覆盖<strong>同时满足</strong>判定与条件覆盖</td>
+</tr>
+<tr>
+<td>驱动模块 vs 桩模块</td>
+<td><strong>驱动=模拟上层调用者</strong>（自底向上时需要）；<strong>桩=模拟下层被调用者</strong>（自顶向下时需要）</td>
+</tr>
+<tr>
+<td>确认测试 vs 系统测试</td>
+<td>确认=<strong>验证是否满足需求规格说明</strong>；系统=<strong>软硬件集成后验证整个系统</strong></td>
+</tr>
+<tr>
+<td>测试 vs 调试</td>
+<td><strong>测试=发现错误</strong>（系统性、有计划）；<strong>调试=定位并排除错误</strong>（在测试之后）</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="_21">十一、本章必背清单 + 简答预测</h2>
+<ul>
+<li><strong>必背</strong></li>
+<li>测试定义、<strong>步骤（单元→组装→确认→系统）</strong>、对象（程序/数据/文档）、目标与 8 条原则；</li>
+<li>黑盒/白盒原理、等价类、<strong>穷举测试 vs 选择测试</strong>、<strong>边界值测试目的与取值原则</strong>、黑盒用例设计步骤；</li>
+<li><strong>6 种覆盖技术</strong>及其用例设计（会算、会写用例表）；</li>
+<li>单元测试定义/步骤/<strong>5 方面内容</strong>、<strong>驱动模块与桩模块</strong>；</li>
+<li><strong>组装测试 4 种方式</strong>、自顶向下/自底向上的步骤与优缺点、计划考虑问题、完成标志；</li>
+<li>确认测试任务、<strong>软件配置复审目的</strong>、阶段工作步骤、有效性测试与系统测试任务、<strong>测试种类及适用阶段</strong>；</li>
+<li>静态分析 5 种方法、静态错误分析内容、引用表用途、四类分析、<strong>人工测试 3 种</strong>；</li>
+<li>调试任务、组成、<strong>5 种方法</strong>、调试步骤、归纳法/演绎法步骤、确定错误与修改错误的原则；</li>
+<li>
+<p>静态分析工具组成与功能、测试数据生成工具分类、动态测试工具分类、覆盖监视/断言/符号执行/结果分析/模块测试台/集成测试环境。</p>
+</li>
+<li>
+<p><strong>高频简答预测</strong></p>
+</li>
+<li>什么是软件测试？软件测试的目标与应遵循的原则是什么？测试的对象与步骤有哪些？</li>
+<li>什么是黑盒测试与白盒测试？各适用于什么阶段？</li>
+<li>什么是穷举测试与选择测试？为什么穷举测试不可行？</li>
+<li>什么是等价类划分？设计黑盒测试用例的步骤是什么？</li>
+<li>边界值测试的目的是什么？选择测试用例的原则有哪些？</li>
+<li>白盒测试有哪些覆盖标准？各有什么特点？强弱顺序如何？</li>
+<li>单元测试的任务是什么？包括哪 5 个方面的内容？什么是驱动模块与桩模块？</li>
+<li>组装测试有哪 4 种组装方式？自顶向下与自底向上各有什么优缺点？</li>
+<li>确认测试的任务是什么？软件配置复审的目的是什么？包括哪些步骤？</li>
+<li>静态分析有哪些方法？人工测试有哪几种方式？</li>
+<li>程序调试的方法有哪些？归纳法与演绎法排错的步骤是什么？</li>
+<li>确定错误性质与位置的原则、修改错误的原则各有哪些？</li>
+<li>静态分析工具由哪些部分组成？测试覆盖监视程序、动态断言处理程序的工作过程是什么？</li>
+<li>
+<p>符号执行结果的两个用途是什么？模块测试台与集成测试环境的功能是什么？</p>
+</li>
+<li>
+<p><strong>简单应用（计算/设计题）预测</strong></p>
+</li>
+<li>给定输入约束，<strong>划分等价类</strong>并设计测试用例表（编号、输入、预期输出、覆盖的等价类）；</li>
+<li>给定一段带判定的程序，<strong>画出流程图、计算环域复杂度</strong>，并按<strong>语句/判定/条件/判定-条件/条件组合/路径覆盖</strong>设计用例；</li>
+<li>给定输入范围，用<strong>边界值分析法</strong>设计测试用例（min−、min、min+、nom、max−、max、max+）。</li>
+</ul>
+</main>
+<footer>13005 软件工程 · 由 Markdown 生成，浏览器直接打开即可阅读</footer>
+</body>
+</html>

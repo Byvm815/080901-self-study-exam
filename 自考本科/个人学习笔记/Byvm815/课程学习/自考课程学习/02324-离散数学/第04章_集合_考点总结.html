@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 4 章 集合 · 考点总结</title>
+<style>
+:root{--fg:#24292f;--muted:#57606a;--line:#d0d7de;--accent:#0969da;--code:#f6f8fa;--soft:#fafbfc}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--fg);
+  font:16px/1.78 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",sans-serif}
+main{max-width:980px;margin:0 auto;padding:26px 22px 72px}
+h1{font-size:1.75em;line-height:1.35;border-bottom:3px solid var(--accent);padding-bottom:.28em;margin:1.1em 0 .7em}
+h2{font-size:1.36em;line-height:1.4;border-bottom:1px solid var(--line);padding-bottom:.22em;margin:1.5em 0 .6em}
+h3{font-size:1.14em;margin:1.25em 0 .45em}
+h4{font-size:1.02em;margin:1.05em 0 .35em;color:var(--muted)}
+p{margin:.5em 0}
+ul,ol{margin:.45em 0;padding-left:1.5em}
+li{margin:.22em 0}
+li>ul,li>ol{margin:.15em 0}
+strong{color:#000}
+em{color:#000}
+code{background:var(--code);border-radius:4px;padding:.12em .34em;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:.92em}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;margin:.7em 0}
+pre code{background:none;padding:0;white-space:pre;font-size:.9em;line-height:1.5}
+table{border-collapse:collapse;width:100%;margin:.75em 0;font-size:.95em;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600}
+tbody tr:nth-child(even){background:var(--soft)}
+blockquote{margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:var(--code);color:var(--muted)}
+blockquote p{margin:.25em 0}
+hr{border:0;border-top:1px solid var(--line);margin:1.8em 0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.topnav{position:sticky;top:0;z-index:20;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+  padding:10px 22px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(180%) blur(6px);font-size:.9em}
+.topnav a{white-space:nowrap}
+.topnav .sep{color:var(--line)}
+.topnav .brand{font-weight:600;color:var(--fg);margin-right:6px}
+footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid var(--line);color:var(--muted);font-size:.86em}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:1em 0}
+.card{display:block;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--soft)}
+.card:hover{border-color:var(--accent)}
+.card b{display:block;margin-bottom:4px}
+.card span{color:var(--muted);font-size:.86em}
+.toc{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:1em 0}
+.toc ul{margin:.25em 0;padding-left:1.3em}
+.tip{border:1px dashed var(--accent);border-radius:10px;padding:10px 14px;background:#f6faff;margin:1em 0;font-size:.94em}
+@media (max-width:640px){main{padding:18px 14px 60px}h1{font-size:1.5em}}
+@media print{
+  body{font-size:11.5pt;line-height:1.6}
+  .topnav{display:none}
+  main{max-width:none;padding:0}
+  h1{page-break-before:always;border-bottom-width:2px}
+  body>main>h1:first-child,main>section:first-child>h1{page-break-before:avoid}
+  pre,table,blockquote,li{page-break-inside:avoid}
+  a{color:#000;text-decoration:none}
+  footer{display:none}
+}
+</style>
+</head>
+<body>
+<nav class="topnav"><span class="brand">02324 离散数学</span> <a href="index.html">目录</a> <span class="sep">|</span> <a href="第03章_谓词逻辑_考点总结.html">← 第 3 章 谓词逻辑 · 考点总结</a> <span class="sep">|</span> <a href="第05章_关系与函数_考点总结.html">第 5 章 关系与函数 · 考点总结 →</a></nav>
+<main>
+<h1 id="4">第 4 章 集合 · 考点总结</h1>
+<blockquote>
+<p>课程：02324 离散数学（080901 自考）<br>
+<strong>课程内容</strong>：4.1 集合的基本概念 ； 4.2 集合的运算 ； 4.3 有序对与笛卡儿积<br>
+<strong>考核层次</strong>：4.1 <strong>领会</strong> ； 4.2 <strong>简单应用</strong> ； 4.3 <strong>简单应用</strong><br>
+<strong>重点</strong>：集合的表示、集合的<strong>幂集</strong>及集合的运算、<strong>集合恒等式的证明</strong><br>
+<strong>难点</strong>：集合的运算及集合恒等式的证明</p>
+</blockquote>
+<hr>
+<h2 id="_1">一、本章知识地图</h2>
+<ul>
+<li><strong>4.1 基本概念</strong>：核心内容：集合与元素、三种表示法、子集/真子集/相等、空集与全集、<strong>幂集</strong>、有限集与无限集、<strong>可数集与不可数集及基数比较</strong>；层次：领会</li>
+<li><strong>4.2 集合的运算</strong>：核心内容：<strong>并、交、补、差</strong>（＋对称差）、运算性质、<strong>集合恒等式</strong>、<strong>恒等式的三种证明方法</strong>；层次：<strong>简单应用</strong></li>
+<li><strong>4.3 有序对与笛卡儿积</strong>：核心内容：<strong>有序对及其集合性定义</strong>、有序 n 元组、<strong>笛卡儿积的定义与性质</strong>；层次：<strong>简单应用</strong></li>
+</ul>
+<hr>
+<h2 id="41">二、4.1 集合的基本概念（领会）</h2>
+<h3 id="_2">（一）集合与元素</h3>
+<ul>
+<li><strong>1. 集合</strong>：把一些<strong>确定的、彼此不同的对象</strong>作为一个整体来考虑，这个整体就是集合；其中的对象称集合的<strong>元素</strong>。</li>
+<li><strong>元素与集合的关系</strong>：<strong>属于 ∈</strong> 或 <strong>不属于 ∉</strong>（二者必居其一）；</li>
+<li>
+<p>集合的三大特征：<strong>确定性</strong>（任一对象是否属于该集合是确定的）、<strong>互异性</strong>（元素彼此不同，重复书写不增加元素）、<strong>无序性</strong>（元素的排列顺序无关）。</p>
+</li>
+<li>
+<p><strong>2. 常用数集记号</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>记号</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>N</strong></td>
+<td>自然数集（有的教材含 0 【注意】）</td>
+</tr>
+<tr>
+<td><strong>Z</strong></td>
+<td>整数集</td>
+</tr>
+<tr>
+<td><strong>Q</strong></td>
+<td>有理数集</td>
+</tr>
+<tr>
+<td><strong>R</strong></td>
+<td>实数集</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>复数集</td>
+</tr>
+<tr>
+<td><strong>Z⁺（N⁺）</strong></td>
+<td>正整数集</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>3. 集合的三种表示法</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>表示法</th>
+<th>形式</th>
+<th>例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>列举法（枚举法）</strong></td>
+<td>把元素一一列出</td>
+<td>A = {a, b, c}；B = {1, 2, 3, …}</td>
+</tr>
+<tr>
+<td><strong>描述法（谓词法）</strong></td>
+<td>A = {x</td>
+<td>P(x)}</td>
+</tr>
+<tr>
+<td><strong>图示法（文氏图）</strong></td>
+<td>用封闭曲线表示集合与元素的关系</td>
+<td>用于直观说明（<strong>一般不作严格证明</strong>）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3">（二）集合间的关系</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>定义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>子集</strong></td>
+<td><strong>A ⊆ B ⟺ 对任意 x，x∈A → x∈B</strong></td>
+<td>空集是任何集合的子集：∅ ⊆ A</td>
+</tr>
+<tr>
+<td><strong>真子集</strong></td>
+<td><strong>A ⊂ B ⟺ A ⊆ B 且 A ≠ B</strong></td>
+<td>任何集合是自身的子集（A ⊆ A）</td>
+</tr>
+<tr>
+<td><strong>相等</strong></td>
+<td><strong>A = B ⟺ A ⊆ B 且 B ⊆ A</strong></td>
+<td><strong>证明集合相等的标准方法</strong></td>
+</tr>
+<tr>
+<td><strong>空集 ∅</strong></td>
+<td>不含任何元素的集合</td>
+<td>∅ ⊆ A 恒成立；∅ ∈ A 一般不成立；空集<strong>唯一</strong></td>
+</tr>
+<tr>
+<td><strong>全集 E（U）</strong></td>
+<td>所讨论对象的全体（相对概念）</td>
+<td>与讨论范围有关</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>区分"属于"与"包含"（高频易错）</strong></li>
+<li><strong>∈ / ∉</strong>：元素与集合之间的关系；</li>
+<li><strong>⊆ / ⊂</strong>：集合与集合之间的关系；</li>
+<li>例：∅ <strong>∈</strong> {∅} 成立（{∅} 有一个元素 ∅）；∅ <strong>⊆</strong> {∅} 也成立。</li>
+</ul>
+<h3 id="_4">（三）幂集</h3>
+<ul>
+<li><strong>幂集 P(A)</strong>：A 的<strong>所有子集</strong>构成的集合（也记作 2^A）。</li>
+<li>
+<p><strong>基数公式</strong>：若 A 是有限集，<strong>|P(A)| = 2^|A|</strong>。</p>
+</li>
+<li>
+<p><strong>例</strong>：A = {a, b} → <strong>P(A) = {∅, {a}, {b}, {a, b}}</strong>，|P(A)| = 2² = 4。</p>
+</li>
+<li><strong>例</strong>：A = {a, {b}} → P(A) = {∅, {a}, {{b}}, {a, {b}}}，|P(A)| = 4。</li>
+<li>
+<p><strong>例（易错）</strong>：<strong>P(∅) = {∅}</strong>（|P(∅)| = 1）；<strong>P({∅}) = {∅, {∅}}</strong>（|P({∅})| = 2）。</p>
+</li>
+<li>
+<p><strong>幂集的性质</strong>：P(A) ∩ P(B) = P(A∩B)；P(A) ∪ P(B) ⊆ P(A∪B)（<strong>不一定相等</strong>）。</p>
+</li>
+</ul>
+<h3 id="_5">（四）有限集、无限集、可数集与不可数集（领会）</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>有限集 / 无限集</strong></td>
+<td>元素个数有限 / 无限；有限集合 A 的**基数</td>
+</tr>
+<tr>
+<td><strong>可数集（可列集）</strong></td>
+<td>能与<strong>自然数集 N</strong> 建立<strong>一一对应</strong>的集合</td>
+</tr>
+<tr>
+<td><strong>不可数集</strong></td>
+<td>不能与 N 建立一一对应的无限集</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>基数比较（了解）</strong></li>
+<li><strong>|N| = |Z| = |Q| = ℵ₀</strong>（可数无限；整数集、有理数集都是<strong>可数集</strong>）；</li>
+<li><strong>|R| = ℵ &gt; ℵ₀</strong>（实数集是<strong>不可数集</strong>）；</li>
+<li><strong>康托尔定理</strong>：对任何集合 A，<strong>|P(A)| = 2^|A| &gt; |A|</strong>（幂集的基数严格大于原集合）；</li>
+<li>有限集的基数就是元素个数：|∅| = 0；|{a,b,c}| = 3。</li>
+</ul>
+<hr>
+<h2 id="42">三、4.2 集合的运算（简单应用，本章核心）</h2>
+<h3 id="_6">（一）五种基本运算</h3>
+<table>
+<thead>
+<tr>
+<th>运算</th>
+<th>定义</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>并</strong> A∪B</td>
+<td>{x</td>
+<td>x∈A <strong>∨</strong> x∈B}</td>
+</tr>
+<tr>
+<td><strong>交</strong> A∩B</td>
+<td>{x</td>
+<td>x∈A <strong>∧</strong> x∈B}</td>
+</tr>
+<tr>
+<td><strong>差（相对补）</strong> A−B</td>
+<td>{x</td>
+<td>x∈A <strong>∧</strong> x∉B}</td>
+</tr>
+<tr>
+<td><strong>补（绝对补）</strong> ~A（Ā）</td>
+<td><strong>E − A</strong> = {x</td>
+<td>x∈E ∧ x∉A}</td>
+</tr>
+<tr>
+<td><strong>对称差</strong> A⊕B 【注意】</td>
+<td>(A−B)∪(B−A) = <strong>(A∪B)−(A∩B)</strong></td>
+<td>属于且仅属于其中一个</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>关键转化</strong>：<strong>A − B = A∩~B</strong>（把差化为交与补，是证明恒等式的常用手段）。</li>
+<li><strong>互斥（不相交）</strong>：A∩B = ∅。</li>
+<li><strong>有限集基数（容斥原理，了解）</strong>：|A∪B| = |A| + |B| − |A∩B|；|A∪B∪C| = |A|+|B|+|C| − |A∩B| − |A∩C| − |B∩C| + |A∩B∩C|。</li>
+</ul>
+<h3 id="1">（二）运算律（与第 1 章命题定律一一对应，必背）</h3>
+<ul>
+<li><strong>幂等律</strong>：集合恒等式：A∪A = A；A∩A = A；对应命题定律：A∨A ⇔ A</li>
+<li><strong>交换律</strong>：集合恒等式：A∪B = B∪A；A∩B = B∩A；对应命题定律：A∨B ⇔ B∨A</li>
+<li><strong>结合律</strong>：集合恒等式：(A∪B)∪C = A∪(B∪C)；(A∩B)∩C = A∩(B∩C)；对应命题定律：结合律</li>
+<li><strong>分配律</strong>：集合恒等式：A∪(B∩C) = (A∪B)∩(A∪C)；A∩(B∪C) = (A∩B)∪(A∩C)；对应命题定律：分配律</li>
+<li><strong>德摩根律</strong>：集合恒等式：<strong>~(A∪B) = ~A∩~B</strong>；<strong>~(A∩B) = ~A∪~B</strong>；对应命题定律：¬(A∨B) ⇔ ¬A∧¬B</li>
+<li><strong>吸收律</strong>：集合恒等式：A∪(A∩B) = A；A∩(A∪B) = A；对应命题定律：吸收律</li>
+<li><strong>零律</strong>：集合恒等式：A∪E = E；A∩∅ = ∅；对应命题定律：A∨1 ⇔ 1；A∧0 ⇔ 0</li>
+<li><strong>同一律</strong>：集合恒等式：A∪∅ = A；A∩E = A；对应命题定律：A∨0 ⇔ A；A∧1 ⇔ A</li>
+<li><strong>排中律</strong>：集合恒等式：A∪~A = <strong>E</strong>；对应命题定律：A∨¬A ⇔ 1</li>
+<li><strong>矛盾律</strong>：集合恒等式：A∩~A = <strong>∅</strong>；对应命题定律：A∧¬A ⇔ 0</li>
+<li>
+<p><strong>双重否定律</strong>：集合恒等式：~~A = A；对应命题定律：¬¬A ⇔ A</p>
+</li>
+<li>
+<p><strong>差与补的常用恒等式（高频）</strong></p>
+</li>
+<li><strong>A − B = A∩~B</strong></li>
+<li>A − B = A − (A∩B)</li>
+<li><strong>(A − B) − C = A − (B∪C)</strong></li>
+<li><strong>A − (B∪C) = (A − B)∩(A − C)</strong></li>
+<li><strong>A − (B∩C) = (A − B)∪(A − C)</strong>（"差对并交的德摩根式"）</li>
+<li>(A∪B) − C = (A − C)∪(B − C)</li>
+<li>
+<p>A ⊆ B ⟺ A∩B = A ⟺ A∪B = B ⟺ A − B = ∅ ⟺ ~B ⊆ ~A（<strong>包含的五种等价刻画，常考</strong>）</p>
+</li>
+<li>
+<p><strong>对称差的性质（了解）</strong>：A⊕B = B⊕A；A⊕A = ∅；A⊕∅ = A；(A⊕B)⊕C = A⊕(B⊕C)。</p>
+</li>
+</ul>
+<h3 id="_7">（三）集合恒等式的三种证明方法（<strong>必考题型</strong>）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>思路</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① 命题演算法（元素法）</strong></td>
+<td>用"x∈左边 ⟺ … ⟺ x∈右边"逐步等值变形</td>
+<td><strong>最常用、最严格</strong>；也可分证 A⊆B 与 B⊆A</td>
+</tr>
+<tr>
+<td><strong>② 恒等式代入法（等值演算法）</strong></td>
+<td>用已知恒等式（分配律、德摩根、吸收律…）逐步变形</td>
+<td>类似第 1 章的等值演算，<strong>每步要写依据</strong></td>
+</tr>
+<tr>
+<td><strong>③ 文氏图法</strong></td>
+<td>画图比较</td>
+<td><strong>仅用于直观验证/说明，不能作为严格证明</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>【例 1；元素法】证明 A − (B∪C) = (A − B)∩(A − C)</strong><br>
+对任意 x：<br>
+x ∈ A − (B∪C)<br>
+⟺ x∈A ∧ x∉(B∪C)<br>
+⟺ x∈A ∧ ¬(x∈B ∨ x∈C)　（属于并集的定义）<br>
+⟺ x∈A ∧ (x∉B ∧ x∉C)　（德摩根）<br>
+⟺ (x∈A ∧ x∉B) ∧ (x∈A ∧ x∉C)　（交换、结合、幂等）<br>
+⟺ x ∈ (A − B) ∧ x ∈ (A − C)<br>
+⟺ x ∈ (A−B)∩(A−C)　⇒ <strong>两边相等</strong> ✓</p>
+</li>
+<li>
+<p><strong>【例 2；元素法】证明 (A − B) − C = A − (B∪C)</strong><br>
+x ∈ (A−B) − C ⟺ (x∈A ∧ x∉B) ∧ x∉C ⟺ x∈A ∧ (x∉B ∧ x∉C) ⟺ x∈A ∧ x∉(B∪C) ⟺ <strong>x ∈ A − (B∪C)</strong> ✓</p>
+</li>
+<li>
+<p><strong>【例 3；恒等式代入法】证明 A∪(A∩B) = A</strong>（吸收律）<br>
+A∪(A∩B) = (A∩E)∪(A∩B)（同一律）= A∩(E∪B)（分配律）= A∩E（零律）= <strong>A</strong>（同一律）✓</p>
+</li>
+<li>
+<p><strong>【例 4；分证互含】证明 (A−B)∪B = A∪B</strong><br>
+① 证左 ⊆ 右：若 x ∈ (A−B)∪B，则 x∈A−B 或 x∈B；前者给出 x∈A（⇒ x∈A∪B），后者给出 x∈A∪B → 左 ⊆ 右；<br>
+② 证右 ⊆ 左：若 x ∈ A∪B，则 x∈A 或 x∈B。若 x∈B，则 x∈左；若 x∉B，则 x∈A 且 x∉B ⇒ x∈A−B ⊆ 左 → 右 ⊆ 左；<br>
+∴ 两边相等 ✓</p>
+</li>
+<li>
+<p><strong>【例 5；用包含等价刻画】证明 A ⊆ B ⟺ A∩B = A</strong><br>
+若 A ⊆ B：对 x∈A∩B 有 x∈A（⇒ A∩B ⊆ A）；对 x∈A，由 A ⊆ B 得 x∈B，故 x∈A∩B（⇒ A ⊆ A∩B）→ 相等；<br>
+反之若 A∩B = A，则对 x∈A 有 x∈A∩B ⇒ x∈B，故 A ⊆ B ✓</p>
+</li>
+</ul>
+<hr>
+<h2 id="43">四、4.3 有序对与笛卡儿积（简单应用）</h2>
+<h3 id="n">（一）有序对与有序 n 元组</h3>
+<ul>
+<li><strong>1. 有序对（序偶）<x, y></strong>：由两个对象按<strong>确定的顺序</strong>构成的二元组。</li>
+<li>
+<p><strong>要点</strong>：<strong><x, y> ≠ <y, x></strong>（当 x ≠ y 时）——这与集合 {x, y} = {y, x} 完全不同。</p>
+</li>
+<li>
+<p><strong>2. 有序对的集合性定义（Kuratowski 定义）</strong></p>
+</li>
+<li><strong><x, y> = {{x}, {x, y}}</strong></li>
+<li>
+<p><strong>定理（唯一性）</strong>：<strong><x, y> = <u, v> ⟺ x = u 且 y = v</strong>。</p>
+</li>
+<li>
+<p><strong>3. 有序 n 元组 <x₁, x₂, …, xₙ></strong>：同理，<strong><x₁,…,xₙ> = <y₁,…,yₙ> ⟺ xᵢ = yᵢ（i = 1,…,n）</strong>。</p>
+</li>
+</ul>
+<h3 id="_8">（二）笛卡儿积（直积）</h3>
+<ul>
+<li><strong>定义</strong>：<strong>A × B = {<x, y> | x∈A ∧ y∈B}</strong></li>
+<li>
+<p><strong>特例</strong>：A × A 记作 A²（如 R² = R×R 表示平面上的点集）。</p>
+</li>
+<li>
+<p><strong>例</strong>：A = {1, 2}，B = {a, b} → <strong>A×B = {&lt;1,a&gt;, &lt;1,b&gt;, &lt;2,a&gt;, &lt;2,b&gt;}</strong>，|A×B| = 2×2 = <strong>4</strong>；<br>
+B×A = {<a,1>, <a,2>, <b,1>, <b,2>}，<strong>A×B ≠ B×A</strong> ✓</p>
+</li>
+</ul>
+<h3 id="_9">（三）笛卡儿积的性质（必背）</h3>
+<table>
+<thead>
+<tr>
+<th>性质</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>基数</strong></td>
+<td>有限集 **</td>
+</tr>
+<tr>
+<td><strong>零元</strong></td>
+<td><strong>A×∅ = ∅×A = ∅</strong></td>
+</tr>
+<tr>
+<td><strong>不满足交换律</strong></td>
+<td>一般 <strong>A×B ≠ B×A</strong>（除非 A = B 或其中一个是 ∅）</td>
+</tr>
+<tr>
+<td><strong>不满足结合律</strong></td>
+<td>一般 <strong>(A×B)×C ≠ A×(B×C)</strong></td>
+</tr>
+<tr>
+<td><strong>对并、交、差分配</strong></td>
+<td>A×(B∪C) = (A×B)∪(A×C)；A×(B∩C) = (A×B)∩(A×C)；A×(B−C) = (A×B)−(A×C)（<strong>右分配</strong>同理：(B∪C)×A = (B×A)∪(C×A)）</td>
+</tr>
+<tr>
+<td><strong>单调性</strong></td>
+<td>若 A ⊆ C 且 B ⊆ D，则 <strong>A×B ⊆ C×D</strong></td>
+</tr>
+<tr>
+<td><strong>非空时的等价</strong></td>
+<td>若 A, B, C, D <strong>均非空</strong>，则 <strong>A×B ⊆ C×D ⟺ A ⊆ C 且 B ⊆ D</strong> 【注意】</td>
+</tr>
+<tr>
+<td><strong>推广</strong></td>
+<td>A₁×A₂×…×Aₙ = {<x₁,…,xₙ></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>由 |P(A)| 求 |A|（常考）</strong>：|P(A)| = 2^|A| ⇒ |A| = log₂|P(A)|。例：|P(A)| = 64 ⇒ |A| = <strong>6</strong>。</li>
+</ul>
+<hr>
+<h2 id="_10">五、本章对比与易混点</h2>
+<table>
+<thead>
+<tr>
+<th>易混点</th>
+<th>正确理解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>∈ vs ⊆</strong></td>
+<td>∈ 是<strong>元素与集合</strong>的关系；⊆ 是<strong>集合与集合</strong>的关系</td>
+</tr>
+<tr>
+<td><strong>∅ vs {∅}</strong></td>
+<td>∅ <strong>不含</strong>任何元素（</td>
+</tr>
+<tr>
+<td>∅ 与包含</td>
+<td><strong>∅ ⊆ A 恒成立</strong>；但 <strong>∅ ∈ A 一般不成立</strong>（除非 A 中含 ∅ 这个元素）</td>
+</tr>
+<tr>
+<td><strong>P(∅) 是什么</strong></td>
+<td><strong>P(∅) = {∅}</strong>（不是 ∅！），</td>
+</tr>
+<tr>
+<td>集合相等怎么证</td>
+<td>必须证 <strong>A ⊆ B 且 B ⊆ A</strong>（或元素法双向等值变形）</td>
+</tr>
+<tr>
+<td>文氏图</td>
+<td><strong>只能辅助说明，不能作为严格证明</strong></td>
+</tr>
+<tr>
+<td><strong>差 vs 补</strong></td>
+<td>差 A−B 相对于 A（不需全集）；补 ~A 相对<strong>全集 E</strong></td>
+</tr>
+<tr>
+<td>差与交补</td>
+<td><strong>A − B = A∩~B</strong>（最常用的转化）</td>
+</tr>
+<tr>
+<td>德摩根律方向</td>
+<td>~(A∪B) = ~A∩~B；~(A∩B) = ~A∪~B（<strong>并变交、交变并</strong>）</td>
+</tr>
+<tr>
+<td><strong>有序对 vs 集合</strong></td>
+<td><x,y> <strong>有序</strong>（<x,y> ≠ <y,x>）；{x,y} <strong>无序</strong>（{x,y} = {y,x}）</td>
+</tr>
+<tr>
+<td>有序对的集合性定义</td>
+<td><strong><x,y> = {{x}, {x,y}}</strong>；<x,y> = <u,v> ⟺ x=u 且 y=v</td>
+</tr>
+<tr>
+<td><strong>A×B 交换/结合</strong></td>
+<td>一般 <strong>不可交换、不可结合</strong>；但对 ∪、∩、− 满足分配律</td>
+</tr>
+<tr>
+<td>A×B ⊆ C×D</td>
+<td><strong>A、B、C、D 均非空</strong>时才等价于 A⊆C 且 B⊆D</td>
+</tr>
+<tr>
+<td>可数集</td>
+<td><strong>N、Z、Q 都可数</strong>（</td>
+</tr>
+<tr>
+<td>幂集基数</td>
+<td>**</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="_11">六、必背清单 + 简答预测 + 计算模板</h2>
+<h3 id="_12">（一）必背清单</h3>
+<ul>
+<li>集合与元素（∈、∉）、集合三特征、常用数集记号、<strong>三种表示法</strong>；</li>
+<li><strong>子集、真子集、相等</strong>的定义；<strong>A = B ⟺ A ⊆ B 且 B ⊆ A</strong>；<strong>空集与全集</strong>（∅ ⊆ A）；</li>
+<li><strong>幂集 P(A)</strong> 与 <strong>|P(A)| = 2^|A|</strong>；P(∅) = {∅}；</li>
+<li><strong>可数集与不可数集</strong>、<strong>|N|=|Z|=|Q|=ℵ₀ &lt; |R|</strong>、<strong>|P(A)| &gt; |A|</strong>；</li>
+<li><strong>五种运算</strong>（并、交、差、补、对称差）的定义与"<strong>A−B = A∩~B</strong>"；</li>
+<li><strong>集合运算律表</strong>（幂等、交换、结合、分配、德摩根、吸收、零律、同一律、排中、矛盾、双重否定）；</li>
+<li><strong>差与补的常用恒等式</strong>（A−(B∪C) = (A−B)∩(A−C) 等）与<strong>包含的五种等价刻画</strong>；</li>
+<li><strong>集合恒等式的三种证明方法</strong>（元素法、恒等式代入法、文氏图法仅辅助）；</li>
+<li><strong>有序对 <x,y></strong>、<strong>集合性定义 <x,y> = {{x},{x,y}}</strong>、唯一性定理、有序 n 元组；</li>
+<li><strong>笛卡儿积 A×B</strong> 的定义、<strong>|A×B| = |A||B|</strong>、A×∅ = ∅、<strong>不交换不结合</strong>、对 ∪∩− 的分配律、单调性与非空时的等价刻画。</li>
+</ul>
+<h3 id="_13">（二）高频简答 / 判断题预测</h3>
+<ul>
+<li>什么是集合？集合的元素有哪些特征？集合有哪三种表示法？</li>
+<li>什么是子集、真子集？如何判断两个集合相等？</li>
+<li>空集与全集各是什么？∅ ⊆ A 与 ∅ ∈ A 是否都成立？</li>
+<li>什么是幂集？如何求？|P(A)| 与 |A| 有什么关系？P(∅) 是什么？</li>
+<li>什么是可数集与不可数集？N、Z、Q、R 中哪些可数？|P(A)| 与 |A| 谁大？</li>
+<li>写出集合的并、交、差、补的定义。差与补有何区别与联系？</li>
+<li>写出德摩根律、分配律、吸收律的集合形式。</li>
+<li>证明集合恒等式有哪些方法？各有什么优缺点？</li>
+<li>如何证明 A − (B∪C) = (A − B)∩(A − C)？</li>
+<li>"A ⊆ B"有哪些等价刻画？</li>
+<li>什么是有序对？它与集合 {x, y} 有何不同？有序对的集合性定义是什么？</li>
+<li>什么是笛卡儿积？它满足交换律和结合律吗？为什么？</li>
+<li>笛卡儿积对并、交、差满足什么运算律？|A×B| 如何计算？</li>
+<li>A×B ⊆ C×D 与 A⊆C 且 B⊆D 是否等价？需要什么条件？</li>
+</ul>
+<h3 id="_14">（三）计算 / 证明题模板</h3>
+<ul>
+<li><strong>求幂集</strong>：列出全部子集（注意 ∅ 与自身必在），个数核对 2^n；含嵌套元素时<strong>逐层区分</strong>。</li>
+<li><strong>判断关系</strong>：先判断是"元素∈集合"还是"集合⊆集合"，再逐项验证。</li>
+<li><strong>集合恒等式证明（元素法）</strong>：写"对任意 x，x∈左 ⟺ … ⟺ x∈右"，每步注明依据（定义、德摩根、分配律等）。</li>
+<li><strong>集合恒等式证明（代入法）</strong>：从复杂一侧出发，用恒等式逐步化简到另一侧，每步写依据。</li>
+<li><strong>证明包含</strong>：证 A ⊆ B 即证"x∈A ⇒ x∈B"；证明相等即<strong>双向包含</strong>。</li>
+<li><strong>笛卡儿积计算</strong>：逐个构造有序对 → 核对 |A×B| = |A|·|B|；讨论交换/结合/分配性质时<strong>举反例</strong>即可否定，<strong>用定义证明</strong>才能肯定。</li>
+<li><strong>由 |P(A)| 求 |A|</strong>：|A| = log₂|P(A)|。</li>
+</ul>
+</main>
+<footer>02324 离散数学 · 由 Markdown 生成，浏览器直接打开即可阅读</footer>
+</body>
+</html>
