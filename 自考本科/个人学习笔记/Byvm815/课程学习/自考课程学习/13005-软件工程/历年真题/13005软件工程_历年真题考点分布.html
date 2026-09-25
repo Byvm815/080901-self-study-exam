@@ -1,0 +1,1945 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>13005 软件工程 · 历年真题考点分布分析</title>
+<style>
+:root{--fg:#24292f;--muted:#57606a;--line:#d0d7de;--accent:#0969da;--code:#f6f8fa;--soft:#fafbfc}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--fg);
+  font:16px/1.78 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",sans-serif}
+main{max-width:980px;margin:0 auto;padding:26px 22px 72px}
+h1{font-size:1.75em;line-height:1.35;border-bottom:3px solid var(--accent);padding-bottom:.28em;margin:1.1em 0 .7em}
+h2{font-size:1.36em;line-height:1.4;border-bottom:1px solid var(--line);padding-bottom:.22em;margin:1.5em 0 .6em}
+h3{font-size:1.14em;margin:1.25em 0 .45em}
+h4{font-size:1.02em;margin:1.05em 0 .35em;color:var(--muted)}
+p{margin:.5em 0}
+ul,ol{margin:.45em 0;padding-left:1.5em}
+li{margin:.22em 0}
+li>ul,li>ol{margin:.15em 0}
+strong{color:#000}
+em{color:#000}
+code{background:var(--code);border-radius:4px;padding:.12em .34em;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:.92em}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;margin:.7em 0}
+pre code{background:none;padding:0;white-space:pre;font-size:.9em;line-height:1.5}
+table{border-collapse:collapse;width:100%;margin:.75em 0;font-size:.95em;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600}
+tbody tr:nth-child(even){background:var(--soft)}
+blockquote{margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:var(--code);color:var(--muted)}
+blockquote p{margin:.25em 0}
+hr{border:0;border-top:1px solid var(--line);margin:1.8em 0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.topnav{position:sticky;top:0;z-index:20;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+  padding:10px 22px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(180%) blur(6px);font-size:.9em}
+.topnav a{white-space:nowrap}
+.topnav .sep{color:var(--line)}
+.topnav .brand{font-weight:600;color:var(--fg);margin-right:6px}
+footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid var(--line);color:var(--muted);font-size:.86em}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:1em 0}
+.card{display:block;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--soft)}
+.card:hover{border-color:var(--accent)}
+.card b{display:block;margin-bottom:4px}
+.card span{color:var(--muted);font-size:.86em}
+.toc{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:1em 0}
+.toc ul{margin:.25em 0;padding-left:1.3em}
+.tip{border:1px dashed var(--accent);border-radius:10px;padding:10px 14px;background:#f6faff;margin:1em 0;font-size:.94em}
+@media (max-width:640px){main{padding:18px 14px 60px}h1{font-size:1.5em}}
+@media print{
+  body{font-size:11.5pt;line-height:1.6}
+  .topnav{display:none}
+  main{max-width:none;padding:0}
+  h1{page-break-before:always;border-bottom-width:2px}
+  body>main>h1:first-child,main>section:first-child>h1{page-break-before:avoid}
+  pre,table,blockquote,li{page-break-inside:avoid}
+  a{color:#000;text-decoration:none}
+  footer{display:none}
+}
+</style>
+</head>
+<body>
+<nav class="topnav"><span class="brand">13005 软件工程</span> <a href="index.html">目录</a></nav>
+<main>
+<h1 id="13005">13005 软件工程 · 历年真题考点分布分析</h1>
+<blockquote>
+<p>数据来源：本课程目录 <code>历年真题/13005软件工程/02333 软件工程，13005 软件工程/</code> 下 36 个 PDF 文件的全部文字。<br>
+抽取口径：36 个文件经文本抽取后，实际拆出 <strong>38 套试卷、1388 道题</strong>（其中 <code>13005 软件工程 2026年4月.pdf</code> 内含 3 套卷；<code>02333 软件工程 2012年10月.pdf</code> 原卷在 23 题处截断）。<br>
+年份跨度：2010 年 1 月 — 2026 年 4 月。<br>
+分类方法：逐题人工标注（28 个并行标注批次），先打 779 个原始考点标签，再按语义归并为 <strong>147 个规范考点</strong>；归章依据是<strong>本课程现行《13005 考试大纲》的 7 章结构</strong>（软件工程概述／结构化软件开发方法／面向对象的软件开发方法／移动应用的设计与测试／软件测试／软件维护／软件项目管理）。<br>
+统计代码：累计 1388 条逐题标注记录，<code>章 × 题型 × 年份</code> 三维交叉，见下文各表。</p>
+</blockquote>
+<hr>
+<h2 id="8">一、结论摘要（先看这 8 条）</h2>
+<ul>
+<li><strong>1. 题库横跨"两代考纲"，不是同一门课。</strong> 2010—2024 年的卷子考的是<strong>旧教材（王立福 2011 版，8 章：含"软件生存周期过程与管理"和"集成化能力成熟度模型 CMMI"）</strong>；2025 年 4 月【广东】、2026 年 4 月两套卷考的是<strong>现行大纲的内容（移动应用、敏捷、三层架构、名词解释题）</strong>。</li>
+<li><strong>2. 旧卷里有 164 题（11.8%）属于现行考纲不设的内容</strong>（CMMI 及成熟度等级 45+41+16 题、ISO/IEC 12207 过程分类 38 题、可行性研究、McCall 质量模型、软件工程标准层级、软件工具分类等）。这部分<strong>不必再背</strong>，但要知道"为什么它不考了"。</li>
+<li><strong>3. 现行考纲下真正的题仓在"结构化方法"（C2）和"面向对象方法"（C3）</strong>：C2 = 456 题（32.9%）、C3 = 312 题（22.5%），两章合计 <strong>55.4%</strong>。这两章是分数主体。</li>
+<li><strong>4. 单点最高频的现行考纲考点</strong>（跨 20 卷以上出现）：内聚类型判别、耦合类型与设计原则、需求规约的基本性质、详细设计工具与结构化程序设计、数据流图 DFD、模块结构图的深度宽度扇入扇出、需求的分类与基本性质、需求发现技术、用况图与用况建模、逻辑覆盖与测试覆盖强弱、等价类划分、单元测试、黑盒测试技术。</li>
+<li><strong>5. 五个"卷卷都有"的送分点</strong>：内聚类型判别（26 卷）、耦合类型判别（27 卷）、需求规约基本性质（19 卷）、DFD（29 卷）、详细设计工具（31 卷）。</li>
+<li><strong>6. 现行考纲里有三处"真题几乎空白区"</strong>：第 4 章移动应用（仅 4 题）、第 6 章软件维护（17 题）、第 7 章软件项目管理（18 题）。<strong>这三章没有真题可依赖，必须回到考纲＋笔记背</strong>，且第 4 章最容易出"识记型填空/名词解释"。</li>
+<li><strong>7. 2025 年起题型变了</strong>：新增<strong>名词解释题（5 题 × 4 分 = 20 分）</strong>，单选题从 15 题 30 分降为 <strong>10 题 20 分</strong>，填空 10 题 10 分。最新卷型＝单选 20 分＋填空 10 分＋名词解释 20 分＋简答 30 分＋应用 20 分。</li>
+<li><strong>8. 应用题的 7 个固定模板</strong>：DFD 图（顶层/0 层/1 层）、DFD→SC 图（变换型/事务型）、判定表与判定树、程序流程图与 N-S 图、白盒覆盖用例（语句/判定/条件/条件组合/路径）、等价类划分与边界值用例、用况图与时序图分析。<strong>几乎每年两道大题都从这 7 类里出。</strong></li>
+</ul>
+<hr>
+<h2 id="_1">二、真题库概况</h2>
+<h3 id="1">1. 卷目与题量清单（按考试时间排序）</h3>
+<table>
+<thead>
+<tr>
+<th>序</th>
+<th>卷名</th>
+<th>题量</th>
+<th>题型构成</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>02333 软件工程 2010年1月</td>
+<td>41</td>
+<td>单选20＋填空10＋简答9＋应用2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>02333 软件工程 2010年10月</td>
+<td>41</td>
+<td>单选20＋填空10＋简答9＋应用2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>02333 软件工程 2011年1月</td>
+<td>41</td>
+<td>单选20＋填空10＋简答9＋应用2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>02333 软件工程 2011年10月</td>
+<td>38</td>
+<td>单选15＋填空15＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>02333 软件工程 2012年1月</td>
+<td>38</td>
+<td>单选15＋填空15＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>02333 软件工程 2012年10月</td>
+<td>23</td>
+<td>单选15＋简答6＋应用2（<strong>原卷截断，无参考答案</strong>）</td>
+</tr>
+<tr>
+<td>7</td>
+<td>02333 软件工程 2013年1月</td>
+<td>38</td>
+<td>单选15＋填空15＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>8</td>
+<td>02333 软件工程 2013年10月</td>
+<td>38</td>
+<td>单选15＋填空15＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>9</td>
+<td>02333 软件工程 2014年4月</td>
+<td>33</td>
+<td>单选15＋填空10＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>10</td>
+<td>02333 软件工程 2014年10月</td>
+<td>33</td>
+<td>单选15＋填空10＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>11</td>
+<td>02333 软件工程 2015年4月</td>
+<td>31</td>
+<td>单选15＋填空10＋简答6</td>
+</tr>
+<tr>
+<td>12</td>
+<td>02333 软件工程 2015年10月</td>
+<td>37</td>
+<td>单选15＋填空16＋简答6</td>
+</tr>
+<tr>
+<td>13</td>
+<td>02333 软件工程 2016年4月</td>
+<td>37</td>
+<td>单选15＋填空16＋简答6</td>
+</tr>
+<tr>
+<td>14</td>
+<td>02333 软件工程 2016年10月</td>
+<td>39</td>
+<td>单选15＋填空16＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>15</td>
+<td>02333 软件工程 2017年4月</td>
+<td>39</td>
+<td>单选15＋填空16＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>16</td>
+<td>02333 软件工程 2017年10月</td>
+<td>37</td>
+<td>单选15＋填空16＋简答6</td>
+</tr>
+<tr>
+<td>17</td>
+<td>02333 软件工程 2018年4月</td>
+<td>39</td>
+<td>单选15＋填空16＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>18</td>
+<td>02333 软件工程 2018年10月</td>
+<td>39</td>
+<td>单选15＋填空16＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>19</td>
+<td>02333 软件工程 2019年4月</td>
+<td>38</td>
+<td>单选15＋填空15＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>20</td>
+<td>02333 软件工程 2019年10月</td>
+<td>38</td>
+<td>单选15＋填空15＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>21</td>
+<td>02333 软件工程 2020年10月</td>
+<td>38</td>
+<td>单选15＋填空15＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>22</td>
+<td>02333 软件工程 2021年4月</td>
+<td>38</td>
+<td>单选15＋填空15＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>23</td>
+<td>02333 软件工程 2021年10月</td>
+<td>38</td>
+<td>单选15＋填空15＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>24</td>
+<td>02333 软件工程 2022年4月</td>
+<td>38</td>
+<td>单选15＋填空15＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>25</td>
+<td>02333 软件工程 2022年10月</td>
+<td>38</td>
+<td>单选15＋填空15＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>26</td>
+<td>02333 软件工程 2023年4月</td>
+<td>38</td>
+<td>单选15＋填空15＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>27</td>
+<td>02333 软件工程 2023年10月</td>
+<td>38</td>
+<td>单选15＋填空15＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>28</td>
+<td>02333 软件工程 2024年4月</td>
+<td>38</td>
+<td>单选15＋填空15＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>29</td>
+<td>02333 软件工程 2024年4月【广东】</td>
+<td>38</td>
+<td>单选15＋填空15＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>30</td>
+<td>02333 软件工程 2024年10月</td>
+<td>33</td>
+<td>单选15＋填空10＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>31</td>
+<td>02333 软件工程 2024年10月【广东】</td>
+<td>38</td>
+<td>单选15＋填空15＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>32</td>
+<td>02333 软件工程 2025年4月【13005】</td>
+<td>33</td>
+<td>单选15＋填空10＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>33</td>
+<td>02333 软件工程 2025年4月【广东】</td>
+<td>33</td>
+<td><strong>单选10＋填空10＋名词解释5＋简答6＋应用2</strong></td>
+</tr>
+<tr>
+<td>34</td>
+<td>02333 软件工程 2025年10月【广东】</td>
+<td>38</td>
+<td>单选15＋填空15＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>35</td>
+<td>13005 软件工程 2026年4月（套1）</td>
+<td>38</td>
+<td>单选15＋填空15＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>36</td>
+<td>13005 软件工程 2026年4月（套2）</td>
+<td>38</td>
+<td>单选15＋填空15＋简答6＋应用2</td>
+</tr>
+<tr>
+<td>37</td>
+<td>13005 软件工程 2026年4月（套3）</td>
+<td>24</td>
+<td>单选15＋填空9（<strong>截断，无大题</strong>）</td>
+</tr>
+<tr>
+<td>38</td>
+<td>2026年4月自考02333软件工程试题及答案</td>
+<td>33</td>
+<td><strong>单选10＋填空10＋名词解释5＋简答6＋应用2</strong></td>
+</tr>
+<tr>
+<td>—</td>
+<td>合计</td>
+<td><strong>1388</strong></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2">2. 两代考纲的判定依据</h3>
+<ul>
+<li><strong>旧考纲卷（34 套）</strong>：题干中稳定出现 <code>CMMI</code>、<code>能力等级/成熟度等级</code>、<code>ISO/IEC 12207</code>、<code>RUP 四层结构</code>、<code>可行性研究</code>、<code>McCall 模型</code> 等关键词，全库 <code>CMMI</code> 命中率极高。</li>
+<li><strong>现行考纲卷（2 套：2025年4月【广东】、2026年4月自考02333）</strong>：出现 <code>移动应用</code>、<code>结对编程</code>、<code>三层架构</code>、<code>信息隐藏</code>、<code>WebApp</code>、<code>名词解释题</code>，且<strong>完全不出现 CMMI</strong>。</li>
+<li><strong>重要提醒</strong>：卷名里的课程代码（02333 / 13005）<strong>不足以判断考纲版本</strong>。例如 <code>13005 软件工程 2026年4月.pdf</code> 内含的 3 套卷全部是旧考纲内容；而 <code>02333 软件工程 2025年4月【广东】.pdf</code> 反而是现行考纲内容。判断一律看题干，不看文件名。</li>
+</ul>
+<hr>
+<h2 id="_2">三、题型与分值结构演变</h2>
+<h3 id="1-1388">1. 全库题型分布（1388 题）</h3>
+<table>
+<thead>
+<tr>
+<th>题型</th>
+<th>题量</th>
+<th>占比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单选</td>
+<td>575</td>
+<td>41.4%</td>
+</tr>
+<tr>
+<td>填空</td>
+<td>506</td>
+<td>36.5%</td>
+</tr>
+<tr>
+<td>简答（含名词解释）</td>
+<td>241</td>
+<td>17.4%</td>
+</tr>
+<tr>
+<td>应用（画图/设计用例）</td>
+<td>66</td>
+<td>4.8%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2_1">2. 分值结构对照（按最新卷型）</h3>
+<table>
+<thead>
+<tr>
+<th>题型</th>
+<th>最新卷型（2025年4月起）</th>
+<th>旧卷型（2019—2024）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单选</td>
+<td>10 题 × 2 分 = <strong>20 分</strong></td>
+<td>15 题 × 2 分 = 30 分</td>
+</tr>
+<tr>
+<td>填空</td>
+<td>10 题 × 1 分 = <strong>10 分</strong></td>
+<td>15 题 × 1 分 = 15 分</td>
+</tr>
+<tr>
+<td>名词解释</td>
+<td>5 题 × 4 分 = <strong>20 分</strong></td>
+<td>无</td>
+</tr>
+<tr>
+<td>简答</td>
+<td>6 题 × 5 分 = <strong>30 分</strong></td>
+<td>6 题 × 5 分 = 30 分</td>
+</tr>
+<tr>
+<td>应用</td>
+<td>2 题 × 10 分 = <strong>20 分</strong></td>
+<td>2 题 × 10 分 = 20 分</td>
+</tr>
+<tr>
+<td>合计</td>
+<td>100 分 / 150 分钟</td>
+<td>100 分 / 150 分钟</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>判断题、多选题在全部 38 套卷中一次都没出现</strong>，不必准备。</li>
+<li><strong>名词解释是新增题型，只有 2 套卷有样题</strong>（共 10 题），是最容易"押中"的部分，本课程《真题考点简记》已专列 30 条备选名词。</li>
+</ul>
+<hr>
+<h2 id="7">四、考点总体分布（按现行考纲 7 章）</h2>
+<h3 id="1_1">1. 全库章分布</h3>
+<table>
+<thead>
+<tr>
+<th>章</th>
+<th>章名</th>
+<th>题量</th>
+<th>占比</th>
+<th>真题是否存在空白</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1</td>
+<td>第1章 软件工程概述</td>
+<td>207</td>
+<td>14.9%</td>
+<td>无</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>第2章 结构化软件开发方法</td>
+<td>456</td>
+<td>32.9%</td>
+<td>无</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>第3章 面向对象的软件开发方法</td>
+<td>312</td>
+<td>22.5%</td>
+<td>无</td>
+</tr>
+<tr>
+<td>C4</td>
+<td>第4章 移动应用的设计与测试</td>
+<td>4</td>
+<td>0.3%</td>
+<td><strong>严重空白</strong></td>
+</tr>
+<tr>
+<td>C5</td>
+<td>第5章 软件测试</td>
+<td>210</td>
+<td>15.1%</td>
+<td>无</td>
+</tr>
+<tr>
+<td>C6</td>
+<td>第6章 软件维护</td>
+<td>17</td>
+<td>1.2%</td>
+<td><strong>基本空白</strong></td>
+</tr>
+<tr>
+<td>C7</td>
+<td>第7章 软件项目管理</td>
+<td>18</td>
+<td>1.3%</td>
+<td><strong>基本空白</strong></td>
+</tr>
+<tr>
+<td>C0</td>
+<td>旧考纲专有（现行不考）</td>
+<td>164</td>
+<td>11.8%</td>
+<td>应剔除</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>剔除 C0 后的有效分布</strong>（1224 题，这才是复习权重）：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>章</th>
+<th>题量</th>
+<th>有效占比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C2 结构化方法</td>
+<td>456</td>
+<td>37.3%</td>
+</tr>
+<tr>
+<td>C3 面向对象方法</td>
+<td>312</td>
+<td>25.5%</td>
+</tr>
+<tr>
+<td>C1 概述</td>
+<td>207</td>
+<td>16.9%</td>
+</tr>
+<tr>
+<td>C5 软件测试</td>
+<td>210</td>
+<td>17.2%</td>
+</tr>
+<tr>
+<td>C7 项目管理</td>
+<td>18</td>
+<td>1.5%</td>
+</tr>
+<tr>
+<td>C6 软件维护</td>
+<td>17</td>
+<td>1.4%</td>
+</tr>
+<tr>
+<td>C4 移动应用</td>
+<td>4</td>
+<td>0.3%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2_2">2. 逐年 × 章分布（题量）</h3>
+<table>
+<thead>
+<tr>
+<th>年份</th>
+<th>C0</th>
+<th>C1</th>
+<th>C2</th>
+<th>C3</th>
+<th>C4</th>
+<th>C5</th>
+<th>C6</th>
+<th>C7</th>
+<th>合计</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2010</td>
+<td>13</td>
+<td>12</td>
+<td>32</td>
+<td>8</td>
+<td>0</td>
+<td>8</td>
+<td>7</td>
+<td>2</td>
+<td>82</td>
+</tr>
+<tr>
+<td>2011</td>
+<td>6</td>
+<td>11</td>
+<td>26</td>
+<td>15</td>
+<td>0</td>
+<td>13</td>
+<td>5</td>
+<td>3</td>
+<td>79</td>
+</tr>
+<tr>
+<td>2012</td>
+<td>6</td>
+<td>9</td>
+<td>19</td>
+<td>16</td>
+<td>0</td>
+<td>11</td>
+<td>0</td>
+<td>0</td>
+<td>61</td>
+</tr>
+<tr>
+<td>2013</td>
+<td>8</td>
+<td>13</td>
+<td>25</td>
+<td>16</td>
+<td>0</td>
+<td>13</td>
+<td>0</td>
+<td>1</td>
+<td>76</td>
+</tr>
+<tr>
+<td>2014</td>
+<td>9</td>
+<td>14</td>
+<td>25</td>
+<td>11</td>
+<td>0</td>
+<td>7</td>
+<td>0</td>
+<td>0</td>
+<td>66</td>
+</tr>
+<tr>
+<td>2015</td>
+<td>9</td>
+<td>11</td>
+<td>26</td>
+<td>11</td>
+<td>0</td>
+<td>10</td>
+<td>0</td>
+<td>1</td>
+<td>68</td>
+</tr>
+<tr>
+<td>2016</td>
+<td>11</td>
+<td>11</td>
+<td>26</td>
+<td>14</td>
+<td>0</td>
+<td>12</td>
+<td>0</td>
+<td>2</td>
+<td>76</td>
+</tr>
+<tr>
+<td>2017</td>
+<td>12</td>
+<td>10</td>
+<td>27</td>
+<td>12</td>
+<td>0</td>
+<td>13</td>
+<td>0</td>
+<td>2</td>
+<td>76</td>
+</tr>
+<tr>
+<td>2018</td>
+<td>11</td>
+<td>11</td>
+<td>27</td>
+<td>13</td>
+<td>0</td>
+<td>14</td>
+<td>0</td>
+<td>2</td>
+<td>78</td>
+</tr>
+<tr>
+<td>2019</td>
+<td>11</td>
+<td>12</td>
+<td>24</td>
+<td>18</td>
+<td>0</td>
+<td>11</td>
+<td>0</td>
+<td>0</td>
+<td>76</td>
+</tr>
+<tr>
+<td>2020</td>
+<td>6</td>
+<td>4</td>
+<td>10</td>
+<td>14</td>
+<td>0</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>38</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>7</td>
+<td>10</td>
+<td>22</td>
+<td>21</td>
+<td>0</td>
+<td>15</td>
+<td>0</td>
+<td>1</td>
+<td>76</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>12</td>
+<td>7</td>
+<td>20</td>
+<td>24</td>
+<td>0</td>
+<td>12</td>
+<td>0</td>
+<td>1</td>
+<td>76</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>11</td>
+<td>15</td>
+<td>22</td>
+<td>16</td>
+<td>0</td>
+<td>12</td>
+<td>0</td>
+<td>0</td>
+<td>76</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>15</td>
+<td>21</td>
+<td>49</td>
+<td>40</td>
+<td>0</td>
+<td>21</td>
+<td>0</td>
+<td>1</td>
+<td>147</td>
+</tr>
+<tr>
+<td>2025</td>
+<td>4</td>
+<td>15</td>
+<td>32</td>
+<td>35</td>
+<td>2</td>
+<td>14</td>
+<td>1</td>
+<td>1</td>
+<td>104</td>
+</tr>
+<tr>
+<td>2026</td>
+<td>13</td>
+<td>21</td>
+<td>44</td>
+<td>28</td>
+<td>2</td>
+<td>20</td>
+<td>4</td>
+<td>1</td>
+<td>133</td>
+</tr>
+</tbody>
+</table>
+<p><strong>读表要点</strong></p>
+<ul>
+<li><strong>C2 常年占 30%～37%</strong>，是唯一"每年都最多"的章。</li>
+<li><strong>C3 比重逐年上升</strong>：2010—2015 年约 8～16 题，2019 年后稳定 16～24 题，2024 年 40 题。<strong>面向对象是本课程权重上升最快的板块</strong>。</li>
+<li><strong>C5 稳定在 10～20 题</strong>，其中约 1/3 是应用题（用例设计、覆盖标准）。</li>
+<li><strong>C0（旧考纲专有）每年恒定 6～15 题</strong>，说明旧卷结构里 CMMI＋12207 是固定"送分块"；这部分在新考纲里被"移动应用＋敏捷"替换。</li>
+<li><strong>C4/C6/C7 直到 2025—2026 才出现题</strong>，印证现行考纲是 2024 年前后才启用的。</li>
+</ul>
+<hr>
+<h2 id="top-60">五、高频考点排行榜（全库 TOP 60）</h2>
+<blockquote>
+<p>记法：<code>卷数/次数</code>。<code>卷数</code> = 出现在多少套不同试卷中（衡量稳定性）；<code>次数</code> = 总出现题数（衡量题量密度）。题型缩写：选＝单选，填＝填空，简＝简答/名词解释，应＝应用。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>排名</th>
+<th>章</th>
+<th>考点</th>
+<th>卷数/次数</th>
+<th>题型分布</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>C0</td>
+<td>CMMI 能力等级与成熟度等级</td>
+<td>32卷/45次</td>
+<td>选29＋填13＋简3</td>
+</tr>
+<tr>
+<td>2</td>
+<td>C2</td>
+<td>详细设计工具与结构化程序设计</td>
+<td>31卷/50次</td>
+<td>填23＋选15＋应6＋简6</td>
+</tr>
+<tr>
+<td>3</td>
+<td>C2</td>
+<td>数据流图（DFD）符号·分层与绘制</td>
+<td>29卷/49次</td>
+<td>填19＋选16＋应12＋简2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>C2</td>
+<td>模块结构图的深度·宽度·扇入扇出·作用域</td>
+<td>29卷/42次</td>
+<td>选19＋填13＋应6＋简4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>C2</td>
+<td>耦合类型与设计原则</td>
+<td>27卷/30次</td>
+<td>选16＋简7＋填7</td>
+</tr>
+<tr>
+<td>6</td>
+<td>C2</td>
+<td>内聚类型与设计原则</td>
+<td>26卷/34次</td>
+<td>选21＋填12＋简1</td>
+</tr>
+<tr>
+<td>7</td>
+<td>C0</td>
+<td>CMMI 过程域、目标与最佳实践组织</td>
+<td>25卷/41次</td>
+<td>填24＋选12＋简5</td>
+</tr>
+<tr>
+<td>8</td>
+<td>C2</td>
+<td>需求的分类与基本性质</td>
+<td>25卷/36次</td>
+<td>选25＋简6＋填5</td>
+</tr>
+<tr>
+<td>9</td>
+<td>C0</td>
+<td>ISO/IEC 12207 生存周期过程分类</td>
+<td>28卷/38次</td>
+<td>填18＋选20</td>
+</tr>
+<tr>
+<td>10</td>
+<td>C2</td>
+<td>需求发现技术（交谈/观察/自悟/提炼）</td>
+<td>24卷/26次</td>
+<td>选13＋填9＋简4</td>
+</tr>
+<tr>
+<td>11</td>
+<td>C3</td>
+<td>用况图与用况建模</td>
+<td>23卷/34次</td>
+<td>简10＋选9＋填8＋应7</td>
+</tr>
+<tr>
+<td>12</td>
+<td>C1</td>
+<td>瀑布模型</td>
+<td>23卷/24次</td>
+<td>选10＋简7＋填7</td>
+</tr>
+<tr>
+<td>13</td>
+<td>C5</td>
+<td>单元测试（内容·依据·驱动桩）</td>
+<td>22卷/23次</td>
+<td>选14＋填8＋简1</td>
+</tr>
+<tr>
+<td>14</td>
+<td>C3</td>
+<td>UML 的定义与图形工具分类</td>
+<td>21卷/26次</td>
+<td>选11＋填10＋简5</td>
+</tr>
+<tr>
+<td>15</td>
+<td>C1</td>
+<td>概念模型与软件模型（模型分类）</td>
+<td>21卷/25次</td>
+<td>选19＋填4＋简2</td>
+</tr>
+<tr>
+<td>16</td>
+<td>C5</td>
+<td>逻辑覆盖与测试覆盖强弱</td>
+<td>20卷/21次</td>
+<td>应11＋选8＋填1＋简1</td>
+</tr>
+<tr>
+<td>17</td>
+<td>C5</td>
+<td>黑盒测试技术（分类·事务流）</td>
+<td>20卷/20次</td>
+<td>选9＋填8＋简3</td>
+</tr>
+<tr>
+<td>18</td>
+<td>C3</td>
+<td>RUP 的工作流与四层结构</td>
+<td>19卷/24次</td>
+<td>选13＋填11</td>
+</tr>
+<tr>
+<td>19</td>
+<td>C1</td>
+<td>增量模型</td>
+<td>19卷/22次</td>
+<td>简9＋选7＋填6</td>
+</tr>
+<tr>
+<td>20</td>
+<td>C3</td>
+<td>统一过程模型（RUP）概述</td>
+<td>19卷/20次</td>
+<td>填12＋选5＋简3</td>
+</tr>
+<tr>
+<td>21</td>
+<td>C1</td>
+<td>螺旋模型</td>
+<td>19卷/19次</td>
+<td>选12＋简4＋填3</td>
+</tr>
+<tr>
+<td>22</td>
+<td>C2</td>
+<td>需求规约的基本性质</td>
+<td>19卷/19次</td>
+<td>简7＋填6＋选6</td>
+</tr>
+<tr>
+<td>23</td>
+<td>C1</td>
+<td>软件危机（含义·表现·成因）</td>
+<td>18卷/19次</td>
+<td>选8＋简7＋填4</td>
+</tr>
+<tr>
+<td>24</td>
+<td>C5</td>
+<td>等价类划分</td>
+<td>18卷/19次</td>
+<td>选9＋应8＋简1＋填1</td>
+</tr>
+<tr>
+<td>25</td>
+<td>C1</td>
+<td>软件工程的定义、研究领域与发展</td>
+<td>18卷/19次</td>
+<td>填9＋简5＋选5</td>
+</tr>
+<tr>
+<td>26</td>
+<td>C1</td>
+<td>软件开发的本质与基本途径</td>
+<td>17卷/23次</td>
+<td>填12＋简8＋选3</td>
+</tr>
+<tr>
+<td>27</td>
+<td>C2</td>
+<td>加工小说明与加工的描述工具</td>
+<td>16卷/17次</td>
+<td>选9＋填8</td>
+</tr>
+<tr>
+<td>28</td>
+<td>C0</td>
+<td>CMMI 的三个源模型与集成思想</td>
+<td>16卷/16次</td>
+<td>填16</td>
+</tr>
+<tr>
+<td>29</td>
+<td>C2</td>
+<td>模块、模块化与模块独立性</td>
+<td>16卷/20次</td>
+<td>填11＋简6＋选3</td>
+</tr>
+<tr>
+<td>30</td>
+<td>C2</td>
+<td>总体（概要）设计的任务与步骤</td>
+<td>15卷/18次</td>
+<td>填7＋简7＋选4</td>
+</tr>
+<tr>
+<td>31</td>
+<td>C1</td>
+<td>软件过程与生存周期阶段</td>
+<td>15卷/16次</td>
+<td>简8＋选5＋填3</td>
+</tr>
+<tr>
+<td>32</td>
+<td>C3</td>
+<td>类图与类的建模</td>
+<td>14卷/19次</td>
+<td>选14＋填3＋简2</td>
+</tr>
+<tr>
+<td>33</td>
+<td>C3</td>
+<td>状态图与状态建模</td>
+<td>14卷/16次</td>
+<td>选6＋填5＋简4＋应1</td>
+</tr>
+<tr>
+<td>34</td>
+<td>C3</td>
+<td>组合·聚合与整体-部分关系</td>
+<td>14卷/15次</td>
+<td>选7＋填6＋应1＋简1</td>
+</tr>
+<tr>
+<td>35</td>
+<td>C3</td>
+<td>RUP 的四个开发阶段</td>
+<td>13卷/17次</td>
+<td>选10＋填6＋简1</td>
+</tr>
+<tr>
+<td>36</td>
+<td>C3</td>
+<td>类与对象的概念、构成与可见性</td>
+<td>13卷/15次</td>
+<td>填7＋选5＋简3</td>
+</tr>
+<tr>
+<td>37</td>
+<td>C5</td>
+<td>软件测试的目的、原则与对象</td>
+<td>11卷/13次</td>
+<td>填7＋选6</td>
+</tr>
+<tr>
+<td>38</td>
+<td>C5</td>
+<td>确认测试与有效性测试</td>
+<td>13卷/13次</td>
+<td>选8＋填4＋简1</td>
+</tr>
+<tr>
+<td>39</td>
+<td>C1</td>
+<td>软件的定义与特点</td>
+<td>13卷/13次</td>
+<td>填10＋简2＋选1</td>
+</tr>
+<tr>
+<td>40</td>
+<td>C2</td>
+<td>需求规约的定义与作用</td>
+<td>12卷/14次</td>
+<td>选6＋简5＋填3</td>
+</tr>
+<tr>
+<td>41</td>
+<td>C2</td>
+<td>结构化分析方法与建模步骤</td>
+<td>12卷/13次</td>
+<td>填7＋简4＋选2</td>
+</tr>
+<tr>
+<td>42</td>
+<td>C2</td>
+<td>数据字典的符号与条目</td>
+<td>12卷/13次</td>
+<td>填8＋选5</td>
+</tr>
+<tr>
+<td>43</td>
+<td>C5</td>
+<td>白盒测试技术</td>
+<td>12卷/13次</td>
+<td>选6＋简4＋填2＋应1</td>
+</tr>
+<tr>
+<td>44</td>
+<td>C3</td>
+<td>分析类（边界类·实体类·控制类）</td>
+<td>12卷/13次</td>
+<td>选11＋填2</td>
+</tr>
+<tr>
+<td>45</td>
+<td>C2</td>
+<td>需求规约的表达风格与文档结构</td>
+<td>12卷/12次</td>
+<td>填7＋选4＋简1</td>
+</tr>
+<tr>
+<td>46</td>
+<td>C5</td>
+<td>组装（集成）测试</td>
+<td>11卷/12次</td>
+<td>填6＋选5＋简1</td>
+</tr>
+<tr>
+<td>47</td>
+<td>C3</td>
+<td>面向对象需求分析（OOA）与建模步骤</td>
+<td>11卷/12次</td>
+<td>简4＋选4＋填3＋应1</td>
+</tr>
+<tr>
+<td>48</td>
+<td>C3</td>
+<td>泛化关系（含义·约束·判别）</td>
+<td>11卷/12次</td>
+<td>填5＋选4＋简3</td>
+</tr>
+<tr>
+<td>49</td>
+<td>C2</td>
+<td>变换型与事务型分析（SC 图设计）</td>
+<td>10卷/11次</td>
+<td>选4＋填3＋简3＋应1</td>
+</tr>
+<tr>
+<td>50</td>
+<td>C3</td>
+<td>顺序图（时序图）与协作</td>
+<td>10卷/11次</td>
+<td>填5＋选3＋应2＋简1</td>
+</tr>
+<tr>
+<td>51</td>
+<td>C5</td>
+<td>静态测试与静态分析</td>
+<td>10卷/10次</td>
+<td>选5＋填4＋简1</td>
+</tr>
+<tr>
+<td>52</td>
+<td>C2</td>
+<td>单个需求的基本性质</td>
+<td>10卷/10次</td>
+<td>填6＋简2＋选2</td>
+</tr>
+<tr>
+<td>53</td>
+<td>C3</td>
+<td>关联、多重性与限定符</td>
+<td>10卷/10次</td>
+<td>填6＋选4</td>
+</tr>
+<tr>
+<td>54</td>
+<td>C5</td>
+<td>软件测试的步骤与过程</td>
+<td>10卷/12次</td>
+<td>填10＋选1＋简1</td>
+</tr>
+<tr>
+<td>55</td>
+<td>C7</td>
+<td>软件项目管理的内容与计划</td>
+<td>9卷/9次</td>
+<td>填8＋简1</td>
+</tr>
+<tr>
+<td>56</td>
+<td>C1</td>
+<td>喷泉模型</td>
+<td>9卷/9次</td>
+<td>选7＋简1＋填1</td>
+</tr>
+<tr>
+<td>57</td>
+<td>C5</td>
+<td>调试（排错）技术</td>
+<td>8卷/8次</td>
+<td>选5＋简2＋填1</td>
+</tr>
+<tr>
+<td>58</td>
+<td>C3</td>
+<td>依赖关系</td>
+<td>8卷/8次</td>
+<td>选4＋填4</td>
+</tr>
+<tr>
+<td>59</td>
+<td>C2</td>
+<td>需求验证与需求工作的挑战</td>
+<td>8卷/8次</td>
+<td>简3＋填3＋选2</td>
+</tr>
+<tr>
+<td>60</td>
+<td>C3</td>
+<td>RUP 的定义与特点（含 RUP 与 UML 关系）</td>
+<td>8卷/8次</td>
+<td>简7＋填1</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="_3">六、分章考点热度表</h2>
+<h3 id="1-c1207">第 1 章 软件工程概述（C1，207 题）</h3>
+<table>
+<thead>
+<tr>
+<th>考点</th>
+<th>卷数/次数</th>
+<th>主考题型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>瀑布模型</td>
+<td>23卷/24次</td>
+<td>选·简·填</td>
+</tr>
+<tr>
+<td>概念模型与软件模型（模型分类）</td>
+<td>21卷/25次</td>
+<td>选</td>
+</tr>
+<tr>
+<td>增量模型</td>
+<td>19卷/22次</td>
+<td>简</td>
+</tr>
+<tr>
+<td>螺旋模型</td>
+<td>19卷/19次</td>
+<td>选·简</td>
+</tr>
+<tr>
+<td>软件危机</td>
+<td>18卷/19次</td>
+<td>选·简</td>
+</tr>
+<tr>
+<td>软件工程的定义、研究领域与发展</td>
+<td>18卷/19次</td>
+<td>填·简</td>
+</tr>
+<tr>
+<td>软件开发的本质与基本途径</td>
+<td>17卷/23次</td>
+<td>填·简</td>
+</tr>
+<tr>
+<td>软件过程与生存周期阶段</td>
+<td>15卷/16次</td>
+<td>简</td>
+</tr>
+<tr>
+<td>软件的定义与特点</td>
+<td>13卷/13次</td>
+<td>填</td>
+</tr>
+<tr>
+<td>喷泉模型</td>
+<td>9卷/9次</td>
+<td>选</td>
+</tr>
+<tr>
+<td>原型（快速原型）模型</td>
+<td>4卷/6次</td>
+<td>选·简</td>
+</tr>
+<tr>
+<td>演化模型</td>
+<td>2卷/2次</td>
+<td>选·简</td>
+</tr>
+<tr>
+<td>系统建模的定义</td>
+<td>2卷/2次</td>
+<td>选·简</td>
+</tr>
+<tr>
+<td>敏捷开发（敏捷·Scrum·XP）</td>
+<td>2卷/2次</td>
+<td>选·名词解释</td>
+</tr>
+<tr>
+<td>软件过程模型的分类与选择</td>
+<td>1卷/1次</td>
+<td>选</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本章判断</strong>：过程模型是绝对核心，<strong>"瀑布/增量/螺旋"三兄弟必须能默写阶段＋优缺点＋适用场合</strong>（每年必有一道简答落在其中之一）。"概念模型/软件模型/设计模型/实现模型/部署模型"是选择题最爱。敏捷只在最新两套卷出现，但<strong>考纲明确要求</strong>，必背。</p>
+<h3 id="2-c2456">第 2 章 结构化软件开发方法（C2，456 题，第一大章）</h3>
+<table>
+<thead>
+<tr>
+<th>考点</th>
+<th>卷数/次数</th>
+<th>主考题型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>详细设计工具与结构化程序设计</td>
+<td>31卷/50次</td>
+<td>填·选·应</td>
+</tr>
+<tr>
+<td>数据流图（DFD）符号·分层与绘制</td>
+<td>29卷/49次</td>
+<td>填·选·<strong>应</strong></td>
+</tr>
+<tr>
+<td>模块结构图的深度·宽度·扇入扇出·作用域</td>
+<td>29卷/42次</td>
+<td>选·填·应</td>
+</tr>
+<tr>
+<td>耦合类型与设计原则</td>
+<td>27卷/30次</td>
+<td>选·简·填</td>
+</tr>
+<tr>
+<td>内聚类型与设计原则</td>
+<td>26卷/34次</td>
+<td>选·填</td>
+</tr>
+<tr>
+<td>需求的分类与基本性质</td>
+<td>25卷/36次</td>
+<td>选</td>
+</tr>
+<tr>
+<td>需求发现技术</td>
+<td>24卷/26次</td>
+<td>选·填·简</td>
+</tr>
+<tr>
+<td>需求规约的基本性质</td>
+<td>19卷/19次</td>
+<td>简</td>
+</tr>
+<tr>
+<td>模块、模块化与模块独立性</td>
+<td>16卷/20次</td>
+<td>填·简</td>
+</tr>
+<tr>
+<td>加工小说明与加工的描述工具</td>
+<td>16卷/17次</td>
+<td>选·填</td>
+</tr>
+<tr>
+<td>总体（概要）设计的任务与步骤</td>
+<td>15卷/18次</td>
+<td>填·简</td>
+</tr>
+<tr>
+<td>需求规约的定义与作用</td>
+<td>12卷/14次</td>
+<td>选·简</td>
+</tr>
+<tr>
+<td>结构化分析方法与建模步骤</td>
+<td>12卷/13次</td>
+<td>填·简</td>
+</tr>
+<tr>
+<td>数据字典的符号与条目</td>
+<td>12卷/13次</td>
+<td>填</td>
+</tr>
+<tr>
+<td>需求规约的表达风格与文档结构</td>
+<td>12卷/12次</td>
+<td>填</td>
+</tr>
+<tr>
+<td>变换型与事务型分析（SC 图设计）</td>
+<td>10卷/11次</td>
+<td>简·应</td>
+</tr>
+<tr>
+<td>单个需求的基本性质</td>
+<td>10卷/10次</td>
+<td>填</td>
+</tr>
+<tr>
+<td>需求验证与需求工作的挑战</td>
+<td>8卷/8次</td>
+<td>简·填</td>
+</tr>
+<tr>
+<td>判定表与判定树</td>
+<td>6卷/6次</td>
+<td><strong>应</strong></td>
+</tr>
+<tr>
+<td>程序流程图与 N-S 图</td>
+<td>多卷</td>
+<td><strong>应</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>本章判断</strong>：<strong>应用大题 60% 出在本章</strong>（DFD 绘制、DFD→SC、判定表、流程图/N-S 图）。<strong>模块独立性（内聚＋耦合＋扇入扇出深度宽度）是单点最集中的客观题矿区</strong>，必须背到"看到描述就能判类型"。</p>
+<h3 id="3-c3312">第 3 章 面向对象的软件开发方法（C3，312 题）</h3>
+<table>
+<thead>
+<tr>
+<th>考点</th>
+<th>卷数/次数</th>
+<th>主考题型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>用况图与用况建模</td>
+<td>23卷/34次</td>
+<td>简·选·填·<strong>应</strong></td>
+</tr>
+<tr>
+<td>UML 的定义与图形工具分类</td>
+<td>21卷/26次</td>
+<td>选·填</td>
+</tr>
+<tr>
+<td>RUP 的工作流与四层结构</td>
+<td>19卷/24次</td>
+<td>选·填</td>
+</tr>
+<tr>
+<td>统一过程模型（RUP）概述</td>
+<td>19卷/20次</td>
+<td>填·选·简</td>
+</tr>
+<tr>
+<td>类图与类的建模</td>
+<td>14卷/19次</td>
+<td>选</td>
+</tr>
+<tr>
+<td>状态图与状态建模</td>
+<td>14卷/16次</td>
+<td>选·填·简·应</td>
+</tr>
+<tr>
+<td>组合·聚合与整体-部分关系</td>
+<td>14卷/15次</td>
+<td>选·填</td>
+</tr>
+<tr>
+<td>RUP 的四个开发阶段</td>
+<td>13卷/17次</td>
+<td>选</td>
+</tr>
+<tr>
+<td>类与对象的概念、构成与可见性</td>
+<td>13卷/15次</td>
+<td>填·选·简</td>
+</tr>
+<tr>
+<td>分析类（边界类·实体类·控制类）</td>
+<td>12卷/13次</td>
+<td>选</td>
+</tr>
+<tr>
+<td>面向对象需求分析（OOA）与建模步骤</td>
+<td>11卷/12次</td>
+<td>简</td>
+</tr>
+<tr>
+<td>泛化关系（含义·约束·判别）</td>
+<td>11卷/12次</td>
+<td>填·选·简</td>
+</tr>
+<tr>
+<td>顺序图（时序图）与协作</td>
+<td>10卷/11次</td>
+<td>填·应</td>
+</tr>
+<tr>
+<td>关联、多重性与限定符</td>
+<td>10卷/10次</td>
+<td>填·选</td>
+</tr>
+<tr>
+<td>依赖关系</td>
+<td>8卷/8次</td>
+<td>选·填</td>
+</tr>
+<tr>
+<td>封装·继承·多态·重载</td>
+<td>7卷/10次</td>
+<td>名词解释</td>
+</tr>
+<tr>
+<td>面向对象设计（OOD）准则与体系结构</td>
+<td>5卷/6次</td>
+<td>简</td>
+</tr>
+<tr>
+<td>包图与包机制</td>
+<td>3卷/4次</td>
+<td>选</td>
+</tr>
+<tr>
+<td>构件图与部署图</td>
+<td>3卷/3次</td>
+<td>填·选</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本章判断</strong>：<strong>用况图是本章第一考点</strong>（简答＋应用双料）。<strong>UML 九种图"哪个图干什么用"是选择题常青树</strong>，必须做成对照表。<strong>RUP（定义/三特点/四阶段/四层结构/与 UML 关系）合计近 60 题</strong>，是本章的第二个大板块。<strong>泛化的 4 个约束（完整/不完整/互斥/重叠）反复考简答</strong>。</p>
+<h3 id="4-c4-4">第 4 章 移动应用的设计与测试（C4，仅 4 题，真题空白区）</h3>
+<table>
+<thead>
+<tr>
+<th>考点</th>
+<th>卷数/次数</th>
+<th>出处</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>移动应用开发框架与程序设计语言</td>
+<td>2卷/2次</td>
+<td>2025年4月【广东】、2026年4月自考02333</td>
+</tr>
+<tr>
+<td>移动应用开发的 5 个迭代阶段</td>
+<td>1卷/1次</td>
+<td>2025年4月【广东】</td>
+</tr>
+<tr>
+<td>移动软件测试（连接性测试）</td>
+<td>1卷/1次</td>
+<td>2026年4月自考02333</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本章判断</strong>：<strong>真题只能提供"题型感"，不能提供题量</strong>。考纲要求"识记：移动应用 3 个特点、5 个迭代阶段、云计算 3 层体系结构、WebApp 质量步骤、移动测试目标"——这些都是<strong>纯记忆型填空/名词解释的料</strong>，必须直接背《第04章_移动应用的设计与测试_考点总结》。</p>
+<h3 id="5-c5210">第 5 章 软件测试（C5，210 题）</h3>
+<table>
+<thead>
+<tr>
+<th>考点</th>
+<th>卷数/次数</th>
+<th>主考题型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>逻辑覆盖与测试覆盖强弱</td>
+<td>22卷/23次</td>
+<td><strong>应</strong>·选</td>
+</tr>
+<tr>
+<td>单元测试（内容·依据·驱动桩）</td>
+<td>22卷/23次</td>
+<td>选·填</td>
+</tr>
+<tr>
+<td>黑盒测试技术（分类·事务流）</td>
+<td>20卷/20次</td>
+<td>选·填·简</td>
+</tr>
+<tr>
+<td>等价类划分</td>
+<td>18卷/19次</td>
+<td>选·<strong>应</strong></td>
+</tr>
+<tr>
+<td>确认测试与有效性测试</td>
+<td>13卷/13次</td>
+<td>选·填</td>
+</tr>
+<tr>
+<td>软件测试的目的、原则与对象</td>
+<td>11卷/13次</td>
+<td>填·选</td>
+</tr>
+<tr>
+<td>软件测试的步骤与过程</td>
+<td>10卷/12次</td>
+<td>填</td>
+</tr>
+<tr>
+<td>白盒测试技术</td>
+<td>12卷/13次</td>
+<td>选·简</td>
+</tr>
+<tr>
+<td>组装（集成）测试</td>
+<td>11卷/12次</td>
+<td>填·选</td>
+</tr>
+<tr>
+<td>静态测试与静态分析</td>
+<td>10卷/10次</td>
+<td>选·填</td>
+</tr>
+<tr>
+<td>调试（排错）技术</td>
+<td>8卷/8次</td>
+<td>选·简</td>
+</tr>
+<tr>
+<td>路径测试技术</td>
+<td>6卷/6次</td>
+<td>简</td>
+</tr>
+<tr>
+<td>错误·故障·失效的定义</td>
+<td>6卷/6次</td>
+<td>选</td>
+</tr>
+<tr>
+<td>边界值分析</td>
+<td>5卷/5次</td>
+<td>简</td>
+</tr>
+<tr>
+<td>因果图法设计测试用例</td>
+<td>3卷/3次</td>
+<td>简</td>
+</tr>
+<tr>
+<td>验证与确认的定义与区别</td>
+<td>3卷/3次</td>
+<td>简</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本章判断</strong>：<strong>"五级覆盖标准的强弱关系"和"等价类/边界值用例设计"是每年应用大题的双保险</strong>。单元测试 5 方面内容（模块接口/局部数据结构/路径/错误处理/边界）反复考简答，必背。</p>
+<h3 id="6-c617">第 6 章 软件维护（C6，17 题，基本空白）</h3>
+<table>
+<thead>
+<tr>
+<th>考点</th>
+<th>卷数/次数</th>
+<th>出处</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>软件可维护性及其度量</td>
+<td>4卷/9次</td>
+<td>2010年1月、2010年10月、2026年4月</td>
+</tr>
+<tr>
+<td>软件维护的类型判别</td>
+<td>3卷/3次</td>
+<td>新老卷都有</td>
+</tr>
+<tr>
+<td>软件维护的副作用与影响因素</td>
+<td>2卷/2次</td>
+<td>2011年1月等</td>
+</tr>
+<tr>
+<td>软件维护的过程与组织</td>
+<td>1卷/2次</td>
+<td>—</td>
+</tr>
+<tr>
+<td>软件维护的定义与内容</td>
+<td>1卷/1次</td>
+<td>2025年4月【广东】名词解释</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本章判断</strong>：<strong>维护的 4 种类型（改正性/适应性/完善性/预防性）判定必考</strong>（新卷 2026年4月第 10 题就是"适应环境变化的维护＝适应性维护"）。<strong>"软件可维护性"和"提高可维护性的方法"是最新卷名词解释＋简答的原题</strong>，务必背原话。</p>
+<h3 id="7-c718">第 7 章 软件项目管理（C7，18 题，基本空白）</h3>
+<table>
+<thead>
+<tr>
+<th>考点</th>
+<th>卷数/次数</th>
+<th>出处</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>软件项目管理的内容与计划</td>
+<td>9卷/9次</td>
+<td>旧卷填空为主</td>
+</tr>
+<tr>
+<td>团队组织结构与项目因素</td>
+<td>1卷/1次</td>
+<td>2025年4月【广东】简答（7 个因素）</td>
+</tr>
+<tr>
+<td>软件成本估算</td>
+<td>1卷/2次</td>
+<td>2010年（COCOMO）</td>
+</tr>
+<tr>
+<td>软件度量（面向规模/面向功能）</td>
+<td>1卷/1次</td>
+<td>—</td>
+</tr>
+<tr>
+<td>软件配置管理</td>
+<td>1卷/1次</td>
+<td>2011年1月名词解释</td>
+</tr>
+<tr>
+<td>软件质量保证</td>
+<td>1卷/1次</td>
+<td>2011年1月名词解释</td>
+</tr>
+<tr>
+<td>项目规划/项目过程的建立</td>
+<td>各1卷</td>
+<td>旧卷简答</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本章判断</strong>：<strong>"规划软件工程团队结构时应考虑的 7 个项目因素"是 2025 年新卷原题</strong>，必须一字不差背下来。其余按考纲背（度量、评估、进度计划、甘特图、关键路径）——<strong>注意"进度计划作图/计算"是考纲写明的"简单应用"，虽然真题没考过，但可能首次出现</strong>。</p>
+<hr>
+<h2 id="_4">七、两代考纲对照：该背什么、该跳过什么</h2>
+<h3 id="1_2">1. 现行考纲仍然考的旧卷考点（<strong>保留，全部要复习</strong>）</h3>
+<ul>
+<li>全部 C1、C2、C3 考点：软件/软件工程/软件危机/模型分类/瀑布·增量·螺旋·喷泉·原型、需求分析与需求规约、DFD/数据字典/判定表判定树、耦合内聚/扇入扇出/深度宽度/变换设计事务设计、详细设计工具、UML 各类图、RUP、用况建模、状态图时序图。</li>
+<li>C5 全部：黑盒白盒、等价类/边界值/因果图、逻辑覆盖、单元/组装/确认/系统测试、静态测试、调试。</li>
+<li>C6 的"维护类型判别、可维护性、提高可维护性的方法"。</li>
+<li>C7 的"团队结构 7 因素、软件度量、成本估算、进度计划、配置管理、质量保证"。</li>
+</ul>
+<h3 id="2-164-118">2. 旧卷特有、现行考纲不考（<strong>可以跳过，共 164 题 / 11.8%</strong>）</h3>
+<table>
+<thead>
+<tr>
+<th>旧考点</th>
+<th>旧卷题量</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CMMI 能力等级与成熟度等级</td>
+<td>45</td>
+<td>新考纲无 CMMI 章</td>
+</tr>
+<tr>
+<td>CMMI 过程域、专用/共用目标、最佳实践组织</td>
+<td>41</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>CMMI 的三个源模型与集成思想</td>
+<td>16</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>能力等级与成熟度等级的区别与联系</td>
+<td>4</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>ISO/IEC 12207 软件生存周期过程分类</td>
+<td>38</td>
+<td>新考纲无"生存周期过程"章</td>
+</tr>
+<tr>
+<td>软件验证过程/项目规划过程域等 12207 细项</td>
+<td>若干</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>可行性研究与成本效益分析（含投资回收期）</td>
+<td>6</td>
+<td>新考纲"软件工程概述"未收</td>
+</tr>
+<tr>
+<td>软件工程标准层级（国际/国家/行业/企业、JIS）</td>
+<td>1</td>
+<td>—</td>
+</tr>
+<tr>
+<td>McCall 质量模型与软件复杂性度量参数</td>
+<td>2</td>
+<td>—</td>
+</tr>
+<tr>
+<td>软件工具分类与软件开发环境、CASE</td>
+<td>4</td>
+<td>—</td>
+</tr>
+<tr>
+<td>项目开发计划与程序维护手册</td>
+<td>2</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>判断口诀</strong>：题干出现 <code>CMMI</code>、<code>能力等级</code>、<code>成熟度等级</code>、<code>过程域</code>、<code>专用目标/共用目标</code>、<code>12207</code>、<code>可行性研究</code>、<code>JIS</code>、<code>McCall</code>、<code>复杂性度量参数</code>（规模/难度/结构/智能度）、<code>CASE</code>、<code>投资回收期</code> → <strong>直接跳过，新考纲不考</strong>。<br>
+<strong>风险提示</strong>：如果本省仍在用旧教材（王立福 2011 版），则 CMMI 与 12207 反而是必考大题。<strong>请以你手上《13005 考试大纲》为准</strong>——本课程笔记与大纲均为 7 章、不含 CMMI，故按"跳过"处理。</p>
+</blockquote>
+<h3 id="3">3. 现行考纲新增、真题几乎无覆盖（<strong>只能靠考纲＋笔记，属"盲区"</strong>）</h3>
+<table>
+<thead>
+<tr>
+<th>新增内容</th>
+<th>真题覆盖</th>
+<th>应对</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>移动应用 3 个特点、5 个迭代阶段、界面设计 3 模型/3 方法</td>
+<td>4 题</td>
+<td>背《第04章》识记清单</td>
+</tr>
+<tr>
+<td>云计算 3 层体系结构、环境感知 App</td>
+<td>0 题</td>
+<td>背识记条目</td>
+</tr>
+<tr>
+<td>WebApp 设计、美学设计、内容设计、导航设计、MVC 体系结构</td>
+<td>0 题（MVC 只在旧卷少量）</td>
+<td>背《第04章》</td>
+</tr>
+<tr>
+<td>移动软件测试（手势/虚拟键盘/语音/安全/性能/压力/负载/实时/A-B 测试）</td>
+<td>0 题</td>
+<td>背《第04章》</td>
+</tr>
+<tr>
+<td>敏捷开发（基本思想、过程、工具、Scrum、XP）</td>
+<td>2 题</td>
+<td>背《第01章》考点 5，注意<strong>名词解释</strong>形式</td>
+</tr>
+<tr>
+<td>三层架构、分层体系结构、MVC 模式优点</td>
+<td>2 题</td>
+<td>背《第03章》</td>
+</tr>
+<tr>
+<td>软件维护全章</td>
+<td>17 题</td>
+<td>背《第06章》</td>
+</tr>
+<tr>
+<td>软件项目管理全章（度量/评估/进度计划/关键路径）</td>
+<td>18 题</td>
+<td>背《第07章》，<strong>注意可能首次出进度计划作图题</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="a-b-c">八、复习优先级结论（A / B / C 三级）</h2>
+<h3 id="a-15">A 级（必背到"默写"，出现 ≥15 卷；这批决定及格线）</h3>
+<ul>
+<li><strong>内聚 7 类型＋耦合 7 类型的判定与设计原则</strong>（26＋27 卷，选择题第一矿区）</li>
+<li><strong>DFD 的 4 种符号、顶层图/0 层图/1 层图的画法与分层原则</strong>（29 卷，应用大题）</li>
+<li><strong>详细设计 4 工具（程序流程图、盒图/N-S、PAD、伪码）的判别、优缺点与转换</strong>（31 卷）</li>
+<li><strong>模块结构图的深度、宽度、扇入、扇出、作用域、控制域的计算与准则</strong>（29 卷）</li>
+<li><strong>需求规约 4 条基本性质＋4 条作用</strong>（19 卷，反复原题）</li>
+<li><strong>单个需求的 5 条基本性质</strong>（必要性、无歧义性、可测性、可跟踪性、可测量性）（10 卷）</li>
+<li><strong>需求 4 类划分＋需求发现 5 技术</strong>（25＋24 卷）</li>
+<li><strong>瀑布/增量/螺旋模型的阶段、优缺点、适用场合</strong>（23＋19＋19 卷）</li>
+<li><strong>概念模型与软件模型（设计/实现/部署）的分类</strong>（21 卷）</li>
+<li><strong>用况图的 6 个模型元素＋用况之间的包含/扩展/泛化关系</strong>（23 卷）</li>
+<li><strong>RUP 三特点＋四阶段＋四层结构＋与 UML 的关系</strong>（合计约 60 题）</li>
+<li><strong>UML 各类图的作用对照</strong>（21 卷）</li>
+<li><strong>五种覆盖标准的强弱排序与用例设计</strong>（22 卷，应用大题）</li>
+<li><strong>等价类划分与边界值分析的用例设计步骤</strong>（18＋5 卷，应用大题）</li>
+<li><strong>单元测试 5 方面内容＋驱动模块/桩模块</strong>（22 卷）</li>
+<li><strong>黑盒/白盒测试的依据与分类</strong>（20＋12 卷）</li>
+</ul>
+<h3 id="b-814">B 级（要背，出现 8—14 卷）</h3>
+<ul>
+<li>数据结构图（SC 图）的变换分析与事务分析步骤</li>
+<li>判定表与判定树的建立与化简</li>
+<li>总体设计的 3 阶段（初始设计→精化设计→复审）与概要设计规约的 4 项内容</li>
+<li>数据字典的 4 类条目与表示符号</li>
+<li>加工小说明的 3 种表达工具（结构化语言、判定表、判定树）</li>
+<li>需求规约的 3 种表达风格（非形式化/半形式化/形式化）</li>
+<li>类与对象的定义、类图三部分、可见性符号（＋、－、#、~）</li>
+<li>泛化的 4 个约束（完整/不完整/互斥/重叠）</li>
+<li>组合与聚合的判别（整体-部分、共存亡）</li>
+<li>关联的多重性与限定符</li>
+<li>状态图（状态 3 类：初态/终态/通常状态）与一个状态转换的 5 个内容</li>
+<li>顺序图的构成与交互场景分析</li>
+<li>分析类（边界类/实体类/控制类）的识别</li>
+<li>软件测试的目的、原则、对象、步骤序列</li>
+<li>确认测试与有效性测试（Alpha/Beta 测试）</li>
+<li>静态测试与静态分析（代码审查）</li>
+<li>调试的 4 种方法（强行排错、回溯法、归纳法、演绎法）</li>
+<li>调试与测试的区别</li>
+<li>软件的 7 个特点、软件工程的 6 个研究领域</li>
+<li>软件危机的原因与表现</li>
+<li>软件开发的本质（问题空间→解空间的映射）与基本途径（系统建模）</li>
+<li>软件生存周期过程/模型/项目过程管理三者关系</li>
+</ul>
+<h3 id="c">C 级（了解即可，或本身就是"盲区需背"）</h3>
+<ul>
+<li>喷泉模型、原型模型、演化模型、系统建模定义</li>
+<li>软件可靠性、可维护性的 7 个质量特性</li>
+<li>COCOMO、软件度量（面向规模/面向功能）</li>
+<li>软件配置管理、软件质量保证</li>
+<li>团队结构 7 因素（<strong>虽只 1 卷，但是新卷原题，应升为 A 级简答</strong>）</li>
+<li>移动应用全章、WebApp、移动测试（<strong>盲区，按考纲背</strong>）</li>
+</ul>
+<hr>
+<h2 id="_5">九、使用建议与风险提示</h2>
+<ul>
+<li><strong>1. 用"新卷型"计时训练</strong>：按单选 20 分＋填空 10 分＋名词解释 20 分＋简答 30 分＋应用 20 分，150 分钟。名词解释 5 题要控制在 12 分钟内（每题 2 分钟写 2—3 个得分点）。</li>
+<li><strong>2. 客观题只刷 2019 年后 + 两套新卷</strong>（共 12 套，468 题）：2019 年后的卷子题型与现行最接近，且 C0 占比已降至 30% 以下。2010—2013 年的卷子只用来查"老考点是否仍考"。</li>
+<li><strong>3. 应用大题专项练 7 类</strong>：DFD（顶层/0 层/1 层）、DFD→SC、判定表/判定树、流程图与 N-S 图、覆盖标准用例、等价类/边界值用例、用况图与时序图分析。近 10 年 20 道大题全部落在这 7 类。</li>
+<li><strong>4. 六处必须"照抄原话"的答案</strong>（阅卷按得分点给分）：</li>
+<li>需求规约基本性质：重要性（和稳定性）程度、可修改性、完整性、一致性。</li>
+<li>单个需求基本性质：必要的、无歧义的、可测（试）的、可跟踪的、可测量的。</li>
+<li>耦合由高到低：内容、公共、外部、控制、标记、数据、非直接。</li>
+<li>内聚由低到高：偶然、逻辑、时间、过程、通信、顺序、功能。</li>
+<li>规划团队结构 7 因素：待解决问题难度、程序规模、团队成员共同工作时间、模块化划分程度、质量与可靠性要求、交付日期严格程度、友好交流程度。</li>
+<li>提高可维护性的方法：提高模块独立性、规范文档与注释、统一编码标准、代码审查与持续重构。</li>
+<li><strong>5. 三处存疑点（取自真题参考答案自身的矛盾，考试时以教材为准）</strong>：</li>
+<li>2023年4月第 14 题解析把"需求管理"归入 CMMI 工程类，与 CMMI-DEV 分类（REQM 属项目管理类）冲突。</li>
+<li>2023年10月第 30 题答案称"CMMI 共用目标 6 个"，与常见表述（GG1—GG5）不符。</li>
+<li>2016年4月第 10 题"关于调试说法错误的是"标答为 D，但选项 A（调试是为证明程序员正确）按教材亦为错误项。</li>
+<li><strong>6. OCR 局限</strong>：原卷中约 40 道题依赖图形（类图、DFD、流程图、模块结构图、判定表），PDF 文本抽取无图，只保留了答案字母或文字要点；做题时请对照原 PDF。</li>
+</ul>
+<hr>
+<blockquote>
+<p>数据文件（工作区）：<code>考点明细_规范.tsv</code>（1388 条逐题标注）、<code>统计报告.txt</code>（完整排行榜与简答/应用全量）。<br>
+配套成品：<code>13005软件工程_真题考点简记.md</code>（高频考点关键词版）。</p>
+</blockquote>
+</main>
+<footer>13005 软件工程 · 历年真题分析 · 由 Markdown 生成</footer>
+</body>
+</html>
