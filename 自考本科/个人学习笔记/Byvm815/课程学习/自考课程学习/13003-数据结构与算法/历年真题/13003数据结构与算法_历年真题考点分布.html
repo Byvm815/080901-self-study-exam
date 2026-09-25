@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>13003 数据结构与算法 · 历年真题考点分布分析</title>
+<style>
+:root{--fg:#24292f;--muted:#57606a;--line:#d0d7de;--accent:#0969da;--code:#f6f8fa;--soft:#fafbfc}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--fg);
+  font:16px/1.78 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",sans-serif}
+main{max-width:980px;margin:0 auto;padding:26px 22px 72px}
+h1{font-size:1.75em;line-height:1.35;border-bottom:3px solid var(--accent);padding-bottom:.28em;margin:1.1em 0 .7em}
+h2{font-size:1.36em;line-height:1.4;border-bottom:1px solid var(--line);padding-bottom:.22em;margin:1.5em 0 .6em}
+h3{font-size:1.14em;margin:1.25em 0 .45em}
+h4{font-size:1.02em;margin:1.05em 0 .35em;color:var(--muted)}
+p{margin:.5em 0}
+ul,ol{margin:.45em 0;padding-left:1.5em}
+li{margin:.22em 0}
+li>ul,li>ol{margin:.15em 0}
+strong{color:#000}
+em{color:#000}
+code{background:var(--code);border-radius:4px;padding:.12em .34em;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:.92em}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;margin:.7em 0}
+pre code{background:none;padding:0;white-space:pre;font-size:.9em;line-height:1.5}
+table{border-collapse:collapse;width:100%;margin:.75em 0;font-size:.95em;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600}
+tbody tr:nth-child(even){background:var(--soft)}
+blockquote{margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:var(--code);color:var(--muted)}
+blockquote p{margin:.25em 0}
+hr{border:0;border-top:1px solid var(--line);margin:1.8em 0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.topnav{position:sticky;top:0;z-index:20;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+  padding:10px 22px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(180%) blur(6px);font-size:.9em}
+.topnav a{white-space:nowrap}
+.topnav .sep{color:var(--line)}
+.topnav .brand{font-weight:600;color:var(--fg);margin-right:6px}
+footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid var(--line);color:var(--muted);font-size:.86em}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:1em 0}
+.card{display:block;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--soft)}
+.card:hover{border-color:var(--accent)}
+.card b{display:block;margin-bottom:4px}
+.card span{color:var(--muted);font-size:.86em}
+.toc{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:1em 0}
+.toc ul{margin:.25em 0;padding-left:1.3em}
+.tip{border:1px dashed var(--accent);border-radius:10px;padding:10px 14px;background:#f6faff;margin:1em 0;font-size:.94em}
+@media (max-width:640px){main{padding:18px 14px 60px}h1{font-size:1.5em}}
+@media print{
+  body{font-size:11.5pt;line-height:1.6}
+  .topnav{display:none}
+  main{max-width:none;padding:0}
+  h1{page-break-before:always;border-bottom-width:2px}
+  body>main>h1:first-child,main>section:first-child>h1{page-break-before:avoid}
+  pre,table,blockquote,li{page-break-inside:avoid}
+  a{color:#000;text-decoration:none}
+  footer{display:none}
+}
+</style>
+</head>
+<body>
+<nav class="topnav"><span class="brand">13003 数据结构与算法</span> <a href="13003数据结构与算法_真题考点简记.html">13003 数据结构与算法 · 真题考点简记（高频关键词版） →</a></nav>
+<main>
+<h1 id="13003">13003 数据结构与算法 · 历年真题考点分布分析</h1>
+<blockquote>
+<p><strong>统计口径（现行教材）</strong>：只统计<strong>现行教材启用之后</strong>的真题。现行教材为<strong>辛运帏、陈朔鹰编著《数据结构与算法》（机械工业出版社，2024 年版，共 8 章）</strong>，全国考委官方教材目录标注其"<strong>预计启用时间 2024 年 10 月</strong>"。<br>
+本课程目录现保留 <strong>4 个 PDF → 4 套试卷、124 道题</strong>，时间跨度 <strong>2024 年 10 月 — 2026 年 4 月</strong>。此前的旧教材卷（2014—2024 年 4 月，共 17 套）已排除。<br>
+分类方法：逐题标注（每道题一个考点标签）→ 按语义归并为规范考点 → 归章依据现行考纲 8 章结构（绪论／线性表／栈和队列／数组、广义表和串／树与二叉树／图结构／内部排序／查找）。<br>
+<strong>数据可信度</strong>：本批原卷有相当比例内容（程序、图、矩阵）是<strong>图片</strong>，文本层为空；已逐页 OCR 补全，仍无法还原的按参考答案与同卷结构推断（逐题备注可查）。<strong>124 题中没有一题属于旧教材专有内容</strong>（C0＝0），即保留下来的卷子已全部落在现行考纲 8 章内。</p>
+</blockquote>
+<hr>
+<h2 id="8">一、结论摘要（先看这 8 条）</h2>
+<ul>
+<li><strong>1. 本批只有 4 套卷、124 题</strong>：2024年10月【13003】、2024年10月【广东】、2025年4月【广东】、2026年4月13181。样本小，<strong>结论用于定优先级与练题型，不要当题库</strong>。</li>
+<li><strong>2. 两种卷型并存，先确认本省用哪套</strong>：</li>
+<li><strong>30 题卷（新卷型，3 套）</strong>：单选 10×2＝20 ＋ 填空 10×2＝20 ＋ 解答 5×6＝30 ＋ 算法阅读 4×5＝20 ＋ 算法设计 1×10＝10 ＝ <strong>100 分</strong>；号段为「1—10 单选 → 11—20 填空 → 21—25 解答 → 26—30 算法」。</li>
+<li><strong>34 题卷（1 套，2024年10月【13003】）</strong>：单选 15×2＝30 ＋ 填空 10×1＝10 ＋ 解答 4×6＝24 ＋ 算法 5×5＝25 ＋ 算法设计 1×10＝10。</li>
+<li><strong>大题（解答＋算法）占 60 分</strong>，是本科目的主战场：<strong>客观题 40 分里填空占 20 分，且每空 2 分</strong>。</li>
+<li><strong>3. 八章分布高度均衡，没有哪一章能放弃</strong>：最高的是<strong>线性表 20 题（16.1%）</strong>，最低的是<strong>绪论 12 题（9.7%）</strong>，其余六章都在 13～17 题之间。</li>
+<li><strong>4. 本批出现 ≥3 卷的考点只有 5 个</strong>（最硬的必考项）：<strong>多维数组行主序地址计算 · 二叉树性质计算 · 由前序中序构造二叉树 · 散列基本思想与散列函数构造 · 广义表表头表尾运算</strong>。</li>
+<li><strong>5. 大题（39 道）分布极均匀</strong>：解答题 19 道、算法题 20 道，八章各 4～7 道。<strong>算法题全部落在"单链表 / 顺序表 / 栈与队列 / 二叉树 / 图 / 二分查找"六类上</strong>，是唯一可以在短期内靠背模板拿分的部分。</li>
+<li><strong>6. 图片题是最大风险点</strong>：本批大量程序、矩阵、图都是图片，<strong>做题必须对照原 PDF</strong>；OCR 还原的程序与原卷可能存在数字级差异（已逐题备注，例如 2026年4月第 28 题参考答案与代码逻辑矛盾）。</li>
+<li><strong>7. 无「超纲」内容</strong>：C0＝0，124 题全部落在 8 章内——<strong>这是新教材口径最大的好处，复习范围干净</strong>。</li>
+<li><strong>8. 与旧卷对比的变化（值得注意）</strong>：</li>
+<li>旧卷常考的<strong>广义表运算（旧口径 20 卷）</strong>在本批仍有 3 卷，<strong>依然是第一大考点</strong>；</li>
+<li><strong>顺序表元素存储地址计算、二分查找比较次数、排序算法稳定性</strong>在旧卷是"每卷必有"，本批各只剩 1～2 卷——<strong>不是不考了，而是样本太少</strong>，不能因此放松；</li>
+<li><strong>「合理出栈序列判定」（旧口径 11 卷）本批只有 1 卷</strong>，同理仍属必背。</li>
+</ul>
+<hr>
+<h2 id="4">二、卷目与题量（本批 4 套）</h2>
+<table>
+<thead>
+<tr>
+<th>序</th>
+<th>卷名</th>
+<th>题量</th>
+<th>题型构成</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>02331 数据结构 2024年10月【13003】</td>
+<td>34</td>
+<td>单选15＋填空10＋算法5＋解答4（<strong>旧排法</strong>）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>02331 数据结构 2024年10月【广东】</td>
+<td>30</td>
+<td>单选10＋填空10＋解答5＋算法5</td>
+</tr>
+<tr>
+<td>3</td>
+<td>02331 数据结构 2025年4月【广东】</td>
+<td>30</td>
+<td>单选10＋填空10＋解答5＋算法5</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2026年4月自考13181数据结构试题及答案</td>
+<td>30</td>
+<td>单选10＋填空10＋解答5＋算法5</td>
+</tr>
+<tr>
+<td>—</td>
+<td><strong>合计</strong></td>
+<td><strong>124</strong></td>
+<td>单选 45 ＋ 填空 40 ＋ 解答 19 ＋ 算法 20</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong><code>2026年4月自考13181…</code> 这一套</strong>属于课程代码 <strong>13181（数据结构，专科，教材 2023 年版）</strong>，与 13003 是<strong>两门不同课程</strong>，但教材作者相同、知识点重合度极高。<strong>它的题目按 13003 大纲归类后作参考</strong>，其中"数组地址计算、广义表 head/tail、Kruskal、建立大根堆、二叉查找树 ASL"这 5 道解答题与 13003 考纲完全一致，<strong>可以当练习用</strong>。</li>
+<li><strong>2026年4月那套的题目页是扫描图片</strong>，文本层只有参考答案与解析，因此它的题干是按答案解析反推的。</li>
+</ul>
+<h3 id="_1">题型与分值对照</h3>
+<table>
+<thead>
+<tr>
+<th>题型</th>
+<th>30 题卷（新卷型）</th>
+<th>34 题卷（旧排法）</th>
+<th>本批题量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单选</td>
+<td>10 × 2 ＝ <strong>20 分</strong></td>
+<td>15 × 2 ＝ 30 分</td>
+<td>45</td>
+</tr>
+<tr>
+<td>填空</td>
+<td>10 × 2 ＝ <strong>20 分</strong></td>
+<td>10 × 1 ＝ 10 分</td>
+<td>40</td>
+</tr>
+<tr>
+<td>解答题</td>
+<td>5 × 6 ＝ <strong>30 分</strong></td>
+<td>4 × 6 ＝ 24 分</td>
+<td>19</td>
+</tr>
+<tr>
+<td>算法阅读</td>
+<td>4 × 5 ＝ <strong>20 分</strong></td>
+<td>5 × 5 ＝ 25 分</td>
+<td>20</td>
+</tr>
+<tr>
+<td>算法设计</td>
+<td>1 × 10 ＝ <strong>10 分</strong></td>
+<td>1 × 10 ＝ 10 分</td>
+<td>（含在 20 内）</td>
+</tr>
+</tbody>
+</table>
+<p>【注意】<strong>不要按题号背题型</strong>——本批 4 套就出现了两种排法（30 题卷把填空排到 11—20、大题排到 21—30；34 题卷是单选 1—15、填空 16—25、大题 26—34）。</p>
+<hr>
+<h2 id="8_1">三、考点总体分布（按现行考纲 8 章）</h2>
+<table>
+<thead>
+<tr>
+<th>章</th>
+<th>章名</th>
+<th>题量</th>
+<th>占比</th>
+<th>本批首考考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C2</td>
+<td>第2章 线性表</td>
+<td><strong>20</strong></td>
+<td><strong>16.1%</strong></td>
+<td>单链表算法（填空/阅读/设计）密集</td>
+</tr>
+<tr>
+<td>C4</td>
+<td>第4章 数组、广义表和串</td>
+<td><strong>17</strong></td>
+<td><strong>13.7%</strong></td>
+<td>地址计算＋广义表表头表尾</td>
+</tr>
+<tr>
+<td>C8</td>
+<td>第8章 查找</td>
+<td><strong>17</strong></td>
+<td><strong>13.7%</strong></td>
+<td>散列、分块、BST、二分</td>
+</tr>
+<tr>
+<td>C5</td>
+<td>第5章 树与二叉树</td>
+<td>16</td>
+<td>12.9%</td>
+<td>性质、遍历、构造、哈夫曼</td>
+</tr>
+<tr>
+<td>C7</td>
+<td>第7章 内部排序</td>
+<td>16</td>
+<td>12.9%</td>
+<td>稳定性、复杂度、各趟结果</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>第3章 栈和队列</td>
+<td>13</td>
+<td>10.5%</td>
+<td>循环队列判空判满、括号匹配</td>
+</tr>
+<tr>
+<td>C6</td>
+<td>第6章 图结构</td>
+<td>13</td>
+<td>10.5%</td>
+<td>MST、最短路径、遍历</td>
+</tr>
+<tr>
+<td>C1</td>
+<td>第1章 绪论</td>
+<td>12</td>
+<td>9.7%</td>
+<td>算法五特性、逻辑/存储结构</td>
+</tr>
+<tr>
+<td>C0</td>
+<td>旧教材专有</td>
+<td><strong>0</strong></td>
+<td>0%</td>
+<td>本批无超纲内容</td>
+</tr>
+</tbody>
+</table>
+<p><strong>读表要点</strong></p>
+<ul>
+<li><strong>分布极其均衡</strong>：最高 16.1%、最低 9.7%，<strong>没有"大头章"也没有"可放弃章"</strong>。这与 13005 软件工程（C2＋C3 占 58.7%）形成鲜明对比——<strong>数据结构必须八章全过一遍</strong>。</li>
+<li><strong>线性表之所以第一，是因为算法题偏爱链表</strong>：本批 20 道算法题里有 7 道在链表/顺序表上（插入、删除、去重、分解奇偶、求交并）。</li>
+<li><strong>第 4 章（数组/广义表/串）虽然"冷门"，却是本批第三大章</strong>：地址计算 3 卷、广义表表头表尾 3 卷，<strong>这两类都是"套公式+按规则剥壳"的送分题，绝不能丢</strong>。</li>
+<li><strong>第 8 章（查找）17 题</strong>：散列 3 卷、分块 2 卷，另有 BST、二分查找、B 树各 1～2 卷——<strong>考点分散，需按考纲逐条过</strong>。</li>
+</ul>
+<hr>
+<h2 id="2">四、高频考点排行榜（出现 ≥2 卷）</h2>
+<blockquote>
+<p>记法：<code>卷数/次数</code>；分母是 4 套卷。本批样本小，<strong>"3 卷"就已是最硬的高频</strong>。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>排名</th>
+<th>章</th>
+<th>考点</th>
+<th>卷数/次数</th>
+<th>题型分布</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>C4</td>
+<td>多维数组行主序地址计算</td>
+<td><strong>3卷/3次</strong></td>
+<td>单1＋填1＋解1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>C5</td>
+<td>二叉树性质计算</td>
+<td><strong>3卷/3次</strong></td>
+<td>单2＋填1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>C5</td>
+<td>由前序中序序列构造二叉树</td>
+<td><strong>3卷/3次</strong></td>
+<td>算1＋填1＋单1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>C8</td>
+<td>散列基本思想与散列函数构造</td>
+<td><strong>3卷/3次</strong></td>
+<td>单2＋解1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>C4</td>
+<td>广义表表头表尾运算</td>
+<td><strong>3卷/3次</strong></td>
+<td>解2＋单1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>C1</td>
+<td>线性结构与非线性结构判定</td>
+<td>2卷/3次</td>
+<td>填2＋单1</td>
+</tr>
+<tr>
+<td>7</td>
+<td>C2</td>
+<td>单链表算法填空与设计</td>
+<td>2卷/3次</td>
+<td>算法3</td>
+</tr>
+<tr>
+<td>8</td>
+<td>C1</td>
+<td>数据元素、数据项与数据类型</td>
+<td>2卷/2次</td>
+<td>单1＋填1</td>
+</tr>
+<tr>
+<td>9</td>
+<td>C1</td>
+<td>算法的定义与五个特性</td>
+<td>2卷/2次</td>
+<td>单1＋解1</td>
+</tr>
+<tr>
+<td>10</td>
+<td>C2</td>
+<td>单链表算法阅读与功能分析</td>
+<td>2卷/2次</td>
+<td>算法2</td>
+</tr>
+<tr>
+<td>11</td>
+<td>C2</td>
+<td>单链表判空条件</td>
+<td>2卷/2次</td>
+<td>填1＋单1</td>
+</tr>
+<tr>
+<td>12</td>
+<td>C2</td>
+<td>线性表的定义与基本操作</td>
+<td>2卷/2次</td>
+<td>填2</td>
+</tr>
+<tr>
+<td>13</td>
+<td>C3</td>
+<td>循环队列判空判满条件</td>
+<td>2卷/2次</td>
+<td>解1＋单1</td>
+</tr>
+<tr>
+<td>14</td>
+<td>C4</td>
+<td>广义表空表与递归性质</td>
+<td>2卷/2次</td>
+<td>填2</td>
+</tr>
+<tr>
+<td>15</td>
+<td>C4</td>
+<td>稀疏矩阵三元组表</td>
+<td>2卷/2次</td>
+<td>单2</td>
+</tr>
+<tr>
+<td>16</td>
+<td>C5</td>
+<td>二叉树遍历算法阅读与输出</td>
+<td>2卷/2次</td>
+<td>解1＋算1</td>
+</tr>
+<tr>
+<td>17</td>
+<td>C6</td>
+<td>最小生成树的边数</td>
+<td>2卷/2次</td>
+<td>单1＋填1</td>
+</tr>
+<tr>
+<td>18</td>
+<td>C7</td>
+<td>排序方法时间复杂度比较</td>
+<td>2卷/2次</td>
+<td>单1＋填1</td>
+</tr>
+<tr>
+<td>19</td>
+<td>C7</td>
+<td>排序算法稳定性判断</td>
+<td>2卷/2次</td>
+<td>单2</td>
+</tr>
+<tr>
+<td>20</td>
+<td>C7</td>
+<td>内排序基本概念</td>
+<td>2卷/2次</td>
+<td>填2</td>
+</tr>
+<tr>
+<td>21</td>
+<td>C7</td>
+<td>排序算法空间复杂度比较</td>
+<td>2卷/2次</td>
+<td>填1＋单1</td>
+</tr>
+<tr>
+<td>22</td>
+<td>C8</td>
+<td>查找基本概念</td>
+<td>2卷/2次</td>
+<td>单1＋填1</td>
+</tr>
+<tr>
+<td>23</td>
+<td>C8</td>
+<td>分块查找前提条件与过程</td>
+<td>2卷/2次</td>
+<td>填1＋单1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>只出现 1 卷的考点</strong>（共 79 个，按章清点见第五节）：树与森林的关系 · B 树插入与结点分裂 · 不同形态二叉树数目 · 两栈共享空间 · 中缀表达式转后缀表达式 · 串的子串数目 · 二分查找判定树 · 二分查找前提条件 · 二分查找确定插入位置 · 二叉排序树平均查找长度 · 二叉排序树构造形态与高度 · 二叉排序树结点关键字大小关系 · 二叉树结点计数算法设计 · 二叉树遍历递归算法设计 · 二叉树链式存储空指针域个数 · 克鲁斯卡尔算法 · 入栈出栈操作串 · 出栈序列计数 · 单循环链表尾结点与遍历条件 · 单链表插入结点指针操作 · 双向链表操作与构造 · 双端队列输出序列判定 · 各排序算法时间复杂度 · 合理出栈序列判定 · 哈夫曼树构造与带权路径长度 · 四种基本存储方法 · 图的广度优先搜索算法设计 · 图的遍历时间复杂度 · 图的遍历概念与辅助结构 · 图的邻接矩阵表示与对称性 · 图的邻接表存储 · 图的顶点度与边数计算 · 堆排序所属类别 · 常数阶时间复杂度表示 · 广义表存储结构 · 广义表深度计算 · 广义表长度计算 · 建立大根堆的过程 · 循环队列元素个数计算 · 快速排序划分过程 · 抽象数据类型定义与特性 · 排序算法与初始状态的关系 · 排序算法与存储结构的适用性 · 排序算法程序阅读与填空 · 散列表平均查找长度与装填因子 · 数据结构的研究内容与三要素 · 数组与矩阵算法阅读分析 · 数组行优先存储顺序 · 栈与队列的定义与特性 · 栈在括号匹配中的应用 · 深度优先与广度优先搜索 · 直接插入排序各趟结果 · 稀疏矩阵的定义 · 线性表存储结构的选择 · 连通图与强连通图边数极值 · 迪杰斯特拉算法求最短路径 · 逻辑结构与存储结构 · 邻接矩阵元素统计与含义 · 链式队列存储与出队指针操作 · 静态链表概念 · 顺序存储与链式存储的特点比较 · 顺序查找平均查找长度 · 顺序栈判空判满条件 · 顺序表元素存储地址计算 · 顺序表算法阅读与设计</p>
+<hr>
+<h2 id="_2">五、分章考点热度</h2>
+<h3 id="1-c112-97">第 1 章 绪论（C1，12 题，9.7%）</h3>
+<table>
+<thead>
+<tr>
+<th>考点</th>
+<th>卷数/次数</th>
+<th>题型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>线性结构与非线性结构判定</td>
+<td>2卷/3次</td>
+<td>填·单</td>
+</tr>
+<tr>
+<td>数据元素、数据项与数据类型</td>
+<td>2卷/2次</td>
+<td>单·填</td>
+</tr>
+<tr>
+<td>算法的定义与五个特性</td>
+<td>2卷/2次</td>
+<td>单·<strong>解</strong></td>
+</tr>
+<tr>
+<td>逻辑结构与存储结构</td>
+<td>1卷</td>
+<td>填</td>
+</tr>
+<tr>
+<td>数据结构的研究内容与三要素</td>
+<td>1卷</td>
+<td>单</td>
+</tr>
+<tr>
+<td>常数阶时间复杂度表示</td>
+<td>1卷</td>
+<td>填</td>
+</tr>
+<tr>
+<td>四种基本存储方法</td>
+<td>1卷</td>
+<td>填</td>
+</tr>
+<tr>
+<td>抽象数据类型定义与特性</td>
+<td>1卷</td>
+<td>单</td>
+</tr>
+</tbody>
+</table>
+<p><strong>判断</strong>：章小但<strong>卷卷都有</strong>。必背：<strong>数据结构三要素（逻辑结构＋存储结构＋运算）</strong>、<strong>逻辑结构 4 类（集合并列、线性、树形、图形）</strong>、<strong>存储结构 4 法（顺序、链接、索引、散列）</strong>、<strong>算法 5 特性（有穷、确定、可行、输入、输出）</strong>、<strong>时间复杂度</strong>。</p>
+<h3 id="2-c220-161">第 2 章 线性表（C2，20 题，16.1%，本批题量第一）</h3>
+<table>
+<thead>
+<tr>
+<th>考点</th>
+<th>卷数/次数</th>
+<th>题型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单链表算法填空与设计</td>
+<td>2卷/3次</td>
+<td><strong>算</strong>×3</td>
+</tr>
+<tr>
+<td>单链表算法阅读与功能分析</td>
+<td>2卷/2次</td>
+<td><strong>算</strong>×2</td>
+</tr>
+<tr>
+<td>单链表判空条件</td>
+<td>2卷/2次</td>
+<td>填·单</td>
+</tr>
+<tr>
+<td>线性表的定义与基本操作</td>
+<td>2卷/2次</td>
+<td>填×2</td>
+</tr>
+<tr>
+<td>顺序表插入删除移动元素个数</td>
+<td>1卷/2次</td>
+<td>单·填</td>
+</tr>
+<tr>
+<td>顺序表算法阅读与设计</td>
+<td>1卷</td>
+<td><strong>算</strong></td>
+</tr>
+<tr>
+<td>线性表存储结构的选择</td>
+<td>1卷</td>
+<td><strong>解</strong></td>
+</tr>
+<tr>
+<td>双向链表操作与构造</td>
+<td>1卷</td>
+<td><strong>算</strong></td>
+</tr>
+<tr>
+<td>单链表插入结点指针操作语句 / 单循环链表遍历结束条件 / 静态链表 / 顺序存储与链式存储比较 / 顺序表元素存储地址计算</td>
+<td>各1卷</td>
+<td>单·填</td>
+</tr>
+</tbody>
+</table>
+<p><strong>判断</strong>：<strong>算法题第一大来源</strong>（本批 7 道）。必练三种题型：<strong>① 单链表插入/删除的指针语句填空；② 算法阅读说功能与复杂度；③ 算法设计（链表去重、分解奇偶、求交并、逆置）</strong>。顺序表的地址公式与插入平均移动次数是必算题。</p>
+<h3 id="3-c313-105">第 3 章 栈和队列（C3，13 题，10.5%）</h3>
+<table>
+<thead>
+<tr>
+<th>考点</th>
+<th>卷数/次数</th>
+<th>题型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>循环队列判空判满条件</td>
+<td>2卷/2次</td>
+<td><strong>解</strong>·单</td>
+</tr>
+<tr>
+<td>栈在括号匹配中的应用</td>
+<td>1卷</td>
+<td><strong>算</strong></td>
+</tr>
+<tr>
+<td>两栈共享空间的判定与操作</td>
+<td>1卷</td>
+<td><strong>算</strong></td>
+</tr>
+<tr>
+<td>中缀表达式转后缀表达式</td>
+<td>1卷</td>
+<td><strong>解</strong></td>
+</tr>
+<tr>
+<td>入栈出栈操作串</td>
+<td>1卷</td>
+<td><strong>解</strong></td>
+</tr>
+<tr>
+<td>合理出栈序列判定 / 出栈序列计数 / 双端队列输出序列 / 循环队列元素个数 / 顺序栈判空判满 / 链式队列出队指针 / 栈与队列定义特性</td>
+<td>各1卷</td>
+<td>单·填</td>
+</tr>
+</tbody>
+</table>
+<p><strong>判断</strong>：<strong>循环队列的判空判满</strong>（牺牲一个单元 vs 设标志位）是本批唯一重复出现的点，也是解答题高频。<strong>合理出栈序列判定</strong>虽本批只 1 卷，但属必考送分题，务必练熟。</p>
+<h3 id="4-c417-137">第 4 章 数组、广义表和串（C4，17 题，13.7%）</h3>
+<table>
+<thead>
+<tr>
+<th>考点</th>
+<th>卷数/次数</th>
+<th>题型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>多维数组行主序地址计算</td>
+<td><strong>3卷/3次</strong></td>
+<td>单·填·<strong>解</strong></td>
+</tr>
+<tr>
+<td>广义表表头表尾运算</td>
+<td><strong>3卷/3次</strong></td>
+<td><strong>解</strong>×2·单</td>
+</tr>
+<tr>
+<td>广义表空表与递归性质</td>
+<td>2卷/2次</td>
+<td>填×2</td>
+</tr>
+<tr>
+<td>稀疏矩阵三元组表</td>
+<td>2卷/2次</td>
+<td>单×2</td>
+</tr>
+<tr>
+<td>广义表深度/长度计算</td>
+<td>各1卷</td>
+<td>单·填</td>
+</tr>
+<tr>
+<td>数组行优先存储顺序 / 稀疏矩阵定义 / 数组与矩阵算法阅读 / 广义表存储结构 / 串的子串数目</td>
+<td>各1卷</td>
+<td>填·算·单</td>
+</tr>
+</tbody>
+</table>
+<p><strong>判断</strong>：<strong>本章是"送分章"</strong>——地址计算公式背熟（行主序 <code>Loc(a[i][j]) = Loc(a[0][0]) + (i×列数 + j) × 每元素单元数</code>），广义表 <code>head</code>/<code>tail</code> 逐层剥壳、注意 <strong><code>tail</code> 结果一定带括号</strong>、<strong>空表 <code>()</code> 与长度 0</strong>。<strong>串（BF/KMP）本批只有 1 题"子串数目"，是全课程唯一盲区，必须回教材背。</strong></p>
+<h3 id="5-c516-129">第 5 章 树与二叉树（C5，16 题，12.9%）</h3>
+<table>
+<thead>
+<tr>
+<th>考点</th>
+<th>卷数/次数</th>
+<th>题型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>二叉树性质计算</td>
+<td><strong>3卷/3次</strong></td>
+<td>单2＋填1</td>
+</tr>
+<tr>
+<td>由前序中序序列构造二叉树</td>
+<td><strong>3卷/3次</strong></td>
+<td>算·填·单</td>
+</tr>
+<tr>
+<td>二叉树遍历算法阅读与输出</td>
+<td>2卷/2次</td>
+<td><strong>解</strong>·<strong>算</strong></td>
+</tr>
+<tr>
+<td>树与二叉树基本概念</td>
+<td>1卷/2次</td>
+<td>单2</td>
+</tr>
+<tr>
+<td>哈夫曼树构造与带权路径长度</td>
+<td>1卷</td>
+<td>填</td>
+</tr>
+<tr>
+<td>二叉树结点计数 / 遍历递归算法设计</td>
+<td>各1卷</td>
+<td><strong>算</strong></td>
+</tr>
+<tr>
+<td>树与森林的关系 / 不同形态二叉树数目 / 链式存储空指针域</td>
+<td>各1卷</td>
+<td>填·解·单</td>
+</tr>
+</tbody>
+</table>
+<p><strong>判断</strong>：<strong>三条硬线</strong>——① <strong>二叉树 5 条性质</strong>（<code>n0 = n2 + 1</code>、第 i 层最多 2^(i−1)、深度 k 最多 2^k − 1、n 个结点完全二叉树深度 ⌊log₂n⌋+1）；② <strong>两种遍历序列唯一确定二叉树</strong>（必须有<strong>中序</strong>）；③ <strong>哈夫曼树 WPL 计算</strong>。这三条在本批占了本章八成题量。</p>
+<h3 id="6-c613-105">第 6 章 图结构（C6，13 题，10.5%）</h3>
+<table>
+<thead>
+<tr>
+<th>考点</th>
+<th>卷数/次数</th>
+<th>题型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最小生成树的边数</td>
+<td>2卷/2次</td>
+<td>单·填</td>
+</tr>
+<tr>
+<td>克鲁斯卡尔算法求最小生成树</td>
+<td>1卷</td>
+<td><strong>解</strong></td>
+</tr>
+<tr>
+<td>迪杰斯特拉算法求最短路径</td>
+<td>1卷</td>
+<td><strong>解</strong></td>
+</tr>
+<tr>
+<td>深度优先与广度优先搜索</td>
+<td>1卷</td>
+<td><strong>算</strong></td>
+</tr>
+<tr>
+<td>图的广度优先搜索算法设计</td>
+<td>1卷</td>
+<td><strong>算</strong></td>
+</tr>
+<tr>
+<td>邻接矩阵元素统计与含义</td>
+<td>1卷</td>
+<td><strong>解</strong></td>
+</tr>
+<tr>
+<td>图的邻接矩阵表示与对称性 / 邻接表存储 / 顶点度与边数 / 遍历概念与辅助结构 / 遍历时间复杂度 / 连通图边数极值</td>
+<td>各1卷</td>
+<td>单·填</td>
+</tr>
+</tbody>
+</table>
+<p><strong>判断</strong>：<strong>大题全部落在"生成树/最短路径/遍历"三处</strong>。必背：<strong>无向图 <code>e ≤ n(n−1)/2</code>、有向图 <code>e ≤ n(n−1)</code></strong>、<strong>生成树边数＝n−1</strong>、<strong>邻接矩阵 0 的个数＝n²−2e</strong>、<strong>DFS/BFS 复杂度（邻接表 O(n+e)、邻接矩阵 O(n²)）</strong>。<strong>关键路径（AOE）本批 0 题，但考纲要求，仍是盲区。</strong></p>
+<h3 id="7-c716-129">第 7 章 内部排序（C7，16 题，12.9%）</h3>
+<table>
+<thead>
+<tr>
+<th>考点</th>
+<th>卷数/次数</th>
+<th>题型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>排序方法时间复杂度比较</td>
+<td>2卷/2次</td>
+<td>单·填</td>
+</tr>
+<tr>
+<td>排序算法稳定性判断</td>
+<td>2卷/2次</td>
+<td>单×2</td>
+</tr>
+<tr>
+<td>内排序基本概念</td>
+<td>2卷/2次</td>
+<td>填×2</td>
+</tr>
+<tr>
+<td>排序算法空间复杂度比较</td>
+<td>2卷/2次</td>
+<td>填·单</td>
+</tr>
+<tr>
+<td>快速排序划分过程</td>
+<td>1卷</td>
+<td><strong>解</strong></td>
+</tr>
+<tr>
+<td>建立大根堆的过程</td>
+<td>1卷</td>
+<td><strong>解</strong></td>
+</tr>
+<tr>
+<td>直接插入排序各趟结果</td>
+<td>1卷</td>
+<td><strong>解</strong></td>
+</tr>
+<tr>
+<td>排序算法程序阅读与填空</td>
+<td>1卷</td>
+<td><strong>算</strong></td>
+</tr>
+<tr>
+<td>各排序算法时间复杂度 / 堆排序类别 / 与初始状态关系 / 与存储结构适用性</td>
+<td>各1卷</td>
+<td>单·填</td>
+</tr>
+</tbody>
+</table>
+<p><strong>判断</strong>：<strong>"稳定性＋复杂度总表"是本章客观题的全部</strong>（必背：稳定＝直接插入、起泡、归并、基数；不稳定＝希尔、快速、选择、堆）。<strong>大题只有四种</strong>：写各趟排序结果、建堆并画堆、快速排序划分过程、排序程序阅读填空。</p>
+<h3 id="8-c817-137">第 8 章 查找（C8，17 题，13.7%，本批题量并列第一）</h3>
+<table>
+<thead>
+<tr>
+<th>考点</th>
+<th>卷数/次数</th>
+<th>题型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>散列基本思想与散列函数构造</td>
+<td><strong>3卷/3次</strong></td>
+<td>单2＋<strong>解</strong></td>
+</tr>
+<tr>
+<td>查找基本概念</td>
+<td>2卷/2次</td>
+<td>单·填</td>
+</tr>
+<tr>
+<td>分块查找前提条件与过程</td>
+<td>2卷/2次</td>
+<td>填·单</td>
+</tr>
+<tr>
+<td>二分查找算法填空与功能分析</td>
+<td>1卷</td>
+<td><strong>算</strong></td>
+</tr>
+<tr>
+<td>二分查找确定插入位置算法设计</td>
+<td>1卷</td>
+<td><strong>算</strong></td>
+</tr>
+<tr>
+<td>二叉排序树平均查找长度</td>
+<td>1卷</td>
+<td><strong>解</strong></td>
+</tr>
+<tr>
+<td>二叉排序树构造形态与高度</td>
+<td>1卷</td>
+<td><strong>解</strong></td>
+</tr>
+<tr>
+<td>二分查找判定树 / 二分查找前提条件 / 顺序查找 ASL / 散列表 ASL 与装填因子 / BST 结点大小关系 / B 树插入与分裂</td>
+<td>各1卷</td>
+<td>单·填</td>
+</tr>
+</tbody>
+</table>
+<p><strong>判断</strong>：<strong>散列是本批第一大考点（3 卷）</strong>——<code>H(key)=key%p</code> 中 <strong>p 取质数或不含 20 以下质因子的数</strong>、<strong>线性探查的 ASL 算法（成功＝Σ探查次数/n，失败＝Σ各地址失败次数/地址数）</strong>。<strong>二分查找</strong>要会：判定树形态、比较次数上下限、前提（顺序存储＋有序）。</p>
+<hr>
+<h2 id="19-20">六、大题全清单（解答题 19 道 ＋ 算法题 20 道）</h2>
+<h3 id="19">解答题 19 道</h3>
+<table>
+<thead>
+<tr>
+<th>章</th>
+<th>卷</th>
+<th>题</th>
+<th>要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1</td>
+<td>2024年10月【13003】</td>
+<td>27</td>
+<td>简述<strong>算法的五个特性</strong></td>
+</tr>
+<tr>
+<td>C2</td>
+<td>2025年4月【广东】</td>
+<td>23</td>
+<td>应用中<strong>如何选择顺序表和链表</strong></td>
+</tr>
+<tr>
+<td>C3</td>
+<td>2025年4月【广东】</td>
+<td>21</td>
+<td>定义<strong>循环队列</strong>结点并写出<strong>队满条件</strong></td>
+</tr>
+<tr>
+<td>C3</td>
+<td>2025年4月【广东】</td>
+<td>22</td>
+<td>写出 <strong>中缀表达式转后缀</strong>的过程</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>2024年10月【13003】</td>
+<td>29</td>
+<td>写出得到出栈序列 2,1,4,3,5 的<strong>操作过程</strong></td>
+</tr>
+<tr>
+<td>C4</td>
+<td>2024年10月【广东】</td>
+<td>25</td>
+<td>求广义表 <strong>表头/表尾/表长/深度</strong></td>
+</tr>
+<tr>
+<td>C4</td>
+<td>2026年4月13181</td>
+<td>23</td>
+<td>写出广义表 <strong>表头与表尾</strong></td>
+</tr>
+<tr>
+<td>C4</td>
+<td>2026年4月13181</td>
+<td>21</td>
+<td><strong>数组地址计算</strong>（行主序）</td>
+</tr>
+<tr>
+<td>C5</td>
+<td>2024年10月【广东】</td>
+<td>21</td>
+<td>写出二叉树<strong>前序/中序/后序</strong>序列</td>
+</tr>
+<tr>
+<td>C5</td>
+<td>2024年10月【广东】</td>
+<td>24</td>
+<td>画出 3 个结点的二叉树<strong>所有形态</strong></td>
+</tr>
+<tr>
+<td>C6</td>
+<td>2024年10月【13003】</td>
+<td>28</td>
+<td>无向图邻接矩阵中 <strong>0 的个数</strong></td>
+</tr>
+<tr>
+<td>C6</td>
+<td>2024年10月【广东】</td>
+<td>23</td>
+<td><strong>迪杰斯特拉</strong>求 A 到各顶点最短路径及长度</td>
+</tr>
+<tr>
+<td>C6</td>
+<td>2026年4月13181</td>
+<td>22</td>
+<td><strong>克鲁斯卡尔</strong>求最小生成树的过程</td>
+</tr>
+<tr>
+<td>C7</td>
+<td>2024年10月【广东】</td>
+<td>22</td>
+<td><strong>直接插入排序</strong>各趟结果（降序）</td>
+</tr>
+<tr>
+<td>C7</td>
+<td>2025年4月【广东】</td>
+<td>25</td>
+<td><strong>快速排序</strong>以首元素为基准各趟结果</td>
+</tr>
+<tr>
+<td>C7</td>
+<td>2026年4月13181</td>
+<td>24</td>
+<td>建立<strong>大根堆</strong>并画堆</td>
+</tr>
+<tr>
+<td>C8</td>
+<td>2024年10月【13003】</td>
+<td>26</td>
+<td>构造哈希函数时通常考虑的<strong>因素</strong></td>
+</tr>
+<tr>
+<td>C8</td>
+<td>2025年4月【广东】</td>
+<td>24</td>
+<td>两个插入序列生成的 <strong>BST 是否一样</strong>并画图</td>
+</tr>
+<tr>
+<td>C8</td>
+<td>2026年4月13181</td>
+<td>25</td>
+<td>计算三棵 <strong>BST 的 ASL</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="20-45-110">算法题 20 道（阅读 4×5 分 ＋ 设计 1×10 分）</h3>
+<table>
+<thead>
+<tr>
+<th>章</th>
+<th>卷</th>
+<th>题</th>
+<th>要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C2</td>
+<td>2024年10月【13003】</td>
+<td>30</td>
+<td>返回指针 curr 指向结点位置的算法<strong>填空</strong></td>
+</tr>
+<tr>
+<td>C2</td>
+<td>2024年10月【13003】</td>
+<td>31</td>
+<td>顺序表算法<strong>阅读</strong>：L 的状态与功能（删除负值）</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>2024年10月【13003】</td>
+<td>34</td>
+<td><strong>设计</strong>：后序遍历二叉树递归程序</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>2024年10月【广东】</td>
+<td>26</td>
+<td>单链表算法<strong>阅读</strong>：功能与复杂度比较</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>2025年4月【广东】</td>
+<td>29</td>
+<td><strong>双向链表</strong>合并填空</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>2026年4月13181</td>
+<td>26</td>
+<td>删除 current 后续结点<strong>填空</strong></td>
+</tr>
+<tr>
+<td>C2</td>
+<td>2026年4月13181</td>
+<td>30</td>
+<td><strong>设计</strong>：删除单链表中元素值重复的结点</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>2024年10月【广东】</td>
+<td>30</td>
+<td><strong>设计</strong>：用栈判断括号是否匹配</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>2026年4月13181</td>
+<td>27</td>
+<td><strong>对顶栈（两栈共享空间）</strong>出栈填空</td>
+</tr>
+<tr>
+<td>C4</td>
+<td>2024年10月【广东】</td>
+<td>27</td>
+<td>广义表存储结构建立函数<strong>阅读</strong></td>
+</tr>
+<tr>
+<td>C4</td>
+<td>2025年4月【广东】</td>
+<td>26</td>
+<td>数组/矩阵算法<strong>阅读</strong>（求 A 与其转置之和）</td>
+</tr>
+<tr>
+<td>C5</td>
+<td>2025年4月【广东】</td>
+<td>28</td>
+<td>前序中序<strong>构造二叉树函数填空</strong></td>
+</tr>
+<tr>
+<td>C5</td>
+<td>2026年4月13181</td>
+<td>28</td>
+<td>二叉树函数<strong>阅读</strong>（统计结点个数）</td>
+</tr>
+<tr>
+<td>C5</td>
+<td>2026年4月13181</td>
+<td>29</td>
+<td>二叉树函数<strong>阅读</strong>（中序遍历输出）</td>
+</tr>
+<tr>
+<td>C6</td>
+<td>2024年10月【广东】</td>
+<td>28</td>
+<td>写 <strong>BFS 遍历序列</strong>并比较两种存储的复杂度</td>
+</tr>
+<tr>
+<td>C6</td>
+<td>2025年4月【广东】</td>
+<td>30</td>
+<td><strong>设计</strong>：邻接表存储图的<strong>广度优先搜索</strong></td>
+</tr>
+<tr>
+<td>C7</td>
+<td>2024年10月【13003】</td>
+<td>33</td>
+<td>排序算法程序<strong>阅读填空</strong>（判断算法/稳定性/哨兵作用）</td>
+</tr>
+<tr>
+<td>C8</td>
+<td>2024年10月【13003】</td>
+<td>32</td>
+<td><strong>折半查找</strong>函数返回值与功能</td>
+</tr>
+<tr>
+<td>C8</td>
+<td>2024年10月【广东】</td>
+<td>29</td>
+<td><strong>二分查找确定插入位置</strong>填空</td>
+</tr>
+<tr>
+<td>C8</td>
+<td>2024年10月【13003】</td>
+<td>—</td>
+<td>（与 32 同源，已合并统计）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>归纳：大题只有 8 类模板</strong></p>
+<ul>
+<li><strong>① 链表/顺序表算法</strong>（填空＋阅读＋设计）——7 道，<strong>最大题源</strong></li>
+<li><strong>② 栈与队列应用题</strong>（括号匹配、对顶栈、循环队列判满、中缀转后缀、出栈序列）——4 道</li>
+<li><strong>③ 数组与广义表</strong>（地址计算、head/tail、存储结构、矩阵运算）——5 道</li>
+<li><strong>④ 二叉树</strong>（性质计算、遍历序列、由前序中序画树、构造/统计/输出算法、哈夫曼 WPL）——6 道</li>
+<li><strong>⑤ 图</strong>（MST、最短路径、DFS/BFS 序列与算法）——4 道</li>
+<li><strong>⑥ 排序</strong>（各趟结果、建堆、快速划分、程序阅读）——4 道</li>
+<li><strong>⑦ 查找</strong>（散列函数与 ASL、BST 形态与 ASL、二分查找）——4 道</li>
+<li><strong>⑧ 算法设计 10 分题</strong>（本批考过：删除重复结点、后序遍历、括号匹配、BFS）——<strong>只考链表、树、图三类</strong></li>
+</ul>
+<hr>
+<h2 id="a-b-c">七、复习优先级结论（A / B / C 三级）</h2>
+<h3 id="a-2">A 级（必背到默写；本批出现 ≥2 卷或属"每卷必出"的基本功）</h3>
+<ul>
+<li><strong>多维数组行主序地址计算</strong>（3 卷，含 1 道解答）</li>
+<li><strong>广义表表头/表尾/表长/深度运算</strong>（3 卷，含 2 道解答）</li>
+<li><strong>二叉树 5 条性质</strong>（<code>n0＝n2＋1</code>、第 i 层 ≤2^(i−1)、深度 k ≤2^k−1、完全二叉树深度）（3 卷）</li>
+<li><strong>由前序＋中序构造二叉树 / 由两种遍历序列唯一确定二叉树</strong>（3 卷）</li>
+<li><strong>散列：散列函数构造、除留余数法、线性探查 ASL、装填因子</strong>（3 卷）</li>
+<li><strong>线性结构与非线性结构的判定</strong>（2 卷）</li>
+<li><strong>算法 5 特性；时间复杂度（常数阶、常见量级排序）</strong>（2 卷）</li>
+<li><strong>数据元素/数据项/数据类型的层级关系</strong>（2 卷）</li>
+<li><strong>单链表判空条件、插入/删除指针语句、算法阅读说功能与复杂度</strong>（2 卷，算法题）</li>
+<li><strong>线性表的定义与基本操作（终端元素、查找返回值）</strong>（2 卷）</li>
+<li><strong>循环队列判空判满条件（牺牲一单元 / 标志位）</strong>（2 卷）</li>
+<li><strong>稀疏矩阵三元组表</strong>（2 卷）</li>
+<li><strong>广义表的空表与递归性质</strong>（2 卷）</li>
+<li><strong>二叉树遍历序列（前/中/后）与遍历算法</strong>（2 卷）</li>
+<li><strong>最小生成树的边数＝n−1</strong>（2 卷）</li>
+<li><strong>排序稳定性判定：稳定＝直接插入/起泡/归并/基数；不稳定＝希尔/快速/选择/堆</strong>（2 卷）</li>
+<li><strong>排序复杂度总表（时间/空间/最好/最坏）</strong>（2 卷）</li>
+<li><strong>内排序基本概念（升序/降序、比较与移动）</strong>（2 卷）</li>
+<li><strong>查找基本概念（ASL 公式、查找的主要操作是比较）</strong>（2 卷）</li>
+<li><strong>分块查找的前提（块间有序、块内无序）与过程</strong>（2 卷）</li>
+</ul>
+<h3 id="b-1">B 级（要背要练；本批 1 卷，但旧卷反复考或考纲明确要求）</h3>
+<ul>
+<li><strong>顺序表元素存储地址计算</strong>、<strong>插入/删除平均移动元素个数</strong></li>
+<li><strong>合理出栈序列的判定</strong>、<strong>出栈序列计数（卡特兰数）</strong>、<strong>双端队列输出序列</strong></li>
+<li><strong>栈在括号匹配、表达式求值中的应用</strong>；<strong>对顶栈（两栈共享空间）</strong></li>
+<li><strong>串：子串数目、BF 与 KMP、<code>next</code> 特征向量</strong>（<strong>本批唯一空白区，必背</strong>）</li>
+<li><strong>哈夫曼树构造与 WPL 计算</strong>；<strong>树与森林的转换</strong>；<strong>完全二叉树/满二叉树判定</strong>；<strong>不同形态二叉树数目</strong></li>
+<li><strong>图的邻接矩阵/邻接表</strong>、<strong>顶点度与边数</strong>、<strong>连通图边数极值</strong>、<strong>DFS/BFS 序列与复杂度</strong></li>
+<li><strong>Prim / Kruskal、Dijkstra、拓扑排序、关键路径 AOE</strong>（<strong>AOE 本批 0 题，考纲要求，必背</strong>）</li>
+<li><strong>二叉排序树的构造、形态、ASL</strong>；<strong>平衡二叉树（AVL）旋转</strong>（<strong>本批 0 题，必背</strong>）</li>
+<li><strong>二分查找：前提、判定树、比较次数、确定插入位置</strong></li>
+<li><strong>B 树与 B+ 树的插入与结点分裂</strong></li>
+<li><strong>各排序算法各趟结果</strong>（直接插入、起泡、快速划分、归并、堆）</li>
+<li><strong>堆的定义与建堆、堆排序过程</strong></li>
+<li><strong>排序算法与初始状态/存储结构的关系</strong></li>
+</ul>
+<h3 id="c">C 级（了解即可）</h3>
+<ul>
+<li>1 卷考点中偏"识别型"的：静态链表、抽象数据类型、四种基本存储方法的名称、数据结构研究内容</li>
+<li>具体代码细节（如某种链表操作的具体变量名）——考纲不要求，理解思路即可</li>
+</ul>
+<hr>
+<h2 id="_3">八、使用建议与风险提示</h2>
+<ul>
+<li><strong>1. 4 套卷的正确用法是"练题型"而不是"押考点"。</strong> 本批大题 39 道已覆盖 8 章，<strong>建议把 39 道大题当 8 类模板各做 2 遍</strong>——这比刷选择题划算得多（大题 60 分）。</li>
+<li><strong>2. 填空是最大的失分陷阱</strong>：新卷型 10 空 × 2 分＝20 分，<code>二叉树第 i 层最多结点数</code>、<code>循环队列队满条件</code>、<code>最小生成树边数</code>、<code>广度优先用队列</code>这类<strong>单句式填空必须条件反射</strong>。</li>
+<li><strong>3. 三处"考纲要求但本批 0 题"的盲区，必须回教材背</strong>：</li>
+<li><strong>串的 BF / KMP 与 <code>next</code> 特征向量</strong>（本批只有 1 道"子串数目"）</li>
+<li><strong>关键路径（AOE 网）</strong>（本批 0 题）</li>
+<li><strong>平衡二叉树（AVL）的四种旋转</strong>（本批 0 题）</li>
+<li><strong>4. 图片题务必对照原 PDF</strong>：本批 124 题中有大量程序、矩阵、图是图片，OCR 还原可能有个别数字错误（已逐题备注）。<strong>其中最需要人工核对的两处</strong>：</li>
+<li><strong>2026年4月 13181 第 28 题</strong>：参考答案称"度为 1 的结点个数"，但代码逻辑实为<strong>度为 2</strong> 的结点个数。</li>
+<li><strong>2026年4月 13181 第 27(2) 空</strong>：参考答案作 <code>righttop == maxSize</code>，按对顶栈定义应为 <strong><code>maxSize - 1</code></strong>。</li>
+<li>另：<strong>2026年4月 13181 的题目页是扫描图片</strong>，无文字层，原题干无法核对，建议以教材同类题练习。</li>
+<li><strong>5. 13181 那套卷怎么用</strong>：它的 5 道解答题（数组地址、广义表、Kruskal、建堆、BST 的 ASL）<strong>与 13003 考纲完全一致</strong>，当练习用；但<strong>不要把它当成 13003 的真题来源</strong>（13181 是专科的另一门课）。</li>
+</ul>
+<hr>
+<blockquote>
+<p>数据来源：<code>历年真题/13181数据结构与算法/02331 数据结构，13181 数据结构/</code> 下现行教材口径的 4 个 PDF。<br>
+配套成品：<strong>《13003数据结构与算法_真题考点简记》</strong>（同目录 HTML）。</p>
+</blockquote>
+</main>
+<footer>13003 数据结构与算法 · 历年真题分析（现行教材口径）· 浏览器直接打开即可阅读</footer>
+</body>
+</html>
