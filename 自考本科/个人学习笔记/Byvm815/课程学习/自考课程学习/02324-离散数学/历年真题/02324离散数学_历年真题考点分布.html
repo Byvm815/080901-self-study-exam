@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>02324 离散数学 · 历年真题考点分布分析</title>
+<style>
+:root{--fg:#24292f;--muted:#57606a;--line:#d0d7de;--accent:#0969da;--code:#f6f8fa;--soft:#fafbfc}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--fg);
+  font:16px/1.78 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",sans-serif}
+main{max-width:980px;margin:0 auto;padding:26px 22px 72px}
+h1{font-size:1.75em;line-height:1.35;border-bottom:3px solid var(--accent);padding-bottom:.28em;margin:1.1em 0 .7em}
+h2{font-size:1.36em;line-height:1.4;border-bottom:1px solid var(--line);padding-bottom:.22em;margin:1.5em 0 .6em}
+h3{font-size:1.14em;margin:1.25em 0 .45em}
+h4{font-size:1.02em;margin:1.05em 0 .35em;color:var(--muted)}
+p{margin:.5em 0}
+ul,ol{margin:.45em 0;padding-left:1.5em}
+li{margin:.22em 0}
+li>ul,li>ol{margin:.15em 0}
+strong{color:#000}
+em{color:#000}
+code{background:var(--code);border-radius:4px;padding:.12em .34em;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:.92em}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;margin:.7em 0}
+pre code{background:none;padding:0;white-space:pre;font-size:.9em;line-height:1.5}
+table{border-collapse:collapse;width:100%;margin:.75em 0;font-size:.95em;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600}
+tbody tr:nth-child(even){background:var(--soft)}
+blockquote{margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:var(--code);color:var(--muted)}
+blockquote p{margin:.25em 0}
+hr{border:0;border-top:1px solid var(--line);margin:1.8em 0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.topnav{position:sticky;top:0;z-index:20;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+  padding:10px 22px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(180%) blur(6px);font-size:.9em}
+.topnav a{white-space:nowrap}
+.topnav .sep{color:var(--line)}
+.topnav .brand{font-weight:600;color:var(--fg);margin-right:6px}
+footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid var(--line);color:var(--muted);font-size:.86em}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:1em 0}
+.card{display:block;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--soft)}
+.card:hover{border-color:var(--accent)}
+.card b{display:block;margin-bottom:4px}
+.card span{color:var(--muted);font-size:.86em}
+.toc{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:1em 0}
+.toc ul{margin:.25em 0;padding-left:1.3em}
+.tip{border:1px dashed var(--accent);border-radius:10px;padding:10px 14px;background:#f6faff;margin:1em 0;font-size:.94em}
+@media (max-width:640px){main{padding:18px 14px 60px}h1{font-size:1.5em}}
+@media print{
+  body{font-size:11.5pt;line-height:1.6}
+  .topnav{display:none}
+  main{max-width:none;padding:0}
+  h1{page-break-before:always;border-bottom-width:2px}
+  body>main>h1:first-child,main>section:first-child>h1{page-break-before:avoid}
+  pre,table,blockquote,li{page-break-inside:avoid}
+  a{color:#000;text-decoration:none}
+  footer{display:none}
+}
+</style>
+</head>
+<body>
+<nav class="topnav"><span class="brand">02324 离散数学</span> <a href="02324离散数学_真题考点简记.html">02324 离散数学 · 真题考点简记（高频关键词版） →</a></nav>
+<main>
+<h1 id="02324">02324 离散数学 · 历年真题考点分布分析</h1>
+<blockquote>
+<p><strong>统计口径</strong>：本课程 <code>历年真题/02324 离散数学/</code> 目录下 <strong>22 个 PDF</strong>，按考试场次去重后为 <strong>20 套试卷、679 道题</strong>（含 <code>02324_2024_10</code> 与 <code>02324离散数学 2024年10月[无答案]</code> 两套重复件；<code>2018年10月</code> 原卷残缺，只有第 1—14 题）。<br>
+时间跨度：<strong>2015 年 4 月 — 2025 年 10 月</strong>（含 2020 年 8 月特殊考期）。<br>
+教材：《离散数学》<strong>辛运帏</strong> 主编，机械工业出版社 <strong>2014 年版</strong>（全国考委 2024 年、2025 年官方教材目录均指定此版且<strong>无"启用时间"值</strong>，说明长期未更换，本批 20 套卷全部在现行教材口径内）。<br>
+分类方法：逐题标注（8 个并行批次）→ 每道题一个"考点标签" → 再按 <strong>9 个章标签</strong>、<strong>6 个能力类别</strong>两个维度统计。<br>
+<strong>数据可信度</strong>：本批有相当多的卷子是"图片化试卷"（题干、选项、公式、题图是内嵌图片，文本层为空）。标注时已对原卷 PDF 逐页渲染并做 OCR 补全（约 300 处），<strong>仍有个别题只能按参考答案反推</strong>（已在第九节逐条列出）。</p>
+</blockquote>
+<hr>
+<h2 id="9">一、结论摘要（先看这 9 条）</h2>
+<ul>
+<li><strong>1. 卷型极其稳定，20 套卷完全一致</strong>：<strong>单选 15×2＝30 分 ＋ 填空 10×2＝20 分 ＋ 简答 7×5＝35 分 ＋ 证明 3×5＝15 分 ＝ 100 分</strong>，每卷 35 题。（个别老卷把 7 道简答中的 2 道写成"证明"、或调整过大题在小节里的顺序，但<strong>题量、分值不变</strong>。）</li>
+<li><strong>2. 大题占 50 分，是本课程的半壁江山</strong>：简答 35 分＋证明 15 分。<strong>客观题（选择＋填空）只占 50 分，且填空每题 2 分共 10 题。</strong> 这意味着"会算"比"会背"更重要。</li>
+<li><strong>3. 第 5 章"关系与函数"是绝对第一章</strong>：153 题（<strong>22.5%</strong>），比第二名高出近 6 个百分点。<strong>关系运算（复合、逆、闭包）＋函数性质（单射/满射/双射）＋偏序与哈斯图</strong>几乎每卷都考 6—10 题。</li>
+<li><strong>4. 第二梯队是"图"和"命题"</strong>：第 8 章图 114 题（16.8%）、第 1 章命题与命题公式 105 题（15.5%）、第 3 章谓词逻辑 84 题（12.4%）。</li>
+<li><strong>5. 最大的"性价比洼地"是第 2 章推理理论</strong>：10 题（<strong>1.5%</strong>），且 20 套卷里有 <strong>9 套一题都不考</strong>。<strong>"命题逻辑的推理理论"只需会做几道形式证明即可，不必投入大量时间</strong>；相对地，第 7 章格与布尔代数也只有 29 题（4.3%），但<strong>几乎每卷必考 1—3 题</strong>（偏序集是否为格、补元、哈斯图）。</li>
+<li><strong>6. 6 个能力维度里，"计算求解"独占 42%</strong>：计算求解 285 题 ＞ 判定与检验 150 题 ＞ 概念判别 94 题 ＞ 证明与推理 67 题 ＞ 作图与构造 48 题 ＞ 符号化翻译 35 题。</li>
+<li><strong>7. 填空 190 题几乎全是"算一个结果"</strong>：计算求解在填空里占 162 题（85%）。<strong>填空题是最容易通过"背题型＋练计算"拿满分的 20 分。</strong></li>
+<li><strong>8. 大题（190 道）只有 8 类模板</strong>：Kruskal 最小生成树（8 卷）、真值表法判定公式类型/等价式（8 卷）、集合恒等式证明（6 卷）、等值演算求主析取/主合取范式（9 卷）、谓词公式在解释下的真值（5 卷）、二叉树表示算术表达式与遍历（6 卷）、交换群/群的证明（7 卷）、哈斯图与极大极小元/格判定（9 卷）。</li>
+<li><strong>9. 卷与卷之间难度与考点分布高度相似</strong>：每一套卷的章分布都接近"关系 6—11 题、图 3—9 题、命题 3—8 题、谓词 3—6 题、代数 1—5 题、图应用 2—5 题、集合 1—5 题、格 0—3 题、推理 0—2 题"。<strong>说明这门课的命题是"结构性出卷"，可以按这 9 章的固定配额分配复习时间。</strong></li>
+</ul>
+<hr>
+<h2 id="_1">二、卷型与分值</h2>
+<table>
+<thead>
+<tr>
+<th>题型</th>
+<th>题量</th>
+<th>分值</th>
+<th>合计</th>
+<th>本批题量</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一、单项选择题</td>
+<td>15</td>
+<td>2 分</td>
+<td><strong>30 分</strong></td>
+<td>299</td>
+<td>概念判别＋计算；四选一</td>
+</tr>
+<tr>
+<td>二、填空题</td>
+<td>10</td>
+<td>2 分</td>
+<td><strong>20 分</strong></td>
+<td>190</td>
+<td><strong>85% 是"算一个结果"</strong>，最易拿分</td>
+</tr>
+<tr>
+<td>三、简答题</td>
+<td>7</td>
+<td>5 分</td>
+<td><strong>35 分</strong></td>
+<td>133</td>
+<td>求范式、画哈斯图、写邻接矩阵、写遍历序列…</td>
+</tr>
+<tr>
+<td>四、证明题</td>
+<td>3</td>
+<td>5 分</td>
+<td><strong>15 分</strong></td>
+<td>57</td>
+<td>集合恒等式、谓词推理、群/格的性质、图论证明</td>
+</tr>
+<tr>
+<td>合计</td>
+<td>35</td>
+<td>—</td>
+<td><strong>100 分</strong></td>
+<td><strong>679</strong></td>
+<td>150 分钟</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>时间分配建议</strong>：单选 30 分钟 ； 填空 25 分钟 ； 简答 55 分钟 ； 证明 30 分钟 ； 复查 10 分钟。</li>
+<li><strong>【注意】题号分段不完全统一</strong>：多数卷是"26—32 简答、33—35 证明"；但部分老卷（如 2016年4月、2017年10月、2022年10月）把 31、32 题也写成了证明题，<strong>实际是"简答 5 题＋证明 5 题"</strong>。做题时先看小节标题，不要按题号猜题型。</li>
+</ul>
+<hr>
+<h2 id="20">三、卷目与题量（20 套）</h2>
+<table>
+<thead>
+<tr>
+<th>序</th>
+<th>考期</th>
+<th>题量</th>
+<th>序</th>
+<th>考期</th>
+<th>题量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2015 年 4 月</td>
+<td>35</td>
+<td>11</td>
+<td>2020 年 10 月</td>
+<td>35</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2015 年 10 月</td>
+<td>35</td>
+<td>12</td>
+<td>2021 年 4 月</td>
+<td>35</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2016 年 4 月</td>
+<td>35</td>
+<td>13</td>
+<td>2022 年 4 月</td>
+<td>35</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2016 年 10 月</td>
+<td>35</td>
+<td>14</td>
+<td>2022 年 10 月</td>
+<td>35</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2017 年 4 月</td>
+<td>35</td>
+<td>15</td>
+<td>2023 年 4 月</td>
+<td>35</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2017 年 10 月</td>
+<td>35</td>
+<td>16</td>
+<td>2023 年 10 月</td>
+<td>35</td>
+</tr>
+<tr>
+<td>7</td>
+<td>2018 年 4 月</td>
+<td>35</td>
+<td>17</td>
+<td>2024 年 10 月</td>
+<td>35</td>
+</tr>
+<tr>
+<td>8</td>
+<td>2018 年 10 月</td>
+<td><strong>14</strong>（原卷残缺）</td>
+<td>18</td>
+<td>2025 年 4 月</td>
+<td>35</td>
+</tr>
+<tr>
+<td>9</td>
+<td>2019 年 4 月</td>
+<td>35</td>
+<td>19</td>
+<td>2025 年 10 月</td>
+<td>35</td>
+</tr>
+<tr>
+<td>10</td>
+<td>2019 年 10 月</td>
+<td>35</td>
+<td>—</td>
+<td><strong>合计</strong></td>
+<td><strong>679</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>去重说明：<code>02324_2024_10 _离散数学真题含答案2.pdf</code>、<code>02324离散数学 2024年10月[无答案].pdf</code> 与 <code>02324 离散数学 2024年10月.pdf</code> 是<strong>同一场考试</strong>的三个版本（第三个文字最全，采用之）。<code>2018年10月</code> 那份只有 3 页、14 题。</li>
+</ul>
+<hr>
+<h2 id="9_1">四、章分布（考纲 9 章）</h2>
+<table>
+<thead>
+<tr>
+<th>章</th>
+<th>章名</th>
+<th>题量</th>
+<th>占比</th>
+<th>大题数</th>
+<th>平均每卷</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C5</td>
+<td>第5章 关系与函数</td>
+<td><strong>153</strong></td>
+<td><strong>22.5%</strong></td>
+<td>38</td>
+<td>约 7.7 题</td>
+</tr>
+<tr>
+<td>C8</td>
+<td>第8章 图</td>
+<td><strong>114</strong></td>
+<td><strong>16.8%</strong></td>
+<td>33</td>
+<td>约 5.7 题</td>
+</tr>
+<tr>
+<td>C1</td>
+<td>第1章 命题与命题公式</td>
+<td><strong>105</strong></td>
+<td><strong>15.5%</strong></td>
+<td>37</td>
+<td>约 5.3 题</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>第3章 谓词逻辑</td>
+<td>84</td>
+<td>12.4%</td>
+<td>17</td>
+<td>约 4.2 题</td>
+</tr>
+<tr>
+<td>C6</td>
+<td>第6章 代数系统的一般概念</td>
+<td>64</td>
+<td>9.4%</td>
+<td>17</td>
+<td>约 3.2 题</td>
+</tr>
+<tr>
+<td>C9</td>
+<td>第9章 图的应用</td>
+<td>64</td>
+<td>9.4%</td>
+<td>23</td>
+<td>约 3.2 题</td>
+</tr>
+<tr>
+<td>C4</td>
+<td>第4章 集合</td>
+<td>56</td>
+<td>8.2%</td>
+<td>11</td>
+<td>约 2.8 题</td>
+</tr>
+<tr>
+<td>C7</td>
+<td>第7章 格与布尔代数</td>
+<td>29</td>
+<td>4.3%</td>
+<td>5</td>
+<td>约 1.5 题</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>第2章 命题逻辑的推理理论</td>
+<td><strong>10</strong></td>
+<td><strong>1.5%</strong></td>
+<td>9</td>
+<td><strong>约 0.5 题</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>卷 × 章 明细</strong></p>
+<table>
+<thead>
+<tr>
+<th>考期</th>
+<th>C1</th>
+<th>C2</th>
+<th>C3</th>
+<th>C4</th>
+<th>C5</th>
+<th>C6</th>
+<th>C7</th>
+<th>C8</th>
+<th>C9</th>
+<th>合计</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2015年4月</td>
+<td>6</td>
+<td>1</td>
+<td>5</td>
+<td>2</td>
+<td>10</td>
+<td>3</td>
+<td>1</td>
+<td>4</td>
+<td>3</td>
+<td>35</td>
+</tr>
+<tr>
+<td>2015年10月</td>
+<td>8</td>
+<td>0</td>
+<td>6</td>
+<td>3</td>
+<td>7</td>
+<td>4</td>
+<td>1</td>
+<td>4</td>
+<td>2</td>
+<td>35</td>
+</tr>
+<tr>
+<td>2016年4月</td>
+<td>6</td>
+<td>0</td>
+<td>6</td>
+<td>3</td>
+<td>7</td>
+<td>4</td>
+<td>1</td>
+<td>5</td>
+<td>3</td>
+<td>35</td>
+</tr>
+<tr>
+<td>2016年10月</td>
+<td>7</td>
+<td>0</td>
+<td>6</td>
+<td>3</td>
+<td>6</td>
+<td>4</td>
+<td>1</td>
+<td>5</td>
+<td>3</td>
+<td>35</td>
+</tr>
+<tr>
+<td>2017年4月</td>
+<td>5</td>
+<td>0</td>
+<td>3</td>
+<td>4</td>
+<td>8</td>
+<td>4</td>
+<td>2</td>
+<td>7</td>
+<td>2</td>
+<td>35</td>
+</tr>
+<tr>
+<td>2017年10月</td>
+<td>3</td>
+<td>1</td>
+<td>5</td>
+<td>5</td>
+<td>6</td>
+<td>2</td>
+<td>1</td>
+<td>8</td>
+<td>4</td>
+<td>35</td>
+</tr>
+<tr>
+<td>2018年4月</td>
+<td>5</td>
+<td>1</td>
+<td>4</td>
+<td>1</td>
+<td>10</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>2</td>
+<td>35</td>
+</tr>
+<tr>
+<td>2018年10月</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>14</td>
+</tr>
+<tr>
+<td>2019年4月</td>
+<td>4</td>
+<td>0</td>
+<td>5</td>
+<td>3</td>
+<td>7</td>
+<td>1</td>
+<td>3</td>
+<td>8</td>
+<td>4</td>
+<td>35</td>
+</tr>
+<tr>
+<td>2019年10月</td>
+<td>5</td>
+<td>0</td>
+<td>5</td>
+<td>1</td>
+<td>8</td>
+<td>4</td>
+<td>1</td>
+<td>6</td>
+<td>5</td>
+<td>35</td>
+</tr>
+<tr>
+<td>2020年8月</td>
+<td>5</td>
+<td>1</td>
+<td>4</td>
+<td>1</td>
+<td>7</td>
+<td>4</td>
+<td>2</td>
+<td>7</td>
+<td>4</td>
+<td>35</td>
+</tr>
+<tr>
+<td>2020年10月</td>
+<td>5</td>
+<td>1</td>
+<td>3</td>
+<td>2</td>
+<td>8</td>
+<td>4</td>
+<td>1</td>
+<td>7</td>
+<td>4</td>
+<td>35</td>
+</tr>
+<tr>
+<td>2021年4月</td>
+<td>5</td>
+<td>1</td>
+<td>4</td>
+<td>2</td>
+<td>8</td>
+<td>4</td>
+<td>1</td>
+<td>6</td>
+<td>4</td>
+<td>35</td>
+</tr>
+<tr>
+<td>2022年4月</td>
+<td>5</td>
+<td>0</td>
+<td>4</td>
+<td>3</td>
+<td>7</td>
+<td>2</td>
+<td>1</td>
+<td>9</td>
+<td>4</td>
+<td>35</td>
+</tr>
+<tr>
+<td>2022年10月</td>
+<td>4</td>
+<td>0</td>
+<td>5</td>
+<td>2</td>
+<td>11</td>
+<td>2</td>
+<td>1</td>
+<td>6</td>
+<td>4</td>
+<td>35</td>
+</tr>
+<tr>
+<td>2023年4月</td>
+<td>6</td>
+<td>2</td>
+<td>3</td>
+<td>1</td>
+<td>10</td>
+<td>3</td>
+<td>2</td>
+<td>3</td>
+<td>5</td>
+<td>35</td>
+</tr>
+<tr>
+<td>2023年10月</td>
+<td>4</td>
+<td>0</td>
+<td>4</td>
+<td>2</td>
+<td>9</td>
+<td>3</td>
+<td>2</td>
+<td>8</td>
+<td>3</td>
+<td>35</td>
+</tr>
+<tr>
+<td>2024年10月</td>
+<td>6</td>
+<td>1</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>5</td>
+<td>2</td>
+<td>4</td>
+<td>2</td>
+<td>35</td>
+</tr>
+<tr>
+<td>2025年4月</td>
+<td>7</td>
+<td>1</td>
+<td>3</td>
+<td>4</td>
+<td>8</td>
+<td>3</td>
+<td>2</td>
+<td>4</td>
+<td>3</td>
+<td>35</td>
+</tr>
+<tr>
+<td>2025年10月</td>
+<td>7</td>
+<td>0</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>4</td>
+<td>3</td>
+<td>4</td>
+<td>2</td>
+<td>35</td>
+</tr>
+</tbody>
+</table>
+<p><strong>读表要点</strong></p>
+<ul>
+<li><strong>第 5 章（关系与函数）每卷稳定 6—11 题</strong>，是唯一"从不低于 6 题"的章。<strong>排名第一的单一考点（关系的复合运算）就在这一章，20 套卷里考了 9 次。</strong></li>
+<li><strong>第 2 章（推理理论）20 套里 9 套 0 题</strong>，其余最多 2 题。<strong>这是唯一可以"低投入"的章</strong>——但要会形式证明，因为大题里它是"证明 3 题"的候选之一（本批 9 道）。</li>
+<li><strong>第 7 章（格与布尔代数）只有 4.3%，但 20 套里 19 套有题</strong>，且常与第 5 章合并考查（哈斯图＋格判定）。<strong>属于"不能不背，但不必深挖"的章。</strong></li>
+<li><strong>第 9 章（图的应用）题量不大（9.4%）但大题占比高</strong>：23 道大题里主要是<strong>最小生成树 Kruskal（8 卷）</strong>与<strong>二叉树表示表达式（5—6 卷）</strong>。</li>
+</ul>
+<hr>
+<h2 id="6">五、能力类别分布（6 类）</h2>
+<table>
+<thead>
+<tr>
+<th>能力</th>
+<th>题量</th>
+<th>占比</th>
+<th>单选</th>
+<th>填空</th>
+<th>简答</th>
+<th>证明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>计算求解</td>
+<td><strong>285</strong></td>
+<td><strong>42.0%</strong></td>
+<td>63</td>
+<td><strong>162</strong></td>
+<td>57</td>
+<td>3</td>
+</tr>
+<tr>
+<td>判定与检验</td>
+<td>150</td>
+<td>22.1%</td>
+<td>127</td>
+<td>7</td>
+<td>16</td>
+<td>0</td>
+</tr>
+<tr>
+<td>概念判别</td>
+<td>94</td>
+<td>13.8%</td>
+<td>78</td>
+<td>16</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>证明与推理</td>
+<td>67</td>
+<td>9.9%</td>
+<td>0</td>
+<td>0</td>
+<td>24</td>
+<td><strong>43</strong></td>
+</tr>
+<tr>
+<td>作图与构造</td>
+<td>48</td>
+<td>7.1%</td>
+<td>0</td>
+<td>1</td>
+<td><strong>36</strong></td>
+<td>11</td>
+</tr>
+<tr>
+<td>符号化翻译</td>
+<td>35</td>
+<td>5.2%</td>
+<td>31</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>这张表决定你的复习方式</strong></p>
+<ul>
+<li><strong>"计算求解"＝285 题（42%）</strong>：这是本课程最大的板块，<strong>分布在填空（162）、简答（57）和单选（63）里</strong>。<strong>"会算"＝及格</strong>。典型：求复合关系、求闭包、求主析取范式、求满射个数、求通路回路数、求树的结点数。</li>
+<li><strong>"判定与检验"＝150 题（22.1%），其中 127 题在单选题里</strong>：判断是不是重言式、是不是欧拉图／哈密顿图、度数序列能否图化、关系是否具某性质、偏序集是否为格、运算是否满足结合律。<strong>这类题技巧性最强，靠"背判别准则"。</strong></li>
+<li><strong>"作图与构造"＝48 题，全部是大题（36 简答＋11 证明）</strong>：画哈斯图、画最小生成树、写邻接矩阵、构造真值表、用二叉树表示表达式。<strong>这是 50 分大题里最稳的一块——因为是"套路题"，练 5 遍就能满分。</strong></li>
+<li><strong>"证明与推理"＝67 题</strong>：43 道在证明题，24 道在简答。<strong>证明题只有 6 种</strong>（见第八节），可以集中突破。</li>
+</ul>
+<hr>
+<h2 id="_2">六、高频考点排行榜</h2>
+<blockquote>
+<p>记法：<code>卷数/次数</code>，分母是 20 套卷。这是本课程最值得投入的清单。</p>
+</blockquote>
+<h3 id="1-5">1. 出现 ≥5 卷（核心必考）</h3>
+<table>
+<thead>
+<tr>
+<th>排名</th>
+<th>章</th>
+<th>考点</th>
+<th>卷数/次数</th>
+<th>题型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>C5</td>
+<td><strong>关系的复合运算</strong></td>
+<td><strong>9卷/9次</strong></td>
+<td>填空</td>
+</tr>
+<tr>
+<td>2</td>
+<td>C9</td>
+<td><strong>Kruskal 算法求最小生成树</strong></td>
+<td><strong>8卷/8次</strong></td>
+<td>简答·证明</td>
+</tr>
+<tr>
+<td>3</td>
+<td>C3</td>
+<td><strong>谓词公式在给定解释下的真值</strong></td>
+<td><strong>8卷/8次</strong></td>
+<td>简答·填空</td>
+</tr>
+<tr>
+<td>4</td>
+<td>C3</td>
+<td><strong>谓词命题符号化</strong></td>
+<td>7卷/8次</td>
+<td>单选·填空</td>
+</tr>
+<tr>
+<td>5</td>
+<td>C7</td>
+<td><strong>偏序集是否为格</strong></td>
+<td>7卷/7次</td>
+<td>单选·简答·证明</td>
+</tr>
+<tr>
+<td>6</td>
+<td>C9</td>
+<td><strong>树的性质求结点数与树叶数</strong></td>
+<td>7卷/7次</td>
+<td>单选·填空</td>
+</tr>
+<tr>
+<td>7</td>
+<td>C5</td>
+<td><strong>关系的定义域与值域</strong></td>
+<td>7卷/7次</td>
+<td>填空</td>
+</tr>
+<tr>
+<td>8</td>
+<td>C8</td>
+<td><strong>握手定理求顶点数</strong></td>
+<td>6卷/8次</td>
+<td>单选·填空</td>
+</tr>
+<tr>
+<td>9</td>
+<td>C1</td>
+<td>真值表法判定公式类型</td>
+<td>6卷/6次</td>
+<td>简答</td>
+</tr>
+<tr>
+<td>10</td>
+<td>C4</td>
+<td>集合恒等式的证明</td>
+<td>6卷/6次</td>
+<td>简答·证明</td>
+</tr>
+<tr>
+<td>11</td>
+<td>C6</td>
+<td>二元运算结合律判定</td>
+<td>6卷/6次</td>
+<td>单选</td>
+</tr>
+<tr>
+<td>12</td>
+<td>C1</td>
+<td>命题的符号化</td>
+<td>6卷/6次</td>
+<td>单选</td>
+</tr>
+<tr>
+<td>13</td>
+<td>C1</td>
+<td>等值演算法求主析取范式</td>
+<td>6卷/6次</td>
+<td>简答</td>
+</tr>
+<tr>
+<td>14</td>
+<td>C5</td>
+<td>关系性质判定</td>
+<td>5卷/6次</td>
+<td>单选·简答</td>
+</tr>
+<tr>
+<td>15</td>
+<td>C6</td>
+<td>代数系统的幺元与零元</td>
+<td>5卷/6次</td>
+<td>填空·单选</td>
+</tr>
+<tr>
+<td>16</td>
+<td>C8</td>
+<td>欧拉图的判定</td>
+<td>5卷/5次</td>
+<td>单选·填空</td>
+</tr>
+<tr>
+<td>17</td>
+<td>C9</td>
+<td>二叉树表示算术表达式与遍历</td>
+<td>5卷/5次</td>
+<td>简答·证明</td>
+</tr>
+<tr>
+<td>18</td>
+<td>C6</td>
+<td>交换群的证明</td>
+<td>5卷/5次</td>
+<td>证明·简答</td>
+</tr>
+<tr>
+<td>19</td>
+<td>C1</td>
+<td>主析取范式中小项个数</td>
+<td>5卷/5次</td>
+<td>单选</td>
+</tr>
+<tr>
+<td>20</td>
+<td>C8</td>
+<td>度数序列可图化判定</td>
+<td>5卷/5次</td>
+<td>单选</td>
+</tr>
+<tr>
+<td>21</td>
+<td>C3</td>
+<td>谓词公式在整数域的真值</td>
+<td>5卷/5次</td>
+<td>填空·单选</td>
+</tr>
+<tr>
+<td>22</td>
+<td>C5</td>
+<td>满射函数个数</td>
+<td>5卷/5次</td>
+<td>填空·单选</td>
+</tr>
+<tr>
+<td>23</td>
+<td>C5</td>
+<td>关系的复合与逆</td>
+<td>5卷/5次</td>
+<td>填空·单选</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-34">2. 出现 3—4 卷（重点）</h3>
+<ul>
+<li>完全图删边得生成树（4）、整除关系哈斯图与极大极小元（4）、运算构成群的判定（4）、<strong>有界格中元素的补元（4）</strong>、构造命题公式真值表（4）、生成树与边数关系（4）、<strong>哈密顿图判定（4）</strong>、矛盾式（永假式）判定（4）、非同构无向树的棵数（4）、集合的差与对称差运算（4）、<strong>邻接矩阵求通路与回路数（4＋4，两个标签）</strong>、小项与大项的性质（4）</li>
+<li>树的分支点与树叶数计算（3）、必要条件命题的符号化（3）、量词的论域展开/消去量词（3）、<strong>等价关系个数与划分（3）</strong>、量词辖域的判定（3）、欧拉公式求平面图的边数（3）、关系的自反对称传递闭包（3）、谓词逻辑推理证明（3）、二元运算交换律判定（3）、谓词公式的自由变元与约束变元（3）、代数系统的零元与幺元（3）、命题符号化与联结词（3）、树的充要条件（3）、<strong>前束范式构造（3）</strong>、真值表法证明逻辑等价式（3）、求主析取范式（3）、谓词逻辑永真式证明（3）、等值演算法求主合取范式（3）、CP 规则证明推理有效（3）、求主合取范式（3）</li>
+</ul>
+<h3 id="3-12">3. 出现 1—2 卷</h3>
+<p>其余约 60 个细分考点（如哈夫曼树、关键路径、Dijkstra、容斥原理、双射证明、B 树相关内容等），见《分布》配套的统计报告与逐题明细。</p>
+<hr>
+<h2 id="_3">七、分章热度与判断</h2>
+<h3 id="1-c1105-155">第 1 章 命题与命题公式（C1，105 题，15.5%）</h3>
+<ul>
+<li>最高频：<strong>真值表法判定公式类型（6 卷）· 命题的符号化（6 卷）· 等值演算法求主析取范式（6 卷）· 主析取范式中小项个数（5 卷）· 构造真值表（4 卷）· 矛盾式判定（4 卷）· 小项大项性质（4 卷）</strong>。</li>
+<li><strong>判断</strong>：本章是"填空题＋简答题"的主场。<strong>必背 4 条</strong>：① n 个变元有小项/大项各 2ⁿ 个；② 重言式的主析取范式含全部 2ⁿ 个小项，矛盾式含 0 个；③ ∑m(S) 与 ∏M(S̄) 互补；④ 求范式两条路——<strong>等值演算法</strong>（考试常要求）与<strong>真值表法</strong>。</li>
+<li><strong>符号化是选择题的固定第一题</strong>（20 套里 6 套考命题符号化、7 套考谓词符号化），<strong>必须练熟"除非…否则""只有…才""因为…所以"三类</strong>。</li>
+</ul>
+<h3 id="2-c210-15">第 2 章 命题逻辑的推理理论（C2，10 题，1.5%）</h3>
+<ul>
+<li><strong>20 套卷里 9 套一题不考</strong>；有题的卷子也只出 1—2 题。</li>
+<li>考过的形式：<strong>CP 规则证明推理有效（3 卷）</strong>、命题逻辑推理的形式证明、反证法。</li>
+<li><strong>判断</strong>：<strong>本课程性价比最低的一章</strong>。只需掌握 <strong>P 规则、T 规则、CP 规则</strong>，会做"附加前提→推出结论"的标准套路即可。</li>
+</ul>
+<h3 id="3-c384-124">第 3 章 谓词逻辑（C3，84 题，12.4%）</h3>
+<ul>
+<li>最高频：<strong>谓词公式在给定解释下的真值（8 卷）· 谓词命题符号化（7 卷）· 谓词公式在整数域的真值（5 卷）</strong>，其后是消去量词（3）、量词辖域（3）、自由与约束变元（3）、前束范式（3）、谓词推理证明（3）、永真式证明（3）。</li>
+<li><strong>判断</strong>：本章有<strong>三条必拿分线</strong>：① <strong>符号化</strong>（"所有…都…""存在…使…"、"并不是所有…都…"）；② <strong>求给定解释下（尤其论域是整数集/实数集/正整数集）的真值</strong>；③ <strong>前束范式</strong>（记住：把量词全部提到最前面，<strong>改名避免同名冲突</strong>）。</li>
+<li><strong>证明题 3 卷考过</strong>：用 <strong>US/ES/UG/EG 规则</strong>构造谓词推理，套路固定，值得专门练。</li>
+</ul>
+<h3 id="4-c456-82">第 4 章 集合（C4，56 题，8.2%）</h3>
+<ul>
+<li>最高频：<strong>集合恒等式的证明（6 卷）</strong>、集合的差与对称差运算（4 卷）、集合的并差运算（1 卷）、容斥原理（1 卷）、幂集恒等式证明（1 卷）。</li>
+<li><strong>判断</strong>：本章题量不大，但<strong>"证明集合恒等式"是本课程最稳的证明题</strong>（6 卷考过）。<strong>固定套路：① 用运算律（德摩根、分配、吸收、幂等）化简；② 或用元素法"左⊆右且右⊆左"。</strong> 另外<strong>对称差 ⊕ 的运算与集合的差 A−B 必背</strong>（填空常考）。</li>
+</ul>
+<h3 id="5-c5153-225">第 5 章 关系与函数（C5，153 题，22.5%，第一大章）</h3>
+<ul>
+<li>最高频：<strong>关系的复合运算（9 卷）· 关系的定义域与值域（7 卷）· 关系性质判定（5—6 卷）· 满射函数个数（5 卷）· 关系的复合与逆（5 卷）· 哈斯图与极大极小元（4 卷）· 关系的自反/对称/传递闭包（3 卷）· 等价关系个数与划分（3 卷）</strong>。</li>
+<li><strong>判断</strong>：<strong>这是"拿分总开关"</strong>。四条必背主线：</li>
+<li><strong>① 关系的复合与逆</strong>：<code>R∘S={〈x,z〉|∃y(〈x,y〉∈R∧〈y,z〉∈S)}</code>；<code>R⁻¹={〈y,x〉|〈x,y〉∈R}</code>；<strong>注意复合方向</strong>（R∘S 是先 R 后 S，与函数复合反向，真题反复设陷阱）。</li>
+<li><strong>② 三种闭包</strong>：<code>r(R)=R∪I_A</code>；<code>s(R)=R∪R⁻¹</code>；<code>t(R)=R∪R²∪R³∪…</code>（用 Warshall 或矩阵幂）。</li>
+<li><strong>③ 等价关系 ↔ 划分</strong>：A={1,2,3} 上等价关系个数＝<strong>5</strong>（Bell 数 B₃）；n 元集合上等价关系个数即"划分个数"；由划分写等价关系＝各块内部全相关。</li>
+<li><strong>④ 偏序与哈斯图</strong>：画哈斯图（去掉自反环、去掉传递可推出的边、层级排布），再求<strong>极大/极小元、最大/最小元、上/下界、上/下确界</strong>。<strong>本题型 4—9 卷必考大题。</strong></li>
+<li>函数部分：<strong>单射/满射/双射的判定与计数</strong>（|A|=m,|B|=n 时 A 到 B 的函数共 nᵐ 个；满射个数＝n!·S(m,n)，如 m=5、n=2 时为 <strong>30</strong>）。</li>
+</ul>
+<h3 id="6-c664-94">第 6 章 代数系统的一般概念（C6，64 题，9.4%）</h3>
+<ul>
+<li>最高频：<strong>二元运算结合律判定（6 卷）· 幺元与零元（5—6 卷）· 交换群的证明（5 卷）· 运算构成群的判定（4 卷）· 二元运算交换律判定（3 卷）</strong>。</li>
+<li><strong>判断</strong>：三条线——① <strong>运算性质判定</strong>（封闭、交换、结合、幂等、分配、吸收、消去律）；② <strong>幺元/零元/逆元</strong>的求法；③ <strong>群、半群、独异点的证明与判定</strong>（证明题 7 卷考过，是本课程证明题第二大类）。</li>
+<li><strong>证明"是交换群"的固定四步</strong>：证明<strong>结合律 → 找出幺元 e → 求出每元逆元 → 验证交换律</strong>。证明"是子群"用<strong>一步判定法</strong>：<code>a,b∈H ⇒ a*b⁻¹∈H</code>。</li>
+</ul>
+<h3 id="7-c729-43">第 7 章 格与布尔代数（C7，29 题，4.3%）</h3>
+<ul>
+<li>最高频：<strong>偏序集是否为格（7 卷）· 有界格中元素的补元（4 卷）</strong>、整除关系哈斯图与格判定（2 卷）、分配格的性质证明（1 卷）。</li>
+<li><strong>判断</strong>：题量虽小但<strong>几乎卷卷有题</strong>，且<strong>常与第 5 章合并成一道"哈斯图＋求极值元＋判断是否为格"的 5 分题</strong>（这类合并题本批 9 卷考过）。</li>
+<li>必背：格＝偏序集中<strong>任意两元素都有上确界和下确界</strong>；<strong>有补格</strong>要求每元都有补元且<strong>补元唯一（布尔代数）</strong>；分配格、模格的定义。</li>
+</ul>
+<h3 id="8-c8114-168">第 8 章 图（C8，114 题，16.8%）</h3>
+<ul>
+<li>最高频：<strong>握手定理求顶点数（6 卷）· 欧拉图判定（5 卷）· 度数序列可图化（5 卷）· 哈密顿图判定（4 卷）· 邻接矩阵求通路与回路数（4＋4 卷）· 欧拉公式求平面图边数（3 卷）</strong>。</li>
+<li><strong>判断</strong>：本章是"<strong>判别准则＋矩阵计算</strong>"的组合。</li>
+<li><strong>① 握手定理</strong>：<code>Σdeg(v)=2m</code>；奇度顶点个数必为偶数。<strong>求顶点数、边数、各度结点数的题必用它。</strong></li>
+<li><strong>② 度数序列可图化</strong>：和为偶数，且最大度 &lt; 顶点数（简单图）；可用 <strong>Havel–Hakimi</strong> 逐步减去。</li>
+<li><strong>③ 欧拉图</strong>：连通且<strong>所有顶点度数为偶数</strong>（欧拉回路）；只有两个奇度顶点则有欧拉通路。</li>
+<li><strong>④ 哈密顿图</strong>：没有简单充要条件；常用<strong>必要条件</strong>（去任意 k 个顶点后连通分支数 ≤ k）与<strong>充分条件</strong>（任两顶点度数和 ≥ n）。</li>
+<li><strong>⑤ 邻接矩阵</strong>：<code>A^k</code> 的 (i,j) 元＝i 到 j 长度为 k 的通路数；<code>tr(A^k)</code>＝长度为 k 的回路数。<strong>简答常考"写邻接矩阵并求通路数/回路数"。</strong></li>
+<li><strong>⑥ 平面图欧拉公式</strong>：<code>n − m + r = 2</code>；连通简单平面图 <code>m ≤ 3n − 6</code>。</li>
+<li><strong>⑦ 非同构树的棵数</strong>：n=5 → 3 棵，n=6 → <strong>6</strong> 棵，n=7 → 11 棵。</li>
+</ul>
+<h3 id="9-c964-94">第 9 章 图的应用（C9，64 题，9.4%）</h3>
+<ul>
+<li>最高频：<strong>Kruskal 求最小生成树（8 卷，第一大题考点）· 树的性质求结点数与树叶数（7 卷）· 二叉树表示算术表达式与遍历（5—6 卷）· 完全图删边得生成树（4 卷）· 生成树与边数关系（4 卷）· 非同构无向树的棵数（4 卷）</strong>。</li>
+<li><strong>判断</strong>：<strong>本章是"大题提分最快的一章"</strong>。</li>
+<li><strong>① 树的性质</strong>：n 个结点的树有 <strong>n−1 条边</strong>；<strong>叶结点数 <code>n₁ = 2 + Σ_{k≥3}(k−2)·n_k</code></strong>（这个公式几乎每年都用）。</li>
+<li><strong>② 最小生成树</strong>：<strong>Kruskal（按边权递增选边、避开回路，取 n−1 条）</strong> 与 Prim（从一个顶点扩展）。<strong>本批 8 卷考 Kruskal，必须练到能写"选边顺序＋权值和"。</strong></li>
+<li><strong>③ 完全图删边</strong>：K_n 得到生成树需删 <code>n(n−1)/2 − (n−1)</code> 条边（K₇ → 删 <strong>15</strong> 条；K₆ → 删 <strong>10</strong> 条）。</li>
+<li><strong>④ 二叉树表示表达式</strong>：把表达式按运算优先级画成二叉树，再写<strong>先序（前缀）＝波兰式、中序＝中缀、后序（后缀）＝逆波兰式</strong>。</li>
+</ul>
+<hr>
+<h2 id="190-8">八、大题（190 道）排行与 8 类模板</h2>
+<h3 id="_4">大题按章分布</h3>
+<table>
+<thead>
+<tr>
+<th>章</th>
+<th>C5</th>
+<th>C1</th>
+<th>C8</th>
+<th>C9</th>
+<th>C3</th>
+<th>C6</th>
+<th>C4</th>
+<th>C2</th>
+<th>C7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>大题数</td>
+<td><strong>38</strong></td>
+<td><strong>37</strong></td>
+<td><strong>33</strong></td>
+<td>23</td>
+<td>17</td>
+<td>17</td>
+<td>11</td>
+<td>9</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="8-190">大题 8 类模板（覆盖 190 道中的绝大多数）</h3>
+<table>
+<thead>
+<tr>
+<th>模板</th>
+<th>出现卷数</th>
+<th>标准解法</th>
+<th>例题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① Kruskal 求最小生成树</strong></td>
+<td><strong>8 卷</strong></td>
+<td>边权排序 → 依次取最小且不成回路的边 → 取满 n−1 条 → 求权和</td>
+<td>"用 Kruskal 算法求题图的最小生成树并画图"</td>
+</tr>
+<tr>
+<td><strong>② 真值表法判定公式类型/等价式</strong></td>
+<td><strong>8 卷</strong></td>
+<td>列 2ⁿ 行真值表 → 全真＝重言式、全假＝矛盾式、有真有假＝可满足式</td>
+<td>"用真值表判定 ┐(P→R)∨(Q∧R) 的类型"</td>
+</tr>
+<tr>
+<td><strong>③ 等值演算求主析取/主合取范式</strong></td>
+<td><strong>9 卷</strong></td>
+<td>消去 →、↔ → 内移 ┐ → 用分配律展开 → 按小项/大项编号写出 ∑m(S)/∏M(S̄)</td>
+<td>"求 (¬P∨Q)∧(R→¬Q) 的主析取范式"</td>
+</tr>
+<tr>
+<td><strong>④ 哈斯图与极大极小元 / 是否构成格</strong></td>
+<td><strong>9 卷</strong></td>
+<td>画哈斯图 → 求极值元、上下界 → 判断任两元是否有上/下确界</td>
+<td>"画整除关系哈斯图并求 B 的极大极小元集"</td>
+</tr>
+<tr>
+<td><strong>⑤ 集合恒等式的证明</strong></td>
+<td>6 卷</td>
+<td>运算法（德摩根/分配/吸收）或元素法（左⊆右且右⊆左）</td>
+<td>"证明 ~(A∪B)=~A∩~B"</td>
+</tr>
+<tr>
+<td><strong>⑥ 谓词公式在解释下的真值 / 谓词推理证明</strong></td>
+<td>5＋3 卷</td>
+<td>消去量词 → 逐个代入论域元素求值；推理用 US/ES/UG/EG</td>
+<td>"求含嵌套量词的谓词公式在解释 I 下的真值"</td>
+</tr>
+<tr>
+<td><strong>⑦ 群的证明 / 代数系统性质证明</strong></td>
+<td>7 卷</td>
+<td>结合律 → 幺元 → 逆元 →（交换律）；子群用 a*b⁻¹∈H</td>
+<td>"证 (Z,∘)（a∘b=a+b+3）是交换群"</td>
+</tr>
+<tr>
+<td><strong>⑧ 邻接矩阵与通路回路计数</strong></td>
+<td>4＋4 卷</td>
+<td>写邻接矩阵 A → 算 A²、A³… → 元素之和＝通路数、迹＝回路数</td>
+<td>"写邻接矩阵并求长度 4 的通路数与回路数"</td>
+</tr>
+</tbody>
+</table>
+<p><strong>另需注意的两类</strong>：<strong>二叉树表示算术表达式与遍历（5—6 卷）</strong>、<strong>关系闭包 r(R)/s(R)/t(R)（3—4 卷）</strong>。</p>
+<h3 id="57-6">证明题（57 道）的 6 种考法</h3>
+<ul>
+<li><strong>集合恒等式</strong>（6 卷，最常见）</li>
+<li><strong>群的证明</strong>（交换群、子群、独异点、幂集关于对称差构成群）</li>
+<li><strong>谓词逻辑推理与永真式</strong>（3 卷）</li>
+<li><strong>图论证明</strong>（握手定理、连通性、平面图边数上界、度数重复性、自补图、哈密顿回路充分条件）</li>
+<li><strong>格与布尔代数性质</strong>（分配格性质、max/min 等式）</li>
+<li><strong>关系性质与等价关系证明</strong>（自反/对称/传递、等价类计数）</li>
+</ul>
+<p><strong>证明题的通用套路</strong>：① 集合类→"元素法或运算法"；② 代数类→"三步验证（封闭/结合/单位元逆元）或一步子群判定"；③ 图论类→"握手定理列方程"或"反证法"；④ 谓词类→"US/ES/UG/EG 规则＋假言推理"。</p>
+<hr>
+<h2 id="a-b-c">九、复习优先级结论（A / B / C 三级）</h2>
+<h3 id="a">A 级（必背必练，决定及格线）</h3>
+<ul>
+<li><strong>关系的复合、逆、定义域与值域</strong>（9＋7 卷）——注意复合方向</li>
+<li><strong>关系的三种闭包 r/s/t</strong>（3—4 卷，简答常考）</li>
+<li><strong>等价关系与划分</strong>（个数、由划分写关系、等价类）（3 卷）</li>
+<li><strong>偏序与哈斯图＋极大极小元＋是否为格</strong>（4—9 卷，大题固定题型）</li>
+<li><strong>函数的单射/满射/双射判定与个数</strong>（5 卷；满射 5→2 是 30）</li>
+<li><strong>Kruskal 最小生成树</strong>（8 卷，第一大题考点）</li>
+<li><strong>树的性质与叶结点公式 <code>n₁=2+Σ(k−2)n_k</code></strong>（7 卷）</li>
+<li><strong>完全图删边数（K₇→15、K₆→10）</strong>（4 卷）</li>
+<li><strong>握手定理求顶点数/边数</strong>（6 卷）</li>
+<li><strong>度数序列可图化 + 欧拉图/哈密顿图判别</strong>（5＋5＋4 卷）</li>
+<li><strong>邻接矩阵求通路与回路数</strong>（8 卷）</li>
+<li><strong>主析取/主合取范式的求法与性质</strong>（6＋5＋3 卷）</li>
+<li><strong>真值表法判定公式类型与等价式</strong>（8＋3 卷）</li>
+<li><strong>命题符号化与谓词命题符号化</strong>（6＋7 卷）</li>
+<li><strong>谓词公式在给定解释（整数域/实数域）下的真值</strong>（8＋5 卷）</li>
+<li><strong>前束范式</strong>（3 卷）</li>
+<li><strong>二元运算性质判定（结合/交换/幂等）与幺元零元</strong>（6＋5 卷）</li>
+<li><strong>群的证明（三步／交换群）与子群判定</strong>（7 卷）</li>
+<li><strong>集合恒等式证明与对称差运算</strong>（6＋4 卷）</li>
+<li><strong>二叉树表示算术表达式与三种遍历</strong>（5—6 卷）</li>
+<li><strong>平面图欧拉公式 n−m+r=2</strong>（3 卷）</li>
+</ul>
+<h3 id="b">B 级（要背要练）</h3>
+<ul>
+<li>CP 规则形式证明（3 卷）</li>
+<li>谓词逻辑推理证明（US/ES/UG/EG）（3 卷）</li>
+<li>谓词逻辑永真式证明（3 卷）</li>
+<li>小项与大项的数量与性质（4 卷）</li>
+<li>自由变元与约束变元、量词辖域、消去量词（各 3 卷）</li>
+<li>有界格的补元、分配格（4＋2 卷）</li>
+<li>欧拉公式的推论 <code>m ≤ 3n−6</code>（平面图边数上界证明）</li>
+<li>非同构无向树的棵数（4 卷；n=5→3、n=6→6、n=7→11）</li>
+<li>容斥原理（1 卷）</li>
+<li>等价关系个数的计数（3 卷）</li>
+<li>群中元素阶的性质、群的中心与子群判定</li>
+<li>哈密顿回路的应用（围圆桌排座）（2—3 卷）</li>
+<li>Dijkstra 最短路径、哈夫曼树与最优二叉树（较低频，但考纲要求）</li>
+</ul>
+<h3 id="c">C 级（了解即可）</h3>
+<ul>
+<li>B 树、布尔表达式化简、网络流、图的着色（本批几乎未考）</li>
+<li>具体的数学史与符号起源（不考）</li>
+</ul>
+<hr>
+<h2 id="_5">十、使用建议与风险提示</h2>
+<ul>
+<li><strong>1. 按"章配额"分配时间</strong>：关系 22.5% ＞ 图 16.8% ＞ 命题 15.5% ＞ 谓词 12.4% ＞ 代数 9.4% ＝ 图应用 9.4% ＞ 集合 8.2% ＞ 格 4.3% ＞ 推理 1.5%。<strong>关系＋图＋命题＝54.8%，是主战场。</strong></li>
+<li><strong>2. 填空 20 分是"保分池"</strong>：190 道填空题里 162 道是"算一个结果"。<strong>把"关系复合、闭包、满射个数、通路回路数、树叶数、删边数、幺元零元"这些算到条件反射，就能稳拿 15 分以上。</strong></li>
+<li><strong>3. 五道送分大题固定套路</strong>（每套卷必然出现其中 4—5 道）：Kruskal 最小生成树、真值表判定、主析取范式、哈斯图与格判定、邻接矩阵通路计数。<strong>这五类各练 5 题，大题 50 分就有了 25 分基本盘。</strong></li>
+<li><strong>4. 判别准则清单（选择题 30 分的关键）</strong>：重言式/矛盾式/可满足式 · 关系五性 · 度数序列可图化 · 欧拉图 · 哈密顿图 · 平面图 · 树 · 格 · 群。<strong>做成一张 A4 卡反复看。</strong></li>
+<li><strong>5. 数据可信度与三处矛盾（取自原卷，复习时以教材为准）</strong>：</li>
+<li><code>2019年10月 填空22</code>：原卷答案给 22，但 K₇ 共 21 条边，删 15 条才得生成树，参考答案疑有误。</li>
+<li><code>2024年10月 单选7</code>：原卷答案给"满射"，但题干中元素 1 有两个像、f 不是映射（应为 D），已两次 OCR 复核，矛盾确实存在。</li>
+<li><code>2024年10月 简答29</code>：原卷给"极大元集{3,4}"，与整除关系 2|4 不符（应为 {3}）。</li>
+<li>另有下列题<strong>原卷答案区为空白或图片</strong>，答案要点由标注者按定义推算（已在明细中标注）：2019年4月 26—35、2022年10月 26—34、2023年10月 13/31/32/34/35、2025年4月 26—33 等。</li>
+<li><strong>6. 图片题与 OCR 局限</strong>：本批约 300 处题干/选项/公式/题图原本是内嵌图片，已用 OCR 补全，但<strong>个别公式的符号（如量词、下标）可能识别有误</strong>；做题请对照原 PDF。</li>
+<li><strong>已知未完全还原的题</strong>：<code>2023年4月</code> 第 10—19 题原卷缺页（PDF 只有 6 页，题干在原卷中不存在，仅存答案字母）；<code>2020年10月</code> 第 9 题选项；<code>2018年4月</code> 第 28 题关系性质表；<code>2015年10月</code> 第 25 题邻接矩阵题图；<code>2021年4月</code> 第 7 题题干。</li>
+<li><strong>7. 章归属存疑的三道题</strong>（占 679 的 0.4%，不影响结论）：<code>2017年10月 第33题</code>（奇数系数证方程无有理根，归第 2 章证明方法）、<code>2019年4月 第31题</code>（max/min 等式证明，归第 7 章）、<code>2020年8月 第32题</code>（哈斯图＋格判定，归第 7 章；若按哈斯图优先则归第 5 章）。</li>
+</ul>
+<hr>
+<blockquote>
+<p>数据来源：<code>历年真题/02324 离散数学/</code> 下 22 个 PDF（去重 20 套卷、679 题）。<br>
+配套成品：<strong>《02324离散数学_真题考点简记》</strong>（同目录 HTML）。</p>
+</blockquote>
+</main>
+<footer>02324 离散数学 · 历年真题分析 · 由 Markdown 生成，浏览器直接打开即可阅读</footer>
+</body>
+</html>

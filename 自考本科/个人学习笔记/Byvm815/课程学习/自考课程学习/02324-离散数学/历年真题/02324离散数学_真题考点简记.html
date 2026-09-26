@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>02324 离散数学 · 真题考点简记（高频关键词版）</title>
+<style>
+:root{--fg:#24292f;--muted:#57606a;--line:#d0d7de;--accent:#0969da;--code:#f6f8fa;--soft:#fafbfc}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--fg);
+  font:16px/1.78 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",sans-serif}
+main{max-width:980px;margin:0 auto;padding:26px 22px 72px}
+h1{font-size:1.75em;line-height:1.35;border-bottom:3px solid var(--accent);padding-bottom:.28em;margin:1.1em 0 .7em}
+h2{font-size:1.36em;line-height:1.4;border-bottom:1px solid var(--line);padding-bottom:.22em;margin:1.5em 0 .6em}
+h3{font-size:1.14em;margin:1.25em 0 .45em}
+h4{font-size:1.02em;margin:1.05em 0 .35em;color:var(--muted)}
+p{margin:.5em 0}
+ul,ol{margin:.45em 0;padding-left:1.5em}
+li{margin:.22em 0}
+li>ul,li>ol{margin:.15em 0}
+strong{color:#000}
+em{color:#000}
+code{background:var(--code);border-radius:4px;padding:.12em .34em;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:.92em}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;margin:.7em 0}
+pre code{background:none;padding:0;white-space:pre;font-size:.9em;line-height:1.5}
+table{border-collapse:collapse;width:100%;margin:.75em 0;font-size:.95em;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600}
+tbody tr:nth-child(even){background:var(--soft)}
+blockquote{margin:.8em 0;padding:.5em 1em;border-left:4px solid var(--accent);background:var(--code);color:var(--muted)}
+blockquote p{margin:.25em 0}
+hr{border:0;border-top:1px solid var(--line);margin:1.8em 0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.topnav{position:sticky;top:0;z-index:20;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+  padding:10px 22px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(180%) blur(6px);font-size:.9em}
+.topnav a{white-space:nowrap}
+.topnav .sep{color:var(--line)}
+.topnav .brand{font-weight:600;color:var(--fg);margin-right:6px}
+footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid var(--line);color:var(--muted);font-size:.86em}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:1em 0}
+.card{display:block;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--soft)}
+.card:hover{border-color:var(--accent)}
+.card b{display:block;margin-bottom:4px}
+.card span{color:var(--muted);font-size:.86em}
+.toc{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:1em 0}
+.toc ul{margin:.25em 0;padding-left:1.3em}
+.tip{border:1px dashed var(--accent);border-radius:10px;padding:10px 14px;background:#f6faff;margin:1em 0;font-size:.94em}
+@media (max-width:640px){main{padding:18px 14px 60px}h1{font-size:1.5em}}
+@media print{
+  body{font-size:11.5pt;line-height:1.6}
+  .topnav{display:none}
+  main{max-width:none;padding:0}
+  h1{page-break-before:always;border-bottom-width:2px}
+  body>main>h1:first-child,main>section:first-child>h1{page-break-before:avoid}
+  pre,table,blockquote,li{page-break-inside:avoid}
+  a{color:#000;text-decoration:none}
+  footer{display:none}
+}
+</style>
+</head>
+<body>
+<nav class="topnav"><span class="brand">02324 离散数学</span> <a href="02324离散数学_历年真题考点分布.html">← 02324 离散数学 · 历年真题考点分布分析</a></nav>
+<main>
+<h1 id="02324">02324 离散数学 · 真题考点简记（高频关键词版）</h1>
+<blockquote>
+<p><strong>口径</strong>：本课程 <code>历年真题/</code> 目录 22 个 PDF，去重后 <strong>20 套卷、679 道题</strong>（2015 年 4 月 — 2025 年 10 月）逐题标注统计。<br>
+教材：《离散数学》辛运帏主编，机械工业出版社 2014 年版。<br>
+标记：<strong>【N卷】＝该考点在 20 套卷中出现过多少套</strong>。<strong>【必背】＝5 卷以上，几乎年年考</strong>；【常考】＝3—4 卷；【偶考】＝1—2 卷。<br>
+用法：本课程 <strong>计算＋判别占 42% 与 22%</strong>，所以这份简记的重点是<strong>公式、判别准则和解题步骤链</strong>，不是概念背诵。</p>
+</blockquote>
+<hr>
+<h2 id="_1">零、卷型与答题策略（先看这一格）</h2>
+<ul>
+<li><strong>单选 15 题 × 2 分 ＝ 30 分</strong> ； <strong>填空 10 题 × 2 分 ＝ 20 分</strong></li>
+<li><strong>简答 7 题 × 5 分 ＝ 35 分</strong> ； <strong>证明 3 题 × 5 分 ＝ 15 分</strong></li>
+<li>共 <strong>35 题 / 100 分</strong>，150 分钟。<strong>没有多选、判断、名词解释。</strong></li>
+<li><strong>【注意】题号分段不完全统一</strong>：多数卷是"26—32 简答、33—35 证明"，部分老卷把 31、32 也写成证明题。<strong>先看小节标题，别按题号猜。</strong></li>
+<li><strong>六大能力占比</strong>：计算求解 42% ＞ 判定与检验 22% ＞ 概念判别 14% ＞ 证明推理 10% ＞ 作图构造 7% ＞ 符号化 5%。</li>
+<li><strong>时间分配</strong>：单选 30 分钟 ； 填空 25 分钟（<strong>这 20 分是保分池，填空 85% 是"算一个结果"</strong>）；简答 55 分钟 ； 证明 30 分钟 ； 复查 10 分钟。</li>
+<li><strong>按章配额复习</strong>（20 套卷的平均每卷题数）：关系与函数 7.7 ＞ 图 5.7 ＞ 命题 5.3 ＞ 谓词 4.2 ＞ 代数 3.2 ＝ 图的应用 3.2 ＞ 集合 2.8 ＞ 格与布尔代数 1.5 ＞ <strong>推理理论 0.5（最低）</strong>。</li>
+</ul>
+<hr>
+<h2 id="105-155">一、命题与命题公式（105 题，15.5%）</h2>
+<ul>
+<li><strong>【必背】</strong>联结词：<strong>┐（非）· ∧（与）· ∨（或）· →（蕴涵）· ↔（等价）</strong>；优先级 <strong>┐ &gt; ∧ &gt; ∨ &gt; → &gt; ↔</strong>。</li>
+<li><strong>【必背】符号化三句口诀</strong>：</li>
+<li>"只要 p 就 q""如果 p 则 q" → <strong>p→q</strong></li>
+<li><strong>"只有 p 才 q" → q→p</strong>（必要条件在前件！）</li>
+<li>"除非 p 否则 q" → <strong>┐p→q</strong>（等价于 p∨q）</li>
+<li>"因为 p 所以 q" → <strong>p→q</strong></li>
+<li><strong>【必背】重言式/矛盾式/可满足式的判定</strong>：真值表全 <strong>T</strong> ＝重言式；全 <strong>F</strong> ＝矛盾式（永假式）；有 T 有 F ＝<strong>非重言式的可满足式</strong>。</li>
+<li><strong>【必背】小项与大项</strong>：n 个命题变元 → <strong>小项 m 与大项 M 各 2ⁿ 个</strong>。</li>
+<li><strong>重言式</strong>的主析取范式含<strong>全部 2ⁿ 个小项</strong>，主合取范式含 <strong>0 个大项</strong>；</li>
+<li><strong>矛盾式</strong>的主析取范式含 <strong>0 个小项</strong>，主合取范式含全部 2ⁿ 个大项；</li>
+<li><strong>互补关系</strong>：若有 ∑m(S)，则主合取范式＝<strong>∏M(S̄)</strong>（S̄ 为补集）。</li>
+<li>两个<strong>不同小项的合取</strong>恒为 F；两个<strong>不同大项的析取</strong>恒为 T。</li>
+<li><strong>【必背】求主析取范式的两条路</strong>（真题 6 卷要求"等值演算法"）：</li>
+<li><strong>① 等值演算法</strong>：消去 →（用 p→q ⇔ ┐p∨q）与 ↔ → 用德摩根把 ┐ 内移 → 用<strong>分配律</strong>展开成"小项之和" → 按变元顺序编号写 <strong>∑m(...)</strong>。</li>
+<li><strong>② 真值表法</strong>：列真值表，<strong>取成真赋值的行</strong>对应的小项相"或"；主合取范式取成假赋值的行对应的大项相"与"。</li>
+<li><strong>【必背】常用等值式</strong>：<code>p→q ⇔ ┐p∨q</code>；<code>p↔q ⇔ (p→q)∧(q→p)</code>；<code>┐(p∧q) ⇔ ┐p∨┐q</code>（德摩根）；<code>p∨(q∧r) ⇔ (p∨q)∧(p∨r)</code>（分配）；<code>p∨(p∧q) ⇔ p</code>（吸收）。</li>
+<li><strong>【常考】构造真值表</strong>（4 卷）：列 2ⁿ 行，逐列算出各子式真值。<strong>大题必写"列出 8 行赋值"的过程才有分。</strong></li>
+</ul>
+<hr>
+<h2 id="10-15">二、命题逻辑的推理理论（10 题，1.5%，全课程最低频）</h2>
+<ul>
+<li><strong>【必背】三条规则</strong>：</li>
+<li><strong>P 规则</strong>：前提可直接引用；</li>
+<li><strong>T 规则</strong>：已推出的公式（或用等值式替换的公式）可引入；</li>
+<li><strong>CP 规则</strong>（3 卷考过）：<strong>要证 R→S，就把 R 作为附加前提，推出 S 即可</strong>。</li>
+<li><strong>【偶考】反证法</strong>：把结论的否定作为附加前提，推出矛盾（如推出 R∧┐R）。</li>
+<li><strong>判断</strong>：<strong>20 套里 9 套一题不考</strong>，只需会标准套路（附加前提 → 假言推理 → 得结论），<strong>不必深挖</strong>。</li>
+</ul>
+<hr>
+<h2 id="84-124">三、谓词逻辑（84 题，12.4%）</h2>
+<ul>
+<li><strong>【必背】符号化</strong>（7 卷）：</li>
+<li>"所有 M 都是 P" → <strong>∀x(M(x)→P(x))</strong>（注意是<strong>→</strong>，不是 ∧）</li>
+<li>"存在 M 是 P" → <strong>∃x(M(x)∧P(x))</strong>（注意是 <strong>∧</strong>，不是 →）</li>
+<li>"并不是所有 M 都是 P" → <strong>┐∀x(M(x)→P(x)) ⇔ ∃x(M(x)∧┐P(x))</strong></li>
+<li>"没有最大的质数" → <strong>┐∃x(R(x)∧∀y(R(y)∧G(x,y) → …))</strong>（先写"存在最大质数"，再整体否定）</li>
+<li><strong>【必背】量词消去（论域展开）</strong>：论域 {a,b} 时</li>
+<li><code>∀xP(x) ⇔ P(a)∧P(b)</code>；<code>∃xP(x) ⇔ P(a)∨P(b)</code>；<code>∀x┐P(x) ⇔ ┐P(a)∧┐P(b)</code></li>
+<li><strong>【必背】自由变元与约束变元</strong>（3 卷）：<strong>在量词辖域内的同名变元是约束变元</strong>，其余为自由变元；<code>∃xF(x,y)∨∀yG(x,y)</code> 中 y 分两处，前一处自由、后一处约束。</li>
+<li><strong>【必背】量词辖域</strong>（3 卷）：<strong>紧跟在量词后的、最小括号内的公式</strong>。<code>∀x(P(x)∨∃yF(y))→∃xQ(x)</code> 中 ∀x 的辖域是 <code>P(x)∨∃yF(y)</code>。</li>
+<li><strong>【必背】前束范式</strong>（3 卷）：<strong>所有量词都提到公式最前面，辖域延伸到整个公式</strong>。</li>
+<li>步骤：① 消去 → 与 ↔；② ┐ 内移（量词转换：<code>┐∀x ⇔ ∃x┐</code>、<code>┐∃x ⇔ ∀x┐</code>）；③ <strong>改名避免同名冲突</strong>；④ 量词左移。</li>
+<li>例：<code>∃x∃yF(x,y)→∀zG(u,v,z) ⇔ ∃x∃y∀z(F(x,y)→G(u,v,z))</code>；<code>∀xP(x)→┐∃xQ(x) ⇔ ∃x∀y(┐P(x)∨┐Q(y))</code></li>
+<li><strong>【必背】给定解释下的真值</strong>（8 卷，简答题常客）：</li>
+<li><strong>论域是整数集/实数集/正整数集</strong>时，逐个判断：如 <code>∀x∃y(x·y=0)</code> 在实数域为 <strong>T</strong>（取 y=0）；<code>∃x∀y(x·y=1)</code> 为 <strong>F</strong>（x=0 时无 y 使 0·y=1）。</li>
+<li>方法：<strong>先看内层量词，把内层当作一元的谓词，再逐层展开</strong>。</li>
+<li><strong>【必背】谓词推理证明</strong>（3 卷）：四条规则——<strong>US</strong>（全称实例化）· <strong>ES</strong>（存在实例化）· <strong>UG</strong>（全称推广）· <strong>EG</strong>（存在推广）。套路：<strong>先 ES 取出个体，再 US 代入，用假言推理推出结论，最后 EG/UG 加回量词</strong>。</li>
+<li><strong>【常考】永真式证明</strong>（3 卷）：用谓词等值式化简，<strong>化到形如 A→A 或 1</strong>。</li>
+</ul>
+<hr>
+<h2 id="56-82">四、集合（56 题，8.2%）</h2>
+<ul>
+<li><strong>【必背】基本运算</strong>：并 ∪ · 交 ∩ · 差 <strong>A−B = {x | x∈A ∧ x∉B}</strong> · 补 ~A · <strong>对称差 A⊕B = (A−B)∪(B−A) = (A∪B)−(A∩B)</strong>。</li>
+<li><strong>【必背】幂集</strong>：|P(A)| = <strong>2^|A|</strong>。A={1,2,3} 时 P(A) 有 8 个元素，<code>P(A)−{∅}</code> 画哈斯图用子集包含关系。</li>
+<li><strong>【必背】容斥原理</strong>：<code>|A∪B| = |A|+|B|−|A∩B|</code>；三集合 <code>|A∪B∪C| = Σ|A| − Σ|A∩B| + |A∩B∩C|</code>。</li>
+<li><strong>考过</strong>：1000 以内<strong>不能被 5、6、8 整除</strong>的正整数个数 → 用容斥补集算 <strong>600</strong>。</li>
+<li><strong>【必背】集合恒等式证明（6 卷，最稳的证明题）</strong> 两种写法：</li>
+<li><strong>① 运算法</strong>：用德摩根 <code>~(A∪B)=~A∩~B</code>、分配律 <code>A∪(B∩C)=(A∪B)∩(A∪C)</code>、吸收律逐步化简；</li>
+<li><strong>② 元素法</strong>：证 <strong>"左⊆右"且"右⊆左"</strong>（任取 x∈左边推出 x∈右边，反之亦然）。</li>
+<li><strong>【偶考】幂集恒等式</strong>：<code>P(A)∩P(B) = P(A∩B)</code>（用 <code>X∈P(A) ⇔ X⊆A</code>）。</li>
+<li><strong>【偶考】有序对与笛卡尔积</strong>：<code>|A×B| = |A|·|B|</code>。</li>
+</ul>
+<hr>
+<h2 id="153-225">五、关系与函数（153 题，22.5%，第一大章）</h2>
+<h3 id="1-9-7-5">1. 关系的基本运算（【必背】，复合 9 卷＋定义域值域 7 卷＋复合与逆 5 卷）</h3>
+<ul>
+<li><strong>定义域与值域</strong>：<code>domR = {x | ∃y(〈x,y〉∈R)}</code>；<code>ranR = {y | ∃x(〈x,y〉∈R)}</code>。</li>
+<li><strong>复合</strong>：<strong><code>R∘S = {〈x,z〉 | ∃y(〈x,y〉∈R ∧ 〈y,z〉∈S)}</code></strong> ——注意<strong>先 R 后 S</strong>（写成 R∘S 时右边先作用，这与函数复合的书写方向一致）。</li>
+<li><strong>逆</strong>：<code>R⁻¹ = {〈y,x〉 | 〈x,y〉∈R}</code>；<strong><code>(R⁻¹)⁻¹ = R</code></strong>；<strong>R 对称 ⇔ R = R⁻¹</strong>。</li>
+<li><strong>幂</strong>：<code>R² = R∘R</code>，<code>Rⁿ = Rⁿ⁻¹∘R</code>。</li>
+<li><strong>关系矩阵</strong>：<code>M_{R∘S} = M_R ⊙ M_S</code>（布尔乘法）；<code>M_{R⁻¹} = M_Rᵀ</code>。</li>
+</ul>
+<h3 id="2-56">2. 关系的五种性质（【必背】，5—6 卷）</h3>
+<table>
+<thead>
+<tr>
+<th>性质</th>
+<th>定义</th>
+<th>关系矩阵特征</th>
+<th>关系图特征</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自反</td>
+<td>∀x，〈x,x〉∈R</td>
+<td>主对角线全 <strong>1</strong></td>
+<td>每点有自环</td>
+</tr>
+<tr>
+<td>反自反</td>
+<td>∀x，〈x,x〉∉R</td>
+<td>主对角线全 <strong>0</strong></td>
+<td>每点无自环</td>
+</tr>
+<tr>
+<td>对称</td>
+<td>〈x,y〉∈R ⇒ 〈y,x〉∈R</td>
+<td>矩阵<strong>对称</strong></td>
+<td>边成对出现</td>
+</tr>
+<tr>
+<td>反对称</td>
+<td>〈x,y〉∈R 且 〈y,x〉∈R ⇒ x=y</td>
+<td><strong>i≠j 时 a_ij 与 a_ji 不同时为 1</strong></td>
+<td>无成对反向边</td>
+</tr>
+<tr>
+<td>传递</td>
+<td>〈x,y〉,〈y,z〉∈R ⇒ 〈x,z〉∈R</td>
+<td><code>R² ⊆ R</code></td>
+<td>可"搭桥"</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>【易混】恒等关系 I_A 与全域关系 E_A</strong>：两者都<strong>自反、对称、传递</strong>；<strong>空关系 ∅ 是反自反、对称、反对称、传递的</strong>（但<strong>不自反</strong>）。</li>
+<li><strong>【易混】整数集上的整除关系</strong>：<strong>自反、反对称、传递，但不对称</strong>（1|2 成立而 2|1 不成立）。</li>
+</ul>
+<h3 id="3-34">3. 关系闭包（【必背】，3—4 卷，简答固定题）</h3>
+<ul>
+<li><strong>自反闭包 <code>r(R) = R ∪ I_A</code></strong></li>
+<li><strong>对称闭包 <code>s(R) = R ∪ R⁻¹</code></strong></li>
+<li><strong>传递闭包 <code>t(R) = R ∪ R² ∪ R³ ∪ …</code></strong>（有限集上算到 Rⁿ 即可；亦可用 <strong>Warshall 算法</strong>）</li>
+<li><strong>关系矩阵</strong>：<code>M_r = M_R ∨ I</code>；<code>M_s = M_R ∨ M_Rᵀ</code>；<code>M_t</code> 用 Warshall 逐次 <code>M ← M ∨ (M ⊙ M)</code></li>
+</ul>
+<h3 id="4-3">4. 等价关系与划分（【必背】，3 卷）</h3>
+<ul>
+<li><strong>等价关系 ⇔ 自反＋对称＋传递</strong>；<strong>等价关系与划分一一对应</strong>。</li>
+<li><strong>A={1,2,3} 上等价关系个数 ＝ 5</strong>（即 3 元集合的划分数：3 个块 1 种、2 个块 3 种、1 个块 1 种，共 5）。</li>
+<li><strong>由划分写等价关系</strong>：各<strong>划分块内元素两两相关</strong>（含自身），跨块不相关；关系矩阵是"块内全 1"的分块对角矩阵。</li>
+<li><strong>由等价关系求等价类</strong>：把互相有关系的元素归成一类。</li>
+</ul>
+<h3 id="5-49">5. 偏序关系与哈斯图（【必背】，4—9 卷，大题固定题）</h3>
+<ul>
+<li><strong>偏序＝自反＋反对称＋传递</strong>（如整除关系、子集包含关系、实数 ≤）。</li>
+<li><strong>画哈斯图的步骤</strong>：① <strong>去掉所有自环</strong>；② <strong>去掉传递可推出的边</strong>（若 a&lt;b&lt;c 有边 a-c 则删除）；③ 按"小在下、大在上"<strong>分层排列</strong>，用直线连接<strong>覆盖关系 COVA</strong>。</li>
+<li><strong>四类"元"的区分</strong>（每年必考，最易混）：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>定义</th>
+<th>是否唯一</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>最大元</strong></td>
+<td>比<strong>所有</strong>元素都大的元</td>
+<td>唯一（存在时）</td>
+</tr>
+<tr>
+<td><strong>极大元</strong></td>
+<td>没有比它更大的元</td>
+<td>可不唯一</td>
+</tr>
+<tr>
+<td><strong>最小元</strong></td>
+<td>比<strong>所有</strong>元素都小的元</td>
+<td>唯一（存在时）</td>
+</tr>
+<tr>
+<td><strong>极小元</strong></td>
+<td>没有比它更小的元</td>
+<td>可不唯一</td>
+</tr>
+<tr>
+<td><strong>上界 / 下界</strong></td>
+<td>比某集合<strong>所有</strong>元素都大 / 小</td>
+<td>可不唯一</td>
+</tr>
+<tr>
+<td><strong>上确界 / 下确界</strong></td>
+<td><strong>最小</strong>的上界 / <strong>最大</strong>的下界</td>
+<td>唯一（存在时）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>【易混】"极大元≠最大元"</strong>：如整除关系下 A={2,4,6,12}，极大元为 12（同时是最大元）；但 A={2,3,6,12} 的极大元是 12。<strong>若有两个互不可比的极大元，则没有最大元。</strong></li>
+</ul>
+<h3 id="6-5">6. 函数（【必背】，单射满射 5 卷）</h3>
+<ul>
+<li><strong>单射</strong>：x₁≠x₂ ⇒ f(x₁)≠f(x₂)（不同元素像不同）。</li>
+<li><strong>满射</strong>：ran f = B（B 中每个元素都有原象）。</li>
+<li><strong>双射＝单射＋满射</strong>；<strong>|A|=|B| 时单射 ⇔ 满射 ⇔ 双射</strong>。</li>
+<li><strong>计数公式</strong>：A 到 B 的<strong>全部函数</strong> nᵐ；<strong>单射个数</strong> = P(n,m)（需 m ≤ n）；<strong>满射个数</strong> = <code>n!·S(m,n)</code>（第二类斯特林数）。</li>
+<li><strong>【必背实例】|A|=5、|B|=2 时满射个数 = 2⁵ − 2 = 30</strong>（5 卷考过）。</li>
+<li><strong>非单射的判定</strong>：找两个不同元素有相同像（如 f(2,3)=f(3,2)）。</li>
+</ul>
+<hr>
+<h2 id="64-94">六、代数系统的一般概念（64 题，9.4%）</h2>
+<ul>
+<li><strong>【必背】二元运算的六条性质</strong>：封闭性 · <strong>交换律</strong> · <strong>结合律</strong> · 幂等律 · <strong>分配律</strong> · 吸收律（＋消去律）。</li>
+<li><strong>【常考】结合律判定（6 卷）</strong>：算 <code>(a*b)*c</code> 与 <code>a*(b*c)</code> 是否相等；<strong>减法、除法不满足结合律</strong>；<code>a*b=a+b−10</code>、<code>a*b=gcd(a,b)</code>、<code>a*b=a+b+ab</code> 等都满足。</li>
+<li><strong>【必背】幺元 / 零元 / 逆元</strong>（5—6 卷）：</li>
+<li><strong>幺元 e</strong>：<code>e*x = x*e = x</code>（关于加法的幺元是 0，乘法是 1，gcd 的幺元是 0，<strong>lcm 的幺元是 1，零元是 0</strong>）；</li>
+<li><strong>零元 θ</strong>：<code>θ*x = x*θ = θ</code>（<strong>P(A) 关于 ∪ 的幺元是 ∅、零元是 A</strong>；反之关于 ∩ 时幺元 A、零元 ∅）；</li>
+<li><strong>逆元</strong>：<code>x*y = y*x = e</code> 时 y 为 x 的逆元。</li>
+<li><strong>【易混】<code>a*b=a+b−5ab</code> 的幺元是 0、零元是 1/5</strong>；<code>a*b=a+b+3</code> 的幺元是 <strong>−3</strong>、a 的逆元是 <strong>−6−a</strong>。</li>
+<li><strong>【必背】四类代数系统</strong>：<strong>半群</strong>（封闭＋结合）⊃ <strong>独异点</strong>（半群＋有幺元）⊃ <strong>群</strong>（独异点＋每元有逆元）⊃ <strong>阿贝尔群/交换群</strong>（群＋交换律）。</li>
+<li><strong>【必背】群的证明四步</strong>（7 卷，证明题第二大类）：</li>
+<li><strong>① 证明封闭性</strong> → <strong>② 证明结合律</strong> → <strong>③ 找出幺元 e</strong> → <strong>④ 求出每元逆元</strong>（→ 若还要证交换群，<strong>⑤ 验证交换律</strong>）。</li>
+<li><strong>例</strong>：<code>(Z,∘)</code> 定义 a∘b = a+b+3：幺元为 <strong>−3</strong>，a 的逆元为 <strong>−6−a</strong>，故构成交换群。</li>
+<li><strong>例</strong>：<code>(Z,*)</code>，a<em>b = a+b+ab：幺元为 </em><em>0</em><em>，a 的逆元为 </em><em>−a/(1+a)</em>*。</li>
+<li><strong>【必背】子群一步判定</strong>：<code>H ≠ ∅ 且 ∀a,b∈H，a*b⁻¹∈H ⇒ H 是 G 的子群</code>。</li>
+<li><strong>【偶考】幂集关于对称差构成群</strong>：幺元 ∅，<strong>每元的逆元是它自身</strong>（因为 A⊕A=∅）。</li>
+<li><strong>【偶考】群的性质</strong>：阶 · 拉格朗日定理（|H| 整除 |G|）· 有限群中元素的阶整除群阶 · 群的中心 C(G) 是子群。</li>
+</ul>
+<hr>
+<h2 id="29-43">七、格与布尔代数（29 题，4.3%，但几乎卷卷有题）</h2>
+<ul>
+<li><strong>【必背】格的定义与判定（7 卷，最高频）</strong>：偏序集中<strong>任意两个元素都有上确界（并 a∨b）和下确界（交 a∧b）</strong>，则称该偏序集为<strong>格</strong>。</li>
+<li><strong>判定技巧</strong>：取任两元素，看它们的<strong>所有上界中是否有最小者</strong>、<strong>所有下界中是否有最大者</strong>；若找不到就不构成格。<strong>"6 的因数格"构成格，"整除关系下 {2,3,6,12} 这类不是格"是常考反例。</strong></li>
+<li><strong>【必背】有补格与补元（4 卷）</strong>：在有界格（有全下界 0 和全上界 1）中，若 <code>a∨b = 1</code> 且 <code>a∧b = 0</code>，则 b 是 a 的<strong>补元</strong>；<strong>有补格中补元不一定唯一</strong>。</li>
+<li><strong>【常考】布尔代数</strong>：<strong>有补分配格</strong>，其中<strong>每个元素的补元唯一</strong>（记作 ┐a）。布尔代数的运算满足德摩根律。</li>
+<li><strong>【必背】分配格</strong>：满足 <code>a∧(b∨c) = (a∧b)∨(a∧c)</code> 的格；<strong>证明题考过</strong>：分配格中若 <code>a∧c=b∧c</code> 且 <code>a∨c=b∨c</code>，则 <code>a=b</code>。</li>
+<li><strong>【必背】max/min 与并交的对应</strong>：实数集上的 ≤ 是偏序，<code>x∨y = max(x,y)</code>、<code>x∧y = min(x,y)</code>，因此 <strong>x+y = max(x,y)+min(x,y)</strong>（考过证明）。</li>
+</ul>
+<hr>
+<h2 id="114-168">八、图（114 题，16.8%）</h2>
+<ul>
+<li><strong>【必背】握手定理（6 卷）</strong>：<strong>Σd(v) = 2m</strong>；推论——<strong>奇度顶点的个数必为偶数</strong>。</li>
+<li>用法：给出部分顶点的度数与边数 m，列方程求未知顶点数。</li>
+<li><strong>【必背】基本概念</strong>：n 阶完全图 K_n 有 <strong>n(n−1)/2 条边</strong>；n 阶简单图最多 n(n−1)/2 条边；<strong>n 阶树有 n−1 条边</strong>。</li>
+<li><strong>【必背】度数序列可图化（5 卷）</strong>：</li>
+<li>必要条件：<strong>度数和为偶数</strong>，且<strong>最大度 ≤ n−1</strong>（简单图）；</li>
+<li><strong>Havel–Hakimi</strong>：把最大度顶点与后面若干最大度顶点相连，递归判断。</li>
+<li>排除法常考：如出现"度和为奇数"或"最大度 = n"的序列就不能简单图化。</li>
+<li><strong>【必背】连通性</strong>：无向图连通 ⇔ 任意两顶点间有通路；<strong>去割点法</strong>：去掉任意 k 个顶点后连通分支数 ≤ k 是哈密顿图的必要条件。</li>
+<li><strong>【必背】欧拉图与欧拉回路（5 卷）</strong>：</li>
+<li><strong>无向图：连通且所有顶点度数为偶数 ⇔ 有欧拉回路</strong>（欧拉图）；</li>
+<li><strong>恰有两个奇度顶点 ⇔ 有欧拉通路（但无欧拉回路）</strong>；</li>
+<li>有向图：连通且每个顶点的<strong>入度 = 出度</strong>。</li>
+<li><strong>【必背】哈密顿图（4 卷）</strong>：经过每个顶点恰好一次的回路。<strong>没有简单的充要条件</strong>，常用：</li>
+<li><strong>充分条件</strong>：n≥3 的简单图中<strong>任意两个不相邻顶点的度数之和 ≥ n</strong>，则存在哈密顿回路；</li>
+<li><strong>必要条件</strong>：去掉任意 k 个顶点后，连通分支数 ≤ k（<strong>用来证明"不是哈密顿图"</strong>）。</li>
+<li><strong>【必背】平面图（3 卷）</strong>：<strong>欧拉公式 <code>n − m + r = 2</code></strong>（连通平面图，n 顶点、m 边、r 个面，<strong>含外部面</strong>）。</li>
+<li>例：6 顶点 8 个面 → m = n + r − 2 = <strong>12</strong>。</li>
+<li><strong>推论</strong>：连通简单平面图 <strong>m ≤ 3n − 6</strong>；不含三角形的平面图 <strong>m ≤ 2n − 4</strong>（用来证"平面图边数上界"和"存在度 &lt; 5 的顶点"）。</li>
+<li><strong>【必背】邻接矩阵（8 卷，简答固定题）</strong>：</li>
+<li><code>A^k</code> 的第 (i,j) 个元素 = <strong>从 v_i 到 v_j 长度为 k 的通路数</strong>；</li>
+<li><strong><code>tr(A^k)</code>（对角元之和）= 长度为 k 的回路数</strong>；</li>
+<li><strong>求"长度 ≤ k 的通路/回路数"就把 A、A²、…、A^k 的元素和/迹累加</strong>。</li>
+<li><strong>【必背】二部图（偶图）</strong>：顶点可分成两个不相交集合，边只在两集合之间；<strong>二部图不含奇长度回路</strong>。</li>
+<li><strong>【常考】图的同构</strong>：必要条件为<strong>顶点数相同、边数相同、度数列相同</strong>；判断"至少几个同构"常由度数列分类入手。</li>
+<li><strong>【常考】自补图</strong>：n(n−1)/4 必须是整数 ⇒ <strong>n = 4k 或 n = 4k+1</strong>。</li>
+</ul>
+<hr>
+<h2 id="64-94_1">九、图的应用（64 题，9.4%，大题提分最快）</h2>
+<ul>
+<li><strong>【必背】树的性质（7 卷）</strong>：n 个顶点的树有 <strong>n−1 条边</strong>；树的<strong>任意两顶点间有唯一通路</strong>；树无回路且连通。</li>
+<li><strong>【必背公式】叶结点数 <code>n₁ = 2 + Σ_{k≥3}(k−2)·n_k</code></strong>（n_k 为度为 k 的顶点数）。</li>
+<li>例：4 个 3 度、2 个 2 度分支点求树叶数 → n₁ = 2 + (3−2)×4 = <strong>6</strong>。</li>
+<li><strong>【必背】最小生成树（8 卷，第一大题考点）</strong>：</li>
+<li><strong>Kruskal 算法</strong>：<strong>把边按权值从小到大排序 → 依次取边，若与已选边不构成回路就选入 → 取满 n−1 条为止 → 求权和</strong>。</li>
+<li><strong>Prim 算法</strong>：从一个顶点出发，每次选"连接已选集合与未选点的最小边"。</li>
+<li><strong>答题要求</strong>：<strong>写出选边顺序（每条边的权值）＋权值和</strong>，有图就画出来。</li>
+<li><strong>【必背】完全图删边（4 卷）</strong>：K_n 要得到生成树需删 <strong>n(n−1)/2 − (n−1)</strong> 条边。</li>
+<li><strong>K₇ → 21 − 6 = 15 条</strong>；<strong>K₆ → 15 − 5 = 10 条</strong>；<strong>K₅ → 10 − 4 = 6 条</strong>。</li>
+<li>一般地，n 顶点 m 边的连通图得到生成树需删 <strong>m − (n−1)</strong> 条边。</li>
+<li><strong>【必背】根树与二叉树（5—6 卷，简答固定题）</strong>：</li>
+<li><strong>用二叉树表示算术表达式</strong>：按运算优先级从最外层运算开始，<strong>运算符作根、左右子式为子树</strong>；</li>
+<li><strong>先序遍历（根左右）＝前缀式（波兰式）</strong>；<strong>中序遍历（左根右）＝中缀式</strong>；<strong>后序遍历（左右根）＝后缀式（逆波兰式）</strong>；</li>
+<li>例：(a<em>b+e)/(d</em>(e−f)) → 先序 <code>/+*abe*d-ef</code>，后序 <code>ab*e+def-*/</code>。</li>
+<li><strong>【必背】最优二叉树（哈夫曼树）</strong>：<strong>每次取两个权最小的根合并</strong>，重复到只剩一棵；<strong>WPL = Σ(权值 × 路径长度)</strong>。</li>
+<li><strong>【常考】非同构无向树的棵数（4 卷）</strong>：<strong>n=5 → 3 棵；n=6 → 6 棵；n=7 → 11 棵</strong>。</li>
+<li><strong>【偶考】最短路径 Dijkstra</strong>：从源点出发，每次选未确定点中距离最小者加入，更新其余点的距离。</li>
+<li><strong>【偶考】拓扑排序与关键路径</strong>：AOV 网求拓扑序列；AOE 网求最早/最迟开始时间与关键路径（关键路径长度＝工期）。</li>
+<li><strong>【常考】哈密顿回路的应用</strong>：<strong>"n 个人围圆桌，相邻者要有共同语言/都是朋友"</strong> → 构造图 G（两人满足条件就连边）→ <strong>求哈密顿回路</strong> 即为排座方案（考过 2—3 卷，包括"7 人围坐"和"30 人每人均有 15 个朋友"的证明）。</li>
+</ul>
+<hr>
+<h2 id="8-50">十、大题 8 类模板（50 分的来源）</h2>
+<table>
+<thead>
+<tr>
+<th>模板</th>
+<th>卷数</th>
+<th>步骤链</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① Kruskal 最小生成树</strong></td>
+<td>8</td>
+<td>边权排序 → 依次取不成回路的边 → 取满 n−1 条 → 写选边顺序与权值和</td>
+</tr>
+<tr>
+<td><strong>② 真值表法判定公式类型/等价式</strong></td>
+<td>8</td>
+<td>列 2ⁿ 行真值表 → 全 T 为重言式、全 F 为矛盾式、有 T 有 F 为可满足式</td>
+</tr>
+<tr>
+<td><strong>③ 等值演算求主析取/主合取范式</strong></td>
+<td>9</td>
+<td>消去 →、↔ → ┐ 内移 → 分配律展开 → 写 ∑m(S) / ∏M(S̄)</td>
+</tr>
+<tr>
+<td><strong>④ 哈斯图＋极大极小元＋是否构成格</strong></td>
+<td>9</td>
+<td>去掉自环与传递边 → 分层画图 → 求极大/极小/最大/最小元与上下界 → 判断任两元是否有上下确界</td>
+</tr>
+<tr>
+<td><strong>⑤ 集合恒等式的证明</strong></td>
+<td>6</td>
+<td>运算法（德摩根/分配/吸收）或<strong>元素法（左⊆右且右⊆左）</strong></td>
+</tr>
+<tr>
+<td><strong>⑥ 谓词公式真值 / 谓词推理证明</strong></td>
+<td>5＋3</td>
+<td>消去量词逐元素求值；推理用 <strong>US/ES/UG/EG ＋ 假言推理</strong></td>
+</tr>
+<tr>
+<td><strong>⑦ 群的证明 / 代数系统性质</strong></td>
+<td>7</td>
+<td><strong>封闭 → 结合 → 幺元 → 逆元 →（交换）</strong>；子群用 <strong>a*b⁻¹∈H</strong></td>
+</tr>
+<tr>
+<td><strong>⑧ 邻接矩阵与通路回路计数</strong></td>
+<td>8</td>
+<td>写 A → 算 A²、A³…→ <strong>元素和＝通路数、迹＝回路数</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>另有 4 类高频大题</strong>：<strong>二叉树表示算术表达式与遍历（5—6 卷）· 关系闭包 r/s/t（3—4 卷）· 等价关系与划分（3 卷）· 平面图欧拉公式求边数（3 卷）</strong>。</p>
+<p><strong>证明题（57 道）只有 6 种</strong>：集合恒等式（6 卷）· 群与代数系统（7 卷）· 谓词推理与永真式（3 卷）· 图论（握手定理/连通性/平面图/自补图/哈密顿充分条件）· 格的性质 · 关系性质与等价关系。</p>
+<hr>
+<h2 id="_2">十一、易混点一句判别（真题陷阱集）</h2>
+<ul>
+<li><strong>"只有 p 才 q"符号化为 q→p</strong>（不是 p→q）；<strong>"除非 p 否则 q"是 ┐p→q</strong>。</li>
+<li><strong>主析取范式的小项个数</strong>：重言式＝<strong>2ⁿ</strong>；矛盾式＝<strong>0</strong>；非重言式的可满足式＝介于两者之间。</li>
+<li><strong>∑m(S) 与 ∏M(S̄)</strong>：主析取的小项集合与主合取的大项集合是<strong>互补</strong>的。</li>
+<li><strong>关系的复合 R∘S 是先 R 后 S</strong>（<code>〈x,z〉</code> 要求存在 y 使 <code>〈x,y〉∈R</code> 且 <code>〈y,z〉∈S</code>）；<strong>不要与函数复合 g(f(x)) 的方向混淆</strong>。</li>
+<li><strong>对称闭包 <code>s(R)=R∪R⁻¹</code>，传递闭包 <code>t(R)=R∪R²∪…</code>，自反闭包 <code>r(R)=R∪I_A</code></strong>。</li>
+<li><strong>空关系 ∅ 是反自反、对称、反对称、传递的，但不对称也不自反</strong>；<strong>恒等关系与全域关系全部满足自反、对称、传递</strong>。</li>
+<li><strong>整除关系是反对称不是对称</strong>（1|2 真、2|1 假）。</li>
+<li><strong>极大元 ≠ 最大元</strong>：有多个互不可比的极大元时就没有最大元；<strong>上确界是最小的上界</strong>。</li>
+<li><strong>群 vs 半群 vs 独异点</strong>：半群只要封闭＋结合；<strong>独异点必须带幺元</strong>；群再加每元有逆元。</li>
+<li><strong>gcd 的幺元是 0、lcm 的幺元是 1</strong>；<strong>P(A) 关于 ∪ 的幺元是 ∅、零元是 A</strong>。</li>
+<li><strong>满射个数公式 n!·S(m,n)</strong>：m=5、n=2 时是 <strong>30</strong>，不是 32（32 是全部函数数 2⁵）。</li>
+<li><strong>欧拉图要求所有顶点都是偶度</strong>；<strong>恰有两个奇度顶点只有欧拉通路</strong>。</li>
+<li><strong>平面图欧拉公式记得算外部面</strong>：<code>n − m + r = 2</code>。</li>
+<li><strong>A^k 的对角元之和是回路数</strong>，不是通路数；<strong>元素总和才是通路数</strong>。</li>
+<li><strong>树：n 个顶点 n−1 条边</strong>；<strong>叶结点公式 <code>n₁ = 2 + Σ(k−2)n_k</code></strong>（k≥3）。</li>
+<li><strong>Kₙ 删 n(n−1)/2 − (n−1) 条边得生成树</strong>：K₇ 删 <strong>15</strong>、K₆ 删 <strong>10</strong>、K₅ 删 <strong>6</strong>。</li>
+<li><strong>先序＝前缀（波兰）、后序＝后缀（逆波兰）</strong>，别写反。</li>
+<li><strong>哈密顿图没有充要条件</strong>，只能用必要条件否定、用度数和条件肯定。</li>
+</ul>
+<hr>
+<h2 id="30">十二、考前 30 分钟清单（只看这一页）</h2>
+<ul>
+<li><strong>卷型</strong>：单选 15×2＝30 ； 填空 10×2＝20 ； 简答 7×5＝35 ； 证明 3×5＝15。<strong>计算＋判别占 64%。</strong></li>
+<li><strong>关系</strong>：复合 <code>R∘S={〈x,z〉|∃y}</code> · 逆 · <code>dom/ran</code> · 三闭包 <code>r=R∪I_A</code>、<code>s=R∪R⁻¹</code>、<code>t=R∪R²∪…</code> · 五性判别 · 等价关系↔划分（A={1,2,3} 有 <strong>5</strong> 个）· 哈斯图＋极大极小元＋上下确界。</li>
+<li><strong>函数</strong>：单射/满射/双射的判定；<strong>A→B 全部函数 nᵐ，满射 n!S(m,n)，5→2 时是 30</strong>。</li>
+<li><strong>命题</strong>：n 变元小项/大项各 2ⁿ；重言式主析取含全部 2ⁿ 个小项；<code>∑m(S) ↔ ∏M(S̄)</code>；等值演算与真值表两条路；<strong>"只有 p 才 q"⇔ q→p</strong>。</li>
+<li><strong>谓词</strong>：符号化（全称用 →、存在用 ∧）· 给定解释求真值（整数域逐项代入）· 前束范式（量词左移＋改名）· US/ES/UG/EG 推理。</li>
+<li><strong>集合</strong>：<code>A−B</code>、<code>A⊕B</code>；<code>|P(A)|=2^|A|</code>；容斥；<strong>恒等式证明用元素法（互相包含）</strong>。</li>
+<li><strong>代数</strong>：结合律/交换律判定 · 幺元零元逆元 · <strong>群证明四步（封闭→结合→幺元→逆元）</strong> · 子群一步判定 <code>a*b⁻¹∈H</code>。</li>
+<li><strong>格</strong>：任两元有上下确界才是格 · 有补格补元可多个 · 布尔代数＝有补分配格（补元唯一）。</li>
+<li><strong>图</strong>：<strong>握手定理 Σd=2m</strong> · 度数列可图化 · 欧拉图（全偶度）· 哈密顿（无充要条件，用度数和或割点法）· 平面图 <code>n−m+r=2</code>、<code>m≤3n−6</code> · <strong>A^k 元素和＝通路数、迹＝回路数</strong>。</li>
+<li><strong>树</strong>：<strong>n 顶点 n−1 边</strong>；<code>n₁=2+Σ(k−2)n_k</code> · <strong>Kruskal 选边顺序＋权和</strong> · K₇ 删 15 边 · 二叉树表示表达式（先序＝前缀、后序＝后缀）· 非同构树 n=5→3、n=6→6、n=7→11。</li>
+<li><strong>答题纪律</strong>：计算题<strong>写出算式</strong>（如 ASL、权值和、边数）；作图题<strong>必须画图</strong>；证明题<strong>分步写清依据</strong>（如"由握手定理""由子群判定"）；范式题<strong>写出 ∑m/∏M 编号</strong>。</li>
+</ul>
+<hr>
+<blockquote>
+<p>数据来源：20 套真题（2015年4月—2025年10月，679 题）逐题标注统计。<br>
+配套成品：<strong>《02324离散数学_历年真题考点分布》</strong>（同目录 HTML）。</p>
+</blockquote>
+</main>
+<footer>02324 离散数学 · 历年真题分析 · 由 Markdown 生成，浏览器直接打开即可阅读</footer>
+</body>
+</html>
