@@ -88,7 +88,7 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <p>得分公式：<strong>定性一句（是什么）＋ 特征/组成 2—3 个点</strong>。题干只给一个词，答案给 3 个点即满分。</p>
 </blockquote>
 <ul>
-<li><strong>软件工程</strong>：应用计算机科学理论与技术以及<strong>工程管理原则和方法</strong>，按<strong>预算和进度</strong>实现满足用户要求的软件产品的一门学科；基本思想是<strong>按工程化原则方法组织软件开发</strong>。</li>
+<li><strong>软件工程</strong>：从管理和技术两方面研究如何更好地开发和维护计算机软件的一门学科。软件工程的基本思想是<strong>按工程化的原则和方法组织软件开发</strong>。</li>
 <li><strong>软件</strong>：计算机系统中与硬件相互依存的另一部分，是<strong>程序＋数据＋相关文档</strong>的完整集合。</li>
 <li><strong>软件危机</strong>：软件开发<strong>生产率与质量</strong>远远满足不了社会发展需求的现象；表现为预算超支、进度延期、不满足需求、可维护性差、可靠性差。</li>
 <li><strong>软件过程</strong>：为获得软件产品而需完成的一系列<strong>过程、活动和任务</strong>的框架（回答"做什么"）。</li>
@@ -96,7 +96,7 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li><strong>软件生存周期模型</strong>：描述软件开发过程各活动<strong>如何执行</strong>的模型，确立<strong>阶段次序与活动准则</strong>，便于协调与通信。</li>
 <li><strong>敏捷开发</strong>：以<strong>人为核心</strong>、<strong>迭代增量</strong>的软件开发方法；强调<strong>快速响应变化</strong>、客户参与、持续交付；代表工具有 <strong>Scrum、XP</strong>。</li>
 <li><strong>需求</strong>：关于"<strong>要构造什么</strong>"的陈述；用户解决问题或达到目标所需的条件或能力。</li>
-<li><strong>需求规约（需求规格说明书）</strong>：<strong>所有需求陈述的正式文档</strong>；是用户与开发组织之间的<strong>技术合同书</strong>。</li>
+<li><strong>需求规约（需求规格说明书）</strong>：又称软件需求说明书。主要包括:(1) 软件系统的目标和范围、(2) 数据描述、(3) 功能描述、(4) 性能描述、(5) 质量保证等方面的需求。</li>
 <li><strong>功能需求</strong>：描述系统<strong>必须提供的服务/行为</strong>（能做什么），是<strong>需求的主体</strong>。</li>
 <li><strong>非功能需求</strong>：性能需求、外部接口需求、<strong>设计约束</strong>、<strong>质量属性</strong>的总称。</li>
 <li><strong>结构化分析方法</strong>：<strong>面向数据流</strong>的需求分析方法；用<strong>自顶向下、逐层分解</strong>的方式建立系统功能模型（DFD）。</li>
@@ -104,7 +104,7 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li><strong>数据字典</strong>：定义 DFD 中<strong>各成分（数据流、数据项、数据存储、加工）具体含义</strong>的集合，是<strong>需求分析阶段最基本的功能</strong>。</li>
 <li><strong>模块</strong>：由<strong>过程＋数据结构</strong>组成的、可组合/分解/更换的单元，具有<strong>接口、功能、逻辑、状态</strong>四属性。</li>
 <li><strong>模块化</strong>：<strong>自顶向下逐层</strong>把系统划分为若干模块，由模块组装成整体完成系统功能的过程。</li>
-<li><strong>耦合</strong>：<strong>模块之间相互依赖（连接紧密）程度</strong>的度量；越低越好。</li>
+<li><strong>耦合</strong>：<strong>模块之间相互依赖（连接紧密）程度</strong>的度量；越低越好。常见的耦合类型有：非直接耦合、数据耦合、标记耦合、控制耦合、外部耦合、公共耦合和内容耦合。</li>
 <li><strong>内聚</strong>：<strong>一个模块内部各成分之间相互关联程度</strong>的度量；越高越好。</li>
 <li><strong>模块独立性</strong>：模块<strong>完成单一子功能</strong>且与其他模块<strong>接口简单</strong>的程度；用<strong>耦合（块间）＋内聚（块内）两个准则</strong>度量。</li>
 <li><strong>非直接耦合</strong>：两个模块之间<strong>没有直接联系</strong>，只通过<strong>上级模块的控制与调用</strong>发生联系；耦合度<strong>最低</strong>。</li>
@@ -113,7 +113,7 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li><strong>详细设计</strong>：为<strong>每个模块确定实现算法与数据结构</strong>，给出<strong>精确的、结构化的过程描述</strong>（例程＋数据结构）。</li>
 <li><strong>类</strong>：具有<strong>相同属性、操作、关系与语义</strong>的对象的描述，是对象的模板。</li>
 <li><strong>对象</strong>：类的<strong>实例</strong>，具有<strong>状态、行为、标识</strong>。</li>
-<li><strong>封装</strong>：把对象的<strong>属性（数据）与服务（操作）结合</strong>成一个独立的系统单元；是一种<strong>信息隐藏技术</strong>。</li>
+<li><strong>封装</strong>：<strong>是面向对象方法的一个重要原则 </strong>。把对象的<strong>属性（数据）与服务（操作）结合</strong>成一个独立的系统单元；是一种<strong>信息隐藏技术</strong>。</li>
 <li><strong>继承（性）</strong>：子类<strong>自动共享父类数据结构与方法</strong>的机制；在已有类基础上定义新类并加入新内容。</li>
 <li><strong>多态性</strong>：<strong>同一操作作用于不同对象可以有不同的解释与结果</strong>；通过<strong>继承与虚函数（接口）</strong>实现。</li>
 <li><strong>重载</strong>：同一类中<strong>同名操作</strong>因<strong>参数类型/个数不同</strong>而有不同实现。</li>
@@ -123,7 +123,7 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li><strong>用况（Use Case）</strong>：系统<strong>对一组动作序列的描述</strong>，为参与者产生可观察的结果。</li>
 <li><strong>RUP</strong>：<strong>基于 UML</strong> 的一种软件开发过程框架，特点是<strong>用况驱动、体系结构为中心、迭代增量</strong>。</li>
 <li><strong>黑盒测试</strong>：只看<strong>外部输入输出</strong>、依据软件<strong>行为描述</strong>设计用例的测试；又称<strong>功能测试</strong>。</li>
-<li><strong>白盒测试</strong>：依据<strong>程序内部逻辑结构</strong>设计用例，重点在<strong>代码级</strong>；又称<strong>结构测试</strong>。</li>
+<li><strong>白盒测试</strong>：依据<strong>程序内部逻辑结构</strong>设计用例，重点在<strong>代码级</strong>；又称<strong>结构测试</strong>。通过检查代码中的语句、路径、条件等,以确定代码是否满足用户需求和设计规范。</li>
 <li><strong>集成测试（组装测试）</strong>：在单元测试基础上，把所有模块<strong>按设计要求组装成完整系统</strong>所进行的测试。</li>
 <li><strong>程序的静态分析方法</strong>：<strong>不运行程序</strong>，通过<strong>分析源代码/文档</strong>发现错误；含代码审查、语法分析、数据流分析。</li>
 <li><strong>软件维护</strong>：软件<strong>交付使用之后</strong>，为<strong>改正错误或满足新需要</strong>而修改软件的过程。</li>
