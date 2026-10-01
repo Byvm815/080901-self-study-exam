@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>02324 离散数学 · 真题考点简记（填空题 / 简答与证明题 分册版）</title>
+<title>02324 离散数学 · 真题考点简记（可读版 · 填空题 / 简答与证明题 分册）</title>
 <style>
 :root{--fg:#24292f;--muted:#57606a;--line:#d0d7de;--accent:#0969da;--code:#f6f8fa;--soft:#fafbfc}
 *{box-sizing:border-box}
@@ -65,119 +65,291 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <body>
 <nav class="topnav"><span class="brand">02324 离散数学</span> <a href="02324离散数学_历年真题考点分布.html">← 02324 离散数学 · 历年真题考点分布分析（填空题 / 简答题与证明题 分板块版）</a></nav>
 <main>
-<h1 id="02324">02324 离散数学 · 真题考点简记（填空题 / 简答与证明题 分册版）</h1>
+<h1 id="02324">02324 离散数学 · 真题考点简记（可读版 · 填空题 / 简答与证明题 分册）</h1>
 <blockquote>
-<p><strong>口径</strong>：现行教材为<strong>辛运帏主编《离散数学》（机械工业出版社，2014 年版）</strong>，全国考委 2024／2025 两年教材目录均指定此版且无"预计启用时间"值（说明长期未更换），故本课程目录里保留的 <strong>22 个 PDF 按考试场次去重后 = 20 套试卷、679 题</strong>（2015 年 4 月 — 2025 年 10 月，含 2020 年 8 月特殊考期）全部在现行教材口径内。<br>
+<p><strong>口径</strong>：现行教材为<strong>辛运帏主编《离散数学》（机械工业出版社，2014 年版）</strong>，全国考委 2024／2025 两年教材目录均指定此版且无「预计启用时间」值（说明长期未更换），故本课程目录里保留的 <strong>22 个 PDF 按考试场次去重后 ＝ 20 套试卷、679 题</strong>（2015 年 4 月 — 2025 年 10 月，含 2020 年 8 月特殊考期）全部在现行教材口径内。<br>
 <strong>卷型 20 套完全一致</strong>：单选 15×2＝30 ；填空 10×2＝20 ；简答 7×5＝35 ；证明 3×5＝15 ＝ <strong>100 分 / 35 题</strong>。<br>
 <strong>卷号写法</strong>：<code>年份后两位.月份</code>，如 <code>19.10#16</code> ＝ 2019 年 10 月第 16 题。<br>
-<strong>本册按题型分两大部分</strong>，因为这两种题的考法完全不同：<br>
-- <strong>第一部分 填空题（190 空）</strong>：题干已经把整段描述给出，<strong>只挖掉一个需要"算出来"的结果</strong>（一个数、一个集合、一个式子）。所以这一部分的记法是——<strong>把空缺处的答案记死</strong>，按章节考点排序，看句子就能想起那个结果。<br>
-- <strong>第二部分 简答题与证明题（190 题）</strong>：题干只给一个要求（"求…""证明…""画…"）。答案是<strong>一整套推导／证明过程</strong>，需要你自己按模板铺开。所以这一部分的记法是——<strong>先背 13 类模板的骨架，再按真题逐题过手</strong>。<br>
-<strong>【注意】两个板块的规律完全不同（本册的核心结论）</strong>：<br>
-- 填空：190 个空里 <strong>187 个答案互不相同（98%）</strong>——同一个考点每次给的数都不一样，<strong>没有可以背的"必考答案"，只有可以练的"必考方法"</strong>。<br>
-- 大题：190 道题里 <strong>185 道（97%）落在 13 类模板上</strong>，其中 <strong>模板①—⑩ 十类每类都出现在 13 卷以上</strong>——<strong>模板是必考的，而且解法步骤固定</strong>。<br>
-全部答案均取自<strong>原卷答案页原文</strong>；凡原卷答案区为空白／为图片的，用【答案区残缺】或〖题干为图片〗显式标注。</p>
+<strong>本册和上一版最大的不同</strong>：不再「一条一条孤立罗列」，而是<strong>先把知识点连成网络，再上记忆清单</strong>。做法是——<br>
+1. <strong>〇、一页知识地图</strong>：用树状结构把 9 章骨架画出来，并给出<strong>四条贯穿全课的主线</strong>；<br>
+2. <strong>每章开头先给「本章知识地图」</strong>，每个考点桶先给一句<strong>关系说明</strong>（这一组空之间是什么关系）；<br>
+3. <strong>凡是「几种运算／几个公式／几类对象」的知识，一律做成表格</strong>（真值表法、小项大项、集合运算、群的定义、图论公式、邻接矩阵计数）；<br>
+4. <strong>大题按「题面关键词 → 模板 → 步骤」做成路线图</strong>，并把 14 类模板之间的<strong>关联</strong>标出来。<br>
+<strong>【注意】</strong> 本批原卷的<strong>公式、图、量词符号大量是内嵌图片</strong>，PDF 文字层丢失了 ∀／∃／¬ 等符号。凡题干标 <strong>〖题干为图片〗</strong> 的，是<strong>原题公式无法还原</strong>，只能用「考点摘要」代替；凡标 <strong>【原卷缺页】</strong> 的，是原 PDF 本身缺页。<br>
+全部答案均取自<strong>原卷答案页原文</strong>；凡原卷答案区为空白／为图片的，已显式标注。</p>
 </blockquote>
 <hr>
-<h2 id="_1">零、卷型与两种题的准备方法</h2>
-<h3 id="01-20-100-35">0.1 卷型（20 套完全一致，100 分 / 35 题）</h3>
+<h2 id="_1">〇、一页知识地图（先看这一页）</h2>
+<h3 id="01-9">0.1 全课程骨架（9 章一棵树）</h3>
+<ul>
+<li><strong>第 1 章 命题与命题公式 —— 「算真值、算编号」</strong></li>
+<li>命题与联结词（¬ ∧ ∨ → ↔）→ <strong>真值表 2ⁿ 行</strong></li>
+<li><strong>小项 m 与大项 M 的编码</strong>（小项按「取 1」、大项按「取 0」）</li>
+<li><strong>主析取范式 ∑m / 主合取范式 ∏M</strong>，两者<strong>项数互补</strong>：<code>∑m(S) ⇔ ∏M(S̄)</code></li>
+<li>公式类型：<strong>重言式（全 1）／矛盾式（全 0）／可满足式（有 1）</strong></li>
+<li>等价与蕴含：<code>P⇔Q</code> 表示 <code>P↔Q</code> 是重言式</li>
+<li><strong>第 2 章 命题逻辑的推理理论 —— 本课程最「瘦」的一章（10 题，且 20 套里 9 套 0 题）</strong></li>
+<li>推理规则（P、T、假言推理、拒取式、析取三段论）· <strong>CP 规则</strong> · <strong>反证法</strong></li>
+<li><strong>第 3 章 谓词逻辑 —— 「把量词展开成 ∧／∨」</strong></li>
+<li>量词与辖域 → <strong>约束变元／自由变元</strong> → <strong>在给定解释下的真值</strong> → <strong>符号化</strong> → <strong>前束范式</strong> → 谓词推理（US／ES／UG／EG）</li>
+<li><strong>第 4 章 集合 —— 「集合算术 ＋ 两个基数公式」</strong></li>
+<li>集合运算：并 ∪ · 交 ∩ · 差 − · <strong>对称差 ⊕</strong>；<code>A⊕B ＝ (A−B)∪(B−A)</code></li>
+<li>基数公式：<strong><code>|P(A)| ＝ 2^|A|</code></strong>、<strong><code>|A×B| ＝ |A|·|B|</code></strong></li>
+<li>幂集、笛卡尔积、集合的表示（列举／描述）、计数（容斥、圆排列）</li>
+<li><strong>第 5 章 关系与函数 —— 本课程第一大章（153 题，22.5%）</strong></li>
+<li>关系的运算：<strong>复合 ∘（最大考点）</strong> · 逆 <code>R⁻¹</code> · 幂 <code>R²</code> · <strong>dom／ran</strong></li>
+<li><strong>三种闭包</strong>：<code>r(R)＝R∪I_A</code>、<code>s(R)＝R∪R⁻¹</code>、<code>t(R)＝R∪R²∪R³∪…</code></li>
+<li>关系的四种性质：<strong>自反／反自反 · 对称／反对称 · 传递</strong></li>
+<li><strong>等价关系 ⇔ 划分</strong>；关系图与关系矩阵</li>
+<li>函数：单射／满射／双射、<strong>满射个数 n!·S(m,n)</strong>、逆函数</li>
+<li><strong>第 6 章 代数系统的一般概念 —— 「解方程求幺元零元」</strong></li>
+<li>二元运算及其性质（<strong>封闭 · 结合 · 交换 · 幂等 · 分配</strong>）</li>
+<li><strong>幺元 e</strong>（解 <code>a*e＝e*a＝a</code>）· <strong>零元 z</strong>（解 <code>a*z＝z</code>）· 逆元</li>
+<li>代数系统四兄弟：<strong>半群 → 独异点 → 群 → 交换群</strong></li>
+<li><strong>第 7 章 格与布尔代数 —— 大题 0 道，只出填空（7 空）</strong></li>
+<li>偏序 → <strong>格</strong>（任意两元素都有上确界与下确界）→ <strong>补元 · 对偶公式 · 分配格</strong> → 布尔代数运算律</li>
+<li><strong>第 8 章 图 —— 「图上的算术」</strong></li>
+<li><strong>握手定理 Σd(v) ＝ 2m</strong>；完全图 Kₙ 有 n(n−1)/2 边</li>
+<li><strong>欧拉公式与平面图</strong>：<code>n − m + r ＝ 2</code>；<code>m ≤ 3n − 6</code></li>
+<li>邻接矩阵／关联矩阵：<strong>Aᵏ 数通路与回路</strong>、关联矩阵非零元素最少 2(n−1)</li>
+<li>欧拉图（连通且无奇度点）／哈密顿图（过每个顶点一次）</li>
+<li><strong>第 9 章 图的应用 —— 「树的计数」</strong></li>
+<li><strong>最小生成树（Kruskal／Prim）</strong>、<strong>最短路径（Dijkstra）</strong>、<strong>关键路径（AOE）</strong></li>
+<li><strong>树的性质</strong>：n 阶树 n−1 条边；核心公式 <strong><code>n₁ ＝ 2 + Σ_{k≥3}(k−2)·n_k</code></strong></li>
+<li>非同构无向树（5 阶 3 棵、6 阶 6 棵、7 阶 11 棵）、正则 m 叉树、完全二叉树</li>
+</ul>
+<h3 id="02">0.2 四条贯穿全课的主线</h3>
+<p><strong>主线 1：命题逻辑「同一个公式，三种算法」</strong>（第 1、2 章）</p>
 <table>
 <thead>
 <tr>
-<th>大题号</th>
-<th>题型</th>
-<th>题数×分值</th>
-<th>合计</th>
-<th>本册归属</th>
+<th>做法</th>
+<th>什么时候用</th>
+<th>关键动作</th>
+<th>结果形式</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>一、1—15</td>
-<td>单项选择</td>
-<td>15×2</td>
-<td>30 分</td>
-<td>不收入本册（见配套《考点分布》）</td>
+<td><strong>真值表法</strong></td>
+<td>变元 ≤ 3 个、要判类型或证等价</td>
+<td><strong>把 2ⁿ 行写全</strong>，逐行列子公式</td>
+<td>类型结论（重言／矛盾／可满足）</td>
 </tr>
 <tr>
-<td><strong>二、16—25</strong></td>
-<td><strong>填空</strong></td>
-<td><strong>10×2</strong></td>
-<td><strong>20 分</strong></td>
-<td><strong>第一部分</strong></td>
+<td><strong>等值演算法</strong></td>
+<td>要求主析取／主合取范式</td>
+<td>消 → ↔ → 德摩根／分配／吸收 → <strong>补全变元</strong></td>
+<td><code>∑m(...)</code> 或 <code>∏M(...)</code></td>
 </tr>
 <tr>
-<td><strong>三、26—32</strong></td>
-<td><strong>简答</strong></td>
-<td><strong>7×5</strong></td>
-<td><strong>35 分</strong></td>
-<td><strong>第二部分</strong></td>
+<td><strong>主范式编号法</strong></td>
+<td>已知真值表或要互换</td>
+<td><strong>小项按取 1 编码、大项按取 0 编码</strong>；<code>∑m(S) ⇔ ∏M(S̄)</code></td>
+<td>编号集合</td>
 </tr>
 <tr>
-<td><strong>四、33—35</strong></td>
-<td><strong>证明</strong></td>
-<td><strong>3×5</strong></td>
-<td><strong>15 分</strong></td>
-<td><strong>第二部分</strong></td>
+<td><strong>推理证明法</strong></td>
+<td>证有效推理</td>
+<td>每行<strong>标注规则</strong>；CP 规则／反证法</td>
+<td>逐行推理链</td>
+</tr>
+</tbody>
+</table>
+<p><strong>主线 2：关系与函数「一张网」</strong>（第 5 章，填空 44 空）</p>
+<table>
+<thead>
+<tr>
+<th>运算</th>
+<th>定义</th>
+<th>本批空数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>复合 R∘S</strong></td>
+<td><code>{〈x,z〉；存在 y 使 〈x,y〉∈R 且 〈y,z〉∈S}</code></td>
+<td><strong>16</strong></td>
+</tr>
+<tr>
+<td><strong>dom／ran</strong></td>
+<td>第一个／第二个元素集合（<strong>去重</strong>）</td>
+<td>9</td>
+</tr>
+<tr>
+<td><strong>闭包 r／s／t</strong></td>
+<td><code>R∪I_A</code> ／ <code>R∪R⁻¹</code> ／ <code>R∪R²∪R³∪…</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>逆 R⁻¹</strong></td>
+<td>序对首尾对调</td>
+<td>与 dom/ran 合考</td>
+</tr>
+<tr>
+<td><strong>幂 R²</strong></td>
+<td>自己与自己复合</td>
+<td>与复合合考</td>
+</tr>
+<tr>
+<td><strong>等价关系 ⇔ 划分</strong></td>
+<td>A 有 3 个元素时共 <strong>5</strong> 个</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>主线 3：代数系统的「四兄弟」</strong>（第 6 章）</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>需要满足</th>
+<th>记忆钩子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>半群</strong></td>
+<td>封闭 ＋ 结合律</td>
+<td>只要求 2 条</td>
+</tr>
+<tr>
+<td><strong>独异点</strong></td>
+<td>封闭 ＋ 结合律 ＋ <strong>有幺元</strong></td>
+<td>3 条</td>
+</tr>
+<tr>
+<td><strong>群</strong></td>
+<td>封闭 ＋ 结合律 ＋ 幺元 ＋ <strong>每元有逆元</strong></td>
+<td>4 条</td>
+</tr>
+<tr>
+<td><strong>交换群（阿贝尔群）</strong></td>
+<td>群 ＋ <strong>交换律</strong></td>
+<td>5 条</td>
+</tr>
+<tr>
+<td><strong>幂集上的系统例子</strong></td>
+<td><code>〈P(A),∪〉</code> 幺元 ∅、零元 A；<code>〈P(A),∩〉</code> 幺元 A、零元 ∅</td>
+<td><strong>常考填空</strong></td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li><strong>简答 ＋ 证明 ＝ 50 分，正好一半</strong>；加上填空 20 分，<strong>主观题共 70 分</strong>。这门课是"会算、会推、会写过程"才能及格。</li>
-<li>部分老卷把 31、32 也写成"证明题"，<strong>题号分段不统一，看小节标题</strong>（三、简答题／四、证明题）。</li>
+<li><strong>必背</strong>：<strong>群中幂等元只能是幺元</strong>；<strong>幺元唯一、逆元唯一</strong>；<code>x*y＝(x+y) mod n</code> 型 → <strong>幺元 0、x 的逆元 n−x</strong>。</li>
 </ul>
-<h3 id="02">0.2 两种题怎么准备</h3>
-<ul>
-<li><strong>填空题怎么准备</strong></li>
-<li>190 个空里 <strong>162 个（85%）是"算一个结果"</strong>（能力归类为计算求解）；<strong>187 个答案互不相同</strong>，重复的只有 3 个（"整数集上 ∀x∃y 的真值" 2 次、空白 3 次）。</li>
-<li>所以填空的正确准备方式是：<strong>把 42 个"考点桶"的算法各练 3 遍</strong>（复合运算、闭包、真值、主范式、欧拉公式、握手定理、树的结点数…），而不是背答案。</li>
-<li>答案形态提示：多为<strong>一个集合、一个数、一个式子</strong>；写答案时<strong>符号要写全</strong>（∀、∃、¬、〈〉、∪、∩、⊕、Σ、Π）。</li>
-<li><strong>简答 / 证明怎么准备</strong></li>
-<li>190 道大题里 <strong>185 道落在 13 类模板上</strong>，<strong>没有偏题</strong>。答题是<strong>按步骤给分</strong>的。</li>
-<li><strong>必须写过程</strong>：真值表要<strong>表全 2ⁿ 行</strong>；等值演算要<strong>逐步写出所用公式</strong>；哈斯图要<strong>画图</strong>；Kruskal 要<strong>写出每次选中的边</strong>（或权值）；证明要<strong>每行标注所用规则</strong>。</li>
-<li><strong>结论句不能省</strong>：如"该公式是非重言式的可满足式""故为格""故 G 是连通图"。</li>
-</ul>
-<h3 id="03">0.3 一句话对比</h3>
+<p><strong>主线 4：图与树的「一张公式表」</strong>（第 8、9 章）</p>
+<table>
+<thead>
+<tr>
+<th>公式</th>
+<th>内容</th>
+<th>用在</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Σd(v) ＝ 2m</strong></td>
+<td>握手定理（度数和 ＝ 边数 2 倍）</td>
+<td>求顶点数／度数／证同构</td>
+</tr>
+<tr>
+<td><strong>完全图 Kₙ：n(n−1)/2</strong></td>
+<td>无向；有向完全图 n(n−1)</td>
+<td>边数最大值</td>
+</tr>
+<tr>
+<td><strong>非连通简单图最多 (n−1)(n−2)/2</strong></td>
+<td>连通图最少 n−1</td>
+<td>边数极值</td>
+</tr>
+<tr>
+<td><strong>n − m + r ＝ 2</strong></td>
+<td>欧拉公式（连通平面图）</td>
+<td>求 n／m／r</td>
+</tr>
+<tr>
+<td><strong>m ≤ 3n − 6</strong></td>
+<td>简单平面图边数上界</td>
+<td>证"存在度 ≤ 5 的顶点"</td>
+</tr>
+<tr>
+<td><strong>删边数 ＝ n(n−1)/2 − (n−1)</strong></td>
+<td>K₆ 删 10、K₇ 删 15、K₈ 删 21、K₉ 删 28</td>
+<td>求生成树</td>
+</tr>
+<tr>
+<td><strong>树：n 个顶点 n−1 条边</strong></td>
+<td>—</td>
+<td>生成树、树的判定</td>
+</tr>
+<tr>
+<td><strong><code>n₁ ＝ 2 + Σ_{k≥3}(k−2)·n_k</code></strong></td>
+<td>树中树叶与分支点的关系</td>
+<td>求结点数／树叶数</td>
+</tr>
+<tr>
+<td><strong>关联矩阵非零元素最少 2(n−1)</strong></td>
+<td>连通图；树的邻接矩阵同</td>
+<td>矩阵计数</td>
+</tr>
+<tr>
+<td><strong>Aᵏ 数通路 ／ 主对角线和数回路 ／ 元素和数通路总数</strong></td>
+<td>邻接矩阵幂</td>
+<td>通路回路计数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="03">0.3 两类题怎么准备</h3>
 <table>
 <thead>
 <tr>
 <th></th>
-<th><strong>填空（20 分 / 190 空）</strong></th>
-<th><strong>简答＋证明（50 分 / 190 题）</strong></th>
+<th><strong>填空题（190 空，每空 2 分）</strong></th>
+<th><strong>简答＋证明（190 题，50 分）</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>难度</td>
-<td>易（会方法就会）</td>
-<td>难（要自己铺出整套推导）</td>
+<td>易——会方法就会</td>
+<td>难——要自己铺出整套推导</td>
 </tr>
 <tr>
-<td>考点特征</td>
-<td>考点极多而分散：<strong>42 个考点桶</strong></td>
-<td>模板高度集中：<strong>13 类模板</strong></td>
+<td>考点</td>
+<td><strong>42 个考点桶</strong>（部位固定）</td>
+<td><strong>13 类模板</strong>（185/190 ＝ 97%）</td>
 </tr>
 <tr>
-<td>跨卷差异</td>
-<td><strong>答案每次都不一样</strong>（187/190 互不相同）</td>
-<td><strong>每次都是同一批模板</strong>（模板①—⑩ 各 ≥13 卷）</td>
+<td>跨卷</td>
+<td><strong>187/190 个答案互不相同（98%）</strong>，重复只有 3 处；<strong>85% 是「算一个结果」</strong></td>
+<td><strong>每卷命中 8—10 类模板</strong>；模板①—⑩ <strong>各 ≥13 卷</strong></td>
 </tr>
 <tr>
-<td>备考方式</td>
-<td><strong>把 42 个考点桶的算法各练 3 遍</strong></td>
-<td><strong>把 13 类模板的步骤背到能默写</strong></td>
+<td>一句话</td>
+<td><strong>没有「必考答案」，只有「必考算法」</strong></td>
+<td><strong>模板必考，而且一次考一大片</strong></td>
+</tr>
+<tr>
+<td>怎么准备</td>
+<td><strong>把 42 个考点桶的算法各练 3 遍</strong>，符号写全</td>
+<td><strong>把 13 类模板的步骤背到能默写</strong>，动手画图</td>
 </tr>
 </tbody>
 </table>
 <hr>
 <h2 id="190">第一部分 填空题速记（190 空）</h2>
 <blockquote>
-<p><strong>记法</strong>：空缺处的答案已<strong>加粗</strong>（若原句有多个空则用 <code>→ **答案**</code> 形式给出）。括号里是出处（卷#题号），用于回原卷核对。<br>
-<strong>阅读提示</strong>：本批原卷的<strong>公式、图、量词符号大量是内嵌图片</strong>，PDF 文字层丢失了 ∀／∃／¬ 等符号。凡题干标 <strong>〖题干为图片〗</strong> 的，是<strong>原题公式完全无法还原</strong>，只能用"考点摘要"代替，请回原卷核对；凡标 <strong>【原卷缺页】</strong> 的，是原 PDF 本身缺页。<br>
-<strong>统计提示</strong>：190 个空 → <strong>187 个答案互不相同（98%）</strong>，只有 3 处重复。<strong>不要背答案，要背算法。</strong></p>
+<p><strong>记法</strong>：空缺处的答案已<strong>加粗</strong>（原句有多个空时用 <code>→ **答案**</code> 形式）。括号里是出处（卷#题号）。<br>
+<strong>阅读提示</strong>：本批原卷的<strong>公式、图、量词符号大量是内嵌图片</strong>。凡题干标 <strong>〖题干为图片〗</strong> 的，是原题公式无法还原，只能用「考点摘要」代替；凡标 <strong>【原卷缺页】</strong> 的，是原 PDF 本身缺页。<br>
+<strong>统计提示</strong>：190 个空 → <strong>187 个答案互不相同（98%）</strong>。<strong>不要背答案，要背算法。</strong></p>
 </blockquote>
 <h3 id="1-22">第 1 章 命题与命题公式（22 空）</h3>
+<p><strong>本章知识地图</strong>：命题公式的真值／指派 → <strong>小项 m 与大项 M 的编码</strong> → 主范式项数关系 → 等价与蕴含。<strong>一句话</strong>：本章只考「给一个公式，算它的真值或它的编号」。</p>
 <h4 id="7">命题公式的指派与赋值（7 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：同一件事的四个问法：<strong>给赋值求真值</strong> / <strong>数成真成假的指派个数</strong> / <strong>n 个变元共 2ⁿ 组指派</strong>。</p>
+</blockquote>
 <ul>
 <li>〖题干为图片〗P∨Q∨¬R的成假赋值　→　<strong>001（P0Q0R1）</strong>（19.10#16）</li>
 <li>P命题取1,Q命题取0,R命题取1,则命题公式(P→Q)VR的真值是<strong>1</strong>。（24.10#16）</li>
@@ -188,6 +360,9 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li>含有n个命题变元的命题公式，共有<strong>2ⁿ</strong>组指派（16.10#25）</li>
 </ul>
 <h4 id="13">小项与大项（主范式）（13 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：<strong>同一套编号规则的反复使用</strong>：<strong>小项 m 按「变元取 1」编码，大项 M 按「取 0」编码</strong>；主析取项数与主合取项数<strong>互补</strong>（<code>∑m(S) ⇔ ∏M(S̄)</code>）。</p>
+</blockquote>
 <ul>
 <li>命题公式P→Q的主合取范式是<strong>¬P∨Q（即大项M₂，共1个）</strong>。（24.10#17）</li>
 <li>〖题干为图片〗命题公式¬P∧Q∧¬R的小项编码　→　<strong>m₂（编码010）</strong>（16.04#23）</li>
@@ -204,15 +379,25 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li>〖题干为图片〗简单析取式¬P∨Q∨R的大项编码　→　<strong>M100</strong>（16.10#19）</li>
 </ul>
 <h4 id="1">题干缺失无法判定（1 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：原卷缺页，仅存答案。</p>
+</blockquote>
 <ul>
 <li>【原卷缺页】第 16 题题干缺失，仅存答案。　→　答案 <strong>T</strong>（23.04#16）</li>
 </ul>
 <h4 id="1_1">等价式与蕴含式关系（1 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：一条性质：<strong>P、Q 等价 ⟺ P→Q 是重言式</strong>；两个不同小项的合取 ⟹ <strong>矛盾式</strong>。</p>
+</blockquote>
 <ul>
 <li>若两个命题公式P，Q等价，则P→Q是<strong>重言式</strong>。（25.04#16）</li>
 </ul>
 <h3 id="3-27">第 3 章 谓词逻辑（27 空）</h3>
+<p><strong>本章知识地图</strong>：谓词公式的<strong>真值</strong>（给定解释）→ <strong>变元</strong>（约束／自由）→ <strong>辖域</strong> → <strong>前束范式</strong> → <strong>符号化</strong>。<strong>一句话</strong>：本章是「把 ∀／∃ 展开成 ∧／∨ 再算」的一章。</p>
 <h4 id="13_1">谓词公式在给定解释下的真值（13 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：<strong>同一道题的四种论域</strong>：整数集 / 自然数集 / 实数域 / 正整数域。做法统一——<strong>把 ∀ 当合取、∃ 当析取</strong>，把论域元素代进去逐个算。</p>
+</blockquote>
 <ul>
 <li>〖题干为图片〗整数集上∀x∃y(x-y=6)的真值　→　<strong>T（真）</strong>（19.10#17）</li>
 <li>〖题干为图片〗自然数集上∀x∃y(x+y=10)的真值　→　<strong>0（假）</strong>（24.10#18）</li>
@@ -229,11 +414,17 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li>〖题干为图片〗自然数域上∃y∀x(x+y=10)的真值　→　<strong>0</strong>（25.10#23）</li>
 </ul>
 <h4 id="2">量词辖域的判定（2 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：考「量词的辖域到哪里为止」——<strong>辖域延伸到该量词后紧跟的整个子公式</strong>。</p>
+</blockquote>
 <ul>
 <li>〖题干为图片〗∀x(P(x)∨∃yF(y))→∃xQ(x)中∀x的辖域　→　<strong>P(x)∨∃yF(y)</strong>（19.10#18）</li>
 <li>〖题干为图片〗∀x(P(x)→∃yQ(y))∨R(y)的辖域与自由变元　→　<strong>辖域为P(x)→∃yQ(y)；自由变元为y</strong>（19.04#25）</li>
 </ul>
 <h4 id="4">谓词公式的约束变元与自由变元（4 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：同一概念的两侧：<strong>被量词约束的叫约束变元，其余叫自由变元</strong>；换名只能换<strong>约束变元</strong>。</p>
+</blockquote>
 <ul>
 <li>公式（原卷为图片）的约束变元为＿＿，自由变元为＿＿。（17.04#18）</li>
 <li>公式（原卷为图片）的约束变元为＿＿，自由变元为＿＿。（15.10#16）</li>
@@ -241,6 +432,9 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li>谓词公式（原卷为图片）中的约束变元有＿＿，自由变元有＿＿。（15.04#20）</li>
 </ul>
 <h4 id="4_1">前束范式（4 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：<strong>同一算法的四道题</strong>：约束变元改名 → 消去 → 与 ↔ → 用 <code>¬∀xP ⇔ ∃x¬P</code> 把否定内移 → <strong>量词全部前移</strong>。</p>
+</blockquote>
 <ul>
 <li>〖题干为图片〗求∃x∃yF(x,y)→∀zG(u,v,z)的前束范式　→　<strong>∃x∃y∀z(F(x,y)→G(u,v,z))</strong>（19.04#19）</li>
 <li>〖题干为图片〗公式∀xP(x)→¬∃xQ(x)的前束范式　→　<strong>∃x∀y(¬P(x)∨¬Q(y))</strong>（21.04#18）</li>
@@ -248,6 +442,9 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li>〖题干为图片〗求∀xF(x)∨(∃xG(x)→∃xH(x))的前束范式　→　<strong>答案区空缺（求解过程为图片）</strong>（20.08#21）</li>
 </ul>
 <h4 id="4_2">谓词的符号化与量词表示（4 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：<strong>同一考点的四种问法</strong>：「所有人都…」→ <code>∀x(S(x)→G(x))</code>；「只能使用存在量词」→ <code>¬∃x¬F(x)</code>；「只能使用全称量词」→ <code>¬∀x¬F(x)</code>。</p>
+</blockquote>
 <ul>
 <li>设S（x）：x是人，G（x）：x 会思考，则命题“人都会思考”可符号化为<strong>∀x(S(x)→G(x))</strong>。（16.04#25）</li>
 <li>设F(x):x有进取心，要求只能使用全称量词，命题“某些人有进取心”可符号化为<strong>¬∀x¬F(x)</strong>.（15.10#21）</li>
@@ -255,7 +452,11 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li>设论域是全体人类，F（x）：x能呼吸，要求只能使用存在量词，命题“所有人都能呼吸” 可符号化为<strong>¬∃x¬F(x)</strong>。（16.10#24）</li>
 </ul>
 <h3 id="4-23">第 4 章 集合（23 空）</h3>
+<p><strong>本章知识地图</strong>：集合运算（并／交／差／<strong>对称差</strong>）→ 集合的表示与相等 → <strong>基数公式（幂集、笛卡尔积）</strong> → 计数。<strong>一句话</strong>：本章 ＝「集合算术 ＋ 两个基数公式」。</p>
 <h4 id="9">集合的交、差与对称差运算（9 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：这一组都在考集合运算：<strong><code>A⊕B ＝ (A−B)∪(B−A)</code></strong>；既考普通集合上的 ⊕，也考<strong>幂集上的 ⊕</strong>。</p>
+</blockquote>
 <ul>
 <li>〖题干为图片〗A={1,2},B={2,a}求P(A)⊕P(B)　→　<strong>{{1},{1,2},{a},{2,a}}</strong>（19.10#23）</li>
 <li>〖题干为图片〗A={3,2,4},B={2,5,3}，求A⊕B与A-B　→　<strong>{4,5}；{4}</strong>（16.04#18）</li>
@@ -268,6 +469,9 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li>〖题干为图片〗A={1,3,4},B={a,3,c}，求A-B与A⊕B　→　<strong>A-B={1,4}；A⊕B={1,4,a,c}</strong>（16.10#21）</li>
 </ul>
 <h4 id="5">集合的运算与表示（5 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：列举法／描述法互化、集合相等判定、并交运算与区间型描述法。</p>
+</blockquote>
 <ul>
 <li>小于10的正奇数组成的集合是<strong>{1,3,5,7,9}</strong>。（24.10#19）</li>
 <li>设A={1,2,3,4},B={2,4,6},则A∩B=<strong>{2,4}</strong>。（24.10#20）</li>
@@ -276,10 +480,16 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li>〖题干为图片〗写出小于10的正偶数组成的集合　→　<strong>{2,4,6,8}</strong>（25.10#24）</li>
 </ul>
 <h4 id="1_2">计数问题（1 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：手镯着色 ＝ 圆排列计数（本批 1 空）。</p>
+</blockquote>
 <ul>
 <li>一个手镯等距离地镶嵌着5颗彩珠，每颗彩珠可以从红、白、蓝、绿、黄5种颜色中挑选。如果要求手镯上的彩珠颜色都不相同，则可以构成<strong>120</strong>种不同颜色彩珠分布的手镯。（17.10#19）</li>
 </ul>
 <h4 id="4_3">笛卡尔积与幂集的基数（4 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：<strong>两条基数公式</strong>：<code>|A×B| ＝ |A|·|B|</code>、<code>|P(A)| ＝ 2^|A|</code>。</p>
+</blockquote>
 <ul>
 <li>设集合A={1,2,3}，集合B={a,b,c,d,e}，则│A×B│=＿＿，而│P(A)×B│=＿＿。　→　<strong>15；40</strong>（17.10#25）</li>
 <li>设 A={1,2}，则 A²＝＿＿。（22.04#26）</li>
@@ -287,6 +497,9 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li>设A={a，b}，B={a，c}，则A×B=<strong>{〈a,a〉,〈a,c〉,〈b,a〉,〈b,c〉}</strong>。（25.04#22）</li>
 </ul>
 <h4 id="4_4">幂集元素个数（4 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：<code>|P(A)| ＝ 2^|A|</code>；<strong>注意 ∅ 与 {∅} 的区别</strong>，写幂集别漏 ∅ 本身。</p>
+</blockquote>
 <ul>
 <li>〖题干为图片〗A={0,1,{1}}的幂集　→　<strong>{∅,{0},{1},{{1}},{0,1},{0,{1}},{1,{1}},{0,1,{1}}}</strong>（20.10#17）</li>
 <li>设 S（原卷为图片），则其幂集 P(S) 的元素个数为＿＿。（15.10#25）</li>
@@ -294,7 +507,11 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li>设集合A有4个元素，则A的幂集P(A)有<strong>16</strong>个元素。（22.10#19）</li>
 </ul>
 <h3 id="5-44">第 5 章 关系与函数（44 空）</h3>
+<p><strong>本章知识地图</strong>：关系的基本运算（<strong>复合 → dom/ran → 逆 → 幂</strong>）→ <strong>闭包（r／s／t）</strong> → 关系图与矩阵 → <strong>等价关系与划分</strong> → 函数（单射／满射／逆函数）。<strong>一句话</strong>：本章是全课程第一大章，<strong>「复合 ＋ dom/ran」就占了 25 空</strong>。</p>
 <h4 id="16">关系的复合运算（16 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：<strong>本课程第一大填空桶（16 空）</strong>。同一个算法反复考：<strong><code>R∘S ＝ {〈x,z〉 | 存在 y 使 〈x,y〉∈R 且 〈y,z〉∈S}</code></strong>（先 R 后 S）；另有 <code>R²</code>、<code>R⁻¹</code>、<code>R⁴</code> 等幂与逆的运算。</p>
+</blockquote>
 <ul>
 <li>〖题干为图片〗给定R,S求复合关系R∘S　→　<strong>{〈1,1〉,〈1,2〉,〈2,2〉}</strong>（19.10#24）</li>
 <li>〖题干为图片〗已知A上关系R、S，求R∘S与S∘R　→　<strong>R∘S={〈1,2〉,〈3,1〉,〈2,1〉}；S∘R={〈4,5〉,〈5,4〉,〈2,5〉}</strong>（17.04#16）</li>
@@ -314,6 +531,9 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li>〖题干为图片〗由给定的R与S求关系复合　→　<strong>{〈4,2〉}（即S∘R）</strong>（16.10#16）</li>
 </ul>
 <h4 id="7_1">单射/满射个数与函数值（7 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：函数计数：<strong>满射个数 ＝ n!·S(m,n)</strong>（<code>|A|=5,|B|=2 → 30</code>；<code>|A|=4,|B|=2 → 14</code>）；同时考给定点的函数值与单射/满射/双射的判定。</p>
+</blockquote>
 <ul>
 <li>设集合A={1，2，3，4，5}，集合B={a，b，c，d，e}，从A到B的不同的单射的个数为<strong>120</strong>。（19.10#25）</li>
 <li>〖题干为图片〗|A|=5,|B|=2时A到B的不同满射个数　→　<strong>30</strong>（21.04#25）</li>
@@ -324,6 +544,9 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li>设R为实数集合，f:R→R,f(x)=x²−3x+2,则f(3)=＿＿,函数f的性质是＿＿。　→　<strong>2；非单射非满射函数</strong>（22.10#16）</li>
 </ul>
 <h4 id="9_1">关系的定义域与值域（9 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：同一概念的两侧：<strong><code>domR</code> 取第一个元素、<code>ranR</code> 取第二个元素，都要去重</strong>。</p>
+</blockquote>
 <ul>
 <li>〖题干为图片〗求关系R的定义域domR　→　<strong>{1,2,3,4}</strong>（24.10#21）</li>
 <li>设集合A={1，2，3，4，5，6，7，8，9，10}，二元关系R={〈x，y〉|x，y∈A，x 是 y 的因子，x＜5}，则domR=＿＿，ran R=＿＿。　→　<strong>domR={1,2,3,4}；ranR={1,…,10}=A</strong>（19.04#20）</li>
@@ -336,15 +559,24 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li>〖题干为图片〗由给定的R求domR与ranR　→　<strong>domR={1,3,4}；ranR={a,c,d}</strong>（16.10#18）</li>
 </ul>
 <h4 id="2_1">等价关系与划分（2 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：<strong>等价关系 ⇔ 划分</strong>；A 有 3 个元素时等价关系共 <strong>5</strong> 个；由划分写等价关系＝把每个块内元素两两配成有序对（含自身对）。</p>
+</blockquote>
 <ul>
 <li>集合A={1，2，3}上的划分共有＿＿种,其中划分S={{1},{2，3}}中有序对的个数为＿＿ ＿＿。　→　<strong>5；5</strong>（17.04#19）</li>
 <li>设集合A有3个元素，则A上的等价关系有<strong>5</strong>个。（16.04#21）</li>
 </ul>
 <h4 id="1_3">恒等关系与全域关系的元素个数（1 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：两条计数：<code>|I_A| ＝ n</code>、<code>|E_A| ＝ n²</code>。</p>
+</blockquote>
 <ul>
 <li>〖题干为图片〗|A|=n时恒等关系IA与全域关系EA的元素个数　→　<strong>n；n²</strong>（19.04#22）</li>
 </ul>
 <h4 id="4_5">关系的自反闭包与对称闭包（4 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：<code>r(R) ＝ R∪I_A</code>、<code>s(R) ＝ R∪R⁻¹</code>；与 <code>t(R) ＝ R∪R²∪R³∪…</code> 合称<strong>三闭包</strong>，常与关系矩阵一起考。</p>
+</blockquote>
 <ul>
 <li>设集合A ={1，3，4}以及A上的一个二元关系R ={〈1，3〉，〈3，4〉，〈3，3〉}，则自反闭包r（R）=＿＿，R-1 =＿＿。　→　<strong>{〈1,1〉,〈1,3〉,〈3,4〉,〈3,3〉,〈4,4〉}；{〈3,1〉,〈4,3〉,〈3,3〉}</strong>（16.04#16）</li>
 <li>设有集合A={a,b,c}上的二元关系则R1的自反闭包r(R1)=＿＿，R1的对称闭包s(R1)=＿＿。　→　<strong>r(R₁)加〈a,a〉,〈b,b〉,〈c,c〉；s(R₁)再加〈b,a〉,〈c,a〉,〈b,c〉</strong>（17.10#23）</li>
@@ -352,24 +584,40 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li>〖题干为图片〗由给定的R求对称闭包s(R)与传递闭包t(R)　→　<strong>s(R)=R∪{〈b,a〉,〈c,b〉}；t(R)=R∪{〈a,c〉}</strong>（16.10#20）</li>
 </ul>
 <h4 id="1_4">按条件求关系元素（1 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：由 gcd／lcm 等附加条件反求满足条件的序对。</p>
+</blockquote>
 <ul>
 <li>设R=｛〈x,y〉|x,y∈Z+∧gcd(x,y)=2∧lcm(x,y)=12｝，其中Z+是正整数集合，gcd(x,y)表示x,y的最大公约数，lcm(x,y)表示x、y的最小公倍数，则R的元素<strong>〈2,12〉,〈4,6〉</strong>。（18.04#16）</li>
 </ul>
 <h4 id="2_2">反函数（逆函数）（2 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：把每个序对的首尾对调即可。</p>
+</blockquote>
 <ul>
 <li>设集合A={1,2,3},集合B={2,4,6},给定函数f={(1,2),(2,4),(3,6)},则逆函数f⁻¹　→　<strong>{〈2,1〉,〈4,2〉,〈6,3〉}</strong>（20.10#25）</li>
 <li>〖题干为图片〗f={(1,3),(2,9),(3,6)}，求逆函数f⁻¹　→　<strong>{(3,1),(9,2),(6,3)}</strong>（20.08#25）</li>
 </ul>
 <h4 id="1_5">等价类的计算（1 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：求 <code>[x]</code> 就是求与 x 同类的所有元素。</p>
+</blockquote>
 <ul>
 <li>〖题干为图片〗模4相等关系下等价类[5]为集合　→　<strong>{1,5,9}</strong>（20.08#17）</li>
 </ul>
 <h4 id="1_6">题干缺失无法判定（1 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：原卷缺页，仅存答案。</p>
+</blockquote>
 <ul>
 <li>【原卷缺页】第 19 题题干缺失。　→　答案 <strong>{〈1,1〉,〈1,2〉,〈1,3〉}</strong>（23.04#19）</li>
 </ul>
 <h3 id="6-20">第 6 章 代数系统的一般概念（20 空）</h3>
+<p><strong>本章知识地图</strong>：代数系统的运算性质 → <strong>幺元与零元</strong> → 群／独异点的幺元、逆元、阶。<strong>一句话</strong>：本章填空几乎只考一件事——<strong>「解方程求幺元零元」</strong>。</p>
 <h4 id="14">代数系统的幺元与零元（14 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：<strong>本课程第二大填空桶（14 空）</strong>。同一个算法：解 <code>a*e ＝ e*a ＝ a</code> 得<strong>幺元</strong>；解 <code>a*z ＝ z</code>（对一切 a 成立）得<strong>零元</strong>。幂集上 ∪／∩ 的幺元零元是本桶常客。</p>
+</blockquote>
 <ul>
 <li>设集合A={1，2，3，4，5}，代数系统〈P（A），∪〉的单位元为<strong>∅</strong>。（19.10#19）</li>
 <li>在非负整数集上关于加法运算构成的代数系统中幺元是<strong>0</strong>。（24.10#22）</li>
@@ -387,6 +635,9 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li>〖题干为图片〗取a<em>b=lcm(a,b)，求幺元与零元　→　</em><em>幺元2；零元16</em>*（16.10#23）</li>
 </ul>
 <h4 id="6">群与独异点的幺元、逆元与阶（6 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：<code>x*y ＝ (x+y) mod n</code> 型：<strong>幺元 0、x 的逆元 n−x</strong>；另考<strong>幂等元只能是幺元</strong>、元素的阶。</p>
+</blockquote>
 <ul>
 <li>〖题干为图片〗不含零元的群至少几阶　→　<strong>2</strong>（24.10#23）</li>
 <li>中，1的阶为＿＿，9阶为＿＿。　→　<strong>10；10</strong>（17.04#22）</li>
@@ -396,7 +647,11 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li>〖题干为图片〗群中的幂等元只能是　→　<strong>幺元</strong>（25.10#18）</li>
 </ul>
 <h3 id="7-7">第 7 章 格与布尔代数（7 空）</h3>
+<p><strong>本章知识地图</strong>：格：补元、对偶公式、吸收律 → 布尔代数运算律。<strong>一句话</strong>：只考「<strong>对偶公式怎么写</strong>」和「<strong>补元有几个</strong>」。</p>
 <h4 id="6_1">格与布尔代数（6 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：补元、<strong>对偶公式（∨ ↔ ∧、≤ ↔ ≥、0 ↔ 1）</strong>、吸收律、分配格判定。</p>
+</blockquote>
 <ul>
 <li>设A=(1,2,3},则幂集格<strong>是</strong>分配格〔填「是」或「不是」〕。（24.10#24）</li>
 <li>下题24图的格中， b的补元是＿＿， c的补元是＿＿。　→　<strong>b的补元a、c、d；c的补元b、d</strong>（17.04#24）</li>
@@ -406,11 +661,18 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li>设〈L，≤〉是一个格，公式a∨（a∧b）≥a的对偶公式是<strong>a∧(a∨b)≤a</strong>。（25.04#24）</li>
 </ul>
 <h4 id="1_7">布尔代数运算律化简（1 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：<code>b∨(a∧b′) ＝ a∨b</code> 型的化简（吸收律）。</p>
+</blockquote>
 <ul>
 <li>〖题干为图片〗化简b∨(a∧b′)　→　<strong>a∨b</strong>（25.10#19）</li>
 </ul>
 <h3 id="8-27">第 8 章 图（27 空）</h3>
+<p><strong>本章知识地图</strong>：图的度数与边数关系 → <strong>握手定理</strong> → <strong>欧拉公式与平面图</strong> → 邻接／关联矩阵 → 欧拉图与哈密顿图 → 割边、正则图。<strong>一句话</strong>：本章 ＝「<strong>图上的算术</strong>」（Σd＝2m、n−m+r＝2、n(n−1)/2）。</p>
 <h4 id="9_2">欧拉公式求平面图（9 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：<strong>一个公式反复考：<code>n − m + r ＝ 2</code></strong>，由此可求 n／m／r 中的任意一个；连通平面图 <code>n ＝ m − r + 2</code>；简单平面图 <code>m ≤ 3n − 6</code>。</p>
+</blockquote>
 <ul>
 <li>设G为连通平面图，共6个顶点，其平面表示中共有8个面，则边数为<strong>12</strong>。（19.10#21）</li>
 <li>完全图K4是平面图，其面数r为＿＿，记节点数为n,边数为m，则n- m+r=＿＿。　→　<strong>4；2</strong>（17.04#20）</li>
@@ -423,6 +685,9 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li>若连通平面图G有8条边，3个面，则G有<strong>7（n=m-r+2）</strong>个结点。（16.10#22）</li>
 </ul>
 <h4 id="9_3">图的顶点数与边数关系（9 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：完全图 Kₙ：<strong>n(n−1)/2</strong> 边；<strong>非连通简单图最多 (n−1)(n−2)/2</strong>；连通图最少 <strong>n−1</strong>；简单图最多 n(n−1)/2；n 阶无向简单图最大度 n−1。</p>
+</blockquote>
 <ul>
 <li>在简单无向图G=,V={v1,v2,v3,v4},则E的值最大是<strong>6</strong>。（24.10#25）</li>
 <li>一个简单无向连通图，有n个结点，m条边，则边数m的最大值为＿＿，边数m的最小值为＿＿。　→　<strong>n(n-1)/2；n-1</strong>（17.04#23）</li>
@@ -435,35 +700,57 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li>一个6阶无向简单图G为连通图，则G的边数至少为<strong>5</strong>条。（22.10#21）</li>
 </ul>
 <h4 id="2_3">欧拉图与哈密顿图（2 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：<strong>欧拉图：连通且无奇数度顶点</strong>；<strong>哈密顿图：存在经过每个顶点恰好一次的回路</strong>。</p>
+</blockquote>
 <ul>
 <li>〖题干为图片〗9阶无向图需添加边成为欧拉图，至少需添加的边数　→　<strong>24；68【原卷答案区两值】</strong>（19.04#16）</li>
 <li>无向图G为欧拉图，当且仅当G是连通的，且G中无（　）数度顶点。　→　<strong>奇</strong>（23.04#23）</li>
 </ul>
 <h4 id="3">握手定理求顶点数（3 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：<strong><code>Σd(v) ＝ 2m</code></strong>：已知边数与部分顶点度数，反求剩余顶点数与总顶点数。</p>
+</blockquote>
 <ul>
 <li>一个无向图有21条边，有3个4度结点，其余结点均为3度，则其结点共有<strong>13</strong>个。（17.10#24）</li>
 <li>无向图G有11条边，4个3度结点，其余均为5度结点，则G的阶数为，其中5度结点有<strong>6；2</strong> 个。（18.04#21）</li>
 <li>无向图G有11条边，2个3度结点，其余均为4度结点，则G的阶数为＿＿，其中4度结点有＿＿ _个。　→　<strong>6；4</strong>（22.04#31）</li>
 </ul>
 <h4 id="2_4">图的邻接矩阵与关联矩阵（2 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：无向图的邻接矩阵<strong>对称</strong>；<strong>n 阶连通图的关联矩阵非零元素最少 2(n−1) 个</strong>。</p>
+</blockquote>
 <ul>
 <li>一个n阶连通图G,则其关联矩阵的非零元素个数最少为（　）个。　→　<strong>2(n-1)</strong>（23.10#24）</li>
 <li>设图G如题25图所示，则图G的邻接矩阵M=<strong>按题25图写出邻接矩阵</strong>。（15.04#25）</li>
 </ul>
 <h4 id="1_8">正则图的概念与判定（1 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：彼得森图是 <strong>3-正则图</strong>。</p>
+</blockquote>
 <ul>
 <li>〖题干为图片〗彼得森图是几正则图　→　<strong>3</strong>（25.04#25）</li>
 </ul>
 <h4 id="1_9">割边(桥)的定义（1 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：<strong>不含在任一回路中的边</strong>称为割边（桥）。</p>
+</blockquote>
 <ul>
 <li>〖题干为图片〗不含在图G任一回路中的边称为　→　<strong>割边</strong>（25.10#20）</li>
 </ul>
 <h3 id="9-20">第 9 章 图的应用（20 空）</h3>
+<p><strong>本章知识地图</strong>：生成树与删边数 → <strong>树的性质求结点数与树叶数</strong> → 非同构树棵数 → 正则 m 叉树、完全二叉树 → 树的邻接矩阵。<strong>一句话</strong>：本章 ＝「<strong>树的计数</strong>」，核心是 <code>n₁ ＝ 2 + Σ(k−2)n_k</code>。</p>
 <h4 id="1_10">握手定理求顶点数（1 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：与第 8 章的握手定理同源，这里是它在<strong>树</strong>上的应用。</p>
+</blockquote>
 <ul>
 <li>设无向树有10片树叶，2个3度分支点，其余的分支点为4度，则树的阶数为<strong>15</strong>。（19.10#20）</li>
 </ul>
 <h4 id="4_6">生成树与删边数（4 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：<strong>删边数 ＝ n(n−1)/2 − (n−1)</strong>：K₆ 删 <strong>10</strong>、K₇ 删 <strong>15</strong>、K₈ 删 <strong>21</strong>、K₉ 删 <strong>28</strong>。</p>
+</blockquote>
 <ul>
 <li>有7个顶点的无向完全图K₇，需要删除<strong>22【原卷答案；K7应删15条，疑答案有误】</strong>条边才能得到生成树。（19.10#22）</li>
 <li>为了从无向完全图K6中得到其生成树，至少需要删除<strong>10</strong>条边（17.10#22）</li>
@@ -471,10 +758,16 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li>有8个顶点的无向完全图K8,需要删除<strong>21</strong>条边才能得到生成树。（20.10#22）</li>
 </ul>
 <h4 id="1_11">无向树最大度数的取值范围（1 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：n 阶（n＞2）无向树：最大度的<strong>最小值 2</strong>、<strong>最大值 n−1</strong>。</p>
+</blockquote>
 <ul>
 <li>一颗n阶(n＞2)无向树T， 其最大度数的最小值为＿＿， 的最大值为＿＿。　→　<strong>2；n-1</strong>（17.04#25）</li>
 </ul>
 <h4 id="8">树的性质求结点数与树叶数（8 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：<strong>核心公式 <code>n₁ ＝ 2 + Σ_{k≥3}(k−2)·n_k</code></strong>，配合握手定理 <code>Σ(k·n_k) ＝ 2(n−1)</code> 联立求解。</p>
+</blockquote>
 <ul>
 <li>一颗7阶树，其分支结点最多有＿＿个，最多有＿＿片树叶。　→　<strong>5；6</strong>（19.04#21）</li>
 <li>〖题干为图片〗8片树叶、1个4度分支点，其余3度，求结点数　→　<strong>13</strong>（21.04#20）</li>
@@ -486,23 +779,38 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li>设无向树T有4个度数为3的结点，其余结点都为树叶，则T的树叶数为<strong>6</strong>。（15.04#23）</li>
 </ul>
 <h4 id="2_5">非同构无向树的棵数（2 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：5 阶 <strong>3</strong> 棵；6 阶 <strong>6</strong> 棵；7 阶 <strong>11</strong> 棵。</p>
+</blockquote>
 <ul>
 <li>〖题干为图片〗5阶非同构的树共有几棵　→　<strong>3</strong>（23.04#24）</li>
 <li>一棵5阶无向树T,其非同构的树共有（　）棵。　→　<strong>3</strong>（23.10#22）</li>
 </ul>
 <h4 id="m1">正则m叉树的树叶数（1 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：高度 h 的正则 m 叉树最多 <strong>m^h</strong> 个叶结点。</p>
+</blockquote>
 <ul>
 <li>一棵高度为5的正则3叉树中叶结点的个数为（　）。　→　<strong>81</strong>（23.04#25）</li>
 </ul>
 <h4 id="1_12">完全二叉树结点关系（1 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：<strong>叶结点数 ＝ 分支结点数 ＋ 1</strong>。</p>
+</blockquote>
 <ul>
 <li>设T为完全二叉树，其叶结点数为7,则分支结点数为<strong>6</strong>。（22.10#22）</li>
 </ul>
 <h4 id="n1">n阶树的边数与邻接矩阵（1 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：树有 <strong>n−1</strong> 条边；邻接矩阵非零元素 <strong>2(n−1)</strong> 个。</p>
+</blockquote>
 <ul>
 <li>一棵n阶树的邻接矩阵的非零元素个数是<strong>2(n-1)</strong>。（22.10#24）</li>
 </ul>
 <h4 id="1_13">含唯一回路的连通图边数（1 空）</h4>
+<blockquote>
+<p><strong>关系说明</strong>：恰有一个回路 ⟹ 边数 ＝ 生成树边数 (n−1) <strong>再加 1</strong>。</p>
+</blockquote>
 <ul>
 <li>设G是一个有11个顶点的简单无向图。如果G恰有一个回路，则G的边数最大是 <strong>11（生成树10条边+1）</strong>（16.10#17）</li>
 </ul>
@@ -511,15 +819,104 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <hr>
 <h2 id="190_1">第二部分 简答题与证明题速记（190 题）</h2>
 <blockquote>
-<p><strong>记法</strong>：大题按<strong>模板</strong>背骨架。每个模板下面给出「题干形态」「解法骨架（得分点）」「本批真题」。真题条目格式为 <strong>卷#题 题干摘要 → 参考答案要点</strong>；凡原卷答案页文字可提取的，另附「原卷答案原文」一行。</p>
-<p><strong>13 类模板的统计</strong>：模板①—⑬ 共 <strong>185/190 题（97%）</strong>；其中<strong>模板①—⑩ 每一类都出现在 13 卷以上</strong>（共 19 套卷含大题，18-10 原卷只有单选 14 题）。</p>
+<p><strong>记法</strong>：大题是「<strong>步骤题</strong>」——阅卷按步骤给分。下面先给一张<strong>路线图</strong>（看到题面关键词 → 用哪个模板），再逐类给「出现形态 ＋ 解法骨架（得分点） ＋ 本批真题」。<br>
+真题条目格式：<strong>卷#题</strong> 题干摘要 → 参考答案要点；凡原卷答案页文字可提取的，另附「<strong>原卷答案原文</strong>」一行。<br>
+<strong>13 类模板的统计</strong>：模板①—⑬ 共 <strong>185/190 题（97%）</strong>；其中<strong>模板①—⑩ 每一类都出现在 13 卷以上</strong>（共 19 套卷含大题，2018 年 10 月原卷只有单选 14 题）。</p>
 </blockquote>
+<h3 id="20">2.0 大题路线图（题面关键词 → 模板）</h3>
+<table>
+<thead>
+<tr>
+<th>题面出现这些词</th>
+<th>用哪个模板</th>
+<th>一句话套路</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「求 r(R)、s(R)、t(R)」「画关系图／写关系矩阵」「判断自反／对称／传递」「由划分求等价关系」</td>
+<td><strong>① 关系</strong></td>
+<td>三闭包公式 ＋ 元素法 ＋ 关系矩阵</td>
+</tr>
+<tr>
+<td>「画哈斯图」「极大元／极小元／上确界」「是否为格」</td>
+<td><strong>② 哈斯图与偏序</strong></td>
+<td>只画「盖住」关系；<strong>任两元素有上下确界才是格</strong></td>
+</tr>
+<tr>
+<td>「用真值表判定／说明」</td>
+<td><strong>③ 真值表法</strong></td>
+<td><strong>2ⁿ 行写全</strong> ＋ 结论句</td>
+</tr>
+<tr>
+<td>「求主析取（主合取）范式」</td>
+<td><strong>④ 等值演算求主范式</strong></td>
+<td>消 →↔ → 德摩根／分配 → 补全变元 → ∑m／∏M</td>
+</tr>
+<tr>
+<td>「在解释 I 下求真值」「证明永真式」「化前束范式」「构造推理证明」</td>
+<td><strong>⑤ 谓词逻辑</strong></td>
+<td>∀ 当 ∧、∃ 当 ∨；量词前移；US／ES</td>
+</tr>
+<tr>
+<td>「用 CP 规则／反证法证明有效推理」「符号化后证明」</td>
+<td><strong>⑥ 命题逻辑推理</strong></td>
+<td>每行<strong>标注规则</strong></td>
+</tr>
+<tr>
+<td>「证明 A∩(B∪C)＝…」「求等式成立的充要条件」</td>
+<td><strong>⑦ 集合恒等式</strong></td>
+<td><strong>双向包含（元素法）</strong></td>
+</tr>
+<tr>
+<td>「证明它构成半群／独异点／群／交换群」</td>
+<td><strong>⑧ 群的证明</strong></td>
+<td>封闭 → 结合 → 幺元 → 逆元（＋交换）</td>
+</tr>
+<tr>
+<td>「写邻接矩阵」「求长度为 k 的通路数与回路数」</td>
+<td><strong>⑨ 邻接矩阵与通路计数</strong></td>
+<td>写 M、算 Mᵏ、报数</td>
+</tr>
+<tr>
+<td>「用握手定理证明」「证明图是连通图」「平面图边数上界」</td>
+<td><strong>⑩ 握手定理与图论证明</strong></td>
+<td><code>Σd＝2m</code> 起手 ＋ 反证法</td>
+</tr>
+<tr>
+<td>「多人多语言围桌排座」「是否为哈密顿图」</td>
+<td><strong>⑪ 哈密顿回路</strong></td>
+<td>建模 → 找哈密顿回路 → 写全部方案</td>
+</tr>
+<tr>
+<td>「用 Kruskal 算法求最小生成树」「铺设线路最省方案」</td>
+<td><strong>⑫ Kruskal</strong></td>
+<td>按权排序取边 ＋ W(T)</td>
+</tr>
+<tr>
+<td>「二叉树表示算术表达式并写遍历」「由树叶数求阶数并画全部非同构树」</td>
+<td><strong>⑬ 二叉树与树</strong></td>
+<td>三序序列；<code>n₁ ＝ 2 + Σ(k−2)n_k</code></td>
+</tr>
+<tr>
+<td>其余零星</td>
+<td><strong>⑭ 零散题</strong></td>
+<td>函数与双射、容斥、max/min</td>
+</tr>
+</tbody>
+</table>
+<h3 id="21-14">2.1 模板之间的三条关联（别把它们当成互不相关的 14 堆）</h3>
+<ul>
+<li><strong>关联 A：命题逻辑三兄弟</strong>——<strong>③ 真值表法</strong> 是「<strong>看得见</strong>」的做法（列出所有情况），<strong>④ 等值演算</strong> 是「<strong>算得出</strong>」的做法（化到主范式），<strong>⑥ 命题推理</strong> 是「<strong>推得动</strong>」的做法（一行行推）。<strong>同一条公式，三种考法；建议三条一起练。</strong></li>
+<li><strong>关联 B：图论三兄弟</strong>——<strong>⑨ 邻接矩阵</strong> 是「<strong>代数</strong>」做法（算矩阵幂），<strong>⑩ 握手定理与图论证明</strong> 是「<strong>不等式</strong>」做法（<code>Σd＝2m</code> ＋ 反证），<strong>⑫ Kruskal</strong> 与 <strong>⑪ 哈密顿</strong> 是「<strong>构造</strong>」做法（写出边／回路）。<strong>四类共 55 题（29%），是第二部分的最大票仓。</strong></li>
+<li><strong>关联 C：关系与集合是一条线</strong>——<strong>⑦ 集合恒等式</strong>（元素法）是<strong>基本功</strong>，<strong>① 关系</strong>（闭包、等价关系）是它的<strong>升级版</strong>；<strong>② 哈斯图</strong> 用的偏序关系也来自第 5 章的「关系」。<strong>三块共 50 题（26%）。</strong></li>
+</ul>
 <h3 id="1-rst">模板 ① 关系（闭包 r/s/t · 关系图与矩阵 · 关系性质 · 等价关系与划分）</h3>
 <ul>
 <li><strong>出现 21 题</strong>，出现 16 卷（15.04、15.10、17.04、17.10、18.04、19.04、19.10、20.08、20.10、21.04、22.10、23.04、23.10、24.10、25.04、25.10）</li>
 <li><strong>题干形态</strong>：给集合 A 与关系 R（序对集合、或给关系图、或给矩阵），要求求 <code>r(R)/s(R)/t(R)</code>、<code>R²</code>、<code>R⁻¹</code>、<code>R∘S</code>、<code>domR/ranR</code>，或画关系图 / 写关系矩阵 / 填性质表，或由划分求等价关系、证明与 dom/ran 有关的等式。</li>
 <li><strong>解法骨架（得分点）</strong><br>
-  1. <strong>三种闭包</strong>：<code>r(R) = R ∪ I_A</code>（加自反对）；<code>s(R) = R ∪ R⁻¹</code>（把有序对反过来全加上）；<code>t(R) = R ∪ R² ∪ R³ ∪ …</code>（<strong>一直算到不再出现新序对</strong>）。<br>
+  1. <strong>三种闭包</strong>：<code>r(R) = R ∪ I_A</code>（加自反对）；<code>s(R) = R ∪ R⁻¹</code>（把序对反过来全加上）；<code>t(R) = R ∪ R² ∪ R³ ∪ …</code>（<strong>一直算到不再出现新序对</strong>）。<br>
   2. <strong>复合</strong>：<code>R∘S = {〈x,z〉 | 存在 y 使 〈x,y〉∈R 且 〈y,z〉∈S}</code>（<strong>先 R 后 S</strong>，写反即错）。<br>
   3. <strong>dom / ran</strong>：第一个元素集 / 第二个元素集，<strong>都要去重</strong>。<br>
   4. <strong>关系图与关系矩阵</strong>：<code>M_R</code> 的 (i,j) 元素为 1 ⇔ 〈i,j〉∈R；复合关系矩阵用<strong>布尔乘</strong>（先乘后取 1）。<br>
@@ -672,7 +1069,7 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
   1. <strong>消去 → 与 ↔</strong>：<code>P→Q ⇔ ¬P∨Q</code>；<code>P↔Q ⇔ (P→Q)∧(Q→P)</code>。<br>
   2. <strong>用力化简</strong>：德摩根、分配律、吸收律、同一律、零律、幂等律、排中律、矛盾律。<br>
   3. <strong>补全变元</strong>：主析取——缺哪个变元就 <code>∧(Q∨¬Q)</code>；主合取——缺哪个就 <code>∨(Q∧¬Q)</code>。<br>
-  4. <strong>写出编号形式</strong>：主析取 <code>∑m(...)</code>（小项按「变元取 1」编码）；主合取 <code>∏M(...)</code>（大项按「变元取 0」编码）。<strong><code>∑m(S) ⇔ ∏M(S̄)</code></strong>，可用互补关系自查。<br>
+  4. <strong>写出编号形式</strong>：主析取 <code>∑m(...)</code>（小项按「变元取 1」编码）；主合取 <code>∏M(...)</code>（大项按「取 0」编码）。<strong><code>∑m(S) ⇔ ∏M(S̄)</code></strong>，可用互补关系自查。<br>
   5. <strong>结尾补一句结论</strong>（真题参考答案常有）：「该公式是非重言式的可满足式」。</li>
 <li><strong>本批真题</strong></li>
 <li><strong>19.10#27</strong>（简答） 等值演算法求(P→Q)∨¬R的主合取范式　→　(¬P∨Q∨¬R)∧(P∨¬Q∨¬R)；非重言式的可满足式</li>
@@ -837,9 +1234,9 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li><strong>出现 14 题</strong>，出现 13 卷（16.04、16.10、17.04、18.04、19.04、19.10、20.08、20.10、21.04、22.04、22.10、23.04、23.10）</li>
 <li><strong>题干形态</strong>：给有向图，写邻接矩阵；求两点间长度为 k 的通路数、长度 k 的回路数、长度 k 的通路总数。</li>
 <li><strong>解法骨架（得分点）</strong><br>
-  1. <strong>先写邻接矩阵 M</strong>（行 i 行、列 j 列，i→j 有边则为 1）。<br>
+  1. <strong>先写邻接矩阵 M</strong>（行 i、列 j，i→j 有边则为 1）。<br>
   2. <strong>算出 M²、M³、M⁴</strong>（按普通矩阵乘法算数值，不要布尔化）。<br>
-  3. 三个必背结论：<strong><code>A^k</code> 的 (i,j) 元素 ＝ i 到 j 长度为 k 的通路数目</strong>；<strong><code>A^k</code> 主对角线元素之和 ＝ 长度为 k 的回路数目</strong>；<strong><code>A^k</code> 全部元素之和 ＝ 长度为 k 的通路总数</strong>。<br>
+  3. 三个必背结论：<strong><code>Aᵏ</code> 的 (i,j) 元素 ＝ i 到 j 长度为 k 的通路数目</strong>；<strong><code>Aᵏ</code> 主对角线元素之和 ＝ 长度为 k 的回路数目</strong>；<strong><code>Aᵏ</code> 全部元素之和 ＝ 长度为 k 的通路总数</strong>。<br>
   4. 答题时<strong>把矩阵写出来再报数</strong>（推理分在这里）。</li>
 <li><strong>本批真题</strong></li>
 <li><strong>19.10#30</strong>（简答） 题30图邻接矩阵、长4通路数、回路数　→　邻接矩阵M（略）；长度为4的通路数为9</li>
@@ -1036,11 +1433,11 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <tr>
 <td><strong>C2 第 2 章 命题逻辑的推理理论</strong></td>
 <td>填空 <strong>0 空</strong>、大题 9 题（9/19 卷）</td>
-<td>全课程最"瘦"的一章。但要练：<strong>CP 规则、反证法、推理规则表（P/T/假言推理/拒取式/析取三段论）</strong>，每行必须标注规则</td>
+<td>全课程最「瘦」的一章。但要练：<strong>CP 规则、反证法、推理规则表（P／T／假言推理／拒取式／析取三段论）</strong>，每行必须标注规则</td>
 </tr>
 <tr>
 <td><strong>C7 第 7 章 格与布尔代数</strong></td>
-<td>填空 7 空、大题 <strong>0 题</strong></td>
+<td>填空 7 空、大题 <strong>0 道</strong></td>
 <td><strong>大题从未出现</strong>，但填空常考：补元、对偶公式、吸收律化简、分配格判定。要会写<strong>对偶公式（∨↔∧、≤↔≥、0↔1）</strong></td>
 </tr>
 <tr>
@@ -1051,71 +1448,204 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <tr>
 <td><strong>函数与映射</strong></td>
 <td>填空 9 空、大题 2 题</td>
-<td>单射 / 满射 / 双射的判定与计数：<code>|A|=5,|B|=2 → 满射 30 个</code>；<code>|A|=4,|B|=2 → 满射 14 个</code>（<strong>用 n!S(m,n) 现算</strong>）</td>
+<td>单射／满射／双射的判定与计数：<code>\|A\|=5,\|B\|=2 → 满射 30 个</code>；<code>\|A\|=4,\|B\|=2 → 满射 14 个</code></td>
 </tr>
 <tr>
-<td><strong>图的应用（最短路 / 关键路径 / 着色）</strong></td>
+<td><strong>图的应用（最短路／关键路径／着色）</strong></td>
 <td>本批 0—1 题</td>
-<td>考纲"图的应用"要求：<strong>生成树与最小生成树（Kruskal/Prim）、最短路（Dijkstra）、关键路径（AOE）、二部图与平面图</strong>。本批只考了最小生成树，<strong>最短路与关键路径必须回教材</strong></td>
+<td>考纲要求：<strong>生成树与最小生成树（Kruskal／Prim）、最短路（Dijkstra）、关键路径（AOE）、二部图与平面图</strong>。本批只考了最小生成树，<strong>最短路与关键路径必须回教材</strong></td>
 </tr>
 <tr>
-<td><strong>平面图 / 欧拉公式</strong></td>
+<td><strong>平面图／欧拉公式</strong></td>
 <td>填空 9 空、大题 1 题</td>
-<td><strong>n − m + r = 2</strong>、<strong>m ≤ 3n − 6</strong>、<strong>n = m − r + 2</strong></td>
+<td><strong>n − m + r ＝ 2</strong>、<strong>m ≤ 3n − 6</strong>、<strong>n ＝ m − r + 2</strong></td>
 </tr>
 </tbody>
 </table>
 <hr>
-<h2 id="_3">附二、易混点一句判别（真题反复设的陷阱）</h2>
-<ol>
-<li><strong>公式类型</strong>：全 1 → <strong>重言式（永真）</strong>；全 0 → <strong>矛盾式（永假）</strong>；有 1 有 0 → <strong>可满足式</strong>。</li>
-<li><strong>小项 m 与大项 M 的编码</strong>：<strong>小项按"变元取 1"编码，大项按"变元取 0"编码</strong>；同一编号的 m 与 M 互为否定。</li>
-<li><strong>∑m(S) ⇔ ∏M(S̄)</strong>：小项编号集合与大项编号集合<strong>互补</strong>；n 个变元的小项、大项各 <strong>2ⁿ</strong> 个。</li>
-<li><strong>主析取范式 ⇔ 使公式为真的赋值对应的小项之析取</strong>；<strong>主合取范式 ⇔ 使公式为假的赋值对应的大项之合取</strong>。</li>
-<li><strong>等价 ⇔ 重言式</strong>：<code>P⇔Q</code> 表示 <code>P↔Q</code> 是重言式；<code>P⇒Q</code> 表示 <code>P→Q</code> 是重言式。</li>
-<li><strong>量词的分配律</strong>：<strong>∀ 对 ∧ 可分配、∃ 对 ∨ 可分配</strong>；<strong>∀ 对 ∨、∃ 对 ∧ 不能随意分配</strong>。</li>
-<li><strong>约束变元 vs 自由变元</strong>：被量词约束的叫约束变元；换名只能换<strong>约束变元</strong>。</li>
-<li><strong>前束范式</strong>：<strong>所有量词都跑到公式最前面，辖域延伸到公式末尾</strong>，母式为不含量词的合取／析取式。</li>
-<li><strong>R∘S 的顺序</strong>：<code>〈x,z〉∈R∘S ⇔ 存在 y 使 〈x,y〉∈R 且 〈y,z〉∈S</code>（<strong>先 R 后 S，别写反</strong>）。</li>
-<li><strong>三种闭包</strong>：<code>r(R)=R∪I_A</code>；<code>s(R)=R∪R⁻¹</code>；<code>t(R)=R∪R²∪R³∪…</code>（算到不再新增为止）。</li>
-<li><strong>dom 与 ran</strong>：<code>domR</code> ＝ 序对的<strong>第一个</strong>元素集合，<code>ranR</code> ＝ <strong>第二个</strong>元素集合（<strong>都要去重</strong>）。</li>
-<li><strong>关系的性质</strong>：<strong>自反与反自反不能同时成立</strong>（非空集上）；<strong>对称与反对称可以同时成立</strong>（如恒等关系）。</li>
-<li><strong>等价关系 ⇔ 划分</strong>；A 有 3 个元素时等价关系共 <strong>5</strong> 个（Bell 数 B₃＝5）。</li>
-<li><strong>|P(A)| = 2^|A|</strong>；<strong>|A×B| = |A|·|B|</strong>。</li>
-<li><strong>幂集的幺元与零元</strong>：<strong>〈P(A),∪〉幺元 ∅、零元 A；〈P(A),∩〉幺元 A、零元 ∅</strong>。</li>
-<li><strong>群的四个条件</strong>：封闭、结合、有幺元、每元有逆元（再加交换律 → 交换群）；<strong>群中幂等元只能是幺元</strong>；<strong>幺元唯一、逆元唯一</strong>。</li>
-<li><strong>握手定理 Σd(v) = 2m</strong>；度数序列能构成无向图的必要条件是<strong>度数和为偶数</strong>。</li>
-<li><strong>完全图 Kₙ 有 n(n−1)/2 条边</strong>；<strong>K₇ 删 15 条得生成树，K₆ 删 10 条，K₈ 删 21 条，K₉ 删 28 条</strong>；删除数 ＝ n(n−1)/2 − (n−1)。</li>
-<li><strong>平面图</strong>：<code>n − m + r = 2</code>；<strong>m ≤ 3n − 6</strong>（n ≥ 3 的简单平面图）；连通平面图 <strong>n = m − r + 2</strong>。</li>
-<li><strong>欧拉图 vs 哈密顿图</strong>：欧拉图经过<strong>每条边</strong>恰好一次并回到起点（<strong>G 连通且无奇数度顶点</strong>）；哈密顿图经过<strong>每个顶点</strong>恰好一次并回到起点。</li>
-<li><strong>连通图的关联矩阵非零元素最少 2(n−1) 个</strong>；<strong>n 阶树的邻接矩阵非零元素 2(n−1) 个</strong>。</li>
-<li><strong>无向树</strong>：n 个顶点 n−1 条边；<strong>n₁ = 2 + Σ_{k≥3}(k−2)n_k</strong>；<strong>非同构无向树：n=5 → 3 棵，n=6 → 6 棵，n=7 → 11 棵</strong>。</li>
-<li><strong>完全二叉树</strong>：叶结点数 ＝ 分支结点数 ＋ 1；高度 h 的正则 m 叉树叶结点最多 <strong>m^h</strong> 个。</li>
-<li><strong>最小生成树</strong>：Kruskal <strong>按边权从小到大</strong>取边、<strong>不成回路就并入</strong>、取满 n−1 条；<strong>W(T) 是权值和</strong>。</li>
-<li><strong>邻接矩阵计数</strong>：<code>A^k</code> 的 <code>(i,j)</code> 元素 ＝ <strong>i 到 j 长度为 k 的通路数</strong>；<code>A^k</code> <strong>主对角线和 ＝ 长度为 k 的回路数</strong>；<code>A^k</code> <strong>全部元素和 ＝ 长度为 k 的通路总数</strong>。</li>
-</ol>
+<h2 id="_3">附二、易混点速查（做成表，按章排）</h2>
+<h3 id="21-13">2.1 命题逻辑与谓词逻辑（第 1、3 章）</h3>
+<table>
+<thead>
+<tr>
+<th>对照项</th>
+<th>一句话判别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>公式类型</td>
+<td>全 1 → <strong>重言式</strong>；全 0 → <strong>矛盾式</strong>；有 1 有 0 → <strong>可满足式</strong></td>
+</tr>
+<tr>
+<td>小项 vs 大项编码</td>
+<td><strong>小项按「变元取 1」编码，大项按「取 0」编码</strong>；同编号的 m 与 M 互为否定</td>
+</tr>
+<tr>
+<td>∑m vs ∏M</td>
+<td><strong><code>∑m(S) ⇔ ∏M(S̄)</code></strong>，编号集合互补；n 变元小项、大项各 <strong>2ⁿ</strong> 个</td>
+</tr>
+<tr>
+<td>等价 vs 蕴含</td>
+<td><code>P⇔Q</code> 表示 <code>P↔Q</code> 是<strong>重言式</strong>；<code>P⇒Q</code> 表示 <code>P→Q</code> 是重言式</td>
+</tr>
+<tr>
+<td>∀ 与 ∃ 的分配</td>
+<td><strong>∀ 对 ∧ 可分配、∃ 对 ∨ 可分配</strong>；<strong>∀ 对 ∨、∃ 对 ∧ 不能随意分配</strong></td>
+</tr>
+<tr>
+<td>约束变元 vs 自由变元</td>
+<td>被量词约束的叫约束变元；<strong>换名只能换约束变元</strong></td>
+</tr>
+<tr>
+<td>前束范式</td>
+<td><strong>所有量词跑到公式最前面</strong>，母式为不含量词的合取／析取式</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-45">2.2 集合与关系（第 4、5 章）</h3>
+<table>
+<thead>
+<tr>
+<th>对照项</th>
+<th>一句话判别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>对称差</td>
+<td><strong><code>A⊕B ＝ (A−B)∪(B−A)</code></strong></td>
+</tr>
+<tr>
+<td>幂集 vs 笛卡尔积</td>
+<td><strong><code>\|P(A)\| ＝ 2^\|A\|</code></strong>；<strong><code>\|A×B\| ＝ \|A\|·\|B\|</code></strong></td>
+</tr>
+<tr>
+<td>幂集上的幺元零元</td>
+<td><strong><code>〈P(A),∪〉</code>：幺元 ∅、零元 A</strong>；<strong><code>〈P(A),∩〉</code>：幺元 A、零元 ∅</strong></td>
+</tr>
+<tr>
+<td>R∘S 的顺序</td>
+<td><code>〈x,z〉∈R∘S ⇔ 存在 y 使 〈x,y〉∈R 且 〈y,z〉∈S</code>（<strong>先 R 后 S，别写反</strong>）</td>
+</tr>
+<tr>
+<td>三种闭包</td>
+<td><code>r＝R∪I_A</code>；<code>s＝R∪R⁻¹</code>；<code>t＝R∪R²∪R³∪…</code></td>
+</tr>
+<tr>
+<td>dom vs ran</td>
+<td>dom 取<strong>第一个</strong>元素集合；ran 取<strong>第二个</strong>；<strong>都要去重</strong></td>
+</tr>
+<tr>
+<td>自反 vs 反自反</td>
+<td><strong>不能同时成立</strong>（非空集上）；<strong>对称与反对称可以同时成立</strong>（如恒等关系）</td>
+</tr>
+<tr>
+<td>等价关系 ⇔ 划分</td>
+<td>A={1,2,3} 时等价关系共 <strong>5</strong> 个（Bell 数 B₃）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23-67">2.3 代数系统与格（第 6、7 章）</h3>
+<table>
+<thead>
+<tr>
+<th>对照项</th>
+<th>一句话判别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>半群／独异点／群／交换群</td>
+<td>依次要 <strong>2／3／4／5</strong> 条（封闭 → 结合 → 幺元 → 逆元 → 交换）</td>
+</tr>
+<tr>
+<td>群中幂等元</td>
+<td><strong>只能是幺元</strong></td>
+</tr>
+<tr>
+<td><code>x*y＝(x+y) mod n</code></td>
+<td><strong>幺元 0，x 的逆元 n−x</strong></td>
+</tr>
+<tr>
+<td>对偶公式</td>
+<td><strong>∨ ↔ ∧、≤ ↔ ≥、0 ↔ 1</strong> 同时替换</td>
+</tr>
+<tr>
+<td>是否为格</td>
+<td><strong>任意两元素都有上确界与下确界</strong> ⇔ 是格</td>
+</tr>
+</tbody>
+</table>
+<h3 id="24-89">2.4 图与树（第 8、9 章）</h3>
+<table>
+<thead>
+<tr>
+<th>对照项</th>
+<th>一句话判别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>握手定理</td>
+<td><strong>Σd(v) ＝ 2m</strong>；度数序列能成图的必要条件是<strong>度数和为偶数</strong></td>
+</tr>
+<tr>
+<td>完全图与极值</td>
+<td>Kₙ：<strong>n(n−1)/2</strong> 边；非连通简单图最多 <strong>(n−1)(n−2)/2</strong>；连通图最少 <strong>n−1</strong></td>
+</tr>
+<tr>
+<td>删边得生成树</td>
+<td><strong>K₆ 删 10、K₇ 删 15、K₈ 删 21、K₉ 删 28</strong>（＝n(n−1)/2 −(n−1)）</td>
+</tr>
+<tr>
+<td>平面图</td>
+<td><strong>n − m + r ＝ 2</strong>；<strong>m ≤ 3n − 6</strong></td>
+</tr>
+<tr>
+<td>欧拉图 vs 哈密顿图</td>
+<td>欧拉图过<strong>每条边</strong>一次（连通且<strong>无奇度点</strong>）；哈密顿图过<strong>每个顶点</strong>一次</td>
+</tr>
+<tr>
+<td>关联矩阵 vs 邻接矩阵</td>
+<td>连通图关联矩阵非零元素最少 <strong>2(n−1)</strong>；树的邻接矩阵非零元素 <strong>2(n−1)</strong></td>
+</tr>
+<tr>
+<td>邻接矩阵计数三结论</td>
+<td><strong>Aᵏ 的 (i,j) ＝ i 到 j 长 k 的通路数</strong>；<strong>主对角线和 ＝ 长 k 的回路数</strong>；<strong>全部元素和 ＝ 长 k 的通路总数</strong></td>
+</tr>
+<tr>
+<td>树的两条公式</td>
+<td>n 个顶点 <strong>n−1</strong> 条边；<strong><code>n₁ ＝ 2 + Σ_{k≥3}(k−2)·n_k</code></strong></td>
+</tr>
+<tr>
+<td>非同构无向树</td>
+<td>5 阶 <strong>3</strong> 棵；6 阶 <strong>6</strong> 棵；7 阶 <strong>11</strong> 棵</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h2 id="30">附三、考前 30 分钟清单（只看这一页）</h2>
 <ul>
 <li><strong>公式类型判定</strong>：全 1 重言式、全 0 矛盾式、有 1 有 0 可满足式；n 变元真值表 <strong>2ⁿ 行</strong></li>
-<li><strong>主范式</strong>：<code>∑m(S) ⇔ ∏M(S̄)</code>；<strong>小项按取 1 编码、大项按取 0 编码</strong></li>
+<li><strong>主范式</strong>：<code>∑m(S) ⇔ ∏M(S̄)</code>；<strong>小项按取 1 编码、大项按取 0 编码</strong>；n 变元小项大项各 2ⁿ</li>
 <li><strong>等值演算四步</strong>：消 →、↔ → 德摩根 → 分配／吸收 → 补全变元写 ∑m 或 ∏M</li>
 <li><strong>谓词求真值</strong>：<strong>∀ 当合取、∃ 当析取</strong>，把论域元素代进去逐个算</li>
 <li><strong>前束范式</strong>：改名 → 消 →／↔ → 否定内移 → 量词前移</li>
 <li><strong>推理证明</strong>：每行右边标规则（P、T、CP、US、ES、UG、EG）；CP 规则把结论前件当附加前提；反证法把结论否定加入前提</li>
 <li><strong>集合恒等式证明</strong>：<strong>双向包含（元素法）</strong> 或恒等变换</li>
-<li><strong>关系三闭包</strong>：<code>r=R∪I_A</code>、<code>s=R∪R⁻¹</code>、<code>t=R∪R²∪R³∪…</code></li>
-<li><strong>满射个数</strong>：<code>n!·S(m,n)</code>（|A|=5,|B|=2 → 30；|A|=4,|B|=2 → 14）</li>
+<li><strong>关系三闭包</strong>：<code>r＝R∪I_A</code>、<code>s＝R∪R⁻¹</code>、<code>t＝R∪R²∪R³∪…</code></li>
+<li><strong>满射个数</strong>：<code>n!·S(m,n)</code>（|A|=5,|B|=2 → <strong>30</strong>；|A|=4,|B|=2 → <strong>14</strong>）</li>
 <li><strong>等价关系个数</strong>：A={1,2,3} → <strong>5</strong></li>
-<li><strong>幂集格</strong>：<code>|P(A)|=2^|A|</code>；<code>〈P(A),∪〉</code> 幺元 ∅、零元 A</li>
-<li><strong>群</strong>：封闭 → 结合 → 幺元 → 逆元（＋交换律）；幂等元只能是幺元</li>
-<li><strong>握手定理</strong>：<code>Σd = 2m</code>；树：<code>n₁ = 2 + Σ(k−2)n_k</code></li>
-<li><strong>平面图</strong>：<code>n − m + r = 2</code>、<code>m ≤ 3n − 6</code></li>
+<li><strong>幂集格</strong>：<code>|P(A)| ＝ 2^|A|</code>；<code>〈P(A),∪〉</code> 幺元 ∅、零元 A；<code>〈P(A),∩〉</code> 幺元 A、零元 ∅</li>
+<li><strong>群</strong>：封闭 → 结合 → 幺元 → 逆元（＋交换律）；<strong>幂等元只能是幺元</strong>；<code>mod n</code> 型：幺元 0、逆元 n−x</li>
+<li><strong>握手定理</strong>：<code>Σd ＝ 2m</code>；树：<code>n₁ ＝ 2 + Σ(k−2)n_k</code></li>
+<li><strong>平面图</strong>：<code>n − m + r ＝ 2</code>、<code>m ≤ 3n − 6</code></li>
 <li><strong>完全图删边得生成树</strong>：K₆ 删 10、K₇ 删 15、K₈ 删 21、K₉ 删 28</li>
-<li><strong>Kruskal</strong>：按权值排序 → 不成回路就并入 → 取满 n−1 条 → 求 W(T)</li>
-<li><strong>邻接矩阵</strong>：<code>A^k</code> 元素和 ＝ 长 k 通路总数；主对角线和 ＝ 长 k 回路数</li>
-<li><strong>哈斯图</strong>：先删自反环、再删可传递边，只画"盖住"关系；<strong>是否为格 ⇔ 任意两元素都有上确界与下确界</strong></li>
-<li><strong>证明题写结论句</strong>："故为群""故为格""故 G 是连通图""故该公式为非重言式的可满足式"</li>
+<li><strong>Kruskal</strong>：按权值排序 → <strong>不成回路就并入</strong> → 取满 n−1 条 → 求 W(T)</li>
+<li><strong>邻接矩阵</strong>：<code>Aᵏ</code> 元素和 ＝ 长 k 通路总数；主对角线和 ＝ 长 k 回路数</li>
+<li><strong>哈斯图</strong>：先删自反环、再删可传递边，只画「盖住」关系；<strong>是否为格 ⇔ 任意两元素都有上确界与下确界</strong></li>
+<li><strong>证明题写结论句</strong>：「故为群」「故为格」「故 G 是连通图」「故该公式为非重言式的可满足式」</li>
 </ul>
 <hr>
 <blockquote>

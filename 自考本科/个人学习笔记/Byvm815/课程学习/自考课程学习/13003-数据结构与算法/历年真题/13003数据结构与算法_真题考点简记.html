@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>13003 数据结构与算法 · 真题考点简记（填空题 / 大题 分册版）</title>
+<title>13003 数据结构与算法 · 真题考点简记（可读版 · 填空题 / 大题 分册）</title>
 <style>
 :root{--fg:#24292f;--muted:#57606a;--line:#d0d7de;--accent:#0969da;--code:#f6f8fa;--soft:#fafbfc}
 *{box-sizing:border-box}
@@ -65,179 +65,693 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <body>
 <nav class="topnav"><span class="brand">13003 数据结构与算法</span> <a href="13003数据结构与算法_历年真题考点分布.html">← 13003 数据结构与算法 · 历年真题考点分布分析（填空题 / 大题 分板块版）</a></nav>
 <main>
-<h1 id="13003">13003 数据结构与算法 · 真题考点简记（填空题 / 大题 分册版）</h1>
+<h1 id="13003">13003 数据结构与算法 · 真题考点简记（可读版 · 填空题 / 大题 分册）</h1>
 <blockquote>
 <p><strong>口径</strong>：只统计<strong>现行教材</strong>（辛运帏、陈朔鹰《数据结构与算法》2024 年版，机械工业出版社，2024 年 10 月考期启用）启用后的真题 —— <strong>4 套卷、124 题</strong>。<br>
-卷目与简称：<br>
-- <strong>A</strong> = <code>02331 数据结构 2024年10月【13003】</code>（旧排法 34 题卷：单选 1—15、解答 16—19、算法 20—24、填空 25—34）<br>
-- <strong>B</strong> = <code>02331 数据结构 2024年10月【广东】</code>（30 题卷）<br>
-- <strong>C</strong> = <code>02331 数据结构 2025年4月【广东】</code>（30 题卷）<br>
-- <strong>D</strong> = <code>2026年4月自考13181数据结构试题试题及答案</code>（30 题卷，<strong>属 13181 课程</strong>，卷型与 13003 完全一致，只作参考）</p>
-<p><strong>本册按题型分两大部分</strong>，因为这两种题的考法完全不同：<br>
-- <strong>第一部分 填空题（40 空）</strong>：题干已经把整段描述说完了，<strong>只挖掉最关键的那个名词（或一个算出来的数）</strong>。所以这一部分的记法是——<strong>把空缺处的答案记死</strong>，按章节考点排序，看句子就想得起那个词。<br>
-- <strong>第二部分 大题（39 道：解答 19 ＋ 算法 20）</strong>：题干只给一个要求（"写出各趟结果""判断该算法的功能""补全算法"）。答案是<strong>一整套步骤链／一段程序</strong>，需要你自己按模板铺开。所以这一部分的记法是——<strong>先背 8 类模板的骨架，再按真题逐题过手</strong>。<br>
-<strong>本课程大题的另一个特点</strong>：<strong>读程序说功能</strong>类题目占比极高，且<strong>题源高度集中</strong>（链表、二叉树、图的遍历、排序、查找各占一类）。<br>
-全部参考答案均取自<strong>原卷答案页原文</strong>；凡原卷答案区为空白或残缺的，另行用【答案区残缺】标注。</p>
+卷目代号：<strong>A</strong> ＝ <code>02331 数据结构 2024年10月【13003】</code>（旧排法 34 题卷）；<strong>B</strong> ＝ <code>02331 数据结构 2024年10月【广东】</code>；<strong>C</strong> ＝ <code>02331 数据结构 2025年4月【广东】</code>；<strong>D</strong> ＝ <code>2026年4月自考13181数据结构试题试题及答案</code>（<strong>属 13181 课程</strong>，卷型与 13003 完全一致，只作参考）。<br>
+<strong>本册和上一版最大的不同</strong>：不再"一条一条孤立罗列"，而是<strong>先把知识点连成网络，再上记忆清单</strong>。做法是——<br>
+1. <strong>〇、一页知识地图</strong>：用树状结构把 8 章骨架画出来，并给出<strong>四条贯穿全课的主线</strong>；<br>
+2. <strong>每章开头先给"本章知识地图"</strong>，再给填空速记（每个知识部位先给一句<strong>关系说明</strong>）；<br>
+3. <strong>凡是"几种算法／几种结构／由快到慢"的知识，一律做成表格</strong>（排序、查找、存储结构、图、树的性质）；<br>
+4. <strong>大题按"题面关键词 → 模板 → 步骤"做成路线图</strong>，而不是按题号堆放。<br>
+<strong>【注意】</strong> 本课程真题库的程序、图、矩阵<strong>大量为内嵌图片</strong>，PDF 文字层为空；凡题面为图片的均已标注，请回原卷核对。</p>
 </blockquote>
 <hr>
-<h2 id="_1">零、卷型与两种题的准备方法</h2>
-<h3 id="01">0.1 两种卷型（都会出现）</h3>
+<h2 id="_1">〇、一页知识地图（先看这一页）</h2>
+<h3 id="01-8">0.1 全课程骨架（8 章一棵树）</h3>
 <ul>
-<li><strong>30 题卷（现行主流，B/C/D 三套都是这一种，100 分）</strong></li>
-<li>单选 10 题×2 ＝ <strong>20 分</strong>（1—10）</li>
-<li>填空 10 空×2 ＝ <strong>20 分</strong>（11—20）</li>
-<li>解答 5 题×6 ＝ <strong>30 分</strong>（21—25）</li>
-<li>算法阅读 4 题×5 ＝ <strong>20 分</strong>（26—29）</li>
-<li>算法设计 1 题×10 ＝ <strong>10 分</strong>（30）</li>
-<li><strong>34 题卷（旧排法，只有 A 这一套）</strong></li>
-<li>单选 15×2 ＝ 30 ；填空 10×1 ＝ 10 ；解答 4×6 ＝ 24 ；算法 5×5 ＝ 25 ；设计 1×10 ＝ 10</li>
-<li><strong>注意号段</strong>：单选 1—15、<strong>解答 16—19</strong>、<strong>算法 20—24</strong>、<strong>填空 25—34</strong>（填空在大题之后！）</li>
-<li><strong>两种卷型的共同结论</strong>：<strong>大题（解答＋算法）合计 60 分，超过一半</strong>。所以这门课"选择题靠背、大题靠练模板"。</li>
+<li><strong>第 1 章 绪论 —— "数据结构是什么、算法好不好"</strong></li>
+<li>数据结构 ＝ <strong>逻辑结构 ＋ 存储结构 ＋ 运算</strong><ul>
+<li>逻辑结构：<strong>线性</strong>（一对一）／<strong>非线性</strong>（树＝一对多、图＝多对多、集合＝无关系）</li>
+<li>存储结构 4 种 → 见 <strong>0.2 主线 1 的表</strong></li>
 </ul>
-<h3 id="02">0.2 两种题怎么准备</h3>
+</li>
+<li>数据类型：<strong>原子类型</strong>／<strong>结构类型</strong>；抽象数据类型 ADT ＝ 定义（逻辑＋运算）＋ 实现</li>
+<li>算法 5 特性：<strong>输入、输出、有穷性、确定性、可行性</strong></li>
+<li>复杂度：<strong>时间复杂度</strong>（O(1) ＜ O(log n) ＜ O(n) ＜ O(n log n) ＜ O(n²) ＜ O(2ⁿ)）／<strong>空间复杂度</strong></li>
+<li><strong>第 2 章 线性表 —— "一件事的两种做法：顺序 vs 链式"</strong></li>
+<li>顺序表：<strong>随机存取</strong>；<strong>插入移动 n−i+1、删除移动 n−i</strong>；地址公式</li>
+<li>链表：<strong>顺序存取</strong>；单链表（<strong>带头结点判空 <code>head-&gt;next==NULL</code></strong>）／循环链表／双向链表／<strong>静态链表</strong>（用数组实现）</li>
+<li>选型（大题必问）→ 见 <strong>0.2 主线 2 的表</strong></li>
+<li><strong>第 3 章 栈和队列 —— "受限的线性表"</strong></li>
+<li>栈 <strong>LIFO</strong>：顺序栈／链栈；应用（<strong>括号匹配、中缀转后缀、出栈序列判定、对顶栈</strong>）</li>
+<li>队列 <strong>FIFO</strong>：<strong>循环队列判空判满</strong>、链式队列</li>
+<li>双端队列（输入受限／输出受限）</li>
+<li><strong>第 4 章 数组、广义表和串 —— "多维与嵌套"</strong></li>
+<li>多维数组：<strong>行优先／列优先</strong>与<strong>地址计算</strong></li>
+<li>特殊矩阵压缩（对称、三角、对角）／<strong>稀疏矩阵三元组表</strong></li>
+<li>广义表：<strong>head／tail／长度／深度</strong>；性质：<strong>递归性</strong></li>
+<li>串：<strong>子串数目</strong>、<strong>BF 与 KMP</strong>（本批未考，必须补）</li>
+<li><strong>第 5 章 树与二叉树 —— "层次结构 + 递归定义"</strong></li>
+<li>树的术语与性质；<strong>二叉树 5 条性质</strong> + <strong>n₀ = n₂ + 1</strong></li>
+<li>遍历：<strong>前序／中序／后序／层序</strong>；<strong>由前序＋中序唯一确定</strong></li>
+<li>存储：<strong>二叉链表空指针域 ＝ n＋1</strong></li>
+<li>特殊树：<strong>满二叉树／完全二叉树</strong>、<strong>哈夫曼树与 WPL</strong>、<strong>二叉排序树</strong>、<strong>堆</strong></li>
+<li>树／森林 ⟷ 二叉树的转换</li>
+<li><strong>第 6 章 图结构 —— "多对多"</strong></li>
+<li>术语与性质：<strong>Σ度 ＝ 2e</strong>；完全图 <strong>n(n−1)/2</strong>（无向）／<strong>n(n−1)</strong>（有向）</li>
+<li>存储：<strong>邻接矩阵／邻接表</strong>（十字链表、邻接多重表）</li>
+<li>遍历：<strong>DFS／BFS</strong>（BFS 用队列）；复杂度对比表</li>
+<li>应用：<strong>最小生成树（Prim／Kruskal）</strong>、<strong>最短路径（Dijkstra／Floyd）</strong>、<strong>拓扑排序</strong>、<strong>关键路径（AOE）</strong></li>
+<li><strong>第 7 章 内部排序 —— "一张总表管全部"</strong></li>
+<li>基本概念（稳定性、内外排序）</li>
+<li>排序算法总表 → 见 <strong>0.2 主线 3 的表（本章最重要的一张表）</strong></li>
+<li>过程题：各趟结果、建堆、快速划分</li>
+<li><strong>第 8 章 查找 —— "三种结构，三套 ASL"</strong></li>
+<li>查找基本概念（ASL、关键字比较）</li>
+<li>线性表查找：顺序／<strong>二分（折半）</strong>／<strong>分块（索引顺序）</strong></li>
+<li>树形查找：<strong>BST</strong>／<strong>AVL（本批未考，必须补）</strong>／<strong>B 树</strong></li>
+<li><strong>哈希（散列）</strong>：散列函数（除留余数）／冲突处理／ASL</li>
+</ul>
+<h3 id="02">0.2 四条贯穿全课的主线</h3>
+<p><strong>主线 1：三种存储结构 + 一种特殊存储</strong>（第 1、2 章——<strong>所有"为什么选它"的问题都从这张表出</strong>）</p>
+<table>
+<thead>
+<tr>
+<th>存储方式</th>
+<th>逻辑相邻是否物理相邻</th>
+<th>存取方式</th>
+<th>插入删除代价</th>
+<th>典型考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>顺序存储</strong></td>
+<td><strong>一定相邻</strong></td>
+<td><strong>随机存取</strong></td>
+<td>需<strong>移动元素</strong>（插入 n−i+1、删除 n−i）</td>
+<td>地址公式、移动次数、二分查找前提</td>
+</tr>
+<tr>
+<td><strong>链式存储</strong></td>
+<td><strong>不一定相邻</strong></td>
+<td><strong>顺序存取</strong></td>
+<td>只改指针（先连后断）</td>
+<td>判空、指针操作、静态链表</td>
+</tr>
+<tr>
+<td><strong>索引存储</strong></td>
+<td>—</td>
+<td>先查索引再查数据</td>
+<td>需维护索引表</td>
+<td><strong>分块查找要求块间有序、块内无序</strong></td>
+</tr>
+<tr>
+<td><strong>散列（哈希）存储</strong></td>
+<td>—</td>
+<td><strong>按关键字直接计算地址</strong></td>
+<td>冲突需处理</td>
+<td>散列函数、ASL、装填因子</td>
+</tr>
+</tbody>
+</table>
+<p><strong>主线 2：顺序表 vs 链表，怎么选</strong>（第 2 章，<strong>大题第 ⑧ 类模板的原题</strong>）</p>
+<table>
+<thead>
+<tr>
+<th>判据</th>
+<th>选顺序表</th>
+<th>选链表</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主要操作</td>
+<td><strong>查找多</strong>（随机存取、时间复杂度 O(1)）</td>
+<td><strong>插入删除多</strong>（改指针即可）</td>
+</tr>
+<tr>
+<td>表长变化</td>
+<td>长度基本固定</td>
+<td><strong>长度变化大、难以预估</strong></td>
+</tr>
+<tr>
+<td>存储开销</td>
+<td>无需额外指针域，但需预分配</td>
+<td>有指针域开销，但可动态增长</td>
+</tr>
+</tbody>
+</table>
+<p><strong>主线 3：排序算法总表（第 7 章最重要的一张表）</strong></p>
+<table>
+<thead>
+<tr>
+<th>排序方法</th>
+<th>平均时间</th>
+<th>最坏时间</th>
+<th>辅助空间</th>
+<th><strong>稳定性</strong></th>
+<th>一句话特征</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>直接插入排序</strong></td>
+<td>O(n²)</td>
+<td>O(n²)</td>
+<td>O(1)</td>
+<td><strong>稳定</strong></td>
+<td><strong>基本有序时最快</strong>；可用<strong>哨兵 r[0]</strong></td>
+</tr>
+<tr>
+<td><strong>起泡（冒泡）排序</strong></td>
+<td>O(n²)</td>
+<td>O(n²)</td>
+<td>O(1)</td>
+<td><strong>稳定</strong></td>
+<td>相邻比较交换；<strong>趟数固定</strong></td>
+</tr>
+<tr>
+<td><strong>简单选择排序</strong></td>
+<td>O(n²)</td>
+<td>O(n²)</td>
+<td>O(1)</td>
+<td>不稳定</td>
+<td>每趟选最小放到前面</td>
+</tr>
+<tr>
+<td><strong>希尔排序</strong></td>
+<td>O(n^1.3)</td>
+<td>O(n²)</td>
+<td>O(1)</td>
+<td>不稳定</td>
+<td>缩小增量的插入排序</td>
+</tr>
+<tr>
+<td><strong>快速排序</strong></td>
+<td><strong>O(n log n)</strong></td>
+<td><strong>O(n²)</strong></td>
+<td><strong>O(log n)</strong></td>
+<td>不稳定</td>
+<td><strong>平均最快</strong>；以基准<strong>划分</strong></td>
+</tr>
+<tr>
+<td><strong>堆排序</strong></td>
+<td>O(n log n)</td>
+<td>O(n log n)</td>
+<td><strong>O(1)</strong></td>
+<td>不稳定</td>
+<td><strong>空间最省</strong>；建大根堆从小往上筛</td>
+</tr>
+<tr>
+<td><strong>归并排序</strong></td>
+<td>O(n log n)</td>
+<td>O(n log n)</td>
+<td><strong>O(n)</strong></td>
+<td><strong>稳定</strong></td>
+<td><strong>效率高又稳定</strong>；<strong>适合链式存储</strong></td>
+</tr>
+<tr>
+<td><strong>基数排序</strong></td>
+<td>O(d(n+r))</td>
+<td>O(d(n+r))</td>
+<td>O(r)</td>
+<td><strong>稳定</strong></td>
+<td><strong>不比较关键字</strong></td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li><strong>填空题怎么准备</strong></li>
-<li>答案通常只有 <strong>2—6 个字</strong>（或一个算出来的数／一个式子），是这段话里<strong>最不可替换的那个术语</strong>。</li>
-<li><strong>只背词，不背句</strong>：看到"数据元素之间存在先后次序关系"→ 线性结构；"关键字基本有序时适宜选用直接插入排序或＿＿"→ 冒泡排序；"B 树都是在＿＿处插入新关键字"→ 叶子。</li>
-<li>本批 40 空里 <strong>38 个答案互不相同</strong>，重复的只有 2 个（"比较"出现 2 次，另有 2 个"O(...)"型复杂度）。<strong>不要指望背原题</strong>，要按考点过一遍教材的术语表。</li>
-<li><strong>大题怎么准备</strong></li>
-<li>大题<strong>不是"讲解题"，是"步骤题"</strong>：阅卷按<strong>步骤给分</strong>（算法题按"结构判断→边界判断→核心循环→返回"给分）。</li>
-<li>本批 39 道大题可归为 <strong>8 类模板</strong>，而且 <strong>①—⑦ 7 类模板在 4 套卷里全部出现，每套卷命中 7—8 类</strong>。这就是"必考"的来源。</li>
-<li><strong>解答题必须写过程</strong>：排序写"每一趟"、图算法写"每步选中的边／距离数组的变化"、还原二叉树写"递归划分过程"、求 ASL 写出算式。只写最终答案拿不到满分。</li>
-<li><strong>一句话对比</strong></li>
-<li>填空：空多、词散、<strong>没有必考点</strong>，靠"术语全过一遍"。</li>
-<li>大题：题量固定 10 道、模板固定 8 类、<strong>每套必中 7—8 类</strong>，靠"模板专项练"。</li>
+<li><strong>20 字口决</strong>：<strong>稳定只有"插、泡、归、基"；O(n log n) 是"快、堆、归"；空间最省是堆、最费是归。</strong></li>
+<li><strong>三个"看题干选算法"的固定搭配</strong>：<strong>基本有序 → 直接插入或冒泡</strong>；<strong>效率高且稳定 → 归并</strong>；<strong>效率高且辅助空间最省 → 堆排序</strong>。</li>
 </ul>
+<p><strong>主线 4：查找三结构 + 哈希</strong>（第 8 章）</p>
+<table>
+<thead>
+<tr>
+<th>查找方法</th>
+<th>前提条件</th>
+<th>ASL（等概率）</th>
+<th>最大比较次数</th>
+<th>对应存储</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>顺序查找</strong></td>
+<td>无要求</td>
+<td>(n+1)/2（成功）</td>
+<td>n</td>
+<td>顺序／链式皆可</td>
+</tr>
+<tr>
+<td><strong>二分（折半）查找</strong></td>
+<td><strong>有序 ＋ 顺序存储</strong></td>
+<td>log₂(n+1) − 1</td>
+<td><strong>⌊log₂n⌋ + 1</strong></td>
+<td>必须是顺序表</td>
+</tr>
+<tr>
+<td><strong>分块（索引顺序）查找</strong></td>
+<td><strong>块间有序，块内无序</strong></td>
+<td>索引表 + 块内</td>
+<td>—</td>
+<td>索引 ＋ 顺序</td>
+</tr>
+<tr>
+<td><strong>BST 查找</strong></td>
+<td>建二叉排序树</td>
+<td>Σ(深度×概率)</td>
+<td>树高（最坏 n）</td>
+<td>二叉链表</td>
+</tr>
+<tr>
+<td><strong>哈希查找</strong></td>
+<td>选好散列函数</td>
+<td>与<strong>装填因子</strong>有关，与 n 无关</td>
+<td>由冲突处理定</td>
+<td><strong>数组</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>一句话</strong>：<strong>"有序 + 顺序存储"是二分查找的门槛</strong>；<strong>哈希的 ASL 与元素个数 n 无关</strong>，只与装填因子有关。</li>
+</ul>
+<h3 id="03">0.3 两种卷型与两类题怎么准备</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>30 题卷</strong>（B、C、D）</th>
+<th><strong>34 题卷</strong>（A，旧排法）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单选</td>
+<td>10×2＝20（1—10）</td>
+<td>15×2＝30（1—15）</td>
+</tr>
+<tr>
+<td>填空</td>
+<td>10×2＝20（<strong>11—20</strong>）</td>
+<td>10×1＝10（<strong>25—34</strong>，在最后）</td>
+</tr>
+<tr>
+<td>解答</td>
+<td>5×6＝30（21—25）</td>
+<td>4×6＝24（<strong>16—19</strong>）</td>
+</tr>
+<tr>
+<td>算法</td>
+<td>阅读 4×5 ＋ 设计 1×10（26—30）</td>
+<td>阅读 4×5 ＋ 设计 1×10（<strong>20—24</strong>）</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>填空题（40 空）</strong></th>
+<th><strong>大题（39 道）</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>难度</td>
+<td>易（只挖一个术语或一个算出来的数）</td>
+<td>难（要铺整套步骤链／一段程序）</td>
+</tr>
+<tr>
+<td>考点</td>
+<td><strong>34 个考点桶，28 个只出现一次（82%）</strong></td>
+<td><strong>只有 8 类模板</strong></td>
+</tr>
+<tr>
+<td>跨卷</td>
+<td><strong>38/40 个答案互不相同</strong>；重复桶只覆盖 12/40 空（30%）</td>
+<td><strong>①—⑦ 七类 4/4 卷全出</strong>，每卷命中 7—8 类</td>
+</tr>
+<tr>
+<td>怎么准备</td>
+<td>按 8 章过术语表（85% 答案 ≤5 字）</td>
+<td>按 8 类模板专项练，练到能默写步骤</td>
+</tr>
+</tbody>
+</table>
 <hr>
-<h2 id="40">第一部分 填空题速记（40 空）</h2>
+<h2 id="_2">第一部分 填空题速记（按章 → 知识部位）</h2>
 <blockquote>
-<p>记法：<strong>空缺处的答案已加粗</strong>，直接读句子就能记住那个词。括号里是出处（卷·题号），用于回原卷核对。<br>
-凡原卷答案区为空白、由教材补齐的，另行标注。</p>
+<p>记法：<strong>空缺处的答案已加粗</strong>。括号里是出处（卷#题号），用于回原卷核对。<br>
+每个知识部位下面先给一句<strong>关系说明</strong>（这一组空考的是同一概念的哪些侧面），再列句子。</p>
 </blockquote>
 <h3 id="1-c16">第 1 章 绪论（C1，6 空）</h3>
+<p><strong>本章知识地图</strong>：逻辑结构（线性／非线性）→ 存储结构（4 种）→ 数据类型 → 运算定义在哪 → 复杂度。</p>
 <ul>
-<li><strong>线性 / 非线性结构的判定</strong></li>
+<li><strong>线性 / 非线性结构的判定</strong>（2 空：<strong>同一个判定的两种问法</strong>——正面问"叫什么"，反面问"特征是什么"）</li>
 <li>在数据结构中，<strong>线性结构</strong>是数据元素之间存在着先后次序关系的结构。（A#25）</li>
 <li>非线性结构的特征是数据结点之间存在着<strong>一对多</strong>或多对多的关系。（C#11）</li>
-<li><strong>算法的时间复杂度与空间复杂度</strong></li>
-<li>如果一个算法的执行时间是一个与问题规模 n 无关的常数，则时间复杂度记作 T(n)＝<strong>O(1)</strong>。（B#11）</li>
-<li><strong>数据类型与抽象数据类型</strong></li>
-<li>数据类型分为原子类型和<strong>结构类型</strong>。（B#12）</li>
-<li><strong>数据的逻辑结构与存储结构</strong></li>
+<li><strong>【对照表】</strong>：<strong>线性＝一对一</strong>；<strong>树＝一对多</strong>；<strong>图＝多对多</strong>；<strong>集合＝无逻辑关系</strong>。</li>
+<li><strong>数据的逻辑结构与存储结构</strong>（1 空）</li>
 <li>数据的运算是定义在数据的<strong>逻辑结构</strong>上的。（C#12）</li>
-<li><strong>存储结构的四种基本方法</strong></li>
+<li><strong>【一句话】</strong>"运算定义在<strong>逻辑结构</strong>上，实现落在<strong>存储结构</strong>上"。</li>
+<li><strong>算法的时间复杂度与空间复杂度</strong>（1 空）</li>
+<li>如果一个算法的执行时间是一个与问题规模 n 无关的常数，则时间复杂度记作 T(n)＝<strong>O(1)</strong>。（B#11）</li>
+<li><strong>数据类型与抽象数据类型</strong>（1 空）</li>
+<li>数据类型分为原子类型和<strong>结构类型</strong>。（B#12）</li>
+<li><strong>存储结构的四种基本方法</strong>（1 空：<strong>只要看到"按关键字计算位置"就是散列</strong>）</li>
 <li>根据数据元素的关键字计算该元素物理存储位置的存储方法是<strong>散列（哈希）存储</strong>方法。（D#11）</li>
+<li><strong>【四种存储方法】</strong>顺序 · 链式 · 索引 · <strong>散列</strong>（见 0.2 主线 1）。</li>
 </ul>
-<h3 id="2-c27">第 2 章 线性表（C2，7 空）</h3>
+<h3 id="2-c27">第 2 章 线性表（C2，7 空，填空数并列第一）</h3>
+<p><strong>本章知识地图</strong>：线性表术语（表头／终端元素／前趋后继）→ 顺序表（地址计算、移动次数）→ 链表（判空、指针、静态链表）→ <strong>选型</strong>。</p>
 <ul>
-<li><strong>线性表的基本术语</strong></li>
+<li><strong>线性表的基本术语</strong>（1 空）</li>
 <li>线性表有且仅有一个<strong>终端元素</strong>，它没有后继，仅有一个直接前趋。（B#15）</li>
-<li><strong>线性表的查找操作</strong></li>
-<li>设线性表 s＝(1,3,5,7,9)，执行 find(s,3) 操作后的返回值为 <strong>2</strong>。（D#12）【注意】参考答案按"第 2 个位置"给出；若按 0 起始下标则为 1，原卷答案与教材下标约定不一致。</li>
-<li><strong>顺序表元素地址计算</strong></li>
+<li><strong>【术语对照】</strong>表头元素（无前趋）· 表尾/终端元素（<strong>无后继</strong>）· 前趋 · 后继。</li>
+<li><strong>顺序表元素地址计算</strong>（1 空：<strong>必考公式题</strong>）</li>
 <li>设顺序表的每个元素占 8 个存储单元，第 1 个元素的存储首地址为 100，则第 6 个元素占用的最后一个存储单元的地址是 <strong>147</strong>（＝100＋5×8＋7）。（A#26）</li>
-<li><strong>顺序表插入删除的移动次数</strong></li>
+<li><strong>【公式】</strong><code>Loc(a_i) ＝ SA ＋ (i−1)×d</code>（<strong>下标从 1 起</strong>）；<code>Loc(a_i) ＝ SA ＋ i×d</code>（下标从 0 起）。<strong>注意问的是"末地址"还是"首地址"</strong>。</li>
+<li><strong>顺序表插入删除的移动次数</strong>（1 空）</li>
 <li>在长度为 n 的顺序表的第 i 个位置上插入一个元素，元素的移动次数为 <strong>n−i＋1</strong>。（B#14）</li>
-<li><strong>线性表的存储结构（顺序 / 链式 / 静态链表）</strong></li>
+<li><strong>【对照】</strong>插入 <strong>n−i＋1</strong>、删除 <strong>n−i</strong>；平均移动 <strong>n/2</strong> 与 <strong>(n−1)/2</strong>。</li>
+<li><strong>线性表的存储结构（顺序 / 链式 / 静态链表）</strong>（1 空）</li>
 <li>在数组中保存的链表称为<strong>静态链表</strong>。（A#27）</li>
-<li><strong>单链表的结构与判空</strong></li>
+<li><strong>单链表的结构与判空</strong>（1 空：<strong>"带头结点"是关键词</strong>）</li>
 <li>带头结点的单链表（以 head 为头指针）为空的判断条件是 <strong>head-&gt;next==NULL</strong>。（B#13）</li>
-<li><strong>单链表的指针操作</strong></li>
+<li><strong>【对照】</strong><strong>带头结点</strong>：<code>head-&gt;next == NULL</code>；<strong>不带头结点</strong>：<code>head == NULL</code>；<strong>循环链表（带头结点）</strong>：<code>head-&gt;next == head</code>。</li>
+<li><strong>单链表的指针操作</strong>（1 空）</li>
 <li>单链表中每个结点的存储地址存放在其<strong>直接前趋</strong>结点的指针域中。（C#13）</li>
+<li><strong>【指针语句铁律】</strong>在 p 之后插入 s：<code>s-&gt;next = p-&gt;next; p-&gt;next = s;</code>（<strong>顺序不能颠倒</strong>）；删除 p 的后继：<code>q = p-&gt;next; p-&gt;next = q-&gt;next; free(q);</code></li>
+<li><strong>线性表的查找操作</strong>（1 空：<strong>注意返回值是"位置"而不是"是否存在"</strong>）</li>
+<li>设线性表 s＝(1,3,5,7,9)，执行 find(s,3) 操作后的返回值为 <strong>2</strong>。（D#12）【注意】参考答案按"第 2 个位置"给出；若按 0 起始下标则为 1，原卷答案与教材下标约定不一致。</li>
 </ul>
 <h3 id="3-c32">第 3 章 栈和队列（C3，2 空）</h3>
+<p><strong>本章知识地图</strong>：栈（LIFO）→ 出栈序列判定／应用；队列（FIFO）→ 循环队列判空判满、链式队列。</p>
 <ul>
-<li><strong>栈的基本操作与判空判满</strong></li>
+<li><strong>栈的基本操作与判空判满</strong>（1 空）</li>
 <li>栈操作中，只要栈不满，就允许<strong>入栈</strong>。（D#13）</li>
-<li><strong>队列的存储与实现</strong></li>
+<li><strong>队列的存储与实现</strong>（1 空）</li>
 <li>链式队列采用带头指针及尾指针的<strong>单链表</strong>作为队列的存储结构。（A#30）</li>
+<li><strong>【本课程第 3 章的核心表格】</strong>（虽然填空只 2 空，但解答题常问）</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>栈</strong></th>
+<th><strong>队列</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>特点</td>
+<td><strong>后进先出（LIFO）</strong></td>
+<td><strong>先进先出（FIFO）</strong></td>
+</tr>
+<tr>
+<td>顺序存储判空</td>
+<td><code>top == -1</code>（或 <code>top == 0</code> 视约定）</td>
+<td><strong><code>front == rear</code></strong></td>
+</tr>
+<tr>
+<td>顺序存储判满</td>
+<td><code>top == MaxSize−1</code></td>
+<td><strong>牺牲一个单元：<code>(rear+1)%M == front</code></strong></td>
+</tr>
+<tr>
+<td>元素个数</td>
+<td><code>top+1</code></td>
+<td><strong><code>(rear−front+M)%M</code></strong></td>
+</tr>
+<tr>
+<td>链式存储</td>
+<td>链栈（<strong>不需要头结点</strong>）</td>
+<td>链式队列（<strong>带头指针＋尾指针的单链表</strong>）</td>
+</tr>
+</tbody>
+</table>
 <h3 id="4-c46">第 4 章 数组、广义表和串（C4，6 空）</h3>
+<p><strong>本章知识地图</strong>：多维数组（行/列优先 → 地址计算）→ 特殊矩阵与稀疏矩阵 → 广义表（head/tail/长度/深度、递归性）→ 串。</p>
 <ul>
-<li><strong>多维数组的行 / 列优先存储</strong></li>
+<li><strong>多维数组的行 / 列优先存储</strong>（2 空：<strong>同一概念的两个侧面</strong>——"按什么顺序存"和"第 k 个元素是谁"）</li>
 <li>N 是一个 3×8 的二维数组，当 N 按行优先方式存储时，该数组的第 10 个元素应表示为 <strong>N[1][1]</strong>。（B#16）</li>
 <li>数组在 C 语言中是按<strong>行</strong>优先顺序存储的。（C#14）</li>
-<li><strong>广义表的定义与性质</strong></li>
+<li><strong>【公式】</strong>行优先 <code>Loc(A[i][j]) ＝ SA ＋ (i×列数 ＋ j)×d</code>；<strong>第 k 个元素（下标 0 起）＝ ⌊k/列数⌋ 行、k mod 列数 列</strong>。</li>
+<li><strong>广义表的定义与性质</strong>（2 空"同一性质的两个侧面"）</li>
 <li>在描述广义表时又用到了广义表的概念，所以广义表具有<strong>递归</strong>的性质。（C#16）</li>
 <li>长度为 0 的广义表称为<strong>空表</strong>。（D#14）</li>
-<li><strong>广义表的表头 / 表尾 / 长度 / 深度</strong></li>
+<li><strong>广义表的表头 / 表尾 / 长度 / 深度</strong>（1 空）</li>
 <li>广义表 G＝(a,b,(c,d,(e,f)),g) 的长度为 <strong>4</strong>。（A#29）</li>
-<li><strong>特殊矩阵与稀疏矩阵</strong></li>
+<li><strong>【四条铁律】</strong>① <strong>长度＝最外层元素个数</strong>；② <strong>head 取第一个元素本身</strong>；③ <strong>tail 取去掉第一个元素后剩下的表，一定带括号</strong>；④ <strong>深度＝括号嵌套层数</strong>（原子深度 0、空表深度 1、最外层括号算 1 层）。</li>
+<li><strong>特殊矩阵与稀疏矩阵</strong>（1 空）</li>
 <li>特殊矩阵中，非零元素个数远远小于矩阵元素总数的矩阵称为<strong>稀疏矩阵</strong>。（C#15）</li>
+<li><strong>【对照】</strong>特殊矩阵（对称、三角、对角 → <strong>压缩存储有规律</strong>）／稀疏矩阵（<strong>非零元素远少于总数</strong> → 三元组表）。</li>
 </ul>
 <h3 id="5-c54">第 5 章 树与二叉树（C5，4 空）</h3>
+<p><strong>本章知识地图</strong>：树的术语 → 二叉树性质（n₀＝n₂＋1）→ 遍历与还原 → 存储（空指针域）→ 哈夫曼树 → 树/森林转换。</p>
 <ul>
-<li><strong>二叉树性质：结点数与度的关系</strong></li>
+<li><strong>二叉树性质：结点数与度的关系</strong>（1 空：<strong>计算题</strong>）</li>
 <li>一棵二叉树共有 20 个结点，其中叶结点为 5 个，则度为 1 的结点的个数是 <strong>11</strong>（n₁＝20−5−4）。（A#31）</li>
-<li><strong>由遍历序列确定二叉树</strong></li>
+<li><strong>【公式组】</strong><code>n ＝ n₀ ＋ n₁ ＋ n₂</code>；<strong><code>n₀ ＝ n₂ ＋ 1</code></strong>；<code>边数 ＝ n−1 ＝ n₁ ＋ 2n₂</code>。</li>
+<li><strong>由遍历序列确定二叉树</strong>（1 空）</li>
 <li>根据先序遍历序列和<strong>中序</strong>遍历序列可以唯一确定一棵二叉树。（D#15）</li>
-<li><strong>哈夫曼树与带权路径长度</strong></li>
+<li><strong>【判别】</strong>唯一确定二叉树<strong>必须含中序</strong>；<strong>前序＋后序不能</strong>唯一确定。</li>
+<li><strong>哈夫曼树与带权路径长度</strong>（1 空）</li>
 <li>二叉树叶结点的带权路径长度定义为叶结点的<strong>权值</strong>与其到根结点的路径长度之积。（D#16）</li>
-<li><strong>树与森林的相互转换</strong></li>
+<li><strong>【哈夫曼树三句话】</strong>每次取<strong>两个最小权值</strong>合并；<strong>WPL 只算叶结点</strong>；结点总数 <strong>2n−1</strong>，<strong>没有度为 1 的结点</strong>。</li>
+<li><strong>树与森林的相互转换</strong>（1 空）</li>
 <li>若一棵树的根结点删除，就得到该树的子树所构成的<strong>森林</strong>。（C#17）</li>
+<li><strong>【转换口诀】</strong>树→二叉树：<strong>"左孩子右兄弟"</strong>；<strong>树的先根遍历 ↔ 二叉树先序</strong>，<strong>树的后根遍历 ↔ 二叉树中序</strong>。</li>
+<li><strong>【本章必背表】二叉树的 5 条性质</strong>：</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>性质</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>第 i 层上<strong>至多 2^(i−1)</strong> 个结点</td>
+</tr>
+<tr>
+<td>2</td>
+<td>深度为 k 的二叉树<strong>至多 2^k − 1</strong> 个结点</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>n₀ ＝ n₂ ＋ 1</strong>（叶结点比双分支结点多 1）</td>
+</tr>
+<tr>
+<td>4</td>
+<td>n 个结点的完全二叉树深度 ＝ <strong>⌊log₂n⌋ ＋ 1</strong></td>
+</tr>
+<tr>
+<td>5</td>
+<td>顺序存储（下标从 1 起）：i 的左孩子 2i、右孩子 2i+1、双亲 ⌊i/2⌋</td>
+</tr>
+</tbody>
+</table>
 <h3 id="6-c64">第 6 章 图结构（C6，4 空）</h3>
+<p><strong>本章知识地图</strong>：术语与性质（Σ度＝2e）→ 存储（邻接矩阵／邻接表）→ 遍历（DFS/BFS）→ 应用（MST、最短路、拓扑、关键路径）。</p>
 <ul>
-<li><strong>图的存储结构（邻接表 / 邻接矩阵）</strong></li>
+<li><strong>图的存储结构（邻接表 / 邻接矩阵）</strong>（2 空：<strong>同一件事"怎么存"的两个空</strong>）</li>
 <li>在图的存储结构中，链式存储结构以<strong>邻接表</strong>为代表。（A#28）</li>
 <li>无向图的邻接矩阵是<strong>对称</strong>矩阵。（D#17）</li>
-<li><strong>图的顶点数与边数关系</strong></li>
-<li>若 G 为 n 个顶点的有向图，则图 G 中最多有 <strong>n(n−1)</strong> 条边。（B#17）</li>
-<li><strong>生成树与最小生成树</strong></li>
-<li>若连通图的顶点个数是 n，则该图的最小生成树的边数是 <strong>n−1</strong>。（A#34）</li>
+<li><strong>【对照表】</strong>：</li>
 </ul>
-<h3 id="7-c77">第 7 章 内部排序（C7，7 空）</h3>
+<table>
+<thead>
+<tr>
+<th>存储结构</th>
+<th>空间</th>
+<th>适合</th>
+<th>求某顶点度</th>
+<th>判断两边是否相邻</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>邻接矩阵</strong></td>
+<td>O(n²)</td>
+<td><strong>稠密图</strong></td>
+<td>行（列）求和，O(n)</td>
+<td><strong>O(1)</strong>；<strong>无向图矩阵对称</strong></td>
+</tr>
+<tr>
+<td><strong>邻接表</strong></td>
+<td>O(n＋e)</td>
+<td><strong>稀疏图</strong></td>
+<td>出度＝表长；<strong>入度需遍历全表</strong></td>
+<td>O(顶点度)</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li><strong>排序的基本概念与术语</strong></li>
+<li><strong>图的顶点数与边数关系</strong>（1 空）</li>
+<li>若 G 为 n 个顶点的有向图，则图 G 中最多有 <strong>n(n−1)</strong> 条边。（B#17）</li>
+<li><strong>【公式表】</strong>无向完全图 <strong>n(n−1)/2</strong> 边；<strong>有向完全图 n(n−1)</strong> 边；连通图最少 <strong>n−1</strong> 边；<strong>非连通简单图最多 (n−1)(n−2)/2</strong> 边。</li>
+<li><strong>生成树与最小生成树</strong>（1 空）</li>
+<li>若连通图的顶点个数是 n，则该图的最小生成树的边数是 <strong>n−1</strong>。（A#34）</li>
+<li><strong>【对照】</strong><code>Prim</code> 适合<strong>稠密图</strong>、<code>Kruskal</code> 适合<strong>稀疏图</strong>；MST <strong>不唯一但权值和最小</strong>。</li>
+</ul>
+<h3 id="7-c77">第 7 章 内部排序（C7，7 空，填空数并列第一）</h3>
+<p><strong>本章知识地图</strong>：基本概念（稳定性）→ <strong>算法总表（0.2 主线 3）</strong>→ 过程题（各趟结果、建堆、快速划分）。</p>
+<ul>
+<li><strong>排序的基本概念与术语</strong>（2 空）</li>
 <li>影响排序效率的两个因素是关键字的<strong>比较</strong>次数和记录的移动次数。（A#32）</li>
 <li>经过排序的数据，若其关键字值依从小到大的顺序排列，则称为<strong>升序</strong>。（D#18）</li>
-<li><strong>起泡排序比较次数计算</strong></li>
-<li>若用起泡排序方法对序列 11,15,27,29,42,53 进行降序排序，则需要进行比较操作的次数是 <strong>15</strong>（＝5＋4＋3＋2＋1，一趟后已完全逆序，仍需走完全部比较）。（A#33）</li>
-<li><strong>排序算法的选择与适用场合</strong></li>
+<li><strong>排序算法的选择与适用场合</strong>（1 空：<strong>"基本有序"是招牌关键词</strong>）</li>
 <li>若待排序记录按关键字基本有序时，适宜选用直接插入排序或<strong>冒泡排序</strong>。（B#18）</li>
-<li><strong>排序算法的时间复杂度</strong></li>
+<li><strong>排序算法的时间复杂度</strong>（1 空）</li>
 <li>堆排序算法的时间复杂度为 <strong>O(nlog₂n)</strong>。（C#18）</li>
-<li><strong>归并排序</strong></li>
+<li><strong>起泡排序比较次数计算</strong>（1 空：<strong>计算题</strong>）</li>
+<li>若用起泡排序方法对序列 11,15,27,29,42,53 进行降序排序，则需要进行比较操作的次数是 <strong>15</strong>（＝5＋4＋3＋2＋1）。（A#33）</li>
+<li><strong>归并排序</strong>（2 空：一个问"适合什么存储"，一个问"辅助数组多大"）</li>
 <li>归并排序易于在<strong>链式</strong>存储结构上实现。（B#19）</li>
 <li>假设参与归并排序的两个有序序列长度分别为 n 和 m，则辅助数组长度是 <strong>n＋m</strong>。（D#19）</li>
+<li><strong>【本章必背】排序算法总表见 0.2 主线 3</strong>；三个固定搭配：<strong>基本有序→插入/冒泡</strong>、<strong>高效且稳定→归并</strong>、<strong>高效且省空间→堆</strong>。</li>
 </ul>
 <h3 id="8-c84">第 8 章 查找（C8，4 空）</h3>
+<p><strong>本章知识地图</strong>：基本概念 → 线性表查找（顺序／二分／分块）→ 树形查找（BST／AVL／B 树）→ 哈希。</p>
 <ul>
-<li><strong>查找的基本概念</strong></li>
+<li><strong>查找的基本概念</strong>（1 空）</li>
 <li>查找运算的主要操作是对关键字的<strong>比较</strong>。（B#20）</li>
-<li><strong>分块查找（索引顺序查找）</strong></li>
+<li><strong>分块查找（索引顺序查找）</strong>（1 空）</li>
 <li>分块查找是两次查找过程，首先查找<strong>索引表</strong>，然后在确定的块中进行顺序查找。（C#19）</li>
-<li><strong>二叉排序树的性质</strong></li>
+<li><strong>【前提】</strong>分块查找要求 <strong>块间有序、块内无序</strong>。</li>
+<li><strong>二叉排序树的性质</strong>（1 空）</li>
 <li>中序遍历二叉排序树得到的遍历序列是一个递增有序序列，说明对于二叉排序树，若它的左子树非空，则左子树上所有结点的值均<strong>小于</strong>根结点的值。（C#20）</li>
-<li><strong>B 树与 B＋树</strong></li>
+<li><strong>B 树与 B＋树</strong>（1 空）</li>
 <li>B 树都是在<strong>叶子（最底层非叶结点）</strong>处插入新关键字。（D#20）【注意】参考答案原文即为"叶子（最底层非叶结点）"，两个说法并列，按教材"插入总在最底层"理解即可。</li>
+<li><strong>【本章必背】查找方法总表见 0.2 主线 4</strong>。</li>
 </ul>
-<p><strong>填空题按章小结</strong>：C2 线性表 7 空 ＝ C7 排序 7 空 ＞ C1 绪论 6 空 ＝ C4 数组广义表串 6 空 ＞ C5 树 4 空 ＝ C6 图 4 空 ＝ C8 查找 4 空 ＞ C3 栈队列 2 空。<strong>八章都出填空，没有可以放弃的章。</strong></p>
 <hr>
 <h2 id="39-19-20">第二部分 大题速记（39 道：解答 19 ＋ 算法 20）</h2>
 <blockquote>
-<p>记法：大题按<strong>模板</strong>背骨架。每个模板下面第一行是"出现形态"，第二行是"必写步骤（得分点）"，然后是本批真题清单。<br>
-题号出处：A/B/C/D 见开头卷目； 表示原卷答案区残缺或题面为图片。</p>
+<p><strong>记法</strong>：本课程大题<strong>不是"讲解题"，是"步骤题"</strong>——阅卷按<strong>步骤给分</strong>。所以下面先给一张<strong>路线图</strong>（看到题面关键词 → 用哪个模板），再逐类给"出现形态 ＋ 必写步骤 ＋ 本批真题"。<br>
+括号里的 <strong>A/B/C/D</strong> 见开头卷目； 表示原卷题面或答案区为图片。</p>
 </blockquote>
+<h3 id="20">2.0 大题路线图（题面关键词 → 模板）</h3>
+<table>
+<thead>
+<tr>
+<th>题面出现这些词</th>
+<th>用哪个模板</th>
+<th>分值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"单链表""顺序表""填空补全""该函数的功能是什么""编写算法"</td>
+<td><strong>① 链表／顺序表算法</strong></td>
+<td>5—10 分</td>
+</tr>
+<tr>
+<td>"出栈序列""中缀转后缀""循环队列判满""括号匹配""两栈共享空间"</td>
+<td><strong>② 栈与队列应用</strong></td>
+<td>6—10 分</td>
+</tr>
+<tr>
+<td>"地址""行主序""表头／表尾""表长／深度""矩阵"</td>
+<td><strong>③ 数组与广义表</strong></td>
+<td>6 分</td>
+</tr>
+<tr>
+<td>"前序／中序／后序""画形态""该函数的功能""递归"</td>
+<td><strong>④ 二叉树</strong></td>
+<td>5—10 分</td>
+</tr>
+<tr>
+<td>"最短路径""最小生成树""遍历序列""复杂度比较""0 的个数"</td>
+<td><strong>⑤ 图</strong></td>
+<td>5—6 分</td>
+</tr>
+<tr>
+<td>"每一趟结果""这是哪种排序""是否稳定""哨兵的作用""建成最大堆"</td>
+<td><strong>⑥ 排序</strong></td>
+<td>6 分</td>
+</tr>
+<tr>
+<td>"散列函数要考虑什么""折半查找返回什么""求 ASL""BST 是否一样"</td>
+<td><strong>⑦ 查找</strong></td>
+<td>6 分</td>
+</tr>
+<tr>
+<td>"简述……的特性""如何选择……"</td>
+<td><strong>⑧ 基本概念问答</strong></td>
+<td>4—6 分</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>一句话</strong>：<strong>①—⑦ 七类模板在 4 套卷里全部出满</strong>（每卷命中 7—8 类）；<strong>算法题的第 5 道（30 题卷的 #30）固定是 10 分的算法设计题</strong>。</li>
+</ul>
 <h3 id="1-7-44">模板 ① 链表 / 顺序表算法（7 道，<strong>4/4 卷必出 —— 最大题源</strong>）</h3>
 <ul>
-<li><strong>出现形态</strong>：三种都有——① 给含空白的函数让<strong>填空</strong>；② 给完整函数问"<strong>该函数的功能是什么</strong>"（有时附带"换成数组存储复杂度一样吗"）；③ 10 分的<strong>算法设计题</strong>。</li>
+<li><strong>出现形态</strong>：① 给含空白的函数让<strong>填空</strong>；② 给完整函数问"<strong>该函数的功能是什么</strong>"（有时附带"换成数组存储复杂度一样吗"）；③ 10 分的<strong>算法设计题</strong>。</li>
 <li><strong>必写步骤（得分点）</strong><br>
   1. 引用题目已给的<strong>结构定义</strong>（不要自己另起名字）；<br>
   2. 写出<strong>函数头</strong>（返回类型、参数）；<br>
   3. <strong>边界判断</strong>：空表／单结点（<code>if (head==NULL || head-&gt;next==NULL) return;</code>）；<br>
   4. <strong>核心循环</strong>：双指针 <code>p</code>/<code>q</code>，先连后断；<br>
-  5. 释放被删结点 <code>free(temp);</code>，最后 <code>return</code> 正确结果。</li>
-<li><strong>指针语句铁律</strong>：在 p 之后插入 s → <code>s-&gt;next = p-&gt;next; p-&gt;next = s;</code>（<strong>顺序不能颠倒</strong>）；删除 p 的后继 → <code>q = p-&gt;next; p-&gt;next = q-&gt;next; free(q);</code></li>
-<li><strong>"说功能"类的高频答法</strong>：求单链表长度／就地逆置／删除所有值为 x 的结点／删除重复值结点／按奇偶拆分链表／合并两个有序链表／单链表上的直接选择排序。</li>
+  5. <code>free(temp);</code> 释放被删结点，最后 <code>return</code> 正确结果。</li>
+<li><strong>【说功能题的答案库】</strong>（本批考过 / 常考的十几种）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>代码骨架特征</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>while(p){n++; p=p-&gt;next;}</code></td>
+<td>求单链表长度</td>
+</tr>
+<tr>
+<td>头插法逐个前移</td>
+<td><strong>就地逆置</strong></td>
+</tr>
+<tr>
+<td>双重循环比较 data</td>
+<td><strong>删除重复值结点</strong></td>
+</tr>
+<tr>
+<td>按 <code>p-&gt;data % 2</code> 分流</td>
+<td><strong>按奇偶拆分链表</strong></td>
+</tr>
+<tr>
+<td>两表比较后接小者</td>
+<td><strong>合并两个有序链表</strong></td>
+</tr>
+<tr>
+<td>每次扫描选最小结点</td>
+<td><strong>单链表上的直接选择排序</strong></td>
+</tr>
+<tr>
+<td><code>if (t==NULL) return 0; return f(l)+f(r)+1;</code></td>
+<td>求<strong>结点数</strong>（<code>+0</code> 判度为 1，<code>+1</code> 判度为 2）</td>
+</tr>
+<tr>
+<td>中序位置输出</td>
+<td><strong>中序遍历输出</strong></td>
+</tr>
+<tr>
+<td>递归建树</td>
+<td>由<strong>前序＋中序构造二叉树</strong></td>
+</tr>
+<tr>
+<td>折半缩小范围</td>
+<td><strong>折半查找</strong>／<strong>确定插入位置</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><strong>本批真题</strong>：</li>
-<li><strong>A#20</strong> 返回指针 curr 指向结点位置的算法填空（答案要点：①<code>p = p-&gt;next</code> ②<code>ERROR</code> ③<code>temp-&gt;next</code> ④<code>count++</code> ⑤<code>count</code>）</li>
-<li><strong>A#21</strong> 顺序表算法阅读：给 L＝(19,−6,−9,26,0,−21,74,35,−30)，写执行 func(&amp;L) 后的 L 与功能（答案：L＝(19,26,0,74,35)，功能是<strong>删除顺序表中所有负值元素</strong>）</li>
+<li><strong>A#20</strong> 返回指针 curr 指向结点位置的算法填空（①<code>p = p-&gt;next</code> ②<code>ERROR</code> ③<code>temp-&gt;next</code> ④<code>count++</code> ⑤<code>count</code>）</li>
+<li><strong>A#21</strong> 顺序表算法阅读：L＝(19,−6,−9,26,0,−21,74,35,−30)，写执行 func(&amp;L) 后的 L 与功能（答案：L＝(19,26,0,74,35)，功能是<strong>删除顺序表中所有负值元素</strong>）</li>
 <li><strong>B#26</strong> 单链表算法阅读：说功能并比较数组实现的时间复杂度（答案：按<strong>奇偶值把链表拆成两个链表</strong>且保持相对次序；两种实现<strong>都是 O(n)</strong>）</li>
 <li><strong>C#27</strong> 单链表函数功能与复杂度（答案：<strong>基于单链表的直接选择排序</strong>，时间复杂度 <strong>O(n²)</strong>，与顺序存储相同）</li>
 <li><strong>C#29</strong> 合并两个升序双向链表的函数填空（三个空：<code>list1-&gt;val &lt; list2-&gt;val</code>；<code>tail = tail-&gt;next</code>；<code>list1-&gt;prev = tail</code>）</li>
-<li><strong>D#26</strong> 删除 current 所指结点<strong>后续结点</strong>的算法填空（答案：(1) <code>temp = current-&gt;next;</code> (2) <code>current-&gt;next = temp-&gt;next;</code> (3) <code>free(temp);</code>）</li>
-<li><strong>D#30</strong> <strong>算法设计（10 分）</strong>：编写删除单链表中元素值重复结点的算法（答案：双重循环，对每个结点 p 删除其后 data 值与 p 相等的结点）</li>
+<li><strong>D#26</strong> 删除 current 所指结点<strong>后续结点</strong>的算法填空（(1) <code>temp = current-&gt;next;</code> (2) <code>current-&gt;next = temp-&gt;next;</code> (3) <code>free(temp);</code>）</li>
+<li><strong>D#30</strong> <strong>算法设计（10 分）</strong>：编写删除单链表中元素值重复结点的算法（双重循环，对每个结点 p 删除其后 data 值与 p 相等的结点）</li>
 </ul>
 <h3 id="2-5-44">模板 ② 栈与队列应用（5 道，<strong>4/4 卷必出</strong>）</h3>
 <ul>
@@ -253,15 +767,15 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li><strong>C#21</strong> 定义循环队列的结点，并写出队列为满的条件</li>
 <li><strong>C#22</strong> 写出 (8＋2*5)/7 转成后缀表达式的过程（正确后缀式应为 <code>8 2 5 * + 7 /</code>）【答案区残缺】</li>
 <li><strong>D#27</strong> 对顶栈出栈算法填空（(1) <code>flag==-1 &amp;&amp; lefttop==-1</code>；(2) <code>flag==1 &amp;&amp; righttop==maxSize-1</code>；(3) <code>*x = element[lefttop--]</code>）</li>
-<li><strong>【易混】</strong> 判断"出栈序列是否合法"：序列中出现"小、大、更小"的交叉倒置即非法。<strong>栈满/栈空</strong>看 <code>top</code>；<strong>对顶栈</strong>两个栈顶相向增长，判满条件要写两个。</li>
+<li><strong>【易混】</strong>判断"出栈序列是否合法"：序列中出现"<strong>小、大、更小</strong>"的交叉倒置即非法。</li>
 </ul>
 <h3 id="3-5-34">模板 ③ 数组与广义表（5 道，3/4 卷）</h3>
 <ul>
 <li><strong>出现形态</strong>：二维数组<strong>行主序地址计算</strong>；广义表 <strong>head/tail/长度/深度</strong>；广义表<strong>存储结构的建立函数</strong>阅读；<strong>矩阵与其转置相加</strong>的算法阅读。</li>
 <li><strong>必写步骤（得分点）</strong></li>
-<li>地址计算：<strong>先由已知条件求首地址 SA</strong>（或求每个元素字节数 d），再套 <code>Loc(A[i][j]) ＝ SA + (i×列数 + j)×d</code>；<strong>下标从 0 还是 1 要看题干</strong>；</li>
+<li>地址计算：<strong>先由已知条件求首地址 SA</strong>（或求每个元素字节数 d），再套 <code>Loc(A[i][j]) ＝ SA ＋ (i×列数 ＋ j)×d</code>；<strong>下标从 0 还是 1 要看题干</strong>；</li>
 <li>head/tail：<strong>head 取第一个元素本身、tail 取去掉第一个元素后剩下的表且一定带括号</strong>，逐层剥壳；</li>
-<li>深度：嵌套层数（<strong>原子深度 0、空表深度 1、最外层括号算 1 层</strong>）；</li>
+<li>深度：嵌套层数（<strong>原子 0、空表 1、最外层括号算 1 层</strong>）；</li>
 <li>说功能：常见"<strong>用头尾链式结构递归建立广义表的存储结构</strong>""求 A 与其转置矩阵之和"。</li>
 <li><strong>本批真题</strong>：</li>
 <li><strong>B#25</strong> 求 L＝(a,(b,c),(x,(y,z),w)) 的表头、表尾、表长、深度（答案：head(L)＝a；tail(L)＝((b,c),(x,(y,z),w))；表长 3；深度 3）</li>
@@ -270,14 +784,14 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li><strong>D#21</strong> 二维数组 A[9][5] 行主序、每元素 4 个存储单元，A[1][4] 地址为 2000，求 A[7][3]（答案：先求 A[0][0]＝<strong>1964</strong>，再算 A[7][3]＝<strong>2116</strong>）</li>
 <li><strong>D#23</strong> 写出广义表 A＝(3,5)、B、C＝(A) 的表头和表尾（参考答案：A 表头 3、表尾 (5)；C 表头 A、表尾 ()）【注意】B 原卷字符残缺，参考答案文本为"表头 m′、表尾 ((2,3,1))"，回原卷核对。</li>
 </ul>
-<h3 id="4-6-44">模板 ④ 二叉树（6 道，4/4 卷）</h3>
+<h3 id="4-6-44">模板 ④ 二叉树（6 道，<strong>4/4 卷</strong>）</h3>
 <ul>
 <li><strong>出现形态</strong>：写<strong>前序/中序/后序</strong>序列；画 <strong>n 个结点的二叉树所有形态</strong>；<strong>由前序＋中序构造二叉树</strong>的函数填空；二叉树函数的<strong>功能分析</strong>（统计度为 1／度为 2 的结点数、中序遍历输出）；10 分的<strong>二叉树递归程序设计</strong>。</li>
 <li><strong>必写步骤（得分点）</strong></li>
 <li>由前序＋中序还原：<strong>必须写出"先取前序第一个为根，在中序里把序列一分为二"的递归划分过程</strong>，否则扣分；</li>
 <li>遍历序列：无论问哪一种，<strong>先画图再写序列</strong>，三序列一次写全；</li>
-<li>形态计数：3 个结点共 <strong>5 种</strong>形态；n 个结点的二叉树形态数＝<strong>卡特兰数 C(2n,n)/(n+1)</strong>；</li>
-<li>递归设计：<code>if (t==NULL) return 0;</code> ＋ <code>return f(left) + f(right) + 1;</code> 的骨架 + <strong>边界判断</strong>。</li>
+<li>形态计数：3 个结点共 <strong>5 种</strong>；n 个结点的二叉树形态数 ＝ <strong>卡特兰数</strong>；</li>
+<li>递归设计：<code>if (t==NULL) return 0;</code> ＋ <code>return f(left) + f(right) + 1;</code> 的骨架 ＋ <strong>边界判断</strong>。</li>
 <li><strong>本批真题</strong>：</li>
 <li><strong>A#24</strong> <strong>算法设计（10 分）</strong>：据位置与同类卷推断为二叉树递归算法（后序遍历类）【题面与答案均为图片，低可信】</li>
 <li><strong>B#21</strong> 写出题 21 图二叉树的前序、中序、后序序列（答案：前序 ABDEGHCFI；中序 DBGEHACFI；后序 DGHEBIFCA）</li>
@@ -286,7 +800,7 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li><strong>D#28</strong> 二叉树函数功能分析（答案：统计<strong>度为 2</strong> 的结点个数；原卷参考答案写"度为 1"，与代码矛盾——代码只在左右子树<strong>都非空</strong>时加 1）</li>
 <li><strong>D#29</strong> 二叉树函数功能分析（答案：<strong>按中序遍历输出各结点数据</strong>）</li>
 </ul>
-<h3 id="5-5-44">模板 ⑤ 图（5 道，4/4 卷）</h3>
+<h3 id="5-5-44">模板 ⑤ 图（5 道，<strong>4/4 卷</strong>）</h3>
 <ul>
 <li><strong>出现形态</strong>：写<strong>邻接矩阵中 0 的个数</strong>；<strong>Dijkstra</strong> 求单源最短路径；写 <strong>BFS 遍历序列</strong>并比较两种存储的时间复杂度；<strong>Kruskal</strong> 求最小生成树的过程；图的搜索算法（阅读／设计）。</li>
 <li><strong>必写步骤（得分点）</strong></li>
@@ -301,43 +815,112 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li><strong>C#30</strong> 图搜索类算法题 【题面仅存题号，据同型卷推断，存疑】</li>
 <li><strong>D#22</strong> 写出克鲁斯卡尔算法求最小生成树的求解过程（答案：<strong>把边按权值从小到大排序，依次取最小权值边，不构成回路则并入 E1，直到含 n−1 条边</strong>）</li>
 </ul>
-<h3 id="6-4-44">模板 ⑥ 排序（4 道，4/4 卷）</h3>
+<h3 id="6-4-44">模板 ⑥ 排序（4 道，<strong>4/4 卷</strong>）</h3>
 <ul>
 <li><strong>出现形态</strong>：给一段排序程序，问<strong>"这是哪一种排序、是否稳定、哨兵 r[0] 的作用"</strong>；给序列写<strong>直接插入排序的每一趟</strong>；写<strong>快速排序每一趟划分</strong>；<strong>建立最大堆（大根堆）并画堆</strong>。</li>
 <li><strong>必写步骤（得分点）</strong></li>
 <li>写各趟结果：<strong>一趟一行、一趟不能漏</strong>（直接插入 n−1 趟、起泡 n−1 趟、快速每次划分写一行）；</li>
 <li>建堆：<strong>从最后一个非叶结点（⌊n/2⌋）开始向前逐个"筛选"下沉</strong>，画成树再写层序；</li>
 <li>程序识别：<code>r[0]=r[i]</code> 且从后往前找插入位置 → <strong>直接插入排序（带哨兵）</strong>；哨兵 r[0] 的作用是<strong>暂存待插入记录并作循环边界</strong>；</li>
-<li>稳定性一口诀：<strong>稳定＝直接插入、起泡、归并、基数</strong>（"插泡归基"）；不稳定＝希尔、快速、选择、堆。</li>
+<li>稳定性口诀：<strong>稳定＝直接插入、起泡、归并、基数</strong>（"<strong>插泡归基</strong>"）。</li>
+<li><strong>【程序识别速查表】</strong>（看到代码特征就能报出算法名）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>代码特征</th>
+<th>是哪种排序</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>r[0]=r[i]</code>，从后往前边比较边后移</td>
+<td><strong>直接插入排序（带哨兵）</strong></td>
+</tr>
+<tr>
+<td>相邻两两比较交换，有"交换标志"</td>
+<td><strong>起泡（冒泡）排序</strong></td>
+</tr>
+<tr>
+<td>每趟扫描选最小，与第 i 个交换</td>
+<td><strong>简单选择排序</strong></td>
+</tr>
+<tr>
+<td><code>pivotkey = r[low]</code>，两侧指针相向移动交换</td>
+<td><strong>快速排序</strong></td>
+</tr>
+<tr>
+<td>从 ⌊n/2⌋ 开始筛选下沉</td>
+<td><strong>堆排序（建堆）</strong></td>
+</tr>
+<tr>
+<td>相邻长度 1、2、4… 两两归并</td>
+<td><strong>归并排序</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><strong>本批真题</strong>：</li>
 <li><strong>A#23</strong> 判断算法种类、稳定性及 r[0] 的作用（答案：<strong>直接插入排序</strong>；<strong>稳定</strong>；r[0] 为<strong>哨兵</strong>，存放待插入元素）</li>
 <li><strong>B#22</strong> 对 (34,56,12,89,43,67,25) 用直接插入法<strong>降序</strong>排序，写出每一趟（答案区给出全部 7 趟结果）</li>
 <li><strong>C#25</strong> 对 (42,18,23,54,67,35) 以第一个元素为基准，写出快速排序的每一趟结果（答案：[35 18 23] 42 [67 54] → [23 18] 35 42 [54] 67 → [18] 23 35 42 54 67）</li>
 <li><strong>D#24</strong> 把 73,14,21,2,5,34,44,52,61 建成最大堆并画出堆（参考答案层序：73,61,44,52,5,34,21,14,2）</li>
 </ul>
-<h3 id="7-5-44">模板 ⑦ 查找（5 道，4/4 卷）</h3>
+<h3 id="7-5-44">模板 ⑦ 查找（5 道，<strong>4/4 卷</strong>）</h3>
 <ul>
 <li><strong>出现形态</strong>：构造<strong>哈希函数</strong>考虑的因素（问答）；<strong>折半查找</strong>函数的返回值与功能分析；<strong>二分查找确定插入位置</strong>的算法填空／设计；两个插入序列生成的 <strong>BST 是否一样并画图</strong>；计算<strong>二叉排序树的平均查找长度 ASL</strong>。</li>
 <li><strong>必写步骤（得分点）</strong></li>
-<li>哈希：<strong>除留余数法 <code>H(key)=key % p</code>（p 取不大于表长的最大质数）</strong>；考虑因素＝①计算哈希函数所需时间 ②关键字长度 ③哈希表大小 ④关键字分布 ⑤查找频率；</li>
-<li>折半查找：<code>low=0, high=n-1</code>，<code>mid=(low+high)/2</code>，注意<strong>返回值是下标还是 −1</strong>；</li>
+<li>哈希：<strong>除留余数法 <code>H(key)=key % p</code>（p 取不大于表长的最大质数）</strong>；考虑因素＝①计算哈希函数所需时间 ②关键字长度 ③哈希表大小 ④关键字分布 ⑤查找频率（<strong>见下表</strong>）；</li>
+<li>折半查找：<code>low=0, high=n-1</code>，<code>mid=(low+high)/2</code>；<strong>返回值是下标还是 −1 要看清</strong>；</li>
 <li>BST：<strong>先画树再判形态</strong>；<strong>中序遍历一定有序</strong>，可用来验算；</li>
-<li>ASL：<strong>写出算式<code>ASL = Σ(每个结点的比较次数)/结点个数</code></strong>，结果按题干保留小数位。</li>
+<li>ASL：<strong>写出算式 <code>ASL = Σ(每个结点的比较次数)/结点个数</code></strong>，按题干保留小数位。</li>
+<li><strong>【哈希函数考虑因素表】</strong>：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>因素</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>计算哈希函数所需的时间</td>
+<td>函数本身不能太复杂</td>
+</tr>
+<tr>
+<td>关键字的长度</td>
+<td>长关键字要做处理</td>
+</tr>
+<tr>
+<td>哈希表的大小</td>
+<td>表长决定取模的 p</td>
+</tr>
+<tr>
+<td>关键字的分布</td>
+<td>是否均匀、是否有规律</td>
+</tr>
+<tr>
+<td>查找频率</td>
+<td>高频关键字尽量少冲突</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><strong>本批真题</strong>：</li>
-<li><strong>A#16</strong> 构造哈希函数时通常考虑的因素（参考答案：①计算哈希函数所需的时间 ②关键字的长度 ③哈希表的大小 ④关键字的分布 ⑤查找频率）</li>
+<li><strong>A#16</strong> 构造哈希函数时通常考虑的因素（参考答案即上表 5 条）</li>
 <li><strong>A#22</strong> 折半查找函数的返回值及算法功能（答案：key＝19 返回 <strong>−1</strong>；key＝28 返回 <strong>3</strong>；功能为<strong>折半查找</strong>）</li>
-<li><strong>B#29</strong> 二分查找有序表中插入元素 x 的算法填空（三个空：(1) <code>high = mid-1</code>；(2) <code>R[i+1] = R[i]</code>；(3) <code>R[i+1].key = x</code>）</li>
+<li><strong>B#29</strong> 二分查找有序表中插入元素 x 的算法填空（(1) <code>high = mid-1</code>；(2) <code>R[i+1] = R[i]</code>；(3) <code>R[i+1].key = x</code>）</li>
 <li><strong>C#24</strong> 两个插入序列生成的二叉排序树是否一样并画图（答案：<strong>不一样</strong>）</li>
 <li><strong>D#25</strong> 计算题 25 图三棵二叉查找树查找成功的平均查找长度（三树均 5 个结点，按各结点深度乘概率求和，保留 1 位小数）【答案区未给数值】</li>
 </ul>
 <h3 id="8-2-24">模板 ⑧ 基本概念问答（2 道，2/4 卷）</h3>
 <ul>
-<li><strong>出现形态</strong>：4 分的"小段默写"，出现在旧排法 34 题卷的解答题里。</li>
 <li><strong>本批真题</strong>：</li>
 <li><strong>A#17</strong> 简述算法的五个特性（答案：<strong>输入、输出、有穷性、确定性、可行性</strong>）</li>
-<li><strong>C#23</strong> 在应用中如何选择顺序表和链表（答案：<strong>按时间性能——查找多用顺序表，插入删除多用链表；长度变化大、难以预估时用链表</strong>）</li>
+<li><strong>C#23</strong> 在应用中如何选择顺序表和链表（答案见 0.2 主线 2 的表格）</li>
 </ul>
-<h3 id="_2">大题模板出现卷数一览（这就是"必考"清单）</h3>
+<h3 id="29">2.9 大题模板出现卷数一览（这就是"必考"清单）</h3>
 <table>
 <thead>
 <tr>
@@ -421,86 +1004,242 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 </ul>
 <hr>
 <h2 id="_3">附一、本批未考、但考纲明确要求 —— 必须回教材背（真题盲区）</h2>
-<ul>
-<li><strong>串的模式匹配：BF 与 KMP</strong></li>
-<li>BF 最好 O(n＋m)、最坏 <strong>O(n×m)</strong>；KMP 主串指针<strong>不回溯</strong>，时间 <strong>O(n＋m)</strong>。</li>
-<li><strong>next 特征向量的求法</strong>：<code>next[1]=0</code>，<code>next[j] = 前 j−1 个字符中"最长相等前后缀"的长度 ＋ 1</code>。<strong>next 只与模式串有关</strong>。</li>
-<li>常见题："求模式串 'abaabcac' 的 next 数组""说明 KMP 比 BF 好在哪"。</li>
-<li><strong>AOE 网与关键路径</strong></li>
-<li><strong>AOV 顶点表示活动（拓扑排序）；AOE 弧表示活动（关键路径）</strong>。</li>
-<li>步骤链：求各顶点最早发生时间 ve（<strong>取最大</strong>）→ 求各顶点最迟发生时间 vl（<strong>取最小</strong>）→ 求各活动的最早开始 e 与最迟开始 l → <strong>e＝l 的活动即关键活动</strong>，关键活动连成关键路径，<strong>路径长度＝工期</strong>。</li>
-<li><strong>AVL 树（平衡二叉树）与四种旋转</strong></li>
-<li>平衡因子 BF ＝ 左子树高 − 右子树高，<strong>|BF| ≤ 1</strong>。</li>
-<li>四种旋转：<strong>LL 型右旋、RR 型左旋、LR 型先左后右旋、RL 型先右后左旋</strong>。</li>
-<li>常见题："依次插入序列画出 AVL 树""判断某树是否平衡"。</li>
-<li><strong>其他考纲要求但本批 0—1 题的细节</strong></li>
-<li><strong>线索二叉树</strong>（中序线索化、找前驱/后继）；</li>
-<li><strong>树的计数与树/森林→二叉树的转换规则</strong>（"左孩子右兄弟"）；</li>
-<li><strong>图的十字链表 / 邻接多重表</strong>；</li>
-<li><strong>B 树的删除与分裂/合并</strong>；</li>
-<li><strong>基数排序</strong>与"不比较关键字"的排序；</li>
-<li><strong>稀疏矩阵的三元组表与十字链表</strong>的建立。</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>盲区</th>
+<th>考纲层次</th>
+<th>必背内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>串的模式匹配：BF 与 KMP</strong></td>
+<td>识记／领会</td>
+<td>BF 最坏 <strong>O(n×m)</strong>；KMP 主串指针<strong>不回溯</strong>，时间 <strong>O(n＋m)</strong>；<strong>next 特征向量</strong>求法：<code>next[1]=0</code>，<code>next[j] = 前 j−1 个字符中最长相等前后缀长度 ＋ 1</code>；<strong>next 只与模式串有关</strong></td>
+</tr>
+<tr>
+<td><strong>AOE 网与关键路径</strong></td>
+<td>简单应用</td>
+<td>步骤链：求各顶点<strong>最早发生时间 ve（取最大）</strong>→ 求<strong>最迟发生时间 vl（取最小）</strong>→ 求各活动<strong>最早开始 e</strong> 与<strong>最迟开始 l</strong> → <strong>e＝l 的活动为关键活动</strong>，连成关键路径，<strong>路径长度＝工期</strong>；<strong>AOV 顶点表活动（拓扑排序）／AOE 弧表活动（关键路径）</strong></td>
+</tr>
+<tr>
+<td><strong>AVL 树与四种旋转</strong></td>
+<td>综合应用</td>
+<td><code>BF ＝ 左子树高 − 右子树高</code>，<strong>平衡因子绝对值 ≤ 1</strong>；<strong>LL 型右旋、RR 型左旋、LR 型先左后右旋、RL 型先右后左旋</strong></td>
+</tr>
+<tr>
+<td>其他（各卷 0—1 题）</td>
+<td>识记／领会</td>
+<td><strong>线索二叉树</strong>（中序线索化、找前驱后继）· <strong>树/森林→二叉树的"左孩子右兄弟"规则</strong> · <strong>图的十字链表／邻接多重表</strong> · <strong>B 树的删除与分裂合并</strong> · <strong>基数排序</strong> · <strong>稀疏矩阵的十字链表</strong></td>
+</tr>
+</tbody>
+</table>
 <hr>
-<h2 id="_4">附二、易混点一句判别（真题反复设的陷阱）</h2>
-<ol>
-<li><strong>逻辑结构 vs 存储结构</strong>：逻辑结构<strong>面向问题</strong>、<strong>独立于</strong>存储；说"一一对应"＝<strong>错</strong>。</li>
-<li><strong>顺序存储 vs 链式存储</strong>：逻辑相邻 → 顺序存储<strong>一定</strong>物理相邻，链式存储<strong>不一定</strong>。</li>
-<li><strong>随机存取 vs 顺序存取</strong>：顺序表<strong>随机</strong>、链表<strong>顺序</strong>。</li>
-<li><strong>栈 LIFO vs 队列 FIFO</strong>：答"<strong>先进先出，先进后出</strong>"。</li>
-<li><strong>循环队列</strong>：空 <code>front==rear</code>；<strong>牺牲一个单元时满 <code>(rear+1)%m==front</code></strong>；队长 <code>(rear−front+m)%m</code>。</li>
-<li><strong>head/tail</strong>：<code>tail(A)</code> <strong>一定带括号</strong>；<code>head(tail(A))</code> 先剥一层再取第一个。</li>
-<li><strong>广义表深度</strong>＝嵌套层数（原子 0、空表 1、最外层括号算 1 层）。</li>
-<li><strong>满二叉树 vs 完全二叉树</strong>：满＝结点最多 2^k−1；完全＝只有最下两层可不满且<strong>左集中</strong>。</li>
-<li><strong>n₀ ＝ n₂ ＋ 1</strong>；<code>n = n₀+n₁+n₂</code>；<code>边数 = n−1 = n₁+2n₂</code>。</li>
-<li><strong>二叉链表空指针域 ＝ n＋1</strong>（n 个结点）。</li>
-<li><strong>唯一确定二叉树必须含中序</strong>（前序＋后序不行）。</li>
-<li><strong>树的先根 ↔ 二叉树先序；树的后根 ↔ 二叉树中序</strong>（森林同理）。</li>
-<li><strong>哈夫曼树</strong>：结点总数 <strong>2n−1</strong>；<strong>WPL 只算叶结点</strong>；<strong>没有度为 1 的结点</strong>；编码不唯一但 WPL 最小。</li>
-<li><strong>生成树边数恒为 n−1</strong>；所有顶点度之和 ＝ 2e <strong>一定是偶数</strong>。</li>
-<li><strong>Prim 适合稠密图、Kruskal 适合稀疏图</strong>；MST 不唯一但<strong>权值和最小</strong>。</li>
-<li><strong>AOV 拓扑排序 vs AOE 关键路径</strong>：<strong>AOV 有环则不能拓扑排序</strong>；关键活动是 <strong>e＝l</strong> 的活动。</li>
-<li><strong>Dijkstra 单源、Floyd 全对</strong>；Dijkstra <strong>不能有负权</strong>。</li>
-<li><strong>稳定排序只有 4 个：直接插入、起泡、归并、基数</strong>；不稳定：希尔、快速、选择、堆。</li>
-<li><strong>快速排序最坏 O(n²)</strong>、空间 <strong>O(log n)</strong>；<strong>归并需 O(n) 辅助空间且稳定</strong>；<strong>堆排序空间 O(1)</strong>。</li>
-<li><strong>"效率高且稳定"→ 归并；"效率高且辅助空间最省"→ 堆排序；"不需比较"→ 基数排序</strong>。</li>
-<li><strong>折半查找要求"有序 ＋ 顺序存储"</strong>；<strong>分块查找要求块间有序、块内无序</strong>；<strong>顺序查找无要求</strong>。</li>
-<li><strong>折半查找最大比较次数 ＝ ⌊log₂n⌋＋1</strong>（＝判定树高度）。</li>
-<li><strong>BST 中序遍历有序</strong>；删除有两个孩子的结点用<strong>中序前驱/后继</strong>替换。</li>
-<li><strong>m 阶 B 树</strong>：非根非叶关键字 <strong>⌈m/2⌉−1 ～ m−1</strong>，子树 <strong>⌈m/2⌉ ～ m</strong>；<strong>叶结点同层</strong>；<strong>"叶结点用指针链接"是 B＋树</strong>；<strong>插入只发生在最底层</strong>。</li>
-<li><strong>哈希</strong>：线性探查法产生<strong>聚集</strong>；ASL 只与<strong>装填因子</strong>有关；哈希表用<strong>数组</strong>存储。</li>
-<li><strong>"空串"长度 0，"空格串"长度不为 0</strong>；<strong>子串必须连续</strong>。</li>
-</ol>
+<h2 id="_4">附二、易混点速查（做成表，按章排）</h2>
+<h3 id="21">2.1 绪论与线性表</h3>
+<table>
+<thead>
+<tr>
+<th>对照项</th>
+<th>一句话判别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>逻辑结构 vs 存储结构</td>
+<td>逻辑结构<strong>面向问题、独立于存储</strong>；说"一一对应"＝<strong>错</strong></td>
+</tr>
+<tr>
+<td>顺序存储 vs 链式存储</td>
+<td>逻辑相邻 → 顺序存储<strong>一定</strong>物理相邻，链式存储<strong>不一定</strong></td>
+</tr>
+<tr>
+<td>随机存取 vs 顺序存取</td>
+<td>顺序表<strong>随机</strong>、链表<strong>顺序</strong></td>
+</tr>
+<tr>
+<td>插入 vs 删除移动次数</td>
+<td>插入 <strong>n−i＋1</strong>、删除 <strong>n−i</strong></td>
+</tr>
+<tr>
+<td>带头结点 vs 不带头结点判空</td>
+<td><code>head-&gt;next==NULL</code> vs <code>head==NULL</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="22">2.2 栈、队列、数组、广义表</h3>
+<table>
+<thead>
+<tr>
+<th>对照项</th>
+<th>一句话判别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>栈 vs 队列</td>
+<td><strong>LIFO</strong> vs <strong>FIFO</strong></td>
+</tr>
+<tr>
+<td>循环队列</td>
+<td>空 <code>front==rear</code>；<strong>牺牲一个单元时满 <code>(rear+1)%m==front</code></strong>；队长 <code>(rear−front+m)%m</code></td>
+</tr>
+<tr>
+<td>出栈序列合法性</td>
+<td>出现"<strong>小、大、更小</strong>"的交叉倒置即非法</td>
+</tr>
+<tr>
+<td>head / tail</td>
+<td><code>tail(A)</code> <strong>一定带括号</strong>；<code>head(tail(A))</code> 先剥一层再取第一个</td>
+</tr>
+<tr>
+<td>广义表深度</td>
+<td>嵌套层数（原子 <strong>0</strong>、空表 <strong>1</strong>、最外层括号算 1 层）</td>
+</tr>
+<tr>
+<td>空串 vs 空格串</td>
+<td>空串长度 <strong>0</strong>；空格串长度不为 0；<strong>子串必须连续</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="23">2.3 树与二叉树</h3>
+<table>
+<thead>
+<tr>
+<th>对照项</th>
+<th>一句话判别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>满二叉树 vs 完全二叉树</td>
+<td>满＝结点最多 2^k−1；完全＝只有最下两层可不满且<strong>左集中</strong></td>
+</tr>
+<tr>
+<td>n₀ 与 n₂</td>
+<td><strong>n₀ ＝ n₂ ＋ 1</strong></td>
+</tr>
+<tr>
+<td>二叉链表空指针域</td>
+<td><strong>n＋1</strong>（n 个结点）</td>
+</tr>
+<tr>
+<td>唯一确定二叉树</td>
+<td><strong>必须含中序</strong>（前序＋后序不行）</td>
+</tr>
+<tr>
+<td>树的先根 / 后根</td>
+<td><strong>树的先根 ↔ 二叉树先序</strong>；<strong>树的后根 ↔ 二叉树中序</strong></td>
+</tr>
+<tr>
+<td>哈夫曼树</td>
+<td>结点总数 <strong>2n−1</strong>；<strong>WPL 只算叶结点</strong>；<strong>无度为 1 的结点</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="24">2.4 图</h3>
+<table>
+<thead>
+<tr>
+<th>对照项</th>
+<th>一句话判别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>度之和</td>
+<td><strong>Σd ＝ 2e</strong>，一定是偶数</td>
+</tr>
+<tr>
+<td>生成树边数</td>
+<td>恒为 <strong>n−1</strong></td>
+</tr>
+<tr>
+<td>Prim vs Kruskal</td>
+<td><strong>Prim 适合稠密图、Kruskal 适合稀疏图</strong>；MST 不唯一但<strong>权值和最小</strong></td>
+</tr>
+<tr>
+<td>AOV vs AOE</td>
+<td><strong>AOV 顶点表活动</strong>（拓扑排序）；<strong>AOE 弧表活动</strong>（关键路径）；AOV 有环则不能拓扑排序</td>
+</tr>
+<tr>
+<td>Dijkstra vs Floyd</td>
+<td><strong>单源</strong> vs <strong>全对</strong>；Dijkstra <strong>不能有负权</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="25">2.5 排序与查找</h3>
+<table>
+<thead>
+<tr>
+<th>对照项</th>
+<th>一句话判别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>稳定排序</td>
+<td><strong>只有"插、泡、归、基"</strong>（直接插入、起泡、归并、基数）</td>
+</tr>
+<tr>
+<td>高效三兄弟</td>
+<td><strong>快排（平均）· 堆排 · 归并</strong>；<strong>空间最省＝堆（O(1)）</strong>、<strong>最费＝归并（O(n)）</strong></td>
+</tr>
+<tr>
+<td>选算法的固定搭配</td>
+<td><strong>基本有序 → 插入/冒泡</strong>；<strong>高效且稳定 → 归并</strong>；<strong>高效且省空间 → 堆</strong>；<strong>不比较 → 基数</strong></td>
+</tr>
+<tr>
+<td>折半查找前提</td>
+<td><strong>有序 ＋ 顺序存储</strong>；最大比较次数 <strong>⌊log₂n⌋＋1</strong></td>
+</tr>
+<tr>
+<td>分块查找前提</td>
+<td><strong>块间有序、块内无序</strong></td>
+</tr>
+<tr>
+<td>BST</td>
+<td>中序遍历<strong>一定有序</strong>；删除双孩子结点用<strong>中序前驱/后继</strong>替换</td>
+</tr>
+<tr>
+<td>m 阶 B 树</td>
+<td>非根非叶关键字 <strong>⌈m/2⌉−1 ～ m−1</strong>，子树 <strong>⌈m/2⌉ ～ m</strong>；<strong>叶结点同层</strong>；<strong>插入只在最底层</strong>；"叶结点用指针链接"＝<strong>B＋树</strong></td>
+</tr>
+<tr>
+<td>哈希</td>
+<td>线性探查产生<strong>聚集</strong>；ASL <strong>只与装填因子有关</strong>；哈希表用<strong>数组</strong>存储</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h2 id="30">附三、考前 30 分钟清单（只看这一页）</h2>
 <ul>
 <li><strong>复杂度排序</strong>：O(1) ＜ O(log n) ＜ O(n) ＜ O(n log n) ＜ O(n²) ＜ O(2ⁿ) ＜ O(n!)</li>
 <li><strong>地址公式</strong>：行主序 <code>SA + (i×列数 + j)×d</code>（下标 0 起）；对称矩阵 <strong>i≥j 时 k ＝ i(i+1)/2 ＋ j</strong></li>
-<li><strong>顺序表插入移动 n−i＋1、删除移动 n−i</strong>；平均移动 n/2 与 (n−1)/2</li>
+<li><strong>顺序表</strong>：插入移动 <strong>n−i＋1</strong>、删除移动 <strong>n−i</strong>；平均移动 n/2 与 (n−1)/2</li>
 <li><strong>循环队列</strong>：空 <code>front==rear</code>；满 <code>(rear+1)%m==front</code>；长 <code>(rear−front+m)%m</code></li>
 <li><strong>中缀→后缀</strong>：<code>(8+2*5)/7</code> ⇒ <code>8 2 5 * + 7 /</code></li>
-<li><strong>二叉树 5 条性质</strong>：第 i 层 ≤ 2^(i−1)；深 k 至多 2^k−1；<strong>n₀＝n₂＋1</strong>；深 ⌊log₂n⌋＋1；顺序存储 i ↔ 2i、2i+1</li>
-<li><strong>空指针域 ＝ n＋1</strong>（n 个结点的二叉链表）</li>
-<li><strong>唯一确定二叉树</strong>：前序＋中序／后序＋中序</li>
-<li><strong>哈夫曼</strong>：合并 n−1 次、结点 2n−1、WPL 只算叶结点</li>
+<li><strong>二叉树 5 性质</strong>：第 i 层 ≤ 2^(i−1)；深 k 至多 2^k−1；<strong>n₀＝n₂＋1</strong>；深 ⌊log₂n⌋＋1；顺序存储 i ↔ 2i、2i+1</li>
+<li><strong>空指针域 ＝ n＋1</strong>；<strong>唯一确定二叉树：前序＋中序／后序＋中序</strong></li>
+<li><strong>哈夫曼</strong>：合并 n−1 次、结点 2n−1、<strong>WPL 只算叶结点</strong></li>
 <li><strong>树的先根 ↔ 二叉树先序</strong>；<strong>树的后根 ↔ 二叉树中序</strong></li>
-<li><strong>图</strong>：Σ度 ＝ 2e；完全无向图 n(n−1)/2 边；<strong>n 顶点有向图最多 n(n−1) 条边</strong>；生成树 n−1 边</li>
+<li><strong>图</strong>：Σ度＝2e；完全无向图 n(n−1)/2 边；<strong>n 顶点有向图最多 n(n−1) 条边</strong>；生成树 n−1 边</li>
 <li><strong>Prim 稠密、Kruskal 稀疏</strong>；<strong>Dijkstra 单源、Floyd 全对</strong></li>
-<li><strong>拓扑排序</strong>：反复"取入度 0 顶点并删其出边"</li>
-<li><strong>关键活动</strong>：时间余量 ＝ 最迟开始 − 最早开始 ＝ 0</li>
+<li><strong>拓扑排序</strong>：反复"取入度 0 顶点并删其出边"；<strong>关键活动：时间余量 ＝ 最迟开始 − 最早开始 ＝ 0</strong></li>
 <li><strong>稳定排序</strong>：<strong>直接插入、起泡、归并、基数</strong></li>
-<li><strong>时间 O(n log n)</strong>：快速（平均）、堆、归并；<strong>空间 O(1)：堆</strong>；<strong>空间 O(n)：归并</strong></li>
+<li><strong>O(n log n)</strong>：快速（平均）、堆、归并；<strong>空间 O(1)：堆</strong>；<strong>空间 O(n)：归并</strong></li>
 <li><strong>折半查找最大比较次数 ＝ ⌊log₂n⌋＋1</strong>，前提"有序＋顺序存储"</li>
-<li><strong>BST 中序有序</strong>；<strong>AVL 平衡因子 |BF| ≤ 1</strong>；<strong>LL 右旋、RR 左旋、LR 先左后右、RL 先右后左</strong></li>
+<li><strong>BST 中序有序</strong>；<strong>AVL 平衡因子的绝对值 ≤ 1</strong>；<strong>LL 右旋、RR 左旋、LR 先左后右、RL 先右后左</strong></li>
 <li><strong>m 阶 B 树</strong>：非根非叶关键字 ⌈m/2⌉−1 ～ m−1，叶同层，<strong>插入只在最底层</strong></li>
 <li><strong>哈希</strong>：除留余数 <code>H(key)=key % p</code>；ASL 成功 ＝ 探查次数和 ／ 元素个数</li>
 <li><strong>图算法大题写三步</strong>：选中的边／确定的顶点、更新的数组、最终结果</li>
 <li><strong>算法题最后写边界判断</strong>：空表、空树、单结点、<code>return</code> 不要漏</li>
-<li><strong>解答题必须写过程</strong>：排序写"趟"、图算法写"每步集合/数组"、还原二叉树写"递归划分"</li>
+<li><strong>解答题必须写过程</strong>：排序写"趟"、图算法写"每步"、还原二叉树写"递归划分"</li>
 </ul>
 <hr>
 <blockquote>
-<p>数据来源（工作区）：<code>13003真题/分类/batch1-9.tsv</code>（逐题标注）、<code>重做13003/在编124题.tsv</code>（现行教材口径 4 套 124 题）。<br>
+<p>数据来源（工作区）：<code>重做13003/在编124题.tsv</code>（现行教材口径 4 套 124 题逐题标注）。<br>
 配套成品：<code>13003数据结构与算法_历年真题考点分布.html</code>（分板块统计与优先级）。</p>
 </blockquote>
 </main>

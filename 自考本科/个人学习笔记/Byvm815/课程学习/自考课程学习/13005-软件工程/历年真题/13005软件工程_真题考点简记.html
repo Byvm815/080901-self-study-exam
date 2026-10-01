@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>13005 软件工程 · 真题考点简记（填空题 / 简述题 分册版）</title>
+<title>13005 软件工程 · 真题考点简记（可读版 · 填空题 / 简述题 分册）</title>
 <style>
 :root{--fg:#24292f;--muted:#57606a;--line:#d0d7de;--accent:#0969da;--code:#f6f8fa;--soft:#fafbfc}
 *{box-sizing:border-box}
@@ -65,64 +65,405 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <body>
 <nav class="topnav"><span class="brand">13005 软件工程</span> <a href="13005软件工程_历年真题考点分布.html">← 13005 软件工程 · 历年真题考点分布分析（填空题 / 简述题 分板块版）</a></nav>
 <main>
-<h1 id="13005">13005 软件工程 · 真题考点简记（填空题 / 简述题 分册版）</h1>
+<h1 id="13005">13005 软件工程 · 真题考点简记（可读版 · 填空题 / 简述题 分册）</h1>
 <blockquote>
 <p><strong>口径</strong>：只统计<strong>现行教材</strong>（张琼声主编《软件工程》2024 年版，机械工业出版社，2025 年 4 月考期启用）启用后的真题 —— <strong>7 套卷、237 题</strong>（2025年4月【13005】、2025年4月【广东】、2025年10月【广东】、<code>13005 软件工程 2026年4月.pdf</code> 内含的 3 套、2026年4月自考02333）。<br>
-<strong>本册按题型分两大部分</strong>，因为这两种题的考法完全不同：<br>
-- <strong>第一部分 填空题（84 题）</strong>：题干已经把整个知识点讲完了，<strong>只挖掉最关键的那个名词</strong>。所以这一部分的记法是——<strong>把空缺处的答案记死</strong>，按章节考点排序，看句子就能想起那个词。<br>
-- <strong>第二部分 名词解释 / 简述题（46 题）</strong>：题干<strong>只给一个关键名词</strong>（名词解释）或一句要求（简述）。答案是<strong>一整段标准表述</strong>，需要你自己把关联名词串起来。所以这一部分的记法是——<strong>先记住加粗的关键名词，再按标准答案的层次自己展开</strong>。<br>
-说明：<strong>名词解释与简答在阅卷上是一回事</strong>（都是"对一个知识点的讲解"，按得分点给分）；本册中名词解释的答案同样采用<strong>真题参考答案原文</strong>。<br>
+<strong>本册和上一版最大的不同</strong>：不再按"一条一条孤立罗列"，而是<strong>先把知识点连成网络，再上记忆清单</strong>。做法是——<br>
+1. <strong>〇、一页知识地图</strong>：用树状结构把 7 章骨架画出来，并给出<strong>三条贯穿全课的主线</strong>；<br>
+2. <strong>每章开头先给"本章知识地图"</strong>，再给填空速记；<br>
+3. <strong>凡是"两大类 / 四种 / 五步 / 由强到弱"的知识，一律做成表格</strong>（这是本课程最容易失分、也最容易做成表格的地方）；<br>
+4. <strong>简述题按"知识簇"重组</strong>，同一簇的题目排在一起，并先给簇内关系图。<br>
 全部简述题答案均取自<strong>真题参考答案原文</strong>（已删去页码、"（每个给分点…）"之类的评分说明）；凡原卷答案残缺的，另行标注。</p>
 </blockquote>
 <hr>
-<h2 id="_1">零、卷型与两种题的准备方法</h2>
+<h2 id="_1">〇、一页知识地图（先看这一页）</h2>
+<h3 id="01-7">0.1 全课程骨架（7 章一棵树）</h3>
 <ul>
-<li><strong>33 题卷（100 分）</strong>：单选 10×2＝20 ； 填空 10×1＝10 ； <strong>名词解释 5×4＝20</strong> ； 简答 6×5＝30 ； 应用 2×10＝20</li>
-<li><strong>38 题卷（100 分）</strong>：单选 15×2＝30 ； 填空 15×1＝15 ； 简答 6×5＝30 ； 应用 2×10＝20</li>
-<li>两种卷型的<strong>填空都是每空 1 分</strong>、<strong>名词解释每题 4 分（答 3 个点即可）</strong>、<strong>简答每题 5 分（答 3—5 个点）</strong>。</li>
-<li><strong>填空题怎么准备</strong>：答案通常只有 1—4 个字，是这段话里<strong>最不可替换的那个术语</strong>（如"判定表""扇入""数据存储""变换型"）。<strong>只背词，不背句</strong>；看到题干里的关键词（"一组条件"→判定表；"多少个上级模块直接调用"→扇入）就能反射出答案。</li>
-<li><strong>名词解释/简答怎么准备</strong>：题干只给你一个词。<strong>先把该词的"关联名词簇"记住</strong>（如"耦合"→ 非直接/数据/标记/控制/外部/公共/内容耦合），再按<strong>标准答案的分点结构</strong>串成一段。评分是<strong>按点给分</strong>，所以<strong>分点写、每点一个术语</strong>最稳。</li>
-<li><strong>【注意】不要把"自己理解的解释"当成答案</strong>。本课程评分以<strong>参考答案的得分点</strong>为准（真题答案区常标注"每个给分点意思正确即可得分"）。本册尽量保留答案原文的措辞。</li>
+<li><strong>第 1 章 软件工程概述 —— "软件工程是什么、软件过程怎么走"</strong></li>
+<li>软件 ＝ <strong>程序 ＋ 数据 ＋ 文档</strong></li>
+<li>软件过程 4 活动：需求分析 → 设计实现 → 测试 → 演进</li>
+<li>软件开发方法学 <strong>3 要素</strong>：术语 / 表达格式 / 映射的过程指导 ←（与第 3 章"为什么 UML 要同 RUP 一起"是同一个考点）</li>
+<li>软件开发本质 ＝ <strong>不同抽象层之间的映射</strong>；抽象层 4 层：需求层 → 设计层 → 实现层 → 部署层</li>
+<li>模型分两大类：<strong>概念模型</strong>（是什么）／<strong>软件模型</strong>（怎么做 ＝ 设计模型＋实现模型＋部署模型）</li>
+<li>软件生存周期模型家族 → 见 <strong>0.2 主线 1</strong></li>
+<li><strong>第 2 章 结构化软件开发方法 —— "一条从需求到代码的直线"</strong></li>
+<li>需求：需求（定义＋<strong>5 基本特性</strong>）→ <strong>需求规约</strong>（＋<strong>4 基本性质</strong>）→ 需求发现技术 → 需求验证（<strong>需求复审</strong>）→ <strong>需求工作三大挑战</strong></li>
+<li>三大规约文档：<strong>需求规约 → 概要设计规约 → 详细设计规约</strong></li>
+<li>结构化分析三件套：<strong>数据流图 DFD</strong> → <strong>数据字典</strong> → <strong>加工小说明</strong></li>
+<li>结构化设计两段：<strong>总体设计</strong>（体系结构、SC 图、HIPO）→ <strong>详细设计</strong>（程序流程图／N-S 图／PAD／伪码）</li>
+<li>模块化：<strong>模块</strong> → <strong>模块独立性 ＝ 耦合（模块间）＋ 内聚（模块内）</strong></li>
+<li><strong>第 3 章 面向对象的软件开发方法 —— "四梁八柱 ＋ 一套图 ＋ 一套过程"</strong></li>
+<li>基本概念：对象 · 类 · 属性 · 操作（方法）· 可见性</li>
+<li>三大特征链：<strong>封装 → 继承（泛化）→ 多态（虚函数、重载）</strong></li>
+<li>类间 5 种关系：依赖 · 关联（聚合 · 组合）· 泛化</li>
+<li><strong>UML 图 2 大类 10 种</strong> → 见 <strong>0.2 主线 3 的表</strong></li>
+<li>分析类 3 种：边界类 · 实体类 · 控制类</li>
+<li><strong>RUP</strong>：用况驱动、体系结构中心、迭代增量；4 阶段 · 4 层 · 工作流</li>
+<li>体系结构：<strong>三层架构</strong>（界面层／业务逻辑层／数据访问层）</li>
+<li>OOD 准则：模块化 · 抽象 · 信息隐蔽 · 低耦合 · 高内聚 · 可复用</li>
+<li><strong>第 4 章 移动应用的设计与测试 —— 真题空白区（只 1 题填空＋1 题简述）</strong></li>
+<li>3 特点 · <strong>5 个迭代阶段</strong> · 界面设计 3 模型／3 方法 · 云计算 3 层 · 常见的 3 类开发方式与语言</li>
+<li><strong>第 5 章 软件测试 —— "一条步骤链 ＋ 白盒一套 ／ 黑盒一套"</strong></li>
+<li>步骤链：<strong>单元 → 组装（集成）→ 确认 → 系统</strong></li>
+<li>白盒：控制流程图 → <strong>路径测试</strong> → 覆盖策略（<strong>由弱到强一张表</strong>）</li>
+<li>黑盒：等价类 · 边界值 · 因果图 · 事务流（<strong>事务吸收</strong>）</li>
+<li>评估：<strong>静态评估 ／ 动态评估</strong></li>
+<li><strong>第 6 章 软件维护 —— "四类维护 ＋ 一个可维护性"</strong></li>
+<li>维护定义 → <strong>4 种维护类型</strong> → 维护的副作用 → <strong>可维护性 4 属性</strong> → 提高可维护性 4 方法</li>
+<li><strong>第 7 章 软件项目管理 —— 真题最少的一章（只 2 题简述）</strong></li>
+<li>度量 · 估算 · 风险 · 进度 · 配置管理 · 质量保证；<strong>团队结构 7 因素</strong> · <strong>项目管理 5 大困难</strong></li>
+</ul>
+<h3 id="02">0.2 把零散考点连成三条主线</h3>
+<p><strong>主线 1：软件生存周期模型家族</strong>（第 1 章 ＋ 第 3 章 RUP，<strong>同一族概念，跨章考</strong>）</p>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>一句话内核</th>
+<th>相对谁而言</th>
+<th>主要短板（简答题常问）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>瀑布模型</strong></td>
+<td>阶段<strong>按固定顺序</strong>自上而下衔接，每阶段有输入／输出</td>
+<td>基线</td>
+<td>要求客户一开始就把需求讲完整；<strong>需求不稳定就会延期</strong>；前期难评估进度；过早强调文档</td>
+</tr>
+<tr>
+<td><strong>原型（快速原型）模型</strong></td>
+<td>先做一个可运行的原型让用户看</td>
+<td>瀑布</td>
+<td>原型容易被当成产品；需求易反复</td>
+</tr>
+<tr>
+<td><strong>增量模型</strong></td>
+<td><strong>需求分组，形成一个个增量</strong>，对每一增量实施瀑布式开发</td>
+<td>瀑布</td>
+<td>未规划的变更会让后续增量<strong>不稳定</strong>；可能要重新开发／发布；进度与配置复杂</td>
+</tr>
+<tr>
+<td><strong>螺旋模型</strong></td>
+<td><strong>原型模型的迭代性 ＋ 瀑布模型的可控性和系统性</strong></td>
+<td>原型＋瀑布</td>
+<td>需要风险评估能力；成本高</td>
+</tr>
+<tr>
+<td><strong>RUP（统一过程）</strong></td>
+<td>以<strong>用况</strong>为驱动、以<strong>体系结构</strong>为中心、<strong>迭代增量式</strong></td>
+<td>重量级</td>
+<td>过程资产多，小项目重</td>
+</tr>
+<tr>
+<td><strong>敏捷开发</strong></td>
+<td><strong>以人为核心、迭代、增量</strong>；快速响应变化、持续交付</td>
+<td>重量级过程</td>
+<td>文档少；依赖团队素质与客户参与</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>记忆钩子</strong>：<strong>"瀑布看顺序、原型看试错、增量分块交、螺旋加风险、RUP 看用况、敏捷讲人"</strong>。</li>
+<li><strong>RUP 与 UML 的关系（第 3 章必考）</strong>：方法学 3 要素中，<strong>UML 只给了前两项（术语 ＋ 表达格式），第三项（映射的过程指导）由 RUP 补上</strong> → 所以 <strong>UML 要同 RUP 一起才称得上一种软件开发方法学</strong>。</li>
+</ul>
+<p><strong>主线 2：结构化方法的"一条直线"</strong>（第 2 章内部＋与第 5 章测试接口）</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>产出文档 / 工具</th>
+<th>关键考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>需求获取</td>
+<td>需求、需求发现技术（<strong>交谈</strong>…）</td>
+<td>需求的 5 个基本特性</td>
+</tr>
+<tr>
+<td>需求分析</td>
+<td><strong>需求规约</strong>（＝软件需求说明书）</td>
+<td>需求规约的 4 个基本性质；需求复审</td>
+</tr>
+<tr>
+<td>结构化分析</td>
+<td><strong>DFD</strong>（4 种符号）＋ <strong>数据字典</strong>（符号＋ 4 类条目）＋ <strong>加工小说明</strong>（3 种工具）</td>
+<td>DFD 分层（自顶而下、逐步求精）；<strong>变换型／事务型</strong></td>
+</tr>
+<tr>
+<td>总体（概要）设计</td>
+<td><strong>概要设计规约</strong>、<strong>软件结构图 SC</strong>、<strong>HIPO 图</strong></td>
+<td>深度／宽度／扇入／扇出／作用域／控制域；变换分析／事务分析</td>
+</tr>
+<tr>
+<td>详细设计</td>
+<td><strong>详细设计规约</strong>、程序流程图／N-S／PAD／伪码</td>
+<td>结构化程序设计 3 种基本结构；<strong>每结构只有一个入口一个出口</strong></td>
+</tr>
+<tr>
+<td>贯穿全程的质量线</td>
+<td><strong>模块独立性 ＝ 耦合 ＋ 内聚</strong></td>
+<td>耦合由弱到强 7 级、内聚由弱到强 7 级（见表格）</td>
+</tr>
+<tr>
+<td>测试</td>
+<td>单元 → 组装 → 确认 → 系统</td>
+<td>单元测试依据<strong>详细设计</strong>、用<strong>白盒</strong>；确认测试依据<strong>需求规格说明</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>主线 3：面向对象的"四梁八柱"</strong>（第 3 章内部）</p>
+<ul>
+<li><strong>第一层 三个基本概念</strong>：<strong>对象</strong>（客观世界中的实体）→ <strong>类</strong>（一组具有<strong>相同属性、操作、关系和语义</strong>的对象的描述）→ <strong>可见性</strong>（<code>+</code> 公有 <code>-</code> 私有 <code>#</code> 受保护 <code>~</code> 包内）</li>
+<li><strong>第二层 三大特征（互相咬合，顺序不能乱）</strong>：</li>
+<li><strong>封装</strong> ＝ 把<strong>属性和服务结合成一个独立的系统单元</strong>，是<strong>信息隐藏技术</strong>；→ 才谈得上"修改内部不影响外部"</li>
+<li><strong>继承（泛化）</strong> ＝ 子类继承父类的属性和方法，形成<strong>"一般 → 特殊"</strong>的层次关系；只有一个父类叫<strong>单继承</strong></li>
+<li><strong>多态</strong> ＝ 同一操作作用于不同对象有不同解释和执行结果；C++ 里靠<strong>虚函数</strong>实现</li>
+<li><strong>第三层 类之间 5 种关系</strong>：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>关系</th>
+<th>语义</th>
+<th>判别关键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>依赖</strong></td>
+<td>一个类"用到"另一个类</td>
+<td><strong>只是把对方作为操作参数</strong> → 抽象为依赖最合宜</td>
+</tr>
+<tr>
+<td><strong>关联</strong></td>
+<td>一般性的结构连接</td>
+<td>普通"有关系"</td>
+</tr>
+<tr>
+<td><strong>聚合</strong></td>
+<td>整体-部分，<strong>部分可独立存在</strong></td>
+<td>整体消亡，部分还能活</td>
+</tr>
+<tr>
+<td><strong>组合</strong></td>
+<td>整体-部分，<strong>部分与整体共存亡</strong></td>
+<td><strong>整体实例不存在了，部分实例也随之消失</strong></td>
+</tr>
+<tr>
+<td><strong>泛化（继承）</strong></td>
+<td>"一般"与"特殊"</td>
+<td>4 个约束：完整／不完整／<strong>互斥</strong>／<strong>重叠</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>第四层 UML 图的两大类（10 种）</strong> —— 这一题 2025年4月【13005】#29 考过，<strong>表格记法</strong>：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>大类</th>
+<th>中文名</th>
+<th>英文名</th>
+<th>记什么</th>
+<th>共几种</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>结构图</strong>（静态）</td>
+<td><strong>类图</strong></td>
+<td>Class Diagram</td>
+<td>类、属性、操作、类间关系</td>
+<td>5</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>对象图</strong></td>
+<td>Object Diagram</td>
+<td>某一时刻的对象实例快照</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><strong>组件（构件）图</strong></td>
+<td>Component Diagram</td>
+<td>软件构件及其依赖</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><strong>部署图</strong></td>
+<td>Deployment Diagram</td>
+<td><strong>网络的物理布局和各种组件的位置</strong></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><strong>包图</strong></td>
+<td>Package Diagram</td>
+<td>把模型元素分组</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>行为图</strong>（动态）</td>
+<td><strong>用例（用况）图</strong></td>
+<td>Use Case Diagram</td>
+<td><strong>描述系统功能与角色之间的交互</strong></td>
+<td>5</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>序列（顺序）图</strong></td>
+<td>Sequence Diagram</td>
+<td>一组对象＋<strong>按时序</strong>组织的交互与消息</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><strong>协作图</strong></td>
+<td>Collaboration Diagram</td>
+<td>对象之间的结构关系与消息</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><strong>状态图</strong></td>
+<td>State Diagram</td>
+<td>描述对象行为的变化和<strong>状态迁移</strong></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><strong>活动图</strong></td>
+<td>Activity Diagram</td>
+<td>工作流的活动与并发</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>一句话辨析</strong>：<strong>"类、对象、组件、部署、包"是结构（静态）；"用例、序列、协作、状态、活动"是行为（动态）</strong>。<strong>支持系统生存周期建模→状态图；支持系统交互建模→交互图（序列图／协作图）。</strong></li>
+</ul>
+<h3 id="03">0.3 两类题怎么准备</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>填空题（84 题，每空 1 分）</strong></th>
+<th><strong>名词解释 ＋ 简述题（46 题，4—5 分／题）</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>题干给你什么</td>
+<td><strong>整段描述</strong>，只挖掉最关键的一个名词</td>
+<td><strong>只给一个名词</strong>或一句要求</td>
+</tr>
+<tr>
+<td>你要输出什么</td>
+<td><strong>一个词</strong>（1—4 个字）</td>
+<td><strong>一整段分点表述</strong></td>
+</tr>
+<tr>
+<td>评分依据</td>
+<td>词对不对</td>
+<td><strong>参考答案的得分点</strong>（常印"每个给分点意思正确即可得分"）</td>
+</tr>
+<tr>
+<td>复习动作</td>
+<td><strong>只背词，不背句</strong>；看到题干关键词就反射出那个词</td>
+<td><strong>先记加粗的关键名词，再按标准答案的分点层次自己展开</strong></td>
+</tr>
+<tr>
+<td>覆盖策略</td>
+<td>84 个空 → <strong>74 个互不相同的答案</strong>，只能按章节把术语过一遍</td>
+<td>46 题 → <strong>34 个题眼，8 个高频题眼覆盖 43.5%</strong>，可以按"必考清单"背</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>答题纪律</strong>：名词解释写 <strong>3 个点</strong>（4 分）；简答写 <strong>3—5 个点</strong>，<strong>每点以关键名词开头</strong>，分号或序号分行写，不写长段落。</li>
 </ul>
 <hr>
-<h2 id="84">第一部分 填空题速记（84 题）</h2>
+<h2 id="_2">第一部分 填空题速记（按章 → 知识部位）</h2>
 <blockquote>
-<p>记法：空缺处的答案已<strong>加粗</strong>。括号里是出处（卷·题号），用于回原卷核对。</p>
+<p>记法：空缺处的答案已<strong>加粗</strong>。括号里是出处（卷·题号），用于回原卷核对。<br>
+每个"知识部位"下面先给一句<strong>关系说明</strong>（这一组空考的是同一个概念的哪些侧面），再列句子。</p>
 </blockquote>
 <h3 id="1-13">第 1 章 软件工程概述（13 题）</h3>
+<p><strong>本章知识地图</strong>：软件（程序＋数据＋文档）→ 软件过程 4 活动 → 方法学 3 要素 → 开发本质＝抽象层映射 → 概念模型／软件模型 → 生存周期模型家族（瀑布→原型→增量→螺旋→RUP）。</p>
 <ul>
-<li><strong>软件的定义与特点</strong></li>
+<li><strong>软件的定义与特点</strong>（2 空：一个问"软件包含什么"，一个问"软件的完整集合是什么"）</li>
 <li>计算机软件一般是指计算机系统中的程序及其<strong>文档</strong>。（100）</li>
 <li>软件是计算机系统中与硬件相互依存的另一部分，是包括程序、<strong>数据</strong>及其相关文档的完整集合。（033）</li>
-<li><strong>概念模型与软件模型</strong></li>
+<li><strong>概念模型与软件模型</strong>（2 空：两者是"是什么 vs 怎么做"的对照关系）</li>
 <li>系统模型分为两大类，一类称为<strong>概念模型</strong>，描述系统是什么；另一类统称为软件模型，描述了实现概念模型的软件解决方案。软件模型可进一步分为设计模型、实现模型和<strong>部署模型</strong>。（【13005】#17）</li>
 <li>在需求层上创建的系统，（<strong>概念模型</strong>）是对客观事物系统的抽象，即问题定义。（#套2·55）</li>
-<li><strong>软件开发的本质与基本途径</strong></li>
+<li><strong>软件开发的本质与基本途径</strong>（2 空：一个考"抽象层"，一个考"方法族"）</li>
 <li>在从<strong>问题域</strong>向运行平台映射的过程中，为控制其复杂性，需要确定多个抽象层，例如<strong>需求层</strong>、设计层、实现层和部署层。（【13005】#16）</li>
 <li>典型的方法包括<strong>结构化方法</strong>、面向数据结构的软件开发方法和<strong>面向对象方法</strong>。（【13005】#18）</li>
-<li><strong>软件工程的定义、研究领域与发展</strong></li>
+<li><strong>软件工程的定义、研究领域与发展</strong>（2 空：同一句话在 2 套卷各挖一个词）</li>
 <li>软件工程作为一门学科，其发展可以划分为两个时期：前期主要研究系统实现技术，后期则开始关注<strong>软件质量</strong>和<strong>软件工程管理</strong>。（2026·16）</li>
 <li>20 世纪 60 年代末到 80 年代初，软件工程的主要特征可概括为：前期主要研究系统实现技术，后期则开始关注软件质量和<strong>软件管理（或软件工程管理）</strong>。（#套2·54）</li>
-<li><strong>软件过程与生存周期阶段</strong></li>
+<li><strong>软件过程与生存周期阶段</strong>（1 空）</li>
 <li>一般而言，软件过程都需要包含以下 4 种基本活动：软件需求分析、软件设计和实现、<strong>软件测试</strong>、软件演进。（【广东】#18）</li>
-<li><strong>瀑布模型</strong></li>
+<li><strong>瀑布模型</strong>（2 空）</li>
 <li>在瀑布模型中，软件开发的各个阶段按照严格的顺序进行，通常是需求分析、<strong>设计</strong>、编码、测试、部署和<strong>运行</strong>。（【13005】#24）</li>
 <li>瀑布模型规定了各开发阶段的活动，并且自上而下具有相互衔接的<strong>固定</strong>顺序，还规定了每一阶段的<strong>输入（工作对象以及本阶段的工作成果）</strong>作为输出传送到下一阶段。（#套2·66）</li>
-<li><strong>螺旋模型</strong></li>
+<li><strong>螺旋模型</strong>（1 空：考它"由哪两个模型组合而来"）</li>
 <li>螺旋模型是一种演进式软件过程模型，结合了<strong>原型</strong>模型的迭代性质和瀑布模型的可控性和系统性特点。（033·17）</li>
-<li><strong>统一过程（RUP）</strong></li>
+<li><strong>统一过程（RUP）</strong>（1 空）</li>
 <li>RUP 是一种以用况为驱动、以体系结构为中心的<strong>迭代、增量式开发</strong>。（#套3·100）</li>
 </ul>
-<h3 id="2-30">第 2 章 结构化软件开发方法（30 题）</h3>
+<h3 id="2-30">第 2 章 结构化软件开发方法（30 题，填空第一大章）</h3>
+<p><strong>本章知识地图</strong>：需求（＋5 特性）→ 需求规约（＋4 性质）→ 需求发现／验证；DFD（4 符号、分层、变换型／事务型）→ 数据字典 → 加工小说明（3 工具）；模块 → 模块独立性（耦合＋内聚）；总体设计（SC 图、HIPO）→ 详细设计（4 工具）；三大规约文档。</p>
 <ul>
-<li><strong>数据流图（DFD）符号·分层与绘制</strong>（6 题）</li>
+<li><strong>数据流图（DFD）符号·分层与绘制</strong>（6 题：<strong>同一张图的四个侧面</strong>——怎么分层、符号含义、静态结构、类型、起点）</li>
 <li>在顶层数据流图的基础上，按功能分解的设计思想，进行"<strong>自顶而下</strong>""<strong>逐步求精</strong>"，建立系统的层次数据流图。（【广东】#16）</li>
 <li>在数据流图中，<strong>数据存储</strong>是数据的静态结构。（【广东】#17）</li>
 <li>数据流图可以分为两种基本类型，分别是<strong>变换型</strong>数据流图和<strong>事务型</strong>数据流图。（【广东】#19）</li>
 <li>结构化需求分析中，数据流的起点称为<strong>数据源</strong>。（【广东】#29）</li>
 <li>数据流图中，圆圈 ○ 代表加工，箭头 → 代表<strong>数据流向</strong>。（【广东】#14）</li>
 <li>在结构化分析方法中，表示"数据的静态结构"的术语是<strong>数据存储</strong>。（#套3·95）</li>
-<li><strong>详细设计工具与结构化程序设计</strong>（4 题）</li>
+<li><strong>DFD 四种符号对照表</strong>：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>名称</th>
+<th>画法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>外部实体</td>
+<td><strong>数据源／数据潭</strong></td>
+<td>矩形</td>
+</tr>
+<tr>
+<td>加工</td>
+<td>变换单元</td>
+<td>圆圈 ○</td>
+</tr>
+<tr>
+<td><strong>数据流</strong></td>
+<td>数据的流向</td>
+<td>箭头 →</td>
+</tr>
+<tr>
+<td><strong>数据存储</strong></td>
+<td><strong>数据的静态结构</strong></td>
+<td>开口矩形</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>详细设计工具与结构化程序设计</strong>（4 题：3 个空在考"3 种基本结构"，1 个空在考 HIPO 图的用途）</li>
 <li>结构化程序设计的三种基本控制结构为<strong>顺序</strong>、<strong>选择</strong>和循环。（【广东】#20）</li>
 <li>结构化程序设计方法是一种基于结构的编程方法，即采用<strong>顺序结构</strong>、选择结构以及重复结构进行编程，其中每一结构只允许一个<strong>入口</strong>和一个出口。（【13005】#19）</li>
 <li>在结构化方法中，HIPO 图应用在<strong>总体设计</strong>阶段，由 IPO 图和<strong>H 图（层次图）</strong>两部分组成。（#套2·57）</li>
@@ -131,10 +472,12 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li>当描述的加工由一组操作组成，而且是否执行某些操作取决于一组条件时，可以用<strong>判定表</strong>来描述。（【广东】#18）</li>
 <li>在结构分析中，加工是对<strong>数据流</strong>变换单元，即它接受输入数据，对其进行<strong>处理</strong>，并产生输出。（【13005】#25）</li>
 <li>加工说明就是对数据流图中每个加工的说明，通常用 3 种形式来描述，即结构化语言、判定表和<strong>判定树</strong>。（033·19）</li>
-<li><strong>模块结构图的深度·宽度·扇入扇出·作用域</strong>（3 题）</li>
+<li><strong>加工小说明 3 种工具</strong>：结构化语言 · <strong>判定表</strong> · <strong>判定树</strong>；<strong>"取决于一组条件"→ 判定表</strong>。</li>
+<li><strong>模块结构图的深度·宽度·扇入扇出·作用域</strong>（3 题：<strong>四个度量各挖一个</strong>）</li>
 <li>表明有多少个上级模块直接调用一个模块称为模块的<strong>扇入</strong>。（【广东】#23）</li>
 <li>"指受该模块内一个判定所影响的所有模块的集合"称为模块的<strong>作用域</strong>。（#套2·58）</li>
 <li>在一个软件结构中，宽度是指同一个层次上模块总数的<strong>最大值</strong>，而对宽度影响最大的因素是模块的<strong>扇出</strong>。（#套2·59）</li>
+<li><strong>四个度量一句话对照</strong>：<strong>深度＝层数</strong>；<strong>宽度＝同层模块数的最大值</strong>；<strong>扇出＝本模块调用的下级模块数</strong>（影响宽度）；<strong>扇入＝直接调用本模块的上级模块数</strong>；<strong>作用域由"判定"决定，控制域由"调用层次"决定</strong>。</li>
 <li><strong>模块、模块化与模块独立性</strong>（3 题）</li>
 <li>在结构化设计中，执行一个特殊任务的一个过程以及相关的数据结构，称之为<strong>模块</strong>。（2026·20）</li>
 <li>一般用两个准则度量模块独立性：模块间的<strong>耦合</strong>和模块的内聚。（033·15）</li>
@@ -144,30 +487,32 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li>指不同模块之间相互依赖程度的度量是<strong>耦合</strong>。（#套3·96）</li>
 <li><strong>内聚类型与设计原则</strong>（1 题）</li>
 <li>如果一个模块内的处理是相关的，而且必须以特定次序执行，则称这个模块为<strong>过程</strong>内聚模块。（【广东】#17）</li>
-<li><strong>需求规约的定义与作用</strong>（1 题）</li>
+<li><strong>需求规约的定义与作用</strong>（1 空：考"需求规约会派生哪两个文档"）</li>
 <li>需求规约是创建产品验收测试计划和用户指南的基础，即基于需求规约一般还会产生<strong>初始测试计划</strong>和<strong>用户系统操作描述</strong>两个文档。（2026·17）</li>
-<li><strong>需求规约的基本性质</strong>（1 题）</li>
+<li><strong>需求规约的基本性质</strong>（1 空）</li>
 <li>需求分析阶段应遵循的原则包括"需求说明"应该具有<strong>完整性（正确性）</strong>和一致性。（033·16）</li>
-<li><strong>需求的分类与基本性质</strong>（1 题）</li>
+<li><strong>需求的分类与基本性质</strong>（1 空）</li>
 <li>对于单一一个需求，必须具有的基本性质：必要的、无歧义的、可跟踪的以及<strong>可测的、可测量的</strong>。（#套3·93）</li>
-<li><strong>需求发现技术</strong>（1 题）</li>
+<li><strong>需求发现技术</strong>（1 空）</li>
 <li>需求人员通过提出问题／用户回答的方式，直接询问用户需要的初始发现需求技术是<strong>交谈</strong>。（#套3·94）</li>
-<li><strong>需求验证与需求工作的挑战</strong>（1 题）</li>
+<li><strong>需求验证与需求工作的挑战</strong>（1 空）</li>
 <li>验证需求是不是歧义的，一般采用<strong>需求复审</strong>。（#套2·56）</li>
-<li><strong>数据字典的符号与条目</strong>（1 题）</li>
+<li><strong>数据字典的符号与条目</strong>（1 空）</li>
 <li>客体的表示方法中，表达式"性别＝男|女"属于<strong>选择</strong>结构。（2026·18）</li>
-<li><strong>总体（概要）设计的任务与步骤</strong>（1 题）</li>
+<li><strong>数据字典符号表</strong>：<code>＝</code> 定义 · <code>＋</code> 顺序 · <code>[ \| ]</code> <strong>选择</strong> · <code>{ }</code> 重复 · <code>( )</code> 可选。</li>
+<li><strong>总体（概要）设计的任务与步骤</strong>（1 空）</li>
 <li>总体设计阶段的基本任务是系统的功能需求分配到一个特定的软件体系结构中。表达这一软件体系结构的工具很多，其中<strong>层次图</strong>很适合在自顶向下设计软件的过程中使用。（2026·19）</li>
-<li><strong>逐步求精方法</strong>（1 题）</li>
+<li><strong>逐步求精方法</strong>（1 空）</li>
 <li>把要解决问题的过程分解为多个步骤或阶段，每一步是对上一步结果的细化，以接近问题的解法，该方法称为<strong>逐步求精</strong>。（#套3·97）</li>
 </ul>
-<h3 id="3-23">第 3 章 面向对象的软件开发方法（23 题）</h3>
+<h3 id="3-23">第 3 章 面向对象的软件开发方法（23 题，填空第二大章）</h3>
+<p><strong>本章知识地图</strong>：对象／类／可见性 → 封装 → 继承（泛化）→ 多态 → 类间 5 种关系 → UML 图 2 大类 → 分析类 3 种 → RUP（4 阶段／4 层／工作流）→ 三层架构 → OOD 准则。</p>
 <ul>
 <li><strong>类与对象的概念、构成与可见性</strong>（3 题）</li>
 <li>在 C++ 中，对象的<strong>操作（方法）</strong>称作成员函数。（【广东】#11）</li>
 <li>类是一组具有相同<strong>属性</strong>、操作、关系和<strong>语义</strong>的对象的描述。（2026·21）</li>
 <li>类是一组具有相同数据结构和相同<strong>行为（操作／方法）</strong>的对象的集合。（033·13）</li>
-<li><strong>封装·继承·多态·重载</strong>（3 题）</li>
+<li><strong>封装·继承·多态·重载</strong>（3 题：<strong>三大特征各挖一个词</strong>）</li>
 <li>在 C++ 语言中，多态性是通过<strong>虚</strong>函数来实现的。（【广东】#12）</li>
 <li>继承是指一个类的定义中可以派生出另一个类的定义，派生出的类被称作<strong>子类</strong>。（【广东】#16）</li>
 <li>在泛化中，如果一个类只有一个父类，则说它使用了<strong>单继承</strong>。（#套2·60）</li>
@@ -177,56 +522,58 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <li><strong>统一过程模型（RUP）概述</strong>（2 题）</li>
 <li>RUP 是以<strong>用况</strong>为驱动、以<strong>体系结构</strong>为中心的迭代、增量式开发。（【广东】#21）</li>
 <li>RUP 利用 UML 提供的术语和工具定义了需求获取层、系统分析层、设计层、<strong>实现层</strong>。（#套2·62）</li>
-<li><strong>RUP 的工作流与四层结构</strong>（1 题）</li>
+<li><strong>RUP 的工作流与四层结构</strong>（1 空）</li>
 <li>RUP 为设计层提供了 4 个术语，分别是：设计类、<strong>用况细化</strong>、设计子系统和<strong>接口</strong>。（【13005】#22）</li>
-<li><strong>RUP 的四个开发阶段</strong>（1 题）</li>
+<li><strong>RUP 的四个开发阶段</strong>（1 空）</li>
 <li>通过演化形成最终的系统体系结构基线，开发完整的系统，确保产品可以开始向客户交付，即具有初始操作能力 —— 本阶段属于<strong>构造</strong>阶段。（2026·24）</li>
-<li><strong>RUP 各层的模型与活动</strong>（1 题）</li>
+<li><strong>RUP 各层的模型与活动</strong>（1 空）</li>
 <li>RUP 的<strong>部署模型</strong>包含节点和主动类到节点的初始映射。（2026·25）</li>
-<li><strong>UML 的定义与图形工具分类</strong>（1 题）</li>
+<li><strong>UML 的定义与图形工具分类</strong>（1 空：<strong>UML 图两在类的用途对照</strong>）</li>
 <li>UML 提供的图形化工具中，支持系统生存周期建模的是<strong>状态图</strong>，支持系统交互建模的是<strong>交互图</strong>。（#套2·61）</li>
-<li><strong>依赖关系</strong>（1 题）</li>
+<li><strong>依赖关系</strong>（1 空）</li>
 <li>如果一个类只是使用另一个类作为它的操作参数，那么把这两个类之间的这一关系抽象为<strong>依赖</strong>最为合宜。（2026·23）</li>
-<li><strong>泛化关系</strong>（2 题）</li>
+<li><strong>泛化关系</strong>（2 空）</li>
 <li>为了进一步表达泛化的语义，UML 给出了 4 个约束，分别为完整、不完整、<strong>互斥</strong>和<strong>重叠</strong>。（2026·22）</li>
 <li>表达两个类之间"一般"与"特殊"的关系称作<strong>泛化（继承）</strong>关系。（033·11）</li>
-<li><strong>组合·聚合与整体-部分关系</strong>（1 题）</li>
+<li><strong>组合·聚合与整体-部分关系</strong>（1 空：<strong>判别关键在"生存周期是否相同"</strong>）</li>
 <li>整体类的实例负责创建和消除部分类的实例，且二者具有相同生存周期的关联关系称为<strong>组合</strong>。（#套3·99）</li>
-<li><strong>顺序图（时序图）与协作</strong>（1 题）</li>
+<li><strong>顺序图（时序图）与协作</strong>（1 空）</li>
 <li><strong>顺序图</strong>是一种交互图，由一组对象以及按时序组织的对象之间的关系组成，其中还包含这些对象之间所发送的信息。（【广东】#30）</li>
-<li><strong>分析类（边界类·实体类·控制类）</strong>（1 题）</li>
+<li><strong>分析类（边界类·实体类·控制类）</strong>（1 空）</li>
 <li>用于规约需要长期驻留在系统中的模型化对象以及与行为相关的某些现象的类称为<strong>实体</strong>类。（【广东】#24）</li>
-<li><strong>状态图与状态建模</strong>（1 题）</li>
+<li><strong>状态图与状态建模</strong>（1 空）</li>
 <li>在 UML 中，状态图可用于描述一个对象行为的<strong>变化</strong>和状态<strong>迁移</strong>。（【13005】#20）</li>
-<li><strong>构件图与部署图</strong>（1 题）</li>
+<li><strong>构件图与部署图</strong>（1 空）</li>
 <li>UML 中的<strong>部署</strong>图显示网络的物理布局和各种组件的位置。（【广东】#13）</li>
-<li><strong>面向对象设计（OOD）准则与体系结构</strong>（1 题）</li>
+<li><strong>面向对象设计（OOD）准则与体系结构</strong>（1 空）</li>
 <li>通常意义上的三层架构就是将整个业务应用划分为界面层、业务逻辑层和<strong>数据访问层</strong>。（【广东】#15）</li>
 </ul>
 <h3 id="4-1">第 4 章 移动应用的设计与测试（1 题）</h3>
+<p><strong>本章知识地图</strong>：3 特点 → <strong>5 个迭代阶段</strong> → 界面设计 → 云计算 3 层 → 移动测试。</p>
 <ul>
-<li><strong>移动应用开发的 5 个迭代阶段</strong></li>
+<li><strong>移动应用开发的 5 个迭代阶段</strong>（1 空：<strong>阶段链</strong>）</li>
 <li>移动应用开发的 5 个迭代阶段包括：需求分析阶段、<strong>设计（软件设计）</strong>阶段、开发阶段、稳定阶段和部署阶段。（【广东】#19）</li>
 </ul>
 <h3 id="5-9">第 5 章 软件测试（9 题）</h3>
+<p><strong>本章知识地图</strong>：测试目的 → <strong>步骤链（单元→组装→确认→系统）</strong> → 白盒（路径测试／覆盖策略）／黑盒（事务流、因果图）→ 静态／动态评估。</p>
 <ul>
-<li><strong>软件测试的目的、原则与对象</strong></li>
+<li><strong>软件测试的目的、原则与对象</strong>（1 空）</li>
 <li>软件测试的主要目的是为了发现软件中的<strong>错误</strong>，并帮助改进软件产品的<strong>质量</strong>。（【13005】#23）</li>
-<li><strong>软件测试的步骤</strong></li>
+<li><strong>软件测试的步骤</strong>（1 空：<strong>步骤链的最后一环</strong>）</li>
 <li>软件测试的基本步骤依次为单元测试、组装测试、确认测试和<strong>系统测试</strong>。（033·18）</li>
-<li><strong>单元测试</strong></li>
+<li><strong>单元测试</strong>（1 空：<strong>"依据什么文档、用什么技术"是固定搭配</strong>）</li>
 <li>单元测试以<strong>详细设计</strong>文档为指导，一般来说它往往采用<strong>白盒</strong>测试技术。（#套2·64）</li>
-<li><strong>组装（集成）测试</strong></li>
+<li><strong>组装（集成）测试</strong>（1 空）</li>
 <li>把单元测试过的所有模块组装在一起进行测试的方式称作<strong>一次性</strong>组装测试。（【广东】#20）</li>
-<li><strong>黑盒测试技术（事务流）</strong></li>
+<li><strong>黑盒测试技术（事务流）</strong>（1 空）</li>
 <li>事务流程图表示中，一个事务可以被另一个事务"吸食"，称为<strong>事务吸收</strong>。（2026·27）</li>
-<li><strong>因果图法设计测试用例</strong></li>
+<li><strong>因果图法设计测试用例</strong>（1 空）</li>
 <li><strong>因果图</strong>是设计测试用例的一种工具，它着重检查各种输入条件的组合。（【广东】#26）</li>
-<li><strong>路径测试技术</strong></li>
+<li><strong>路径测试技术</strong>（1 空）</li>
 <li>在路径测试技术中，<strong>路径选取</strong>是测试用例设计的基础。（#套2·63）</li>
-<li><strong>错误·故障·失效的定义</strong></li>
+<li><strong>错误·故障·失效的定义</strong>（1 空）</li>
 <li>软件测试中，<strong>错误</strong>是指"与所期望的设计之间的偏差，该偏差可能产生不期望的系统行为或失效"。（【广东】#25）</li>
-<li><strong>软件评估的分类</strong></li>
+<li><strong>软件评估的分类</strong>（1 空）</li>
 <li>软件评估可以分为<strong>静态评估</strong>和<strong>动态评估</strong>。（2026·26）</li>
 </ul>
 <h3 id="8">附：旧教材专有内容的填空题（8 题，<strong>现行考纲不考，可跳过</strong>）</h3>
@@ -239,10 +586,12 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <hr>
 <h2 id="46">第二部分 名词解释与简述题速记（46 题）</h2>
 <blockquote>
-<p><strong>记法</strong>：题干只给一个名词或一句要求。<strong>加粗部分＝必须记住的关键名词</strong>；其余是用来把这些名词串成句子的"胶水"，意思对了即可得分。<br>
+<p><strong>记法</strong>：题干只给一个名词或一句要求。<strong>加粗部分 ＝ 必须记住的关键名词</strong>；其余是用来把这些名词串成句子的"胶水"，意思对了即可得分。<br>
+<strong>本部分按"知识簇"重组</strong>——同一簇的题目来自不同卷子、但考的是<strong>同一个知识块</strong>，排在一起才好比较、才好串成一条线。每簇开头先给"簇内关系"。<br>
 每题的答案均为<strong>真题参考答案原文</strong>（个别原卷答案残缺的已标注）。</p>
 </blockquote>
-<h3 id="1-10">第 1 章 软件工程概述（10 题）</h3>
+<h3 id="a-1-10">知识簇 A 软件工程与软件过程（第 1 章，10 题）</h3>
+<p><strong>簇内关系（一条线）</strong>：<strong>软件工程是什么</strong>（#1 名词解释 → #2 基本定义）→ <strong>为什么要有它</strong>（#3 软件危机）→ <strong>它的内核</strong>（#4 开发本质）→ <strong>它的过程模型</strong>（#5—#8 瀑布／增量）→ <strong>它的新趋势</strong>（#9 敏捷）→ <strong>【旧教材】能力成熟度</strong>（#10）。</p>
 <h4 id="1-2025421">1. 软件工程（名词解释·2025年4月【广东】#21）</h4>
 <ul>
 <li><strong>标准答案</strong>：是从<strong>管理和技术两方面</strong>研究如何更好地<strong>开发和维护计算机软件</strong>的一门学科。软件工程的<strong>基本思想</strong>是<strong>按工程化的原则和方法组织软件开发</strong>。</li>
@@ -267,15 +616,69 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <h4 id="6-2025426">6. 瀑布模型中每个阶段的任务（简述·2025年4月【广东】#26）</h4>
 <ul>
 <li><strong>标准答案</strong>：<strong>需求定义阶段</strong>的主要任务是<strong>了解用户需要计算机系统解决什么问题</strong>。<strong>系统和软件设计阶段</strong>建立软件的<strong>总体结构</strong>，画出由软件模块组成的<strong>软件体系结构图</strong>，然后针对单个模块进行设计，确定模块内部的过程和结构。<strong>实现与单元测试阶段</strong>用选定的编程语言把模块的过程性描述转换为<strong>源程序</strong>并对每个模块进行测试。<strong>集成与系统测试阶段</strong>将软件的所有模块<strong>集成在一起进行全面测试</strong>。<strong>运行与维护阶段</strong>向用户<strong>提交软件产品</strong>，使软件投入运营，其间根据用户要求对软件进行维护和修改。</li>
+<li><strong>表格化速记</strong>（把上面这段压成 5 行）：</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>一句话任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>需求定义</td>
+<td>了解用户需要计算机系统<strong>解决什么问题</strong></td>
+</tr>
+<tr>
+<td>系统和软件设计</td>
+<td>建立<strong>总体结构</strong>、画软件体系结构图，再逐模块设计</td>
+</tr>
+<tr>
+<td>实现与单元测试</td>
+<td>把过程性描述转成<strong>源程序</strong>并逐个模块测试</td>
+</tr>
+<tr>
+<td>集成与系统测试</td>
+<td>把所有模块<strong>集成起来全面测试</strong></td>
+</tr>
+<tr>
+<td>运行与维护</td>
+<td>向用户<strong>提交产品</strong>、投入运营并按需维护修改</td>
+</tr>
+</tbody>
+</table>
 <h4 id="7-13005-2026435">7. 瀑布模型存在的主要问题（简述·13005 2026年4月#35）</h4>
 <ul>
 <li><strong>标准答案</strong>：瀑布模型将软件生存周期的各项活动规定为按固定顺序而连接的若干阶段工作，形如瀑布流水，最终得到产品。存在的主要问题是：（1）<strong>要求客户能够完整、正确和清晰地表达他们的需求</strong>；并要求开发人员<strong>一开始就要理解这一应用</strong>。（2）由于<strong>需求的不稳定性</strong>，使设计、编码和测试阶段都可能发生<strong>延期</strong>；并且当项目接近结束时，出现了大量的集成和测试工作。（3）在开始的阶段中，<strong>很难评估真正的进度状态</strong>；并且直到项目结束之前都不能演示系统的能力。（4）在一个项目的早期阶段，<strong>过分强调了基线和里程碑处的文档</strong>；并可能需要花费更多的时间用于建立一些用处不大的文档。</li>
 </ul>
 <h4 id="8-202541300530">8. 增量模型及优势与不足（简述·2025年4月【13005】#30）</h4>
 <ul>
-<li><strong>标准答案</strong>：增量模型意指<strong>需求可以分组，形成一个个的增量</strong>，并可形成一个结构，在这一条件下，可对<strong>每一增量实施瀑布式开发</strong>。优势：（1）第一个可交付版本所需要的<strong>成本和时间较少</strong>，从而可减少开发由增量表示的小系统所承担的风险；（2）由于<strong>很快发布了第一个版本</strong>，因此可以<strong>减少用户需求的变更</strong>；（3）<strong>允许增量投资</strong>，即项目开始时可以仅对一个或两个增量投资。不足：（1）如果<strong>没有对用户的变更要求进行规划</strong>，那么产生的初始增量可能会造成后来增量的<strong>不稳定</strong>；（2）如果需求不像早期思考的那样稳定和完整，那么一些增量就可能需要<strong>重新开发、重新发布</strong>；（3）由于<strong>进度和配置的复杂性</strong>，可能会<strong>增大管理成本</strong>、超出组织的能力。</li>
+<li><strong>标准答案</strong>：增量模型意指<strong>需求可以分组，形成一个个的增量</strong>，并可形成一个结构，在这一条件下，可对<strong>每一增量实施瀑布式开发</strong>。<strong>优势</strong>：（1）第一个可交付版本所需要的<strong>成本和时间较少</strong>，从而可减少开发由增量表示的小系统所承担的风险；（2）由于<strong>很快发布了第一个版本</strong>，因此可以<strong>减少用户需求的变更</strong>；（3）<strong>允许增量投资</strong>，即项目开始时可以仅对一个或两个增量投资。<strong>不足</strong>：（1）如果<strong>没有对用户的变更要求进行规划</strong>，那么产生的初始增量可能会造成后来增量的<strong>不稳定</strong>；（2）如果需求不像早期思考的那样稳定和完整，那么一些增量就可能需要<strong>重新开发、重新发布</strong>；（3）由于<strong>进度和配置的复杂性</strong>，可能会<strong>增大管理成本</strong>、超出组织的能力。</li>
+<li><strong>表格化速记</strong>：</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>优势（3 条）</th>
+<th>不足（3 条）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一个可交付版本<strong>成本和时间较少</strong>，降低风险</td>
+<td>未规划用户变更 → 后续增量<strong>不稳定</strong></td>
+</tr>
+<tr>
+<td><strong>很快发布第一个版本</strong> → 减少用户需求变更</td>
+<td>需求不稳 → 增量需<strong>重新开发、重新发布</strong></td>
+</tr>
+<tr>
+<td><strong>允许增量投资</strong>（先投一两个增量）</td>
+<td><strong>进度和配置复杂</strong> → 管理成本增大</td>
+</tr>
+</tbody>
+</table>
 <h4 id="9-202640233321">9. 敏捷开发（名词解释·2026年4月自考02333#21）</h4>
 <ul>
 <li><strong>标准答案</strong>：敏捷开发是一种<strong>以人为核心、迭代、增量</strong>的软件开发方法。强调<strong>快速响应需求变化</strong>、<strong>持续交付可用软件</strong>、<strong>客户参与</strong>、<strong>团队协作和自我管理</strong>。典型方法包括 <strong>Scrum、极限编程（XP）</strong> 等。</li>
@@ -284,11 +687,46 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <ul>
 <li><strong>标准答案</strong>：（1）0 级：<strong>未完成级</strong>；（2）1 级：<strong>已执行级</strong>；（3）2 级：<strong>已管理级</strong>；（4）3 级：<strong>已定义级</strong>；（5）4 级：<strong>已定量管理级</strong>；（6）5 级：<strong>持续优化级</strong>。</li>
 </ul>
-<h3 id="2-13">第 2 章 结构化软件开发方法（13 题）</h3>
+<h3 id="b-2-13">知识簇 B 需求与结构化方法（第 2 章，13 题）</h3>
+<p><strong>簇内关系（两条并行线）</strong><br>
+- <strong>需求线</strong>：需求的定义＋5 特性（#3）→ 需求规约（#1）＋4 性质（#2）→ 需求分析目标（#5）→ 需求工作挑战（#4）→ 结构化方法四步骤（#6）<br>
+- <strong>设计线</strong>：耦合（#7 #8 #9 #10 是同一个概念的四问）→ 程序流程图优缺点（#11）→ 详细设计任务与目标（#12）→ 概要设计规约内容（#13）<br>
+- <strong>两条线的交点</strong>：<strong>需求规约／概要设计规约／详细设计规约</strong>是同一"文档族"的三个成员。</p>
 <h4 id="1-2025422">1. 需求规约（需求规格说明书）（名词解释·2025年4月【广东】#22）</h4>
 <ul>
 <li><strong>标准答案</strong>：又称<strong>软件需求说明书</strong>。主要包括：（1）<strong>软件系统的目标和范围</strong>；（2）<strong>数据描述</strong>；（3）<strong>功能描述</strong>；（4）<strong>性能描述</strong>；（5）<strong>质量保证</strong>等方面的需求。</li>
+<li><strong>表格化速记</strong>（5 个部分）：</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>部分</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>目标与范围</td>
+<td>软件系统做什么、边界在哪</td>
+</tr>
+<tr>
+<td>数据描述</td>
+<td>数据对象与关系</td>
+</tr>
+<tr>
+<td>功能描述</td>
+<td>功能与处理</td>
+</tr>
+<tr>
+<td>性能描述</td>
+<td>性能指标</td>
+</tr>
+<tr>
+<td>质量保证</td>
+<td>质量属性与保证措施</td>
+</tr>
+</tbody>
+</table>
 <h4 id="2-4-13005-20264270">2. 需求规约的 4 个基本性质（简述·13005 2026年4月#套2#70）</h4>
 <ul>
 <li><strong>标准答案</strong>：需求规约是一个软件项/产品/系统<strong>所有需求陈述的正式文档</strong>，它表达了一个软件产品/系统的<strong>概念模型</strong>。一般需要满足以下 4 个基本性质：（1）<strong>重要性和稳定性程度</strong>：按需求的重要性和稳定性对需求进行<strong>分级</strong>；（2）<strong>可修改的</strong>：在不过多地影响其他需求的前提下，可以容易地修改一个单一需求；（3）<strong>完整的</strong>：没有被遗漏的需求；（4）<strong>一致的</strong>：不存在互斥的需求。</li>
@@ -296,7 +734,44 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <h4 id="3-20251031">3. 需求的定义及其基本特性（简述·2025年10月【广东】#31）</h4>
 <ul>
 <li><strong>标准答案</strong>：需求是有关一个"<strong>要予构造</strong>"的<strong>陈述</strong>，描述了待开发产品/系统（或项目）<strong>功能上的能力、性能参数或其他性质</strong>。对于单一一个需求，必须具有<strong>五个基本特性</strong>：（1）<strong>必要的</strong>，该需求是用户所要求的；（2）<strong>无歧义的</strong>，该需求只能用一种方式解释；（3）<strong>可测的</strong>，该需求是可以进行测试的；（4）<strong>可跟踪的</strong>，该需求可从一个开发阶段跟踪到另一个阶段；（5）<strong>可测量的</strong>，该需求是可测量的。</li>
+<li><strong>【易混对照表】"需求规约的 4 性质" vs "单一需求的 5 特性"</strong>（<strong>真题最爱在这里设陷阱</strong>）：</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>需求规约</strong>（整份文档）——4 个性质</th>
+<th><strong>单一需求</strong>（每条需求）——5 个特性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>重要性和稳定性程度（分级）</td>
+<td>必要的</td>
+</tr>
+<tr>
+<td>2</td>
+<td>可修改的</td>
+<td>无歧义的</td>
+</tr>
+<tr>
+<td>3</td>
+<td>完整的</td>
+<td>可测的</td>
+</tr>
+<tr>
+<td>4</td>
+<td>一致的</td>
+<td>可跟踪的</td>
+</tr>
+<tr>
+<td>5</td>
+<td>—</td>
+<td>可测量的</td>
+</tr>
+</tbody>
+</table>
 <h4 id="4-202541300526">4. 需求工作的三大挑战（简述·2025年4月【13005】#26）</h4>
 <ul>
 <li><strong>标准答案</strong>：（1）<strong>问题空间的理解</strong>；（2）<strong>人与人之间的通信</strong>；（3）<strong>需求的变化性</strong>。</li>
@@ -312,10 +787,77 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <h4 id="7-2025428">7. 耦合及常见耦合类型（名词解释式简述·2025年4月【广东】#28）</h4>
 <ul>
 <li><strong>标准答案</strong>：<strong>耦合是模块之间的相对独立性（互相连接的紧密程度）的度量</strong>。常见的耦合类型有：<strong>非直接耦合、数据耦合、标记耦合、控制耦合、外部耦合、公共耦合和内容耦合</strong>。</li>
+<li><strong>【必背表】耦合由弱到强（耦合越弱越好）＋ 内聚由弱到强（内聚越强越好）</strong>：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>强弱</th>
+<th><strong>耦合</strong>（模块之间，越弱越好）</th>
+<th>判别关键</th>
+<th><strong>内聚</strong>（模块之内，越强越好）</th>
+<th>判别关键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最弱／最强</td>
+<td><strong>非直接耦合</strong>（无耦合）</td>
+<td>两模块无任何交互</td>
+<td><strong>功能内聚</strong></td>
+<td>只完成单一功能，各部分协同完成同一功能</td>
+</tr>
+<tr>
+<td>↑</td>
+<td><strong>数据耦合</strong></td>
+<td>只通过参数传<strong>数据</strong></td>
+<td><strong>顺序内聚</strong></td>
+<td>前一部分的输出是后一部分的<strong>输入</strong></td>
+</tr>
+<tr>
+<td>↑</td>
+<td><strong>标记耦合</strong></td>
+<td>传的是<strong>数据结构／记录</strong></td>
+<td><strong>通信内聚</strong></td>
+<td>各部分<strong>操作同一数据集</strong></td>
+</tr>
+<tr>
+<td>↑</td>
+<td><strong>控制耦合</strong></td>
+<td>传的是<strong>控制信息（开关量）</strong></td>
+<td><strong>过程内聚</strong></td>
+<td>处理相关且<strong>必须按特定次序执行</strong></td>
+</tr>
+<tr>
+<td>↑</td>
+<td><strong>外部耦合</strong></td>
+<td>都访问同一<strong>外部数据格式／协议</strong></td>
+<td><strong>时间内聚</strong></td>
+<td>各部分必须在<strong>同一时间段</strong>内执行</td>
+</tr>
+<tr>
+<td>↑</td>
+<td><strong>公共耦合</strong></td>
+<td>共享<strong>公共环境（全局数据区）</strong></td>
+<td><strong>逻辑内聚</strong></td>
+<td>各部分逻辑相似但功能不同（如统一的"输出"）</td>
+</tr>
+<tr>
+<td>最强／最弱</td>
+<td><strong>内容耦合</strong></td>
+<td>一个模块<strong>直接访问另一个模块的内部</strong></td>
+<td><strong>偶然内聚</strong></td>
+<td>各部分之间没有联系，只是被凑在一起</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>设计原则（原卷答案原文）</strong>：如果模块间必须存在耦合，<strong>尽量使用数据耦合，少用控制耦合，限制公共耦合的范围，避免使用内容耦合</strong>。</li>
 </ul>
 <h4 id="8-202541300528">8. 耦合产生的主要因素（简述·2025年4月【13005】#28）</h4>
 <ul>
 <li><strong>标准答案</strong>：（1）一个模块<strong>向另一个模块传递数据</strong>；（2）一个模块<strong>对另一个模块施加控制</strong>；（3）<strong>模块间共享公共环境（全局数据区）</strong>。</li>
+<li><strong>【联系上一题】</strong>三个因素正对应耦合表中的三档：<strong>传数据 → 数据／标记耦合；施加控制 → 控制耦合；共享公共环境 → 公共耦合</strong>。</li>
 </ul>
 <h4 id="9-13005-20264271">9. 模块与模块耦合（简述·13005 2026年4月#套2#71）</h4>
 <ul>
@@ -328,7 +870,44 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <h4 id="11-20251032">11. 程序流程图的内容及其主要优缺点（简述·2025年10月【广东】#32）</h4>
 <ul>
 <li><strong>标准答案</strong>：程序流程图又称<strong>程序框图</strong>，使用的主要符号包括<strong>顺序结构、选择结构和循环结构</strong>。主要优点是<strong>对控制流程的描绘很直观，便于初学者掌握</strong>。主要缺点：（1）<strong>不是一种逐步求精的工具</strong>，它诱使程序员过早考虑程序的控制流程，不考虑全局结构；（2）所表达的<strong>控制流往往不受任何约束随意转移</strong>，会影响程序结构设计；（3）<strong>不易表示数据结构</strong>。</li>
+<li><strong>【对照表】详细设计的 4 种工具</strong>：</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>别名</th>
+<th>特点</th>
+<th>主要短板</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>程序流程图</strong></td>
+<td>程序框图</td>
+<td><strong>直观</strong>，便于初学者掌握</td>
+<td>非逐步求精；控制流可随意转移；<strong>不易表示数据结构</strong></td>
+</tr>
+<tr>
+<td><strong>盒图（N-S 图）</strong></td>
+<td>Nassi-Shneiderman 图</td>
+<td><strong>不允许控制转移</strong>，只有顺序／选择／循环</td>
+<td>图较大、不易扩充</td>
+</tr>
+<tr>
+<td><strong>PAD 图</strong></td>
+<td>问题分析图</td>
+<td>自顶向下、逐步求精</td>
+<td>表示复杂判断时较繁</td>
+</tr>
+<tr>
+<td><strong>伪码（PDL）</strong></td>
+<td>过程设计语言</td>
+<td>可读性好、易转成源程序</td>
+<td>不直观、无图形约束</td>
+</tr>
+</tbody>
+</table>
 <h4 id="12-13005-2026432">12. 结构化方法详细设计的任务及目标（简述·13005 2026年4月#32）</h4>
 <ul>
 <li><strong>标准答案</strong>：（1）<strong>任务</strong>是<strong>具体描述模块结构图中的每一模块</strong>，即给出实现模块功能的<strong>实施机制</strong>，包括一组<strong>例程和数据结构</strong>，从而精确地定义了满足需求所规约的结构。（2）<strong>目标</strong>是将总体设计阶段所产生的<strong>系统高层结构映射为以这些术语所表达的低层结构</strong>，也是系统的最终结构。</li>
@@ -336,8 +915,14 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <h4 id="13-13005-2026433">13. 概要设计规约的主要内容（简述·13005 2026年4月#33）</h4>
 <ul>
 <li><strong>标准答案</strong>：（1）<strong>系统环境</strong>，包括硬件、软件接口、人机界面、外部定义的数据库及其设计有关的限定条件等；（2）<strong>软件模块的结构</strong>，包括模块之间的接口及设计的数据流和主要数据结构等；（3）<strong>模块描述</strong>，包括模块接口定义、模块处理逻辑及必要的注释等；（4）<strong>文件结构和全局数据文件的逻辑结构</strong>，包括记录描述、访问方式以及交叉引用信息等。</li>
+<li><strong>表格化速记</strong>：<strong>环境 → 结构 → 模块 → 文件</strong>（4 块，对应"外面—骨架—单元—数据"）。</li>
 </ul>
-<h3 id="3-9">第 3 章 面向对象的软件开发方法（9 题）</h3>
+<h3 id="c-umlrup-3-9">知识簇 C 面向对象与 UML／RUP（第 3 章，9 题）</h3>
+<p><strong>簇内关系（三条线，最后合成一条）</strong><br>
+- <strong>概念线</strong>：封装（#1）→ 继承（#3）→ 多态（#2）<br>
+- <strong>建模线</strong>：用况图（#4）→ <strong>UML 图两大类</strong>（#5）→ 组合关系（#6）<br>
+- <strong>过程线</strong>：面向对象设计准则（#7）→ RUP 需求获取（#8）→ <strong>UML＋RUP 才是方法学</strong>（#9）<br>
+- <strong>合成点</strong>：<strong>建模线（UML）＋ 过程线（RUP）＝ 一条完整的软件开发方法学</strong>，这正是 #9 的答案。</p>
 <h4 id="1-2025423">1. 封装（名词解释·2025年4月【广东】#23）</h4>
 <ul>
 <li><strong>标准答案</strong>：是<strong>面向对象方法的一个重要原则</strong>。它将对象的<strong>属性和服务结合成一个独立的系统单元</strong>。是一种<strong>信息隐藏技术</strong>。</li>
@@ -353,33 +938,178 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <h4 id="4-20251033">4. 用况图的作用及构成（简述·2025年10月【广东】#33）</h4>
 <ul>
 <li><strong>标准答案</strong>：用况图是一种<strong>表达系统功能模型的图形化工具</strong>。主要内容包括：（1）<strong>主题</strong>：是由一组用况所描述的一个类，通常是一个系统或子系统；（2）<strong>用况</strong>：规约了系统可以执行的一个动作序列；（3）<strong>参与者</strong>：参与者表达了一组<strong>高内聚的角色</strong>；（4）<strong>关联、泛化与依赖</strong>：关联表示<strong>参与者参与一个用况</strong>，泛化和依赖表示用况之间或参与者之间的关系。</li>
+<li><strong>表格化速记（用况图的 4 个成分）</strong>：</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>成分</th>
+<th>是什么</th>
+<th>关键提示</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>主题</strong></td>
+<td>由一组用况所描述的一个类</td>
+<td>通常是一个系统或子系统</td>
+</tr>
+<tr>
+<td><strong>用况</strong></td>
+<td>系统可以执行的<strong>动作序列</strong></td>
+<td>表达"系统能做什么"</td>
+</tr>
+<tr>
+<td><strong>参与者</strong></td>
+<td>一组<strong>高内聚的角色</strong></td>
+<td>人或外部系统</td>
+</tr>
+<tr>
+<td><strong>关系</strong></td>
+<td>关联／泛化／依赖</td>
+<td>关联＝参与者参与一个用况</td>
+</tr>
+</tbody>
+</table>
 <h4 id="5-uml-202541300529">5. UML 图形化工具的两大类（简述·2025年4月【13005】#29）</h4>
 <ul>
 <li><strong>标准答案</strong>：（1）<strong>结构图</strong>：<strong>类图、对象图、组件（构件）图、部署图、包图</strong>；（2）<strong>行为图</strong>：<strong>用例（用况）图、序列（顺序）图、协作图、状态图、活动图</strong>。</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>大类</th>
+<th>成员（各 5 种）</th>
+<th>一句话</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>结构图</strong>（静态）</td>
+<td><strong>类图 · 对象图 · 组件（构件）图 · 部署图 · 包图</strong></td>
+<td>描述系统的<strong>静态结构</strong></td>
+</tr>
+<tr>
+<td><strong>行为图</strong>（动态）</td>
+<td><strong>用例（用况）图 · 序列（顺序）图 · 协作图 · 状态图 · 活动图</strong></td>
+<td>描述系统的<strong>动态行为</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>记忆钩子</strong>：<strong>"类、对、组、部、包"是结构；"例、序、协、状、活"是行为</strong>。</li>
+</ul>
 <h4 id="6-2025427">6. 组合关系的含义（简述·2025年4月【广东】#27）</h4>
 <ul>
 <li><strong>标准答案</strong>：组合关系是一种<strong>整体-部分关系</strong>。组合关系中<strong>部分类的实例完全隶属于整体方的类的实例</strong>，部分类需要与整体类<strong>共存</strong>。组合关系中一旦<strong>整体类的实例不存在了，部分类的实例也会随之消失</strong>，失去存在的价值。</li>
+<li><strong>【对照表】组合 vs 聚合</strong>：</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>组合（Composition）</strong></th>
+<th><strong>聚合（Aggregation）</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>关系强度</td>
+<td><strong>强</strong></td>
+<td>弱</td>
+</tr>
+<tr>
+<td>生存周期</td>
+<td>部分与整体<strong>共存亡</strong></td>
+<td>部分可<strong>独立存在</strong></td>
+</tr>
+<tr>
+<td>创建／消除</td>
+<td><strong>整体类的实例负责创建和消除部分类的实例</strong></td>
+<td>部分由外部创建</td>
+</tr>
+<tr>
+<td>一句话判别</td>
+<td>"整体没了，部分也没了" → 组合</td>
+<td>"整体没了，部分还在" → 聚合</td>
+</tr>
+</tbody>
+</table>
 <h4 id="7-2025429">7. 面向对象设计准则（简述·2025年4月【广东】#29）</h4>
 <ul>
 <li><strong>标准答案</strong>：面向对象设计准则包括：<strong>模块化、抽象、信息隐蔽、低耦合、高内聚、可复用</strong>。</li>
+<li><strong>表格化速记（3 组，6 条）</strong>：</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>分组</th>
+<th>准则</th>
+<th>一句话</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分组（分而治之）</td>
+<td><strong>模块化</strong> · <strong>抽象</strong></td>
+<td>把系统分成模块；提取本质、忽略细节</td>
+</tr>
+<tr>
+<td>隐藏（隔离变化）</td>
+<td><strong>信息隐蔽</strong></td>
+<td>把易变部分藏进模块内部</td>
+</tr>
+<tr>
+<td>质量（模块关系）</td>
+<td><strong>低耦合</strong> · <strong>高内聚</strong> · <strong>可复用</strong></td>
+<td>模块间弱依赖、模块内强相关、能被重复使用</td>
+</tr>
+</tbody>
+</table>
 <h4 id="8-rup-20251036">8. RUP 中需求获取的目标及开展的工作（简述·2025年10月【广东】#36）</h4>
 <ul>
 <li><strong>标准答案</strong>：<strong>目标</strong>：使用 UML 中的<strong>用况、参与者以及依赖</strong>等术语来<strong>抽象客观实际问题</strong>，形成系统的<strong>需求获取模型</strong>，并产生该模型视角下的<strong>体系结构描述</strong>。<strong>开展的工作</strong>包括：（1）<strong>列出候选需求</strong>；（2）<strong>理解系统语境</strong>；（3）<strong>捕获系统功能需求</strong>；（4）<strong>捕获非功能需求</strong>。</li>
+<li><strong>表格化速记（4 项工作）</strong>：<strong>列候选 → 懂语境 → 抓功能 → 抓非功能</strong>。</li>
 </ul>
 <h4 id="9-uml-rup-13005-20264272">9. 为什么 UML 要同 RUP 一起才称得上是软件开发的方法学（简述·13005 2026年4月#套2#72）</h4>
 <ul>
 <li><strong>标准答案</strong>：（1）一种<strong>软件开发方法学</strong>至少由 3 部分组成：用于<strong>表达基本信息的术语</strong>、用于<strong>组织基本信息的表达格式</strong>、用于在不同抽象层之间进行<strong>映射的过程指导</strong>；（2）<strong>UML 仅包括前两方面的内容</strong>，因此它只是一种<strong>可视化的建模语言</strong>，而不是一种特定的软件开发方法学；（3）<strong>RUP 给出的是一种基于 UML 的过程指导</strong>，满足软件开发方法学的第三项内容。因此 <strong>UML 要同 RUP 一起才称得上是一种软件开发的方法学</strong>。</li>
+<li><strong>结构速记（3 要素 ＋ 谁补谁）</strong>：</li>
 </ul>
-<h3 id="4-1_1">第 4 章 移动应用的设计与测试（1 题）</h3>
-<h4 id="1-202640233327">1. 移动应用常见的开发框架和程序设计语言（简述·2026年4月自考02333#27）</h4>
+<table>
+<thead>
+<tr>
+<th>方法学 3 要素</th>
+<th>谁提供</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>表达基本信息的<strong>术语</strong></td>
+<td><strong>UML</strong></td>
+<td>类、对象、用况…</td>
+</tr>
+<tr>
+<td>组织基本信息的<strong>表达格式</strong></td>
+<td><strong>UML</strong></td>
+<td>各种图</td>
+</tr>
+<tr>
+<td>不同抽象层之间的<strong>映射过程指导</strong></td>
+<td><strong>RUP</strong></td>
+<td>迭代增量过程、4 阶段 4 层</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li><strong>标准答案</strong>：<strong>原生开发</strong>：<strong>Java/Kotlin（Android）</strong>、<strong>Swift/Objective-C（iOS）</strong>；<strong>跨平台框架</strong>：<strong>React Native（JavaScript/TypeScript）</strong>、<strong>Flutter（Dart）</strong>、<strong>UniApp（Vue.js）</strong>、<strong>Xamarin（C#）</strong>；<strong>混合开发</strong>：<strong>Ionic、Cordova（HTML/CSS/JS）</strong>。</li>
+<li>→ <strong>所以 UML 只满足前 2 项，只是"可视化建模语言"；加上 RUP 才凑满 3 项，才叫"方法学"。</strong></li>
 </ul>
-<h3 id="5-7">第 5 章 软件测试（7 题）</h3>
+<h3 id="d-56-10">知识簇 D 测试与维护（第 5、6 章，10 题）</h3>
+<p><strong>簇内关系（一条测试链 ＋ 一条维护链）</strong><br>
+- <strong>测试链</strong>：白盒（#1 名词 → #2 要点 → #3 路径测试 → #4 覆盖策略）＋ 单元测试（#5）＋ 静态分析（#6）＋ 确认测试（#7）<br>
+- <strong>维护链</strong>：软件维护（#8 名词）→ 可维护性（#9 名词）→ 提高可维护性 4 方法（#10）<br>
+- <strong>连接点</strong>：<strong>测试的"静态／动态"分类 与 维护的"可理解性／可测试性"是同一批质量属性</strong>。</p>
 <h4 id="1-2025425">1. 白盒测试（名词解释·2025年4月【广东】#25）</h4>
 <ul>
 <li><strong>标准答案</strong>：是软件测试中的一种测试方式，它将测试<strong>重点放在程序的代码级</strong>。测试者需要<strong>了解程序内部的逻辑结构</strong>，<strong>从程序的逻辑结构出发，按照一定的原则设计测试用例</strong>。通过<strong>检查代码中的语句、路径、条件</strong>等，以确定代码是否满足用户需求和设计规范。</li>
@@ -395,130 +1125,468 @@ footer{max-width:980px;margin:0 auto;padding:18px 22px 60px;border-top:1px solid
 <h4 id="4-20251034">4. 路径测试技术的测试策略（测试覆盖）（简述·2025年10月【广东】#34）</h4>
 <ul>
 <li><strong>标准答案</strong>：（1）<strong>路径覆盖</strong>：执行所有可能穿过程序控制流程的路径；（2）<strong>语句覆盖</strong>：至少执行程序中所有语句一次；（3）<strong>分支覆盖</strong>：至少将程序中的每一个分支执行一次；（4）<strong>条件覆盖与条件组合覆盖</strong>：条件覆盖是指每个<strong>判定中的所有可能的条件取值至少执行一次</strong>；条件组合覆盖是指设计足够的测试用例，使<strong>每个判定中所有可能的条件取值组合至少执行一次</strong>。</li>
+<li><strong>【必背表】覆盖策略由弱到强（可直接写在卷面上）</strong>：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>由弱 → 强</th>
+<th>策略</th>
+<th>达标要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>最弱</strong></td>
+<td><strong>语句覆盖</strong></td>
+<td>至少执行程序中所有语句一次</td>
+</tr>
+<tr>
+<td>↓</td>
+<td><strong>分支（判定）覆盖</strong></td>
+<td>每一个分支至少执行一次</td>
+</tr>
+<tr>
+<td>↓</td>
+<td><strong>条件覆盖</strong></td>
+<td>每个判定中所有可能的<strong>条件取值</strong>至少执行一次</td>
+</tr>
+<tr>
+<td>↓</td>
+<td><strong>判定-条件覆盖</strong></td>
+<td>判定与条件同时满足</td>
+</tr>
+<tr>
+<td>↓</td>
+<td><strong>条件组合覆盖</strong></td>
+<td>每个判定中所有可能的<strong>条件取值组合</strong>至少执行一次</td>
+</tr>
+<tr>
+<td><strong>最强</strong></td>
+<td><strong>路径覆盖</strong></td>
+<td>执行所有可能穿过程序控制流程的路径</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>两句话记住关系</strong>：<strong>"路径最强、语句最弱，两两之间具有偏序关系"</strong>。</li>
 </ul>
 <h4 id="5-2025430">5. 单元测试的主要内容（简述·2025年4月【广东】#30）</h4>
 <ul>
 <li><strong>标准答案</strong>：（1）<strong>模块接口测试</strong>（检查模块的输入输出参数是否匹配）；（2）<strong>局部数据结构测试</strong>（检查局部变量的定义和使用是否正确）；（3）<strong>路径测试</strong>（选择重要路径进行测试，验证程序的逻辑是否正确）；（4）<strong>错误处理测试</strong>（检查模块的错误处理功能是否完善）；（5）<strong>边界测试</strong>（检查程序在边界值上的行为是否正确）。</li>
+<li><strong>【四件套对照表】三种测试各"依据什么、查什么"</strong>：</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>测试</th>
+<th>依据的文档</th>
+<th>查什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>单元测试</strong></td>
+<td><strong>详细设计</strong></td>
+<td>模块接口 · 局部数据结构 · 重要路径 · 错误处理 · <strong>边界</strong></td>
+</tr>
+<tr>
+<td><strong>组装（集成）测试</strong></td>
+<td>概要设计</td>
+<td>模块之间的<strong>接口</strong>与组装方式（一次性／增量式）</td>
+</tr>
+<tr>
+<td><strong>确认测试</strong></td>
+<td><strong>需求规格说明</strong></td>
+<td>软件是否满足需求中规定的功能与性能；有效性测试 → 配置审查 → 验收测试</td>
+</tr>
+</tbody>
+</table>
 <h4 id="6-202640233324">6. 程序的静态分析方法（名词解释·2026年4月自考02333#24）</h4>
 <ul>
 <li><strong>标准答案</strong>：静态分析是软件测试的一种方法，在<strong>不运行程序</strong>的情况下，通过<strong>分析源代码或中间代码</strong>来发现<strong>潜在错误、代码规范问题或安全漏洞</strong>。常用技术包括<strong>代码审查、语法分析、数据流分析</strong>等。</li>
+<li><strong>一句话对比</strong>：<strong>静态分析不运行程序（代码审查、语法分析、数据流分析）；动态测试要运行程序（白盒／黑盒）。</strong></li>
 </ul>
 <h4 id="7-202640233329">7. 确认测试的任务及步骤（简述·2026年4月自考02333#29）</h4>
 <ul>
 <li><strong>标准答案</strong>：<strong>任务</strong>：<strong>验证软件是否满足需求规格说明中规定的功能和性能要求</strong>。<strong>步骤</strong>：<strong>有效性测试</strong>（确认软件功能与需求规格说明一致）→ <strong>软件配置审查</strong>→ <strong>验收测试（Alpha 测试与 Beta 测试）</strong>。</li>
 <li>【注意】原卷答案只印出"任务"一句，"步骤"部分在原卷答案区残缺，此处按教材要点补齐。</li>
 </ul>
-<h3 id="6-3">第 6 章 软件维护（3 题）</h3>
-<h4 id="1-2025424">1. 软件维护（名词解释·2025年4月【广东】#24）</h4>
+<h4 id="8-2025424">8. 软件维护（名词解释·2025年4月【广东】#24）</h4>
 <ul>
 <li><strong>标准答案</strong>：就是在<strong>软件已经交付使用之后</strong>，为了<strong>改正错误或满足新的需要</strong>而<strong>修改软件的过程</strong>。</li>
 </ul>
-<h4 id="2-202640233325">2. 软件可维护性（名词解释·2026年4月自考02333#25）</h4>
+<h4 id="9-202640233325">9. 软件可维护性（名词解释·2026年4月自考02333#25）</h4>
 <ul>
 <li><strong>标准答案</strong>：软件可维护性是指软件系统能够被<strong>理解、修改、修复和适应</strong>的<strong>难易程度</strong>。它包括<strong>可理解性、可修改性、可测试性和可移植性</strong>等属性，是衡量软件质量的重要指标。</li>
 </ul>
-<h4 id="3-202640233330">3. 提高软件可维护性的四种方法（简述·2026年4月自考02333#30）</h4>
+<h4 id="10-202640233330">10. 提高软件可维护性的四种方法（简述·2026年4月自考02333#30）</h4>
 <ul>
 <li><strong>标准答案</strong>：<strong>提高模块独立性（高内聚低耦合）</strong>；<strong>规范文档与注释</strong>；<strong>统一编码标准（统一编程风格）</strong>；<strong>进行代码审查与持续重构</strong>。</li>
 <li>【注意】原卷答案区未印出内容，此处按教材要点补齐。</li>
+<li><strong>表格化速记＋与第 2 章的联系</strong>：</li>
 </ul>
-<h3 id="7-2">第 7 章 软件项目管理（2 题）</h3>
-<h4 id="1-2025431">1. 规划软件工程团队结构时应考虑的项目因素（简述·2025年4月【广东】#31）</h4>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>对应第 2 章的哪个考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>提高模块独立性（高内聚低耦合）</strong></td>
+<td>模块独立性 ＝ 耦合 ＋ 内聚</td>
+</tr>
+<tr>
+<td><strong>规范文档与注释</strong></td>
+<td>需求规约／概要设计规约／详细设计规约三份文档</td>
+</tr>
+<tr>
+<td><strong>统一编码标准（统一编程风格）</strong></td>
+<td>结构化程序设计（顺序／选择／循环，单入口单出口）</td>
+</tr>
+<tr>
+<td><strong>代码审查与持续重构</strong></td>
+<td>静态分析（代码审查）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="e-47-4">知识簇 E 其他（第 4、7 章，4 题）</h3>
+<p><strong>簇内关系</strong>：移动应用（#1）＝第 4 章的真题空白区；项目管理（#2 #3）＝第 7 章的真题空白区。共 4 题，占 46 题的 8.7%。</p>
+<h4 id="1-202640233327">1. 移动应用常见的开发框架和程序设计语言（简述·2026年4月自考02333#27）</h4>
+<ul>
+<li><strong>标准答案</strong>：<strong>原生开发</strong>：<strong>Java/Kotlin（Android）</strong>、<strong>Swift/Objective-C（iOS）</strong>；<strong>跨平台框架</strong>：<strong>React Native（JavaScript/TypeScript）</strong>、<strong>Flutter（Dart）</strong>、<strong>UniApp（Vue.js）</strong>、<strong>Xamarin（C#）</strong>；<strong>混合开发</strong>：<strong>Ionic、Cordova（HTML/CSS/JS）</strong>。</li>
+<li><strong>表格化速记（3 类开发方式）</strong>：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>开发方式</th>
+<th>代表框架／语言</th>
+<th>一句话</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>原生开发</strong></td>
+<td><strong>Java/Kotlin</strong>（Android）、<strong>Swift/Objective-C</strong>（iOS）</td>
+<td>各平台官方语言，性能最好</td>
+</tr>
+<tr>
+<td><strong>跨平台框架</strong></td>
+<td><strong>React Native</strong>（JS/TS）、<strong>Flutter</strong>（Dart）、<strong>UniApp</strong>（Vue.js）、<strong>Xamarin</strong>（C#）</td>
+<td>一套代码多端运行</td>
+</tr>
+<tr>
+<td><strong>混合开发</strong></td>
+<td><strong>Ionic、Cordova</strong>（HTML/CSS/JS）</td>
+<td>网页技术套壳</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-2025431">2. 规划软件工程团队结构时应考虑的项目因素（简述·2025年4月【广东】#31）</h4>
 <ul>
 <li><strong>标准答案</strong>（答对其中 5 个即可）：（1）<strong>待解决问题的难度</strong>；（2）<strong>所开发程序的规模</strong>；（3）<strong>团队成员需要共同工作的时间</strong>；（4）能够对问题进行<strong>模块化划分的程度</strong>；（5）<strong>待开发系统的质量要求和可靠性要求</strong>；（6）<strong>交付日期的严格程度</strong>；（7）<strong>项目所需要的友好交流的程度</strong>。</li>
+<li><strong>表格化速记（7 个因素，可按"难／大／久／分／质／期／通"七字记）</strong>：</li>
 </ul>
-<h4 id="2-202640233331">2. 软件项目管理中存在的困难（简述·2026年4月自考02333#31）</h4>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>因素</th>
+<th>记忆字</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>待解决问题的<strong>难度</strong></td>
+<td>难</td>
+</tr>
+<tr>
+<td>2</td>
+<td>所开发程序的<strong>规模</strong></td>
+<td>大</td>
+</tr>
+<tr>
+<td>3</td>
+<td>团队成员需要<strong>共同工作的时间</strong></td>
+<td>久</td>
+</tr>
+<tr>
+<td>4</td>
+<td>能够对问题进行<strong>模块化划分的程度</strong></td>
+<td>分</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>质量要求和可靠性要求</strong></td>
+<td>质</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>交付日期的严格程度</strong></td>
+<td>期</td>
+</tr>
+<tr>
+<td>7</td>
+<td>项目所需要的<strong>友好交流的程度</strong></td>
+<td>通</td>
+</tr>
+</tbody>
+</table>
+<h4 id="3-202640233331">3. 软件项目管理中存在的困难（简述·2026年4月自考02333#31）</h4>
 <ul>
 <li><strong>标准答案</strong>：<strong>需求不明确或频繁变更</strong>；<strong>工作量与进度难以准确估算</strong>；<strong>团队成员沟通协作效率低</strong>；<strong>风险难以预测和控制</strong>；<strong>技术难度与人员技能不匹配</strong>。</li>
 </ul>
 <hr>
-<h2 id="_2">附一、本批未考但考纲要求、必须按笔记背的内容</h2>
+<h2 id="2-10-20">附一、应用大题：解题路线图（2 题 × 10 分 ＝ 20 分）</h2>
 <blockquote>
-<p>下面这些在第 4/6/7 章和"敏捷开发"里是<strong>真题空白区</strong>（7 套卷里只 11 题），但考纲明文要求，<strong>只能用教材/笔记补</strong>。</p>
+<p>本批 12 道应用题只考 <strong>4 类</strong>。<strong>看到题面关键词 → 直接对应套路</strong>，按步骤给分，过程比结果重要。</p>
 </blockquote>
+<table>
+<thead>
+<tr>
+<th>题面关键词</th>
+<th>对应套路</th>
+<th>关键步骤（评分点）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"画出数据流图""顶层图／0 层图／1 层图"</td>
+<td><strong>① DFD 绘制</strong></td>
+<td>① 找<strong>外部实体</strong>（矩形）→ ② 画<strong>顶层图</strong>（整个系统一个加工，<strong>数据流必须命名</strong>）→ ③ 分解为若干<strong>加工</strong>并编号 → ④ 画 0 层图、按需再细分；<strong>父子图数据流守恒（平衡）</strong></td>
+</tr>
+<tr>
+<td>"导出软件结构图""SC 图""变换分析／事务分析"</td>
+<td><strong>② DFD → SC 图</strong>（本批 0 题，考纲要求）</td>
+<td>① 判<strong>变换型／事务型</strong>；② 变换型：找<strong>输入／变换中心／输出</strong>三条边界 → 顶层挂三个模块 → 自顶向下逐步求精；③ 事务型：找<strong>事务中心</strong> → 挂"调度＋接受"及各事务分支 → 逐层分解；④ 按<strong>高内聚低耦合</strong>精化（减扇出、加中间层、<strong>作用域落在控制域内</strong>）</td>
+</tr>
+<tr>
+<td>"设计测试用例""等价类""边界值""语句／分支覆盖"</td>
+<td><strong>③ 逻辑覆盖 ＋ 等价类／边界值用例设计</strong></td>
+<td><strong>白盒</strong>：① 画控制流程图并给语句／判定／条件编号 → ② 列表：用例号 → 输入 → 执行的语句 → 各判定取值 → ③ 检查达标。<strong>黑盒</strong>：① 列输入条件 → ② 划分有效／无效等价类并<strong>编号</strong> → ③ 有效等价类<strong>一条用例覆盖多个</strong> → ④ <strong>每个无效等价类单独一条用例</strong> → ⑤ 边界值取 min、min−1、min+1、正常值、max−1、max、max+1</td>
+</tr>
+<tr>
+<td>"伪代码→流程图／N-S 图""顺序图／状态图／用况图分析"</td>
+<td><strong>④ 图形绘制与转换 · UML 建模</strong></td>
+<td><strong>流程图→N-S</strong>：识别顺序／选择／循环，<strong>N-S 不允许控制转移</strong>。<strong>顺序图三问</strong>：对象名称 → 消息名称 → 按序写出交互过程。<strong>用况图三问</strong>：几个用例 → 系统需求描述 → "包含"关系发生在哪些用例之间。<strong>状态图</strong>：先列全部<strong>状态</strong>，再画状态与<strong>迁移</strong>（事件／监护条件／动作）</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li><strong>第 4 章移动应用</strong>：移动应用的 <strong>3 个特点</strong>（强调用户体验、需求及环境复杂、技术难度高）· <strong>5 个迭代阶段</strong> · 界面设计的 <strong>3 种模型</strong>与 <strong>3 种方法</strong> · <strong>云计算 3 层体系结构</strong> · <strong>WebApp 设计</strong>（界面、美学、内容、导航、构件）· <strong>影响移动 App 质量的 6 个因素</strong> · 移动软件的测试（连接性、手势、虚拟键盘、语音、安全、性能、压力、负载、实时、A/B、文档测试）。</li>
-<li><strong>第 6 章软件维护</strong>：<strong>4 种维护类型判别</strong>（改正性／适应性／完善性／预防性）· 维护的<strong>副作用</strong>（编码／数据／文档）· 维护工作<strong>过程与组织</strong> · 软件<strong>可靠性</strong>的定义。</li>
-<li><strong>第 7 章软件项目管理</strong>：<strong>软件度量</strong>（面向规模／面向功能）· <strong>成本估算（COCOMO）</strong> · <strong>风险评估</strong>（技术风险／商业风险）· <strong>进度计划</strong>（甘特图、PERT、关键路径）· <strong>配置管理</strong> · <strong>质量保证</strong>。</li>
-<li><strong>敏捷开发</strong>：敏捷的<strong>基本思想、过程与工具</strong>（用户故事、看板、燃尽图、持续集成）· <strong>Scrum</strong> 的 3 角色／3 工件／4 会议 · <strong>XP 的关键任务</strong>（计划游戏、小版本发布、简单设计、TDD、结对编程、重构、持续集成、集体代码所有权、现场客户、40 小时工作制）。</li>
+<li><strong>覆盖强弱（可直接写在卷面上）</strong>：语句 ＜ 分支 ＜ 条件 ＜ 判定-条件 ＜ 条件组合 ＜ 路径。</li>
 </ul>
 <hr>
-<h2 id="_3">附二、易混点一句判别（填空题最爱挖的地方）</h2>
-<ul>
-<li><strong>概念模型</strong>回答"是什么"，<strong>软件模型</strong>回答"怎么做"，软件模型再分<strong>设计模型／实现模型／部署模型</strong>。</li>
-<li><strong>DFD 四种符号</strong>：数据源/数据潭（矩形）· 加工（圆）· <strong>数据流（箭头）</strong> · <strong>数据存储（开口矩形）</strong>；"数据的静态结构"＝<strong>数据存储</strong>。</li>
-<li><strong>DFD 两大类型</strong>：<strong>变换型</strong>（输入—变换—输出，顺序结构）／<strong>事务型</strong>（事务中心按输入值选路径）。</li>
-<li><strong>深度</strong>＝层数；<strong>宽度</strong>＝同层模块数的<strong>最大值</strong>；<strong>扇出</strong>＝本模块调用的下级模块数；<strong>扇入</strong>＝直接调用本模块的上级模块数；<strong>作用域</strong>由<strong>判定</strong>决定，<strong>控制域</strong>由<strong>调用层次</strong>决定。</li>
-<li><strong>耦合由高到低</strong>：内容、公共、外部、控制、标记、数据、非直接；<strong>内聚由低到高</strong>：偶然、逻辑、时间、过程、通信、顺序、功能。</li>
-<li><strong>过程内聚</strong>看"必须按特定次序执行"；<strong>通信内聚</strong>看"操作同一数据集"；<strong>顺序内聚</strong>看"前者的输出是后者的输入"。</li>
-<li><strong>加工小说明的 3 种工具</strong>：结构化语言、<strong>判定表</strong>、<strong>判定树</strong>（"取决于一组条件"→判定表）。</li>
-<li><strong>数据字典符号</strong>：<code>＝</code> 定义 · <code>＋</code> 顺序 · <code>[ | ]</code> <strong>选择</strong> · <code>{ }</code> 重复 · <code>( )</code> 可选。</li>
-<li><strong>详细设计 4 工具</strong>：程序流程图、<strong>盒图（N-S 图）</strong>、<strong>PAD 图</strong>、伪码（PDL）；<strong>HIPO 图</strong>＝IPO 图＋层次图，用于<strong>总体设计</strong>阶段。</li>
-<li><strong>结构化程序设计 3 种基本结构</strong>：顺序、选择、<strong>循环（重复）</strong>；每种结构<strong>只允许一个入口和一个出口</strong>。</li>
-<li><strong>类＝相同属性、操作、关系和语义</strong>的对象的描述；<strong>可见性</strong>：<code>+</code> 公有、<code>-</code> 私有、<code>#</code> 受保护、<code>~</code> 包内可见。</li>
-<li><strong>泛化的 4 个约束</strong>：完整、不完整、<strong>互斥</strong>、<strong>重叠</strong>。</li>
-<li><strong>组合／聚合</strong>：整体负责创建与消除部分、与部分共存亡＝<strong>组合</strong>；否则＝<strong>聚合</strong>。</li>
-<li><strong>三层架构</strong>：界面层、业务逻辑层、<strong>数据访问层</strong>。</li>
-<li><strong>RUP</strong>：以<strong>用况</strong>为驱动、以<strong>体系结构</strong>为中心、迭代增量；四阶段＝初始、精化、<strong>构造</strong>、移交；四层＝需求获取、分析、设计、<strong>实现</strong>。</li>
-<li><strong>单元测试</strong>依据<strong>详细设计</strong>、采用<strong>白盒</strong>技术；<strong>组装测试</strong>查接口；<strong>确认测试</strong>查需求规格说明。</li>
-<li><strong>覆盖强弱</strong>：语句 ＜ 分支 ＜ 条件 ＜ 判定-条件 ＜ 条件组合 ＜ <strong>路径</strong>（路径最强、语句最弱，两两之间具有<strong>偏序关系</strong>）。</li>
-<li><strong>事务吸收</strong>＝一个事务被另一个事务"吸食"。</li>
-<li><strong>静态测试</strong>不运行程序；<strong>白盒测试</strong>重点在代码级、依据逻辑结构。</li>
-</ul>
+<h2 id="_3">附二、易混点速查（全部做成表，按"章"排）</h2>
+<h3 id="21-1">2.1 第 1 章：概念对照</h3>
+<table>
+<thead>
+<tr>
+<th>对照项</th>
+<th>一句话判别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>概念模型</strong> vs <strong>软件模型</strong></td>
+<td>概念模型回答"<strong>是什么</strong>"（问题定义）；软件模型回答"<strong>怎么做</strong>"，再分<strong>设计模型／实现模型／部署模型</strong></td>
+</tr>
+<tr>
+<td><strong>软件工程发展两期</strong></td>
+<td>前期抓<strong>系统实现技术</strong>，后期抓<strong>软件质量 ＋ 软件工程管理</strong></td>
+</tr>
+<tr>
+<td><strong>方法学 3 要素</strong></td>
+<td>术语 · 表达格式 · <strong>映射的过程指导</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-2-dfd">2.2 第 2 章：DFD 与模块度量</h3>
+<table>
+<thead>
+<tr>
+<th>对照项</th>
+<th>一句话判别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DFD 四种符号</strong></td>
+<td>数据源/数据潭（矩形）· 加工（圆）· <strong>数据流（箭头）</strong> · <strong>数据存储（开口矩形）</strong></td>
+</tr>
+<tr>
+<td><strong>"数据的静态结构"</strong></td>
+<td>＝ <strong>数据存储</strong></td>
+</tr>
+<tr>
+<td><strong>DFD 两大类型</strong></td>
+<td><strong>变换型</strong>（输入—变换—输出，顺序结构）／<strong>事务型</strong>（事务中心按输入值选路径）</td>
+</tr>
+<tr>
+<td><strong>深度／宽度／扇入／扇出</strong></td>
+<td>深度＝层数；宽度＝同层模块数<strong>最大值</strong>；<strong>扇出</strong>＝本模块调用的下级模块数（<strong>影响宽度</strong>）；<strong>扇入</strong>＝直接调用本模块的上级模块数</td>
+</tr>
+<tr>
+<td><strong>作用域 vs 控制域</strong></td>
+<td>作用域由<strong>判定</strong>决定；控制域由<strong>调用层次</strong>决定</td>
+</tr>
+<tr>
+<td><strong>加工小说明 3 工具</strong></td>
+<td>结构化语言 · <strong>判定表</strong> · <strong>判定树</strong>；"<strong>取决于一组条件</strong>"→ <strong>判定表</strong></td>
+</tr>
+<tr>
+<td><strong>数据字典符号</strong></td>
+<td><code>＝</code> 定义 · <code>＋</code> 顺序 · <code>[ \| ]</code> <strong>选择</strong> · <code>{ }</code> 重复 · <code>( )</code> 可选</td>
+</tr>
+<tr>
+<td><strong>详细设计 4 工具</strong></td>
+<td>程序流程图 · <strong>盒图（N-S）</strong> · <strong>PAD 图</strong> · 伪码（PDL）</td>
+</tr>
+<tr>
+<td><strong>HIPO 图</strong></td>
+<td>＝ IPO 图 ＋ <strong>层次图（H 图）</strong>，用于<strong>总体设计</strong>阶段</td>
+</tr>
+<tr>
+<td><strong>结构化程序设计 3 结构</strong></td>
+<td>顺序 · 选择 · <strong>循环（重复）</strong>；每种结构<strong>只有一个入口和一个出口</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="23-3">2.3 第 3 章：面向对象</h3>
+<table>
+<thead>
+<tr>
+<th>对照项</th>
+<th>一句话判别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>类＝什么</strong></td>
+<td>一组具有<strong>相同属性、操作、关系和语义</strong>的对象的描述</td>
+</tr>
+<tr>
+<td><strong>可见性符号</strong></td>
+<td><code>+</code> 公有 · <code>-</code> 私有 · <code>#</code> 受保护 · <code>~</code> 包内可见</td>
+</tr>
+<tr>
+<td><strong>泛化的 4 个约束</strong></td>
+<td>完整 · 不完整 · <strong>互斥</strong> · <strong>重叠</strong></td>
+</tr>
+<tr>
+<td><strong>组合 vs 聚合</strong></td>
+<td>整体负责创建与消除部分、与部分<strong>共存亡</strong>＝<strong>组合</strong>；否则＝<strong>聚合</strong></td>
+</tr>
+<tr>
+<td><strong>依赖关系</strong></td>
+<td>一个类<strong>只是把另一个类作为操作参数</strong> → <strong>依赖</strong></td>
+</tr>
+<tr>
+<td><strong>UML 图两大类</strong></td>
+<td><strong>结构图</strong>：类图·对象图·组件图·部署图·包图；<strong>行为图</strong>：用例图·序列图·协作图·状态图·活动图</td>
+</tr>
+<tr>
+<td><strong>三层架构</strong></td>
+<td>界面层 · 业务逻辑层 · <strong>数据访问层</strong></td>
+</tr>
+<tr>
+<td><strong>RUP</strong></td>
+<td>以<strong>用况</strong>为驱动、以<strong>体系结构</strong>为中心、迭代增量；4 阶段＝初始·精化·<strong>构造</strong>·移交；4 层＝需求获取·分析·设计·<strong>实现</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="24-56">2.4 第 5、6 章：测试与维护</h3>
+<table>
+<thead>
+<tr>
+<th>对照项</th>
+<th>一句话判别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>测试步骤链</strong></td>
+<td>单元 → 组装（集成）→ 确认 → <strong>系统</strong></td>
+</tr>
+<tr>
+<td><strong>单元测试依据／技术</strong></td>
+<td>依据<strong>详细设计</strong>、采用<strong>白盒</strong>技术</td>
+</tr>
+<tr>
+<td><strong>组装 vs 确认</strong></td>
+<td>组装测试查<strong>接口</strong>；确认测试查<strong>需求规格说明</strong></td>
+</tr>
+<tr>
+<td><strong>覆盖强弱</strong></td>
+<td>语句 ＜ 分支 ＜ 条件 ＜ 判定-条件 ＜ 条件组合 ＜ <strong>路径</strong>（<strong>偏序关系</strong>）</td>
+</tr>
+<tr>
+<td><strong>静态 vs 动态</strong></td>
+<td>静态<strong>不运行程序</strong>（代码审查、语法分析、数据流分析）；动态要运行程序</td>
+</tr>
+<tr>
+<td><strong>事务吸收</strong></td>
+<td>一个事务被另一个事务"<strong>吸食</strong>"</td>
+</tr>
+<tr>
+<td><strong>维护 4 类型</strong></td>
+<td>改正性（改错）· 适应性（适应环境）· 完善性（加功能／提性能）· 预防性（防患于未然）</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h2 id="30">附三、考前 30 分钟清单（只看这一页）</h2>
 <ul>
 <li><strong>卷型</strong>：33 题卷＝单选 10×2＋填空 10×1＋<strong>名词解释 5×4</strong>＋简答 6×5＋应用 2×10；38 题卷＝单选 15×2＋填空 15×1＋简答 6×5＋应用 2×10。</li>
-<li><strong>一句话区分两类题</strong>：<strong>填空＝把整句话给你，你只填那个最关键的词</strong>；<strong>名词解释/简答＝只给你那个词，你要把整句话讲出来</strong>。所以——填空题背"词"，简述题背"词的关联名词簇＋分点结构"。</li>
+<li><strong>一句话区分两类题</strong>：<strong>填空＝把整句话给你，你只填那个最关键的词</strong>；<strong>名词解释／简答＝只给你那个词，你要把整句话讲出来</strong>。→ 填空背"词"，简述背"词的关联名词簇 ＋ 分点结构"。</li>
 <li><strong>必背名词解释（考过的原题）</strong>：软件工程 · 需求规约（需求规格说明书）· 封装 · 多态性 · 敏捷开发 · 非直接耦合 · 白盒测试 · 程序的静态分析方法 · 软件维护 · 软件可维护性。</li>
-<li><strong>必背简述（考过的原题）</strong>：软件危机及表现 · 软件开发的本质 · 瀑布模型的概念及问题 · 增量模型的优势与不足 · 需求的定义及 5 个基本特性 · 需求规约的 4 个基本性质 · 需求工作三大挑战 · 需求分析阶段的目标 · 耦合类型与设计原则 · 程序流程图的优缺点 · 详细设计的任务与目标 · 概要设计规约的内容 · 用况图的作用及构成 · UML 两大类图 · 面向对象设计准则 · RUP 需求获取的目标与工作 · 为什么 UML＋RUP 才是方法学 · 移动应用开发框架 · 白盒测试要点 · 路径测试策略 · 单元测试的 5 项内容 · 确认测试的任务与步骤 · 提高可维护性的四种方法 · 团队结构的 7 个项目因素 · 项目管理的困难。</li>
-<li><strong>答题纪律</strong>：名词解释写 <strong>3 个点</strong>（4 分）；简答写 <strong>3—5 个点</strong>，<strong>每点以关键名词开头</strong>；分号或序号分行写，不写长段落。</li>
+<li><strong>必背简述（考过的原题）</strong>：软件危机及表现 · 软件开发的本质 · 瀑布模型的概念及问题 · 增量模型的优势与不足 · 需求的定义及 5 个基本特性 · 需求规约的 4 个基本性质 · 需求工作三大挑战 · 需求分析阶段的目标 · 耦合类型与设计原则 · 程序流程图的优缺点 · 详细设计的任务与目标 · 概要设计规约的内容 · 用况图的作用及构成 · <strong>UML 两大类图</strong> · 面向对象设计准则 · RUP 需求获取的目标与工作 · 为什么 UML＋RUP 才是方法学 · 移动应用开发框架 · 白盒测试要点 · 路径测试策略 · 单元测试的 5 项内容 · 确认测试的任务与步骤 · 提高可维护性的四种方法 · 团队结构的 7 个项目因素 · 项目管理的困难。</li>
+<li><strong>8 个高频题眼（覆盖 43.5% 题量）</strong>：<strong>耦合（4 卷）· 瀑布模型（3 卷）· 封装／继承／多态（3 卷）· 详细设计（2 卷）· 增量模型（2 卷）· 软件工程定义（2 卷）· 白盒测试（2 卷）· 可维护性（2 卷）</strong>。</li>
+<li><strong>会做表格就能拿分的 6 处</strong>：UML 图两大类 · 耦合与内聚排序 · 覆盖策略强弱 · 三种测试的依据与对象 · 增量模型优缺点 · 移动应用三类框架。</li>
+<li><strong>答题纪律</strong>：名词解释写 <strong>3 个点</strong>（4 分）；简答写 <strong>3—5 个点</strong>，每点以<strong>关键名词开头</strong>，分号或序号<strong>分行</strong>写，不写长段落。</li>
 </ul>
 <hr>
-<h2 id="2-10-20">附四、应用大题模板（2 题 × 10 分 ＝ 20 分）</h2>
-<blockquote>
-<p>本批 12 道应用题只考 <strong>4 类</strong>。每类都给出"看到题目先写什么、按什么顺序写"的固定套路——<strong>应用题按步骤给分，过程比结果重要</strong>。</p>
-</blockquote>
-<h3 id="1-dfd-0-1">① DFD 绘制（顶层图 / 0 层图 / 1 层图）</h3>
-<ul>
-<li><strong>本批考过</strong>：机票预订系统、学生成绩管理系统、系统体系结构题。</li>
-<li><strong>步骤链</strong>：① 找<strong>外部实体</strong>（数据源／数据潭，画成矩形）→ ② 画<strong>顶层图</strong>（整个系统用一个"加工"表示，箭头是进出系统的数据流，并为数据流命名）→ ③ 把系统功能分解成若干<strong>加工</strong>并编号，画 <strong>0 层图</strong> → ④ 按题目要求再细分（1 层）。</li>
-<li><strong>评分点</strong>：符号用对（矩形＝外部实体、圆＝加工、箭头＝数据流、开口矩形＝数据存储）；<strong>数据流必须命名</strong>；<strong>父子图数据流守恒（平衡）</strong>。</li>
-</ul>
-<h3 id="2-dfd-sc">② DFD → 软件结构图（SC 图）</h3>
-<ul>
-<li><strong>本批 0 题</strong>，但考纲"综合应用"明确要求（用变换分析法／事务分析法画 SC 图），<strong>不能丢</strong>。</li>
-<li><strong>步骤链</strong>：① 判断数据流图是<strong>变换型</strong>还是<strong>事务型</strong>；② <strong>变换型</strong>：找出<strong>输入部分／变换中心／输出部分</strong>三条边界 → 顶层挂"输入、变换、输出"三个模块 → 自顶向下逐步求精；③ <strong>事务型</strong>：找出<strong>事务中心</strong> → 顶层挂"调度／接受"加各事务处理分支 → 逐层分解；④ 按<strong>高内聚低耦合</strong>精化（减扇出、加中间层、作用域落在控制域内）。</li>
-</ul>
-<h3 id="3">③ 逻辑覆盖与等价类／边界值用例设计</h3>
-<ul>
-<li><strong>本批考过 5 次</strong>（GCD 代码设计用例集、三角形程序等价类＋覆盖检查、程序段差异用例、测试用例表）。</li>
-<li><strong>步骤链（白盒）</strong>：① 画<strong>控制流程图</strong>并给语句／判定／条件编号；② 按要求的标准<strong>列表设计用例</strong>：用例号 → 输入 → 执行的语句 → 各判定（条件）的取值结果；③ 检查是否达标（判定覆盖要真、假各一次；条件组合覆盖要覆盖所有组合）。</li>
-<li><strong>步骤链（黑盒）</strong>：① 列<strong>输入条件</strong>；② 划分<strong>有效／无效等价类</strong>并<strong>编号</strong>；③ 有效等价类<strong>尽量一条用例覆盖多个</strong>；④ <strong>每个无效等价类单独一条用例</strong>；⑤ 边界值取<strong>最小值、最小值−1、最小值＋1、正常值、最大值−1、最大值、最大值＋1</strong>。</li>
-<li><strong>覆盖强弱（可直接写在卷面上）</strong>：语句 ＜ 分支 ＜ 条件 ＜ 判定-条件 ＜ 条件组合 ＜ 路径。</li>
-</ul>
-<h3 id="4-uml">④ 图形绘制与转换 / UML 图建模</h3>
-<ul>
-<li><strong>本批考过</strong>：伪代码 → <strong>程序流程图与 N-S 图</strong>（2025年4月广东）；<strong>交互顺序图</strong>（网络打印机、登录时序图分析）；<strong>状态图</strong>（图书管理系统）；<strong>用况图分析</strong>（用例个数、需求描述、"包含"关系）。</li>
-<li><strong>程序流程图 → N-S 图</strong>：识别<strong>顺序／选择／循环</strong>三种结构；N-S 图<strong>不允许控制转移</strong>，把 goto／break 改写成结构化形式。</li>
-<li><strong>顺序图分析三问</strong>（真题原题的问法）：① 与角色交互的<strong>对象名称</strong>有哪些；② 对象之间传递了哪些<strong>消息名称</strong>；③ 按顺序写出<strong>交互过程</strong>。</li>
-<li><strong>用况图分析三问</strong>：① 图中有几个<strong>用例</strong>；② 写出该系统的<strong>需求描述</strong>；③ "包含"关系发生在哪些用例之间。</li>
-<li><strong>状态图</strong>：先列出对象的所有<strong>状态</strong>（如"可借阅、已锁定、已借出、已归还、已损坏或丢失"），再画状态与<strong>转移</strong>（事件、监护条件、动作）。</li>
-</ul>
-<hr>
-<h2 id="_4">附五、备选名词解释清单（本批未考过，但同类型可出）</h2>
+<h2 id="_4">附四、备选名词解释清单（本批未考过，但同类型可出）</h2>
 <blockquote>
 <p>只列词，<strong>不填答案</strong>——这些词本批 7 套卷没有作为名词解释出过，任何一个"自编解释"都可能与阅卷的得分点不符，<strong>请按教材原文去背</strong>。判断依据是：它在本批作为<strong>填空的答案</strong>出现过，说明教材明确给出过定义。</p>
 </blockquote>
-<ul>
-<li><strong>第 1 章</strong>：软件 · 软件过程 · 软件过程模型 · 软件生存周期模型 · 原型（快速原型）模型 · 演化模型 · 喷泉模型</li>
-<li><strong>第 2 章</strong>：功能需求 · 非功能需求（性能需求／设计约束／质量属性）· 需求发现技术 · 结构化分析方法 · 数据流图（DFD）· 数据字典 · 加工小说明 · 模块 · 模块化 · 模块独立性 · 内聚 · 耦合 · 软件体系结构（总体设计）· 软件结构图（SC 图）· 变换型／事务型数据流图 · 详细设计 · HIPO 图</li>
-<li><strong>第 3 章</strong>：对象 · 类 · 继承 · 重载 · 泛化 · 聚合（聚集）· 用况 · 参与者 · 分析类（边界类／实体类／控制类）· RUP · 三层架构 · MVC</li>
-<li><strong>第 5 章</strong>：黑盒测试 · 集成（组装）测试 · 确认测试 · 有效性测试 · 错误／故障／失效 · 事务吸收 · 因果图</li>
-<li><strong>第 6 章</strong>：软件可靠性 · 维护的副作用 · 软件配置管理 · 软件质量保证</li>
-<li><strong>第 7 章</strong>：软件度量 · 功能点 · 风险评估 · 甘特图 · 关键路径</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>章</th>
+<th>备选词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>第 1 章</strong></td>
+<td>软件 · 软件过程 · 软件过程模型 · 软件生存周期模型 · 原型（快速原型）模型 · 演化模型 · 喷泉模型</td>
+</tr>
+<tr>
+<td><strong>第 2 章</strong></td>
+<td>功能需求 · 非功能需求（性能需求／设计约束／质量属性）· 需求发现技术 · 结构化分析方法 · 数据流图（DFD）· 数据字典 · 加工小说明 · 模块 · 模块化 · 模块独立性 · 内聚 · 耦合 · 软件体系结构（总体设计）· 软件结构图（SC 图）· 变换型／事务型数据流图 · 详细设计 · HIPO 图</td>
+</tr>
+<tr>
+<td><strong>第 3 章</strong></td>
+<td>对象 · 类 · 继承 · 重载 · 泛化 · 聚合（聚集）· 用况 · 参与者 · 分析类（边界类／实体类／控制类）· RUP · 三层架构 · MVC</td>
+</tr>
+<tr>
+<td><strong>第 5 章</strong></td>
+<td>黑盒测试 · 集成（组装）测试 · 确认测试 · 有效性测试 · 错误／故障／失效 · 事务吸收 · 因果图</td>
+</tr>
+<tr>
+<td><strong>第 6 章</strong></td>
+<td>软件可靠性 · 维护的副作用 · 软件配置管理 · 软件质量保证</td>
+</tr>
+<tr>
+<td><strong>第 7 章</strong></td>
+<td>软件度量 · 功能点 · 风险评估 · 甘特图 · 关键路径</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <blockquote>
 <p>数据来源：7 套现行教材真题（237 题）逐题标注 ＋ <strong>真题参考答案原文</strong>。<br>
